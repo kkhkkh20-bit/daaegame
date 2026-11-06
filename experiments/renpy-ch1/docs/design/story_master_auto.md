@@ -2049,7 +2049,7 @@ def r13_nw_true_ending_ready():
 | `karo_guard_not_ready13` | `not (r13_v111_actor_ready("karo") and r13_v111_actor_ready("guard"))` | d13 |
 | `karo_guard_ready13` | `r13_v111_actor_ready("karo") and r13_v111_actor_ready("guard")` | d13 |
 | `karo_heard_iron5` | `r13_v111_value("meeting:lamp") in ("win","partial") and r13_v111_value("listed:resident_tok") is not True and r13_v111_actor_ready("karo")` | d05 |
-| `karo_ready` | `r13_v111_actor_ready("karo")` | d11 |
+| `karo_ready` | `r13_v111_actor_ready("karo")` | d11, d13 |
 | `karo_ready11` | `r13_v111_actor_ready("karo")` | d11 |
 | `kkomi_acorn_shared` | `r13_v111_value("kkomi_acorn10") is True and r13_v111_actor_ready("daram")` | d12 |
 | `kkomi_alive` | `r13_v111_value("KKOMI_ALIVE") is not False` | d07 |
@@ -2126,7 +2126,7 @@ def r13_nw_true_ending_ready():
 | `prep12_seat_only` | `bool(r13_v111_value("warm_seat_ready")) and not r13_v111_value("carrier_arrived")` | d12 |
 | `prevention_b` | `r13_v111_value("prevention") in ("B","promise","repair")` | d08, d11 |
 | `prevention_stone` | `r13_v111_value("prevention")=="stone"` | d08, d09, d11 |
-| `reader_nabi` | `not (r13_v111_value("departed:nabi") or not r13_v111_person_alive("nabi"))` | d14 |
+| `reader_nabi` | `not (r13_v111_value("departed:nabi") or not r13_v111_person_alive("nabi"))` | d13, d14 |
 | `reader_tosil` | `bool(r13_v111_value("departed:nabi") or not r13_v111_person_alive("nabi"))` | d14 |
 | `records_lose` | `r13_v111_value("meeting:records")=="lose"` | d10 |
 | `records_lose_fell7` | `r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention")!="stone"` | d10 |

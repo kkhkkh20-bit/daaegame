@@ -1,0 +1,418 @@
+{
+  "schema": "room13.resident-days.v1",
+  "date": "2026-11-06",
+  "basename": "resident-days1314",
+  "renumber_chapters": true,
+  "edition": "2026년 11월 6일 · 13~14일차",
+  "title": "다람탐정 주민 별편 — 글씨가 마를 때까지",
+  "introduction": "마지막 이틀의 같은 시간을 여섯 주민의 눈으로 읽는 여섯 장면입니다. 한 판에서 실제로 함께 일어날 수 있는 장면만 경로별로 묶었습니다. 가족 우선 경로에는 이번 새 14일 별편이 없으며, 그 파일은 13일 공통 장면 하나만 담습니다. 주민 전원과 모든 결말을 새로 소설화한 책은 아닙니다. 게임에는 속마음 전문 대신 다돌이 직접 보고 듣는 짧은 행동과 대사를 연결했습니다.",
+  "premise": "다돌은 딸 다람과 아내를 찾아 눈 덮인 마을에 왔습니다. 가족이 만난 뒤에도 마을 밖으로 사람을 실어 가는 수레가 남았습니다. 판돌은 돌아오지 않은 아내 모과를 기다리고, 나비는 학교에서 내려올 사람을 받을 자리를 준비합니다. 까로는 수레 주인 은호에게 빈 수레를 돌려주려 합니다. 이송을 멈추는 것과 이미 떠난 사람이 돌아오는 것은 다릅니다. 14일의 아침 줄기에서는 토실이 엄마 보미의 이름을 쓰고, 백 부인이 실제 물자와 빈칸을 확인하며, 등지기 초롱이 학교 문을 비출 등을 남깁니다. 이 줄기에도 앞선 상실과 아직 끝내지 못한 일이 남을 수 있습니다.",
+  "scenes": [
+    {
+      "id": "RR13_01",
+      "title": "절반은 남겨 두고",
+      "pov_name": "판돌",
+      "day": 13,
+      "label": "r13_v111_blanket_mended13",
+      "anchors": [
+        "MS14_D13_S01_L0017",
+        "MS14_D13_S01_L0018",
+        "MS14_D13_S01_L0023"
+      ],
+      "known": [
+        "판돌이 학교에서 추위에 떨고 아빠와 다람이 까로가 내놓은 터진 담요 한 장을 고친다.",
+        "판돌은 자기만의 물건이 아니며 나중에 다른 사람도 써야 한다고 말한다.",
+        "가족은 아직 떠날 수 있는지 물어보러 가기 전이다."
+      ],
+      "unknown": [
+        "이후 가족 거래 수락 또는 거절",
+        "담요를 봤다는 말의 참거짓",
+        "담요 회의·수레 중단·개별 인수의 결과",
+        "모과의 행방에 관한 후속 입증",
+        "최종 결말"
+      ],
+      "branch": {
+        "entry": "13일 아침 공통 blanket_mended13; 가족 거래·담요 회의보다 앞",
+        "piko_alive": [
+          false,
+          true
+        ],
+        "daram_fever12": [
+          false,
+          true
+        ],
+        "family_deal": "아직 결정 전; 뒤의 수락/거절 어느 쪽도 가정하지 않음",
+        "new_when": false
+      },
+      "game_added_ids": [
+        "NW_RR13_P01",
+        "NW_RR13_P02",
+        "NW_RR13_P03"
+      ],
+      "game_modified_ids": [],
+      "scene_extent": {
+        "manuscript": "추위에 떠는 판돌이 고친 담요를 받은 뒤 한 장의 남은 끝을 옆 사람도 함께 덮게 내밀었다가 아빠가 다리까지 그대로 덮게 하는 장면. 담요를 자르거나 추가·기부·소유 처리하지 않는다. 몸의 감각과 내면은 문서만의 시점이다.",
+        "release_after": "MS14_D13_S01_L0023",
+        "game_excerpt": {
+          "position": "after",
+          "anchor": "MS14_D13_S01_L0017",
+          "extent": "한 장의 한쪽을 어깨에 걸친 채 남은 끝을 아빠 쪽으로 내미는 행동과 두 대사. 이어지는 기존 L0018에서 아빠가 지금은 판돌이 덮도록 한다. 실제 담요 수량·자료 획득은 기존 흐름만 처리한다."
+        }
+      }
+    },
+    {
+      "id": "RR13_02",
+      "title": "문 앞은 비워 두고",
+      "pov_name": "나비",
+      "day": 13,
+      "label": "r13_v111_beds_ready13",
+      "anchors": [
+        "beds_ready13",
+        "NW_D13_BR01"
+      ],
+      "known": [
+        "가족 거래를 거절하고 담요 회의의 첫 대조를 통과한 뒤 수레를 세웠다.",
+        "완전 인수 경로에서 학교 자리와 받을 사람을 먼저 준비하러 아빠·까로가 나비를 찾는다.",
+        "명단에 있던 나비라면 school_handover_prep13에서 먼저 하차 처리한다.",
+        "이 장면의 담요는 학교 자리를 펴는 물건이며 아침 판돌이 덮은 새 그림 담요를 가져오는 장면이 아니다."
+      ],
+      "unknown": [
+        "판돌·모모·굴돌 및 조건별 이송 대상의 실제 하차·인수 완료",
+        "감독 명령 중지·고삐 및 호송 장비 반환·너울의 명령 중계 중지",
+        "기록 공개 또는 폭력의 결과",
+        "이미 떠난 사람이 돌아오는지 여부"
+      ],
+      "branch": {
+        "family_deal": false,
+        "meeting_blanket": "첫 대조 성공 후 완전 인수 준비 경로; blanket lose/partial의 미완료 경로에서는 실행되지 않음",
+        "cart_departed": false,
+        "handover_prepared13": "이 블록 조회가 아닌 라벨의 기존 set에서 처리",
+        "nabi_listed_before_prep": [
+          false,
+          true
+        ],
+        "external_guard": "r13_v111_beds_ready13의 기존 if r13_v111_actor_ready('nabi')",
+        "existing_when": "추가 세 행 모두 reader_nabi; 나비 사망·떠남 때 응답만 남기지 않음",
+        "new_when": false
+      },
+      "game_added_ids": [
+        "NW_RR13_N01",
+        "NW_RR13_N02",
+        "NW_RR13_N03"
+      ],
+      "game_modified_ids": [],
+      "scene_extent": {
+        "manuscript": "학교 자리를 준비하며 문 앞에 서 있던 아빠·까로에게 통로를 내고, 아빠에게 학교 담요를 펼치게 하는 나비의 행동. 아직 환자를 인수하지 않은 준비 장면. 새 침상 수·수용 인원·물자 수를 정하지 않는다.",
+        "release_after": "beds_ready13 블록 종료",
+        "game_excerpt": {
+          "position": "blocks",
+          "anchor": "beds_ready13",
+          "extent": "기존 나비의 인수 준비 약속 뒤, 아빠에게 학교 담요를 옮겨 달라며 문 앞을 비우는 세 대사. 준비 완료 플래그·이동·인수는 기존 실행부에 둔다."
+        }
+      }
+    },
+    {
+      "id": "RR13_03",
+      "title": "손에 드릴게요",
+      "pov_name": "까로",
+      "day": 13,
+      "label": "r13_v111_cart_return13",
+      "anchors": [
+        "MS14_D13_S04_L0084",
+        "MS14_D13_S04_L0085",
+        "MS14_D13_S04_L0086"
+      ],
+      "known": [
+        "개별 하차와 인수를 거쳐 수레는 비었으며 all_cart_handed 뒤 정리 경로에 들어왔다.",
+        "은호는 자기 수레임을 밝히고 이런 일에는 다시 빌려주지 않겠다고 한다.",
+        "까로·아빠·은호가 실제 동석한다.",
+        "고삐를 직접 반환하려는 반응이며 학교 인수나 마을 전체의 이송 중단을 대신하는 행위가 아니다."
+      ],
+      "unknown": [
+        "별도 선택인 까로의 향후 강제 운반 거부를 이미 선언했는지 여부",
+        "현재 감독 명령 중지·너울에게 중지 사본 제시 완료 여부",
+        "과거 또는 다른 경로에서 떠난 사람의 귀환",
+        "기록 공개·폭력 및 최종 결말의 결과"
+      ],
+      "branch": {
+        "family_deal": false,
+        "cart_departed": false,
+        "all_cart_handed": true,
+        "cart_returned": "기존 라벨 끝의 set이 처리; 대사 조회가 완료시키지 않음",
+        "Kkaro_forced_transport_refused": [
+          false,
+          true
+        ],
+        "current_order_execution_stopped": [
+          false,
+          true
+        ],
+        "relay_stopped": [
+          false,
+          true
+        ],
+        "family_location": [
+          "square",
+          "school"
+        ],
+        "external_guard": "S04_L0085 호출의 기존 if r13_v111_actor_ready('karo')",
+        "existing_when": "추가 세 행 모두 karo_ready",
+        "new_when": false
+      },
+      "game_added_ids": [
+        "NW_RR13_K01",
+        "NW_RR13_K02",
+        "NW_RR13_K03"
+      ],
+      "game_modified_ids": [],
+      "scene_extent": {
+        "manuscript": "빈 수레를 주인에게 돌려주며 고삐도 직접 받으라고 고집하는 까로와 은호의 주고받기. 원고 말미의 물리적 반환은 기존 cart_return13 라벨 끝의 반환 처리와 같은 범위다. 감독자나 엄마·다람의 동석을 요구하지 않는다.",
+        "release_after": "r13_v111_cart_return13의 기존 cart_returned·escort_gear_returned 처리 뒤",
+        "game_excerpt": {
+          "position": "after",
+          "anchor": "MS14_D13_S04_L0085",
+          "extent": "빈 수레를 받으라는 기존 말 뒤 고삐를 손에 주려는 세 대사만. 실제 넘겨지는 후속 행동·완료 플래그는 선행시키지 않는다."
+        }
+      }
+    },
+    {
+      "id": "RR14_01",
+      "title": "글씨가 마를 때까지",
+      "pov_name": "토실",
+      "day": 14,
+      "label": "r13_v111_tosil_name14",
+      "anchors": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "label": "r13_v111_ending_dispatch14",
+          "role": "다른 결말 분기를 먼저 가른 뒤 morning 줄기만 진행"
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "label": "r13_v111_name_board14",
+          "role": "보미 사망 확인 면담 뒤 이름판. 토실의 이름 쓰기/지금 쓰지 않기 선택 보존"
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "label": "r13_v111_tosil_name14",
+          "record_ids": [
+            "MS14_D14_S04_L0003",
+            "MS14_D14_S04_L0004",
+            "MS14_D14_S04_L0005",
+            "MS14_D14_S04_L0006",
+            "MS14_D14_S04_L0007"
+          ]
+        }
+      ],
+      "known": [
+        "토실이 스스로 보미의 이름을 쓰겠다고 선택함. 다람은 종이 아래쪽만 받치며 획을 대신 고치지 않음",
+        "토실은 글씨가 삐뚤다고 하고 다람은 읽을 수 있다고 답함",
+        "눈앞의 젖은 글씨와 종이, 함께 끝을 눌러 주는 두 사람의 손"
+      ],
+      "unknown": [
+        "이름을 썼다는 사실이 할머니의 면담 전부를 직접 들었다는 뜻은 아님. inside/outside의 청취 범위를 합치지 않음",
+        "확인되지 않은 이송자의 죽음·귀환, 살아 있는 피코의 사망",
+        "이름 쓰기만으로 기다림·상실·보호 문제가 모두 해결됐다는 결론"
+      ],
+      "branch": {
+        "ending": "morning의 현재 이름판 장면. morning이 사망0·마을 전체 해결이라는 뜻은 아님",
+        "choice": "토실이 이름을 쓰겠다면 기다린다 → tosil_name14",
+        "listening": "tosil_listen inside/outside 양쪽에 공통. 비공개 진술을 인용하지 않음",
+        "when": null,
+        "excluded": "이름을 지금 쓰지 않는 tosil_no_name14에는 새 반응이 없음. family/partial/violence/left_name/frozen/불타는 밤의 별도 결말에 복사하지 않음",
+        "state": "보미 이름 쓰기 이후 현재 행동만. 새 자료·사망·위로 완료·선택 강제·보호자 인수 상태 없음"
+      },
+      "game_added_ids": [
+        "NW_RR14_01_01",
+        "NW_RR14_01_02",
+        "NW_RR14_01_03"
+      ],
+      "modified_ids": [],
+      "scene_extent": {
+        "full_manuscript": "day14_원고.md ##04. 새 아침 줄기의 이름판에서 글씨가 마르기를 기다리는 토실의 1인칭",
+        "game_excerpt": "d14.json after.MS14_D14_S04_L0007의 3행. 종이를 접지 말라는 토실과 아빠의 짧은 답까지",
+        "full_only": "마르면 달라지는 글씨를 기다리는 일과 끝나지 않은 엄마 기다림을 구별하는 내면. 모친 귀환·상실 회복을 만들지 않음",
+        "expressions": {
+          "NW_RR14_01_01": "neutral",
+          "NW_RR14_01_02": "anxious",
+          "NW_RR14_01_03": "neutral"
+        }
+      }
+    },
+    {
+      "id": "RR14_02",
+      "title": "내일 몫은 빈칸",
+      "pov_name": "백 부인",
+      "day": 14,
+      "label": "r13_v111_madam_inventory14",
+      "anchors": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "label": "r13_v111_supply_inventory_done14",
+          "record_ids": [
+            "MS14_D14_S04_L0017",
+            "MS14_D14_S04_L0018",
+            "MS14_D14_S04_L0019"
+          ],
+          "role": "물자 확인 입력 뒤 학교 실제 몫과 빈칸 확인. 백 부인 실제 ready일 때만 호출"
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "label": "r13_v111_madam_inventory14",
+          "record_ids": [
+            "MS14_D14_S04_L0022",
+            "MS14_D14_S04_L0023"
+          ],
+          "overlay_ids": [
+            "NW_D14_S04_V05",
+            "NW_D14_S04_MB01"
+          ],
+          "role": "백 부인 ready 안에서 S04_L0022와 그 after 묶음 전체 호출"
+        }
+      ],
+      "known": [
+        "엄마가 남은 장작과 현재 쓰는 장작을 구분하고 오늘 학교에 넘길 몫을 말함",
+        "나비는 오늘 밤 아이들 자리를 데울 몫부터 물음. 백 부인은 내일 몫이 비는지 확인함",
+        "백 부인은 학교 몫을 장부로 따져 보는 참관자. 오늘 학교가 받은 장작을 백 부인의 소유·기부라고 단정하지 않음",
+        "기존 장부를 가운데로 돌려 남도 읽게 하고 나비가 손 뻗을 자리를 비키는 행동"
+      ],
+      "unknown": [
+        "내일·다음 겨울 물자가 이미 새로 생겼거나 새 열원 연구가 완성됐다는 결론",
+        "학교 물자 실제 확인만으로 이송 연결 중지·장치 공동 통제까지 자동 완성됐다는 해석",
+        "명단·자료·해결되지 않은 인수 문제의 해소 또는 이미 이송된 사람의 귀환"
+      ],
+      "branch": {
+        "ending": "morning의 학교 물자 확인 장면. 제단 회의 승리·부분·실패의 미해결 조건과 별개",
+        "presence": "supply_inventory_done14 및 madam_inventory14의 기존 actor_ready('resident_madam') 전체 guard",
+        "when": null,
+        "guard_extent": "S04_L0022가 ready일 때만 r13_v111_lines에 들어가므로 추가한 아빠·나비 지문까지 세 행 모두 함께 보호됨",
+        "state": "반응은 학교 물자 확인의 기존 상태 설정보다 앞. 기존 school_inventory_checked/school_supply_handed/school_heat_connected 설정과 current_sacrifice_operation_closed의 연결 중지&&공동 통제 판정을 그대로 보존",
+        "excluded": "백 부인 부재·사망·이송으로 ready가 아니면 세 행 전체 없음. 다른 결말·불타는 밤·진후일담을 현재 장면으로 바꾸지 않음"
+      },
+      "game_added_ids": [
+        "NW_RR14_02_01",
+        "NW_RR14_02_02",
+        "NW_RR14_02_03"
+      ],
+      "modified_ids": [],
+      "scene_extent": {
+        "full_manuscript": "day14_원고.md ##05. 오늘의 공동 확인과 내일 빈칸을 분리하는 백 부인 시점",
+        "game_excerpt": "d14.json after.MS14_D14_S04_L0022의 기존 NW_D14_S04_MB01 다음 3행. 오늘 학교가 받은 몫과 미확보된 내일 몫을 중복 계산하지 않게 확인",
+        "full_only": "장부를 자기 쪽에 감추지 않으면서도 없는 물자를 약속하지 않는 목적. 추가 거래·공동관리 계약을 만들지 않음",
+        "expressions": {
+          "NW_RR14_02_01": "neutral",
+          "NW_RR14_02_02": "anxious",
+          "NW_RR14_02_03": "neutral"
+        }
+      }
+    },
+    {
+      "id": "RR14_03",
+      "title": "문까지 보이는 등",
+      "pov_name": "초롱",
+      "day": 14,
+      "label": "r13_v111_chorong_lamps14",
+      "anchors": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "label": "r13_v111_lamp_assignment14",
+          "role": "초롱 실제 ready면 chorong_lamps14, 아니면 mother_lamps14. 미완료 이송/장치 문제는 기존 unfinished_operation14로 따로 확인"
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "label": "r13_v111_chorong_lamps14",
+          "record_ids": [
+            "MS14_D14_S04_L0029",
+            "MS14_D14_S04_L0030",
+            "MS14_D14_S04_L0031"
+          ],
+          "overlay_ids": [
+            "NW_D14_S04_V06"
+          ],
+          "role": "초롱 ready 안에서 S04_L0029와 after 전체를 호출. lamp_manager 설정은 기존 끝 위치 유지"
+        }
+      ],
+      "known": [
+        "초롱이 학교 앞 등은 남기고 다른 두 등은 줄이자고 실제로 말함",
+        "아빠가 보는 끈·등갓·학교 문과 현재 위치에서의 가시 범위",
+        "밖에서 사람이 오면 먼저 알리고 길을 안내하라는 엄마의 실제 부탁"
+      ],
+      "unknown": [
+        "산길이 이미 열림·모든 어두운 골목 해결·장치가 완치됨·미래 희생이 끝났다는 주장",
+        "날짜를 잊은 사람의 즉시 회복·사망자 생환·떠난 사람 귀환",
+        "제단 회의에서 입증하지 못한 세부 진상을 혼자 알고 있다는 지식"
+      ],
+      "branch": {
+        "ending": "morning의 현재 학교 앞 등 배치. 진후일담 몇 주 뒤·봄의 출발 장면이 아님",
+        "presence": "lamp_assignment14와 chorong_lamps14의 기존 actor_ready('resident_lamplighter') guard 전체 사용",
+        "when": null,
+        "guard_extent": "S04_L0029 호출 안의 추가 세 행 전체를 보호. 초롱 부재의 엄마 대체에 아빠 반응만 따로 남기지 않음",
+        "state": "lamp_manager='resident_lamplighter'는 원래 위치에서만 설정. 초롱 부재 시 기존 mom 대체 유지. current_transport_chain_stopped&&device_joint_control이 아니면 미완료 대사·효과 유지",
+        "excluded": "가족만 구한 결말·부분 인수 결말·군중 폭력·남겨진 이름·얼어붙은 마을·불타는 밤에 이 생활을 소급하지 않음"
+      },
+      "game_added_ids": [
+        "NW_RR14_03_01",
+        "NW_RR14_03_02",
+        "NW_RR14_03_03"
+      ],
+      "modified_ids": [],
+      "scene_extent": {
+        "full_manuscript": "day14_원고.md ##06. 등을 무조건 늘리던 초롱이 남겨 둘 등을 정하고 학교 문이 보이는 자리로 비키는 생활 변화",
+        "game_excerpt": "d14.json after.MS14_D14_S04_L0029의 3행. 현재 학교 문이 보이게 살피자는 짧은 주고받기만",
+        "full_only": "밝은 곳과 통행 가능한 곳이 다르다는 자기 일의 한계. 새 등·연료·관리 시설·회복 결과를 만들지 않음",
+        "expressions": {
+          "NW_RR14_03_01": "neutral",
+          "NW_RR14_03_02": "anxious",
+          "NW_RR14_03_03": "neutral"
+        }
+      }
+    }
+  ],
+  "reading_profiles": {
+    "morning_named": {
+      "label": "실제 수레 반환·토실 이름 쓰기·아침 줄기",
+      "order": [
+        "RR13_01",
+        "RR13_02",
+        "RR13_03",
+        "RR14_01",
+        "RR14_02",
+        "RR14_03"
+      ]
+    },
+    "morning_unwritten": {
+      "label": "실제 수레 반환·이름 쓰기를 미룸·아침 줄기",
+      "order": [
+        "RR13_01",
+        "RR13_02",
+        "RR13_03",
+        "RR14_02",
+        "RR14_03"
+      ]
+    },
+    "morning_unreturned": {
+      "label": "개별 인수 완료·이송 중지 미완료·이름 쓰기",
+      "order": [
+        "RR13_01",
+        "RR13_02",
+        "RR14_01",
+        "RR14_02",
+        "RR14_03"
+      ]
+    },
+    "family_priority": {
+      "label": "가족 우선 경로의 13일 공통 장면만",
+      "order": [
+        "RR13_01"
+      ]
+    }
+  },
+  "profile_notes": [
+    "기본 경로는 가족 거래를 거절하고 담요 회의를 통과해 실제 하차·학교 인수를 마친 뒤 빈 수레를 반환하는 한 가지 유효한 경로다. 명령·호송·사본 전달까지 모두 완료했다고 새로 가정하지 않는다.",
+    "13일 나비는 실제 학교 자리 준비, 까로는 실제 반환 입력이 있어야 한다. 자리 준비만으로 학교 인수를 끝냈다고 하지 않는다.",
+    "14일 세 별편은 일반 아침 줄기이며 무사망이나 진엔딩을 뜻하지 않는다. 가족 우선/부분/군중폭력/남겨진 이름/얼어붙은 마을/불타는 밤에 복사하지 않는다.",
+    "토실이 이름 쓰기를 미루면 토실 별편을 제외한다. 직접 이름을 쓰는 경우에도 안/밖의 어른 문답 청취를 같게 만들지 않는다.",
+    "개별 인수를 마친 뒤 운반 거부·반환 등 이송 중지 절차를 마치지 않은 판도 아침 줄기에 들어갈 수 있지만 본편의 미완 운영 안내가 남는다. 물자 확인과 등 관리만으로 완전 해결을 선언하지 않는다.",
+    "가족 우선 파일은 새로운 결말 전문이 아니라 거래 전에 겪는 판돌 별편 하나다. 서로 다른 결과를 전체 비교본에서 이어 읽으면 한 판의 사건으로 오해할 수 있다."
+  ]
+}

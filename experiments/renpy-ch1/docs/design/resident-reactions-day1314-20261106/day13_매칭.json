@@ -1,0 +1,172 @@
+{
+  "day": 13,
+  "scenes": [
+    {
+      "id": "RR13_01",
+      "title": "절반은 남겨 두고",
+      "pov_name": "판돌",
+      "day": 13,
+      "label": "r13_v111_blanket_mended13",
+      "anchors": [
+        "MS14_D13_S01_L0017",
+        "MS14_D13_S01_L0018",
+        "MS14_D13_S01_L0023"
+      ],
+      "known": [
+        "판돌이 학교에서 추위에 떨고 아빠와 다람이 까로가 내놓은 터진 담요 한 장을 고친다.",
+        "판돌은 자기만의 물건이 아니며 나중에 다른 사람도 써야 한다고 말한다.",
+        "가족은 아직 떠날 수 있는지 물어보러 가기 전이다."
+      ],
+      "unknown": [
+        "이후 가족 거래 수락 또는 거절",
+        "담요를 봤다는 말의 참거짓",
+        "담요 회의·수레 중단·개별 인수의 결과",
+        "모과의 행방에 관한 후속 입증",
+        "최종 결말"
+      ],
+      "branch": {
+        "entry": "13일 아침 공통 blanket_mended13; 가족 거래·담요 회의보다 앞",
+        "piko_alive": [
+          false,
+          true
+        ],
+        "daram_fever12": [
+          false,
+          true
+        ],
+        "family_deal": "아직 결정 전; 뒤의 수락/거절 어느 쪽도 가정하지 않음",
+        "new_when": false
+      },
+      "game_added_ids": [
+        "NW_RR13_P01",
+        "NW_RR13_P02",
+        "NW_RR13_P03"
+      ],
+      "game_modified_ids": [],
+      "scene_extent": {
+        "manuscript": "추위에 떠는 판돌이 고친 담요를 받은 뒤 한 장의 남은 끝을 옆 사람도 함께 덮게 내밀었다가 아빠가 다리까지 그대로 덮게 하는 장면. 담요를 자르거나 추가·기부·소유 처리하지 않는다. 몸의 감각과 내면은 문서만의 시점이다.",
+        "release_after": "MS14_D13_S01_L0023",
+        "game_excerpt": {
+          "position": "after",
+          "anchor": "MS14_D13_S01_L0017",
+          "extent": "한 장의 한쪽을 어깨에 걸친 채 남은 끝을 아빠 쪽으로 내미는 행동과 두 대사. 이어지는 기존 L0018에서 아빠가 지금은 판돌이 덮도록 한다. 실제 담요 수량·자료 획득은 기존 흐름만 처리한다."
+        }
+      }
+    },
+    {
+      "id": "RR13_02",
+      "title": "문 앞은 비워 두고",
+      "pov_name": "나비",
+      "day": 13,
+      "label": "r13_v111_beds_ready13",
+      "anchors": [
+        "beds_ready13",
+        "NW_D13_BR01"
+      ],
+      "known": [
+        "가족 거래를 거절하고 담요 회의의 첫 대조를 통과한 뒤 수레를 세웠다.",
+        "완전 인수 경로에서 학교 자리와 받을 사람을 먼저 준비하러 아빠·까로가 나비를 찾는다.",
+        "명단에 있던 나비라면 school_handover_prep13에서 먼저 하차 처리한다.",
+        "이 장면의 담요는 학교 자리를 펴는 물건이며 아침 판돌이 덮은 새 그림 담요를 가져오는 장면이 아니다."
+      ],
+      "unknown": [
+        "판돌·모모·굴돌 및 조건별 이송 대상의 실제 하차·인수 완료",
+        "감독 명령 중지·고삐 및 호송 장비 반환·너울의 명령 중계 중지",
+        "기록 공개 또는 폭력의 결과",
+        "이미 떠난 사람이 돌아오는지 여부"
+      ],
+      "branch": {
+        "family_deal": false,
+        "meeting_blanket": "첫 대조 성공 후 완전 인수 준비 경로; blanket lose/partial의 미완료 경로에서는 실행되지 않음",
+        "cart_departed": false,
+        "handover_prepared13": "이 블록 조회가 아닌 라벨의 기존 set에서 처리",
+        "nabi_listed_before_prep": [
+          false,
+          true
+        ],
+        "external_guard": "r13_v111_beds_ready13의 기존 if r13_v111_actor_ready('nabi')",
+        "existing_when": "추가 세 행 모두 reader_nabi; 나비 사망·떠남 때 응답만 남기지 않음",
+        "new_when": false
+      },
+      "game_added_ids": [
+        "NW_RR13_N01",
+        "NW_RR13_N02",
+        "NW_RR13_N03"
+      ],
+      "game_modified_ids": [],
+      "scene_extent": {
+        "manuscript": "학교 자리를 준비하며 문 앞에 서 있던 아빠·까로에게 통로를 내고, 아빠에게 학교 담요를 펼치게 하는 나비의 행동. 아직 환자를 인수하지 않은 준비 장면. 새 침상 수·수용 인원·물자 수를 정하지 않는다.",
+        "release_after": "beds_ready13 블록 종료",
+        "game_excerpt": {
+          "position": "blocks",
+          "anchor": "beds_ready13",
+          "extent": "기존 나비의 인수 준비 약속 뒤, 아빠에게 학교 담요를 옮겨 달라며 문 앞을 비우는 세 대사. 준비 완료 플래그·이동·인수는 기존 실행부에 둔다."
+        }
+      }
+    },
+    {
+      "id": "RR13_03",
+      "title": "손에 드릴게요",
+      "pov_name": "까로",
+      "day": 13,
+      "label": "r13_v111_cart_return13",
+      "anchors": [
+        "MS14_D13_S04_L0084",
+        "MS14_D13_S04_L0085",
+        "MS14_D13_S04_L0086"
+      ],
+      "known": [
+        "개별 하차와 인수를 거쳐 수레는 비었으며 all_cart_handed 뒤 정리 경로에 들어왔다.",
+        "은호는 자기 수레임을 밝히고 이런 일에는 다시 빌려주지 않겠다고 한다.",
+        "까로·아빠·은호가 실제 동석한다.",
+        "고삐를 직접 반환하려는 반응이며 학교 인수나 마을 전체의 이송 중단을 대신하는 행위가 아니다."
+      ],
+      "unknown": [
+        "별도 선택인 까로의 향후 강제 운반 거부를 이미 선언했는지 여부",
+        "현재 감독 명령 중지·너울에게 중지 사본 제시 완료 여부",
+        "과거 또는 다른 경로에서 떠난 사람의 귀환",
+        "기록 공개·폭력 및 최종 결말의 결과"
+      ],
+      "branch": {
+        "family_deal": false,
+        "cart_departed": false,
+        "all_cart_handed": true,
+        "cart_returned": "기존 라벨 끝의 set이 처리; 대사 조회가 완료시키지 않음",
+        "Kkaro_forced_transport_refused": [
+          false,
+          true
+        ],
+        "current_order_execution_stopped": [
+          false,
+          true
+        ],
+        "relay_stopped": [
+          false,
+          true
+        ],
+        "family_location": [
+          "square",
+          "school"
+        ],
+        "external_guard": "S04_L0085 호출의 기존 if r13_v111_actor_ready('karo')",
+        "existing_when": "추가 세 행 모두 karo_ready",
+        "new_when": false
+      },
+      "game_added_ids": [
+        "NW_RR13_K01",
+        "NW_RR13_K02",
+        "NW_RR13_K03"
+      ],
+      "game_modified_ids": [],
+      "scene_extent": {
+        "manuscript": "빈 수레를 주인에게 돌려주며 고삐도 직접 받으라고 고집하는 까로와 은호의 주고받기. 원고 말미의 물리적 반환은 기존 cart_return13 라벨 끝의 반환 처리와 같은 범위다. 감독자나 엄마·다람의 동석을 요구하지 않는다.",
+        "release_after": "r13_v111_cart_return13의 기존 cart_returned·escort_gear_returned 처리 뒤",
+        "game_excerpt": {
+          "position": "after",
+          "anchor": "MS14_D13_S04_L0085",
+          "extent": "빈 수레를 받으라는 기존 말 뒤 고삐를 손에 주려는 세 대사만. 실제 넘겨지는 후속 행동·완료 플래그는 선행시키지 않는다."
+        }
+      }
+    }
+  ]
+}
