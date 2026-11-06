@@ -6,4 +6,4 @@
 - [같은 경로 Word](resident-days101112.docx).
 - [여섯 경로·전체 비교본·HTML·Word 묶음](resident-days101112.zip).
 
-살인/예방·실제 출석·배식 전 중단/섭취 후 사건·명단 칸 무효를 구별한다. 전체 비교본은 한 판의 연속 사건이 아니다. 조기 예방판에는 이번 새 12일 별편이 없다. 원고·시간·정보·실행 매칭은 [작업 문서](../../../experiments/renpy-ch1/docs/design/resident-reactions-day101112-20261106/README.md)를 따른다.
+살인/예방·실제 출석·배식 전 중단/섭취 후 사건·명단 칸 무효를 구별한다. 전체 비교본은 한 판의 연속 사건이 아니다. 조기 예방판에는 이번 새 12일 별편이 없다. 원고·시간·정보·실행 매칭은 [작업 문서](https://github.com/kkhkkh20-bit/daaegame/blob/main/experiments/renpy-ch1/docs/design/resident-reactions-day101112-20261106/README.md)를 따른다.

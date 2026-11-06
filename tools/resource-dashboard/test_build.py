@@ -3,6 +3,13 @@ from pathlib import Path
 spec=importlib.util.spec_from_file_location('resource_build',Path(__file__).with_name('build.py'))
 b=importlib.util.module_from_spec(spec);spec.loader.exec_module(b)
 class Extractor(unittest.TestCase):
+    def test_repository_media_url_pins_and_encodes_source_path(self):
+        path='experiments/renpy-ch1/game/assets/한 장.webp'
+        url=b.repository_media_url(path,'abc123')
+        self.assertTrue(url.startswith('https://raw.githubusercontent.com/kkhkkh20-bit/daaegame/abc123/'))
+        self.assertIn('%ED%95%9C%20%EC%9E%A5.webp',url)
+        self.assertNotIn(' ',url)
+
     def test_deployed_renderer_url_matches_current_content(self):
         web=Path(__file__).parent/'web'
         deployed=b.REPO/'preview/resource-dashboard'

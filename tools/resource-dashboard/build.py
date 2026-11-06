@@ -5,10 +5,15 @@ from functools import lru_cache
 import importlib.util
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import quote
 
 REPO = Path(__file__).resolve().parents[2]
 GAME_REL = Path('experiments/renpy-ch1/game')
 EMOTIONS = ['neutral','joy','angry','anxious','surprise_talk','surprise_react']
+
+def repository_media_url(path, revision):
+    # Pages에서 제외한 작업 원본은 해당 게임 커밋의 저장소 파일로 연결한다.
+    return 'https://raw.githubusercontent.com/kkhkkh20-bit/daaegame/'+revision+'/'+quote(Path(path).as_posix(),safe='/')
 
 def python_blocks(text, errors=None):
     lines=text.splitlines(); i=0
@@ -69,7 +74,7 @@ def build(repo=REPO, output=None):
         # Only repository-relative paths; never expose local source-master paths as URLs.
         p=Path(path)
         if p.is_absolute() or '..' in p.parts:return dict(path=path,exists=False,error='unsafe/non-repository path')
-        full=game/p;exists=full.is_file();row=dict(path=str(GAME_REL/p),url='../../'+str(GAME_REL/p),exists=exists)
+        full=game/p;exists=full.is_file();row=dict(path=str(GAME_REL/p),url=repository_media_url(GAME_REL/p,sha),exists=exists)
         if exists:
             inputs[str(GAME_REL/p)]=subprocess_blob_hash(full)
             if full.suffix.lower() in ('.png','.webp','.jpg','.jpeg'):
@@ -155,7 +160,7 @@ def build(repo=REPO, output=None):
             inputs[str(p.relative_to(repo))]=hashlib.sha256(p.read_bytes()).hexdigest()
             inputs[str(shot.relative_to(repo))]=subprocess_blob_hash(shot)
             actor=next((a for a in j.get('actors',[]) if a.get('person')==who),j.get('actor',{}))
-            by_id[who]['captures'].append(dict(url='../../'+str(shot.relative_to(repo)),evidence=str(p.relative_to(repo)),day=room.get('day'),period=room.get('period'),location=room.get('location'),screens=j['screens'],game_commit=j.get('game_commit','unknown'),pose=actor.get('pose'),actor=actor,archive_sha256=j.get('archive_sha256'),capture_kind=j.get('capture_kind','historical QA'),label='실제 엔진 QA 캡처 · 상태 fixture / 현재 source commit 일치 미검증'))
+            by_id[who]['captures'].append(dict(url=repository_media_url(shot.relative_to(repo),sha),evidence=str(p.relative_to(repo)),day=room.get('day'),period=room.get('period'),location=room.get('location'),screens=j['screens'],game_commit=j.get('game_commit','unknown'),pose=actor.get('pose'),actor=actor,archive_sha256=j.get('archive_sha256'),capture_kind=j.get('capture_kind','historical QA'),label='실제 엔진 QA 캡처 · 상태 fixture / 현재 source commit 일치 미검증'))
     for c in characters:
         for placement in c['placements']:
             placement['captures']=[capture for capture in c['captures'] if capture.get('pose')==placement['pose'] and capture['location']==placement['location']]
