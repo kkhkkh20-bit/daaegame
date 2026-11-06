@@ -554,10 +554,31 @@ label r13_v111_bori_witness7:
 label r13_v111_bori_witness_heard7:
     call r13_lines([("resident_bori","불이 번지기 전에 누비 씨가 창고 문 앞에 서 있는 건 봤소.",{"no_lead":True})],"v111:bori_fire_door_witness")
     $ r13_v111_set("bori_nubi_door_witness_heard",True)
+    jump r13_v111_nubi_hypothesis7
+
+label r13_v111_nubi_hypothesis7:
+    if not r13_v111_value("bori_nubi_door_witness_heard"):
+        jump r13_v111_bori_witness7
+    if not r13_v111_value("fire_lamp_defense_heard"):
+        call r13_lines(r13_nw_block('nubi_lamp_defense7'),'nw:nubi_lamp_defense7')
+        $ r13_v111_set("fire_lamp_defense_heard",True)
+    if r13_v111_value("fire_origin_hypothesis"):
+        jump r13_v111_nubi_proof7
+    menu:
+        '기름통이 누비 씨 것이니 불을 놓은 사람도 누비 씨다.':
+            call r13_lines(r13_nw_block('nubi_owner_rebut7'),'nw:nubi_owner_rebut7')
+            jump r13_v111_nubi_hypothesis7
+        '등잔에서 번졌다면, 불이 시작된 자리가 맞는지 확인해야 한다.':
+            $ r13_v111_set("fire_origin_hypothesis",True)
+        '창고 문 앞에 있었으니 누비 씨가 불을 놓았다.':
+            call r13_lines(r13_nw_block('nubi_presence_rebut7'),'nw:nubi_presence_rebut7')
+            jump r13_v111_nubi_hypothesis7
     jump r13_v111_nubi_proof7
 
 label r13_v111_nubi_proof7:
     $ r13_meeting_checkpoint("fire")
+    if not r13_v111_value("fire_origin_hypothesis"):
+        jump r13_v111_nubi_hypothesis7
     call r13_v111_proof('불이 시작된 곳과 진술을 대조한다',['E06_FIRE'],'r13_v111_nubi_first_question7','r13_v111_nubi_wrong7',None,review_return='r13_v111_bori_witness7')
     jump expression _return
 
@@ -575,20 +596,13 @@ label r13_v111_nubi_wrong7:
     jump r13_v111_responsibility7
 
 label r13_v111_nubi_first_question7:
-    # 2026-10-27 D09(소유자 "둘 다 적용해"): 자료가 받아들여진 뒤 자백으로 가기 전, 어느 관찰 사실을 문제 삼을지 플레이어가 한 번 고른다.
-    # 어느 것을 골라도 자백·결과는 같다. 다른 것은 누비의 첫 대답 한 줄뿐. 기회를 쓰지 않는다.
+    # 이전 판에서 자료 제출을 마친 저장도 이 라벨로 이어진다. 재제출을 요구하지 않는다.
     if not r13_v111_value("bori_nubi_door_witness_heard"):
         jump r13_v111_bori_witness7
-    menu:
-        '문 앞의 기름 흔적을 설명해 주십시오.':
-            $ r13_v111_set("fire_first_question","oil")
-            call r13_lines(r13_nw_block('nubi_ask_oil'),'nw:nubi_ask_oil')
-        '등잔은 뒷벽 물통 옆에 있었습니다. 뚜껑도 닫혀 있었고요.':
-            $ r13_v111_set("fire_first_question","lamp")
-            call r13_lines(r13_nw_block('nubi_ask_lamp'),'nw:nubi_ask_lamp')
-        '창고 문 앞에 서 계신 걸 보리 씨가 봤습니다.':
-            $ r13_v111_set("fire_first_question","door")
-            call r13_lines(r13_nw_block('nubi_ask_door'),'nw:nubi_ask_door')
+    if not r13_v111_value("fire_lamp_defense_heard"):
+        call r13_lines(r13_nw_block('nubi_lamp_defense7'),'nw:nubi_lamp_defense7:old_success')
+        $ r13_v111_set("fire_lamp_defense_heard",True)
+    call r13_lines(r13_nw_block('nubi_origin_checked7'),'nw:nubi_origin_checked7')
     jump r13_v111_nubi_admission7
 
 label r13_v111_nubi_admission7:

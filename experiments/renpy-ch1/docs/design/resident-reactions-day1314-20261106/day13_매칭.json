@@ -44,8 +44,8 @@
       ],
       "game_modified_ids": [],
       "scene_extent": {
-        "manuscript": "추위에 떠는 판돌이 고친 담요를 받은 뒤 한 장의 남은 끝을 옆 사람도 함께 덮게 내밀었다가 아빠가 다리까지 그대로 덮게 하는 장면. 담요를 자르거나 추가·기부·소유 처리하지 않는다. 몸의 감각과 내면은 문서만의 시점이다.",
-        "release_after": "MS14_D13_S01_L0023",
+        "manuscript": "고친 담요 한 장의 남은 끝을 옆 사람도 함께 덮게 내밀었다가 아빠가 다리까지 덮게 하는 짧은 반응. 몸을 숨기고 다시 드러내는 반복과 가족의 출발 문답은 덜었다. 담요 수량·소유·기부 처리 불변.",
+        "release_after": "MS14_D13_S01_L0018",
         "game_excerpt": {
           "position": "after",
           "anchor": "MS14_D13_S01_L0017",
@@ -85,24 +85,22 @@
           true
         ],
         "external_guard": "r13_v111_beds_ready13의 기존 if r13_v111_actor_ready('nabi')",
-        "existing_when": "추가 세 행 모두 reader_nabi; 나비 사망·떠남 때 응답만 남기지 않음",
         "new_when": false
       },
-      "game_added_ids": [
-        "NW_RR13_N01",
-        "NW_RR13_N02",
-        "NW_RR13_N03"
-      ],
+      "game_added_ids": [],
       "game_modified_ids": [],
       "scene_extent": {
-        "manuscript": "학교 자리를 준비하며 문 앞에 서 있던 아빠·까로에게 통로를 내고, 아빠에게 학교 담요를 펼치게 하는 나비의 행동. 아직 환자를 인수하지 않은 준비 장면. 새 침상 수·수용 인원·물자 수를 정하지 않는다.",
+        "manuscript": "학교 담요를 펼치는 아빠에게 일을 나누고 나비는 문 옆에서 받을 준비를 하는 짧은 장면. 서로 길을 막고 여러 번 비키는 왕복과 준비 의미의 재설명을 덜었다. 아직 환자를 인수하지 않는 준비 장면이며 새 침상 수·수용 인원·물자 수를 정하지 않는다.",
         "release_after": "beds_ready13 블록 종료",
         "game_excerpt": {
           "position": "blocks",
           "anchor": "beds_ready13",
-          "extent": "기존 나비의 인수 준비 약속 뒤, 아빠에게 학교 담요를 옮겨 달라며 문 앞을 비우는 세 대사. 준비 완료 플래그·이동·인수는 기존 실행부에 둔다."
+          "extent": "추가 행 없이 기존 NW_D13_BR01의 「자리는 깔아 둘게요. 내려오는 분은 제가 받아요. 데려오기만 하세요」만 대응한다. 원고의 담요 옮기기 대화는 문서에만 남으며 준비 완료·이동·인수는 기존 실행부가 처리한다."
         }
-      }
+      },
+      "game_existing_ids": [
+        "NW_D13_BR01"
+      ]
     },
     {
       "id": "RR13_03",
@@ -159,7 +157,7 @@
       ],
       "game_modified_ids": [],
       "scene_extent": {
-        "manuscript": "빈 수레를 주인에게 돌려주며 고삐도 직접 받으라고 고집하는 까로와 은호의 주고받기. 원고 말미의 물리적 반환은 기존 cart_return13 라벨 끝의 반환 처리와 같은 범위다. 감독자나 엄마·다람의 동석을 요구하지 않는다.",
+        "manuscript": "빈 수레와 고삐를 주인에게 직접 넘기려는 까로, 타고 있던 사람들의 행방을 묻는 은호의 주고받기. 설명을 반복하던 회고와 손목·동선 묘사를 덜고 실제 인수까지 남겼다. 기존 cart_return13의 범위이며 다른 감독·이송 중지 절차 완료를 가정하지 않는다.",
         "release_after": "r13_v111_cart_return13의 기존 cart_returned·escort_gear_returned 처리 뒤",
         "game_excerpt": {
           "position": "after",

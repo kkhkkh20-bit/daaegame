@@ -62,18 +62,13 @@ class ResidentDay13(Layer):
         self.assertIn('jump r13_v111_blanket_lie13', self.label('r13_v111_offer_refuse13'))
 
     def test_nabi_prepares_space_without_receiving_patients_and_entire_response_obeys_guard(self):
-        for alive, departed in itertools.product((False, True), repeat=2):
-            env = self.load()
-            env['r13_v111_person_alive'] = lambda person: alive if person == 'nabi' else True
-            env['r13_v111_set']('departed:nabi', departed)
-            before = copy.deepcopy(self.state.room13)
-            rows = self.render_excerpt(env, self.excerpts()[1])
-            self.assertEqual(len(rows), 3 if alive and not departed else 0)
-            self.assertEqual(before, self.state.room13)
-        self.assertEqual({r.get('when') for r in self.excerpts()[1]}, {'reader_nabi'})
         env = self.load()
+        before = copy.deepcopy(self.state.room13)
+        self.assertEqual(self.excerpts()[1], [])
         rows = env['r13_nw_block']('beds_ready13')
-        self.assertEqual([r[0] for r in rows], ['nabi', 'nabi', 'dad', 'nabi'])
+        self.assertEqual([r[0] for r in rows], ['nabi'])
+        self.assertIn('데려오기만 하세요', rows[0][1])
+        self.assertEqual(before, self.state.room13)
         self.assertFalse(env['r13_v111_value']('handover_prepared13'))
         for person in ('npc_pandol', 'resident_momo', 'resident_guldol'):
             self.assertFalse(env['r13_v111_value']('handed:' + person))
@@ -127,12 +122,13 @@ class ResidentDay13(Layer):
         self.assertIn('"relay_stopped"', self.label('r13_v111_night_finish13'))
         self.assertIn('"cart_returned"', self.label('r13_v111_night_finish13'))
 
-    def test_matching_separates_full_prose_from_nine_visible_beats(self):
+    def test_matching_separates_full_prose_from_six_added_beats(self):
         matching = json.loads(MATCHING.read_text())
         self.assertEqual(matching['day'], 13)
         self.assertEqual([e['id'] for e in matching['scenes']], ['RR13_01', 'RR13_02', 'RR13_03'])
         self.assertEqual([e['pov_name'] for e in matching['scenes']], ['판돌', '나비', '까로'])
-        self.assertEqual(sum(len(e['game_added_ids']) for e in matching['scenes']), 9)
+        self.assertEqual(sum(len(e['game_added_ids']) for e in matching['scenes']), 6)
+        self.assertEqual(matching['scenes'][1]['game_existing_ids'], ['NW_D13_BR01'])
         for entry, rows in zip(matching['scenes'], self.excerpts()):
             self.assertTrue(entry['known'] and entry['unknown'])
             self.assertTrue(entry['scene_extent']['manuscript'])
@@ -145,7 +141,7 @@ class ResidentDay13(Layer):
         for index, part in enumerate(manuscript.split('## ')[1:], 1):
             self.assertTrue(part.startswith(f'{index:02d}. '))
             self.assertIn(' — ', part.splitlines()[0])
-            self.assertTrue(900 <= len('\n'.join(part.splitlines()[4:])) <= 1400)
+            self.assertTrue('\n'.join(part.splitlines()[4:]).strip(), '주민 원고 본문이 비어 있다')
 
 
 if __name__ == '__main__':

@@ -8,9 +8,27 @@
       "day": 14,
       "label": "r13_v111_tosil_name14",
       "anchors": [
-        {"file": "game/room13_v111_days1114.rpy", "label": "r13_v111_ending_dispatch14", "role": "다른 결말 분기를 먼저 가른 뒤 morning 줄기만 진행"},
-        {"file": "game/room13_v111_days1114.rpy", "label": "r13_v111_name_board14", "role": "보미 사망 확인 면담 뒤 이름판. 토실의 이름 쓰기/지금 쓰지 않기 선택 보존"},
-        {"file": "game/room13_v111_days1114.rpy", "label": "r13_v111_tosil_name14", "record_ids": ["MS14_D14_S04_L0003", "MS14_D14_S04_L0004", "MS14_D14_S04_L0005", "MS14_D14_S04_L0006", "MS14_D14_S04_L0007"]}
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "label": "r13_v111_ending_dispatch14",
+          "role": "다른 결말 분기를 먼저 가른 뒤 morning 줄기만 진행"
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "label": "r13_v111_name_board14",
+          "role": "보미 사망 확인 면담 뒤 이름판. 토실의 이름 쓰기/지금 쓰지 않기 선택 보존"
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "label": "r13_v111_tosil_name14",
+          "record_ids": [
+            "MS14_D14_S04_L0003",
+            "MS14_D14_S04_L0004",
+            "MS14_D14_S04_L0005",
+            "MS14_D14_S04_L0006",
+            "MS14_D14_S04_L0007"
+          ]
+        }
       ],
       "known": [
         "토실이 스스로 보미의 이름을 쓰겠다고 선택함. 다람은 종이 아래쪽만 받치며 획을 대신 고치지 않음",
@@ -30,13 +48,21 @@
         "excluded": "이름을 지금 쓰지 않는 tosil_no_name14에는 새 반응이 없음. family/partial/violence/left_name/frozen/불타는 밤의 별도 결말에 복사하지 않음",
         "state": "보미 이름 쓰기 이후 현재 행동만. 새 자료·사망·위로 완료·선택 강제·보호자 인수 상태 없음"
       },
-      "game_added_ids": ["NW_RR14_01_01", "NW_RR14_01_02", "NW_RR14_01_03"],
+      "game_added_ids": [
+        "NW_RR14_01_01",
+        "NW_RR14_01_02",
+        "NW_RR14_01_03"
+      ],
       "modified_ids": [],
       "scene_extent": {
         "full_manuscript": "day14_원고.md ##04. 새 아침 줄기의 이름판에서 글씨가 마르기를 기다리는 토실의 1인칭",
         "game_excerpt": "d14.json after.MS14_D14_S04_L0007의 3행. 종이를 접지 말라는 토실과 아빠의 짧은 답까지",
-        "full_only": "마르면 달라지는 글씨를 기다리는 일과 끝나지 않은 엄마 기다림을 구별하는 내면. 모친 귀환·상실 회복을 만들지 않음",
-        "expressions": {"NW_RR14_01_01": "neutral", "NW_RR14_01_02": "anxious", "NW_RR14_01_03": "neutral"}
+        "full_only": "토실이 직접 쓴 글씨와 다람이 엄마를 곁에 둔 모습을 나란히 보고, 종이를 함께 누르며 잉크가 마르길 기다리는 짧은 장면. 기다림의 의미를 재설명하던 내면은 덜었다. 모친 귀환·상실 회복을 만들지 않음.",
+        "expressions": {
+          "NW_RR14_01_01": "neutral",
+          "NW_RR14_01_02": "anxious",
+          "NW_RR14_01_03": "neutral"
+        }
       }
     },
     {
@@ -46,8 +72,29 @@
       "day": 14,
       "label": "r13_v111_madam_inventory14",
       "anchors": [
-        {"file": "game/room13_v111_days1114.rpy", "label": "r13_v111_supply_inventory_done14", "record_ids": ["MS14_D14_S04_L0017", "MS14_D14_S04_L0018", "MS14_D14_S04_L0019"], "role": "물자 확인 입력 뒤 학교 실제 몫과 빈칸 확인. 백 부인 실제 ready일 때만 호출"},
-        {"file": "game/room13_v111_days1114.rpy", "label": "r13_v111_madam_inventory14", "record_ids": ["MS14_D14_S04_L0022", "MS14_D14_S04_L0023"], "overlay_ids": ["NW_D14_S04_V05", "NW_D14_S04_MB01"], "role": "백 부인 ready 안에서 S04_L0022와 그 after 묶음 전체 호출"}
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "label": "r13_v111_supply_inventory_done14",
+          "record_ids": [
+            "MS14_D14_S04_L0017",
+            "MS14_D14_S04_L0018",
+            "MS14_D14_S04_L0019"
+          ],
+          "role": "물자 확인 입력 뒤 학교 실제 몫과 빈칸 확인. 백 부인 실제 ready일 때만 호출"
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "label": "r13_v111_madam_inventory14",
+          "record_ids": [
+            "MS14_D14_S04_L0022",
+            "MS14_D14_S04_L0023"
+          ],
+          "overlay_ids": [
+            "NW_D14_S04_V05",
+            "NW_D14_S04_MB01"
+          ],
+          "role": "백 부인 ready 안에서 S04_L0022와 그 after 묶음 전체 호출"
+        }
       ],
       "known": [
         "엄마가 남은 장작과 현재 쓰는 장작을 구분하고 오늘 학교에 넘길 몫을 말함",
@@ -68,13 +115,21 @@
         "state": "반응은 학교 물자 확인의 기존 상태 설정보다 앞. 기존 school_inventory_checked/school_supply_handed/school_heat_connected 설정과 current_sacrifice_operation_closed의 연결 중지&&공동 통제 판정을 그대로 보존",
         "excluded": "백 부인 부재·사망·이송으로 ready가 아니면 세 행 전체 없음. 다른 결말·불타는 밤·진후일담을 현재 장면으로 바꾸지 않음"
       },
-      "game_added_ids": ["NW_RR14_02_01", "NW_RR14_02_02", "NW_RR14_02_03"],
+      "game_added_ids": [
+        "NW_RR14_02_01",
+        "NW_RR14_02_02",
+        "NW_RR14_02_03"
+      ],
       "modified_ids": [],
       "scene_extent": {
         "full_manuscript": "day14_원고.md ##05. 오늘의 공동 확인과 내일 빈칸을 분리하는 백 부인 시점",
         "game_excerpt": "d14.json after.MS14_D14_S04_L0022의 기존 NW_D14_S04_MB01 다음 3행. 오늘 학교가 받은 몫과 미확보된 내일 몫을 중복 계산하지 않게 확인",
-        "full_only": "장부를 자기 쪽에 감추지 않으면서도 없는 물자를 약속하지 않는 목적. 추가 거래·공동관리 계약을 만들지 않음",
-        "expressions": {"NW_RR14_02_01": "neutral", "NW_RR14_02_02": "anxious", "NW_RR14_02_03": "neutral"}
+        "full_only": "오늘 몫과 내일 빈칸을 짚고 다른 사람이 다 읽을 때까지 장부를 펴 두는 참관 행동. 중복 계산 설명과 같은 결론의 회고를 덜었다. 추가 소유·기부·거래·공동관리 계약을 만들지 않음.",
+        "expressions": {
+          "NW_RR14_02_01": "neutral",
+          "NW_RR14_02_02": "anxious",
+          "NW_RR14_02_03": "neutral"
+        }
       }
     },
     {
@@ -84,8 +139,24 @@
       "day": 14,
       "label": "r13_v111_chorong_lamps14",
       "anchors": [
-        {"file": "game/room13_v111_days1114.rpy", "label": "r13_v111_lamp_assignment14", "role": "초롱 실제 ready면 chorong_lamps14, 아니면 mother_lamps14. 미완료 이송/장치 문제는 기존 unfinished_operation14로 따로 확인"},
-        {"file": "game/room13_v111_days1114.rpy", "label": "r13_v111_chorong_lamps14", "record_ids": ["MS14_D14_S04_L0029", "MS14_D14_S04_L0030", "MS14_D14_S04_L0031"], "overlay_ids": ["NW_D14_S04_V06"], "role": "초롱 ready 안에서 S04_L0029와 after 전체를 호출. lamp_manager 설정은 기존 끝 위치 유지"}
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "label": "r13_v111_lamp_assignment14",
+          "role": "초롱 실제 ready면 chorong_lamps14, 아니면 mother_lamps14. 미완료 이송/장치 문제는 기존 unfinished_operation14로 따로 확인"
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "label": "r13_v111_chorong_lamps14",
+          "record_ids": [
+            "MS14_D14_S04_L0029",
+            "MS14_D14_S04_L0030",
+            "MS14_D14_S04_L0031"
+          ],
+          "overlay_ids": [
+            "NW_D14_S04_V06"
+          ],
+          "role": "초롱 ready 안에서 S04_L0029와 after 전체를 호출. lamp_manager 설정은 기존 끝 위치 유지"
+        }
       ],
       "known": [
         "초롱이 학교 앞 등은 남기고 다른 두 등은 줄이자고 실제로 말함",
@@ -105,13 +176,21 @@
         "state": "lamp_manager='resident_lamplighter'는 원래 위치에서만 설정. 초롱 부재 시 기존 mom 대체 유지. current_transport_chain_stopped&&device_joint_control이 아니면 미완료 대사·효과 유지",
         "excluded": "가족만 구한 결말·부분 인수 결말·군중 폭력·남겨진 이름·얼어붙은 마을·불타는 밤에 이 생활을 소급하지 않음"
       },
-      "game_added_ids": ["NW_RR14_03_01", "NW_RR14_03_02", "NW_RR14_03_03"],
+      "game_added_ids": [
+        "NW_RR14_03_01",
+        "NW_RR14_03_02",
+        "NW_RR14_03_03"
+      ],
       "modified_ids": [],
       "scene_extent": {
-        "full_manuscript": "day14_원고.md ##06. 등을 무조건 늘리던 초롱이 남겨 둘 등을 정하고 학교 문이 보이는 자리로 비키는 생활 변화",
+        "full_manuscript": "day14_원고.md ##06. 남겨 둘 등을 정하고 학교 문과 등 사이를 함께 살피는 초롱의 짧은 생활 변화",
         "game_excerpt": "d14.json after.MS14_D14_S04_L0029의 3행. 현재 학교 문이 보이게 살피자는 짧은 주고받기만",
-        "full_only": "밝은 곳과 통행 가능한 곳이 다르다는 자기 일의 한계. 새 등·연료·관리 시설·회복 결과를 만들지 않음",
-        "expressions": {"NW_RR14_03_01": "neutral", "NW_RR14_03_02": "anxious", "NW_RR14_03_03": "neutral"}
+        "full_only": "등갓을 닦고 밖에서 오는 사람을 알리라는 부탁을 받은 뒤 다음 점검에도 문 쪽에서 보기로 하는 반응. 비켜서는 동선과 산길·어둠의 한계를 반복 설명하던 회고는 덜었다. 새 등·연료·시설·회복 결과를 만들지 않음.",
+        "expressions": {
+          "NW_RR14_03_01": "neutral",
+          "NW_RR14_03_02": "anxious",
+          "NW_RR14_03_03": "neutral"
+        }
       }
     }
   ]

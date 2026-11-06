@@ -47,7 +47,7 @@ testcase resident13_nabi_beds_before_receipt:
     run Function(r13_v111_scene,'MS14_D13_S04')
     run Function(r13_v111_arrive,['nabi','karo'])
     run Call('qa_rr_scene','r13_v111_beds_ready13')
-    click pos (900,600) until eval qa_rr_visible('NW_RR13_N') timeout 60
+    click pos (900,600) until eval (r13_packet and '데려오기만 하세요' in r13_packet[1].replace('\n',' ')) timeout 60
     assert eval (not r13_v111_value('handover_prepared13') and not r13_v111_value('all_cart_handed'))
     assert eval (not r13_v111_value('handed:npc_pandol') and not r13_v111_value('handed:resident_momo'))
     screenshot 'resident13_nabi.png'

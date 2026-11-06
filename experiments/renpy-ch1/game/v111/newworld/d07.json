@@ -6,11 +6,7 @@
         "when": "fire_lose"
       },
       {
-        "text": "……어제 그 통의 등유가 어디로 갔는지, 거기부터 다시 보겠습니다.",
-        "when": "fire1_no_fire_record"
-      },
-      {
-        "text": "천만으로는 누구라고 못 하겠군요. 어제 그 통에 마지막으로 손댄 사람이 누굽니까?"
+        "text": "그 자료로는 불이 시작된 곳을 확인할 수 없군요. 창고에서 찾은 흔적을 다시 보겠습니다."
       }
     ],
     "MS14_D07_S02_L0001": [
@@ -184,19 +180,12 @@
       "text": "애들 쪽 보지 마시오.{w=.3} 당신한테 묻고 있소.",
       "expression": "angry"
     },
-    "MS14_D07_S01_L0046": [
-      {
-        "text": "그게 어제 내가 물 데운 거랑 무슨 상관이에요?",
-        "expression": "angry",
-        "when": "fire1_no_fire_record"
-      },
-      {
-        "text": "빨래터 천이 여기만 있는 줄 알아요?",
-        "expression": "angry"
-      }
-    ],
+    "MS14_D07_S01_L0046": {
+      "text": "그 자료로는 등잔에서 번졌는지 아닌지 모르잖아요.",
+      "expression": "angry"
+    },
     "MS14_D07_S01_L0030": {
-      "text": "보리 씨는 불이 번지기 전에 누비 씨를 봤답니다.{w=.3}\n그때 뭘 하고 계셨습니까? 등유 통도 여기 있고요."
+      "text": "문 앞에서 무슨 일이 있었습니까?"
     },
     "MS14_D07_S01_L0032": {
       "text": "나가라고……{w=.4} 하려고 했어요.",
@@ -2128,33 +2117,6 @@
         "text": "다람이 톡의 빈손을 한번 잡았다가 놓는다. 서리가 방을 비워 달라고 하자 우리는 복도로 나간다."
       }
     ],
-    "nubi_ask_oil": [
-      {
-        "id": "NW_D07_S01_Q01",
-        "speaker": "누비",
-        "kind": "dialogue",
-        "text": "……기름은, 제가 흘렸어요.",
-        "expression": "anxious"
-      }
-    ],
-    "nubi_ask_lamp": [
-      {
-        "id": "NW_D07_S01_Q02",
-        "speaker": "누비",
-        "kind": "dialogue",
-        "text": "……등잔 말고, 문 앞의 불을 묻는 거군요.",
-        "expression": "anxious"
-      }
-    ],
-    "nubi_ask_door": [
-      {
-        "id": "NW_D07_S01_Q03",
-        "speaker": "누비",
-        "kind": "dialogue",
-        "text": "봤겠죠. 저 거기 있었으니까.",
-        "expression": "anxious"
-      }
-    ],
     "half_fire_split7": [
       {
         "id": "NW_HALF_D07_01",
@@ -2355,6 +2317,70 @@
         "speaker": null,
         "kind": "narration",
         "text": "톡이 공구를 챙겨 문밖으로 나간다. 서리가 방을 비워 달라고 하자 나도 복도에서 기다리던 다람 곁으로 돌아간다."
+      }
+    ],
+    "nubi_lamp_defense7": [
+      {
+        "id": "NW_D07_OR01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "문 앞에서 무엇을 하고 계셨습니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D07_OR02",
+        "speaker": "누비",
+        "kind": "dialogue",
+        "text": "창고 안에 등잔 있었잖아요. 거기서 불이 번졌을 수도 있죠.\n제가 거기 있었다고 불을 놓은 건 아니에요.",
+        "expression": "angry"
+      }
+    ],
+    "nubi_owner_rebut7": [
+      {
+        "id": "NW_D07_OR03",
+        "speaker": "누비",
+        "kind": "dialogue",
+        "text": "물 데울 때도 쓰는 통이에요. 제 거라는 게 불을 놓았다는 증거예요?",
+        "expression": "angry"
+      },
+      {
+        "id": "NW_D07_OR04",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "통의 주인은 안다. 하지만 누가 그 기름에 불을 붙였는지는 아직 모른다.",
+        "expression": "neutral"
+      }
+    ],
+    "nubi_presence_rebut7": [
+      {
+        "id": "NW_D07_OR05",
+        "speaker": "누비",
+        "kind": "dialogue",
+        "text": "보리 씨가 제가 불 붙이는 것도 봤대요?",
+        "expression": "angry"
+      },
+      {
+        "id": "NW_D07_OR06",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "보리 씨는 문 앞에 서 있었다고만 말했다. 그 말로 불을 붙였다고 단정할 수는 없다.",
+        "expression": "neutral"
+      }
+    ],
+    "nubi_origin_checked7": [
+      {
+        "id": "NW_D07_OR07",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "등잔은 뒷벽 물통 옆에 있었습니다. 뚜껑이 닫혀 있었고, 기름도 남아 있었죠.\n그런데 기름 냄새가 나는 천과 탄 자국은 문 쪽에 있었습니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D07_OR08",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "등잔에서 번졌다는 설명만으로는 문 앞 흔적을 설명할 수 없습니다.",
+        "expression": "neutral"
       }
     ]
   },

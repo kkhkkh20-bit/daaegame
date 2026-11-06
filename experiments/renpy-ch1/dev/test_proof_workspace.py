@@ -25,7 +25,7 @@ class ProofWorkspacePure(unittest.TestCase):
         self.assertEqual(set(ctx),{'함께 들어갈 근거를 고른다','두 편지를 나란히 본다','불이 시작된 곳과 진술을 대조한다','측정 종료와 점검 기록을 대조한다','수리와 반출을 가릴 자료를 낸다','돌과 매입 기록을 낸다','바깥 걸쇠 주장과 발견 위치를 대조한다','마지막 점검과 인수한 돌을 연결한다'})
         self.assertEqual(ctx['두 편지를 나란히 본다']['mode'],'compare')
         self.assertEqual(ctx['함께 들어갈 근거를 고른다']['speaker'],'돌목')
-        self.assertEqual(ctx['불이 시작된 곳과 진술을 대조한다']['quote_when'],('value','bori_nubi_door_witness_heard'))
+        self.assertEqual(ctx['불이 시작된 곳과 진술을 대조한다']['quote_when'],('value','fire_lamp_defense_heard'))
         self.assertIsNone(self.ns['r13_pw_context']('구리선과 수선 출처를 대조한다'))
         # 정답 ID·미획득 자료는 표시 데이터에 없다(인계서 4장·13장).
         for spec in ctx.values():
@@ -47,6 +47,12 @@ class ProofWorkspacePure(unittest.TestCase):
                 self.assertEqual(spec['speaker'],row.get('speaker',records[line]['speaker']))
             self.assertEqual(spec['quote_when'],('flag','v111:entered:MS14_D03_S05'))
         self.assertIsNone(self.ns['R13_PW_CONTEXT']['측정 종료와 점검 기록을 대조한다']['quote'])
+
+    def test_fire_quote_was_spoken_before_evidence_comparison(self):
+        import json
+        quote=self.ns['R13_PW_CONTEXT']['불이 시작된 곳과 진술을 대조한다']['quote']
+        rows=json.loads((ROOT/'game/v111/newworld/d07.json').read_text())['blocks']['nubi_lamp_defense7']
+        self.assertIn(quote, [' '.join(r['text'].split()) for r in rows])
 
     def test_quote_visible_follows_flag_or_value(self):
         vis=self.ns['r13_pw_quote_visible'];ctx=self.ns['R13_PW_CONTEXT']

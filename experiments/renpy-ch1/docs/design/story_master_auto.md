@@ -433,7 +433,7 @@
 
 | 장면 | 제목 · 원본 장소 | 이동(travel) | 인물 | 라벨 |
 |---|---|---|---|---|
-| `MS14_D07_S01` | 7-1. 오전 / 빨래터 — 내 아이들 몫 · ['LAUNDRY'] | 마을 빨래터(laundry), 마을 학교(school) | 누비, 보리, 나비, 사자 선생님, 누비의 큰아이, 누비의 둘째, 누비의 막내, 너울 | `r13_v111_day7`, `r13_v111_children_school7`, `r13_v111_children_here7`, `r13_v111_nubi_children_school7`, `r13_v111_nubi_children_receipt7`, `r13_v111_nubi_children_received7` 외 6 |
+| `MS14_D07_S01` | 7-1. 오전 / 빨래터 — 내 아이들 몫 · ['LAUNDRY'] | 마을 빨래터(laundry), 마을 학교(school) | 누비, 보리, 나비, 사자 선생님, 누비의 큰아이, 누비의 둘째, 누비의 막내, 너울 | `r13_v111_day7`, `r13_v111_children_school7`, `r13_v111_children_here7`, `r13_v111_nubi_children_school7`, `r13_v111_nubi_children_receipt7`, `r13_v111_nubi_children_received7` 외 7 |
 | `MS14_D07_S02` | 7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리 · ['HALL', 'SCHOOL_ROOM'] | 마을 학교(school) | 나비, 보리, 누비, 너울, 사자 선생님, 도토, 다람, 초롱, 도담 | `r13_v111_responsibility7`, `r13_v111_fire_basis_route7`, `r13_v111_empty_fire_basis7`, `r13_v111_rescue_fire_basis7`, `r13_v111_responsibility_wrong7`, `r13_v111_responsibility_answers7` 외 3 |
 | `MS14_D07_S03` | 7-3. 저녁 / 여관 13호 — 잠깐이라는 약속 · ['ROOM13', 'INN_CORRIDOR'] | 여관 2층 · 13호실(room13), 여관 2층 복도(hall) | 다람, 할머니, 부엉이 할아버지, 도토, 까로 | `r13_v111_room_visit7`, `r13_v111_handover7` |
 | `MS14_D07_S04` | 7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문 · ['SNOW_DETOUR', 'OUTPOST', 'INN_CORRIDOR', 'ROOM13'] | 임시 진료실(clinic), 여관 2층 복도(hall), 여관 2층 · 13호실(room13), 마을 학교(school) | 까로, 서리 검사원, 도토, 나비, 할머니, 너울, 다람 | `r13_v111_incident7`, `r13_v111_sleep7`, `r13_v111_free_sleep7`, `r13_v111_free_sleep7_input`, `r13_v111_free_sleep7_done`, `r13_v111_detained_sleep7` 외 3 |
@@ -445,25 +445,30 @@
   - 「여기서 계속 묻는다.」 `$ r13_v111_set('choice:MS14_D07_S01','here')`
 - `r13_v111_nubi_children_receipt7` if 「선생님, 누비 씨 아이 셋을 맡아 주셨습니까?」 `→ r13_v111_nubi_children_received7`
 - `r13_v111_bori_witness7` if 「창고 문 앞에서 무엇을 보셨습니까?」 `→ r13_v111_bori_witness_heard7`
+- `r13_v111_nubi_hypothesis7` if `not r13_v111_value("bori_nubi_door_witness_heard")` `→ r13_v111_bori_witness7`
+- `r13_v111_nubi_hypothesis7` if `not r13_v111_value("fire_lamp_defense_heard")` `$ r13_v111_set("fire_lamp_defense_heard",True)`
+- `r13_v111_nubi_hypothesis7` if `r13_v111_value("fire_origin_hypothesis")` `→ r13_v111_nubi_proof7`
+- 메뉴 `r13_v111_nubi_hypothesis7` (567줄)
+  - 「기름통이 누비 씨 것이니 불을 놓은 사람도 누비 씨다.」 → `r13_v111_nubi_hypothesis7`
+  - 「등잔에서 번졌다면, 불이 시작된 자리가 맞는지 확인해야 한다.」 `$ r13_v111_set("fire_origin_hypothesis",True)`
+  - 「창고 문 앞에 있었으니 누비 씨가 불을 놓았다.」 → `r13_v111_nubi_hypothesis7`
+- `r13_v111_nubi_proof7` if `not r13_v111_value("fire_origin_hypothesis")` `→ r13_v111_nubi_hypothesis7`
 - `r13_v111_nubi_wrong7` if `r13_nw_retry("fire")` `→ r13_v111_nubi_proof7`
 - `r13_v111_nubi_first_question7` if `not r13_v111_value("bori_nubi_door_witness_heard")` `→ r13_v111_bori_witness7`
-- 메뉴 `r13_v111_nubi_first_question7` (582줄)
-  - 「문 앞의 기름 흔적을 설명해 주십시오.」 `$ r13_v111_set("fire_first_question","oil")`
-  - 「등잔은 뒷벽 물통 옆에 있었습니다. 뚜껑도 닫혀 있었고요.」 `$ r13_v111_set("fire_first_question","lamp")`
-  - 「창고 문 앞에 서 계신 걸 보리 씨가 봤습니다.」 `$ r13_v111_set("fire_first_question","door")`
+- `r13_v111_nubi_first_question7` if `not r13_v111_value("fire_lamp_defense_heard")` `$ r13_v111_set("fire_lamp_defense_heard",True)`
 - `r13_v111_nubi_admission7` if `not r13_v111_value("bori_nubi_door_witness_heard")` `→ r13_v111_bori_witness7`
 - 값
   - `choice:MS14_D07_S01` = `"school"` (`r13_v111_day7`)
   - `choice:MS14_D07_S01` = `"here"` (`r13_v111_day7`)
   - `grand_snack_ready7` = `r13_v111_value("snack_bagged5") is True and not r13_v111_value("DARAM_DETAINED") and r13_v111_value("location:daram") in (None,"school") and not r13_v111_value("grand_ticket_spot_known") and not r13_v111_value("grand_snack_given7")` (`r13_v111_nubi_children_school7`)
   - `bori_nubi_door_witness_heard` = `true` (`r13_v111_bori_witness_heard7`)
+  - `fire_lamp_defense_heard` = `true` (`r13_v111_nubi_hypothesis7`)
+  - `fire_origin_hypothesis` = `true` (`r13_v111_nubi_hypothesis7`)
   - 회의 끝 `fire` → `"lose"` (`r13_v111_nubi_wrong7`)
   - 명단 올림 보리 (까닭 `fire_lose`) (`r13_v111_nubi_wrong7`)
-  - `fire_first_question` = `"oil"` (`r13_v111_nubi_first_question7`)
-  - `fire_first_question` = `"lamp"` (`r13_v111_nubi_first_question7`)
-  - `fire_first_question` = `"door"` (`r13_v111_nubi_first_question7`)
+  - `fire_lamp_defense_heard` = `true` (`r13_v111_nubi_first_question7`)
 
-#### `MS14_D07_S02` 갈림 · 값 (room13_v111_days610.rpy:616)
+#### `MS14_D07_S02` 갈림 · 값 (room13_v111_days610.rpy:630)
 
 - `r13_v111_responsibility7` if `r13_v111_value("meeting:fire")=="lose"` `→ r13_v111_responsibility_answers7`
 - `r13_v111_fire_basis_route7` if `r13_v111_value('FIRE_EVACUATED')` `→ r13_v111_empty_fire_basis7`
@@ -480,7 +485,7 @@
   - `neoul_promise_proven` = `true` (`r13_v111_responsibility_answers7`)
   - `dodam_spoon7` = `true` (`r13_v111_dodam_spoon7`)
 
-#### `MS14_D07_S03` 갈림 · 값 (room13_v111_days610.rpy:742)
+#### `MS14_D07_S03` 갈림 · 값 (room13_v111_days610.rpy:756)
 
 - `r13_v111_room_visit7` if `r13_v111_value('stove13_7') in ('ration','empty')` `→ r13_v111_owl_well7`
 - `r13_v111_handover7` if `r13_v111_value('doto_promise7')` `→ r13_v111_promise_night7`
@@ -493,7 +498,7 @@
   - `choice:MS14_D07_S03` = `"C"` (`r13_v111_handover7`)
   - 생사 판정 `fate_owl` = `lost` (`r13_v111_handover7`)
 
-#### `MS14_D07_S04` 갈림 · 값 (room13_v111_days610.rpy:797)
+#### `MS14_D07_S04` 갈림 · 값 (room13_v111_days610.rpy:811)
 
 - `r13_v111_incident7` if `r13_v111_value('corridor_handover7')` `$ r13_v111_set('DARAM_location','room13')`
 - `r13_v111_sleep7` if `r13_v111_value("DARAM_DETAINED")` `→ r13_v111_detained_sleep7`
@@ -516,24 +521,24 @@
 | `MS14_D08_P01` | 8-P. 생존 대체 / 다람과 함께 듣는 진료 · ['SCHOOL_ROOM', 'CLINIC', 'ROOM13'] | 여관 2층 · 13호실(room13) | 다람, 부엉이 할아버지, 도토, 서리 검사원, 너울, 할머니 | `r13_v111_prevent_clinic8`, `r13_v111_prevention_story8`, `r13_v111_care8`, `r13_v111_missing_pages8` |
 | `MS14_D08_S04` | 8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길 · ['LAMP_PATH'] | 마을 학교(school), 돌이 있는 광장(square) | 다람, 나비, 초롱, 도토, 바둑이 | `r13_v111_mother_letter8`, `r13_v111_letter_route8`, `r13_v111_letter_murder8`, `r13_v111_letter_prevent8`, `r13_v111_escort8`, `r13_v111_escort_done8` 외 4 |
 
-#### `MS14_D08_S02` 갈림 · 값 (room13_v111_days610.rpy:926)
+#### `MS14_D08_S02` 갈림 · 값 (room13_v111_days610.rpy:940)
 
 - `r13_v111_room_check8` if 「문틈과 발견 자리를 살핀다」 `→ r13_v111_room_checked8`
 - 값
   - 자료 얻음 `NW_STONE` (`r13_v111_room_checked8`)
 
-#### `MS14_D08_S03` 갈림 · 값 (room13_v111_days610.rpy:978)
+#### `MS14_D08_S03` 갈림 · 값 (room13_v111_days610.rpy:992)
 
 - `r13_v111_tool_faces8` if 「손잡이·파단면·고리를 확인한다」 `→ r13_v111_tool_faces_seen8`
 - `r13_v111_wire_curve8` if 「구리 조각과 핀 끝을 대조한다」 `→ r13_v111_wire_curve_seen8`
 
-#### `MS14_D08_P01` 갈림 · 값 (room13_v111_days610.rpy:1030)
+#### `MS14_D08_P01` 갈림 · 값 (room13_v111_days610.rpy:1044)
 
 - `r13_v111_prevention_story8` if `r13_v111_value('prevention')=='stone'` `→ r13_v111_owl_well8`
 - 값
   - 자료 얻음 `NW_STONE` (`r13_v111_missing_pages8`)
 
-#### `MS14_D08_S04` 갈림 · 값 (room13_v111_days610.rpy:1073)
+#### `MS14_D08_S04` 갈림 · 값 (room13_v111_days610.rpy:1087)
 
 - `r13_v111_mother_letter8` if `not r13_v111_value('DARAM_DETAINED')` `$ r13_v111_set('DARAM_location','school')`
 - `r13_v111_mother_letter8` if `r13_v111_actor_ready('nabi')` `$ r13_v111_set('busy:nabi','daram_guard')`
@@ -558,7 +563,7 @@
 | `MS14_D09_P01` | 9-P. 생존 대체 / 침입과 위조의 갈림길 · ['INN_KITCHEN', 'PASSAGE', 'ROOM13'] | 마을 학교(school), 여관 1층 · 주방(kitchen), 여관 2층 · 13호실(room13) | 다람, 나비, 사자 선생님, 도토, 따닥, 할머니, 부엉이 할아버지 | `r13_v111_prevent_passage9`, `r13_v111_safe_prevent9`, `r13_v111_prevent_walk9`, `r13_v111_papers_check9`, `r13_v111_papers_done9` |
 | `MS14_D09_S04` | 9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지 · ['POST_OFFICE', 'HOLDING_ROOM', 'SCHOOL_ROOM'] | 우체국 입구(post), 보호실 면회 자리(v111_custody), 마을 학교(school) | 세련, 슬링, 다람 | `r13_v111_postal9`, `r13_v111_night_route9`, `r13_v111_custody_night9`, `r13_v111_school_night9`, `r13_v111_sleep9`, `r13_v111_sleep9_input` 외 2 |
 
-#### `MS14_D09_S01` 갈림 · 값 (room13_v111_days610.rpy:1161)
+#### `MS14_D09_S01` 갈림 · 값 (room13_v111_days610.rpy:1175)
 
 - `r13_v111_passage9` if `not r13_v111_value('DARAM_DETAINED') and r13_v111_actor_ready('daram') and not r13_v111_value('daram_door_asked9')` `$ r13_v111_set('daram_door_asked9',True)`
 - `r13_v111_safe_passage9` if 「쐐기·안전줄·문지기를 확인한다」 `→ r13_v111_passage_walk9`
@@ -568,16 +573,16 @@
 - 값
   - `daram_door_asked9` = `true` (`r13_v111_passage9`)
 
-#### `MS14_D09_S02` 갈림 · 값 (room13_v111_days610.rpy:1216)
+#### `MS14_D09_S02` 갈림 · 값 (room13_v111_days610.rpy:1230)
 
 - `r13_v111_tok_route9` if `r13_v111_tok_attends("workshop")` `→ r13_v111_tok9`
 
-#### `MS14_D09_S03` 갈림 · 값 (room13_v111_days610.rpy:1260)
+#### `MS14_D09_S03` 갈림 · 값 (room13_v111_days610.rpy:1274)
 
 - `r13_v111_pin_question9` if 「그날 밤 할머니 곁에서 본 것을 묻겠습니다.」 `→ r13_v111_pin_time9`
 - `r13_v111_scarf_compare9` if 「목도리 끝과 핀을 대조한다」 `→ r13_v111_scarf_done9`
 
-#### `MS14_D09_P01` 갈림 · 값 (room13_v111_days610.rpy:1332)
+#### `MS14_D09_P01` 갈림 · 값 (room13_v111_days610.rpy:1346)
 
 - `r13_v111_prevent_passage9` if `r13_v111_value('busy:nabi')=='daram_guard' and r13_v111_value('location:daram')=='school'` `$ r13_v111_set('busy:nabi',None)`
 - `r13_v111_safe_prevent9` if 「쐐기·안전줄·문지기를 확인한다」 `→ r13_v111_prevent_walk9`
@@ -585,7 +590,7 @@
 - 값
   - `busy:nabi` = `null` (`r13_v111_prevent_passage9`)
 
-#### `MS14_D09_S04` 갈림 · 값 (room13_v111_days610.rpy:1390)
+#### `MS14_D09_S04` 갈림 · 값 (room13_v111_days610.rpy:1404)
 
 - `r13_v111_night_route9` if `r13_v111_value('route7')=='murder'` `→ r13_v111_custody_night9`
 - `r13_v111_custody_night9` if `r13_v111_owned('E08_RECENT_LETTER') and not r13_v111_value('mother_warning_shared9')` `$ r13_v111_set('mother_warning_shared9',True)`
@@ -606,7 +611,7 @@
 | `MS14_D10_P01` | 10-P. 예방 대체 / 그 종이를 넘기기 전에 · ['HALL', 'POST_BENCH'] | 마을 학교(school) | 다람, 부엉이 할아버지, 할머니, 뿔이 촌장, 너울, 슬링, 세련 | `r13_v111_prevent_hearing10`, `r13_v111_authority_proof10`, `r13_v111_authority_answer10`, `r13_v111_writing_proof10`, `r13_v111_writing_answer10`, `r13_v111_pocket10` 외 8 |
 | `MS14_D10_S04P` | 반드시 실장할 짧은 대체 대사 · ['SCHOOL_ROOM'] | 마을 학교(school) | 다람, 꼬미 | `r13_v111_prevent_return10`, `r13_v111_sleep10`, `r13_v111_kkomi_acorn10`, `r13_v111_sleep10_input`, `r13_v111_sleep10_done` |
 
-#### `MS14_D10_S02` 갈림 · 값 (room13_v111_days610.rpy:1489)
+#### `MS14_D10_S02` 갈림 · 값 (room13_v111_days610.rpy:1503)
 
 - `r13_v111_hearing_wrong10` if `r13_nw_retry("room13",['E08_CHILD_ACCOUNT', 'E08_TOOL'],'half_room13_wound10')` `→ r13_v111_wound_proof10`
 - `r13_v111_passage_wrong10` if `r13_nw_retry("room13",['E09_PASSAGE', 'E08_ROOM'],'half_room13_passage10')` `→ r13_v111_passage_proof10`
@@ -617,7 +622,7 @@
   - 회의 끝 `room13` → `"lose"` (`r13_v111_passage_wrong10`)
   - 명단 올림 다람 (까닭 `room13_lose`) (`r13_v111_passage_wrong10`)
 
-#### `MS14_D10_S03` 갈림 · 값 (room13_v111_days610.rpy:1582)
+#### `MS14_D10_S03` 갈림 · 값 (room13_v111_days610.rpy:1596)
 
 - `r13_v111_owner_answer10` if `r13_v111_tok_attends("hearing")` `→ r13_v111_owner_tok10`
 - `r13_v111_owner_wrong10` if `r13_nw_retry("room13",['E08_WOUND_WIRE', 'E09_PIN_OWNER'],'half_room13_owner10')` `→ r13_v111_owner_proof10`
@@ -634,16 +639,16 @@
   - 회의 끝 `room13` → `"partial"` (`r13_v111_contact_wrong10`)
   - `room13_partial_kind` = `"accident"` (`r13_v111_contact_wrong10`)
 
-#### `MS14_D10_S04` 갈림 · 값 (room13_v111_days610.rpy:1732)
+#### `MS14_D10_S04` 갈림 · 값 (room13_v111_days610.rpy:1746)
 
 - `r13_v111_bench10` if `r13_v111_value('route7')=='murder' and r13_v111_value('meeting:room13')=='win' and not r13_v111_value('DARAM_DETAINED') and r13_v111_value('CHORONG_ALIVE') is not False and r13_v111_person_alive('resident_lamplighter') and not r13_v111_value('listed:resident_lamplighter') and not r13_v111_value('departed:resident_lamplighter') and not r13_v111_value('busy:resident_lamplighter')` `$ r13_v111_join(['resident_lamplighter'])`
 - 값
   - `mother_contact_relay10` = `true` (`r13_v111_bench10`)
 
-#### `MS14_D10_P01` 갈림 · 값 (room13_v111_days610.rpy:1771)
+#### `MS14_D10_P01` 갈림 · 값 (room13_v111_days610.rpy:1785)
 
 - `r13_v111_pocket10` if 「어제는 전부라고 하셨습니다.」 `→ r13_v111_pocket_answer10`
-- 메뉴 `r13_v111_pocket_answer10` (1850줄)
+- 메뉴 `r13_v111_pocket_answer10` (1864줄)
   - 「가족끼리 확인하고, 왜 숨겼는지 묻는다」 → `r13_v111_family_paper10`
   - 「공개된 수량만 대조하고 기록을 받는다」 → `r13_v111_public_paper10`
 - `r13_v111_private_handoff10` if 「아내가 직접 편지를 건넸습니까?」 `→ r13_v111_owl_invitation10`
@@ -657,7 +662,7 @@
   - 명단 올림 부엉이 할아버지 (까닭 `records_lose`) (`r13_v111_authority_wrong10`)
   - 회의 끝 `records` → `"partial"` (`r13_v111_writing_wrong10`)
 
-#### `MS14_D10_S04P` 갈림 · 값 (room13_v111_days610.rpy:1925)
+#### `MS14_D10_S04P` 갈림 · 값 (room13_v111_days610.rpy:1939)
 
 - `r13_v111_sleep10_input` if 「잠자리를 정리한다」 `→ r13_v111_sleep10_done`
 - 값
@@ -1606,15 +1611,15 @@
 
 | 증명 키(쟁점) | 화면 제목 | 정답 | 대체 정답 | 덧붙여도 받음 | 자리 |
 |---|---|---|---|---|---|
-| 불이 시작된 곳과 진술을 대조한다 | — | E06_FIRE | — | — | room13_v111_days610.rpy:561 |
-| 불의 원인과 빈 창고 진압을 구분한다 | ‘다들 책임이 있소’. 셋이 정말 같은 책임인가 | E06_FIRE+E06_EMPTY+E07_NUBI | E06_FIRE+E06_EMPTY+NW_NUBI_TICKET | NW_LAUNDRY_TALK, E02 | room13_v111_days610.rpy:633 |
-| 불의 원인과 아이 구조를 구분한다 | ‘다들 책임이 있소’. 셋이 정말 같은 책임인가 | E06_FIRE+E06_RESCUE+E07_NUBI | E06_FIRE+E06_RESCUE+NW_NUBI_TICKET | NW_LAUNDRY_TALK, E02 | room13_v111_days610.rpy:637 |
+| 불이 시작된 곳과 진술을 대조한다 | — | E06_FIRE | — | — | room13_v111_days610.rpy:582 |
+| 불의 원인과 빈 창고 진압을 구분한다 | ‘다들 책임이 있소’. 셋이 정말 같은 책임인가 | E06_FIRE+E06_EMPTY+E07_NUBI | E06_FIRE+E06_EMPTY+NW_NUBI_TICKET | NW_LAUNDRY_TALK, E02 | room13_v111_days610.rpy:647 |
+| 불의 원인과 아이 구조를 구분한다 | ‘다들 책임이 있소’. 셋이 정말 같은 책임인가 | E06_FIRE+E06_RESCUE+E07_NUBI | E06_FIRE+E06_RESCUE+NW_NUBI_TICKET | NW_LAUNDRY_TALK, E02 | room13_v111_days610.rpy:651 |
 
 결과마다 바뀌는 값
 
-- `"lose"` · `r13_v111_nubi_wrong7` (room13_v111_days610.rpy:568): 명단 올림 보리 (까닭 `fire_lose`)
-- `"partial"` · `r13_v111_responsibility_wrong7` (room13_v111_days610.rpy:646): 명단 올림 보리 (까닭 `fire_partial`)
-- `"win"` · `r13_v111_responsibility_answers7` (room13_v111_days610.rpy:651): `fire_neoul_promise_recorded` = `true`; `grand:fire` = `true`; `neoul_promise_proven` = `true`
+- `"lose"` · `r13_v111_nubi_wrong7` (room13_v111_days610.rpy:589): 명단 올림 보리 (까닭 `fire_lose`)
+- `"partial"` · `r13_v111_responsibility_wrong7` (room13_v111_days610.rpy:660): 명단 올림 보리 (까닭 `fire_partial`)
+- `"win"` · `r13_v111_responsibility_answers7` (room13_v111_days610.rpy:665): `fire_neoul_promise_recorded` = `true`; `grand:fire` = `true`; `neoul_promise_proven` = `true`
 
 이 회의를 읽는 조건: `fire_lose`, `fire_partial`, `fire_win`, `fire_win_empty`, `fire_win_plain`, `fire_win_rescue`
 
@@ -1622,20 +1627,20 @@
 
 | 증명 키(쟁점) | 화면 제목 | 정답 | 대체 정답 | 덧붙여도 받음 | 자리 |
 |---|---|---|---|---|---|
-| 두 상처와 촛대 파손을 대조한다 | — | E08_CHILD_ACCOUNT+E08_TOOL | — | — | room13_v111_days610.rpy:1507 |
-| 두 번째 길을 실제 기록으로 보인다 | 정말 그 문 말고는 책상까지 갈 길이 없었는가 | E09_PASSAGE+E08_ROOM | — | — | room13_v111_days610.rpy:1536 |
-| 구리선과 수선 출처를 대조한다 | 이 핀을 구별할 수 있는가 | E08_WOUND_WIRE+E09_PIN_OWNER | E08_CONTACT_ASSEMBLY+E09_PIN_OWNER | — | room13_v111_days610.rpy:1594 |
-| 첫 비명 뒤 핀을 다시 채운 때 | 핀이 언제 떨어졌는가 | E09_PIN_TIME+E09_PIN_HANDOVER_TIME | — | — | room13_v111_days610.rpy:1629 |
-| 접촉면과 아이의 위치를 대조한다 | 방금 설명은 물증과 맞는가 | E08_CONTACT_ASSEMBLY+E08_WOUND_WIRE+E08_CHILD_POSITION+E08_ROOM_REACH+E09_SCARF | — | — | room13_v111_days610.rpy:1653 |
+| 두 상처와 촛대 파손을 대조한다 | — | E08_CHILD_ACCOUNT+E08_TOOL | — | — | room13_v111_days610.rpy:1521 |
+| 두 번째 길을 실제 기록으로 보인다 | 정말 그 문 말고는 책상까지 갈 길이 없었는가 | E09_PASSAGE+E08_ROOM | — | — | room13_v111_days610.rpy:1550 |
+| 구리선과 수선 출처를 대조한다 | 이 핀을 구별할 수 있는가 | E08_WOUND_WIRE+E09_PIN_OWNER | E08_CONTACT_ASSEMBLY+E09_PIN_OWNER | — | room13_v111_days610.rpy:1608 |
+| 첫 비명 뒤 핀을 다시 채운 때 | 핀이 언제 떨어졌는가 | E09_PIN_TIME+E09_PIN_HANDOVER_TIME | — | — | room13_v111_days610.rpy:1643 |
+| 접촉면과 아이의 위치를 대조한다 | 방금 설명은 물증과 맞는가 | E08_CONTACT_ASSEMBLY+E08_WOUND_WIRE+E08_CHILD_POSITION+E08_ROOM_REACH+E09_SCARF | — | — | room13_v111_days610.rpy:1667 |
 
 결과마다 바뀌는 값
 
-- `"lose"` · `r13_v111_hearing_wrong10` (room13_v111_days610.rpy:1557): 명단 올림 다람 (까닭 `room13_lose`)
-- `"lose"` · `r13_v111_passage_wrong10` (room13_v111_days610.rpy:1568): 명단 올림 다람 (까닭 `room13_lose`)
-- `"win"` · `r13_v111_contact_answer10` (room13_v111_days610.rpy:1657): `grandmother_custody` = `"detained"`; `forgery_confirmed` = `true`
-- `"partial"` · `r13_v111_owner_wrong10` (room13_v111_days610.rpy:1704): `room13_partial_kind` = `"unknown"`
-- `"partial"` · `r13_v111_time_wrong10` (room13_v111_days610.rpy:1714): `room13_partial_kind` = `"unknown"`
-- `"partial"` · `r13_v111_contact_wrong10` (room13_v111_days610.rpy:1724): `room13_partial_kind` = `"accident"`
+- `"lose"` · `r13_v111_hearing_wrong10` (room13_v111_days610.rpy:1571): 명단 올림 다람 (까닭 `room13_lose`)
+- `"lose"` · `r13_v111_passage_wrong10` (room13_v111_days610.rpy:1582): 명단 올림 다람 (까닭 `room13_lose`)
+- `"win"` · `r13_v111_contact_answer10` (room13_v111_days610.rpy:1671): `grandmother_custody` = `"detained"`; `forgery_confirmed` = `true`
+- `"partial"` · `r13_v111_owner_wrong10` (room13_v111_days610.rpy:1718): `room13_partial_kind` = `"unknown"`
+- `"partial"` · `r13_v111_time_wrong10` (room13_v111_days610.rpy:1728): `room13_partial_kind` = `"unknown"`
+- `"partial"` · `r13_v111_contact_wrong10` (room13_v111_days610.rpy:1738): `room13_partial_kind` = `"accident"`
 
 이 회의를 읽는 조건: `granny_held_win`, `granny_room13_lose`, `granny_room13_partial`, `room13_lose`, `room13_not_win`, `room13_partial_accident`, `room13_partial_unknown`, `room13_win`
 
@@ -1643,14 +1648,14 @@
 
 | 증명 키(쟁점) | 화면 제목 | 정답 | 대체 정답 | 덧붙여도 받음 | 자리 |
 |---|---|---|---|---|---|
-| 수신인과 가족 전달 권한을 구분한다 | — | E06_CONTACT+E09_MAIL | — | — | room13_v111_days610.rpy:1796 |
-| 반송·필사본·초대 발송을 대조한다 | 그 초대장을 아내가 보냈다고 할 수 있는가 | E01+E07+E09_MAIL | E01+E27+E09_MAIL | E07, E27, E09 | room13_v111_days610.rpy:1813 |
+| 수신인과 가족 전달 권한을 구분한다 | — | E06_CONTACT+E09_MAIL | — | — | room13_v111_days610.rpy:1810 |
+| 반송·필사본·초대 발송을 대조한다 | 그 초대장을 아내가 보냈다고 할 수 있는가 | E01+E07+E09_MAIL | E01+E27+E09_MAIL | E07, E27, E09 | room13_v111_days610.rpy:1827 |
 
 결과마다 바뀌는 값
 
-- `"win"` · `r13_v111_writing_answer10` (room13_v111_days610.rpy:1817)
-- `"lose"` · `r13_v111_authority_wrong10` (room13_v111_days610.rpy:1901): 명단 올림 부엉이 할아버지 (까닭 `records_lose`)
-- `"partial"` · `r13_v111_writing_wrong10` (room13_v111_days610.rpy:1912)
+- `"win"` · `r13_v111_writing_answer10` (room13_v111_days610.rpy:1831)
+- `"lose"` · `r13_v111_authority_wrong10` (room13_v111_days610.rpy:1915): 명단 올림 부엉이 할아버지 (까닭 `records_lose`)
+- `"partial"` · `r13_v111_writing_wrong10` (room13_v111_days610.rpy:1926)
 
 이 회의를 읽는 조건: `records_lose`, `records_lose_fell7`, `records_lose_prev_b`, `records_lose_prev_stone`, `records_partial`, `records_partial_prev_b`, `records_partial_prev_stone`
 
@@ -1839,7 +1844,7 @@ def r13_nw_true_ending_ready():
 | `fate_owl` | `stone` 식은 돌 | `r13_v111_owl_well7` (room13_v111_owl_prevent.rpy:91) |
 | `fate_owl` | `promise` 내려가지 않은 당번 | `r13_v111_promise_night7` (room13_v111_owl_prevent.rpy:121) |
 | `fate_owl` | `repair` 곁에 남은 수리공 | `r13_v111_tok_night7` (room13_v111_owl_prevent.rpy:176) |
-| `fate_owl` | `lost` 닫힌 문 | `r13_v111_handover7` (room13_v111_days610.rpy:793) |
+| `fate_owl` | `lost` 닫힌 문 | `r13_v111_handover7` (room13_v111_days610.rpy:807) |
 | `fate_nero` | `handover` 인계 | `r13_v111_lower_safe11` (room13_v111_days1114.rpy:895), `r13_v111_rescue_handoff11` (room13_v111_days1114.rpy:969) |
 | `fate_nero` | `rescue` 구조 | `r13_v111_rescue_handoff11` (room13_v111_days1114.rpy:971) |
 | `fate_nero` | `lost` 끊긴 등불 | `r13_v111_late_road11` (room13_v111_days1114.rpy:1005) |
@@ -1859,11 +1864,11 @@ def r13_nw_true_ending_ready():
 | 실룩 | `lamp_transfer` | `r13_v111_silluk_transfer` (room13_v111_days123.rpy:1314) |
 | 톡 | `lamp_lose` | `r13_v111_trial_wrong` (room13_v111_days123.rpy:1325) |
 | 밤이 | `gate_post_lose` | `r13_v111_wrong5` (room13_v111_days45.rpy:507) |
-| 보리 | `fire_lose` | `r13_v111_nubi_wrong7` (room13_v111_days610.rpy:569) |
-| 보리 | `fire_partial` | `r13_v111_responsibility_wrong7` (room13_v111_days610.rpy:647) |
-| 다람 | `room13_lose` | `r13_v111_hearing_wrong10` (room13_v111_days610.rpy:1558) |
-| 다람 | `room13_lose` | `r13_v111_passage_wrong10` (room13_v111_days610.rpy:1569) |
-| 부엉이 할아버지 | `records_lose` | `r13_v111_authority_wrong10` (room13_v111_days610.rpy:1902) |
+| 보리 | `fire_lose` | `r13_v111_nubi_wrong7` (room13_v111_days610.rpy:590) |
+| 보리 | `fire_partial` | `r13_v111_responsibility_wrong7` (room13_v111_days610.rpy:661) |
+| 다람 | `room13_lose` | `r13_v111_hearing_wrong10` (room13_v111_days610.rpy:1572) |
+| 다람 | `room13_lose` | `r13_v111_passage_wrong10` (room13_v111_days610.rpy:1583) |
+| 부엉이 할아버지 | `records_lose` | `r13_v111_authority_wrong10` (room13_v111_days610.rpy:1916) |
 | 굴돌 | `facility` | `r13_v111_hyp_end11` (room13_v111_days1114.rpy:862) |
 | 나비 | `soup_lose` | `r13_v111_fragment_wrong12` (room13_v111_days1114.rpy:1609) |
 | 피코 | `street` | `r13_v111_day13` (room13_v111_days1114.rpy:1809) |
@@ -1931,7 +1936,7 @@ def r13_nw_true_ending_ready():
 | `end_portrait_child` | `r13_v111_value("piko_alive") is False and r13_v111_value("portrait")=="child_completed" and not r13_nw_true_ending_ready()` | d14 |
 | `family_on_square` | `r13_v111_value("family_location")=="square" and r13_v111_actor_ready("daram")` | d13 |
 | `family_priority` | `r13_v111_value("outcome13")=="family_priority"` | d14 |
-| `fire1_no_fire_record` | `r13_nw_wrong_issue()=="불이 시작된 곳과 진술을 대조한다" and not r13_nw_gave("E06_FIRE")` | d07 |
+| `fire1_no_fire_record` | `r13_nw_wrong_issue()=="불이 시작된 곳과 진술을 대조한다" and not r13_nw_gave("E06_FIRE")` | — |
 | `fire_evacuated` | `r13_v111_value("FIRE_EVACUATED") is True` | d06, d07 |
 | `fire_grand` | `r13_v111_value("grand:fire") is True` | d07 |
 | `fire_lose` | `r13_v111_value("meeting:fire")=="lose"` | d07 |
@@ -2126,7 +2131,7 @@ def r13_nw_true_ending_ready():
 | `prep12_seat_only` | `bool(r13_v111_value("warm_seat_ready")) and not r13_v111_value("carrier_arrived")` | d12 |
 | `prevention_b` | `r13_v111_value("prevention") in ("B","promise","repair")` | d08, d11 |
 | `prevention_stone` | `r13_v111_value("prevention")=="stone"` | d08, d09, d11 |
-| `reader_nabi` | `not (r13_v111_value("departed:nabi") or not r13_v111_person_alive("nabi"))` | d13, d14 |
+| `reader_nabi` | `not (r13_v111_value("departed:nabi") or not r13_v111_person_alive("nabi"))` | d14 |
 | `reader_tosil` | `bool(r13_v111_value("departed:nabi") or not r13_v111_person_alive("nabi"))` | d14 |
 | `records_lose` | `r13_v111_value("meeting:records")=="lose"` | d10 |
 | `records_lose_fell7` | `r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention")!="stone"` | d10 |
