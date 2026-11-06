@@ -39,6 +39,11 @@ label r13_v111_free_day7:
 label r13_v111_free_day7_wait:
     call r13_v111_wait('free_day7')
     if _return==0:
+        if r13_part1_active() and r13_part1_ready():
+            call screen r13_part1_finish_choice
+            if not _return:
+                $ r13_v111_talk_person=None
+                jump r13_v111_free_day7_wait
         jump r13_v111_free_evening7
     call r13_v111_free_day7_pick(_return)
     jump r13_v111_free_day7_wait
@@ -78,6 +83,8 @@ label r13_v111_free_day7_pick(n):
 label r13_v111_free_evening7:
     # 1부 공개판의 경계. 후속판은 같은 완료 저장에서 아래의 기존 저녁으로 이어진다.
     call r13_part1_finish
+    if _return=="explore":
+        jump r13_v111_free_day7_wait
     call r13_lines(r13_nw_block('free_evening7'),'nw:free_evening7')
     jump r13_v111_room_visit7
 

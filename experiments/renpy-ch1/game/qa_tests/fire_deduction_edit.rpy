@@ -14,6 +14,7 @@ testcase fire7_hypothesis_rebut_and_submit:
     click pos (900,600) until '편지를 외투 안에' timeout 60
     click pos (900,600) until screen 'r13_hub' timeout 90
     run Function(qa_fire_deduction7)
+    run Function(r13_v111_set,'KKOMI_ALIVE',False)
     run Call('qa_rr_scene','r13_v111_bori_witness_heard7')
     click pos (900,600) until screen 'choice' timeout 60
     assert eval (r13_v111_value('fire_lamp_defense_heard') is True and not r13_v111_value('NUBI_admitted_setting_fire'))
@@ -40,6 +41,7 @@ testcase fire7_hypothesis_rebut_and_submit:
     click pos (900,600) until eval (r13_packet and '가져간다고 안 했어요' in r13_packet[1].replace('\n',' ')) timeout 90
     click pos (900,600) until screen 'r13_hub' timeout 60
     assert eval (r13_v111_owned('E07_NUBI') and r13_v111_value('NUBI_admitted_setting_fire') is True and r13_v111_value('NUBI_intent_to_kill')=='unproven')
+    assert eval (qa_nw_seen('이름이 꼬미였어요') and qa_nw_seen('꼬미는 창고에서 나오지 못했습니다'))
 
 
 testcase fire7_investigate_retry:

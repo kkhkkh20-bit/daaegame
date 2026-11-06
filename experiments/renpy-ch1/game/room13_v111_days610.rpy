@@ -565,12 +565,12 @@ label r13_v111_nubi_hypothesis7:
     if r13_v111_value("fire_origin_hypothesis"):
         jump r13_v111_nubi_proof7
     menu:
-        '기름통이 누비 씨 것이니 불을 놓은 사람도 누비 씨다.':
+        '등잔에서 문 쪽으로 불이 번졌다':
             call r13_lines(r13_nw_block('nubi_owner_rebut7'),'nw:nubi_owner_rebut7')
             jump r13_v111_nubi_hypothesis7
-        '등잔에서 번졌다면, 불이 시작된 자리가 맞는지 확인해야 한다.':
+        '문 쪽 천에서 안으로 불이 번졌다':
             $ r13_v111_set("fire_origin_hypothesis",True)
-        '창고 문 앞에 있었으니 누비 씨가 불을 놓았다.':
+        '뒤창 장작에서 안으로 불이 번졌다':
             call r13_lines(r13_nw_block('nubi_presence_rebut7'),'nw:nubi_presence_rebut7')
             jump r13_v111_nubi_hypothesis7
     jump r13_v111_nubi_proof7

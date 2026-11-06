@@ -76,6 +76,18 @@ init 336 python:
 # spoken with Dad in this run greets him as a stranger; their own greeting starts after that.
 # "Met" is the game's own encounter record (r13_met_people(), filled when someone speaks).
 init 346 python:
+    def r13_v111_stage_speaker(person):
+        # 발화자의 합류 때문에 이전 장소의 인물까지 현재 장소로 옮기지 않는다.
+        if not r13_v111_person_alive(person) or r13_v111_value("departed:"+person):return
+        n=winter_copy.deepcopy(store.room13)
+        here=n["location"]
+        values=n["v111"].setdefault("values",{})
+        present=[p for p in n["v111"].get("people",[]) if values.get("location:"+p) in (None,here)
+                 and r13_v111_person_alive(p) and not values.get("departed:"+p)]
+        n["v111"]["people"]=list(dict.fromkeys(present+[person]))
+        values["location:"+person]=here
+        store.room13=n
+
     _r13_met_line_art=r13_ep_line_art
     def r13_ep_line_art(packet):
         who=packet[0] if packet else None
@@ -87,7 +99,7 @@ init 346 python:
                 if (r13_v111_active() and who not in ("daram","mom") and who in CAST
                         and who not in (store.room13["v111"].get("people") or [])
                         and not r13_offscreen_voice(R13_NAMES.get(who,who))):
-                    r13_v111_join([who])
+                    r13_v111_stage_speaker(who)
             except Exception:
                 pass
         return _r13_met_line_art(packet)

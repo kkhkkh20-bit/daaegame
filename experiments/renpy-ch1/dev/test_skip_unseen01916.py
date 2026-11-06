@@ -13,7 +13,7 @@ renpy=types.SimpleNamespace(config=config,stop_skipping=lambda:setattr(config,'s
 e=dict(store=s,preferences=pref,renpy=renpy,persistent=types.SimpleNamespace(room13_read=['read']))
 exec(compile(functions,'skip-helpers','exec'),e)
 for original in (False,True):
- for destination in ('r13_part1_end','choice','r13_topics','r13_book','r13_debate_board','r13_meeting_agenda','pause_menu','save','load','main_menu','confirm'):
+ for destination in ('r13_part1_finish_choice','r13_part1_end','choice','r13_topics','r13_book','r13_debate_board','r13_meeting_agenda','pause_menu','save','load','main_menu','confirm'):
   pref.skip_unseen=original;screens.clear()
   e['r13_toggle_fast_all']();assert s.r13_fast_all and pref.skip_unseen and config.skipping=='slow'
   e['r13_sync_skip_unseen']();assert getattr(renpy,'_r13_skip_unseen_before',None)==original
@@ -25,4 +25,4 @@ for original in (False,True):
  e['r13_end_skip_modes']()
  e['r13_toggle_fast_all']();s.r13_fast_all=False;e['r13_stop_skip_at_choices']()
  assert pref.skip_unseen==original and getattr(renpy,'_r13_skip_unseen_before',None) is None
-print('PASS: all-skip crosses unread lines; eleven choice/menu boundaries restore both original preferences; read-only mode and external stops restore the preference')
+print('PASS: all-skip crosses unread lines; twelve choice/menu boundaries restore both original preferences; read-only mode and external stops restore the preference')

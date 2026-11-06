@@ -170,10 +170,10 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 336 | `room13_v111_idle.rpy:55` | _r13_met_idle_lines |
-| 2 | 346 | `room13_v111_idle.rpy:95` | _r13_state_idle_lines |
-| 3 | 348 | `room13_v111_idle.rpy:163` | _r13_guard_idle_lines |
-| 4 | 349 | `room13_v111_idle.rpy:183` | _r13_scene_idle_lines |
-| 5 | 351 | `room13_v111_idle.rpy:232` | _r13_piko_news_idle_lines |
+| 2 | 346 | `room13_v111_idle.rpy:107` | _r13_state_idle_lines |
+| 3 | 348 | `room13_v111_idle.rpy:175` | _r13_guard_idle_lines |
+| 4 | 349 | `room13_v111_idle.rpy:195` | _r13_scene_idle_lines |
+| 5 | 351 | `room13_v111_idle.rpy:244` | _r13_piko_news_idle_lines |
 | 6 | 354 | `room13_piko_reactions.rpy:91` |  |
 
 ## `r13_finish_topic` (5층)
@@ -248,7 +248,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 160 | `systems/room13_ep_art.rpy:163` | _r13_impact_line_art |
 | 2 | 345 | `systems/room13_impact_fx.rpy:65` | _r13_met_line_art |
-| 3 | 346 | `room13_v111_idle.rpy:80` | _r13_end_cut_line_art |
+| 3 | 346 | `room13_v111_idle.rpy:92` | _r13_end_cut_line_art |
 | 4 | 350 | `systems/room13_end_cut.rpy:83` |  |
 
 ## `r13_next_day` (4층)
@@ -276,7 +276,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 301 | `room13_v111.rpy:75` | _r13_nw_binding |
 | 2 | 318 | `room13_v111_newworld_rules.rpy:462` | _r13_gw_binding |
 | 3 | 321 | `room13_v111_grand_win.rpy:17` | _r13_part1_binding |
-| 4 | 370 | `room13_part1.rpy:53` |  |
+| 4 | 370 | `room13_part1.rpy:82` |  |
 
 ## `r13_v111_goal` (4층)
 
@@ -469,7 +469,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 335 | `room13_v111_reactions.rpy:68` | _r13_idle_present_reaction |
 | 2 | 336 | `room13_v111_idle.rpy:46` | _r13_present_fallback |
-| 3 | 347 | `room13_v111_idle.rpy:139` |  |
+| 3 | 347 | `room13_v111_idle.rpy:151` |  |
 
 ## `r13_v111_set` (3층)
 

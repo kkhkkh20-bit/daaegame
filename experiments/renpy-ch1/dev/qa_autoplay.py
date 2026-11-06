@@ -65,7 +65,7 @@ TRUE_GATES={
     # 7일 불 회의 대승리: 보리 목격 전에 기름통 밑 홈에서 누비네 배급표(NW_NUBI_TICKET)를 꺼낸다.
     'bori_witness7':['통 밑 홈을 들춘다','창고 문 앞에서 무엇을 보셨습니까?'],
     # 7일 부엉이(13호 살인): 부리에게 집게 → 재받이의 배급 돌 → 13호 난로의 검푸른 돌과 바꾼다(prevention=stone).
-    'free_day7':['집게 하나만 빌릴 수 있을까?','재받이를 들여다본다','집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다','다람아, 오늘 적은 걸 같이 보자.','다람아, 이제 13호에 가 보자.'],
+    'free_day7':['집게 하나만 빌릴 수 있을까?','재받이를 들여다본다','집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다','다람아, 오늘 조사는 여기서 마치자.','다람아, 이제 13호에 가 보자.'],
     # 10일 기록 회의 뒤: 부엉이에게 편지 전달을 묻고, 공개 수치로 인계한다.
     'private_handoff10':[('아내가 직접 편지를 건넸습니까?',lambda v:not v.get('owl_invitation_testimony')),'공개 수치만 대조하고 인계해 주십시오.'],
     # 11일 엄마: 세 질문을 하나씩.
@@ -91,7 +91,7 @@ TRUE_GATES={
 # 선택창(메뉴) 글귀. 보이는 것 중 앞에 있는 것을 고른다. 없으면 기본 길과 같다.
 TRUE_CHOICES=[
     '걸쇠와 파편 발견 위치를 대조한다',
-    '등잔에서 번졌다면, 불이 시작된 자리가 맞는지 확인해야 한다.',
+    '문 쪽 천에서 안으로 불이 번졌다',
     '그릇을 돌려주러 같이 가자.',                       # 6일 꼬미를 만나러 학교 뒤로
     '아이들은 학교에서 기다리게 하자.',                 # 7일 누비네 아이들을 학교로
     '집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다',     # 7일 13호 난로(물건 행동 고르기 창)
@@ -126,11 +126,11 @@ BRANCHES={
     # 6일: 꼬미를 학교로 데려가지 않는다 → 장작 창고 불.
     'kkomi_lost':dict(day=6,gates={'afternoon6':['내일 아침에 데리러 올게']},drop=['그릇을 돌려주러 같이 가자.']),
     # 7일: 돌을 바꾸지 않고 도토의 다짐만 받는다.
-    'owl_promise':dict(day=7,gates={'free_day7':['아래서 누가 부르면 어떻게 하십니까?','다람아, 오늘 적은 걸 같이 보자.','다람아, 이제 13호에 가 보자.']},drop=['집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다']),
+    'owl_promise':dict(day=7,gates={'free_day7':['아래서 누가 부르면 어떻게 하십니까?','다람아, 오늘 조사는 여기서 마치자.','다람아, 이제 13호에 가 보자.']},drop=['집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다']),
     # 7일: 톡에게 13호 빗장 받이를 고쳐 달라고 한다.
-    'owl_repair':dict(day=7,gates={'free_day7':['13호 빗장 받이를 살핀다','빗장 받이를 봐 주실 수 있습니까?','빗장 받이 작업을 함께 확인한다','다람아, 오늘 적은 걸 같이 보자.','다람아, 이제 13호에 가 보자.']},drop=['집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다']),
+    'owl_repair':dict(day=7,gates={'free_day7':['13호 빗장 받이를 살핀다','빗장 받이를 봐 주실 수 있습니까?','빗장 받이 작업을 함께 확인한다','다람아, 오늘 조사는 여기서 마치자.','다람아, 이제 13호에 가 보자.']},drop=['집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다']),
     # 7일: 예방 없음(부엉이 사망 → 8~10일 13호 회의). 기름통 홈도 들추지 않아 불 대승리가 없다 → 13일 군중이 기록 읽기 길로 가지 않는다.
-    'owl_lost':dict(day=7,gates={'free_day7':['다람아, 오늘 적은 걸 같이 보자.','다람아, 이제 13호에 가 보자.'],'bori_witness7':['창고 문 앞에서 무엇을 보셨습니까?']},
+    'owl_lost':dict(day=7,gates={'free_day7':['다람아, 오늘 조사는 여기서 마치자.','다람아, 이제 13호에 가 보자.'],'bori_witness7':['창고 문 앞에서 무엇을 보셨습니까?']},
         drop=['집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다','통 밑 홈을 들춘다']),
     # 11일: 낮에 수레를 준비만 하고 밤에 출발한다(구조).
     'nero_rescue':dict(day=11,gates={'rescue_cart11':['수레 짐칸을 살핀다','그릇 하나를 집는다','수레 짐을 내려 자리를 비운다','덮개를 접어 빈 짐칸에 싣는다','까로 씨, 수레를 끌어 주시겠습니까?','아랫길을 비추는 등을 점검한다','아랫길 세 사람의 받을 자리를 비운다','먼저 학교 물자를 인계한다']}),
@@ -213,7 +213,7 @@ async def true_check(q,where):
         if r['meetings'].get(m)!='win':fails.append('meeting:%s=%s'%(m,r['meetings'].get(m)))
     log('TRUE-CHECK',where,'ready=',r['ready'],'ending14=',r['ending14'],'회의=',r['meetings'],'떠남=',r['departed'],'outcome13=',r['outcome13'],'못 맞춘 조건=',fails or '없음')
     return r
-SCREENS=("main_menu","say","choice","r13_confirm","r13_end_card","r13_hub","r13_topics","r13_map","r13_book","r13_records","r13_crisis_proof","r13_proof_workspace","r13_more_tools","r13_side_questions","r13_fork_screen","r13_piko_scene","r13_pw_picture","r13_part1_end","_exception")
+SCREENS=("main_menu","say","choice","r13_confirm","r13_end_card","r13_hub","r13_topics","r13_map","r13_book","r13_records","r13_crisis_proof","r13_proof_workspace","r13_more_tools","r13_side_questions","r13_fork_screen","r13_piko_scene","r13_pw_picture","r13_part1_finish_choice","r13_part1_end","_exception")
 if TRUE_ROUTE:SCREENS=SCREENS+("r13_meeting_retry_choice",)   # 진엔딩 길: 회의를 지면 뜨는 다시 하기 창을 알아본다
 n_shot=[0]
 async def shot(q,name):
@@ -389,6 +389,10 @@ async def main():
             for step in range(30000):
                 st=await snap(q);sc=st['screens']
                 if '_exception' in sc:await shot(q,'exception');log('EXCEPTION');break
+                if 'r13_part1_finish_choice' in sc:
+                    await shot(q,'part1-finish-choice')
+                    await q.press('1부 마무리')
+                    continue
                 if 'r13_part1_end' in sc:
                     await asyncio.sleep(1)
                     st=await snap(q)

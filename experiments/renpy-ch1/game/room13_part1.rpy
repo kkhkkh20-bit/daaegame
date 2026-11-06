@@ -13,6 +13,29 @@ init 370 python:
         return (store.room13.get("day")==7 and values.get("meeting:fire") in ("win","partial","lose")
                 and values.get("D07_S02_handover_completed") is True and values.get("D07_S02_message_completed") is True)
 
+    def r13_part1_warning_known():
+        return (r13_v111_owned("E27") and r13_v111_value("mother_first_contact_read5") is True
+                and r13_v111_value("mother_denies_invitation") is True)
+
+    def r13_part1_daram_here():
+        # 이전 판의 위치 표식이 낡았어도, 학교에서 실제 마주한 아이와 대화한다.
+        if (store.room13.get("location")!="school" or r13_v111_value("DARAM_DETAINED")
+                or r13_v111_value("departed:daram") or not r13_v111_person_alive("daram")):return False
+        return r13_v111_actor_ready("daram") or "daram" in r13_visible_people()
+
+    def r13_part1_can_explore():
+        return (r13_part1_active() and r13_part1_ready() and store.room13.get("period")==1
+                and r13_v111_value("route7") in (None,"uncommitted"))
+
+    def r13_part1_resume_exploration():
+        if not r13_part1_can_explore():return
+        # 사건 결과와 오후 행동은 그대로 두고 다음 마무리에서 완료 저장을 갱신한다.
+        r13_v111_set("part1_completed",False)
+        r13_v111_set("part1_checkpoint_written",False)
+        store.r13_part1_save_failed=False
+        store.r13_v111_talk_person=None
+        renpy.retain_after_load()
+
     def r13_part1_records(values):
         """현재 판에서 입증/기록한 범위만 보여 준다. 미래의 생사와 인계 완료를 만들지 않는다."""
         outcome=values.get("meeting:fire")
@@ -30,6 +53,12 @@ init 370 python:
             rows.append("학교가 맡은 아이들의 자리와 돌봄 담당자를 확인했다.")
         if values.get("E07_OWL_CONTACT"):
             rows.append("초롱이 건넨 쪽지에는 13과 부엉이의 이름이 있다. 엄마의 현재 위치는 아직 모른다.")
+        if values.get("stove13_7")=="ration":
+            rows.append("13호 난로에서 검푸른 돌을 꺼내고 배급 돌로 바꿨다.")
+        elif values.get("stove13_7")=="empty":
+            rows.append("13호 난로에서 검푸른 돌을 꺼냈다.")
+        if values.get("doto_promise7"):
+            rows.append("도토에게 다람을 맡게 되면 부름을 받아도 자리를 지켜 달라고 부탁했다.")
         return rows
 
     def r13_part1_save():
@@ -54,7 +83,7 @@ init 370 python:
         result=_r13_part1_binding()
         if r13_part1_active() and (store.room13.get("v111") or {}).get("gate")=="free_day7":
             result=dict(result)
-            result["options"]=[dict(o,title="다람아, 오늘 적은 걸 같이 보자.") if o.get("index")==0 else o for o in result.get("options",[])]
+            result["options"]=[dict(o,title="다람아, 오늘 조사는 여기서 마치자.") if o.get("index")==0 else o for o in result.get("options",[])]
         return result
 
 label r13_part1_finish:
@@ -68,14 +97,44 @@ label r13_part1_finish:
             call r13_lines(r13_nw_block('part1_fire_lost'),'nw:part1_fire_lost')
         elif r13_v111_value("meeting:fire")=="partial":
             call r13_lines(r13_nw_block('part1_fire_partial'),'nw:part1_fire_partial')
+        elif r13_v111_value("neoul_promise_proven"):
+            call r13_lines(r13_nw_block('part1_fire_grand'),'nw:part1_fire_grand')
         else:
             call r13_lines(r13_nw_block('part1_fire_won'),'nw:part1_fire_won')
-        if not r13_v111_value("DARAM_DETAINED") and r13_v111_actor_ready("daram") and r13_v111_value("location:daram") in (None,"school"):
-            $ r13_v111_join(['daram'])
+        if r13_part1_daram_here():
+            if r13_v111_value("KKOMI_ALIVE") is False:
+                call r13_lines(r13_nw_block('part1_child_lost'),'nw:part1_child_lost')
+            elif r13_v111_value("KKOMI_ALIVE") is True:
+                call r13_lines(r13_nw_block('part1_child_saved'),'nw:part1_child_saved')
+            if r13_v111_value("meeting:fire")=="partial":
+                call r13_lines(r13_nw_block('part1_family_partial'),'nw:part1_family_partial')
+            elif r13_v111_value("meeting:fire")=="lose":
+                call r13_lines(r13_nw_block('part1_family_lost'),'nw:part1_family_lost')
+            if r13_part1_warning_known():
+                call r13_lines(r13_nw_block('part1_family_plan'),'nw:part1_family_plan')
+            else:
+                call r13_lines(r13_nw_block('part1_family_contact'),'nw:part1_family_contact')
             call r13_lines(r13_nw_block('part1_family_close'),'nw:part1_family_close')
         $ r13_v111_set("part1_completed",True)
     call screen r13_part1_end
+    if _return=="explore":
+        $ r13_part1_resume_exploration()
+        return "explore"
     return
+
+screen r13_part1_finish_choice():
+    modal True
+    zorder 150
+    default ready=False
+    timer .2 action SetScreenVariable("ready",True)
+    use r13_notebook_shell("오늘의 조사",stamp="일곱째 날")
+    text "오늘의 조사를 마칠까요?" xpos R13_NB_LEFT ypos 220 size r13_type("display") color r13_nb_ink() font R13_UI_BOLD_FONT
+    text "마치면 제1부의 마지막 대화로 이어집니다.\n아직 둘러볼 곳이 있으면 조사를 계속할 수 있습니다." xpos R13_NB_LEFT ypos 324 xsize R13_NB_WIDTH size r13_type("emphasis") color r13_nb_ink() font R13_UI_FONT
+    hbox:
+        xpos R13_NB_LEFT ypos r13_nb_footer_y() spacing 18
+        use r13_control("탐색 계속",None,Return(False),enabled=ready,width=528,control_id="r13_part1_keep_exploring")
+        use r13_control("1부 마무리",None,Return(True),enabled=ready,primary=True,width=528,control_id="r13_part1_finish_now")
+    key "game_menu" action Return(False)
 
 screen r13_part1_end():
     modal True
@@ -105,7 +164,8 @@ screen r13_part1_end():
     text ("자동 저장을 마치지 못했습니다. 진행 저장으로 남겨 주세요." if r13_part1_save_failed else "이어가기용 완료 저장을 남겼습니다." if r13_v111_value("part1_checkpoint_written") else "완료 저장을 남기는 중입니다.") xpos R13_NB_LEFT ypos 506 size r13_type("small") color r13_nb_muted() font R13_UI_FONT xsize R13_NB_WIDTH
     hbox:
         xpos R13_NB_LEFT ypos r13_nb_footer_y() spacing 18
-        use r13_control("기록 접기" if expanded else "기록 펼치기",None,ToggleScreenVariable("expanded"),enabled=ready,width=346,control_id="r13_part1_records")
-        use r13_control("진행 저장",None,ShowMenu("save"),enabled=ready,width=346,control_id="r13_part1_save")
-        use r13_control("메인화면",None,MainMenu(confirm=False),enabled=ready,primary=True,width=346,control_id="r13_part1_main")
+        use r13_control("탐색 계속",None,Return("explore"),enabled=ready and r13_part1_can_explore(),width=255,control_id="r13_part1_explore")
+        use r13_control("기록 접기" if expanded else "기록 펼치기",None,ToggleScreenVariable("expanded"),enabled=ready,width=255,control_id="r13_part1_records")
+        use r13_control("진행 저장",None,ShowMenu("save"),enabled=ready,width=255,control_id="r13_part1_save")
+        use r13_control("메인화면",None,MainMenu(confirm=False),enabled=ready,primary=True,width=255,control_id="r13_part1_main")
     key "game_menu" action ShowMenu("pause_menu")

@@ -215,8 +215,8 @@
 #### `MS14_D03_S05` 갈림 · 값 (room13_v111_days123.rpy:1132)
 
 - `r13_v111_trial_repair` if `r13_v111_value('lamp_bound2')` `→ r13_lamp_attempt_repair3`
-- `r13_v111_trial_knife` if 「깨진 칼끝을 안쪽 조각에 맞대 본다」 `→ r13_v111_knife_fit`
-- `r13_v111_trial_knife` if 「자국이 닮았으니 실룩의 칼이라고 단정한다」 `→ r13_v111_knife_wrong`
+- `r13_v111_trial_knife` if 「칼끝과 안쪽 조각을 맞춰 본다」 `→ r13_v111_knife_fit`
+- `r13_v111_trial_knife` if 「칼날과 안벽 자국을 맞춰 본다」 `→ r13_v111_knife_wrong`
 - `r13_v111_trial_knife` if 「자료를 다시 본다」 `→ r13_v111_trial_knife_records`
 - `r13_v111_knife_wrong` if `r13_nw_retry('lamp')` `→ r13_v111_trial_knife`
 - 메뉴 `r13_v111_latch_question3` (1209줄)
@@ -455,9 +455,9 @@
 - `r13_v111_nubi_hypothesis7` if `not r13_v111_value("fire_lamp_defense_heard")` `$ r13_v111_set("fire_lamp_defense_heard",True)`
 - `r13_v111_nubi_hypothesis7` if `r13_v111_value("fire_origin_hypothesis")` `→ r13_v111_nubi_proof7`
 - 메뉴 `r13_v111_nubi_hypothesis7` (567줄)
-  - 「기름통이 누비 씨 것이니 불을 놓은 사람도 누비 씨다.」 → `r13_v111_nubi_hypothesis7`
-  - 「등잔에서 번졌다면, 불이 시작된 자리가 맞는지 확인해야 한다.」 `$ r13_v111_set("fire_origin_hypothesis",True)`
-  - 「창고 문 앞에 있었으니 누비 씨가 불을 놓았다.」 → `r13_v111_nubi_hypothesis7`
+  - 「등잔에서 문 쪽으로 불이 번졌다」 → `r13_v111_nubi_hypothesis7`
+  - 「문 쪽 천에서 안으로 불이 번졌다」 `$ r13_v111_set("fire_origin_hypothesis",True)`
+  - 「뒤창 장작에서 안으로 불이 번졌다」 → `r13_v111_nubi_hypothesis7`
 - `r13_v111_nubi_proof7` if `not r13_v111_value("fire_origin_hypothesis")` `→ r13_v111_nubi_hypothesis7`
 - `r13_v111_nubi_wrong7` if `r13_nw_retry("fire")` `→ r13_v111_nubi_proof7`
 - `r13_v111_nubi_first_question7` if `not r13_v111_value("bori_nubi_door_witness_heard")` `→ r13_v111_bori_witness7`
@@ -1423,7 +1423,7 @@
 | `(장면 전) room13_hidden_pandol.rpy` | — | 판돌 집(hidden_pandol) | 판돌, 다람, 나비, 사자 선생님, (+식) | `r13_hp_meal6`, `r13_hp_meal6_wait`, `r13_hp_pick7`, `r13_hp_wood11`, `r13_hp_visit11`, `r13_hp_house11_wait` 외 3 |
 | `(장면 전) room13_hidden_base.rpy` | — | — | 엄마, 다람 | `r13_hidden_base_paper1`, `r13_hidden_base_pick7`, `r13_hidden_base_marks11`, `r13_hidden_base14`, `r13_hidden_base_door14`, `r13_hidden_base_room14` 외 1 |
 | `(장면 전) room13_lamp_attempt.rpy` | — | — | — | `r13_lamp_prep2` |
-| `(장면 전) room13_part1.rpy` | — | 마을 학교(school) | 다람 | `r13_part1_finish` |
+| `(장면 전) room13_part1.rpy` | — | 마을 학교(school) | — | `r13_part1_finish` |
 
 #### `(장면 전) room13_v111_days45.rpy` 갈림 · 값 (room13_v111_days45.rpy:4)
 
@@ -1431,12 +1431,15 @@
 
 #### `(장면 전) room13_v111_owl_prevent.rpy` 갈림 · 값 (room13_v111_owl_prevent.rpy:26)
 
-- `r13_v111_free_day7_wait` if 「다람아, 이제 13호에 가 보자.」 `→ r13_v111_free_evening7`
+- `r13_v111_free_day7_wait` if 「다람아, 이제 13호에 가 보자.」 `→ r13_v111_free_day7_wait`
+- `r13_v111_free_day7_wait` if `r13_part1_active() and r13_part1_ready()` `→ r13_v111_free_day7_wait`
+- `r13_v111_free_day7_wait` if `not _return` `→ r13_v111_free_day7_wait`
 - `r13_v111_free_day7_pick` elif `n==2` `$ r13_v111_set('doto_promise7',True)`
 - `r13_v111_free_day7_pick` elif `n==4` `$ r13_v111_set('pocket_ration7',True)`
 - `r13_v111_free_day7_pick` elif `n==5` `$ r13_v111_set('pocket_ration7',False)`
 - `r13_v111_free_day7_pick` elif `n==6` `$ r13_v111_set('tongs7',True)`
 - `r13_v111_free_day7_pick` elif `n==7` `$ r13_v111_set('stove13_7','empty')`
+- `r13_v111_free_evening7` if `_return=="explore"` `→ r13_v111_free_day7_wait`
 - `r13_v111_owl_repair_pick7` if `n==110` `$ r13_v111_set('owl_latch_seen7',True)`
 - `r13_v111_owl_repair_pick7` elif `n==111 and r13_v111_value('owl_latch_seen7') and r13_owl_tok_available7()` `$ r13_v111_set('owl_tok_agreed7',True)`
 - `r13_v111_owl_repair_pick7` elif `n==112 and r13_v111_value('owl_tok_agreed7') and r13_owl_tok_available7()` `$ r13_v111_join(['resident_tok'])`
@@ -1530,10 +1533,9 @@
   - `lamp_latch_seen2` = `true` (`r13_lamp_prep2`)
   - `lamp_bound2` = `true` (`r13_lamp_prep2`)
 
-#### `(장면 전) room13_part1.rpy` 갈림 · 값 (room13_part1.rpy:60)
+#### `(장면 전) room13_part1.rpy` 갈림 · 값 (room13_part1.rpy:89)
 
-- `r13_part1_finish` if `not r13_v111_value("part1_completed")` `$ r13_v111_join(['daram'])`
-- `r13_part1_finish` if `not r13_v111_value("DARAM_DETAINED") and r13_v111_actor_ready("daram") and r13_v111_value("location:daram") in (None,"school")` `$ r13_v111_join(['daram'])`
+- `r13_part1_finish` if `not r13_v111_value("part1_completed")` `$ r13_v111_set("part1_completed",True)`
 - 값
   - `part1_completed` = `true` (`r13_part1_finish`)
 
@@ -1581,8 +1583,8 @@
 선택지 쟁점
 
 - `menu:trial_knife` (room13_v111_days123.rpy:1169)
-  - 「깨진 칼끝을 안쪽 조각에 맞대 본다」 — 통과
-  - 「자국이 닮았으니 실룩의 칼이라고 단정한다」 — 틀림(기회 사용 또는 회의 끝)
+  - 「칼끝과 안쪽 조각을 맞춰 본다」 — 통과
+  - 「칼날과 안벽 자국을 맞춰 본다」 — 틀림(기회 사용 또는 회의 끝)
   - 「자료를 다시 본다」 — 통과
 
 | 증명 키(쟁점) | 화면 제목 | 정답 | 대체 정답 | 덧붙여도 받음 | 자리 |
@@ -1855,9 +1857,9 @@ def r13_nw_true_ending_ready():
 | `fate_piko` | `lost` 꺼진 등 | `r13_v111_day3` (room13_v111_days123.rpy:828) |
 | `fate_kkomi` | `saved` 넷 인계 | `r13_v111_handoff_done6` (room13_v111_days610.rpy:282) |
 | `fate_kkomi` | `lost` 타 버린 창고 | `r13_v111_afternoon6` (room13_v111_days610.rpy:175) |
-| `fate_owl` | `stone` 식은 돌 | `r13_v111_owl_well7` (room13_v111_owl_prevent.rpy:93) |
-| `fate_owl` | `promise` 내려가지 않은 당번 | `r13_v111_promise_night7` (room13_v111_owl_prevent.rpy:123) |
-| `fate_owl` | `repair` 곁에 남은 수리공 | `r13_v111_tok_night7` (room13_v111_owl_prevent.rpy:178) |
+| `fate_owl` | `stone` 식은 돌 | `r13_v111_owl_well7` (room13_v111_owl_prevent.rpy:100) |
+| `fate_owl` | `promise` 내려가지 않은 당번 | `r13_v111_promise_night7` (room13_v111_owl_prevent.rpy:130) |
+| `fate_owl` | `repair` 곁에 남은 수리공 | `r13_v111_tok_night7` (room13_v111_owl_prevent.rpy:185) |
 | `fate_owl` | `lost` 닫힌 문 | `r13_v111_handover7` (room13_v111_days610.rpy:807) |
 | `fate_nero` | `handover` 인계 | `r13_v111_lower_safe11` (room13_v111_days1114.rpy:895), `r13_v111_rescue_handoff11` (room13_v111_days1114.rpy:969) |
 | `fate_nero` | `rescue` 구조 | `r13_v111_rescue_handoff11` (room13_v111_days1114.rpy:971) |

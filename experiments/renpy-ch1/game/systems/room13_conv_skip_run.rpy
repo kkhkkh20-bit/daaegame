@@ -4,7 +4,7 @@
 default r13_conv_skip_run = False
 init 66 python:
     # 플레이어가 고르는 화면: menu 의 choice 와, 게임 안에서 call screen 으로 부르는 화면 전부(2026-10-30 grep 기준).
-    R13_CONV_SKIP_STOP_SCREENS=("r13_part1_end","r13_piko_scene","r13_pw_picture","choice","r13_confirm","r13_book","r13_life_closeup","r13_hub","r13_topics","r13_shop","r13_map",
+    R13_CONV_SKIP_STOP_SCREENS=("r13_part1_finish_choice","r13_part1_end","r13_piko_scene","r13_pw_picture","choice","r13_confirm","r13_book","r13_life_closeup","r13_hub","r13_topics","r13_shop","r13_map",
         "r13_winter_board","r13_records","r13_meeting_retry_choice","r13_episode_aftermath_view","r13_cinematic_view","r13_work_board",
         "r13_tool_closeup","r13_resident_approach","r13_rescue_notes","r13_q1_checkpoint_wait","r13_proof_workspace","r13_plan_read",
         "r13_plan_comparison","r13_object_context","r13_nearby","r13_meeting_ballot","r13_meeting_agenda","r13_life_group_conversation",

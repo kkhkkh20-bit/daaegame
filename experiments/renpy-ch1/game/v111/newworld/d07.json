@@ -1238,6 +1238,26 @@
         "kind": "dialogue",
         "text": "가져간다고 안 했어요. 어디까지 썼는지 보자는 거예요.",
         "expression": "angry"
+      },
+      {
+        "id": "NW_PART1_ND01",
+        "speaker": "아빠",
+        "text": "하지만 꼬미는 창고에서 나오지 못했습니다.",
+        "when": "kkomi_dead",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_PART1_ND02",
+        "speaker": "누비",
+        "text": "……{w=.5} 이름이 꼬미였어요?",
+        "when": "kkomi_dead",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_PART1_ND03",
+        "speaker": null,
+        "text": "누비가 팔을 늘어뜨린다. 손끝이 떨린다. 나는 그 이름을 다시 말하지 않는다.",
+        "when": "kkomi_dead"
       }
     ],
     "MS14_D07_S02_L0036": [
@@ -1593,7 +1613,7 @@
         "id": "NW_OP_D07_02",
         "speaker": "아빠",
         "kind": "thought",
-        "text": "해 지려면 아직 멀었다. 쪽지의 13호는 저녁에 다람이와 같이 가 보자."
+        "text": "부엉이 어르신께 물건 기록을 여쭤봐야 해. 그전에 놓친 게 없는지 더 둘러볼 수 있겠다."
       }
     ],
     "free_evening7": [
@@ -2340,14 +2360,14 @@
         "id": "NW_D07_OR03",
         "speaker": "누비",
         "kind": "dialogue",
-        "text": "물 데울 때도 쓰는 통이에요. 제 거라는 게 불을 놓았다는 증거예요?",
+        "text": "등잔에서 문까지 번졌다는 거죠? 등잔이 놓였던 자리도 살펴봤어요?",
         "expression": "angry"
       },
       {
         "id": "NW_D07_OR04",
         "speaker": "아빠",
         "kind": "thought",
-        "text": "통의 주인은 안다. 하지만 누가 그 기름에 불을 붙였는지는 아직 모른다.",
+        "text": "등잔에서 번졌다면, 놓였던 자리와 남은 상태가 그 설명에 맞아야 한다.",
         "expression": "neutral"
       }
     ],
@@ -2356,14 +2376,14 @@
         "id": "NW_D07_OR05",
         "speaker": "누비",
         "kind": "dialogue",
-        "text": "보리 씨가 제가 불 붙이는 것도 봤대요?",
+        "text": "보리 씨가 장작을 숨긴 건 뒤창 밑이잖아요. 거기서 불이 시작된 것도 봤대요?",
         "expression": "angry"
       },
       {
         "id": "NW_D07_OR06",
         "speaker": "아빠",
         "kind": "thought",
-        "text": "보리 씨는 문 앞에 서 있었다고만 말했다. 그 말로 불을 붙였다고 단정할 수는 없다.",
+        "text": "뒤창 밑에 장작이 있었다는 말은 들었다. 거기서 불이 시작됐는지는 탄 자리를 보아야 한다.",
         "expression": "neutral"
       }
     ],
@@ -2388,7 +2408,7 @@
         "id": "NW_PART1_WIN01",
         "kind": "thought",
         "speaker": "아빠",
-        "text": "누비가 불을 놓았다는 말은 기록에 남았다. 그 일을 누가 시켰는지까지 밝혀진 것은 아니다."
+        "text": "누비가 불을 놓은 일과 보리가 불을 끈 일을 따로 남겼다. 너울의 약속도 회의 기록에 옮겨졌다."
       }
     ],
     "part1_fire_partial": [
@@ -2404,7 +2424,7 @@
         "id": "NW_PART1_LOSE01",
         "kind": "thought",
         "speaker": "아빠",
-        "text": "수첩을 덮으려다 오늘 적은 이름들을 다시 보았다. 끝내 확인하지 못한 것이 남아 있었다."
+        "text": "보리는 불을 낸 사람으로 적혔다. 나는 그 기록을 바로잡지 못했다."
       }
     ],
     "part1_family_close": [
@@ -2412,24 +2432,173 @@
         "id": "NW_PART1_FAM01",
         "speaker": "다람",
         "kind": "dialogue",
-        "text": "아빠, 엄마 만나면 오늘 일도 말해 줄 거지?"
+        "text": "엄마한테 말할 건 내가 먼저 고를래."
       },
       {
         "id": "NW_PART1_FAM02",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "응. 우리 둘이 본 걸 말해 주자."
+        "text": "그래. 아빠가 대신 말하지 않을게."
       },
       {
         "id": "NW_PART1_FAM03",
         "speaker": "다람",
         "kind": "dialogue",
-        "text": "그럼 나도 같이 말할래."
+        "text": "과자 아직 있다고. 그거부터."
       },
       {
         "id": "NW_PART1_FAM04",
         "kind": "narration",
-        "text": "다람이 내 소매를 놓고 손을 잡았다. 나는 다른 손으로 수첩을 여몄다."
+        "text": "다람이 소매 대신 손바닥을 내민다. 나는 그 손을 잡고, 다른 손으로 수첩을 덮는다."
+      }
+    ],
+    "part1_fire_grand": [
+      {
+        "id": "NW_PART1_GW01",
+        "speaker": "아빠",
+        "text": "누비의 자백과 배급표가 회의 기록에 함께 남았다. 너울의 약속도 그 종이에 함께 남았다.",
+        "kind": "thought"
+      }
+    ],
+    "part1_child_saved": [
+      {
+        "id": "NW_PART1_KS01",
+        "speaker": "다람",
+        "text": "꼬미가 자기 자리라고 했어."
+      },
+      {
+        "id": "NW_PART1_KS02",
+        "speaker": "아빠",
+        "text": "응. 오늘 누울 자리도 확인했지."
+      },
+      {
+        "id": "NW_PART1_KS03",
+        "speaker": "다람",
+        "text": "내일 아침에도 내가 이름 부를래. 대답하는지."
+      },
+      {
+        "id": "NW_PART1_KS04",
+        "speaker": "아빠",
+        "text": "그럼 아빠도 같이 듣자."
+      }
+    ],
+    "part1_child_lost": [
+      {
+        "id": "NW_PART1_KL01",
+        "speaker": "다람",
+        "text": "꼬미 자리도 여기 있었으면 좋겠어.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_PART1_KL02",
+        "speaker": "아빠",
+        "text": "……응. 아빠도.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_PART1_KL03",
+        "speaker": "다람",
+        "text": "같이 오자고 했는데.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_PART1_KL04",
+        "speaker": "아빠",
+        "text": "네가 어제 같이 데려오자고 했지. 아빠도 들었어.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_PART1_KL05",
+        "speaker": "다람",
+        "text": "조금만 여기 있자.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_PART1_KL06",
+        "speaker": null,
+        "text": "나는 다람 곁에 앉는다. 아이가 먼저 일어날 때까지 수첩을 펴지 않는다."
+      }
+    ],
+    "part1_family_partial": [
+      {
+        "id": "NW_PART1_FP01",
+        "speaker": "다람",
+        "text": "보리 아저씨 이름은 아직 그 명단에 있어?",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_PART1_FP02",
+        "speaker": "아빠",
+        "text": "응. 누비 씨가 불을 놓았다는 건 남겼는데, 보리 씨 이름은 빼내지 못했어.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_PART1_FP03",
+        "speaker": null,
+        "text": "다람이 내 수첩 가장자리를 붙잡는다. 나는 보리의 이름이 있는 쪽을 펼쳐 둔다."
+      }
+    ],
+    "part1_family_lost": [
+      {
+        "id": "NW_PART1_FL01",
+        "speaker": "다람",
+        "text": "보리 아저씨는…… 어떻게 되는 거야?",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_PART1_FL02",
+        "speaker": "아빠",
+        "text": "명단에 올랐어. 불을 낸 사람을 끝내 밝히지 못했어.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_PART1_FL04",
+        "speaker": null,
+        "text": "나는 보리의 이름 옆에 적었던 줄을 다시 읽고, 확인하지 못한 대목에 짧게 선을 긋는다."
+      }
+    ],
+    "part1_family_plan": [
+      {
+        "id": "NW_PART1_MP01",
+        "speaker": "다람",
+        "text": "처음 편지는 엄마가 쓴 게 아니었잖아. 누가 우리를 부른 걸까?"
+      },
+      {
+        "id": "NW_PART1_MP02",
+        "speaker": "아빠",
+        "text": "아직 몰라. 엄마가 우리를 부르지 않았다는 건 이제 알고."
+      },
+      {
+        "id": "NW_PART1_MP03",
+        "speaker": "아빠",
+        "text": "부엉이 어르신께 물건 오간 기록을 여쭤보자. 그 편지에 관한 기록도 있는지, 엄마가 맡긴 물건은 없는지."
+      },
+      {
+        "id": "NW_PART1_MP04",
+        "speaker": "다람",
+        "text": "엄마 답장은 여관에 말하지 않는 거지?"
+      },
+      {
+        "id": "NW_PART1_MP05",
+        "speaker": "아빠",
+        "text": "응. 엄마한테는 초롱 씨를 통해서 답을 보내자. 마음 놓고 만날 방법을 계속 물어보고."
+      }
+    ],
+    "part1_family_contact": [
+      {
+        "id": "NW_PART1_MC01",
+        "speaker": "아빠",
+        "text": "초롱 씨 쪽지에 적힌 부엉이 어르신을 만나 보자. 물건 오간 기록에 엄마 얘기도 있을지 몰라."
+      },
+      {
+        "id": "NW_PART1_MC02",
+        "speaker": "다람",
+        "text": "같이 가는 거지?"
+      },
+      {
+        "id": "NW_PART1_MC03",
+        "speaker": "아빠",
+        "text": "응. 같이 가자."
       }
     ]
   },

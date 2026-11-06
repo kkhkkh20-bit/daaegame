@@ -20,17 +20,17 @@ testcase v111_wrong_thoughts_knife:
     run Function(qa_nw_day3_meeting_ready)
     run Jump("r13_v111_trial_knife")
     pause 1.5
-    click "자국이 닮았으니 실룩의 칼이라고 단정한다"
+    click "칼날과 안벽 자국을 맞춰 본다"
     pause 1.0
-    click pos (640,300) until "자국이 닮았으니 실룩의 칼이라고 단정한다" timeout 90
+    click pos (640,300) until "칼날과 안벽 자국을 맞춰 본다" timeout 90
     assert eval (r13_v111_value("tries:lamp")==1 and qa_wt_upto("menu:trial_knife",1))
-    click "자국이 닮았으니 실룩의 칼이라고 단정한다"
+    click "칼날과 안벽 자국을 맞춰 본다"
     pause 1.0
-    click pos (640,300) until "자국이 닮았으니 실룩의 칼이라고 단정한다" timeout 90
+    click pos (640,300) until "칼날과 안벽 자국을 맞춰 본다" timeout 90
     assert eval (r13_v111_value("tries:lamp")==2 and qa_wt_upto("menu:trial_knife",2))
-    click "자국이 닮았으니 실룩의 칼이라고 단정한다"
+    click "칼날과 안벽 자국을 맞춰 본다"
     pause 1.0
-    click pos (640,300) until "자국이 닮았으니 실룩의 칼이라고 단정한다" timeout 90
+    click pos (640,300) until "칼날과 안벽 자국을 맞춰 본다" timeout 90
     assert eval (r13_v111_value("tries:lamp")==3 and qa_wt_upto("menu:trial_knife",3) and r13_v111_value("meeting:lamp") is None)
 
 testcase v111_wrong_thoughts_room13:
