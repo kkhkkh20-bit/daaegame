@@ -1,0 +1,132 @@
+{
+  "schema": "room13.resident-reaction-plan.v1",
+  "date": "2026-11-06",
+  "day": 5,
+  "scope": "별편 3편과 기존 본편에 연결한 짧은 행동 3묶음. 전체 별편은 게임에 삽입하지 않음.",
+  "source_priority": [
+    "game/room13_v111_days45.rpy",
+    "game/v111/records.json",
+    "game/v111/newworld/d05.json",
+    "docs/design/VOICE_GUIDE.md"
+  ],
+  "novel_reference": "/workspace/outputs/daram-full-novel-polished-20261105/chapters/05_원고.txt",
+  "preserved": [
+    "기존 records·획득 순서·회의 정답·기회·승패·생사·진료 및 인수 상태",
+    "5일 엄마 편지는 가족만 읽음. 주민에게 자동 전달하지 않음"
+  ],
+  "scenes": [
+    {
+      "id": "RR5_01",
+      "title": "물통을 놓을 자리",
+      "pov_name": "나비",
+      "day": 5,
+      "anchors": [
+        "blocks.nabi_confirm5: NW_NOV_D05_08~13",
+        "blocks.nabi_hearing5: NW_AUD_D05_03"
+      ],
+      "label": [
+        "r13_v111_nabi_confirm5",
+        "r13_v111_hearing5",
+        "r13_v111_bami_clear5"
+      ],
+      "known": [
+        "전날 네로가 자신의 식당에서 물통을 나른 일",
+        "초소 소리가 났을 때 함께 문밖을 봄",
+        "부녀가 초소에서도 직접 말해 달라고 요청"
+      ],
+      "unknown": [
+        "무는 순간의 얼굴·행동",
+        "겉옷을 빌린 사람의 현장 행동",
+        "회의에서 자신의 말을 어떤 혐의에 연결할지",
+        "이후에 가족이 읽을 엄마 편지"
+      ],
+      "branch": "모든 5일 경로의 식당 확인 뒤. 출발 약속은 공통이나 실제 초소 증언은 gate_post 승리의 bami_clear5에서만 재생.",
+      "game_added_ids": [
+        "NW_RR5_DEPART01",
+        "NW_RR5_DEPART02"
+      ],
+      "game_revised_ids": [
+        "NW_NOV_D05_13"
+      ],
+      "game_change": "기존 행주 놓고 출발하는 한 줄을 역할 요청으로 바꾸고 아빠의 물통 정리·앞치마 벗기·직접 증언하겠다는 답으로 마무리. 새 목격이나 증언 자료를 생성하지 않음.",
+      "literary_additions": "앞치마 매듭과 문턱의 짧은 실랑이는 별편의 새 소소한 행동. 이전에 확정된 알리바이·시각으로 사용하지 않음."
+    },
+    {
+      "id": "RR5_02",
+      "title": "한 번 더 접어 줘요",
+      "pov_name": "밤이",
+      "day": 5,
+      "anchors": [
+        "MS14_D05_S03_L0029~L0036",
+        "MS14_D05_S03_L0037"
+      ],
+      "label": [
+        "r13_v111_bami_clear5"
+      ],
+      "known": [
+        "초소 문밖에서 들은 자신의 혐의·오늘 가도 된다는 말",
+        "안에 들어와 들은 바둑이의 기록 낭독",
+        "이름을 받침까지 맞게 썼다는 직접 확인"
+      ],
+      "unknown": [
+        "무는 장면에서 보지 못한 얼굴",
+        "다른 사람의 실제 범행·새 목격",
+        "다돌 가족의 엄마 편지 내용"
+      ],
+      "branch": "meeting:gate_post == win. L0029 앞에 문밖에서 들어온다는 기존 지문이 있고 L0036 뒤에만 발췌. E25/E26·cleared·밤 돌봄은 그대로 L0037 commit에서 적용.",
+      "game_added_ids": [
+        "NW_RR5_FOLD01",
+        "NW_RR5_FOLD02",
+        "NW_RR5_FOLD03"
+      ],
+      "game_revised_ids": [],
+      "game_change": "기존 이름 확인 다음 밤이가 접을 크기를 정하고 종이를 보관하는 행동. 보증 내용을 새로 만들거나 장래 구금을 모두 금지하는 판정은 추가하지 않음.",
+      "literary_additions": "종이를 주머니에 넣는 세부 동작과 거리 두기는 별편 확장. 다른 주민의 속마음은 단정하지 않음."
+    },
+    {
+      "id": "RR5_03",
+      "title": "내 말도 적어요",
+      "pov_name": "밤이",
+      "day": 5,
+      "anchors": [
+        "MS14_D05_S03_L0039 after: NW_D05_S03_C01~05",
+        "NW_DLG_D05_02",
+        "NW_BD5_BAMI01"
+      ],
+      "label": [
+        "r13_v111_wrong5 (기회 소진 뒤)"
+      ],
+      "known": [
+        "문밖에서 들은 보호시설 명단 지시",
+        "이미 아니라고 말했음",
+        "곁에 선 바둑이와 문턱에 놓인 다람의 도토리"
+      ],
+      "unknown": [
+        "기록의 보이지 않는 내용",
+        "지금 어디까지 움직여도 되는지",
+        "실제 인수·이송의 미래",
+        "엄마 편지"
+      ],
+      "branch": "기존 gate_post_lose 조건일 때만. meeting:gate_post=lose, listed:bami=True, bami_status=listed. 명단 등록은 즉시 인수·이송이나 사망을 뜻하지 않음.",
+      "game_added_ids": [],
+      "game_revised_ids": [
+        "NW_D05_S03_C03"
+      ],
+      "game_change": "문밖의 기존 ‘나 아니라니까요’를 ‘내 말도 거기 적어요’까지 확장. 실제 기록을 고쳤다는 약속·해방·명단 삭제·새 이동 없음. 기존 guard gate_post_lose 유지.",
+      "literary_additions": "수첩에도 자신의 말을 적으라는 추가 요구는 별편만. 요구가 받아들여졌거나 보증서를 받았다고 쓰지 않음."
+    }
+  ],
+  "unresolved_conditions": [],
+  "validation_scope": "관련 오프라인 단위 검사와 문서·출처 대조만. SDK·native·빌드·전체 시험·자연 완주·초견 재미 검증은 하지 않음.",
+  "additional_game_blocks": [
+    {
+      "block": "warning_private5",
+      "ids": [
+        "NW_RR5_PRIVATE01",
+        "NW_RR5_PRIVATE02"
+      ],
+      "label": "r13_v111_warning_read5에서 가족 편지 전문 읽기 앞; call과 배우 퇴장은 메인 통합",
+      "purpose": "초롱이 편지 내용을 듣는 것으로 오해하지 않도록 실제 자리를 비움. 새 정보·시간·생사·획득 상태 없음."
+    }
+  ]
+}

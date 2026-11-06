@@ -563,6 +563,9 @@ label r13_v111_envelope5:
     jump r13_v111_envelope5
 
 label r13_v111_warning_read5:
+    call r13_lines(r13_nw_block('warning_private5'),'nw:warning_private5')
+    # 가족 앞으로 온 편지는 배달한 초롱이 비켜난 뒤 부녀만 읽는다.
+    $ r13_v111_arrive(['daram'])
     $ r13_v111_commit('MS14_D05_S04_L0005')
     call r13_lines(r13_nw_block('warning_first5'),'nw:warning_first5')
     $ renpy.music.stop(fadeout=0.0 if renpy.is_skipping() else .15)

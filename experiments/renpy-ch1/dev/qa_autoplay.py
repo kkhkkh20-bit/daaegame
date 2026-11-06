@@ -432,6 +432,14 @@ async def main():
                     await q.press(todo or '등 쪽으로 간다')
                     continue
                 if 'say' in sc:
+                    # 이어보기의 앞 날짜는 실제 건너뛰기 버튼으로 통과한다. 선택·이동·증거 제출은 그대로 누른다.
+                    skip_before=int(os.environ.get('ROOM13_SKIP_BEFORE_DAY','0'))
+                    if skip_before and st['day'] and st['day']<skip_before:
+                        try:
+                            log('대화 건너뛰기 버튼',st['day'],st['gate'])
+                            await q.press('건너뛰기');continue
+                        except AssertionError:
+                            pass
                     g=str(st['gate'])
                     # 진엔딩 길: 같은 관문 안에서 장면이 바뀌어도(14일 결말·진엔딩 후일담) 장면마다 두 장씩 남긴다.
                     if TRUE_ROUTE:g=g+'-'+str(st.get('scene'))+('-'+str(st['values'].get('ending14')) if st['values'].get('ending14') else '')

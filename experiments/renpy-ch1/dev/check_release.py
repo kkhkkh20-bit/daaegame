@@ -16,7 +16,10 @@ def source_version():
 
 
 def bundle_version(part=REPO / 'preview/room13-dev/game.part01'):
-    with zipfile.ZipFile(io.BytesIO(Path(part).read_bytes())) as z:
+    part = Path(part)
+    # 전송 파일은 하나의 ZIP을 잘라 놓은 것이다. 두 부분 이상일 때도 전체를 합쳐 검사한다.
+    parts = sorted(part.parent.glob('game.part[0-9][0-9]')) if part.name == 'game.part01' else [part]
+    with zipfile.ZipFile(io.BytesIO(b''.join(p.read_bytes() for p in parts))) as z:
         text = z.read('game/options.rpy').decode('utf-8')
     return re.search(r'config\.version = "([^"]+)"', text).group(1)
 

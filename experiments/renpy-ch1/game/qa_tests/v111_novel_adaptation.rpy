@@ -15,6 +15,7 @@ testcase novel_d05_letter_read_commit:
     run Jump("r13_v111_warning_read5")
     click pos (900,600) until eval (r13_packet and "그날 밤 초롱 씨 오는 길목" in r13_packet[1].replace("\n"," ")) timeout 60
     assert eval (not r13_v111_value("mother_first_contact_read5"))
+    assert eval (room13["v111"]["people"]==["daram"])
     screenshot "novel_d05_letter.png"
     click pos (900,600) until screen "r13_crisis_proof" timeout 90
     assert eval (r13_v111_value("mother_first_contact_read5") is True)

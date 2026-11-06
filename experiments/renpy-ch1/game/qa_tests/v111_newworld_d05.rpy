@@ -61,3 +61,4 @@ testcase v111_nw_d05_extra_e21_wins:
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("meeting:gate_post")=="win" and r13_v111_value("listed:bami") is not True)
     assert eval (qa_nw_seen("아이 말은 그렇다 치고") and not qa_nw_seen("의심받는 아이 말로"))
+    assert eval (qa_nw_seen("종이 접어 줘요. 더 작게.") and qa_nw_seen("밤이는 작아진 종이를 받아"))

@@ -1,13 +1,18 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 17232411,
-  "archive_sha256": "561a39f350bb50ebf179836532448735b1efc07f781ac2d8a7d7fd7f0c4322e4",
+  "archive_bytes": 17233306,
+  "archive_sha256": "05d61ed9956258da767de10e2c5556fa9e4ecd6fcd30da331f005d91055fd2fb",
   "parts": [
    {
     "file": "game.part01",
-    "bytes": 17232411,
-    "sha256": "561a39f350bb50ebf179836532448735b1efc07f781ac2d8a7d7fd7f0c4322e4"
+    "bytes": 10485760,
+    "sha256": "6412407293650c84b4098facf4ac8a3b6bebd090fc576fc9e20a13ceb515b5fe"
+   },
+   {
+    "file": "game.part02",
+    "bytes": 6747546,
+    "sha256": "f463b23095a516c8935e7953e7e0fb04419460c506572d45368ea358e74ce083"
    }
   ]
  },
@@ -29,12 +34,16 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 498618,
-   "sha256": "0911ecf04eac2d13bee26183959c1981bc3d982400c1bb1a2f3b38185a4396a9"
+   "bytes": 498754,
+   "sha256": "2a2636b2a58dd0c388067a0215c34819a3a58cbd727d2035e85e8b45154a92df"
   },
   "game.part01": {
-   "bytes": 17232411,
-   "sha256": "561a39f350bb50ebf179836532448735b1efc07f781ac2d8a7d7fd7f0c4322e4"
+   "bytes": 10485760,
+   "sha256": "6412407293650c84b4098facf4ac8a3b6bebd090fc576fc9e20a13ceb515b5fe"
+  },
+  "game.part02": {
+   "bytes": 6747546,
+   "sha256": "f463b23095a516c8935e7953e7e0fb04419460c506572d45368ea358e74ce083"
   },
   "game/assets/Pretendard-Bold.otf": {
    "bytes": 415444,
@@ -18989,5 +18998,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 807998734
+ "total_bytes": 807999765
 }

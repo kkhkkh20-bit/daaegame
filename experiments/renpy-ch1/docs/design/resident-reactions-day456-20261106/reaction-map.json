@@ -1,0 +1,545 @@
+{
+  "schema": "room13.resident-days.v1",
+  "date": "2026-11-06",
+  "title": "다람탐정 주민 별편 — 문밖에 남은 말",
+  "introduction": "4~6일의 같은 시간을 주민의 눈으로 읽는 아홉 장면입니다. 전체 분기 비교에는 서로 다른 결과가 함께 들어 있습니다. 경로별 파일은 그 판에서 이어지는 장면만 묶었습니다. 별편 전문은 읽기 문서이며 본편에는 짧은 행동과 대사를 연결했습니다.",
+  "premise": "엄마를 찾아 마을에 온 다돌과 딸 다람. 초소를 지키는 돌목이 밤에 누군가에게 물린 뒤, 얼굴을 봤다는 사람도 없는데 아이 밤이가 의심받습니다. 식당의 나비는 그날 다른 주민과 함께 있었고, 배달 일을 하는 도토는 아이들이 지낼 학교의 담요를 옮깁니다. 장작을 나르는 보리에게는 학교에 있는 아이 도담이 있습니다. 창고에 머무는 꼬미와 다른 세 아이가 실제로 학교에 도착했는지에 따라, 다음 날의 불은 전혀 다른 밤을 만듭니다.",
+  "scenes": [
+    {
+      "id": "RR4_01",
+      "title": "문부터 비우시오",
+      "pov_name": "돌목",
+      "day": 4,
+      "anchor": "MS14_D04_S03_L0026",
+      "label": "r13_v111_bite4",
+      "known": [
+        "4일 저녁 자기 팔을 물리고 상대를 놓쳤다.",
+        "붙잡은 사람은 허리를 숙이고 있었고 얼굴·키는 확인하지 못했다. 검은 것이 털인지 옷인지도 모른다.",
+        "다돌은 의자와 진료를 권했고, 너울은 밤이를 지목했으며, 바둑이는 아이의 말을 듣고 자신이 곁에 있겠다고 했다."
+      ],
+      "unknown": [
+        "문 사람의 이름·얼굴·실제 키·나이·정체.",
+        "밤이가 물었다는 사실 여부.",
+        "5일 이후의 의복 대조·범인·보호시설 진상과 결말."
+      ],
+      "branch": {
+        "piko_alive": [
+          true,
+          false
+        ],
+        "lamp_bound2": "무관",
+        "bami_cold4": "무관",
+        "silluk_status": "무관",
+        "note": "원고와 발췌는 공통 피습 직후 장면만 사용한다. 피코의 생존 스케치나 사망 회상을 넣지 않는다."
+      },
+      "game_excerpt": {
+        "anchor": "MS14_D04_S03_L0007",
+        "position": "after",
+        "label": "r13_v111_bite4",
+        "known_at_excerpt": [
+          "돌목이 팔을 물린 상태이며 다돌이 의자와 진료를 권한 직후다."
+        ],
+        "unknown_at_excerpt": [
+          "뒤에 이어지는 피해 진술과 너울의 밤이 지목은 발췌에서 먼저 말하지 않는다."
+        ]
+      },
+      "game_added_line_ids": [
+        "NW_RR4_G01",
+        "NW_RR4_G02",
+        "NW_RR4_G03"
+      ],
+      "manuscript": "day4_원고.md#01",
+      "manuscript_note": "주민 1인칭 소설의 전체 장면. 전문을 게임에 재생하지 않는다. 게임에는 지정된 의자 동작만 발췌하며 다돌 1인칭 현재형을 쓴다."
+    },
+    {
+      "id": "RR4_02",
+      "title": "나한테만 말하면 뭐 해",
+      "pov_name": "밤이",
+      "day": 4,
+      "anchor": "MS14_D04_S04_L0031",
+      "label": "r13_v111_bami_night4",
+      "known": [
+        "밤이는 양동이가 넘어질 무렵 근처에 있었다고 말한다. 처마/울타리 위치는 현행 bami_cold4 분기를 따른다.",
+        "맨발로 울타리 쪽에 가는 구부린 사람을 봤지만 얼굴·키·나이는 모른다.",
+        "콩이는 낮에 밤이를 봤지만 무는 장면은 못 봤다고 정정한다. 바둑이는 사람들 앞에서도 그렇게 말해 달라고 하고 옆에 있겠다고 한다."
+      ],
+      "unknown": [
+        "문 사람의 이름·얼굴·실제 키·나이·정체.",
+        "발자국·천과 특정 인물의 연결.",
+        "피코 스케치의 내용·획득 여부와 5일 이후의 추리 정답."
+      ],
+      "branch": {
+        "piko_alive": [
+          true,
+          false
+        ],
+        "lamp_bound2": "무관",
+        "bami_cold4": [
+          true,
+          false
+        ],
+        "silluk_status": "무관",
+        "note": "냉기 분기별 정확한 대기 위치는 원고에서 지정하지 않는다. 게임의 기존 위치 진술 두 변형은 유지한다."
+      },
+      "game_excerpt": {
+        "anchor": "MS14_D04_S04_L0027",
+        "position": "after",
+        "label": "r13_v111_bami_night4",
+        "known_at_excerpt": [
+          "콩이가 무는 장면은 보지 못했다고 말한 직후다."
+        ],
+        "unknown_at_excerpt": [
+          "내일의 정정이 실제로 이행됐다는 사실은 아직 없다. 새 공개 증언·자료를 획득하지 않는다."
+        ]
+      },
+      "game_added_line_ids": [
+        "NW_RR4_B01",
+        "NW_RR4_B02",
+        "NW_RR4_B03"
+      ],
+      "manuscript": "day4_원고.md#02",
+      "manuscript_note": "주민 1인칭 소설의 전체 장면. 전문을 게임에 재생하지 않는다. 게임에는 콩이에게 향하는 짧은 요청만 발췌한다."
+    },
+    {
+      "id": "RR5_01",
+      "title": "물통을 놓을 자리",
+      "pov_name": "나비",
+      "day": 5,
+      "anchors": [
+        "blocks.nabi_confirm5: NW_NOV_D05_08~13",
+        "blocks.nabi_hearing5: NW_AUD_D05_03"
+      ],
+      "label": [
+        "r13_v111_nabi_confirm5",
+        "r13_v111_hearing5",
+        "r13_v111_bami_clear5"
+      ],
+      "known": [
+        "전날 네로가 자신의 식당에서 물통을 나른 일",
+        "초소 소리가 났을 때 함께 문밖을 봄",
+        "부녀가 초소에서도 직접 말해 달라고 요청"
+      ],
+      "unknown": [
+        "무는 순간의 얼굴·행동",
+        "겉옷을 빌린 사람의 현장 행동",
+        "회의에서 자신의 말을 어떤 혐의에 연결할지",
+        "이후에 가족이 읽을 엄마 편지"
+      ],
+      "branch": "모든 5일 경로의 식당 확인 뒤. 출발 약속은 공통이나 실제 초소 증언은 gate_post 승리의 bami_clear5에서만 재생.",
+      "game_added_ids": [
+        "NW_RR5_DEPART01",
+        "NW_RR5_DEPART02"
+      ],
+      "game_revised_ids": [
+        "NW_NOV_D05_13"
+      ],
+      "game_change": "기존 행주 놓고 출발하는 한 줄을 역할 요청으로 바꾸고 아빠의 물통 정리·앞치마 벗기·직접 증언하겠다는 답으로 마무리. 새 목격이나 증언 자료를 생성하지 않음.",
+      "literary_additions": "앞치마 매듭과 문턱의 짧은 실랑이는 별편의 새 소소한 행동. 이전에 확정된 알리바이·시각으로 사용하지 않음."
+    },
+    {
+      "id": "RR5_02",
+      "title": "한 번 더 접어 줘요",
+      "pov_name": "밤이",
+      "day": 5,
+      "anchors": [
+        "MS14_D05_S03_L0029~L0036",
+        "MS14_D05_S03_L0037"
+      ],
+      "label": [
+        "r13_v111_bami_clear5"
+      ],
+      "known": [
+        "초소 문밖에서 들은 자신의 혐의·오늘 가도 된다는 말",
+        "안에 들어와 들은 바둑이의 기록 낭독",
+        "이름을 받침까지 맞게 썼다는 직접 확인"
+      ],
+      "unknown": [
+        "무는 장면에서 보지 못한 얼굴",
+        "다른 사람의 실제 범행·새 목격",
+        "다돌 가족의 엄마 편지 내용"
+      ],
+      "branch": "meeting:gate_post == win. L0029 앞에 문밖에서 들어온다는 기존 지문이 있고 L0036 뒤에만 발췌. E25/E26·cleared·밤 돌봄은 그대로 L0037 commit에서 적용.",
+      "game_added_ids": [
+        "NW_RR5_FOLD01",
+        "NW_RR5_FOLD02",
+        "NW_RR5_FOLD03"
+      ],
+      "game_revised_ids": [],
+      "game_change": "기존 이름 확인 다음 밤이가 접을 크기를 정하고 종이를 보관하는 행동. 보증 내용을 새로 만들거나 장래 구금을 모두 금지하는 판정은 추가하지 않음.",
+      "literary_additions": "종이를 주머니에 넣는 세부 동작과 거리 두기는 별편 확장. 다른 주민의 속마음은 단정하지 않음."
+    },
+    {
+      "id": "RR5_03",
+      "title": "내 말도 적어요",
+      "pov_name": "밤이",
+      "day": 5,
+      "anchors": [
+        "MS14_D05_S03_L0039 after: NW_D05_S03_C01~05",
+        "NW_DLG_D05_02",
+        "NW_BD5_BAMI01"
+      ],
+      "label": [
+        "r13_v111_wrong5 (기회 소진 뒤)"
+      ],
+      "known": [
+        "문밖에서 들은 보호시설 명단 지시",
+        "이미 아니라고 말했음",
+        "곁에 선 바둑이와 문턱에 놓인 다람의 도토리"
+      ],
+      "unknown": [
+        "기록의 보이지 않는 내용",
+        "지금 어디까지 움직여도 되는지",
+        "실제 인수·이송의 미래",
+        "엄마 편지"
+      ],
+      "branch": "기존 gate_post_lose 조건일 때만. meeting:gate_post=lose, listed:bami=True, bami_status=listed. 명단 등록은 즉시 인수·이송이나 사망을 뜻하지 않음.",
+      "game_added_ids": [],
+      "game_revised_ids": [
+        "NW_D05_S03_C03"
+      ],
+      "game_change": "문밖의 기존 ‘나 아니라니까요’를 ‘내 말도 거기 적어요’까지 확장. 실제 기록을 고쳤다는 약속·해방·명단 삭제·새 이동 없음. 기존 guard gate_post_lose 유지.",
+      "literary_additions": "수첩에도 자신의 말을 적으라는 추가 요구는 별편만. 요구가 받아들여졌거나 보증서를 받았다고 쓰지 않음."
+    },
+    {
+      "scene_id": "RR6_01",
+      "manuscript_heading": "06",
+      "title": "빈 수레를 빼기 전에",
+      "pov_name": "도토",
+      "day": 6,
+      "anchors": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "label": "r13_v111_school_blanket_loan6",
+          "dialogue_ids": [
+            "NW_NOV_D06_LOAN02",
+            "NW_NOV_D06_LOAN03",
+            "NW_NOV_D06_LOAN06",
+            "NW_NOV_D06_LOAN07",
+            "NW_NOV_D06_LOAN08",
+            "NW_NOV_D06_LOAN09"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "label": "r13_v111_children_ready6",
+          "dialogue_ids": [
+            "MS14_D06_P01_L0009",
+            "MS14_D06_P01_L0010",
+            "MS14_D06_P01_L0011",
+            "MS14_D06_P01_L0012",
+            "MS14_D06_P01_L0017"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "label": "r13_v111_handoff_done6",
+          "dialogue_ids": [
+            "MS14_D06_P01_L0019",
+            "MS14_D06_P01_L0022",
+            "NW_NOV_D06_RECEIPT01",
+            "NW_NOV_D06_RECEIPT02",
+            "NW_NOV_D06_RECEIPT03"
+          ],
+          "commit_after_reaction": "MS14_D06_P01_L0024"
+        }
+      ],
+      "known": [
+        "학교 담요함에서 실제 빌리는 수량과 아빠 이름을 나비가 기록함",
+        "아빠의 운반 부탁에 도토가 응답하고 수레에 적재함",
+        "도토가 창고에서 네 아이의 출발 확인을 듣고 학교까지 운반함",
+        "선생님의 실제 입실 허용과 아이들 자리, 나비와 대조한 담요 수량"
+      ],
+      "unknown": [
+        "도토가 도착하기 전 아빠와 선생님의 모든 대화",
+        "아직 일어나지 않은 화재·범인·배후",
+        "가족 담요 두 장을 학교 차용 물자로 보는 해석"
+      ],
+      "branch": {
+        "route": "당일 실제 인수 경로",
+        "conditions": [
+          "afternoon6 기존 자리 허락·깡통 조작 관문 통과",
+          "school_blankets_prepared6 == true",
+          "handoff6의 실제 인수 입력 반환 0"
+        ],
+        "when": null,
+        "existing_call_guard": "handoff_done6에서 if school_blankets_prepared6: call school_blanket_receipt6",
+        "legacy": "차용 기록이 없는 구형 저장에서는 기존 인수 대사만 유지하고 이 반응을 소급하지 않음"
+      },
+      "game_addition": {
+        "file": "game/v111/newworld/d06.json",
+        "location": "blocks.school_blanket_receipt6의 NW_NOV_D06_RECEIPT03 다음",
+        "row_ids": [
+          "NW_RR6_01_01",
+          "NW_RR6_01_02",
+          "NW_RR6_01_03"
+        ],
+        "scope": "나비의 실제 수량 일치 응답 뒤 도토가 수레를 빼려는 동작과 아빠의 응답. 인수 완료 commit은 기존 위치에 그대로 둠."
+      },
+      "id": "RR6_01"
+    },
+    {
+      "scene_id": "RR6_02",
+      "manuscript_heading": "07",
+      "title": "셋은 옆으로",
+      "pov_name": "보리",
+      "day": 6,
+      "anchors": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "label": "r13_v111_woodshed_seen6",
+          "dialogue_ids": [
+            "MS14_D06_S02_L0012",
+            "MS14_D06_S02_L0013"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "label": "r13_v111_fire6",
+          "dialogue_ids": [
+            "MS14_D06_S03_L0004",
+            "MS14_D06_S03_L0005",
+            "MS14_D06_S03_L0006",
+            "MS14_D06_S03_L0008",
+            "MS14_D06_S03_L0010"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "label": "r13_v111_rescue_done6",
+          "dialogue_ids": [
+            "MS14_D06_S03_L0012",
+            "MS14_D06_S03_L0013",
+            "MS14_D06_S03_L0015",
+            "MS14_D06_S03_L0019",
+            "MS14_D06_S03_L0020"
+          ],
+          "commit": "MS14_D06_S03_L0022"
+        }
+      ],
+      "known": [
+        "보리가 한 아이를 안고 나오고 두 아이가 뒤따라 나옴",
+        "보리는 안쪽 받침대 밑 꼬미를 직접 봤다고 말함",
+        "아빠가 다람과 구조된 세 아이를 학교로 보낸 뒤 현장에 돌아옴",
+        "플레이어가 젖은 천과 장작 치우기 조작을 수행함",
+        "들보·벽 붕괴 후 보리가 아빠를 끌어냄"
+      ],
+      "unknown": [
+        "발화 순간·범인의 행동·누비 배후",
+        "보리가 보지 못한 학교의 현재 상세 모습",
+        "숨은 구조 성공·꼬미 생존 가능성"
+      ],
+      "branch": {
+        "route": "아이 잔류 화재의 세 아이 구조 현장",
+        "conditions": [
+          "실제 사전 학교 인수 완료가 없는 경로 → permission6 → fire6",
+          "FIRE_EVACUATED is not true"
+        ],
+        "when": null,
+        "existing_call_guard": "MS14_D06_S03_L0005는 r13_v111_fire6에서만 호출. 빈 창고 r13_v111_empty_fire6에서는 호출하지 않음",
+        "result": "기존 S03_L0022의 warehouse_children_rescued=3, KKOMI_ALIVE=false, BORI_hands=burned 유지"
+      },
+      "game_addition": {
+        "file": "game/v111/newworld/d06.json",
+        "location": "after.MS14_D06_S03_L0005",
+        "row_ids": [
+          "NW_RR6_02_01",
+          "NW_RR6_02_02",
+          "NW_RR6_02_03"
+        ],
+        "scope": "이미 밖으로 나온 셋을 문에서 비키게 하는 동작. 구조 인원·순서·조작 관문·다람 학교 이동을 바꾸지 않음."
+      },
+      "id": "RR6_02"
+    },
+    {
+      "scene_id": "RR6_03",
+      "manuscript_heading": "08",
+      "title": "조금만 더 들어 주렴",
+      "pov_name": "보리",
+      "day": 6,
+      "anchors": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "label": "r13_v111_bori_burned6",
+          "dialogue_ids": [
+            "MS14_D06_S04_L0011",
+            "MS14_D06_S04_L0012",
+            "MS14_D06_S04_L0013"
+          ],
+          "commit": "MS14_D06_S04_L0014"
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "label": "r13_v111_after_fire6",
+          "dialogue_ids": [
+            "MS14_D06_S04_L0019",
+            "MS14_D06_S04_L0020",
+            "MS14_D06_S04_L0021",
+            "NW_D06_S04_A01",
+            "MS14_D06_S04_L0022",
+            "MS14_D06_S04_L0023"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "label": "r13_v111_rescue_testimony6",
+          "dialogue_ids": [
+            "MS14_D06_S04_L0025",
+            "NW_D06_S04_T22"
+          ]
+        }
+      ],
+      "known": [
+        "RR6_02와 같은 경로. 꼬미를 구조하지 못했고 세 아이만 학교 담요에 있음",
+        "도담은 학교에서 기다렸으며 보리에게 물을 들어 줌",
+        "보리는 자기 장작 절도를 알고 인정함",
+        "너울은 장작 절도를 방화 의심과 연결하지만 아직 입증되지 않음",
+        "꼬미가 낮에 수레를 잡아 주었던 직접 경험"
+      ],
+      "unknown": [
+        "누가 무슨 동기로 불을 놓았는지",
+        "등잔·문 쪽 탄 자국·천의 최종 추리",
+        "보리의 부상이 특정 범인을 입증한다는 결론"
+      ],
+      "branch": {
+        "route": "잔류 화재 뒤 학교 귀환·꼬미 사망",
+        "conditions": [
+          "after_fire6의 FIRE_EVACUATED is not true → bori_burned6",
+          "앞선 S03_L0022 commit으로 KKOMI_ALIVE == false"
+        ],
+        "when": null,
+        "existing_call_guard": "r13_v111_after_fire6의 if FIRE_EVACUATED / else 기존 분기",
+        "result": "기존 화상·꼬미 사망 재확인 commit 및 이후 구조 목격 증언·자료 획득 유지"
+      },
+      "game_addition": {
+        "file": "game/v111/newworld/d06.json",
+        "location": "after.MS14_D06_S04_L0013",
+        "row_ids": [
+          "NW_RR6_03_01",
+          "NW_RR6_03_02",
+          "NW_RR6_03_03"
+        ],
+        "scope": "도담의 물잔을 받으려다 포기하고 아이의 도움을 받는 보리. 추가 치료·사인·완치·새 상태 없음."
+      },
+      "id": "RR6_03"
+    },
+    {
+      "scene_id": "RR6_04",
+      "manuscript_heading": "09",
+      "title": "손바닥을 뒤집어 보고",
+      "pov_name": "보리",
+      "day": 6,
+      "anchors": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "label": "r13_v111_empty_fire6",
+          "dialogue_ids": [
+            "MS14_D06_S03P_L0001",
+            "MS14_D06_S03P_L0002",
+            "MS14_D06_S03P_L0003",
+            "MS14_D06_S03P_L0004",
+            "MS14_D06_S03P_L0005",
+            "MS14_D06_S03P_L0006",
+            "MS14_D06_S03P_L0007"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "label": "r13_v111_bori_unhurt6",
+          "dialogue_ids": [
+            "MS14_D06_S04_L0015",
+            "MS14_D06_S04_L0016",
+            "MS14_D06_S04_L0017"
+          ],
+          "commit": "MS14_D06_S04_L0018"
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "label": "r13_v111_after_fire6",
+          "dialogue_ids": [
+            "MS14_D06_S04_L0019",
+            "MS14_D06_S04_L0020",
+            "MS14_D06_S04_L0021"
+          ]
+        }
+      ],
+      "known": [
+        "아빠가 꼬미 포함 네 아이를 학교에 실제 인수시켰다고 현장에서 답함",
+        "보리는 안으로 뛰려다 멈추고 아빠·도토와 불의 확산을 막음",
+        "보리의 장작 절도는 빈 창고판에서도 그대로임",
+        "학교 귀환 뒤 도담이 남겨 놓은 밥을 말하고 소매를 잡음",
+        "구조 화상은 없는 경로지만 낮 장작 가시와 그을린 소매는 기존 사실"
+      ],
+      "unknown": [
+        "화재 현장에서 보이지 않는 아이들의 상세 행동",
+        "누비 방화·너울 약속·발화 순간",
+        "아이를 불 속에서 구조했다는 목격"
+      ],
+      "branch": {
+        "route": "네 아이 실제 사전 인수 → 빈 창고 화재 → 학교 귀환",
+        "conditions": [
+          "FIRE_EVACUATED == true",
+          "after_fire6 → bori_unhurt6"
+        ],
+        "when": null,
+        "existing_call_guard": "r13_v111_after_fire6의 FIRE_EVACUATED 참 분기",
+        "result": "KKOMI_ALIVE=true 및 BORI_hands=not_rescue_burned 유지. 구조 증언이 아닌 기존 E06_EMPTY 목격 자료 유지."
+      },
+      "game_addition": {
+        "file": "game/v111/newworld/d06.json",
+        "location": "after.MS14_D06_S04_L0017",
+        "row_ids": [
+          "NW_RR6_04_01",
+          "NW_RR6_04_02"
+        ],
+        "scope": "밥그릇을 잡기 전 손바닥을 보고 도담의 손을 떼지 않는 두 행동. 화상·구조·새 상처를 만들지 않음."
+      },
+      "id": "RR6_04"
+    }
+  ],
+  "reading_profiles": {
+    "win_safe": {
+      "label": "밤이 혐의 해소 · 아이들 사전 인계",
+      "order": [
+        "RR4_01",
+        "RR4_02",
+        "RR5_01",
+        "RR5_02",
+        "RR6_01",
+        "RR6_04"
+      ]
+    },
+    "win_loss": {
+      "label": "밤이 혐의 해소 · 화재에서 꼬미 상실",
+      "order": [
+        "RR4_01",
+        "RR4_02",
+        "RR5_01",
+        "RR5_02",
+        "RR6_02",
+        "RR6_03"
+      ]
+    },
+    "lose_safe": {
+      "label": "밤이 명단 등록 · 아이들 사전 인계",
+      "order": [
+        "RR4_01",
+        "RR4_02",
+        "RR5_01",
+        "RR5_03",
+        "RR6_01",
+        "RR6_04"
+      ]
+    },
+    "lose_loss": {
+      "label": "밤이 명단 등록 · 화재에서 꼬미 상실",
+      "order": [
+        "RR4_01",
+        "RR4_02",
+        "RR5_01",
+        "RR5_03",
+        "RR6_02",
+        "RR6_03"
+      ]
+    }
+  }
+}

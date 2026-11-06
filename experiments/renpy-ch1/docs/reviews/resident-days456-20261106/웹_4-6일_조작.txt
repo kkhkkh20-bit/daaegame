@@ -1,0 +1,475 @@
+SHOT 001-main
+BUILD 0.20.107
+RESUME br-piko_lost-day4
+==== 4일
+SAVED br-piko_lost-day4
+  값 DARAM_DETAINED None → False
+  값 KKOMI_ALIVE None → True
+  값 OWL_ALIVE None → True
+  값 bami_status None → free
+  값 carried_dry_blankets None → 2
+  값 fate:fate_piko None → lost
+  값 meeting:gate None → win
+  값 meeting:lamp None → win
+  값 piko_alive None → False
+  값 route7 None → uncommitted
+  값 silluk_status None → reporting_obligation
+STATE 0 4 0 travel ['r13_hub'] custody_choice room13 사람= []
+SHOT 002-hub-travel-room13
+  배치 []
+  층15 [True, 0, 2160, [[1700, 375, 35, 67], [863, 552, 215, 64], [842, 498, 438, 57], [1541, 419, 150, 126]], []]
+  층16직접 [['층16출력', []]]
+STATE 1 4 0 travel ['r13_map'] custody_choice room13 사람= []
+SHOT 003-map-ms14_somi
+STATE 2 4 0 travel [] custody_choice ms14_somi 사람= []
+STATE 7 4 0 travel ['say'] custody_choice ms14_somi 사람= ['resident_nero', 'resident_somi']
+대화 건너뛰기 버튼 4 travel
+대화 건너뛰기 버튼 4 travel
+STATE 9 4 0 portrait_show4 ['r13_hub'] custody_choice ms14_somi 사람= ['resident_nero', 'resident_somi']
+SHOT 004-hub-portrait_show4-ms14_somi
+  배치 [['resident_nero', 692, 455, 115, 210, True], ['resident_somi', 920, 536, 146, 129, True]]
+  층15 [True, 0, 1920, [], [['resident_nero', [654, 396, 191, 271], True, 667], ['resident_somi', [863, 437, 260, 230], True, 667]]]
+  층16직접 [['resident_nero', [654, 396, 191, 271]], ['resident_somi', [863, 437, 260, 230]], ['층16출력', [['resident_nero', [654, 396, 191, 271]], ['resident_somi', [863, 437, 260, 230]]]]]
+STATE 10 4 0 portrait_show4 ['r13_topics'] custody_choice ms14_somi 사람= ['resident_nero', 'resident_somi']
+SHOT 005-topics-portrait_show4-resident_nero
+  자료 제시 이분을 보셨습니까?
+STATE 11 4 0 portrait_show4 ['r13_book'] custody_choice ms14_somi 사람= ['resident_nero', 'resident_somi']
+STATE 12 4 0 portrait_show4 ['say'] custody_choice ms14_somi 사람= ['resident_nero', 'resident_somi']
+대화 건너뛰기 버튼 4 portrait_show4
+대화 건너뛰기 버튼 4 portrait_show4
+STATE 14 4 0 travel ['r13_hub'] custody_choice ms14_somi 사람= []
+SHOT 006-hub-travel-ms14_somi
+  배치 []
+  층15 [True, 0, 1920, [], []]
+  층16직접 [['층16출력', []]]
+STATE 15 4 0 travel ['r13_map'] custody_choice ms14_somi 사람= []
+SHOT 007-map-square
+STATE 16 4 0 travel [] custody_choice square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook']
+STATE 22 4 0 travel ['say'] custody_choice square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook', 'resident_kongi', 'resident_tosil', 'bami', 'resident_lamplighter']
+대화 건너뛰기 버튼 4 travel
+STATE 23 4 0 portrait_place4 ['r13_hub'] custody_choice square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook', 'resident_kongi', 'resident_tosil', 'bami']
+SHOT 008-hub-portrait_place4-square
+  배치 [['bami', 339, 437, 119, 142, False], ['doto', 776, 410, 109, 211, False], ['resident_kongi', 1399, 509, 141, 131, True], ['resident_badook', 1039, 506, 200, 159, True], ['resident_seol', 458, 456, 115, 210, False], ['resident_owlgp', 175, 523, 93, 152, True], ['resident_tosil', 1652, 541, 82, 165, True]]
+  층15 [True, 0, 1920, [[598, 269, 170, 236], [861, 475, 121, 52], [904, 270, 187, 201]], [['bami', [615, 411, 167, 168], False, 579], ['doto', [835, 376, 132, 245], False, 621], ['resident_kongi', [1371, 459, 196, 182], True, 641], ['resident_seol', [602, 456, 116, 210], False, 665], ['resident_badook', [1008, 457, 263, 211], True, 668], ['resident_owlgp', [150, 478, 127, 198], True, 676], ['resident_tosil', [1640, 495, 103, 211], True, 706]]]
+  층16직접 [['bami', [704, 411, 167, 168]], ['doto', [835, 376, 132, 245]], ['resident_kongi', [1371, 459, 196, 182]], ['resident_seol', [602, 456, 116, 210]], ['resident_badook', [1008, 457, 263, 211]], ['resident_owlgp', [150, 478, 127, 198]], ['resident_tosil', [1640, 495, 103, 211]], ['층16출력', [['bami', [315, 411, 167, 168]], ['doto', [835, 376, 132, 245]], ['resident_kongi', [1371, 459, 196, 182]], ['resident_seol', [458, 457, 115, 210]], ['resident_badook', [1008, 457, 263, 211]], ['resident_owlgp', [150, 478, 127, 198]], ['resident_tosil', [1640, 495, 103, 211]]]]]
+STATE 24 4 0 portrait_place4 ['r13_topics'] custody_choice square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook', 'resident_kongi', 'resident_tosil', 'bami']
+SHOT 009-topics-portrait_place4-bami
+  자료 제시 여기 두고 물러날게.
+STATE 25 4 0 portrait_place4 ['r13_book'] custody_choice square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook', 'resident_kongi', 'resident_tosil', 'bami']
+STATE 26 4 0 portrait_place4 ['say'] custody_choice square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook', 'resident_kongi', 'resident_tosil', 'bami']
+대화 건너뛰기 버튼 4 portrait_place4
+대화 건너뛰기 버튼 4 portrait_place4
+STATE 28 4 1 travel ['r13_hub'] custody_choice square 사람= ['doto', 'resident_lamplighter', 'resident_sling', 'resident_somi', 'resident_hyeoni', 'resident_kongi', 'resident_tosil', 'bami']
+SHOT 010-hub-travel-square
+  배치 [['resident_hyeoni', 740, 409, 132, 210, False], ['doto', 495, 410, 109, 211, False], ['bami', 1159, 507, 119, 142, False], ['resident_somi', 976, 537, 146, 129, True], ['resident_lamplighter', 194, 466, 101, 211, True], ['resident_sling', 1555, 479, 130, 211, False], ['resident_tosil', 475, 539, 82, 165, True], ['resident_kongi', 1718, 577, 141, 131, True]]
+  층15 [True, 0, 1920, [[598, 269, 170, 236], [861, 475, 121, 52], [904, 270, 187, 201]], [['resident_hyeoni', [1092, 385, 152, 232], False, 617], ['doto', [835, 376, 132, 245], False, 621], ['bami', [1126, 462, 186, 187], False, 649], ['resident_somi', [1043, 498, 192, 169], True, 667], ['resident_lamplighter', [183, 422, 122, 255], True, 677], ['resident_sling', [1555, 479, 130, 211], False, 690], ['resident_tosil', [650, 494, 103, 211], True, 705], ['resident_kongi', [1591, 506, 217, 201], True, 707]]]
+  층16직접 [['resident_hyeoni', [730, 387, 152, 232]], ['doto', [835, 376, 132, 245]], ['bami', [1126, 462, 186, 187]], ['resident_somi', [953, 498, 191, 169]], ['resident_lamplighter', [183, 422, 122, 255]], ['resident_sling', [1555, 479, 130, 211]], ['resident_tosil', [650, 494, 103, 211]], ['resident_kongi', [1680, 508, 216, 201]], ['층16출력', [['resident_hyeoni', [730, 387, 152, 232]], ['doto', [835, 376, 132, 245]], ['bami', [1126, 462, 186, 187]], ['resident_somi', [953, 498, 191, 169]], ['resident_lamplighter', [183, 422, 122, 255]], ['resident_sling', [1555, 479, 130, 211]], ['resident_tosil', [463, 494, 103, 210]], ['resident_kongi', [1680, 508, 216, 201]]]]]
+STATE 29 4 1 travel ['r13_map'] custody_choice square 사람= ['doto', 'resident_lamplighter', 'resident_sling', 'resident_somi', 'resident_hyeoni', 'resident_kongi', 'resident_tosil', 'bami']
+STATE 30 4 1 travel [] custody_choice ms14_somi 사람= ['resident_kongi', 'resident_tosil', 'bami', 'resident_lamplighter']
+STATE 36 4 1 travel ['say'] custody_choice ms14_somi 사람= ['resident_nero']
+대화 건너뛰기 버튼 4 travel
+STATE 37 4 2 travel ['r13_hub'] custody_choice ms14_somi 사람= []
+STATE 38 4 2 travel ['r13_map'] custody_choice ms14_somi 사람= []
+SHOT 011-map-gate
+STATE 39 4 2 travel [] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard']
+STATE 44 4 2 travel ['say'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard', 'neoul', 'resident_badook']
+대화 건너뛰기 버튼 4 travel
+STATE 45 4 2 look_gate4 ['r13_hub'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard', 'neoul', 'resident_badook']
+SHOT 012-hub-look_gate4-gate
+  배치 [['guard', 696, 512, 191, 280, False], ['neoul', 544, 536, 188, 280, False], ['resident_lamplighter', 1490, 540, 135, 281, True], ['karo', 116, 608, 169, 221, False], ['resident_badook', 1253, 676, 267, 212, False]]
+  층15 [True, 760, 2467, [[1661, 583, 201, 98], [986, 513, 75, 114], [1080, 614, 82, 177], [690, 596, 178, 75], [536, 669, 413, 127], [1608, 734, 206, 100], [1880, 637, 125, 111]], [['guard', [1458, 512, 190, 280], False, 792], ['neoul', [1306, 535, 188, 280], False, 815], ['resident_lamplighter', [1184, 591, 110, 230], True, 821], ['karo', [879, 663, 122, 165], False, 828], ['resident_badook', [1062, 686, 254, 34], False, 890]]]
+  층16직접 [['guard', [1458, 512, 190, 280]], ['neoul', [1306, 535, 188, 280]], ['resident_lamplighter', [1993, 592, 110, 230]], ['karo', [879, 663, 122, 165]], ['resident_badook', [1062, 686, 254, 34]], ['층16출력', [['guard', [1458, 512, 190, 280]], ['neoul', [1306, 535, 188, 280]], ['resident_lamplighter', [1993, 592, 110, 230]], ['karo', [963, 663, 122, 165]], ['resident_badook', [1062, 686, 254, 34]]]]]
+STATE 46 4 2 look_gate4 ['say'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard', 'neoul', 'resident_badook']
+대화 건너뛰기 버튼 4 look_gate4
+  값 bami_status free → temporarily_with_badugi
+STATE 47 4 2 travel ['r13_hub'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard']
+SHOT 013-hub-travel-gate
+  배치 [['guard', 696, 512, 191, 280, False], ['resident_lamplighter', 412, 540, 135, 281, True], ['karo', 148, 608, 169, 221, False]]
+  층15 [True, 760, 2467, [[1661, 583, 201, 98], [986, 513, 75, 114], [1080, 614, 82, 177], [690, 596, 178, 75], [536, 669, 413, 127], [1608, 734, 206, 100], [1880, 637, 125, 111]], [['guard', [1458, 512, 190, 280], False, 792], ['resident_lamplighter', [1184, 591, 110, 230], True, 821], ['karo', [879, 663, 122, 165], False, 828]]]
+  층16직접 [['guard', [1458, 512, 190, 280]], ['resident_lamplighter', [1184, 591, 110, 230]], ['karo', [879, 663, 122, 165]], ['층16출력', [['guard', [1458, 512, 190, 280]], ['resident_lamplighter', [1184, 591, 110, 230]], ['karo', [963, 663, 122, 165]]]]]
+STATE 48 4 2 travel ['r13_map'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard']
+SHOT 014-map-ms14_guardroom
+STATE 49 4 2 travel [] custody_choice ms14_guardroom 사람= []
+STATE 55 4 2 travel ['say'] custody_choice ms14_guardroom 사람= ['resident_badook', 'bami']
+대화 건너뛰기 버튼 4 travel
+대화 건너뛰기 버튼 4 travel
+STATE 57 4 2 bami_ask4 ['r13_hub'] custody_choice ms14_guardroom 사람= ['resident_badook', 'bami']
+SHOT 015-hub-bami_ask4-ms14_guardroom
+  배치 [['bami', 934, 522, 119, 142, False], ['resident_badook', 693, 455, 113, 210, True]]
+  층15 [True, 0, 1920, [], [['bami', [859, 394, 269, 271], False, 665], ['resident_badook', [644, 396, 211, 271], True, 667]]]
+  층16직접 [['bami', [859, 394, 269, 271]], ['resident_badook', [644, 396, 211, 271]], ['층16출력', [['bami', [859, 394, 269, 271]], ['resident_badook', [644, 396, 211, 271]]]]]
+STATE 58 4 2 bami_ask4 ['r13_topics'] custody_choice ms14_guardroom 사람= ['resident_badook', 'bami']
+SHOT 016-topics-bami_ask4-bami
+  질문 어디서 봤니?
+STATE 59 4 2 bami_ask4 ['say'] custody_choice ms14_guardroom 사람= ['resident_badook', 'bami']
+대화 건너뛰기 버튼 4 bami_ask4
+대화 건너뛰기 버튼 4 bami_ask4
+STATE 61 4 2 travel ['r13_topics'] custody_choice ms14_guardroom 사람= ['resident_badook', 'bami']
+SHOT 017-topics-travel-bami
+STATE 62 4 2 travel ['r13_hub'] custody_choice ms14_guardroom 사람= ['resident_badook', 'bami']
+SHOT 018-hub-travel-ms14_guardroom
+  배치 [['bami', 934, 522, 119, 142, False], ['resident_badook', 693, 455, 113, 210, True]]
+  층15 [True, 0, 1920, [], [['bami', [859, 394, 269, 271], False, 665], ['resident_badook', [644, 396, 211, 271], True, 667]]]
+  층16직접 [['bami', [859, 394, 269, 271]], ['resident_badook', [644, 396, 211, 271]], ['층16출력', [['bami', [859, 394, 269, 271]], ['resident_badook', [644, 396, 211, 271]]]]]
+STATE 63 4 2 travel ['r13_map'] custody_choice ms14_guardroom 사람= ['resident_badook', 'bami']
+STATE 64 4 2 travel [] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard', 'resident_badook', 'bami']
+STATE 70 4 2 inspect_gate4 ['r13_hub'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard']
+SHOT 019-hub-inspect_gate4-gate
+  배치 [['guard', 1424, 512, 191, 280, False], ['karo', 148, 608, 169, 221, False], ['resident_lamplighter', 1272, 556, 135, 281, True]]
+  층15 [True, 760, 2467, [[1661, 583, 201, 98], [986, 513, 75, 114], [1080, 614, 82, 177], [690, 596, 178, 75], [536, 669, 413, 127], [1608, 734, 206, 100], [1880, 637, 125, 111], [1170, 500, 170, 240], [1370, 700, 150, 140]], [['guard', [1458, 512, 190, 280], False, 792], ['karo', [879, 663, 122, 165], False, 828], ['resident_lamplighter', [2044, 606, 110, 230], True, 836]]]
+  층16직접 [['guard', [1458, 512, 190, 280]], ['karo', [879, 663, 122, 165]], ['resident_lamplighter', [2044, 606, 110, 230]], ['층16출력', [['guard', [1543, 512, 190, 280]], ['karo', [963, 663, 122, 165]], ['resident_lamplighter', [2044, 606, 110, 230]]]]]
+STATE 71 4 2 inspect_gate4 ['say'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard']
+대화 건너뛰기 버튼 4 inspect_gate4
+SHOT 020-say-inspect_gate4-MS14_D04_S04-None
+STATE 72 4 2 inspect_gate4 ['r13_hub'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard']
+STATE 73 4 2 inspect_gate4 ['say'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard']
+대화 건너뛰기 버튼 4 inspect_gate4
+SHOT 021-say-inspect_gate4-MS14_D04_S04-None
+STATE 74 4 2 inspect_gate4 ['r13_hub'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard']
+STATE 75 4 2 inspect_gate4 ['say'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard']
+대화 건너뛰기 버튼 4 inspect_gate4
+STATE 76 4 2 collect4 ['r13_hub'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard', 'resident_badook', 'bami']
+SHOT 022-hub-collect4-gate
+  배치 [['guard', 696, 512, 191, 280, False], ['bami', 528, 620, 159, 189, False], ['resident_lamplighter', 1490, 540, 135, 281, True], ['karo', 116, 608, 169, 221, False], ['resident_badook', 1253, 676, 267, 212, False]]
+  층15 [True, 760, 2467, [[1661, 583, 201, 98], [986, 513, 75, 114], [1080, 614, 82, 177], [690, 596, 178, 75], [536, 669, 413, 127], [1608, 734, 206, 100], [1880, 637, 125, 111]], [['guard', [1458, 512, 190, 280], False, 792], ['bami', [1283, 637, 171, 83], False, 809], ['resident_lamplighter', [1184, 591, 110, 230], True, 821], ['karo', [879, 663, 122, 165], False, 828], ['resident_badook', [1062, 686, 254, 34], False, 890]]]
+  층16직접 [['guard', [1458, 512, 190, 280]], ['bami', [1283, 637, 171, 83]], ['resident_lamplighter', [1993, 592, 110, 230]], ['karo', [879, 663, 122, 165]], ['resident_badook', [1062, 686, 254, 34]], ['층16출력', [['guard', [1458, 512, 190, 280]], ['bami', [1283, 637, 171, 83]], ['resident_lamplighter', [1993, 592, 110, 230]], ['karo', [963, 663, 122, 165]], ['resident_badook', [1062, 686, 254, 34]]]]]
+STATE 77 4 2 collect4 ['r13_topics'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard', 'resident_badook', 'bami']
+SHOT 023-topics-collect4-resident_badook
+  질문 같이 천을 수거해 주십시오.
+STATE 78 4 2 collect4 ['say'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard', 'resident_badook', 'bami']
+대화 건너뛰기 버튼 4 collect4
+대화 건너뛰기 버튼 4 collect4
+STATE 80 4 2 travel ['r13_topics'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard', 'resident_badook']
+SHOT 024-topics-travel-resident_badook
+STATE 81 4 2 travel ['r13_hub'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard', 'resident_badook']
+STATE 82 4 2 travel ['r13_map'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard', 'resident_badook']
+SHOT 025-map-dining
+STATE 83 4 2 travel [] custody_choice dining 사람= ['nabi', 'resident_owlgp', 'resident_tok', 'resident_dalgeurak', 'resident_hyeoni', 'resident_badook']
+  값 bami_status temporarily_with_badugi → with_badugi_at_diner
+STATE 89 4 2 travel ['say'] custody_choice dining 사람= ['nabi', 'resident_owlgp', 'resident_tok', 'resident_dalgeurak', 'resident_hyeoni', 'resident_badook']
+대화 건너뛰기 버튼 4 travel
+STATE 90 4 2 travel ['r13_hub'] custody_choice dining 사람= ['nabi', 'resident_owlgp', 'resident_tok', 'resident_dalgeurak', 'resident_hyeoni']
+SHOT 026-hub-travel-dining
+  배치 [['resident_dalgeurak', 1901, 269, 81, 151, False], ['resident_tok', 635, 272, 114, 151, False], ['nabi', 989, 265, 142, 210, False], ['resident_owlgp', 468, 526, 93, 152, True], ['resident_hyeoni', 53, 482, 132, 210, False]]
+  층15 [True, 0, 2160, [[731, 437, 156, 247], [1517, 0, 103, 186]], [['resident_dalgeurak', [1887, 187, 130, 236], False, 423], ['resident_tok', [584, 216, 205, 212], False, 428], ['nabi', [989, 265, 142, 210], False, 475], ['resident_owlgp', [442, 477, 130, 202], True, 679], ['resident_hyeoni', [33, 433, 171, 260], False, 693]]]
+  층16직접 [['resident_dalgeurak', [1887, 187, 130, 236]], ['resident_tok', [584, 216, 205, 212]], ['nabi', [989, 265, 142, 210]], ['resident_owlgp', [442, 477, 130, 202]], ['resident_hyeoni', [33, 433, 171, 260]], ['층16출력', [['resident_dalgeurak', [1887, 187, 130, 236]], ['resident_tok', [584, 216, 205, 212]], ['nabi', [989, 265, 142, 210]], ['resident_owlgp', [442, 477, 130, 202]], ['resident_hyeoni', [33, 433, 171, 260]]]]]
+STATE 91 4 2 travel ['r13_map'] custody_choice dining 사람= ['nabi', 'resident_owlgp', 'resident_tok', 'resident_dalgeurak', 'resident_hyeoni']
+STATE 92 4 2 travel [] custody_choice square 사람= ['doto', 'resident_bori', 'resident_badook']
+STATE 98 4 2 travel ['say'] custody_choice square 사람= ['doto', 'resident_bori', 'resident_badook']
+대화 건너뛰기 버튼 4 travel
+STATE 99 4 2 travel ['r13_hub'] custody_choice square 사람= ['doto', 'resident_bori', 'resident_badook']
+STATE 100 4 2 travel ['r13_map'] custody_choice square 사람= ['doto', 'resident_bori', 'resident_badook']
+SHOT 027-map-room13
+STATE 101 4 2 travel [] custody_choice room13 사람= []
+STATE 107 4 2 sleep4 ['r13_hub'] custody_choice room13 사람= []
+SHOT 028-hub-sleep4-room13
+  배치 []
+  층15 [True, 0, 2160, [[1700, 375, 35, 67], [863, 552, 215, 64], [842, 498, 438, 57], [1541, 419, 150, 126], [809, 337, 675, 180]], []]
+  층16직접 [['층16출력', []]]
+==== 5일
+SAVED br-piko_lost-day5
+STATE 108 5 0 travel ['r13_hub'] custody_choice room13 사람= []
+STATE 109 5 0 travel ['r13_map'] custody_choice room13 사람= []
+STATE 110 5 0 travel [] custody_choice ms14_somi 사람= []
+STATE 116 5 0 travel ['say'] custody_choice ms14_somi 사람= ['resident_nero', 'resident_somi', 'resident_musoe']
+대화 건너뛰기 버튼 5 travel
+STATE 117 5 0 travel ['r13_hub'] custody_choice ms14_somi 사람= ['resident_nero', 'resident_somi', 'resident_musoe']
+STATE 118 5 0 travel ['r13_map'] custody_choice ms14_somi 사람= ['resident_nero', 'resident_somi', 'resident_musoe']
+SHOT 029-map-ms14_somi_inside
+STATE 119 5 0 travel [] custody_choice ms14_somi_inside 사람= ['resident_nero', 'resident_somi', 'resident_musoe']
+STATE 125 5 0 travel ['say'] custody_choice ms14_somi_inside 사람= ['resident_musoe']
+대화 건너뛰기 버튼 5 travel
+대화 건너뛰기 버튼 5 travel
+STATE 127 5 0 compare_cloth5 ['r13_hub'] custody_choice ms14_somi_inside 사람= ['resident_nero', 'resident_somi', 'resident_musoe']
+SHOT 030-hub-compare_cloth5-ms14_somi_inside
+  배치 [['resident_nero', 272, 450, 115, 210, True], ['resident_musoe', 1030, 439, 139, 231, True], ['resident_somi', 636, 551, 146, 129, True]]
+  층15 [True, 0, 1920, [[1400, 350, 300, 300]], [['resident_nero', [224, 362, 211, 300], True, 662], ['resident_musoe', [1003, 356, 180, 315], True, 671], ['resident_somi', [553, 406, 312, 276], True, 682]]]
+  층16직접 [['resident_nero', [224, 362, 211, 300]], ['resident_musoe', [1003, 356, 180, 315]], ['resident_somi', [553, 406, 312, 276]], ['층16출력', [['resident_nero', [224, 362, 211, 300]], ['resident_musoe', [1003, 356, 180, 315]], ['resident_somi', [553, 406, 312, 276]]]]]
+STATE 129 5 0 compare_cloth5 ['say'] custody_choice ms14_somi_inside 사람= ['resident_nero', 'resident_somi', 'resident_musoe']
+대화 건너뛰기 버튼 5 compare_cloth5
+대화 건너뛰기 버튼 5 compare_cloth5
+STATE 131 5 0 travel ['r13_hub'] custody_choice ms14_somi_inside 사람= ['resident_nero', 'resident_somi', 'resident_musoe']
+SHOT 031-hub-travel-ms14_somi_inside
+  배치 [['resident_nero', -368, 450, 115, 210, True], ['resident_musoe', 390, 439, 139, 231, True], ['resident_somi', -4, 551, 146, 129, True]]
+  층15 [True, 640, 1920, [], [['resident_nero', [224, 362, 211, 300], True, 662], ['resident_musoe', [1003, 356, 180, 315], True, 671], ['resident_somi', [553, 406, 312, 276], True, 682]]]
+  층16직접 [['resident_nero', [224, 362, 211, 300]], ['resident_musoe', [1003, 356, 180, 315]], ['resident_somi', [553, 406, 312, 276]], ['층16출력', [['resident_nero', [224, 362, 211, 300]], ['resident_musoe', [1003, 356, 180, 315]], ['resident_somi', [553, 406, 312, 276]]]]]
+STATE 132 5 0 travel ['r13_map'] custody_choice ms14_somi_inside 사람= ['resident_nero', 'resident_somi', 'resident_musoe']
+SHOT 032-map-clinic
+STATE 133 5 0 travel [] custody_choice clinic 사람= ['resident_seori', 'resident_nero', 'resident_somi', 'resident_musoe']
+STATE 139 5 0 travel ['say'] custody_choice clinic 사람= ['resident_seori', 'ms14_clinician']
+대화 건너뛰기 버튼 5 travel
+STATE 140 5 0 travel ['r13_hub'] custody_choice clinic 사람= ['resident_seori']
+SHOT 033-hub-travel-clinic
+  배치 [['resident_seori', 965, 285, 134, 210, False]]
+  층15 [True, 0, 1920, [[625, 463, 316, 79], [598, 344, 142, 60], [1012, 322, 431, 221]], [['resident_seori', [753, 285, 134, 210], False, 495]]]
+  층16직접 [['resident_seori', [753, 285, 134, 210]], ['층16출력', [['resident_seori', [965, 285, 134, 210]]]]]
+STATE 141 5 0 travel ['r13_map'] custody_choice clinic 사람= ['resident_seori']
+STATE 142 5 0 travel [] custody_choice dining 사람= []
+STATE 148 5 0 travel ['say'] custody_choice dining 사람= ['resident_nero', 'resident_badook', 'nabi']
+SHOT 034-say-travel-MS14_D05_S02-None
+SHOT 035-say-travel-MS14_D05_S02-아빠
+STATE 158 5 0 travel ['r13_hub'] custody_choice dining 사람= []
+STATE 159 5 0 travel ['r13_map'] custody_choice dining 사람= []
+STATE 160 5 0 travel [] custody_choice gate 사람= ['karo', 'resident_bori', 'guard']
+STATE 165 5 0 travel ['say'] custody_choice gate 사람= ['karo', 'resident_bori', 'resident_badook', 'guard', 'neoul', 'resident_nero', 'resident_kongi']
+대화 건너뛰기 버튼 5 travel
+대화 건너뛰기 버튼 5 travel
+STATE 167 5 0 travel ['r13_crisis_proof'] custody_choice gate 사람= ['karo', 'resident_bori', 'resident_badook', 'guard', 'neoul', 'resident_nero', 'resident_kongi']
+SHOT 036-proof-travel
+  제출 묶음 밤이 혐의의 근거를 확인한다 ['E20', 'E22', 'E23', 'E24']
+STATE 168 5 0 travel ['r13_book'] custody_choice gate 사람= ['karo', 'resident_bori', 'resident_badook', 'guard', 'neoul', 'resident_nero', 'resident_kongi']
+STATE 169 5 0 travel ['r13_crisis_proof'] custody_choice gate 사람= ['karo', 'resident_bori', 'resident_badook', 'guard', 'neoul', 'resident_nero', 'resident_kongi']
+STATE 170 5 0 travel ['r13_book'] custody_choice gate 사람= ['karo', 'resident_bori', 'resident_badook', 'guard', 'neoul', 'resident_nero', 'resident_kongi']
+STATE 171 5 0 travel ['r13_crisis_proof'] custody_choice gate 사람= ['karo', 'resident_bori', 'resident_badook', 'guard', 'neoul', 'resident_nero', 'resident_kongi']
+STATE 172 5 0 travel ['r13_book'] custody_choice gate 사람= ['karo', 'resident_bori', 'resident_badook', 'guard', 'neoul', 'resident_nero', 'resident_kongi']
+STATE 173 5 0 travel ['r13_crisis_proof'] custody_choice gate 사람= ['karo', 'resident_bori', 'resident_badook', 'guard', 'neoul', 'resident_nero', 'resident_kongi']
+STATE 174 5 0 travel ['r13_book'] custody_choice gate 사람= ['karo', 'resident_bori', 'resident_badook', 'guard', 'neoul', 'resident_nero', 'resident_kongi']
+STATE 175 5 0 travel ['r13_crisis_proof'] custody_choice gate 사람= ['karo', 'resident_bori', 'resident_badook', 'guard', 'neoul', 'resident_nero', 'resident_kongi']
+  값 meeting:gate_post None → win
+STATE 176 5 0 travel ['say'] custody_choice gate 사람= ['karo', 'resident_bori', 'resident_badook', 'guard', 'neoul', 'resident_nero', 'resident_kongi']
+대화 건너뛰기 버튼 5 travel
+  값 bami_status with_badugi_at_diner → cleared
+STATE 177 5 1 envelope5 ['r13_hub'] custody_choice gate 사람= ['karo', 'resident_kalbaram', 'guard', 'resident_lamplighter']
+SHOT 037-hub-envelope5-gate
+  배치 [['guard', 692, 512, 204, 280, False], ['karo', -432, 532, 285, 307, False], ['resident_lamplighter', 600, 572, 135, 281, True], ['resident_kalbaram', 1244, 608, 227, 281, False]]
+  층15 [True, 760, 2467, [[1661, 583, 201, 98], [986, 513, 75, 114], [1080, 614, 82, 177], [690, 596, 178, 75], [536, 669, 413, 127], [1608, 734, 206, 100], [1880, 637, 125, 111]], [['guard', [1452, 512, 204, 280], False, 792], ['karo', [327, 533, 285, 306], False, 839], ['resident_lamplighter', [1372, 616, 112, 104], True, 851], ['resident_kalbaram', [2006, 608, 226, 281], False, 889]]]
+  층16직접 [['guard', [1452, 512, 204, 280]], ['karo', [327, 533, 285, 306]], ['resident_lamplighter', [1372, 616, 112, 104]], ['resident_kalbaram', [2006, 608, 226, 281]], ['층16출력', [['guard', [1452, 512, 204, 280]], ['karo', [327, 533, 285, 306]], ['resident_lamplighter', [1372, 616, 112, 104]], ['resident_kalbaram', [2006, 608, 226, 281]]]]]
+STATE 178 5 1 envelope5 ['r13_topics'] custody_choice gate 사람= ['karo', 'resident_kalbaram', 'guard', 'resident_lamplighter']
+SHOT 038-topics-envelope5-resident_lamplighter
+  질문 봉투를 받겠습니다.
+STATE 179 5 1 envelope5 ['say'] custody_choice gate 사람= ['karo', 'resident_kalbaram', 'guard', 'resident_lamplighter']
+SHOT 039-say-envelope5-MS14_D05_S04-초롱
+SHOT 040-say-envelope5-MS14_D05_S04-None
+대화 건너뛰기 버튼 5 envelope5
+STATE 182 5 1 envelope5 ['r13_crisis_proof'] custody_choice gate 사람= ['karo', 'resident_kalbaram', 'guard', 'resident_lamplighter']
+SHOT 041-proof-envelope5
+  제출 묶음 두 편지의 초대를 대조한다 ['E01', 'E27']
+STATE 183 5 1 envelope5 ['r13_book'] custody_choice gate 사람= ['karo', 'resident_kalbaram', 'guard', 'resident_lamplighter']
+STATE 184 5 1 envelope5 ['r13_crisis_proof'] custody_choice gate 사람= ['karo', 'resident_kalbaram', 'guard', 'resident_lamplighter']
+STATE 185 5 1 envelope5 ['r13_book'] custody_choice gate 사람= ['karo', 'resident_kalbaram', 'guard', 'resident_lamplighter']
+STATE 186 5 1 envelope5 ['r13_crisis_proof'] custody_choice gate 사람= ['karo', 'resident_kalbaram', 'guard', 'resident_lamplighter']
+STATE 187 5 1 envelope5 ['say'] custody_choice gate 사람= ['karo', 'resident_kalbaram', 'guard', 'resident_lamplighter']
+대화 건너뛰기 버튼 5 envelope5
+STATE 188 5 1 envelope5 ['choice'] custody_choice gate 사람= ['karo', 'resident_kalbaram', 'guard', 'resident_lamplighter']
+SHOT 042-choice-custody_choice
+  선택 0 첫날 기록을 다시 본다
+STATE 189 5 1 envelope5 ['say'] custody_choice gate 사람= ['karo', 'resident_kalbaram', 'guard', 'resident_lamplighter']
+대화 건너뛰기 버튼 5 envelope5
+STATE 190 5 1 reply_handoff5 ['r13_topics'] custody_choice gate 사람= ['karo', 'resident_kalbaram', 'guard', 'resident_lamplighter']
+SHOT 043-topics-reply_handoff5-resident_lamplighter
+  자료 제시 답장을 맡기겠습니다.
+STATE 191 5 1 reply_handoff5 ['r13_book'] custody_choice gate 사람= ['karo', 'resident_kalbaram', 'guard', 'resident_lamplighter']
+STATE 192 5 1 reply_handoff5 ['say'] custody_choice gate 사람= ['karo', 'resident_kalbaram', 'guard', 'resident_lamplighter']
+대화 건너뛰기 버튼 5 reply_handoff5
+STATE 193 5 2 travel ['r13_topics'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard']
+SHOT 044-topics-travel-resident_lamplighter
+STATE 194 5 2 travel ['r13_hub'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard']
+STATE 195 5 2 travel ['r13_map'] custody_choice gate 사람= ['karo', 'resident_lamplighter', 'guard']
+STATE 196 5 2 travel [] custody_choice ms14_somi_inside 사람= []
+STATE 202 5 2 travel ['say'] custody_choice ms14_somi_inside 사람= ['resident_somi', 'resident_musoe', 'resident_nero', 'resident_badook']
+대화 건너뛰기 버튼 5 travel
+STATE 203 5 2 travel ['r13_hub'] custody_choice ms14_somi_inside 사람= ['resident_somi', 'resident_musoe', 'resident_nero', 'resident_badook']
+STATE 204 5 2 travel ['r13_map'] custody_choice ms14_somi_inside 사람= ['resident_somi', 'resident_musoe', 'resident_nero', 'resident_badook']
+STATE 205 5 2 travel [] custody_choice dining 사람= ['nabi', 'resident_owlgp', 'resident_tok', 'resident_mulgyeol', 'resident_dalgeurak', 'resident_hyeoni', 'resident_somi', 'resident_musoe', 'resident_nero', 'resident_badook']
+STATE 211 5 2 travel ['say'] custody_choice dining 사람= ['nabi', 'resident_owlgp', 'resident_tok', 'resident_mulgyeol', 'resident_dalgeurak', 'resident_hyeoni', 'karo']
+대화 건너뛰기 버튼 5 travel
+STATE 212 5 2 travel ['r13_hub'] custody_choice dining 사람= ['nabi', 'resident_owlgp', 'resident_tok', 'resident_mulgyeol', 'resident_dalgeurak', 'resident_hyeoni', 'karo']
+STATE 213 5 2 travel ['r13_map'] custody_choice dining 사람= ['nabi', 'resident_owlgp', 'resident_tok', 'resident_mulgyeol', 'resident_dalgeurak', 'resident_hyeoni', 'karo']
+SHOT 045-map-laundry
+STATE 214 5 2 travel [] custody_choice laundry 사람= ['karo', 'resident_owlgp']
+STATE 220 5 2 laundry5 ['r13_hub'] custody_choice laundry 사람= []
+SHOT 046-hub-laundry5-laundry
+  배치 []
+  층15 [True, 0, 1920, [[640, 175, 560, 225]], []]
+  층16직접 [['층16출력', []]]
+STATE 221 5 2 laundry5 ['say'] custody_choice laundry 사람= []
+대화 건너뛰기 버튼 5 laundry5
+  값 grand_laundry_seen5 None → True
+  값 grand_ticket_spot_known None → True
+STATE 222 5 2 laundry5 ['r13_hub'] custody_choice laundry 사람= []
+STATE 223 5 2 laundry5 ['r13_map'] custody_choice laundry 사람= []
+SHOT 047-map-inn
+STATE 224 5 2 laundry5 [] custody_choice inn 사람= ['granny', 'resident_eunho', 'resident_madam', 'resident_ubak', 'resident_guseul', 'resident_tosil']
+STATE 230 5 2 laundry5 ['say'] custody_choice inn 사람= ['granny', 'resident_eunho', 'resident_madam', 'resident_ubak', 'resident_guseul', 'resident_tosil']
+대화 건너뛰기 버튼 5 laundry5
+STATE 231 5 2 travel ['r13_hub'] custody_choice inn 사람= ['granny', 'resident_eunho', 'resident_madam', 'resident_ubak', 'resident_guseul', 'resident_tosil']
+SHOT 048-hub-travel-inn
+  배치 [['granny', 775, 272, 95, 195, False], ['resident_tosil', -151, 370, 82, 165, False], ['resident_guseul', 394, 329, 90, 210, True], ['resident_ubak', 153, 438, 191, 180, True], ['resident_eunho', -634, 480, 183, 200, True], ['resident_madam', -399, 491, 117, 209, False]]
+  층15 [True, 640, 1920, [[1556, 355, 127, 46], [1670, 136, 150, 170]], [['granny', [1527, 226, 122, 242], False, 466.5752517985611], ['resident_tosil', [475, 320, 105, 215], False, 535], ['resident_guseul', [1033, 323, 92, 216], True, 539], ['resident_ubak', [777, 409, 224, 211], True, 620], ['resident_eunho', [0, 437, 226, 244], True, 681], ['resident_madam', [241, 491, 117, 209], False, 700]]]
+  층16직접 [['granny', [1527, 226, 122, 242]], ['resident_tosil', [475, 320, 105, 215]], ['resident_guseul', [1033, 323, 92, 216]], ['resident_ubak', [777, 409, 224, 211]], ['resident_eunho', [0, 437, 226, 244]], ['resident_madam', [241, 491, 117, 209]], ['층16출력', [['granny', [1400, 227, 122, 241]], ['resident_tosil', [475, 320, 105, 215]], ['resident_guseul', [1033, 323, 92, 216]], ['resident_ubak', [777, 409, 224, 211]], ['resident_eunho', [0, 437, 226, 244]], ['resident_madam', [241, 491, 117, 209]]]]]
+STATE 232 5 2 travel ['r13_map'] custody_choice inn 사람= ['granny', 'resident_eunho', 'resident_madam', 'resident_ubak', 'resident_guseul', 'resident_tosil']
+SHOT 049-map-hall
+STATE 233 5 2 travel [] custody_choice hall 사람= []
+STATE 238 5 2 travel ['say'] custody_choice hall 사람= []
+대화 건너뛰기 버튼 5 travel
+STATE 239 5 2 travel ['r13_hub'] custody_choice hall 사람= []
+SHOT 050-hub-travel-hall
+  배치 []
+  층15 [True, 0, 2160, [[861, 401, 126, 88], [916, 192, 72, 95], [1236, 335, 125, 164], [530, 466, 200, 76]], []]
+  층16직접 [['층16출력', []]]
+STATE 240 5 2 travel ['r13_map'] custody_choice hall 사람= []
+STATE 241 5 2 travel [] custody_choice room13 사람= []
+STATE 247 5 2 lock_check5 ['r13_hub'] custody_choice room13 사람= []
+SHOT 051-hub-lock_check5-room13
+  배치 []
+  층15 [True, 0, 2160, [[1700, 375, 35, 67], [863, 552, 215, 64], [842, 498, 438, 57], [1541, 419, 150, 126], [272, 12, 293, 303], [401, 393, 95, 40]], []]
+  층16직접 [['층16출력', []]]
+STATE 248 5 2 lock_check5 ['say'] custody_choice room13 사람= []
+대화 건너뛰기 버튼 5 lock_check5
+대화 건너뛰기 버튼 5 lock_check5
+STATE 250 5 2 sleep5 ['r13_hub'] custody_choice room13 사람= []
+SHOT 052-hub-sleep5-room13
+  배치 []
+  층15 [True, 0, 2160, [[1700, 375, 35, 67], [863, 552, 215, 64], [842, 498, 438, 57], [1541, 419, 150, 126], [809, 337, 675, 180]], []]
+  층16직접 [['층16출력', []]]
+==== 6일
+SAVED br-piko_lost-day6
+STATE 251 6 0 sleep5 [] custody_choice inn 사람= ['granny', 'resident_nubi']
+STATE 256 6 0 sleep5 ['say'] custody_choice inn 사람= ['granny', 'resident_nubi']
+대화 건너뛰기 버튼 6 sleep5
+STATE 257 6 0 travel ['r13_hub'] custody_choice inn 사람= ['granny', 'resident_nubi', 'resident_lamplighter']
+STATE 258 6 0 travel ['r13_map'] custody_choice inn 사람= ['granny', 'resident_nubi', 'resident_lamplighter']
+SHOT 053-map-school
+STATE 259 6 0 travel [] custody_choice school 사람= ['resident_teacher', 'granny', 'resident_lamplighter']
+STATE 264 6 0 travel ['say'] custody_choice school 사람= ['resident_teacher', 'resident_lamplighter', 'kid_kkomi']
+대화 건너뛰기 버튼 6 travel
+STATE 265 6 0 travel ['choice'] custody_choice school 사람= ['resident_teacher', 'resident_lamplighter', 'kid_kkomi']
+SHOT 054-choice-custody_choice
+  선택 0 그릇을 돌려주러 같이 가자.
+STATE 266 6 0 travel ['say'] custody_choice school 사람= ['resident_teacher', 'resident_lamplighter', 'kid_kkomi']
+대화 건너뛰기 버튼 6 travel
+대화 건너뛰기 버튼 6 travel
+STATE 268 6 0 travel [] custody_choice dining 사람= ['resident_teacher', 'resident_lamplighter', 'kid_kkomi']
+STATE 274 6 0 board6 ['r13_hub'] custody_choice dining 사람= ['nabi']
+SHOT 055-hub-board6-dining
+  배치 [['nabi', 989, 265, 142, 210, False]]
+  층15 [True, 0, 2160, [[731, 437, 156, 247], [1517, 0, 103, 186], [946, 480, 1190, 130]], [['nabi', [989, 265, 142, 210], False, 475]]]
+  층16직접 [['nabi', [989, 265, 142, 210]], ['층16출력', [['nabi', [989, 265, 142, 210]]]]]
+STATE 275 6 0 board6 ['say'] custody_choice dining 사람= ['nabi']
+대화 건너뛰기 버튼 6 board6
+STATE 276 6 0 hp_meal6 ['r13_hub'] custody_choice dining 사람= ['npc_pandol', 'daram', 'nabi']
+SHOT 056-hub-hp_meal6-dining
+  배치 [['nabi', 989, 265, 142, 210, False], ['npc_pandol', 273, 460, 102, 195, True], ['daram', 495, 514, 89, 165, True]]
+  층15 [True, 0, 2160, [[731, 437, 156, 247], [1517, 0, 103, 186], [946, 480, 1190, 130]], [['nabi', [989, 265, 142, 210], False, 475], ['npc_pandol', [236, 396, 171, 260], True, 656], ['daram', [440, 420, 199, 260], True, 680]]]
+  층16직접 [['nabi', [989, 265, 142, 210]], ['npc_pandol', [236, 396, 171, 260]], ['daram', [440, 420, 199, 260]], ['층16출력', [['nabi', [989, 265, 142, 210]], ['npc_pandol', [236, 396, 171, 260]], ['daram', [440, 420, 199, 260]]]]]
+STATE 277 6 0 hp_meal6 ['r13_topics'] custody_choice dining 사람= ['npc_pandol', 'daram', 'nabi']
+SHOT 057-topics-hp_meal6-daram
+  질문 다람아, 애들한테 가자.
+STATE 278 6 0 hp_meal6 ['say'] custody_choice dining 사람= ['npc_pandol', 'daram', 'nabi']
+대화 건너뛰기 버튼 6 hp_meal6
+대화 건너뛰기 버튼 6 hp_meal6
+STATE 280 6 1 travel ['r13_hub'] custody_choice dining 사람= ['nabi']
+STATE 281 6 1 travel ['r13_map'] custody_choice dining 사람= ['nabi']
+SHOT 058-map-v111_woodshed
+STATE 282 6 1 travel [] custody_choice v111_woodshed 사람= []
+STATE 288 6 1 travel ['say'] custody_choice v111_woodshed 사람= ['kid_kkomi', 'resident_bori']
+대화 건너뛰기 버튼 6 travel
+STATE 289 6 1 woodshed_check6 ['r13_hub'] custody_choice v111_woodshed 사람= ['kid_kkomi', 'resident_bori']
+SHOT 059-hub-woodshed_check6-v111_woodshed
+  배치 [['kid_kkomi', 286, 514, 88, 165, True], ['resident_bori', 1486, 460, 146, 230, True]]
+  층15 [True, 0, 2400, [[656, 309, 563, 290]], [['kid_kkomi', [229, 361, 173, 320], True, 681], ['resident_bori', [1390, 357, 302, 335], True, 692]]]
+  층16직접 [['kid_kkomi', [229, 361, 173, 320]], ['resident_bori', [1390, 357, 302, 335]], ['층16출력', [['kid_kkomi', [229, 361, 173, 320]], ['resident_bori', [1390, 357, 302, 335]]]]]
+STATE 290 6 1 woodshed_check6 ['say'] custody_choice v111_woodshed 사람= ['kid_kkomi', 'resident_bori']
+대화 건너뛰기 버튼 6 woodshed_check6
+대화 건너뛰기 버튼 6 woodshed_check6
+STATE 292 6 1 afternoon6 ['r13_hub'] custody_choice v111_woodshed 사람= ['kid_kkomi', 'resident_bori']
+SHOT 060-hub-afternoon6-v111_woodshed
+  배치 [['kid_kkomi', 286, 514, 88, 165, True], ['resident_bori', 687, 460, 146, 230, True]]
+  층15 [True, 0, 2400, [[1878, 20, 110, 150]], [['kid_kkomi', [229, 361, 173, 320], True, 681], ['resident_bori', [593, 362, 298, 330], True, 692]]]
+  층16직접 [['kid_kkomi', [229, 361, 173, 320]], ['resident_bori', [593, 362, 298, 330]], ['층16출력', [['kid_kkomi', [229, 361, 173, 320]], ['resident_bori', [593, 362, 298, 330]]]]]
+STATE 294 6 1 afternoon6 ['say'] custody_choice v111_woodshed 사람= ['kid_kkomi', 'resident_bori']
+대화 건너뛰기 버튼 6 afternoon6
+STATE 295 6 1 afternoon6 ['r13_hub'] custody_choice v111_woodshed 사람= ['kid_kkomi', 'resident_bori']
+STATE 296 6 1 afternoon6 ['say'] custody_choice v111_woodshed 사람= ['kid_kkomi', 'resident_bori']
+대화 건너뛰기 버튼 6 afternoon6
+STATE 297 6 1 afternoon6 ['r13_hub'] custody_choice v111_woodshed 사람= ['kid_kkomi', 'resident_bori']
+STATE 298 6 1 afternoon6 ['r13_map'] custody_choice v111_woodshed 사람= ['kid_kkomi', 'resident_bori']
+STATE 299 6 1 afternoon6 [] custody_choice school 사람= ['resident_teacher', 'resident_bori']
+STATE 303 6 1 afternoon6 ['r13_hub'] custody_choice school 사람= ['resident_teacher', 'resident_bori']
+SHOT 061-hub-afternoon6-school
+  배치 [['resident_teacher', 71, 240, 157, 230, False], ['resident_bori', 401, 304, 146, 230, True]]
+  층15 [True, 0, 1800, [[235, 419, 123, 28]], [['resident_teacher', [71, 240, 157, 230], False, 470], ['resident_bori', [353, 296, 216, 240], True, 536]]]
+  층16직접 [['resident_teacher', [71, 240, 157, 230]], ['resident_bori', [353, 296, 216, 240]], ['층16출력', [['resident_teacher', [71, 240, 157, 230]], ['resident_bori', [353, 296, 216, 240]]]]]
+STATE 304 6 1 afternoon6 ['r13_topics'] custody_choice school 사람= ['resident_teacher', 'resident_bori']
+SHOT 062-topics-afternoon6-resident_teacher
+  질문 선생님, 학교에 아이 자리가 있겠습니까?
+STATE 305 6 1 afternoon6 ['say'] custody_choice school 사람= ['resident_teacher', 'resident_bori']
+대화 건너뛰기 버튼 6 afternoon6
+대화 건너뛰기 버튼 6 afternoon6
+STATE 307 6 1 afternoon6 [] custody_choice v111_woodshed 사람= ['kid_kkomi', 'resident_bori']
+STATE 313 6 1 afternoon6 ['r13_hub'] custody_choice v111_woodshed 사람= ['kid_kkomi', 'resident_bori']
+STATE 316 6 1 afternoon6 ['r13_topics'] custody_choice v111_woodshed 사람= ['kid_kkomi', 'resident_bori']
+SHOT 063-topics-afternoon6-kid_kkomi
+  질문 학교에 자리가 났어. 같이 갈래?
+STATE 317 6 1 afternoon6 [] custody_choice school 사람= ['resident_teacher', 'resident_bori']
+STATE 323 6 1 afternoon6 ['say'] custody_choice school 사람= ['resident_teacher', 'resident_bori']
+대화 건너뛰기 버튼 6 afternoon6
+STATE 324 6 1 travel ['r13_hub'] custody_choice school 사람= ['resident_teacher', 'resident_bori', 'nabi', 'doto']
+SHOT 064-hub-travel-school
+  배치 [['resident_teacher', 71, 240, 157, 230, False], ['resident_bori', 401, 304, 146, 230, True], ['nabi', 578, 330, 102, 210, True], ['doto', 78, 484, 84, 211, True]]
+  층15 [True, 0, 1800, [[235, 419, 123, 28]], [['resident_teacher', [71, 240, 157, 230], False, 470], ['resident_bori', [353, 296, 216, 240], True, 536], ['nabi', [549, 300, 161, 240], True, 540], ['doto', [54, 436, 114, 260], True, 696]]]
+  층16직접 [['resident_teacher', [71, 240, 157, 230]], ['resident_bori', [353, 296, 216, 240]], ['nabi', [549, 300, 161, 240]], ['doto', [54, 436, 114, 260]], ['층16출력', [['resident_teacher', [71, 240, 157, 230]], ['resident_bori', [353, 296, 216, 240]], ['nabi', [549, 300, 161, 240]], ['doto', [54, 436, 114, 260]]]]]
+STATE 325 6 1 travel ['r13_map'] custody_choice school 사람= ['resident_teacher', 'resident_bori', 'nabi', 'doto']
+STATE 326 6 1 travel [] custody_choice v111_woodshed 사람= ['resident_teacher', 'nabi', 'doto']
+STATE 332 6 1 travel ['say'] custody_choice v111_woodshed 사람= ['kid_kkomi', 'resident_bori']
+대화 건너뛰기 버튼 6 travel
+STATE 333 6 1 travel ['r13_hub'] custody_choice v111_woodshed 사람= ['kid_kkomi', 'resident_bori', 'doto']
+SHOT 065-hub-travel-v111_woodshed
+  배치 [['kid_kkomi', 286, 514, 88, 165, True], ['doto', 1107, 469, 84, 211, True], ['resident_bori', 687, 460, 146, 230, True]]
+  층15 [True, 0, 2400, [], [['kid_kkomi', [229, 361, 173, 320], True, 681], ['doto', [1067, 356, 143, 325], True, 681], ['resident_bori', [593, 362, 298, 330], True, 692]]]
+  층16직접 [['kid_kkomi', [229, 361, 173, 320]], ['doto', [1067, 356, 143, 325]], ['resident_bori', [593, 362, 298, 330]], ['층16출력', [['kid_kkomi', [229, 361, 173, 320]], ['doto', [1067, 356, 143, 325]], ['resident_bori', [593, 362, 298, 330]]]]]
+STATE 334 6 1 travel ['r13_map'] custody_choice v111_woodshed 사람= ['kid_kkomi', 'resident_bori', 'doto']
+STATE 335 6 1 travel [] custody_choice school 사람= ['resident_teacher', 'resident_bori', 'kid_kkomi', 'doto']
+STATE 340 6 1 handoff6 ['r13_hub'] custody_choice school 사람= ['resident_teacher', 'resident_bori', 'doto', 'kid_kkomi']
+SHOT 066-hub-handoff6-school
+  배치 [['resident_teacher', 71, 240, 157, 230, False], ['kid_kkomi', 1319, 344, 88, 165, True], ['doto', 1107, 306, 84, 211, True], ['resident_bori', 401, 304, 146, 230, True]]
+  층15 [True, 0, 1800, [[235, 419, 123, 28], [0, 482, 260, 127]], [['resident_teacher', [71, 240, 157, 230], False, 470], ['kid_kkomi', [1307, 331, 97, 179], True, 510], ['doto', [1091, 288, 101, 230], True, 518], ['resident_bori', [353, 296, 216, 240], True, 536]]]
+  층16직접 [['resident_teacher', [71, 240, 157, 230]], ['kid_kkomi', [1307, 331, 97, 179]], ['doto', [1091, 288, 101, 230]], ['resident_bori', [353, 296, 216, 240]], ['층16출력', [['resident_teacher', [71, 240, 157, 230]], ['kid_kkomi', [1307, 331, 97, 179]], ['doto', [1091, 288, 101, 230]], ['resident_bori', [353, 296, 216, 240]]]]]
+STATE 341 6 1 handoff6 ['say'] custody_choice school 사람= ['resident_teacher', 'resident_bori', 'doto', 'kid_kkomi']
+대화 건너뛰기 버튼 6 handoff6
+대화 건너뛰기 버튼 6 handoff6
+  값 fate:fate_kkomi None → saved
+STATE 343 6 2 travel ['r13_hub'] custody_choice school 사람= []
+STATE 344 6 2 travel ['r13_map'] custody_choice school 사람= []
+SHOT 067-map-v111_fire
+STATE 345 6 2 travel [] custody_choice v111_fire 사람= []
+STATE 350 6 2 travel ['say'] custody_choice v111_fire 사람= ['resident_bori', 'doto']
+대화 건너뛰기 버튼 6 travel
+대화 건너뛰기 버튼 6 travel
+STATE 352 6 2 travel ['r13_hub'] custody_choice v111_fire 사람= []
+SHOT 068-hub-travel-v111_fire
+  배치 []
+  층15 [True, 0, 1920, [], []]
+  층16직접 [['층16출력', []]]
+STATE 353 6 2 travel ['r13_map'] custody_choice v111_fire 사람= []
+STATE 354 6 2 travel [] custody_choice school 사람= []
+STATE 359 6 2 travel ['say'] custody_choice school 사람= ['nabi', 'resident_bori', 'neoul', 'doto']
+대화 건너뛰기 버튼 6 travel
+STATE 360 6 2 travel ['r13_hub'] custody_choice school 사람= ['nabi', 'resident_bori', 'neoul', 'doto']
+STATE 361 6 2 travel ['r13_map'] custody_choice school 사람= ['nabi', 'resident_bori', 'neoul', 'doto']
+SHOT 069-map-v111_ruin
+STATE 362 6 2 travel [] custody_choice v111_ruin 사람= ['nabi', 'resident_bori', 'neoul', 'doto']
+STATE 367 6 2 fire_evidence6 ['r13_hub'] custody_choice v111_ruin 사람= ['doto']
+SHOT 070-hub-fire_evidence6-v111_ruin
+  배치 [['doto', 237, 449, 84, 211, True]]
+  층15 [True, 0, 1920, [[720, 400, 240, 200]], [['doto', [201, 351, 136, 310], True, 661]]]
+  층16직접 [['doto', [201, 351, 136, 310]], ['층16출력', [['doto', [201, 351, 136, 310]]]]]
+STATE 368 6 2 fire_evidence6 ['say'] custody_choice v111_ruin 사람= ['doto']
+대화 건너뛰기 버튼 6 fire_evidence6
+STATE 369 6 2 travel ['r13_hub'] custody_choice v111_ruin 사람= []
+SHOT 071-hub-travel-v111_ruin
+  배치 []
+  층15 [True, 0, 1920, [], []]
+  층16직접 [['층16출력', []]]
+STATE 370 6 2 travel ['r13_map'] custody_choice v111_ruin 사람= []
+STATE 371 6 2 travel [] custody_choice school 사람= []
+STATE 377 6 2 travel ['say'] custody_choice school 사람= ['kid_kkomi']
+대화 건너뛰기 버튼 6 travel
+STATE 378 6 2 sleep6_input ['r13_hub'] custody_choice school 사람= []
+SHOT 072-hub-sleep6_input-school
+  배치 []
+  층15 [True, 0, 1800, [[235, 419, 123, 28], [0, 482, 260, 127]], []]
+  층16직접 [['층16출력', []]]
+부분 주행 완료 6 일 다음 날 도착
+SHOT 073-partial-finished
+ERRORS [] 시간 263
