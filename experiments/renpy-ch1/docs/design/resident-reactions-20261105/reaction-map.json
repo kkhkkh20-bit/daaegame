@@ -1,10 +1,10 @@
 {
   "schema": "room13.resident-reaction-plan.v1",
   "status": "proposal_not_runtime",
-  "date": "2026-11-05",
+  "date": "2026-11-06",
   "game_baseline": "0.20.104",
   "language": "ko",
-  "scope": "공통 14일 시간표와 피코 사건 4시점·7장면 문학 초고",
+  "scope": "공통 14일 시간표와 피코 사건 4시점·7장면 개정 원고. 욕구·꺼리는 것·선택과 대가를 구별하고 기존 관계를 보강함.",
   "runtime_changes": false,
   "declarative_conditions_only": true,
   "read_completion_gates_are_implementation_proposals": true,
@@ -242,7 +242,7 @@
   "scenes": [
     {
       "id": "RR_PIKO_01",
-      "title": "아이가 서 있는 쪽",
+      "title": "밤새 지키지는 못해요",
       "pov": "resident_lamplighter",
       "pov_name": "초롱",
       "day": 3,
@@ -278,11 +278,19 @@
       },
       "valid_until": "3일 발견 직후; 이후에는 날짜가 붙은 회상",
       "revisit_echo": "초롱은 다람이 아빠 곁에 있는지 먼저 살핀다.",
-      "new_evidence": false
+      "new_evidence": false,
+      "characterization": {
+        "want": "자기 일을 제대로 했다는 설명으로 자신을 지키고 싶음",
+        "resistance": "부녀의 슬픔 앞에서 자기 변명을 하는 사람으로 보일까 두려움",
+        "choice": "변호 문장을 삼키고 부녀가 받칠 때까지 판자를 건넴",
+        "cost": "일 처리로 피할 수 없는 자리에 남는 불편함",
+        "relationship_anchor": "D02_S03_L0027~30의 직접 대화",
+        "status": "literary_proposal_not_new_evidence"
+      }
     },
     {
       "id": "RR_PIKO_02",
-      "title": "없는 자리와 남은 사람",
+      "title": "고치러 오라고 한 사람",
       "pov": "resident_lamplighter",
       "pov_name": "초롱",
       "day": 3,
@@ -319,11 +327,19 @@
       },
       "valid_until": "3일 첫 조사 구간; 이후 회상",
       "revisit_echo": "초롱은 식당에서 본 피코의 얼굴을 떠올리고 점검장을 편다.",
-      "new_evidence": false
+      "new_evidence": false,
+      "characterization": {
+        "want": "등을 빨리 다시 켜고 일을 진행하고 싶음",
+        "resistance": "수리를 맡긴 자기 판단도 질문받는 것",
+        "choice": "톡을 부른 본인도 질문의 대상이라고 나섬",
+        "cost": "자신의 의뢰 판단을 남 앞에 세움",
+        "relationship_anchor": "D03_S01_L0028~30 식당 생존 확인과 전날 수리 의뢰",
+        "status": "literary_proposal_not_new_evidence"
+      }
     },
     {
       "id": "RR_PIKO_03",
-      "title": "켜진 등 앞에서도",
+      "title": "켜져 있으니까",
       "pov": "resident_lamplighter",
       "pov_name": "초롱",
       "day": 3,
@@ -354,11 +370,19 @@
       },
       "valid_until": "3일 미수 첫 현장; 이후 미수판 회상",
       "revisit_echo": "초롱은 켜진 등을 보고도 덮개를 한 번 더 살핀다.",
-      "new_evidence": false
+      "new_evidence": false,
+      "characterization": {
+        "want": "문제없이 점검을 마치고 싶음",
+        "resistance": "수리공을 불필요하게 의심하는 사람처럼 보이는 것",
+        "choice": "켜진 등이어도 새 흠집 설명을 청함",
+        "cost": "말다툼과 불쾌함을 피하지 못함",
+        "relationship_anchor": "현재 미수 현장의 피코·톡과 실제 같은 자리",
+        "status": "literary_proposal_not_new_evidence"
+      }
     },
     {
       "id": "RR_PIKO_04",
-      "title": "아침 손님이 오기 전에",
+      "title": "노란 의자",
       "pov": "nabi",
       "pov_name": "나비",
       "day": 3,
@@ -370,10 +394,13 @@
       "source": [
         "days123: r13_v111_shelter_done·r13_v111_piko_alive3",
         "MS14_D02_S04_L0030~36",
-        "MS14_D03_S01_L0023~34(특히 L0028·L0030·L0033)"
+        "MS14_D03_S01_L0023~34(특히 L0028·L0030·L0033)",
+        "days123: r13_v111_piko_clean·r13_v111_piko_receive",
+        "MS14_D03_S01_L0035~L0039"
       ],
       "proposed_trigger": {
-        "after_sequence": "piko_alive3 식당 재회·초롱 도난 발표·나비 반응을 포함한 전체 묶음 완료"
+        "after_sequence": "piko_clean의 실제 정리 및 piko_receive의 MS14_D03_S01_L0039 commit 완료 뒤 회상",
+        "required_earlier_scene": "piko_alive3 식당 재회·초롱 도난 발표·나비 반응 전체"
       },
       "knowledge": {
         "seen": [
@@ -393,11 +420,19 @@
       },
       "valid_until": "식당 발표를 들은 같은 아침; 식당을 떠난 뒤에는 그 아침의 회상",
       "revisit_echo": "나비는 자리를 정리하려다 피코가 챙길 때까지 손을 멈춘다.",
-      "new_evidence": false
+      "new_evidence": false,
+      "characterization": {
+        "want": "자리를 치우고 아침 장사를 시작하고 싶음",
+        "resistance": "또 물감과 정리를 자기 일로 떠안는 것",
+        "choice": "자기 준비 시간을 써서 기존 정리를 함께 함",
+        "cost": "손을 다시 씻고 그릇 준비가 남는 실제 번거로움",
+        "relationship_anchor": "D02_S04_L0005·L0007·L0010 노란 자국과 천 조건",
+        "status": "literary_proposal_not_new_evidence"
+      }
     },
     {
       "id": "RR_PIKO_05",
-      "title": "고친 손",
+      "title": "쓸 수야 있죠",
       "pov": "resident_tok",
       "pov_name": "톡",
       "day": 3,
@@ -409,31 +444,48 @@
       ],
       "source": [
         "days123: r13_v111_lamp3",
-        "MS14_D03_S02_L0002~11"
+        "MS14_D03_S02_L0002~11",
+        "MS14_D03_S02_L0020~L0025",
+        "d02.json: NW_D02_S04_TKA2·TKB2"
       ],
       "proposed_trigger": {
-        "after_sequence": "lamp3 첫 묶음 완료"
+        "after_sequence": "lamp_fragment3 S02_L0016~L0025 전체 완료",
+        "required_earlier_scene": "D02 S04 TKA2 또는 TKB2의 나사·쇠고리 만남"
       },
       "knowledge": {
         "seen": [
-          "등의 현재 상태·공구·부녀"
+          "등의 현재 상태·공구·부녀",
+          "이미 공개된 안쪽 파편 조사"
         ],
         "known_from_own_action": [
-          "자신이 한 걸쇠 수리"
+          "자신이 한 걸쇠 수리",
+          "전날 다람이 나사를 찾아 주어 남는 쇠고리를 건넴"
         ],
         "unknown": [
           "남의 반출 행위",
           "구체적 시각 대조 정답",
           "다른 사람이 알려 주지 않은 사망 경위"
+        ],
+        "heard": [
+          "다른 공구를 썼을 수 있다는 질문과 본인의 대답",
+          "아빠가 누구를 믿어야 할지 모르겠다는 말"
         ]
       },
       "valid_until": "3일 의심받는 첫 현장; 입증 뒤에는 회상",
       "revisit_echo": "톡은 공구를 아이 얼굴 높이로 들지 않는다.",
-      "new_evidence": false
+      "new_evidence": false,
+      "characterization": {
+        "want": "능숙한 수리공으로 인정받고 싶음",
+        "resistance": "정직한 기술 설명이 혐의로 바뀜",
+        "choice": "다른 공구를 쓸 수 있다는 사실을 부인하지 않고 남음",
+        "cost": "억울함과 의심을 감수하고 후속 질문을 받음",
+        "relationship_anchor": "D02_TKA2/TKB2의 다람 만남. 피코와 사적 친분은 추가하지 않음",
+        "status": "literary_proposal_not_new_evidence"
+      }
     },
     {
       "id": "RR_PIKO_06",
-      "title": "손대지 않은 흠집",
+      "title": "품삯은 하나 몫인데",
       "pov": "resident_tok",
       "pov_name": "톡",
       "day": 3,
@@ -463,11 +515,19 @@
       },
       "valid_until": "3일 미수 첫 현장; 이후 미수판 회상",
       "revisit_echo": "톡은 고친 자리와 새 흠집을 나누어 가리킨다.",
-      "new_evidence": false
+      "new_evidence": false,
+      "characterization": {
+        "want": "어제 끝낸 일과 새 파손을 구별하고 돌아가고 싶음",
+        "resistance": "남이 한 일까지 자기 수리로 묶이는 것",
+        "choice": "현장을 만지지 않고 자신이 고친 범위를 설명하기로 함",
+        "cost": "끝낸 일을 다시 설명하는 시간. 새 품삯 약정 없음",
+        "relationship_anchor": "D02_TKA3/TKB3 품삯 불평과 기존 수리",
+        "status": "literary_proposal_not_new_evidence"
+      }
     },
     {
       "id": "RR_PIKO_07",
-      "title": "집게가 놓이던 자리",
+      "title": "빌려줌",
       "pov": "buri",
       "pov_name": "부리",
       "day": 3,
@@ -479,10 +539,13 @@
       ],
       "source": [
         "days123: r13_v111_workshop3",
-        "MS14_D03_S03_L0002~06"
+        "MS14_D03_S03_L0002~06",
+        "MS14_D03_S03_L0009~L0011",
+        "days123: r13_v111_loan3"
       ],
       "proposed_trigger": {
-        "after_sequence": "workshop3 집게 대여 문답 완료"
+        "after_sequence": "r13_v111_loan3의 MS14_D03_S03_L0011 문답 완료 뒤",
+        "required_earlier_scene": "workshop3 첫 문답과 loan_read 실제 확인, E12 인수"
       },
       "knowledge": {
         "seen": [
@@ -493,7 +556,8 @@
         ],
         "heard": [
           "온도를 재려고 가져간다는 말",
-          "톡이 확인해 달라고 했다는 아빠 말"
+          "톡이 확인해 달라고 했다는 아빠 말",
+          "아빠가 집게의 사용 여부를 확인하려 한다는 설명"
         ],
         "unknown": [
           "피코 사망 소식의 청취 여부",
@@ -503,7 +567,15 @@
       },
       "valid_until": "3일 공방 문답 뒤; 이후에는 당시 모른 채였던 회상",
       "revisit_echo": "부리는 집게가 돌아오면 둘 칸을 비워 둔다.",
-      "new_evidence": false
+      "new_evidence": false,
+      "characterization": {
+        "want": "닫은 가게에 더 일을 들이지 않고 싶음",
+        "resistance": "빌려준 일이 훔치게 해 준 일로 기록되는 것",
+        "choice": "돌려보내려다 자기 말을 어떻게 적었는지 다시 확인함",
+        "cost": "끊으려던 문답을 스스로 늘리는 수고",
+        "relationship_anchor": "D03_S03_L0002~11 대여 문답. 피코와 관계·사망 인지 추가 없음",
+        "status": "literary_proposal_not_new_evidence"
+      }
     }
   ],
   "open_questions": [
@@ -515,5 +587,26 @@
     "진료소 최초 방문자의 이름·정확한 사망 시각·의학적 직접 사인은 미확정",
     "4~14일 주민별 원고는 별도 후속 범위; 현재 표는 전체 주민 대사 완성본이 아님"
   ],
-  "validation_scope": "문서·조건·출처 대조와 JSON 형식 검사. 게임 적용·빌드·자연 완주·초견 독자 재미 검증 미실행."
+  "validation_scope": "문서·조건·출처 대조와 JSON 형식 검사. 게임 적용·빌드·자연 완주·초견 독자 재미 검증 미실행.",
+  "revision": "2026-11-06-character-rewrite",
+  "character_revision_rules": [
+    "인물이 피코를 모르면 친구였다는 회상을 만들지 않음",
+    "새 대화는 편집 제안. 사건 사실과 추가 문학 동작을 구분",
+    "05와 07 공개 하한을 더 뒤의 실제 원문 완료로 이동",
+    "범행·사인·물건 위치·점검 기록·새 진료·밤의 알리바이 변화 없음"
+  ],
+  "paired_scene_contracts": [
+    {
+      "scenes": [
+        "RR_PIKO_03",
+        "RR_PIKO_06"
+      ],
+      "status": "추가 대화 기획·게임 미반영",
+      "shared_lines": [
+        "보고 있는 데 말고요. 바깥쪽.",
+        "네. 거기부터요."
+      ],
+      "purpose": "같은 순간을 초롱의 점검 목표와 톡의 작업 경계에서 각각 읽음"
+    }
+  ]
 }
