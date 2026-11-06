@@ -645,5 +645,25 @@
       "RR_PIKO_03",
       "RR_PIKO_06"
     ]
+  },
+  "runtime_adaptation": {
+    "version": "0.20.106",
+    "scope": "원고의 짧은 행동·대사 발췌 및 승인한 사망 현장 선택. 원고 전문·읽기 하한 전체가 실행된 것은 아님.",
+    "applied_scene_excerpts": [
+      "RR_PIKO_01",
+      "RR_PIKO_04",
+      "RR_PIKO_05",
+      "RR_PIKO_07"
+    ],
+    "piko_scene_read_flags": [
+      "piko_scene_read:posture",
+      "piko_scene_read:portrait",
+      "piko_scene_read:daram"
+    ],
+    "actual_news_flags": [
+      "piko_news3:nabi",
+      "piko_news3:buri"
+    ],
+    "buri_note": "실행 사망판은 공방에서 실제 보고를 듣는다. 원고07의 미인지 속마음을 실행의 전체 대화나 새 정보로 취급하지 않는다."
   }
 }

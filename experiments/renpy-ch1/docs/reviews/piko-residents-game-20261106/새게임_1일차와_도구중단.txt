@@ -1,0 +1,363 @@
+SHOT 001-main
+BUILD 0.20.106
+  값 DARAM_DETAINED None → False
+  값 KKOMI_ALIVE None → True
+  값 OWL_ALIVE None → True
+  값 bami_status None → free
+  값 carried_dry_blankets None → 0
+  값 piko_alive None → True
+  값 route7 None → uncommitted
+  값 silluk_status None → free
+STATE 0 1 0  [] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+STATE 4 1 0  ['say'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+SHOT 002-say--None-None
+SHOT 003-say--None-None
+STATE 7 1 0  [] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+STATE 19 1 0  ['say'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+SHOT 004-say--MS14_D01_S01-다람
+SHOT 005-say--MS14_D01_S01-아빠
+STATE 75 1 0  [] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+STATE 82 1 0  ['say'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+SHOT 006-say--MS14_D01_S02-다람
+SHOT 007-say--MS14_D01_S02-아빠
+STATE 117 1 0 gate_request ['r13_hub'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+SHOT 008-hub-gate_request-gate
+  배치 [['resident_siluk', 516, 472, 161, 272, False], ['guard', 716, 512, 153, 280, False], ['karo', 148, 608, 169, 221, False], ['resident_bori', 1196, 560, 265, 307, False]]
+  층15 [True, 760, 2467, [[1661, 583, 201, 98], [986, 513, 75, 114], [1080, 614, 82, 177], [690, 596, 178, 75], [536, 669, 413, 127], [1608, 734, 206, 100], [1880, 637, 125, 111], [1700, 640, 126, 30]], [['resident_siluk', [1545, 540, 119, 205], False, 745], ['guard', [1497, 572, 124, 222], False, 794], ['karo', [879, 663, 122, 165], False, 828], ['resident_bori', [1957, 559, 265, 306], False, 865]]]
+  층16직접 [['resident_siluk', [1360, 541, 119, 205]], ['guard', [1497, 572, 124, 222]], ['karo', [879, 663, 122, 165]], ['resident_bori', [1957, 559, 265, 306]], ['층16출력', [['resident_siluk', [1300, 541, 119, 205]], ['guard', [1497, 572, 124, 222]], ['karo', [963, 663, 122, 165]], ['resident_bori', [1957, 559, 265, 306]]]]]
+STATE 118 1 0 gate_request ['say'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+SHOT 009-say-gate_request-MS14_D01_S02-아빠
+SHOT 010-say-gate_request-MS14_D01_S02-돌목
+STATE 127 1 0 gate_choice ['r13_hub'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+SHOT 011-hub-gate_choice-gate
+  배치 [['resident_siluk', 516, 472, 161, 272, False], ['guard', 716, 512, 153, 280, False], ['karo', 148, 608, 169, 221, False], ['resident_bori', 1196, 560, 265, 307, False]]
+  층15 [True, 760, 2467, [[1661, 583, 201, 98], [986, 513, 75, 114], [1080, 614, 82, 177], [690, 596, 178, 75], [536, 669, 413, 127], [1608, 734, 206, 100], [1880, 637, 125, 111], [1740, 598, 110, 52]], [['resident_siluk', [1545, 540, 119, 205], False, 745], ['guard', [1497, 572, 124, 222], False, 794], ['karo', [879, 663, 122, 165], False, 828], ['resident_bori', [1957, 559, 265, 306], False, 865]]]
+  층16직접 [['resident_siluk', [1360, 541, 119, 205]], ['guard', [1497, 572, 124, 222]], ['karo', [879, 663, 122, 165]], ['resident_bori', [1957, 559, 265, 306]], ['층16출력', [['resident_siluk', [1300, 541, 119, 205]], ['guard', [1497, 572, 124, 222]], ['karo', [963, 663, 122, 165]], ['resident_bori', [1957, 559, 265, 306]]]]]
+STATE 128 1 0 gate_choice ['say'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+SHOT 012-say-gate_choice-MS14_D01_S02-아빠
+STATE 129 1 0 gate_choice ['choice'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+SHOT 013-choice-gate_choice
+  선택 0 목요일 칸을 꺼낸다
+STATE 130 1 0 gate_choice ['say'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+SHOT 014-say-gate_choice-MS14_D01_S02-아빠
+STATE 132 1 0 gate_choice ['choice'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+  선택 1 금요일 칸을 꺼낸다
+STATE 133 1 0 gate_choice ['say'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+STATE 136 1 0 gate_investigate ['r13_hub'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+SHOT 015-hub-gate_investigate-gate
+  배치 [['resident_siluk', 516, 472, 161, 272, False], ['guard', 716, 512, 153, 280, False], ['karo', 148, 608, 169, 221, False], ['resident_bori', 1196, 560, 265, 307, False]]
+  층15 [True, 760, 2467, [[1661, 583, 201, 98], [986, 513, 75, 114], [1080, 614, 82, 177], [690, 596, 178, 75], [536, 669, 413, 127], [1608, 734, 206, 100], [1880, 637, 125, 111], [1700, 640, 126, 30]], [['resident_siluk', [1545, 540, 119, 205], False, 745], ['guard', [1497, 572, 124, 222], False, 794], ['karo', [879, 663, 122, 165], False, 828], ['resident_bori', [1957, 559, 265, 306], False, 865]]]
+  층16직접 [['resident_siluk', [1360, 541, 119, 205]], ['guard', [1497, 572, 124, 222]], ['karo', [879, 663, 122, 165]], ['resident_bori', [1957, 559, 265, 306]], ['층16출력', [['resident_siluk', [1300, 541, 119, 205]], ['guard', [1497, 572, 124, 222]], ['karo', [963, 663, 122, 165]], ['resident_bori', [1957, 559, 265, 306]]]]]
+STATE 137 1 0 gate_investigate ['say'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+SHOT 016-say-gate_investigate-MS14_D01_S03-None
+SHOT 017-say-gate_investigate-MS14_D01_S03-None
+STATE 149 1 0 gate_investigate ['r13_hub'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+STATE 151 1 0 gate_investigate ['say'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+STATE 153 1 0 gate_investigate ['r13_hub'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+STATE 155 1 0 gate_investigate ['r13_topics'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+SHOT 018-topics-gate_investigate-guard
+  질문 근거를 대겠습니다. 둘 다 들여보내 주십시오.
+STATE 156 1 0 gate_investigate ['r13_proof_workspace'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+SHOT 019-proof-gate_investigate
+  제출 묶음 함께 들어갈 근거를 고른다 ['E02', 'E03']
+SHOT 020-proof-checked-함께 들어갈 근거를 고
+STATE 157 1 0 gate_investigate ['say'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+  값 meeting:gate None → win
+SHOT 021-say-gate_investigate-MS14_D01_S04-다람
+SHOT 022-say-gate_investigate-MS14_D01_S04-돌목
+STATE 195 1 0 registered_menu ['r13_topics'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+SHOT 023-topics-registered_menu-guard
+  질문 명단은 어떻게 옮겨 적으신 겁니까?
+STATE 196 1 0 registered_menu ['say'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+SHOT 024-say-registered_menu-MS14_D01_S04-아빠
+SHOT 025-say-registered_menu-MS14_D01_S04-돌목
+STATE 203 1 0 registered_menu ['r13_topics'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+STATE 204 1 0 registered_menu ['r13_hub'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+SHOT 026-hub-registered_menu-gate
+  배치 [['resident_siluk', 516, 472, 161, 272, False], ['guard', 716, 512, 153, 280, False], ['karo', 148, 608, 169, 221, False], ['resident_bori', 1196, 560, 265, 307, False]]
+  층15 [True, 760, 2467, [[1661, 583, 201, 98], [986, 513, 75, 114], [1080, 614, 82, 177], [690, 596, 178, 75], [536, 669, 413, 127], [1608, 734, 206, 100], [1880, 637, 125, 111]], [['resident_siluk', [1545, 540, 119, 205], False, 745], ['guard', [1497, 572, 124, 222], False, 794], ['karo', [879, 663, 122, 165], False, 828], ['resident_bori', [1957, 559, 265, 306], False, 865]]]
+  층16직접 [['resident_siluk', [1360, 541, 119, 205]], ['guard', [1497, 572, 124, 222]], ['karo', [879, 663, 122, 165]], ['resident_bori', [1957, 559, 265, 306]], ['층16출력', [['resident_siluk', [1300, 541, 119, 205]], ['guard', [1497, 572, 124, 222]], ['karo', [963, 663, 122, 165]], ['resident_bori', [1957, 559, 265, 306]]]]]
+STATE 205 1 0 registered_menu ['r13_map'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+SHOT 027-map-inn
+STATE 206 1 0 registered_menu [] None inn 사람= ['granny', 'resident_nubi', 'resident_tosil']
+STATE 211 1 0 registered_menu [] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+STATE 217 1 0 registered_menu ['say'] None gate 사람= ['karo', 'resident_bori', 'resident_siluk', 'guard']
+STATE 245 1 0 registered_menu [] None inn 사람= ['granny', 'resident_nubi', 'resident_tosil']
+STATE 251 1 0 registered_menu ['say'] None inn 사람= ['granny', 'resident_nubi', 'resident_tosil']
+SHOT 028-say-registered_menu-MS14_D01_S05-할머니
+SHOT 029-say-registered_menu-MS14_D01_S05-할머니
+STATE 279 1 0 travel ['r13_hub'] None inn 사람= ['granny', 'resident_nubi', 'resident_tosil']
+SHOT 030-hub-travel-inn
+  배치 [['granny', 775, 272, 95, 195, False], ['resident_tosil', -151, 370, 82, 165, False], ['resident_nubi', 192, 440, 136, 210, False]]
+  층15 [True, 640, 1920, [[1556, 355, 127, 46], [1670, 136, 150, 170]], [['granny', [1527, 226, 122, 242], False, 466.5752517985611], ['resident_tosil', [475, 320, 105, 215], False, 535], ['resident_nubi', [832, 440, 136, 210], False, 650]]]
+  층16직접 [['granny', [1527, 226, 122, 242]], ['resident_tosil', [475, 320, 105, 215]], ['resident_nubi', [832, 440, 136, 210]], ['층16출력', [['granny', [1400, 227, 122, 241]], ['resident_tosil', [475, 320, 105, 215]], ['resident_nubi', [832, 440, 136, 210]]]]]
+STATE 280 1 0 travel ['r13_map'] None inn 사람= ['granny', 'resident_nubi', 'resident_tosil']
+SHOT 031-map-room13
+STATE 281 1 0 travel [] None room13 사람= ['granny']
+STATE 287 1 0 travel ['say'] None room13 사람= []
+SHOT 032-say-travel-MS14_D01_S05-아빠
+SHOT 033-say-travel-MS14_D01_S05-None
+STATE 297 1 0 note_pick ['r13_hub'] None room13 사람= []
+SHOT 034-hub-note_pick-room13
+  배치 []
+  층15 [True, 0, 2160, [[1700, 375, 35, 67], [863, 552, 215, 64], [842, 498, 438, 57], [1541, 419, 150, 126], [160, 383, 152, 49]], []]
+  층16직접 [['층16출력', []]]
+STATE 298 1 0 note_pick ['say'] None room13 사람= []
+SHOT 035-say-note_pick-MS14_D01_S05-None
+SHOT 036-say-note_pick-MS14_D01_S05-None
+STATE 306 1 0 bundle_open ['r13_hub'] None room13 사람= []
+SHOT 037-hub-bundle_open-room13
+  배치 []
+  층15 [True, 0, 2160, [[1700, 375, 35, 67], [863, 552, 215, 64], [842, 498, 438, 57], [1541, 419, 150, 126], [485, 585, 126, 88]], []]
+  층16직접 [['층16출력', []]]
+STATE 307 1 0 bundle_open ['choice'] None room13 사람= []
+SHOT 038-choice-bundle_open
+  선택 0 책상 아래 보따리를 연다
+STATE 308 1 0 bundle_open ['say'] None room13 사람= []
+SHOT 039-say-bundle_open-MS14_D01_S05-None
+SHOT 040-say-bundle_open-MS14_D01_S05-None
+STATE 325 1 0 bundle_open ['r13_proof_workspace'] None room13 사람= []
+SHOT 041-proof-bundle_open
+  제출 묶음 두 편지를 나란히 본다 ['E01', 'E06']
+SHOT 042-proof-checked-두 편지를 나란히 본다
+STATE 326 1 2 bundle_open ['say'] None room13 사람= []
+STATE 344 1 2 bundle_open ['choice'] None room13 사람= []
+  선택 1 방을 더 둘러본다
+STATE 345 1 2 travel ['r13_hub'] None room13 사람= []
+SHOT 043-hub-travel-room13
+  배치 []
+  층15 [True, 0, 2160, [[1700, 375, 35, 67], [863, 552, 215, 64], [842, 498, 438, 57], [1541, 419, 150, 126]], []]
+  층16직접 [['층16출력', []]]
+STATE 346 1 2 travel ['r13_map'] None room13 사람= []
+STATE 347 1 2 travel [] None inn 사람= ['granny', 'resident_eunho', 'resident_madam', 'resident_ubak', 'resident_guseul']
+STATE 352 1 2 travel ['say'] None inn 사람= ['granny', 'resident_eunho', 'resident_madam', 'resident_ubak', 'resident_guseul']
+STATE 361 1 2 travel ['r13_hub'] None inn 사람= ['granny', 'resident_eunho', 'resident_madam', 'resident_ubak', 'resident_guseul']
+STATE 362 1 2 travel ['r13_map'] None inn 사람= ['granny', 'resident_eunho', 'resident_madam', 'resident_ubak', 'resident_guseul']
+STATE 363 1 2 travel [] None room13 사람= ['granny']
+STATE 368 1 2 travel ['say'] None room13 사람= []
+STATE 392 1 2 sleep1 ['r13_hub'] None room13 사람= []
+SHOT 044-hub-sleep1-room13
+  배치 []
+  층15 [True, 0, 2160, [[1700, 375, 35, 67], [863, 552, 215, 64], [842, 498, 438, 57], [1541, 419, 150, 126], [809, 337, 675, 180]], []]
+  층16직접 [['층16출력', []]]
+==== 2일
+SAVED br-piko_lost-day2
+STATE 393 2 0 travel ['r13_hub'] None room13 사람= []
+STATE 394 2 0 travel ['r13_map'] None room13 사람= []
+SHOT 045-map-gate
+STATE 395 2 0 travel [] None gate 사람= ['karo', 'resident_bori', 'guard']
+STATE 400 2 0 travel ['say'] None gate 사람= ['karo', 'resident_bori', 'guard']
+SHOT 046-say-travel-MS14_D02_S01-아빠
+SHOT 047-say-travel-MS14_D02_S01-None
+STATE 434 2 0 travel ['r13_hub'] None gate 사람= ['karo', 'resident_bori', 'guard']
+SHOT 048-hub-travel-gate
+  배치 [['guard', 484, 640, 171, 155, False], ['karo', 148, 608, 169, 221, False], ['resident_bori', 1196, 560, 265, 307, False]]
+  층15 [True, 760, 2467, [[1661, 583, 201, 98], [986, 513, 75, 114], [1080, 614, 82, 177], [690, 596, 178, 75], [536, 669, 413, 127], [1608, 734, 206, 100], [1880, 637, 125, 111]], [['guard', [1247, 238, 614, 554], False, 792], ['karo', [879, 663, 122, 165], False, 828], ['resident_bori', [1957, 559, 265, 306], False, 865]]]
+  층16직접 [['guard', [1247, 238, 614, 554]], ['karo', [879, 663, 122, 165]], ['resident_bori', [1957, 559, 265, 306]], ['층16출력', [['guard', [1023, 239, 613, 554]], ['karo', [963, 663, 122, 165]], ['resident_bori', [1957, 559, 265, 306]]]]]
+STATE 435 2 0 travel ['r13_map'] None gate 사람= ['karo', 'resident_bori', 'guard']
+SHOT 049-map-square
+STATE 436 2 0 travel [] None square 사람= ['doto', 'resident_owlgp', 'resident_yeoni', 'resident_seol', 'resident_ppul', 'resident_badook', 'resident_hyeoni', 'karo']
+STATE 441 2 0 travel ['say'] None square 사람= ['doto', 'resident_owlgp', 'resident_yeoni', 'resident_seol', 'resident_ppul', 'resident_badook', 'resident_hyeoni']
+STATE 456 2 0 lamp_rope ['r13_hub'] None square 사람= ['doto', 'resident_owlgp', 'resident_yeoni', 'resident_seol', 'resident_ppul', 'resident_badook', 'resident_hyeoni', 'resident_lamplighter']
+SHOT 050-hub-lamp_rope-square
+  배치 [['resident_lamplighter', 477, 372, 101, 211, True], ['resident_hyeoni', 1102, 407, 132, 210, False], ['resident_yeoni', 1721, 464, 103, 155, False], ['doto', 776, 410, 109, 211, False], ['resident_seol', 378, 456, 115, 210, False], ['resident_owlgp', 175, 523, 93, 152, True], ['resident_ppul', 281, 490, 97, 210, False], ['resident_badook', 560, 544, 200, 159, True]]
+  층15 [True, 0, 1920, [[598, 269, 170, 236], [861, 475, 121, 52], [904, 270, 187, 201]], [['resident_lamplighter', [656, 361, 105, 220], True, 581], ['resident_hyeoni', [1092, 385, 152, 232], False, 617], ['resident_yeoni', [1708, 440, 121, 180], False, 620], ['doto', [835, 376, 132, 245], False, 621], ['resident_seol', [602, 456, 116, 210], False, 665], ['resident_owlgp', [150, 478, 127, 198], True, 676], ['resident_ppul', [281, 490, 97, 210], False, 700], ['resident_badook', [569, 481, 282, 226], True, 707]]]
+  층16직접 [['resident_lamplighter', [474, 362, 105, 220]], ['resident_hyeoni', [1092, 385, 152, 232]], ['resident_yeoni', [1708, 440, 121, 180]], ['doto', [835, 376, 132, 245]], ['resident_seol', [602, 456, 116, 210]], ['resident_owlgp', [150, 478, 127, 198]], ['resident_ppul', [281, 490, 97, 210]], ['resident_badook', [1199, 481, 281, 225]], ['층16출력', [['resident_lamplighter', [475, 363, 105, 220]], ['resident_hyeoni', [1092, 385, 152, 232]], ['resident_yeoni', [1708, 440, 121, 180]], ['doto', [835, 376, 132, 245]], ['resident_seol', [378, 457, 115, 210]], ['resident_owlgp', [150, 478, 127, 198]], ['resident_ppul', [281, 490, 97, 210]], ['resident_badook', [521, 481, 280, 225]]]]]
+STATE 457 2 0 lamp_rope ['say'] None square 사람= ['doto', 'resident_owlgp', 'resident_yeoni', 'resident_seol', 'resident_ppul', 'resident_badook', 'resident_hyeoni', 'resident_lamplighter']
+SHOT 051-say-lamp_rope-MS14_D02_S01-None
+SHOT 052-say-lamp_rope-MS14_D02_S01-초롱
+STATE 494 2 0 go_box ['r13_hub'] None square 사람= ['doto', 'resident_owlgp', 'resident_yeoni', 'resident_seol', 'resident_ppul', 'resident_badook', 'resident_hyeoni', 'resident_lamplighter']
+SHOT 053-hub-go_box-square
+  배치 [['resident_lamplighter', 477, 372, 101, 211, True], ['resident_hyeoni', 1102, 407, 132, 210, False], ['resident_yeoni', 1721, 464, 103, 155, False], ['doto', 776, 410, 109, 211, False], ['resident_seol', 378, 456, 115, 210, False], ['resident_owlgp', 175, 523, 93, 152, True], ['resident_ppul', 281, 490, 97, 210, False], ['resident_badook', 560, 544, 200, 159, True]]
+  층15 [True, 0, 1920, [[598, 269, 170, 236], [861, 475, 121, 52], [904, 270, 187, 201]], [['resident_lamplighter', [656, 361, 105, 220], True, 581], ['resident_hyeoni', [1092, 385, 152, 232], False, 617], ['resident_yeoni', [1708, 440, 121, 180], False, 620], ['doto', [835, 376, 132, 245], False, 621], ['resident_seol', [602, 456, 116, 210], False, 665], ['resident_owlgp', [150, 478, 127, 198], True, 676], ['resident_ppul', [281, 490, 97, 210], False, 700], ['resident_badook', [569, 481, 282, 226], True, 707]]]
+  층16직접 [['resident_lamplighter', [474, 362, 105, 220]], ['resident_hyeoni', [1092, 385, 152, 232]], ['resident_yeoni', [1708, 440, 121, 180]], ['doto', [835, 376, 132, 245]], ['resident_seol', [602, 456, 116, 210]], ['resident_owlgp', [150, 478, 127, 198]], ['resident_ppul', [281, 490, 97, 210]], ['resident_badook', [1199, 481, 281, 225]], ['층16출력', [['resident_lamplighter', [475, 363, 105, 220]], ['resident_hyeoni', [1092, 385, 152, 232]], ['resident_yeoni', [1708, 440, 121, 180]], ['doto', [835, 376, 132, 245]], ['resident_seol', [378, 457, 115, 210]], ['resident_owlgp', [150, 478, 127, 198]], ['resident_ppul', [281, 490, 97, 210]], ['resident_badook', [521, 481, 280, 225]]]]]
+STATE 495 2 0 go_box ['r13_map'] None square 사람= ['doto', 'resident_owlgp', 'resident_yeoni', 'resident_seol', 'resident_ppul', 'resident_badook', 'resident_hyeoni', 'resident_lamplighter']
+SHOT 054-map-forest
+STATE 496 2 0 go_box [] None forest 사람= ['resident_siluk', 'resident_solbang', 'resident_kalbaram']
+STATE 502 2 0 go_box ['say'] None forest 사람= ['resident_siluk', 'resident_solbang', 'resident_kalbaram']
+SHOT 055-say-go_box-MS14_D02_S01-다람
+SHOT 056-say-go_box-MS14_D02_S01-다람
+STATE 506 2 0 box_inspect ['r13_hub'] None forest 사람= ['resident_siluk', 'resident_solbang', 'resident_kalbaram', 'resident_lamplighter']
+SHOT 057-hub-box_inspect-forest
+  배치 [['resident_siluk', 1630, 491, 139, 209, False], ['resident_lamplighter', 805, 490, 101, 211, False], ['resident_solbang', 1384, 512, 130, 193, True], ['resident_kalbaram', 1111, 570, 129, 137, False]]
+  층15 [True, 0, 2160, [[940, 600, 196, 90]], [['resident_siluk', [1630, 491, 139, 209], False, 700], ['resident_lamplighter', [999, 450, 119, 250], False, 700], ['resident_solbang', [1370, 472, 158, 233], True, 705], ['resident_kalbaram', [1094, 540, 161, 180], False, 720]]]
+  층16직접 [['resident_siluk', [1630, 491, 139, 209]], ['resident_lamplighter', [999, 450, 119, 250]], ['resident_solbang', [1370, 472, 158, 233]], ['resident_kalbaram', [1094, 540, 161, 180]], ['층16출력', [['resident_siluk', [1630, 491, 139, 209]], ['resident_lamplighter', [795, 451, 119, 250]], ['resident_solbang', [1370, 472, 158, 233]], ['resident_kalbaram', [1094, 540, 161, 180]]]]]
+STATE 507 2 0 box_inspect ['say'] None forest 사람= ['resident_siluk', 'resident_solbang', 'resident_kalbaram', 'resident_lamplighter']
+SHOT 058-say-box_inspect-MS14_D02_S01-None
+SHOT 059-say-box_inspect-MS14_D02_S01-None
+STATE 516 2 0 box_note ['r13_hub'] None forest 사람= ['resident_siluk', 'resident_solbang', 'resident_kalbaram', 'resident_lamplighter']
+SHOT 060-hub-box_note-forest
+  배치 [['resident_siluk', 1630, 491, 139, 209, False], ['resident_lamplighter', 805, 490, 101, 211, False], ['resident_solbang', 1384, 512, 130, 193, True], ['resident_kalbaram', 1111, 570, 129, 137, False]]
+  층15 [True, 0, 2160, [[940, 600, 196, 90]], [['resident_siluk', [1630, 491, 139, 209], False, 700], ['resident_lamplighter', [999, 450, 119, 250], False, 700], ['resident_solbang', [1370, 472, 158, 233], True, 705], ['resident_kalbaram', [1094, 540, 161, 180], False, 720]]]
+  층16직접 [['resident_siluk', [1630, 491, 139, 209]], ['resident_lamplighter', [999, 450, 119, 250]], ['resident_solbang', [1370, 472, 158, 233]], ['resident_kalbaram', [1094, 540, 161, 180]], ['층16출력', [['resident_siluk', [1630, 491, 139, 209]], ['resident_lamplighter', [795, 451, 119, 250]], ['resident_solbang', [1370, 472, 158, 233]], ['resident_kalbaram', [1094, 540, 161, 180]]]]]
+STATE 517 2 0 box_note ['say'] None forest 사람= ['resident_siluk', 'resident_solbang', 'resident_kalbaram', 'resident_lamplighter']
+SHOT 061-say-box_note-MS14_D02_S01-None
+SHOT 062-say-box_note-MS14_D02_S01-아빠
+STATE 531 2 0 travel ['r13_hub'] None forest 사람= ['resident_siluk', 'resident_solbang', 'resident_kalbaram', 'resident_ppul', 'resident_lamplighter']
+SHOT 063-hub-travel-forest
+  배치 [['resident_siluk', 1630, 491, 139, 209, False], ['resident_lamplighter', 1009, 489, 101, 211, False], ['resident_solbang', 1384, 512, 130, 193, True], ['resident_kalbaram', 1111, 570, 129, 137, False], ['resident_ppul', 1791, 520, 215, 190, True]]
+  층15 [True, 0, 2160, [], [['resident_siluk', [1630, 491, 139, 209], False, 700], ['resident_lamplighter', [999, 450, 119, 250], False, 700], ['resident_solbang', [1370, 472, 158, 233], True, 705], ['resident_ppul', [1790, 519, 218, 193], True, 712], ['resident_kalbaram', [1094, 540, 161, 180], False, 720]]]
+  층16직접 [['resident_siluk', [1630, 491, 139, 209]], ['resident_lamplighter', [999, 450, 119, 250]], ['resident_solbang', [1370, 472, 158, 233]], ['resident_ppul', [1790, 519, 218, 193]], ['resident_kalbaram', [1094, 540, 161, 180]], ['층16출력', [['resident_siluk', [1630, 491, 139, 209]], ['resident_lamplighter', [999, 450, 119, 250]], ['resident_solbang', [1370, 472, 158, 233]], ['resident_ppul', [1790, 519, 218, 193]], ['resident_kalbaram', [1094, 540, 161, 180]]]]]
+STATE 532 2 0 travel ['r13_map'] None forest 사람= ['resident_siluk', 'resident_solbang', 'resident_kalbaram', 'resident_ppul', 'resident_lamplighter']
+SHOT 064-map-post
+STATE 533 2 0 travel [] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong', 'resident_ppul', 'resident_lamplighter']
+STATE 539 2 0 travel ['say'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+SHOT 065-say-travel-MS14_D02_S02-세련
+SHOT 066-say-travel-MS14_D02_S02-세련
+STATE 545 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+SHOT 067-hub-envelope_show-post
+  배치 [['seryeon', 781, 350, 118, 210, False], ['resident_sling', 597, 392, 141, 209, False], ['resident_librarian', -405, 392, 146, 210, False], ['resident_jongjong', 69, 440, 98, 211, False], ['resident_momo', -64, 479, 96, 210, True]]
+  층15 [True, 880, 2160, [[645, 396, 112, 203], [1135, 282, 310, 184]], [['seryeon', [1661, 350, 118, 210], False, 560], ['resident_librarian', [485, 411, 129, 194], False, 605], ['resident_jongjong', [667, 441, 110, 210], False, 651], ['resident_sling', [1298, 383, 187, 280], False, 663], ['resident_momo', [807, 460, 113, 230], True, 690]]]
+  층16직접 [['seryeon', [1661, 350, 118, 210]], ['resident_librarian', [485, 411, 129, 194]], ['resident_jongjong', [667, 441, 110, 210]], ['resident_sling', [1298, 383, 187, 280]], ['resident_momo', [807, 460, 113, 230]], ['층16출력', [['seryeon', [1661, 350, 118, 210]], ['resident_librarian', [485, 411, 129, 194]], ['resident_jongjong', [943, 441, 110, 210]], ['resident_sling', [1449, 387, 186, 280]], ['resident_momo', [807, 460, 113, 230]]]]]
+STATE 546 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 547 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 548 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 549 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 550 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 551 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 552 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 553 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 554 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 555 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 556 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 557 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 558 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 559 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 560 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 561 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 562 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 563 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 564 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 565 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 566 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 567 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 568 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 569 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 570 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 571 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 572 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 573 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 574 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 575 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 576 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 577 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 578 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 579 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 580 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 581 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 582 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 583 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 584 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 585 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 586 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 587 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 588 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 589 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 590 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 591 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 592 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 593 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 594 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 595 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 596 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 597 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 598 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 599 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 600 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 601 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 602 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 603 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 604 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 605 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 606 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 607 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 608 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 609 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 610 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 611 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 612 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 613 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 614 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 615 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 616 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 617 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 618 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 619 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 620 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 621 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 622 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 623 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 624 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 625 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 626 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 627 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 628 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 629 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 630 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 631 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 632 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 633 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 634 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 635 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 636 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 637 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 638 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 639 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 640 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 641 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 642 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 643 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 644 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 645 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 646 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 647 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 648 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 649 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 650 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 651 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 652 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 653 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 654 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 655 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 656 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 657 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 658 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 659 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 660 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 661 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 662 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 663 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 664 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 665 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 666 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 667 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 668 2 0 envelope_show ['r13_book'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+STATE 669 2 0 envelope_show ['r13_hub'] None post 사람= ['seryeon', 'resident_librarian', 'resident_sling', 'resident_momo', 'resident_jongjong']
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/workspace/daaegame/experiments/renpy-ch1/dev/qa_autoplay.py", line 614, in main
+    arrow='‹' if x<640 else '›'
+  File "/workspace/daaegame/experiments/renpy-ch1/dev/qa_v111_play.py", line 27, in value
+    await asyncio.sleep(.5)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/daaegame/experiments/renpy-ch1/dev/qa_autoplay.py", line 630, in <module>
+    log('ERROR',repr(e));await pg.screenshot(path=str(OUT/'failure.png'))
+^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt

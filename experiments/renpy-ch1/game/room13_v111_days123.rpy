@@ -862,7 +862,34 @@ label r13_v111_piko_dead3:
     call r13_lines(r13_v111_lines(['MS14_D03_S01_L0002', 'MS14_D03_S01_L0003', 'MS14_D03_S01_L0004', 'MS14_D03_S01_L0005', 'MS14_D03_S01_L0006', 'MS14_D03_S01_L0007', 'MS14_D03_S01_L0008', 'MS14_D03_S01_L0009', 'MS14_D03_S01_L0010', 'MS14_D03_S01_L0011', 'MS14_D03_S01_L0012', 'MS14_D03_S01_L0013', 'MS14_D03_S01_L0014', 'MS14_D03_S01_L0015', 'MS14_D03_S01_L0016', 'MS14_D03_S01_L0018', 'MS14_D03_S01_L0019', 'MS14_D03_S01_L0020']), 'v111:piko_dead3:MS14_D03_S01_L0002')
     $ r13_v111_commit('MS14_D03_S01_L0021')
     call r13_lines(r13_v111_lines(['MS14_D03_S01_L9101']), 'v111:piko_dead3:MS14_D03_S01_L9101')
+    call r13_piko_scene3
     jump r13_v111_lamp3
+
+label r13_piko_scene3:
+    if not r13_piko_scene_available():
+        return
+    $ r13_piko_scene_near=True
+label r13_piko_scene3_again:
+    window hide
+    call screen r13_piko_scene
+    if _return=="leave":
+        $ r13_ep_line_art_clear()
+        return
+    if _return=="distance":
+        $ r13_piko_scene_near=not r13_piko_scene_near
+        jump r13_piko_scene3_again
+    $ r13_piko_scene_answer=_return
+    if r13_piko_scene_answer in ("posture","portrait","daram"):
+        if r13_piko_scene_answer=="portrait":
+            call screen r13_pw_picture("V111:E09",called=True)
+            $ r13_piko_scene_rows=r13_nw_block('piko_scene_portrait')
+        elif r13_piko_scene_answer=="posture":
+            $ r13_piko_scene_rows=r13_nw_block('piko_scene_posture')
+        else:
+            $ r13_piko_scene_rows=r13_nw_block('piko_scene_daram')
+        call r13_lines(r13_piko_scene_lines(r13_piko_scene_rows,r13_piko_scene_answer=="portrait"),"piko_scene:"+r13_piko_scene_answer)
+        $ r13_v111_set("piko_scene_read:"+r13_piko_scene_answer,True)
+    jump r13_piko_scene3_again
 
 label r13_v111_lamp3:
     $ r13_v111_scene('MS14_D03_S02')
@@ -923,6 +950,7 @@ label r13_v111_workshop3:
     $ r13_v111_scene('MS14_D03_S03')
     call r13_v111_travel('workshop','workshop3')
     $ r13_v111_score()
+    call r13_piko_report('buri')
     call r13_lines(r13_v111_lines(['MS14_D03_S03_L0002', 'MS14_D03_S03_L0003', 'MS14_D03_S03_L0004', 'MS14_D03_S03_L0005', 'MS14_D03_S03_L0006']), 'v111:workshop3:MS14_D03_S03_L0002')
     jump r13_v111_loan_read
 

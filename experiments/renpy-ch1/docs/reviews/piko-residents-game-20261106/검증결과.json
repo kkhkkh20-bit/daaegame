@@ -1,0 +1,149 @@
+{
+  "date": "2026-11-06",
+  "version": "0.20.106",
+  "approval": "응 시안 적용",
+  "unit_tests": 1254,
+  "unit_status": "통과",
+  "native": {
+    "piko_scene_skip_preserves_choice": "PASSED",
+    "lamp_attempt_field_and_win": "PASSED",
+    "v111_early_day3_workspace_retry_and_alternate": "PASSED",
+    "v111_nw_d02_afternoon_shelter": "PASSED",
+    "v111_piko_mourning_idle_and_child": "PASSED",
+    "v111_piko_scene_holds_until_body_talk_and_clears": "PASSED",
+    "piko_scene_absent_on_living_routes": "PASSED",
+    "piko_scene_actions_order_restore_and_leave": "PASSED"
+  },
+  "web": {
+    "status": "통과",
+    "version": "0.20.106",
+    "scope": "실제 시작 뒤 사망 직전 상태 fixture; 선택·브라우저 재시작 복원",
+    "geometry_pc": [
+      [
+        "posture",
+        [
+          345,
+          29
+        ]
+      ],
+      [
+        "portrait",
+        [
+          207,
+          29
+        ]
+      ],
+      [
+        "daram",
+        [
+          201,
+          29
+        ]
+      ]
+    ],
+    "geometry_phone": [
+      [
+        "posture",
+        [
+          368,
+          78
+        ]
+      ],
+      [
+        "portrait",
+        [
+          276,
+          39
+        ]
+      ],
+      [
+        "daram",
+        [
+          268,
+          39
+        ]
+      ]
+    ],
+    "phone_targets": [
+      [
+        "r13_piko_posture",
+        [
+          776,
+          170,
+          430,
+          104
+        ]
+      ],
+      [
+        "r13_piko_portrait",
+        [
+          776,
+          290,
+          430,
+          104
+        ]
+      ],
+      [
+        "r13_piko_daram",
+        [
+          776,
+          410,
+          430,
+          104
+        ]
+      ],
+      [
+        "r13_piko_leave",
+        [
+          776,
+          530,
+          430,
+          88
+        ]
+      ],
+      [
+        "r13_piko_distance",
+        [
+          144,
+          548,
+          596,
+          88
+        ]
+      ]
+    ],
+    "saved": {
+      "near": false,
+      "read": {
+        "posture": false,
+        "portrait": true,
+        "daram": true
+      },
+      "evidence": [
+        "V111:E01",
+        "V111:E09"
+      ],
+      "minutes": 0,
+      "tries": null,
+      "alive": false,
+      "portrait": "unfinished",
+      "variant": "unfinished"
+    },
+    "pageerrors": []
+  },
+  "natural": {
+    "start": "새 게임",
+    "resume": "실제 br-piko_lost-day2 저장",
+    "through_day": 3,
+    "next_day": 4,
+    "branch": "사망·도난",
+    "lamp_meeting": "win",
+    "buri_news_heard": true,
+    "portrait": "unfinished"
+  },
+  "not_performed": [
+    "전체14일 무중단 진행",
+    "인간 초면 재미 실험",
+    "구버전 저장 변환 전체 검사"
+  ],
+  "archive_sha256": "5a3b19418e92d1729c61446022318d17679bb8c7950fe050e0231502cc2d7928"
+}

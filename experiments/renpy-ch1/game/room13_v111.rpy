@@ -324,6 +324,7 @@ label r13_v111_wait_again:
         jump r13_v111_wait_again
     if v111_pick[0]=="person":
         $ v111_person=v111_pick[1]
+        $ v111_piko_reported=False
         if room13["location"] in ("hidden_pandol","hidden_base14") and not any(o.get("person")==v111_person for o in v111_binding.get("options",[])):
             call r13_hidden_idle
             jump r13_v111_wait_again
@@ -336,11 +337,15 @@ label r13_v111_wait_again:
             call r13_v111_gate_ledger_hand
             $ r13_v111_time("inspect:gate_request:ledger",15)
             return 0
+        if v111_person in r13_visible_people():
+            call r13_piko_report(v111_person)
+            $ v111_piko_reported=bool(_return)
         if v111_person in r13_visible_people() and r13_v111_idle_ok(v111_person):
             # 2026-10-27 소유자: 회의(오답 뒤) 상태의 현장에서 다른 주민의 한가한 한 줄에도 돌목 무대가 떴다. 현장 관찰로 읽는다.
-            $ r13_field_reading=True
-            call r13_lines(r13_v111_idle_lines(v111_person),"v111:idle:"+v111_person)
-            $ r13_field_reading=False
+            if not v111_piko_reported:
+                $ r13_field_reading=True
+                call r13_lines(r13_v111_idle_lines(v111_person),"v111:idle:"+v111_person)
+                $ r13_field_reading=False
         elif v111_person in r13_visible_people():
             # 0.20.10 (4~14일 리뷰 P07): 물을 것이 없는 다람은 장면마다 처음 한 번 먼저 대답한다.
             if v111_person=="daram" and r13_v111_daram_hello_due():

@@ -36,6 +36,9 @@ testcase v111_piko_scene_holds_until_body_talk_and_clears:
     screenshot 'piko-body-child-question-restored.png'
     click pos (900,600) until eval (r13_packet and r13_packet[2].get('line_id')=='MS14_D03_S01_L0020') timeout 45
     assert eval (r13_ep_cut_current=='piko-death3')
+    click pos (900,600) until screen 'r13_piko_scene' timeout 90
+    assert eval (r13_v111_value('piko_alive') is False and r13_v111_owned('E09'))
+    click id 'r13_piko_leave'
     click pos (900,600) until screen 'r13_hub' timeout 90
     assert eval (room13['v111']['gate']=='lamp_inspect3' and r13_v111_value('piko_alive') is False)
     assert eval ('r13_ep_cut' not in renpy.get_showing_tags() and not r13_ep_cut_current)

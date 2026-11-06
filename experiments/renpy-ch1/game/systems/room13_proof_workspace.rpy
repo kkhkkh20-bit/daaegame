@@ -724,12 +724,14 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
             use r13_control(caption,None,action,enabled=(ready and enabled),primary=primary,width=bw,control_id=control_id)
 
 # 작은 머리글 그림은 필요할 때 기존 수첩 판에서 확대해 본다.
-screen r13_pw_picture(key):
+screen r13_pw_picture(key,called=False):
     modal True
     zorder 90
-    use r13_notebook_shell(r13_catalog_title(key),close_action=Hide("r13_pw_picture"))
+    $ close_action=Return() if called else Hide("r13_pw_picture")
+    use r13_notebook_shell(r13_catalog_title(key),close_action=close_action)
     $ box=min(420,r13_nb_footer_y()-R13_NB_TOP-28)
     fixed:
         xcenter 640 ypos (R13_NB_TOP+12) xysize (box,box)
         use r13_evidence_picture_box(key,box)
-    use r13_nb_footer_button(0,"닫기",Hide("r13_pw_picture"),primary=True)
+    use r13_nb_footer_button(0,"닫기",close_action,primary=True)
+    key "game_menu" action close_action

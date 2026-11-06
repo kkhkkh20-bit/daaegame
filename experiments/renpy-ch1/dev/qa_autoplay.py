@@ -211,7 +211,7 @@ async def true_check(q,where):
         if r['meetings'].get(m)!='win':fails.append('meeting:%s=%s'%(m,r['meetings'].get(m)))
     log('TRUE-CHECK',where,'ready=',r['ready'],'ending14=',r['ending14'],'회의=',r['meetings'],'떠남=',r['departed'],'outcome13=',r['outcome13'],'못 맞춘 조건=',fails or '없음')
     return r
-SCREENS=("main_menu","say","choice","r13_confirm","r13_end_card","r13_hub","r13_topics","r13_map","r13_book","r13_records","r13_crisis_proof","r13_proof_workspace","r13_more_tools","r13_side_questions","r13_fork_screen","_exception")
+SCREENS=("main_menu","say","choice","r13_confirm","r13_end_card","r13_hub","r13_topics","r13_map","r13_book","r13_records","r13_crisis_proof","r13_proof_workspace","r13_more_tools","r13_side_questions","r13_fork_screen","r13_piko_scene","r13_pw_picture","_exception")
 if TRUE_ROUTE:SCREENS=SCREENS+("r13_meeting_retry_choice",)   # 진엔딩 길: 회의를 지면 뜨는 다시 하기 창을 알아본다
 n_shot=[0]
 async def shot(q,name):
@@ -352,7 +352,7 @@ async def cheese_crisis(q,st,mode):
 
 async def main():
     async with async_playwright() as p:
-        b=await p.chromium.launch_persistent_context(str(OUT.parent/('profile-autoplay-'+(os.environ.get('PROFILE') or os.environ.get('ROUTE') or 'base'))),executable_path='/opt/pw-browsers/chromium',viewport={'width':1280,'height':720},args=['--no-sandbox','--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required'])
+        b=await p.chromium.launch_persistent_context(str(OUT.parent/('profile-autoplay-'+(os.environ.get('PROFILE') or os.environ.get('ROUTE') or 'base'))),executable_path=os.environ.get('ROOM13_CHROMIUM','/usr/bin/chromium'),viewport={'width':1280,'height':720},args=['--no-sandbox','--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required'])
         for prev in b.pages:await prev.close()
         pg=await b.new_page();q=Driver(pg,OUT);errors=[];pg.on('pageerror',lambda e:errors.append(str(e)))
         await pg.goto(URL,wait_until='domcontentloaded',timeout=180000)
@@ -372,18 +372,28 @@ async def main():
         await q.py('import renpy;renpy.store.preferences.text_cps=0;result=True')
         log('BUILD',await q.py('import renpy;result=renpy.store.config.version'))
         if os.environ.get('RESUME_DAY'):
-            code='import renpy;renpy.exports.load("%s")'%((BRANCH and BRANCHES[BRANCH].get('save')) or 'auto-day'+os.environ['RESUME_DAY'])
+            checkpoint=(BRANCH and BRANCHES[BRANCH].get('save')) or SAVE_PREFIX+os.environ['RESUME_DAY']
+            code='import renpy;renpy.exports.load("%s")'%checkpoint
             await pg.evaluate('code=>{renpy_exec("exec("+JSON.stringify(code)+")").catch(()=>{});return true;}',code)
             await asyncio.sleep(3)
             try:await pg.evaluate("window._renpy_cmd_callback({data:true})")
             except Exception:pass
-            log('RESUME auto-day'+os.environ['RESUME_DAY'])
+            restored=await snap(q)
+            assert restored.get('day')==int(os.environ['RESUME_DAY']),('저장을 불러오지 못함',checkpoint,restored)
+            log('RESUME',checkpoint)
         else:await q.press('처음부터')
         last=None;true_prev={};seen_shots=set();visits={};book_target=None;map_target=None;stale_n=0;stale_last=None;object_attempts={};say_shots={};last_day=1;t0=time.time()
         try:
             for step in range(30000):
                 st=await snap(q);sc=st['screens']
                 if '_exception' in sc:await shot(q,'exception');log('EXCEPTION');break
+                # 시작부터 정해진 날까지 실제 입력하는 부분 주행. 다음 날 상태를 조작하지 않는다.
+                stop_after=int(os.environ.get('ROOM13_STOP_AFTER_DAY','0'))
+                if stop_after and st['day'] and st['day']>stop_after:
+                    log('부분 주행 완료',stop_after,'일 다음 날 도착')
+                    await shot(q,'partial-finished')
+                    (OUT/'부분주행_결과.json').write_text(json.dumps(dict(status='완료',through_day=stop_after,next_day=st['day'],state=st,pageerrors=errors),ensure_ascii=False,indent=2))
+                    break
                 if st['day'] and st['day']>=15:log('15일 도착');await shot(q,'day15');break
                 if 'main_menu' in sc and step>50:log('메인 화면(결말)');await shot(q,'ending');break
                 if st['day'] and st['day']!=last_day:
@@ -410,6 +420,17 @@ async def main():
                 stale_n=stale_n+1 if finger==stale_last else 0;stale_last=finger
                 if stale_n>=60:
                     dump=await q.state();log('STALE',st['gate'],st['location'],[b['text'] for b in dump['buttons']][:30]);await shot(q,'stale-'+str(st['gate']));break
+                if 'r13_pw_picture' in sc:
+                    await shot(q,'piko-portrait-owned')
+                    await q.press('닫기')
+                    continue
+                if 'r13_piko_scene' in sc:
+                    # 선택은 실제 단추로 한다. 방문/읽음 표시를 테스트에서 직접 만들지 않는다.
+                    read=st['values']
+                    todo=next((label for key,label in [('posture','초롱 씨에게 발견 당시 모습을 묻는다'),('portrait','받은 초상을 다시 본다'),('daram','다람에게 말을 건넨다')] if not read.get('piko_scene_read:'+key)),None)
+                    await shot(q,'piko-scene')
+                    await q.press(todo or '등 쪽으로 간다')
+                    continue
                 if 'say' in sc:
                     g=str(st['gate'])
                     # 진엔딩 길: 같은 관문 안에서 장면이 바뀌어도(14일 결말·진엔딩 후일담) 장면마다 두 장씩 남긴다.
@@ -493,6 +514,9 @@ async def main():
                     continue
                 if 'r13_book' in sc:
                     if TRUE_ROUTE and not book_target:
+                        # 유일한 자료 제시 질문은 빈 질문지를 거치지 않고 책을 바로 연다.
+                        target=await q.py('import renpy;c=renpy.display.screen.get_screen("r13_book");result=c.scope.get("target") if c else None')
+                        book_target=next((o['present'] for o in st['binding'].get('options',[]) if o.get('present') in st['evidence'] and (not target or o.get('person')==target)),None)
                         # 이야기가 직접 여는 「보여 주기」 책: 13일 너울에게 중지 명령 사본, 14일 장치 앞에서 인계 기록.
                         want={13:'V111:E13_ORDER',14:'V111:E13_HANDOVER'}.get(st['day'])
                         if want and want in st['evidence'] and await q.py('import renpy;c=renpy.display.screen.get_screen("r13_book");result=bool(c and c.scope.get("present_label"))'):
