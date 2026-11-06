@@ -43,6 +43,9 @@ def word(path, title, subtitle, premise, chapters):
 async def export(source, out):
     out.mkdir(parents=True, exist_ok=True)
     spec = json.loads((source / 'reaction-map.json').read_text())
+    basename = spec.get('basename', 'resident-days456')
+    edition = spec.get('edition', '2026년 11월 6일 · 4~6일차')
+    renumber = spec.get('renumber_chapters', False)
     raw = (source / '주민_반응별편.md').read_text().split('## 작가·게임 매칭표')[0]
     chunks = re.split(r'^## (\d\d\..*)$', raw, flags=re.M)
     assert len(chunks) == 1 + len(spec['scenes']) * 2
@@ -60,16 +63,17 @@ async def export(source, out):
     parts = ['<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + esc(spec['title']) + '</title><style>' + css + '</style><nav aria-label="이야기 경로">']
     for key, profile in profiles.items():
         parts.append('<button type="button" data-flow="' + esc(key) + '">' + esc(profile['label']) + '</button>')
-    parts.append('</nav><main><h1>' + esc(spec['title']) + '</h1><p class="meta">2026년 11월 6일 · 4~6일차</p><p id="intro">' + esc(spec['introduction']) + '</p><p>' + esc(spec['premise']) + '</p>')
+    parts.append('</nav><main><h1>' + esc(spec['title']) + '</h1><p class="meta">' + esc(edition) + '</p><p id="intro">' + esc(spec['introduction']) + '</p><p>' + esc(spec['premise']) + '</p>')
     for scene_id, (heading, paragraphs) in chapters.items():
         parts.append('<section class="chapter" data-id="' + scene_id + '"><h2>' + esc(heading) + '</h2>')
         parts.extend('<p>' + esc(p).replace('\n', '<br>') + '</p>' for p in paragraphs)
         parts.append('</section>')
     parts.append('<footer>별편 전문은 읽기 문서입니다. 본편에는 해당 경로의 짧은 행동·대사만 연결했습니다.</footer></main><script>const profiles=' + json.dumps(profiles, ensure_ascii=False) + ';const introduction=' + json.dumps(spec['introduction'], ensure_ascii=False) + ';')
-    parts.append('''function select(flow){const order=profiles[flow].order;const sections=Array.from(document.querySelectorAll('.chapter'));const footer=document.querySelector('footer');for(const id of order){const node=sections.find(n=>n.dataset.id===id);node.hidden=false;footer.before(node);}for(const node of sections)if(!order.includes(node.dataset.id)){node.hidden=true;footer.before(node);}for(const b of document.querySelectorAll('[data-flow]'))b.setAttribute('aria-pressed',String(b.dataset.flow===flow));document.querySelector('#intro').textContent=flow==='all'?introduction:profiles[flow].label+' · 같은 판에서 이어지는 장면만 시간순으로 읽습니다.';}for(const b of document.querySelectorAll('[data-flow]'))b.addEventListener('click',()=>select(b.dataset.flow));select(Object.keys(profiles)[0]);</script></html>''')
+    parts.append('const renumber=' + json.dumps(renumber) + ';')
+    parts.append('''for(const s of document.querySelectorAll('.chapter'))s.dataset.title=s.querySelector('h2').textContent.replace(/^\\d+\\.\\s*/, '');function select(flow){const order=profiles[flow].order;const sections=Array.from(document.querySelectorAll('.chapter'));const footer=document.querySelector('footer');for(const [i,id] of order.entries()){const node=sections.find(n=>n.dataset.id===id);node.hidden=false;if(renumber)node.querySelector('h2').textContent=String(i+1).padStart(2,'0')+'. '+node.dataset.title;footer.before(node);}for(const node of sections)if(!order.includes(node.dataset.id)){node.hidden=true;footer.before(node);}for(const b of document.querySelectorAll('[data-flow]'))b.setAttribute('aria-pressed',String(b.dataset.flow===flow));document.querySelector('#intro').textContent=flow==='all'?introduction:profiles[flow].label+' · 같은 판에서 이어지는 장면만 시간순으로 읽습니다.';}for(const b of document.querySelectorAll('[data-flow]'))b.addEventListener('click',()=>select(b.dataset.flow));select(Object.keys(profiles)[0]);</script></html>''')
     content = ''.join(parts)
-    (out / 'resident-days456.html').write_text(content)
-    (out / 'resident-days456.txt').write_text(raw)
+    (out / (basename + '.html')).write_text(content)
+    (out / (basename + '.txt')).write_text(raw)
     result = {}
     async with async_playwright() as p:
         browser = await p.chromium.launch(executable_path='/usr/bin/chromium', args=['--no-sandbox'])
@@ -82,11 +86,16 @@ async def export(source, out):
             assert visible == profile['order'], (flow, visible)
             if flow == 'all':
                 await page.locator('#intro').evaluate('(node,text)=>node.textContent=text', spec['introduction'])
-            subtitle = profile['label'] + ' · 2026년 11월 6일'
-            word(out / ('resident-days456-' + flow + '.docx'), spec['title'], subtitle, spec['premise'], [chapters[k] for k in profile['order']])
-            await page.pdf(path=str(out / ('resident-days456-' + flow + '.pdf')), prefer_css_page_size=True, print_background=True)
+            selected = [chapters[k] for k in profile['order']]
+            if renumber:
+                selected = [(re.sub(r'^\d+\.', '%02d.' % i, title), paragraphs) for i, (title, paragraphs) in enumerate(selected, 1)]
+                headings = await page.locator('.chapter:visible h2').all_text_contents()
+                assert headings == [title for title, paragraphs in selected]
+            subtitle = profile['label'] + ' · ' + edition
+            word(out / (basename + '-' + flow + '.docx'), spec['title'], subtitle, spec['premise'], selected)
+            await page.pdf(path=str(out / (basename + '-' + flow + '.pdf')), prefer_css_page_size=True, print_background=True)
             result[flow] = len(visible)
-        await page.locator('[data-flow="win_safe"]').click()
+        await page.locator('[data-flow="' + next(iter(spec['reading_profiles'])) + '"]').click()
         await page.screenshot(path=str(out / 'book-preview.png'))
         await browser.close()
     (out / 'export-check.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')

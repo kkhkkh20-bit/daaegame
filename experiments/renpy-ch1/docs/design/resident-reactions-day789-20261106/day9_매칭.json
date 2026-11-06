@@ -1,0 +1,124 @@
+{
+  "day": 9,
+  "scenes": [
+    {
+      "id": "RR9_01",
+      "title": "그 말은 지우지 마세요",
+      "pov_name": "부리",
+      "day": 9,
+      "label": "r13_v111_passage_walk9",
+      "anchors": [
+        {"file": "game/room13_v111_days610.rpy", "label": "r13_v111_day9", "condition": "route7 == 'murder' → passage9"},
+        {"file": "game/room13_v111_days610.rpy", "label": "r13_v111_passage9", "role": "다람을 동행시키지 않고 도토·따닥·할머니·부리 도착"},
+        {"file": "game/room13_v111_days610.rpy", "label": "r13_v111_safe_passage9", "role": "반환0만 실제 통로 확인으로 진입. 반환1은 안전 되묻기로 돌아감"},
+        {"file": "game/room13_v111_days610.rpy", "label": "r13_v111_passage_walk9", "record_ids": ["MS14_D09_S01_L0002", "MS14_D09_S01_L0003", "MS14_D09_S01_L0004", "MS14_D09_S01_L0005", "MS14_D09_S01_L0007", "MS14_D09_S01_L0008", "MS14_D09_S01_L0014"], "overlay_ids": ["NW_D09_S01_B01", "NW_D09_S01_A01", "NW_NOV_D09_MANUAL04"]}
+      ],
+      "known": [
+        "부엉이가 숨진 뒤 부리가 아빠 임시 짝으로 주방 조사에 실제 출석함",
+        "할머니가 오래된 빨래 길이라고 주장하자 부리는 왜 할아버지 방으로 연결되는지 묻지만 이 자리에서 답을 받지 못함",
+        "부리는 아빠가 딸을 구하려는 당사자임을 알며 스스로 할아버지 일을 확인하려 함",
+        "주방에서 확인 가능한 쐐기·안전줄·도토가 올리고 손을 뗀 레버 및 아빠의 출입"
+      ],
+      "unknown": [
+        "부리가 따라 들어가지 않은 통로 내부·13호 내부의 아빠 단독 시야",
+        "살해범·수단·핀 도착 시각의 확정 및 할머니 진술의 최종 진위",
+        "아빠만 들은 최신 엄마 편지 전문·현재 은신처·10일 이후 진상"
+      ],
+      "branch": {
+        "route7": "murder",
+        "manuscript_profile": "부엉이 사망·다람 보호실 경로",
+        "presence": "부리 주방 출석. 다람 조사 동행·대사 없음",
+        "game_scope": "route7 murder로만 들어오는 S01 고유 호출 앵커 사용. 새 when 없음",
+        "prevention": "prevent_passage9/prevent_walk9의 P01에는 이 앵커와 부리 반응을 넣지 않음",
+        "evidence_boundary": "RR9_01은 실제 확인 중 표시되며 E09_PASSAGE 취득은 기존 S01_L0014 commit 이후. 질문 보존은 정답·범행 확정이 아님"
+      },
+      "game_added_ids": ["NW_RR9_01_01", "NW_RR9_01_02", "NW_RR9_01_03"],
+      "modified_ids": [],
+      "scene_extent": {
+        "full_manuscript": "docs/design/resident-reactions-day789-20261106/day9_원고.md의 ##07. 주방에서 질문을 던지고 실제 안전 확인·왕복을 밖에서 기다리는 부리의 1인칭 별편",
+        "game_excerpt": "d09.json after.MS14_D09_S01_L0005의 3행. 부리의 질문을 지우지 않겠다는 응답까지만. 별편 전체를 게임에서 재생하지 않음",
+        "full_only": "부리의 내면·할아버지와 딸을 먼저 생각하는 서로 다른 목적·밖에서 기다리는 동안의 감각",
+        "expressions": {"NW_RR9_01_01": "neutral", "NW_RR9_01_02": "angry", "NW_RR9_01_03": "neutral"}
+      }
+    },
+    {
+      "id": "RR9_02",
+      "title": "물건은 여기 놓고요",
+      "pov_name": "톡",
+      "day": 9,
+      "label": "r13_v111_tok9",
+      "anchors": [
+        {"file": "game/room13_v111_days610.rpy", "label": "r13_v111_tok_route9", "condition": "r13_v111_tok_attends('workshop') → tok9, 거짓이면 repair_copy9"},
+        {"file": "game/room13_v111_later_bindings.rpy", "function": "r13_v111_tok_attends", "condition": "TOK_ALIVE && tok_workshop_present. tok_hearing_present와 독립"},
+        {"file": "game/room13_v111_days610.rpy", "label": "r13_v111_tok9", "record_ids": ["MS14_D09_S02_L0001", "MS14_D09_S02_L0004", "MS14_D09_S02_L0007", "MS14_D09_S02_L0009", "MS14_D09_S02_L0011", "MS14_D09_S02_L0012", "MS14_D09_S02_L0013", "MS14_D09_S02_L0014", "MS14_D09_S02_L0015", "MS14_D09_S02_L0016", "MS14_D09_S02_L0018"], "overlay_ids": ["NW_D09_S02_B01", "NW_D09_S02_B02", "NW_D09_S02_B03"]},
+        {"file": "game/room13_v111_days610.rpy", "label": "r13_v111_repair_copy9", "role": "세련의 기존 수선 영수증 사본 대체. RR9_02를 붙이지 않음. 기존 S02_L0026 commit 유지"}
+      ],
+      "known": [
+        "톡이 핀을 구리선으로 고친 본인의 일·솜씨·수선값 미지급",
+        "상자 너머 현재 핀 모양과 기존 장부의 날짜·그림·수리·인수 기록",
+        "부리가 숫자를 되묻고 미지급 발언을 적는 현행 주고받기",
+        "그림과 현재 핀에서 끝 길이가 달라진 관찰은 원래 S02_L0015~16 순서에서만 설명"
+      ],
+      "unknown": [
+        "수리 후 핀이 어디로 이동했는지·누가 범행에 사용했는지",
+        "할머니의 살해 여부·핀 파손과 상처를 연결하는 최종 결론",
+        "톡이 없는 경로의 직접 출석·직접 증언이라는 기억",
+        "구금 다람과 아빠 사이의 비공개 엄마 편지 내용"
+      ],
+      "branch": {
+        "route7": "murder 경로가 passage_after9→workshop9→tok_route9로 진입",
+        "attendance": "bool(TOK_ALIVE && tok_workshop_present)",
+        "hearing_independence": "tok_hearing_present의 참·거짓과 무관",
+        "presence": "tok9에서 부리·톡 실제 도착. 다람은 조사에 동행하지 않음",
+        "game_scope": "실제 출석한 tok9의 S02_L0007 뒤만. 새 when 없음",
+        "copy_route": "TOK_ALIVE가 거짓이거나 tok_workshop_present가 거짓이면 세련의 사본으로 같은 기존 E09_PIN_OWNER를 취득. 톡의 새 반응은 표시하지 않음",
+        "evidence_boundary": "새 반응은 관찰 도중. 소유권·수리·인수 확인과 E09_PIN_OWNER 획득은 기존 S02_L0018 commit. 살해 목격·사용 입증으로 확대하지 않음"
+      },
+      "game_added_ids": ["NW_RR9_02_01", "NW_RR9_02_02", "NW_RR9_02_03"],
+      "modified_ids": [],
+      "scene_extent": {
+        "full_manuscript": "docs/design/resident-reactions-day789-20261106/day9_원고.md의 ##08. 핀을 살피고 장부를 펴 보이는 톡의 1인칭 별편",
+        "game_excerpt": "d09.json after.MS14_D09_S02_L0007의 3행. 상자를 작업대 가운데로 옮기고 아빠에게 물건을 보라고 하는 대응만",
+        "full_only": "흔한 핀이라 얼버무리는 심리·솜씨와 수선값에 대한 자존심·장부 밖의 일을 증언할 수 없다는 내면",
+        "expressions": {"NW_RR9_02_01": "neutral", "NW_RR9_02_02": "anxious", "NW_RR9_02_03": "neutral"}
+      }
+    },
+    {
+      "id": "RR9_03",
+      "title": "칸 이름까지 옮겨 주세요",
+      "pov_name": "세련",
+      "day": 9,
+      "label": "r13_v111_postal9",
+      "anchors": [
+        {"file": "game/room13_v111_days610.rpy", "label": "r13_v111_postal9", "record_ids": ["MS14_D09_S04_L0001", "MS14_D09_S04_L0002", "MS14_D09_S04_L0004", "MS14_D09_S04_L0006", "MS14_D09_S04_L0007", "MS14_D09_S04_L0008", "MS14_D09_S04_L0009", "MS14_D09_S04_L0010", "MS14_D09_S04_L0011", "MS14_D09_S04_L0014", "MS14_D09_S04_L0016", "MS14_D09_S04_L0017", "MS14_D09_S04_L0019", "MS14_D09_S04_L0021", "MS14_D09_S04_L0022", "MS14_D09_S04_L0023", "MS14_D09_S04_L0024"], "overlay_ids": ["NW_D09_S04_T22", "NW_D09_S04_A01", "NW_D09_S04_T24", "NW_AUD_D09_04"]}
+      ],
+      "known": [
+        "장부와 미발송 우편을 찾아본 범위에서 새 편지는 없으며 다른 경유지까지 알지는 못함",
+        "접수 보조표의 맡긴 사람 칸에 여관 이름·도토 표시가 있음. 작성자를 적은 칸은 아님",
+        "슬링의 본보기 작성·식권 지급 진술. 본인도 초대장 작성 순간은 못 봤다고 함",
+        "우체국이 보관한 반송 우편·보조표·접수 및 발송 날짜. 본보기 날짜는 슬링이 직접 짚음"
+      ],
+      "unknown": [
+        "초대장 작성자·위조범의 최종 특정",
+        "반송 이유의 내막·글씨를 본뜬 사람의 숨은 동기",
+        "아빠만 들은 8일 최신 엄마 편지 전문과 은신처·발소리 경고",
+        "아빠가 조용히 읽는 속말·그날 밤 아빠와 다람이 실제로 나눌 말"
+      ],
+      "branch": {
+        "route7": "murder 및 모든 예방 경로의 공통 postal9",
+        "presence": "우체국 실제 도착자는 세련·슬링. 부리·톡·다람을 끌어오지 않음",
+        "game_scope": "S04_L0009 뒤 공통 3행. 새 when 없음",
+        "evidence_boundary": "표의 칸 이름을 함께 적는 반응만. E09_MAIL 획득·검색 완료는 기존 S04_L0024 commit. ‘맡긴 사람’과 작성자·위조범을 합치지 않음",
+        "private_letter": "구금 다람에게 mother_warning_read9로 편지를 공유하는 이후 밤 장면과 분리. 우체국의 공개 반송 우편과 아빠의 최신 비공개 편지는 다른 지식 범위"
+      },
+      "game_added_ids": ["NW_RR9_03_01", "NW_RR9_03_02", "NW_RR9_03_03"],
+      "modified_ids": [],
+      "scene_extent": {
+        "full_manuscript": "docs/design/resident-reactions-day789-20261106/day9_원고.md의 ##09. 검색 결과·보조표·본보기·날짜를 내보내며 기록의 범위를 지키는 세련의 1인칭 별편",
+        "game_excerpt": "d09.json after.MS14_D09_S04_L0009의 3행. 표의 칸 이름까지 옮기라는 요구와 아빠의 확인만",
+        "full_only": "기록을 보낸 뒤 오독될 책임을 생각하는 내면·빈칸을 지어내지 않은 채 도움을 주려는 목적",
+        "expressions": {"NW_RR9_03_01": "neutral", "NW_RR9_03_02": "angry", "NW_RR9_03_03": "neutral"}
+      }
+    }
+  ]
+}

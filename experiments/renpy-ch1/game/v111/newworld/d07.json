@@ -1227,6 +1227,47 @@
         "kind": "dialogue",
         "text": "접힌 틈으로 이름 하나가 보였어요. 부엉이 어르신이요.{w=.3}\n그 어르신이 예전 물건 오간 기록을 갖고 계시대요."
       }
+    ],
+    "MS14_D07_S01_L0044": [
+      {
+        "id": "NW_RR7_N01",
+        "speaker": "누비",
+        "kind": "dialogue",
+        "text": "그 종이, 내가 좀 볼게요.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_RR7_N02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "가져가시지는 못합니다. 여기서 보십시오.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_RR7_N03",
+        "speaker": "누비",
+        "kind": "dialogue",
+        "text": "가져간다고 안 했어요. 어디까지 썼는지 보자는 거예요.",
+        "expression": "angry"
+      }
+    ],
+    "MS14_D07_S02_L0036": [
+      {
+        "id": "NW_RR7_B01",
+        "speaker": "꼬미",
+        "kind": "dialogue",
+        "text": "두 개도 들 수 있는데.",
+        "expression": "neutral",
+        "when": "kkomi_alive"
+      },
+      {
+        "id": "NW_RR7_B02",
+        "speaker": "보리",
+        "kind": "dialogue",
+        "text": "나르는 거랑 안 깨는 건 달라. 한 개씩 해.",
+        "expression": "neutral",
+        "when": "kkomi_alive"
+      }
     ]
   },
   "drop": [],
@@ -1237,7 +1278,34 @@
         "id": "NW_D07_NC01",
         "speaker": null,
         "kind": "narration",
-        "text": "사자 선생님이 세 아이의 이름을 하나씩 불러 확인한다. 대답이 작으면 한 번 더 부른다. 아이들이 교실 안으로 들어간다."
+        "text": "사자 선생님이 큰아이부터 이름을 부른다. 막내는 큰아이 뒤에 붙어 있다."
+      },
+      {
+        "id": "NW_RR7_T01",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "막내도 대답! 네 목소리가 아직 안 들렸어.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_RR7_T02",
+        "speaker": "나비",
+        "kind": "dialogue",
+        "text": "손은 잡고 있어도 되죠?",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_RR7_T03",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "그럼요. 손은 그대로 두고, 대답만 직접!",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_RR7_T04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "막내의 작은 대답을 듣고서야 선생님이 교실 안을 가리킨다."
       }
     ],
     "fire_lose_neoul7": [

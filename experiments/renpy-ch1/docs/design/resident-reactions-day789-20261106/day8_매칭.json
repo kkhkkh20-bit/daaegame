@@ -1,0 +1,155 @@
+{
+  "day": 8,
+  "date": "2026-11-06",
+  "baseline": "d68a804a2 / 0.20.107",
+  "scenes": [
+    {
+      "id": "RR8_01",
+      "title": "소매를 내리는 동안",
+      "pov_name": "서리",
+      "day": 8,
+      "label": "r13_v111_custody8",
+      "anchors": [
+        "MS14_D08_S01_L0002~L0024",
+        "MS14_D08_S01_L0015 after",
+        "MS14_D08_S01_L0025 commit"
+      ],
+      "known": [
+        "직접 진료 중 본 다람의 소매·멍",
+        "아빠가 아이의 말을 끊었다가 사과함",
+        "아이가 직접 말한 타격·숨은 자리·듣기만 한 소리",
+        "현재 면회 출입 기록과 아빠의 이송 질문"
+      ],
+      "unknown": [
+        "아이가 보지 못한 얼굴",
+        "범인과 이후 조사 정답",
+        "아빠가 이후 읽는 엄마 편지",
+        "다음 면회에 관해 실제로 확정되지 않은 시각"
+      ],
+      "branch": {
+        "required": "route7=murder; OWL_ALIVE=False; DARAM_DETAINED=True",
+        "actual_stage": [
+          "daram",
+          "resident_seori",
+          "neoul"
+        ],
+        "excluded": [
+          "prevention=stone",
+          "생존 예방"
+        ]
+      },
+      "game_added_ids": [
+        "NW_RR8_CARE01",
+        "NW_RR8_CARE02",
+        "NW_RR8_CARE03"
+      ],
+      "game_revised_ids": [],
+      "scene_extent": {
+        "full_manuscript": "custody8 전체와 L0024의 기존 after(이송 질문·퇴장 시각)까지 실제 청취. L0025 완료 뒤 회상으로 열람한다.",
+        "short_extract": "L0015의 소매 관찰·기록을 읽은 뒤에만 세 줄. 이후 아이의 숨은 자리·두 번째 소리는 아직 미공개이며 발췌에서 말하지 않는다."
+      },
+      "literary_scope": "소매를 정리하는 동안 아빠 질문을 늦추는 작은 동작. 새 멍·상처 형상·진단·사인·면회 연장·다음 방문 허가를 만들지 않음."
+    },
+    {
+      "id": "RR8_02",
+      "title": "내가 들고 있겠네",
+      "pov_name": "부엉이",
+      "day": 8,
+      "label": "r13_v111_care8",
+      "anchors": [
+        "MS14_D08_P01_L0012~L0016",
+        "MS14_D08_P01_L0014 after",
+        "MS14_D08_P01_L0017 commit"
+      ],
+      "known": [
+        "전날 쓰러진 뒤 의료진의 도움을 받았고 현재 살아 있음",
+        "다람과 아빠가 함께 진료를 마친 13호에 옴",
+        "같이 보자던 종이가 남아 있음",
+        "서리가 무리하지 말라고 한 직접 지시"
+      ],
+      "unknown": [
+        "아직 다음 missing_pages8에서 확인하지 않은 누락 장의 내용·원인",
+        "살인판에서만 생기는 상처·시신 물증",
+        "엄마의 새 경고 편지 전문",
+        "이후 범인·회의 정답"
+      ],
+      "branch": {
+        "required": "route7=prevented, OWL_ALIVE=True, DARAM_DETAINED=False, prevention in [B,promise,repair]",
+        "actual_stage": [
+          "daram",
+          "resident_owlgp",
+          "resident_seori",
+          "doto"
+        ],
+        "excluded": [
+          "prevention=stone: 쓰러짐·서리 동석 없음",
+          "murder: 부엉이 사망·다람 구금"
+        ]
+      },
+      "game_added_ids": [
+        "NW_RR8_OWL01",
+        "NW_RR8_OWL02",
+        "NW_RR8_OWL03"
+      ],
+      "game_revised_ids": [],
+      "scene_extent": {
+        "full_manuscript": "care8 L0012~16의 진료·종이·휴식 지시를 모두 읽고 L0017 완료 뒤. 뒤의 문서 누락·명단 위협은 아직 쓰지 않는다.",
+        "short_extract": "부엉이가 어제보다 낫고 종이가 그대로라고 말한 L0014 다음 세 줄. L0015~16의 기존 의료 지시는 그대로 뒤따른다."
+      },
+      "literary_scope": "환자가 종이를 직접 든 채 보여 주고 아이가 자리를 옮기는 행동. 장을 건네거나 순서를 바꾸지 않고, 새 증상·회복 보장·시간 경과를 만들지 않음. 이후 기존 문서 누락·명단 위협을 무효화하지 않음."
+    },
+    {
+      "id": "RR8_03",
+      "title": "봉투를 받은 사람",
+      "pov_name": "초롱",
+      "day": 8,
+      "label": "r13_v111_escort_done8",
+      "anchors": [
+        "MS14_D08_S04_L0002~L0012 (살인 경로)",
+        "MS14_D08_S04_L0014~L0020 (예방 경로)",
+        "MS14_D08_S04_L0031~L0033",
+        "MS14_D08_S04_L0032 before"
+      ],
+      "known": [
+        "평소 물자 자리에 있던 봉투를 점검함으로 옮김",
+        "순찰대원의 물건 확인 요구와 아빠의 받는 이·인수자 확인 발언",
+        "본인이 함에서 봉투를 꺼내 직접 아빠에게 건넴",
+        "아빠가 몸을 돌려 혼자 읽고 주머니에 넣음",
+        "바둑이가 큰길까지 함께 서겠다고 했고 실제로 함께 나감"
+      ],
+      "unknown": [
+        "봉투 안쪽 종이 전문·6일 작성 날짜",
+        "엄마의 새 이동 장소와 뒤따르는 사람의 정체",
+        "아빠의 이후 진상 입증",
+        "광장에 없는 다람의 현재 반응"
+      ],
+      "branch": {
+        "required": "murder 또는 prevented 공통; escort8에서 실제 공개 등길 동행을 선택해 public_road_escort_completed=True",
+        "actual_stage": [
+          "resident_lamplighter",
+          "doto",
+          "resident_badook"
+        ],
+        "excluded": [
+          "다람 현장 동석: 구금 또는 학교 인계 상태이므로 없음",
+          "솜이·세련 등 새 전달자 추가"
+        ]
+      },
+      "game_added_ids": [
+        "NW_RR8_LETTER01",
+        "NW_RR8_LETTER02",
+        "NW_RR8_LETTER03"
+      ],
+      "game_revised_ids": [],
+      "scene_extent": {
+        "full_manuscript": "해당 갈래의 봉투 인수·혼자 읽기, 공개길 선택 및 L0032 뒤 바둑이와 큰길로 나가는 기존 지문까지 청취. L0033 완료 뒤 회상으로만 열람한다.",
+        "short_extract": "escort8의 실제 선택 완료 뒤 L0031(함 닫기·편지 보관) 다음, L0032(큰길 안내) 바로 앞 세 줄. 순찰대원 대화나 편지 전문을 새로 만들지 않는다."
+      },
+      "literary_scope": "봉투를 건넨 사람이 수령을 확인하는 행동. 이 원고가 초롱에게 비밀 편지를 읽히거나 새로운 우편 경로·목격자를 만드는 것은 아님."
+    }
+  ],
+  "runtime_scope": "d08 overlay의 기존 표시 원행 세 곳에 총 9행만 추가. shared rpy·records·조건·효과·자료·정답·기회·생사·실제 인수 상태 불변.",
+  "new_guards_needed": [],
+  "validation_scope": "소유 신규 단위 검사와 정본·위치·정보 공개 대조만. SDK/native/build/git/전체 시험 미실행.",
+  "integration_note": "기존 호출 라벨의 생존 분기와 함께, 추가 발췌 묶음에도 기존 생존 when을 명시해 사망 상태의 문장 조회에서 남은 응답이 나오지 않게 했다. 새 조건·효과·판정은 없다."
+}

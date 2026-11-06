@@ -408,6 +408,28 @@
         "kind": "narration",
         "text": "보호실은 난로가 꺼져 입김이 하얗다. 서리가 문 옆 출입 장부를 펴고, 들어오는 사람의 이름과 시각을 적는다. 내 이름 옆에 분까지 적는다."
       }
+    ],
+    "MS14_D08_S04_L0032": [
+      {
+        "id": "NW_RR8_LETTER01",
+        "speaker": "초롱",
+        "kind": "dialogue",
+        "text": "봉투는 잘 받으신 거죠?",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_RR8_LETTER02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "네. 고맙습니다. 제가 잘 챙기겠습니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_RR8_LETTER03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나는 봉투를 넣은 안주머니를 손바닥으로 짚는다. 초롱이 닫힌 함에서 손을 뗀다."
+      }
     ]
   },
   "after": {
@@ -985,6 +1007,52 @@
         "speaker": "다람",
         "kind": "dialogue",
         "text": "아니. 집었을 때 그랬어. 그걸 들고 침대 밑으로 갔어."
+      }
+    ],
+    "MS14_D08_S01_L0015": [
+      {
+        "id": "NW_RR8_CARE01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 소매를 내리려다 나를 본다. 나는 다음 질문을 꺼내려던 입을 다문다."
+      },
+      {
+        "id": "NW_RR8_CARE02",
+        "speaker": "서리",
+        "kind": "dialogue",
+        "text": "소매는 내려도 돼. 아버지, 아이가 편히 앉은 다음에요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_RR8_CARE03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나는 다람이 소매를 정리할 자리를 비켜 앉는다."
+      }
+    ],
+    "MS14_D08_P01_L0014": [
+      {
+        "id": "NW_RR8_OWL01",
+        "speaker": "부엉이",
+        "kind": "dialogue",
+        "text": "이대로 보게. 내가 들고 있을 테니.",
+        "expression": "neutral",
+        "when": "owl_alive"
+      },
+      {
+        "id": "NW_RR8_OWL02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "부엉이가 종이를 다람 쪽으로 돌린다. 다람은 종이를 당겨 받으려던 손을 거둔다.",
+        "when": "owl_alive"
+      },
+      {
+        "id": "NW_RR8_OWL03",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "그럼 제가 이쪽으로 갈게요.",
+        "expression": "neutral",
+        "when": "owl_alive"
       }
     ]
   },

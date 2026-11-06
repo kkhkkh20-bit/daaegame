@@ -1,0 +1,170 @@
+{
+  "day": 7,
+  "scenes": [
+    {
+      "id": "RR7_01",
+      "title": "막내도 대답",
+      "pov_name": "사자 선생님",
+      "day": 7,
+      "label": "r13_v111_nubi_children_received7",
+      "anchors": [
+        "MS14_D07_S01_L0024",
+        "nubi_children_received7",
+        "NW_D07_NC01"
+      ],
+      "known": [
+        "나비와 아빠가 누비의 세 아이를 학교로 데려왔다.",
+        "세 아이의 기존 인수 효과는 MS14_D07_S01_L0024가 처리한다.",
+        "기존 블록도 이름을 하나씩 부르고 대답이 작으면 다시 불러 실제 인수를 보여 준다."
+      ],
+      "unknown": [
+        "누비의 방화 자백",
+        "방화 회의의 승패",
+        "막내가 선택적으로 알려 주는 기름통 바닥 쪽지 정보"
+      ],
+      "branch": {
+        "school_choice": [
+          "school",
+          "here에서 학교 인수로 합류"
+        ],
+        "FIRE_EVACUATED": [
+          false,
+          true
+        ],
+        "KKOMI_ALIVE": [
+          false,
+          true
+        ],
+        "meeting_fire_final": [
+          "lose",
+          "partial",
+          "win"
+        ],
+        "new_when": false
+      },
+      "game_added_ids": [
+        "NW_RR7_T01",
+        "NW_RR7_T02",
+        "NW_RR7_T03",
+        "NW_RR7_T04"
+      ],
+      "game_modified_ids": [
+        "NW_D07_NC01"
+      ],
+      "scene_extent": {
+        "manuscript": "학교 문에서 세 아이를 받아 막내의 직접 대답까지 듣고 교실 안으로 들이는 선생님 시점. 세부 동작·내면은 원고에만 있음. 창고 아이 셋 또는 넷의 후반 출석과 다른 장면.",
+        "release_after": "nubi_children_received7 블록 종료",
+        "game_excerpt": {
+          "position": "blocks",
+          "anchor": "nubi_children_received7",
+          "extent": "기존 한 줄 인수 지문을 짧은 주고받기로 풀어 쓴 다섯 행. 기존 지문 한 행 교체와 네 행 추가이며, 인수 효과는 원래 커밋에 둠."
+        }
+      }
+    },
+    {
+      "id": "RR7_02",
+      "title": "어디까지 썼는지",
+      "pov_name": "누비",
+      "day": 7,
+      "label": "r13_v111_nubi_admission7",
+      "anchors": [
+        "MS14_D07_S01_L0041",
+        "MS14_D07_S01_L0042",
+        "MS14_D07_S01_L0044"
+      ],
+      "known": [
+        "보리가 누비의 문 앞 목격을 말했고, 플레이어가 E06_FIRE를 실제 대조했다.",
+        "누비가 창고 아이들을 내보내려 문 앞에 등유를 붓고 불을 놓았다고 인정했다.",
+        "자기 아이 셋은 앞선 학교 인수 절차에서 선생님에게 넘어갔다.",
+        "너울의 약속은 누비가 한 말이며, 물건으로 입증된 사실이 아니다."
+      ],
+      "unknown": [
+        "살인 의도",
+        "너울의 약속 입증 여부",
+        "아직 치르지 않은 두 번째 자료 대조의 승패"
+      ],
+      "branch": {
+        "entry": "E06_FIRE 대조 성공 및 보리 문 앞 목격 청취 뒤의 자백 전용 라벨",
+        "fire_first_proof": "성공만; 1차 lose 라벨에서는 실행되지 않음",
+        "FIRE_EVACUATED": [
+          false,
+          true
+        ],
+        "KKOMI_ALIVE": [
+          false,
+          true
+        ],
+        "meeting_fire_final": "이후 win 또는 partial 가능; 원고에서 최종 결과를 단정하지 않음",
+        "new_when": false
+      },
+      "game_added_ids": [
+        "NW_RR7_N01",
+        "NW_RR7_N02",
+        "NW_RR7_N03"
+      ],
+      "game_modified_ids": [],
+      "scene_extent": {
+        "manuscript": "살인 의도를 적지 말라는 항의부터 자백을 적은 종이를 직접 확인하는 누비의 반응까지. 내면·통 옆으로 다가서는 세부 동작은 주민 시점 원고에만 있음.",
+        "release_after": "MS14_D07_S01_L0044",
+        "game_excerpt": {
+          "position": "after",
+          "anchor": "MS14_D07_S01_L0044",
+          "extent": "종이를 보려는 요구와 아빠의 보관 원칙이 부딪히는 세 대사만. 읽어 주는 후속 장면·내부 독백은 게임에 넣지 않음."
+        }
+      }
+    },
+    {
+      "id": "RR7_03",
+      "title": "빈 것부터",
+      "pov_name": "보리",
+      "day": 7,
+      "label": "r13_v111_living_child7",
+      "anchors": [
+        "MS14_D07_S02_L0034",
+        "MS14_D07_S02_L0035",
+        "MS14_D07_S02_L0036",
+        "MS14_D07_S02_L0051"
+      ],
+      "known": [
+        "꼬미가 살아 있고 학교 아이들 교실에 있다.",
+        "보리는 도담의 밥을 챙길 때 꼬미네도 함께 먹이겠다고 말했다.",
+        "꼬미가 그릇을 나르겠다고 나섰고 보리는 빈 것부터 나르라고 했다.",
+        "후속 확인에서 꼬미의 자리와 창고에서 온 네 아이의 출석이 확인된다."
+      ],
+      "unknown": [
+        "다음 날 이후의 사건",
+        "본편이 정하지 않은 꼬미의 가족사",
+        "보리의 부상 유무를 이 장면만으로 일괄 단정할 수 없음"
+      ],
+      "branch": {
+        "KKOMI_ALIVE": true,
+        "FIRE_EVACUATED": [
+          false,
+          true
+        ],
+        "meeting_fire_final": [
+          "lose",
+          "partial",
+          "win"
+        ],
+        "new_when": false,
+        "exclusion": "사망 전용 lost_child7에서는 이 발췌를 호출하지 않음. 구조·화상·빈 창고 진압이나 누비·너울의 동석을 원고에 덧붙이지 않음."
+      },
+      "game_added_ids": [
+        "NW_RR7_B01",
+        "NW_RR7_B02"
+      ],
+      "game_modified_ids": [],
+      "scene_extent": {
+        "manuscript": "보리의 식사 약속부터 꼬미의 빈 그릇 돕기와 후속 네 아이 출석 확인까지. 꼬미가 실제 옮기는 세부 동작과 보리의 속말은 원고만의 장면화이며 물건 효과를 뜻하지 않음.",
+        "release_after": "MS14_D07_S02_L0051",
+        "game_excerpt": {
+          "position": "after",
+          "anchor": "MS14_D07_S02_L0036",
+          "extent": "꼬미의 두 개 욕심을 보리가 한 개씩 하라고 막는 두 대사만. 후속 출석 확인보다 앞이며, 아이나 어른의 손 부상 상태를 가정하지 않음."
+        }
+      }
+    }
+  ],
+  "integration_note": "기존 호출 라벨의 생존 분기와 함께, 추가 발췌 묶음에도 기존 생존 when을 명시해 사망 상태의 문장 조회에서 남은 응답이 나오지 않게 했다. 새 조건·효과·판정은 없다."
+}
