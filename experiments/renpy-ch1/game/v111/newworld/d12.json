@@ -906,6 +906,29 @@
     ]
   },
   "after": {
+    "MS14_D12_S04_L0100": [
+      {
+        "id": "NW_RR12_02_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나비가 새미 쪽으로 돌아서다 배식대 앞에 다시 선다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_RR12_02_02",
+        "speaker": "나비",
+        "kind": "dialogue",
+        "text": "책은 제가 꺼낼게요. 새미야, 냄비 쪽으로는 오지 마.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_RR12_02_03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "여기는 제가 지키겠습니다.",
+        "expression": "neutral"
+      }
+    ],
     "MS14_D12_S01_L0018": [
       {
         "id": "NW_D12_S01_A01",
@@ -1032,6 +1055,30 @@
         "speaker": "서리",
         "kind": "dialogue",
         "text": "아니요. 병만 보고 안에 든 것까지 단정할 수는 없어요. 무엇을 넣었는지, 언제 넣었는지부터 확인해야 해요.",
+        "expression": "neutral",
+        "when": "route12_premeal"
+      },
+      {
+        "id": "NW_RR12_01_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "서리가 병을 보는 내 앞을 비껴 아이들 쪽으로 몸을 낮춘다.",
+        "expression": "neutral",
+        "when": "route12_premeal"
+      },
+      {
+        "id": "NW_RR12_01_02",
+        "speaker": "서리",
+        "kind": "dialogue",
+        "text": "병 얘기는 들었어요. 아이들 얼굴도 보고 말할게요.",
+        "expression": "anxious",
+        "when": "route12_premeal"
+      },
+      {
+        "id": "NW_RR12_01_03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "저는 배식대에 있겠습니다. 확인하고 말씀해 주십시오.",
         "expression": "neutral",
         "when": "route12_premeal"
       }
@@ -1639,6 +1686,30 @@
         "speaker": null,
         "kind": "narration",
         "text": "돌목이 이송 예정 칸에 줄을 긋고, 그 옆에 ‘무효’라고 적는다.",
+        "when": "grand_soup_guard"
+      },
+      {
+        "id": "NW_RR12_03_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "돌목이 무효라고 적은 명단을 세워 너울 쪽으로 돌린다.",
+        "expression": "neutral",
+        "when": "grand_soup_guard"
+      },
+      {
+        "id": "NW_RR12_03_02",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "이 칸 보고도 싣지는 마시오. 내가 고쳐 적은 건 보셨소.",
+        "expression": "angry",
+        "when": "grand_soup_guard"
+      },
+      {
+        "id": "NW_RR12_03_03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "예. 방금 고쳐 적으신 걸 봤습니다.",
+        "expression": "neutral",
         "when": "grand_soup_guard"
       },
       {

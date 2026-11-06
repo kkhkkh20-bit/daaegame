@@ -2111,7 +2111,7 @@ def r13_nw_true_ending_ready():
 | `no_ledger` | `not r13_v111_owned("NW_NEOUL_LEDGER")` | d14 |
 | `nw_no_rebut` | `not getattr(store,"r13_nw_rebut_pending",None)` | d14 |
 | `nw_rebut_pending` | `bool(getattr(store,"r13_nw_rebut_pending",None))` | d10, d12 |
-| `owl_alive` | `r13_v111_value("OWL_ALIVE") is not False` | d08, d14 |
+| `owl_alive` | `r13_v111_value("OWL_ALIVE") is not False` | d08, d10, d14 |
 | `owl_dead` | `r13_v111_value("OWL_ALIVE") is False` | d11, d14 |
 | `owl_fell7` | `r13_v111_value("OWL_ALIVE") is not False and r13_v111_value("prevention")!="stone"` | d08, d11 |
 | `owl_listed_cart13` | `r13_v111_value("OWL_ALIVE") is not False and r13_v111_value("listed:resident_owlgp") is True and not r13_v111_value("departed:resident_owlgp")` | d13 |

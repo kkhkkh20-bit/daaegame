@@ -1,0 +1,121 @@
+{
+  "day": 12,
+  "scenes": [
+    {
+      "id": "RR12_01",
+      "title": "얼굴도 보고 말할게요",
+      "pov_name": "서리",
+      "day": 12,
+      "label": "r13_v111_medical_arrival12",
+      "anchors": [
+        {"file": "game/room13_v111_days1114.rpy", "label": "r13_v111_premeal12", "record_ids": ["MS14_D12_A_L0002", "MS14_D12_A_L0008"], "role": "배식 전 중단·의료 호출·보리 실제 호출 이동"},
+        {"file": "game/room13_v111_days1114.rpy", "label": "r13_v111_handling_pre12", "record_ids": ["MS14_D12_S04_L0068", "MS14_D12_S04_L0095"], "role": "기존 관찰·질문 뒤 의료 실제 도착으로 이동"},
+        {"file": "game/room13_v111_days1114.rpy", "label": "r13_v111_medical_arrival12", "record_ids": ["MS14_D12_S04_L0042", "MS14_D12_S04_L0044", "MS14_D12_S04_L0045"], "overlay_ids": ["NW_D12_MED01", "NW_D12_S04_K02P", "NW_D12_S04_K03P", "NW_D12_S04_P01"]}
+      ],
+      "known": [
+        "서리는 보리와 함께 실제 귀환한 뒤에만 현장에 있음. 배식 전 중단 경로에서 아무도 작은 냄비 국을 먹지 않았다는 나비의 답을 들음",
+        "진료소 약에 붙이는 표시를 알아보지만 병만으로 내용물·투입 시각을 단정할 수 없다고 답함",
+        "원래 의료 도착 대사와 병 확인 뒤 아이들 쪽으로 몸을 낮추는 생활 반응"
+      ],
+      "unknown": [
+        "현재 대조된 자료만으로 최종 범인·투입 수단·동기를 확정하는 판단",
+        "누가 약을 넣었는지에 대한 회의의 최종 입증 결과",
+        "명단 확보·무효·선생님 감독 방식 등 이후 판정",
+        "먹지 않았다는 말만으로 전원 건강·다람 열 회복을 확인했다는 결론"
+      ],
+      "branch": {
+        "route12": "premeal_stopped",
+        "when": "route12_premeal",
+        "presence": "medical_arrival12 진입에서 resident_seori·resident_bori 실제 join, 보리 호출 업무 해제 뒤",
+        "before_evidence_commit": "추가 반응은 E12_HANDLING acquire 및 medical_arrived=True 설정보다 앞. 새로운 자료 취득·건강 판정 없음",
+        "excluded": "late_exposure에서는 이 추가 반응이 나오지 않음. early_prevented는 회의·의료 도착 자체를 거치지 않음",
+        "children": "도담·꼬미가 국을 먹은 뒤 사망하는 경로와 다름. 먹기 전 중단으로 기존 생존을 유지하며 과거에 사망한 꼬미를 되살리지 않음"
+      },
+      "game_added_ids": ["NW_RR12_01_01", "NW_RR12_01_02", "NW_RR12_01_03"],
+      "modified_ids": [],
+      "scene_extent": {
+        "full_manuscript": "day12_원고.md ##07. 실제 의료 도착부터 아이들 쪽으로 몸을 낮추는 순간까지 서리의 1인칭. 새 진료 결과·비밀 고백을 만들지 않음",
+        "game_excerpt": "d12.json after.MS14_D12_S04_L0045의 기존 NW_D12_S04_P01 응답 다음 3행. 기존 when만 사용",
+        "full_only": "자기 표시가 붙은 병을 먼저 보려는 마음과 눈앞 아이들을 확인할 책임 사이의 충돌",
+        "expressions": {"NW_RR12_01_01": "neutral", "NW_RR12_01_02": "anxious", "NW_RR12_01_03": "neutral"}
+      }
+    },
+    {
+      "id": "RR12_02",
+      "title": "그 책은 내가 꺼낼게",
+      "pov_name": "나비",
+      "day": 12,
+      "label": "r13_v111_aftermath_pre12",
+      "anchors": [
+        {"file": "game/room13_v111_days1114.rpy", "label": "r13_v111_soup_after_route12", "role": "자백·명단 증명 결과 뒤 route12가 late_exposure가 아니면 aftermath_pre12"},
+        {"file": "game/room13_v111_days1114.rpy", "label": "r13_v111_aftermath_pre12", "record_ids": ["MS14_D12_S04_L0096", "MS14_D12_S04_L0097", "MS14_D12_S04_L0098", "MS14_D12_S04_L0099", "MS14_D12_S04_L0100", "MS14_D12_S04_L0101", "MS14_D12_S04_L0102"], "role": "새미의 내일 책 질문→나비 약속→기존 book_promise12→선생님 감독 선택"}
+      ],
+      "known": [
+        "배식 전에 중단했고 선생님의 행위가 기존 플레이어 증명 뒤 드러난 상태",
+        "새미가 아랫칸 책을 무거워 못 꺼내며 선생님이 나비에게 부탁한 실제 대화",
+        "나비는 자기 손으로 남은 국을 덜어 건넨 일을 알지만 당시 내용물·범행을 알았던 것으로 소급하지 않음",
+        "아빠에게 현재 배식대 곁을 맡기고 새미에게 책을 꺼내 줄 좁은 생활 약속"
+      ],
+      "unknown": [
+        "배식 전부터 독이나 범행을 알고 있었다는 지식",
+        "부분 결과에서 명단 원본을 확보했다거나 일반 승리에서 이송 칸이 무효라는 주장",
+        "아직 선택하지 않은 선생님 감독·신병 인계 결과",
+        "학교 전체 관리직·모든 아이 보호자의 새 인수나 기존 토실 보호 결과의 변경"
+      ],
+      "branch": {
+        "route12": "premeal_stopped",
+        "meeting": "일반 승리·대승리·명단 입증 부분 결과에 공통. teacher_confessed 이후 기존 aftermath_pre12",
+        "when": null,
+        "presence": "나비가 실제 원래 S04_L0100을 말하는 고유 앵커. 새미는 이 경로에서 살아 내일 책을 묻는 기존 인물",
+        "excluded": "회의의 최종 실패는 soup_lost12로 가므로 이 앵커 없음. late_exposure의 도담 사망 뒤 장면·early_prevented의 평범한 저녁과 분리",
+        "state": "추가행 자체는 상태를 바꾸지 않음. 기존 book_promise12=True는 원래 위치에서만 설정. 나비 명단 편입 실패 루트로 이 반응을 옮기지 않음"
+      },
+      "game_added_ids": ["NW_RR12_02_01", "NW_RR12_02_02", "NW_RR12_02_03"],
+      "modified_ids": [],
+      "scene_extent": {
+        "full_manuscript": "day12_원고.md ##08. 배식 전 중단·행위 입증 이후 책 질문과 나비의 약속. 일반·부분·대승리 사이의 명단 상태를 단정하지 않음",
+        "game_excerpt": "d12.json after.MS14_D12_S04_L0100의 3행. 아빠가 배식대에 남겠다는 답까지만",
+        "full_only": "솥의 무게를 알던 나비가 아이의 무거운 책 한 권을 맡는 목적. 학교 전체 인수와 실제 책 전달 완료를 만들지 않음",
+        "expressions": {"NW_RR12_02_01": "neutral", "NW_RR12_02_02": "anxious", "NW_RR12_02_03": "neutral"}
+      }
+    },
+    {
+      "id": "RR12_03",
+      "title": "고쳐 적은 건 보셨소",
+      "pov_name": "돌목",
+      "day": 12,
+      "label": "r13_v111_list_won12",
+      "anchors": [
+        {"file": "game/room13_v111_days1114.rpy", "label": "r13_v111_list_won12", "role": "플레이어가 명단·흰 그릇 대조에 승리. 기존 반환 그릇 대승리 검사 뒤 grand:soup 및 transfer_list_voided 설정"},
+        {"file": "game/v111/newworld/d12.json", "block": "soup_list_won12", "overlay_ids": ["NW_GW_D12_11", "NW_GW_D12_12", "NW_GW_D12_13", "NW_GW_D12_14", "NW_GW_D12_15", "NW_GW_D12_16", "NW_GW_D12_17", "NW_SL_W_09"], "role": "그릇 대조·돌목의 실제 무효 기입 뒤, 아빠가 명단 원본을 가져가기 전"}
+      ],
+      "known": [
+        "플레이어가 비교한 돌아온 흰 그릇과 배식대 그릇의 바닥 표시",
+        "그릇만 돌아온다는 공개 증언 및 그릇을 실제 뒤집어 본 돌목의 관찰",
+        "돌목이 이송 예정 칸에 실제 줄을 긋고 무효라고 적은 행위",
+        "원본을 아빠가 떼어 보관하고 너울이 손을 거두는 현행 장면"
+      ],
+      "unknown": [
+        "명단 무효가 이미 이송된 사람들의 생환·구조·피해 회복을 뜻한다는 해석",
+        "다음날 이송 중단과 촌장 감독·결말이 이미 완료됐다는 주장",
+        "일반 승리·부분·실패 경로에도 자동으로 무효가 적용됐다는 기억"
+      ],
+      "branch": {
+        "full_manuscript_route": "premeal_stopped 또는 late_exposure에서 돌목 실제 입회 대승리. 배식 전후의 피해를 단정하지 않는 공통 장면",
+        "game_excerpt_route": "list_won12의 grand:soup == true && actor_ready('guard'). 기존 grand_soup_guard 조건 그대로",
+        "when": "grand_soup_guard",
+        "excluded": "일반 승리·부분·실패·돌목 부재에서는 표시하지 않음. 조기 완전 예방의 별도 early_guard_bowl12에도 복사하지 않음",
+        "late_scope": "같은 대승리 블록을 거치는 late_exposure에도 짧은 발췌는 가능하지만 아이 생존·진료 결과를 말하지 않아 기존 피해를 지우지 않음",
+        "state": "기존 명단 확보·무효 설정 뒤의 반응만. 새 정책 효과·자료 획득·감독 선택·생환을 추가하지 않음"
+      },
+      "game_added_ids": ["NW_RR12_03_01", "NW_RR12_03_02", "NW_RR12_03_03"],
+      "modified_ids": [],
+      "scene_extent": {
+        "full_manuscript": "day12_원고.md ##09. 국 사건 대승리의 돌목 시점. 그릇을 확인하고 칸을 무효로 적은 직후부터 원본 보관 확인까지. 배식 전 중단·늦은 피해 갈래 양쪽에 적용",
+        "game_excerpt": "d12.json blocks.soup_list_won12에서 NW_GW_D12_17 다음 3행. 무효 표시를 너울과 아빠에게 확인시키는 행위만",
+        "full_only": "받아 적기만 했다는 자기 방어와 실제 문을 지킨 책임의 충돌. 이미 떠난 사람을 데려온 것이 아니라는 한계",
+        "expressions": {"NW_RR12_03_01": "neutral", "NW_RR12_03_02": "angry", "NW_RR12_03_03": "neutral"}
+      }
+    }
+  ]
+}

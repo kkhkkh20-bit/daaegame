@@ -1650,6 +1650,27 @@
         "speaker": null,
         "kind": "narration",
         "text": "부리가 손을 내민다. 나는 수첩 원본을 그 손에 돌려준다. 허락받고 옮겨 적은 장만 내 쪽에 남긴다."
+      },
+      {
+        "id": "NW_RR10_B01",
+        "speaker": "부리",
+        "kind": "dialogue",
+        "text": "아버지는 다람이랑 계세요.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_RR10_B02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "부리 씨, 잠깐…….",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_RR10_B03",
+        "speaker": "부리",
+        "kind": "dialogue",
+        "text": "지금은 혼자 갈게요.",
+        "expression": "anxious"
       }
     ],
     "MS14_D10_S02_L0016": [
@@ -1871,6 +1892,26 @@
         "speaker": "톡",
         "kind": "dialogue",
         "text": "그다음부턴 다르게 감았어요.{w=.3} 장부에 다 있어요!"
+      },
+      {
+        "id": "NW_RR10_T01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "톡이 공구를 꺼내려 하자 나는 손을 든다."
+      },
+      {
+        "id": "NW_RR10_T02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "풀지는 마십시오. 지금 모양대로 둬야 합니다.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_RR10_T03",
+        "speaker": "톡",
+        "kind": "dialogue",
+        "text": "안 풀어요! 손으로만 보여 드릴게요.",
+        "expression": "angry"
       }
     ],
     "MS14_D10_S03_L0026": [
@@ -2076,6 +2117,31 @@
         "speaker": "다람",
         "kind": "dialogue",
         "text": "도토 아저씨가 잡고 있었어. 오른손에는 내가 주운 짧은 손잡이 들고 있었고."
+      }
+    ],
+    "MS14_D10_P01_L0073": [
+      {
+        "id": "NW_RR10_O01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "부엉이가 빈손으로 내 가방 입구를 가리킨다.",
+        "when": "owl_alive"
+      },
+      {
+        "id": "NW_RR10_O02",
+        "speaker": "부엉이",
+        "kind": "dialogue",
+        "text": "가방, 닫게. 받았으면.",
+        "expression": "neutral",
+        "when": "owl_alive"
+      },
+      {
+        "id": "NW_RR10_O03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "예. 제가 챙기겠습니다.",
+        "expression": "neutral",
+        "when": "owl_alive"
       }
     ]
   },

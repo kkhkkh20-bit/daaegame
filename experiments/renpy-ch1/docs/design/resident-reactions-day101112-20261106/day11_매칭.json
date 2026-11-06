@@ -1,0 +1,128 @@
+{
+  "day": 11,
+  "date": "2026-11-06",
+  "scenes": [
+    {
+      "id": "RR11_01",
+      "title": "네 그릇만",
+      "pov_name": "나비",
+      "day": 11,
+      "label": "r13_v111_tosil_safe11",
+      "anchors": [
+        "MS14_D11_S01_L0041~L0046: 실제 도착·수락",
+        "MS14_D11_S01_L0051 after",
+        "MS14_D11_S01_L0052 및 commit"
+      ],
+      "known": [
+        "토실이 학교에 실제 도착했고 자신이 맡기로 답함",
+        "누군가 토실에게 부녀를 따라가라고 했다는 아빠의 말",
+        "누가 데리러 와도 아빠에게 먼저 확인하라는 요청",
+        "젖은 겉옷과 국을 먹을 자리"
+      ],
+      "unknown": [
+        "부녀가 향할 온실의 주소",
+        "이후 가족 재회·가족끼리 나눌 연락 경위",
+        "할머니의 현재 구금 여부를 직접 듣지 않았다면 그 상태",
+        "가설 회의 결과·뒤의 아랫길 구조 결과"
+      ],
+      "branch": {
+        "required": "나비 실제 도착·수락 뒤 tosil_handoff11의 실제 선택을 완료하고 tosil_safe11에 들어온 지점",
+        "grandmother_custody": "detained / 자유 양쪽 공통. 나비 원고는 할머니 상태나 지시자를 새로 단정하지 않음.",
+        "nabi_location": "학교에 없으면 nabi_waiting11→nabi_wait11의 실제 대기·도착을 마친 뒤만",
+        "exclude": "온실 가족 대화·담요 양도·학교 물자 인수와 별개"
+      },
+      "game_added_ids": [
+        "NW_RR11_SEAT01",
+        "NW_RR11_SEAT02",
+        "NW_RR11_SEAT03"
+      ],
+      "game_revised_ids": [],
+      "scene_extent": {
+        "full_manuscript": "학교에서 실제 토실 인계를 수락하고 L0052 완료 후, 부녀가 실제 출발한 당시의 회상. 나비는 그 출발 목적지·이후 재회를 알지 않는다.",
+        "short_extract": "L0051의 겉옷·부엌 발언 다음 세 줄, L0052의 원래 인계 확인 commit 전. 앞선 실제 도착·수락을 대신하지 않는다."
+      },
+      "literary_scope": "먹기 전에 일을 하려는 아이와 먼저 앉혀 먹이려는 부엌 담당자의 짧은 충돌. 나비가 어머니 역할·영구 보호를 약속하거나 학교 침구·식량 수를 새로 정하지 않음."
+    },
+    {
+      "id": "RR11_02",
+      "title": "소매 끝을 잡고",
+      "pov_name": "엄마",
+      "day": 11,
+      "label": "r13_v111_button11",
+      "anchors": [
+        "MS14_D11_S02B_L0002~L0019",
+        "MS14_D11_S02B_L0016 after"
+      ],
+      "known": [
+        "현재 온실에서 부녀를 다시 만남",
+        "남편이 바느질 주머니를 지녔고 다람 주머니가 터졌다는 방금 대화",
+        "다람이 집에 같이 가고 싶다고 말함",
+        "오늘 온실에서 나갈 때 따로 가지 않겠다는 자신의 말"
+      ],
+      "unknown": [
+        "이때 아직 대답하지 않은 선택 질문의 경위를 가족이 모두 들었다는 가정",
+        "5일 편지·10일 전언을 해당 저장에서 실제 들었는지와 무관한 추가 회상",
+        "이후 가설 회의·구조·가족 담요의 최종 사용 결과"
+      ],
+      "branch": {
+        "required": "11일 가족 재회 후 온실 button11 공통. 현장 인물은 dad,daram,mom뿐.",
+        "contact_history": "mother_first_contact_read5 / mother_contact_relay10 네 조합 모두 허용. 그별 설명은 mother_life11에서 실제 읽은 범위대로 별도 유지.",
+        "murder_prevention": "부엉이 사망·생존과 무관한 현재 단추 장면. 구금 경험이나 사망을 소급 회상하지 않음.",
+        "blankets": "carried_dry_blankets 0/1/2 및 앞선 덮기/보관 선택과 독립. 새 침구를 만들지 않음."
+      },
+      "game_added_ids": [
+        "NW_RR11_SLEEVE01",
+        "NW_RR11_SLEEVE02",
+        "NW_RR11_SLEEVE03"
+      ],
+      "game_revised_ids": [],
+      "scene_extent": {
+        "full_manuscript": "button11 L0019까지 실제 읽은 뒤. 다음 mother_questions11의 선택 답변은 원고에 포함하지 않는다.",
+        "short_extract": "L0016의 당일 동행 약속 뒤, L0018의 단추 당겨보기 앞 세 줄. 새 바느질 물건이나 영원한 안전 약속 없이 소매를 받치는 행동만 보강."
+      },
+      "literary_scope": "엄마가 모든 일을 대신하려다 팔을 그대로 두고 가족의 손을 받는 장면. 주민에게 비밀·온실 주소를 공개하지 않음."
+    },
+    {
+      "id": "RR11_03",
+      "title": "등 앞을 비키시오",
+      "pov_name": "굴돌",
+      "day": 11,
+      "label": "r13_v111_guldol_heat11",
+      "anchors": [
+        "MS14_D11_S03_L0002~L0009",
+        "MS14_D11_S03_L0006 after"
+      ],
+      "known": [
+        "현재 시설 벽 그림과 떨어진 돌판을 직접 봄",
+        "불과 갈라지는 표시를 나누어 읽는 자신의 기존 발언",
+        "엄마가 든 등과 가족이 현재 관찰하는 위치",
+        "학교 난방을 묻는 아빠와 장작·운반을 말한 엄마"
+      ],
+      "unknown": [
+        "가설 회의가 아직 입증하지 않은 장기 노출·독성·희생의 결론",
+        "부녀와 엄마가 온실에서 나눈 비밀",
+        "전날 다른 갈래의 살인·예방 세부 경위",
+        "낮 물자의 실제 학교 인수 여부·뒤의 구조 생사·자신의 향후 명단 결과"
+      ],
+      "branch": {
+        "required": "r13_v111_actor_ready(resident_guldol)인 실제 동행. 추가 세 줄 모두 기존 when=guldol_ready.",
+        "absent": "굴돌 부재 시 mother_heat11의 S03L0043~45로 대체되며 이 세 줄은 재생하지 않음.",
+        "effects": "guldol_facility_seen은 기존 라벨에서만 설정. 명단 위험과 즉시 사망을 혼동하지 않음. 새 생사·명단 판정 없음."
+      },
+      "game_added_ids": [
+        "NW_RR11_LIGHT01",
+        "NW_RR11_LIGHT02",
+        "NW_RR11_LIGHT03"
+      ],
+      "game_revised_ids": [],
+      "scene_extent": {
+        "full_manuscript": "guldol_heat11 L0009까지 실제 관찰·대화를 마친 뒤. 다음 heat_check11에서 읽을 깨진 돌판 글·벽 이름과 가설 회의 결론은 포함하지 않는다.",
+        "short_extract": "실제로 굴돌이 말하는 L0006 뒤 세 줄. 기존 guldol_ready guard를 지문·아빠 발화에도 동일하게 적용한다."
+      },
+      "literary_scope": "급한 난방 답을 원하는 아빠와 그림을 같이 확인하려는 광부가 등 앞의 자리를 조정함. 돌판·관·곡괭이를 새 단서로 바꾸거나 새 접촉 결과를 만들지 않음."
+    }
+  ],
+  "runtime_scope": "d11 after 세 앵커에 9행 추가만. records/상태/획득/정답/생사/기회/효과/라벨/UI/아트 불변.",
+  "new_guards_needed": [],
+  "validation_scope": "소유 신규 단위 검사와 원문·행동·분기 대조. SDK/native/build/전체 검사/git 실행 없음."
+}
