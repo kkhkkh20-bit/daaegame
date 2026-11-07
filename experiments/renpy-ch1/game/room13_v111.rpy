@@ -395,7 +395,7 @@ label r13_v111_wait_again:
         $ v111_matches=[i for i,o in enumerate(v111_binding.get("options",[])) if o.get("object")==v111_pick[1] and o.get("location")==room13["location"]]
         if len(v111_matches)==1:
             $ r13_v111_bed_pending=v111_binding["options"][v111_matches[0]].get("bed_to")   # 2026-10-29: 침대 한 번으로 잠자리까지(r13_v111_auto_index)
-            $ r13_v111_time("inspect:"+key+":"+v111_pick[1],0 if key=="gate_investigate" and v111_pick[1]=="ledger" else 15)
+            $ r13_v111_time("inspect:"+key+":"+v111_pick[1],0 if key=="letter_compare_review" or (key=="gate_investigate" and v111_pick[1]=="ledger") else 15)
             return v111_binding["options"][v111_matches[0]].get("index",v111_matches[0])
         if len(v111_matches)>1:
             $ v111_object_options=[("(%s, 어떻게 할까?)"%r13_object_name(v111_pick[1]),None)]+[(v111_binding["options"][i]["title"],i) for i in v111_matches]   # 2026-10-28 캡처 검수: 제목 없이 열리면 직전 대사(「설마 여기서 주무십니까?」)가 물음처럼 떠서 고를 것과 어긋났다. 보기만이 아니라 하는 일(사람 받기)도 있어 「어떻게 할까」로 묻는다
@@ -444,8 +444,8 @@ label r13_v111_proof_again:
         call screen r13_proof_workspace(v111_claim,key,can_press=bool(hint) or key in R13_PROOF_RANGE,investigate=bool(review_return),chances=r13_v111_proof_chances(key))
     else:
         call screen r13_crisis_proof(v111_claim,heading="기록 · 자료 대조",can_press=bool(hint) or key in R13_PROOF_RANGE,need_evidence=True,leave_label="자료 다시 보기",chances=r13_v111_proof_chances(key),investigate=bool(review_return))
-    if _return=="investigate" and review_return:
-        return review_return
+    if _return=="investigate" and r13_pw_review_target(key,review_return):
+        return r13_pw_review_target(key,review_return)
     if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="observe":
         # D08: 나란히 펼친 두 편지에서 짚은 구역. 기회를 쓰지 않는다.
         call r13_v111_letter_observe(_return[1])

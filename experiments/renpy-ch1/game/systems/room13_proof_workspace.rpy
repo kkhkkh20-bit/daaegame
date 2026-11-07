@@ -53,6 +53,17 @@ init 350 python:
     }
     R13_PW_TABS=(("all","전체"),("now","이번 사건"),("past","지난 사건"),("person","사람별"))
     R13_PW_COMPARE_LIMIT=2
+    # 저장된 호출의 review_return이 없던 판도 같은 현장으로 돌아갈 수 있게 한다.
+    R13_PW_REVIEW_RETURNS={"두 편지를 나란히 본다":"r13_v111_letter_compare_review"}
+
+    def r13_pw_review_target(key,declared=None):
+        return declared or R13_PW_REVIEW_RETURNS.get(key)
+
+    def r13_pw_pair_submission(pair,owned,mode):
+        """현재 직접 읽는 쌍을 명시적으로 제출할 때만 사용한다. 정답 자료를 고르지 않는다."""
+        values=list(pair or ())
+        if mode!="compare" or len(values)!=2 or values[0]==values[1]:return None
+        return values if all(k in owned for k in values) else None
 
     def r13_pw_context(key):
         """시범 쟁점이면 문맥 dict, 아니면 None(호출자가 기존 화면으로 폴백)."""
@@ -192,6 +203,12 @@ init 351 python:
         copy=winter_copy.deepcopy(store.room13)
         copy["arguments"][claim]=list(chosen)
         store.room13=copy
+
+    def r13_pw_submit_pair(claim,pair,mode):
+        chosen=r13_pw_pair_submission(pair,r13_pw_entries(),mode)
+        if chosen is None:return
+        r13_pw_set_arguments(claim,chosen)
+        renpy.end_interaction("argue")
 
     def r13_pw_toggle_action(claim,key,mode):
         persistent.room13_pw_controls_seen=True
@@ -365,7 +382,7 @@ init 351 python:
 
     def r13_pw_help(mode,chances,count):
         if mode=="compare":
-            return "편지와 메모를 체크하고 「나란히 보기」로 읽은 뒤 「비교 마치기」."
+            return "「나란히 읽기」에서 두 자료를 고른 뒤 「이 두 장 비교」를 누른다. 돌아가려면 「조사 계속」."
         # 2026-10-29 눈가림 플레이: 1일 돌목 회의에서 한 장씩만 내다 다 틀렸고, 여러 장을 함께 낼 수 있다는 것은
         # 기록의 「나란히 놓기」를 보고서야 짐작했다. 몇 장인지는 말하지 않고, 함께 고를 수 있다는 것만 알린다.
         if not count:
@@ -463,13 +480,14 @@ screen r13_pw_detail(claim,key,mode,x,y,w,h,origin_open,can_pair,ready):
                     text ("얻은 곳: "+r13_record_source_label(key)) size small color r13_nb_muted() font R13_UI_BOLD_FONT xsize inner
 
 # 두 자료를 나란히: 같은 폭 두 열, 각 열만 스크롤. 맞는지 아닌지는 표시하지 않는다.
-# 2026-10-27 D08: 두 편지 나란히 보기에서 「눈에 띄는 부분을 짚어 본다」. 두 문서 위에 같은 모양의 구역 넷(머리글·본문·끝부분·여백)을
-# 열고 하나를 고르면 ("observe",구역) 을 돌려준다. 정답 구역을 미리 강조하지 않는다. 기회를 쓰지 않는다.
+# 두 편지 관찰: 작은 그림 위에 글자를 겹치지 않고, 두 편지가 공유하는 한 줄의 네 버튼으로 부분을 고른다.
+# 하나를 고르면 기존 ("observe",구역)을 돌려준다. 정답 구역을 미리 강조하지 않고 기회를 쓰지 않는다.
 init 350 python:
     R13_PW_OBSERVE_KEY="두 편지를 나란히 본다"
-    def r13_pw_observe_spots(pic):
-        return [("head","머리글",(0,0,pic,int(pic*.25))),("body","본문",(0,int(pic*.25),int(pic*.7),int(pic*.5))),
-                ("tail","끝부분",(int(pic*.7),int(pic*.6),pic-int(pic*.7),pic-int(pic*.6))),("margin","여백",(0,int(pic*.75),int(pic*.7),pic-int(pic*.75)))]
+    def r13_pw_observe_spots(width,height=64):
+        names=(("head","머리글"),("body","본문"),("tail","끝부분"),("margin","여백"))
+        return [(key,name,(i*(width+8)//4,0,(i+1)*(width+8)//4-i*(width+8)//4-8,height))
+                for i,(key,name) in enumerate(names)]
     # 2026-10-29 피드백 M: 나란히 보기에서 편지 두 장이 종이 그림과 요약(「…라고 적혔다」)으로만 보여, 「직접 읽고 견준다」는
     # 안내와 달리 원문이 앞에 없었다. 편지·메모처럼 글 자체가 자료인 것은 원문을 제목 바로 아래 먼저 보이고 그림은 그 아래에 둔다.
     # 맞는지 아닌지는 여전히 표시하지 않는다.
@@ -483,13 +501,16 @@ screen r13_pw_pair(pair,x,y,w,h,observe=False,ready=True):
     $ inner=col_w-24
     $ pic=min(inner,160 if not r13_touch_ui() else 110)
     $ title_size=r13_nb_heading_size()
-    text "나란히 놓기 · 두 자료를 함께 봅니다. 맞는지 아닌지는 표시하지 않습니다." xpos x ypos y xsize w size small color r13_nb_muted() font R13_UI_BOLD_FONT
+    $ observe_h=88 if r13_touch_ui() else 64
+    $ observe_panel_h=observe_h if observe else 0
+    $ observe_gap=12 if observe else 0
+    text ("두 편지에서 함께 살펴볼 부분을 고르세요." if observe else "나란히 놓기 · 두 자료를 함께 봅니다. 맞는지 아닌지는 표시하지 않습니다.") xpos x ypos y xsize w size small color r13_nb_muted() font R13_UI_BOLD_FONT
     $ top=y+small+10
-    add Solid("#c9a86a66") xpos (x+col_w+8) ypos top xsize 1 ysize (h-(top-y))
+    add Solid("#c9a86a66") xpos (x+col_w+8) ypos top xsize 1 ysize (h-(top-y)-observe_panel_h-observe_gap)
     for column,key in enumerate((tuple(pair)+(None,None))[:2]):
         viewport:
             id ("r13_pw_pair_%d"%column)
-            area ((x if column==0 else x+col_w+16),top,col_w,h-(top-y))
+            area ((x if column==0 else x+col_w+16),top,col_w,h-(top-y)-observe_panel_h-observe_gap)
             mousewheel True draggable True scrollbars "vertical"
             vscrollbar_unscrollable "hide"
             vbox:
@@ -504,18 +525,17 @@ screen r13_pw_pair(pair,x,y,w,h,observe=False,ready=True):
                         fixed:
                             xpos ((inner-pic)//2) xysize (pic,pic)
                             use r13_evidence_picture_box(key,pic)
-                            if observe:
-                                for spot_id,spot_name,(sx,sy,sw,sh) in r13_pw_observe_spots(pic):
-                                    button:
-                                        id r13_pw_id("r13_pw_spot_%d_"%column,spot_id)
-                                        area (sx,sy,sw,sh) padding (0,0)
-                                        background Solid("#a63a2e22") hover_background Solid("#a63a2e55")
-                                        action Return(("observe",spot_id)) sensitive ready alt (spot_name+" 짚기")
-                                        text spot_name size r13_type("small") color r13_nb_accent() font R13_UI_BOLD_FONT xpos 4 ypos 2
                     use r13_evidence_fact_list(key,inner)
                 else:
                     text ("%d번 자리"%(column+1)) size title_size color r13_nb_muted() font R13_UI_BOLD_FONT
                     text "목록에서 함께 볼 자료의 이름을 누르세요." size r13_ev_fact_size() color r13_nb_muted() font R13_UI_BOLD_FONT xsize inner
+    if observe:
+        fixed:
+            xpos x ypos (y+h-observe_panel_h) xysize (w,observe_panel_h)
+            for spot_id,spot_name,(sx,sy,sw,sh) in r13_pw_observe_spots(w,observe_h):
+                fixed:
+                    area (sx,sy,sw,sh)
+                    use r13_control(spot_name,None,Return(("observe",spot_id)),enabled=ready,width=sw,height=sh,label_size=r13_type("emphasis" if r13_touch_ui() else "body"),control_id=r13_pw_id("r13_pw_spot_0_",spot_id))
 
 # 고른 자료 칩 줄. × 로 그 선택만 해제한다. compare 에서 셋째를 고르면 여기서 바꿀 자리를 고른다.
 screen r13_pw_chips(claim,chosen,mode,L,replace_pending,ready):
@@ -573,6 +593,7 @@ screen r13_pw_read_card(key,x,y,w,h,origin_open,ready,slot=None):
                     xsize (inner-12) spacing 8
                     if key:
                         button:
+                            id ("r13_pw_change_%d"%slot if slot is not None else "r13_pw_single_picture")
                             xsize (inner-12) yminimum 48 padding (0,0) background None hover_background Solid("#c9a86a22")
                             action ([SetScreenVariable("pick_slot",slot),SetScreenVariable("view","list")] if slot is not None else Show("r13_pw_picture",key=key)) sensitive ready
                             alt (("%d번 자료 변경 · "%(slot+1)) if slot is not None else "자료 그림 확대 · ")+r13_catalog_title(key)
@@ -642,7 +663,12 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ ink=r13_nb_ink()
     $ muted=r13_nb_muted()
     $ accent=r13_nb_accent()
-    use r13_notebook_shell("자료 대조",close_action=(Return("investigate") if investigate else None),rule_y=(148 if touch else 128))
+    $ can_review=bool(r13_pw_review_target(key,"investigate" if investigate else None))
+    $ review_action=Return("investigate") if can_review else None
+    $ pair_submission=r13_pw_pair_submission(live_pair,owned,mode) if view=="pair" else None
+    use r13_notebook_shell("자료 대조",close_action=review_action,rule_y=(148 if touch else 128))
+    if can_review:
+        key "game_menu" action review_action
     if chances:
         text chances.replace("회의 기회","기회") xpos R13_NB_TITLE_X ypos (108 if touch else 104) xsize 370 size small color muted font R13_UI_BOLD_FONT
     fixed:
@@ -715,15 +741,15 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
             use r13_control("목록",None,[SetScreenVariable("view","list"),SetScreenVariable("observe",False),SetScreenVariable("pick_slot",None)],enabled=ready,width=176,control_id="r13_pw_back_list")
     vbox:
         xpos 324 ypos (L["footer_y"]+6) xsize 144 spacing 2
-        text ("%d장 선택"%len(chosen)) size small color ink font R13_UI_BOLD_FONT
-        text ("제출 자료" if persistent.room13_pw_controls_seen else "체크로 선택") size small color muted font R13_UI_FONT
+        text ("2장 읽기" if pair_submission else "%d장 선택"%len(chosen)) size small color ink font R13_UI_BOLD_FONT
+        text ("현재 두 장" if pair_submission else "체크로 두 장" if mode=="compare" and len(chosen)<2 else "제출 자료" if persistent.room13_pw_controls_seen else "체크로 선택") size small color muted font R13_UI_FONT
     $ secondary=[]
+    if can_review:
+        $ secondary.append(("조사 계속",review_action,"r13_pw_investigate"))
+    if view=="pair" and r13_pw_observe_available(key,live_pair):
+        $ secondary.append(("짚기 그만" if observe else "문서 짚기",[Function(r13_pw_remember_pair,claim,pair),SetScreenVariable("quote_open",False),ToggleScreenVariable("observe")],"r13_pw_observe"))
     if can_press:
         $ secondary.append(("되묻는다",Return("press"),"r13_pw_press"))
-    if investigate:
-        $ secondary.append(("조사 계속",Return("investigate"),"r13_pw_investigate"))
-    if view=="pair" and r13_pw_observe_available(key,live_pair):
-        $ secondary.append(("짚기 그만" if observe else "문서 짚기",[Function(r13_pw_remember_pair,claim,pair),ToggleScreenVariable("observe")],"r13_pw_observe"))
     for si,(caption,action,cid) in enumerate(secondary[:2]):
         fixed:
             xpos (480+si*164) ypos L["footer_y"] xysize (156,L["footer_h"])
@@ -733,7 +759,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
         use r13_control("접기" if origin_open else "출처",None,ToggleScreenVariable("origin_open"),enabled=ready and view!="list",width=128,label_size=small,control_id="r13_pw_origin")
     fixed:
         xpos 966 ypos L["footer_y"] xysize (240,L["footer_h"])
-        use r13_control(r13_pw_main_label(mode),None,Return("argue"),enabled=ready and r13_pw_submit_ok(stored,mode) and r13_pw_submit_ok(chosen,mode),primary=True,width=240,control_id="r13_pw_submit")
+        use r13_control("이 두 장 비교" if pair_submission else r13_pw_main_label(mode),None,Function(r13_pw_submit_pair,claim,live_pair,mode) if pair_submission else Return("argue"),enabled=ready and (bool(pair_submission) or (r13_pw_submit_ok(stored,mode) and r13_pw_submit_ok(chosen,mode))),primary=True,width=240,control_id="r13_pw_submit")
     if replace_pending:
         button:
             xysize (1280,720) background Solid("#05070f88") action NullAction()

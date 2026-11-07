@@ -125,6 +125,65 @@ class ProofWorkspacePure(unittest.TestCase):
         self.assertFalse(ok([],'proof'));self.assertTrue(ok(['a'],'proof'));self.assertTrue(ok(['a','b','c'],'proof'))
         self.assertFalse(ok([],'compare'));self.assertFalse(ok(['a'],'compare'));self.assertTrue(ok(['a','b'],'compare'));self.assertFalse(ok(['a','b','c'],'compare'))
 
+    def test_first_letter_comparison_can_review_even_without_legacy_return_argument(self):
+        target=self.ns['r13_pw_review_target']
+        self.assertEqual(target('두 편지를 나란히 본다',None),'r13_v111_letter_compare_review')
+        self.assertEqual(target('두 편지를 나란히 본다','existing_return'),'existing_return')
+        self.assertIsNone(target('두 편지의 초대를 대조한다'))
+        self.assertIsNone(target('함께 들어갈 근거를 고른다'))
+        self.assertEqual(target('다른 쟁점','existing_return'),'existing_return')
+        import json
+        binding=json.loads((ROOT/'game/v111/field-bindings.json').read_text())['letter_compare_review']
+        self.assertEqual(binding,dict(location='room13',people=['daram'],options=[dict(title='편지와 메모를 다시 대조한다',location='room13',object='mother_note',index=0)]))
+        flow=(ROOT/'game/room13_v111.rpy').read_text()
+        self.assertIn('if _return=="investigate" and r13_pw_review_target(key,review_return):',flow)
+        self.assertIn('return r13_pw_review_target(key,review_return)',flow)
+        self.assertIn('0 if key=="letter_compare_review" or ',flow)
+        early=(ROOT/'game/room13_v111_days123.rpy').read_text()
+        review=early.split('label r13_v111_letter_compare_review:',1)[1].split('\nlabel ',1)[0]
+        self.assertIn("call r13_v111_wait('letter_compare_review')",review)
+        self.assertIn('jump r13_v111_letter_compare',review)
+        self.assertNotIn('r13_v111_commit',review)
+
+    def test_explicit_pair_submission_uses_only_current_owned_read_pair(self):
+        pair_submit=self.ns['r13_pw_pair_submission']
+        owned=['V111:E01','V111:E06','V111:E03']
+        self.assertEqual(pair_submit(('V111:E01','V111:E06'),owned,'compare'),['V111:E01','V111:E06'])
+        # 읽는 자료를 정답으로 바꾸지 않는다. 잘못 고른 두 장도 기존 판정으로 넘긴다.
+        self.assertEqual(pair_submit(('V111:E03','V111:E01'),owned,'compare'),['V111:E03','V111:E01'])
+        self.assertEqual(pair_submit(('V111:E06','V111:E01'),owned,'compare'),['V111:E06','V111:E01'])
+        for pair in (None,(),('V111:E01',),('V111:E01',None),('V111:E01','V111:E01'),('V111:E01','V111:E99')):
+            self.assertIsNone(pair_submit(pair,owned,'compare'))
+        self.assertIsNone(pair_submit(('V111:E01','V111:E06'),owned,'proof'))
+        self.assertEqual(owned,['V111:E01','V111:E06','V111:E03'])
+
+    def test_pair_submit_action_preserves_original_argument_verdict_boundary(self):
+        import ast,textwrap
+        from types import SimpleNamespace
+        source=re.search(r'^    def r13_pw_submit_pair\([\s\S]*?(?=\n    def |\nscreen )',SRC.read_text(),re.M).group(0)
+        tree=ast.parse(textwrap.dedent(source))
+        node=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='r13_pw_submit_pair')
+        writes=[];returns=[]
+        namespace=dict(self.ns,r13_pw_entries=lambda:['V111:E01','V111:E06','V111:E03'],
+                       r13_pw_set_arguments=lambda claim,pair:writes.append((claim,list(pair))),
+                       renpy=SimpleNamespace(end_interaction=returns.append))
+        exec(compile(ast.Module(body=[node],type_ignores=[]),'읽는 쌍의 명시 제출','exec'),namespace)
+        action=namespace['r13_pw_submit_pair']
+        action('claim',('V111:E01','V111:E03'),'compare')
+        self.assertEqual(writes,[('claim',['V111:E01','V111:E03'])])
+        self.assertEqual(returns,['argue'])
+        for pair,mode in ((('V111:E01',None),'compare'),(('V111:E01','V111:E99'),'compare'),(('V111:E01','V111:E06'),'proof')):
+            action('claim',pair,mode)
+        self.assertEqual(len(writes),1)
+        self.assertEqual(returns,['argue'])
+
+    def test_review_button_precedes_other_secondary_controls(self):
+        source=SRC.read_text()
+        footer=source.split('    $ secondary=[]',1)[1].split('    for si,',1)[0]
+        self.assertLess(footer.index('r13_pw_investigate'),footer.index('r13_pw_observe'))
+        self.assertLess(footer.index('r13_pw_observe'),footer.index('r13_pw_press'))
+        self.assertIn('key "game_menu" action review_action',source)
+
     def test_reading_pair_is_separate_from_selection(self):
         fill=self.ns['r13_pw_pair_fill'];live=self.ns['r13_pw_pair_live'];from_chosen=self.ns['r13_pw_pair_from_chosen']
         chosen=['a','b','c']

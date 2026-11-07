@@ -148,10 +148,12 @@ init 170 python:
         _r13_closeup_smooth_cache[key]=result
         return result
     def r13_dialogue_fit_profile(profiles,height):
-        exact=profiles.get(str(int(height)))
+        exact=profiles.get(str(int(height))) if float(height)==int(height) else None
         if exact:return exact
         if not profiles:return None
-        base=min(profiles,key=lambda h:abs(int(h)-int(height)))
+        # 560 질문 전용 전신은 비례 크기표가 아니다. 일반 컷·대사의 중간 높이에 빌리지 않는다.
+        proportional=[h for h,p in profiles.items() if "question_top" not in p] or list(profiles)
+        base=min(proportional,key=lambda h:abs(int(h)-float(height)))
         ratio=float(height)/int(base);profile=profiles[base]
         k=profile.get("dot_scale")
         # 2026-10-27 붓 원본으로 바꾼 프로필(smooth)은 발 기준선(dot_scale)은 그대로 쓰되 정수 칸 배율은 쓰지 않는다.

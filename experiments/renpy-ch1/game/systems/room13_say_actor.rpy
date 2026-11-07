@@ -21,6 +21,7 @@ init 40 python:
     # 불투명 영역 윗변을 재서 머리끝을 목표 높이에 맞춘다. 재지 못하면 예전 계산(발 선 + 키 보정)으로 둔다.
     R13_SAY_HEAD_TOP=20          # 어른(키 210) 머리끝 화면 높이
     R13_SAY_TALL_CUT=36          # 210 보다 큰 인물은 키 차이만큼(최대 이만큼) 화면 위로 잘린다
+    R13_SAY_HEAD_NUDGE={"daram":-32}  # 아이 크기는 유지하고 일반 대사에서만 조금 위로 올린다.
     _R13_SAY_HEADTOP={}
     def _r13_say_headtop(who,pose,h):
         profile=r13_dialogue_source_profile(who,pose,h)
@@ -32,7 +33,7 @@ init 40 python:
         if emotion=="flustered" and "flustered" not in profile["frames"]:emotion="anxious"
         frame=profile["frames"].get(emotion) or profile["frames"].get("neutral")
         if not frame:return None
-        key=(frame["file"],h)
+        key=(frame["file"],h,tuple(frame["offset"]),frame.get("scale",1.0))
         if key not in _R13_SAY_HEADTOP:
             try:
                 surf=renpy.display.im.Image(frame["file"]).load()
@@ -45,7 +46,13 @@ init 40 python:
     # 그려진다). 실제로 그릴 그림(말하는 그림)을 한 번 그려 맨 위 불투명 줄을 잰다. 인물·자세·키마다 한 번만 잰다.
     _R13_SAY_DRAWN_TOP={}
     def _r13_say_drawn_headtop(who,pose,h):
-        key=(who,pose,h)
+        beat=getattr(store,"r13_dialogue_beat",None) or {}
+        active=beat.get("person")==who
+        token=(beat.get("context_key"),beat.get("talk"),beat.get("react")) if active else None
+        context=(globals().get("R13_DIALOGUE_CONTEXT_ART",{}).get("entries",{}) or {}).get(beat.get("context_key"),{}) if active else {}
+        profile=r13_dialogue_fit_profile(context.get("profiles",{}),h) if context else r13_dialogue_source_profile(who,pose,h)
+        geometry=(tuple(profile["canvas"]),tuple((k,f["file"],tuple(f["offset"]),f.get("scale",1.0)) for k,f in sorted(profile["frames"].items()))) if profile else None
+        key=(who,pose,h,token,geometry)
         if key not in _R13_SAY_DRAWN_TOP:
             try:
                 rect=renpy.render_to_surface(r13_close_art(who,pose,h,True)).get_bounding_rect(min_alpha=40)
@@ -56,7 +63,7 @@ init 40 python:
     def r13_say_head_target(who):
         st=r13_say_stature(who)
         if st>1.0:return R13_SAY_HEAD_TOP-min(R13_SAY_TALL_CUT,int(round((st-1.0)*R13_SAY_STATURE_REF*1.55*0.4)))
-        return R13_SAY_HEAD_TOP+r13_say_child_drop(who)
+        return R13_SAY_HEAD_TOP+r13_say_child_drop(who)+R13_SAY_HEAD_NUDGE.get(who,0)
     # 그림 캔버스 가운데가 몸 가운데가 아닌 인물(다람은 왼쪽 꼬리 때문에 얼굴이 오른쪽에 섰다)은 그만큼 옮긴다.
     R13_SAY_X_NUDGE={"daram":-64}
     def r13_say_actor_x(who,pose,carriage=False):

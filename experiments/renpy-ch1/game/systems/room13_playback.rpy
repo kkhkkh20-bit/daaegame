@@ -14,12 +14,17 @@ init 97 python:
 screen r13_backlog():
     modal True
     zorder 110
+    default scroll_state=r13_backlog_scroll_state()
+    default history_scroll=ui.adjustment(range=scroll_state["range"],value=scroll_state["value"])
+    on "hide" action Function(r13_backlog_remember_scroll,history_scroll)
     # Opaque: the current line behind must not show through the history.
     add Solid("#10212aff")
     text "백로그" xpos 90 ypos 36 size r13_type("title") color "#fff2cf"
-    text "실제로 읽은 대화 · 최근 기록부터" xpos 245 ypos 46 size r13_type("small") color "#b7ccd0"
+    text "실제로 읽은 대화 · 위에서 아래로 읽습니다" xpos 245 ypos 46 size r13_type("small") color "#b7ccd0"
     viewport:
+        id "r13_backlog_view"
         area (90,108,1100,500) mousewheel True draggable True scrollbars "vertical"
+        yadjustment history_scroll yinitial (1.0 if scroll_state["tail"] else None)
         vbox:
             spacing 20
             for row in r13_history_rows():

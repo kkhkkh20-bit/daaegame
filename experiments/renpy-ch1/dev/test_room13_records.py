@@ -39,7 +39,7 @@ before=copy.deepcopy(s.room13);assert env['r13_met_people']()==[person];assert s
 s.room13.update(day=2,location='inn');s.r13_thought_active=True
 entry=types.SimpleNamespace(who='아빠',what='내가 실제로 한 생각.')
 env['r13_history_stamp'](entry);s._history_list=[entry,types.SimpleNamespace(who='까로',what='실제 발언.'),types.SimpleNamespace(who=None,what='실제 서술.')]
-rows=env['r13_history_rows']();assert [r['kind'] for r in rows]==['서술','발언','독백'];assert rows[-1]['stamp']=='2일 · 여관'
-assert [r['what'] for r in rows]==['실제 서술.','실제 발언.','내가 실제로 한 생각.']
+rows=env['r13_history_rows']();assert [r['kind'] for r in rows]==['독백','발언','서술'];assert rows[0]['stamp']=='2일 · 여관'
+assert [r['what'] for r in rows]==['내가 실제로 한 생각.','실제 발언.','실제 서술.']
 assert 'does_not_establish' not in (root/'game/room13_notebook.rpy').read_text()
 print(json.dumps({'pass':True,'evidence':34,'testimony':6,'page_size':5,'checks':['explicit categories','acquired only and no duplicates','archive never submitted','34 entries pagination','old save factual people recovery without mutations','real history and thought distinction','limitation copy removed only from UI']},ensure_ascii=False,indent=2))

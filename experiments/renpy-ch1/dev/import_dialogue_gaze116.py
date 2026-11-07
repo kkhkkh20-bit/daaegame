@@ -53,7 +53,7 @@ def build_profiles(sources,visible_height_840):
 
 def normalize_question_layout(people):
     """픽셀 좌표를 정수로 고정하고 실제 알파 경계로 질문용 발끝을 화면 안에 둔다."""
-    for entry in people.values():
+    for person,entry in people.items():
         if entry.get('status')!='approved_runtime':continue
         for profile in entry['profiles'].values():
             for frame in profile['frames'].values():
@@ -64,7 +64,8 @@ def normalize_question_layout(people):
             with Image.open(ROOT/'game'/frame['file']) as image:
                 box=image.convert('RGBA').getchannel('A').point(lambda a:255 if a>=40 else 0).getbbox()
             feet.append(frame['offset'][1]+box[3]*frame.get('scale',1))
-        question['question_top']=min(118,math.floor(708-max(feet)))
+        top=math.floor(708-max(feet))
+        question['question_top']=top if person=='daram' else min(118,top)
 
 
 def main():

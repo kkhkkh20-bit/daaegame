@@ -2,6 +2,7 @@ default r13_present_priority = None
 default r13_book_views = {}
 default r13_record_scrolls = {}
 default r13_records_view = {}
+default r13_backlog_position = None
 
 # Record categories are explicit: a testimony is not inferred from its title.
 init 68 python:
@@ -227,11 +228,20 @@ init 68 python:
         entry.r13_day=store.room13.get("day")
         # The opening carriage has no map location; room13 already says "gate".
         entry.r13_place="carriage" if getattr(store,"place",None)=="마차 안" else store.room13.get("location")
+        # 대사창의 분할 페이지를 실제로 본 범위만 묶는다. 다음 페이지 원문을 미리 기록하지 않는다.
+        page=getattr(store,"r13_page_i",None)
+        pages=getattr(store,"r13_pages",()) or ()
+        if isinstance(page,int) and 0<=page<len(pages):
+            entry.r13_line_key=getattr(store,"r13_read_id",None)
+            entry.r13_page_index=page
+            packet=getattr(store,"r13_packet",()) or ()
+            options=packet[2] if len(packet)>2 and isinstance(packet[2],dict) else {}
+            entry.r13_line_id=options.get("line_id")
     config.history_length=max(config.history_length or 0,250)
     config.history_callbacks.append(r13_history_stamp)
     def r13_history_rows():
         rows=[]
-        for entry in reversed(getattr(store,"_history_list",[]) or []):
+        for entry in getattr(store,"_history_list",[]) or []:
             if not getattr(entry,"what",None):continue
             who=getattr(entry,"who",None)
             thought=getattr(entry,"r13_thought",False)
@@ -240,9 +250,31 @@ init 68 python:
             day=getattr(entry,"r13_day",None)
             place_name="마차 안" if place=="carriage" else R13_PLACES.get(place,(place or "",))[0]
             stamp=("%d일 · %s"%(day,place_name)) if day is not None else "이전 저장의 대화"
-            rows.append(dict(who=who or "서술",kind=kind,stamp=stamp,
-                what=renpy.filter_text_tags(entry.what,allow=["b","i","u","s","color"])))
+            text=renpy.filter_text_tags(entry.what,allow=["b","i","u","s","color"])
+            line_key=getattr(entry,"r13_line_key",None)
+            page=getattr(entry,"r13_page_index",None)
+            row=dict(who=who or "서술",kind=kind,stamp=stamp,what=text,
+                line_key=line_key,line_id=getattr(entry,"r13_line_id",None),first_page=page,last_page=page)
+            previous=rows[-1] if rows else None
+            if (previous and line_key and previous["line_key"]==line_key
+                    and isinstance(page,int) and isinstance(previous["last_page"],int)
+                    and page==previous["last_page"]+1
+                    and all(previous[field]==row[field] for field in ("who","kind","stamp","line_id"))):
+                previous["what"]+="\n"+text
+                previous["last_page"]=page
+            else:rows.append(row)
         return rows
+
+    def r13_backlog_scroll_state():
+        saved=getattr(store,"r13_backlog_position",None) or {}
+        value=max(0,saved.get("value",0))
+        return dict(value=value,range=max(value,saved.get("range",0)),tail=saved.get("tail",True))
+
+    def r13_backlog_remember_scroll(adjustment):
+        extent=max(0,adjustment.range)
+        value=max(0,min(extent,adjustment.value))
+        store.r13_backlog_position=dict(value=value,range=extent,tail=extent-value<=4)
+        renpy.retain_after_load()
 
 init 71:
     style r13_paper_tab_button is r13_compact_button:

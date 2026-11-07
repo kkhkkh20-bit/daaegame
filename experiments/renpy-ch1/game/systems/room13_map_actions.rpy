@@ -92,5 +92,8 @@ init 125 python:
             if "offer" in when and when["offer"] not in offers:continue
             if not renpy.loadable(prop["file"]):continue
             x,y,w,h=prop["rect"]
-            result.append((Transform(prop["file"],xysize=(w,h),nearest=True),x,y))
+            # 배경 소품은 원화의 투명 여백을 제외한 영역을 먼저 잡은 뒤 배치한다.
+            # 책상 아래 천 보따리의 접지 그림자도 이 영역 안에서 함께 움직인다.
+            art=Transform(prop["file"],crop=tuple(prop["crop"])) if prop.get("crop") else prop["file"]
+            result.append((Transform(art,xysize=(w,h),nearest=True),x,y))
         return result

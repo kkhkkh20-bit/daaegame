@@ -441,7 +441,7 @@ testcase proof_reading_letter_observation_controls:
     assert eval (qa_pw_read_scope()["live_pair"]==("V111:E01","V111:E06") and qa_pw_read_has("r13_pw_observe"))
     click id "r13_pw_observe"
     pause .4
-    assert eval (qa_pw_read_scope()["observe"] and all(qa_pw_read_has("r13_pw_spot_%d_%s"%(column,spot)) for column in (0,1) for spot in ("head","body","tail","margin")))
+    assert eval (qa_pw_read_scope()["observe"] and all(qa_pw_read_has("r13_pw_spot_0_"+spot) and not qa_pw_read_has("r13_pw_spot_1_"+spot) for spot in ("head","body","tail","margin")))
     screenshot "proof-reading-letter-observation.png"
     click id "r13_pw_observe"
     pause .4

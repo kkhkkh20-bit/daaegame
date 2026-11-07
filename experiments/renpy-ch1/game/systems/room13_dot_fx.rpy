@@ -476,6 +476,9 @@ init 57 python:
         return what, list(at_list) + [motion(lead)]
 
     def r13_body_size(who, pose):
+        # 새 정면 원본의 틀과 같은 크기로 움직여야 .62 축이 옛 전신 틀 아래로 인물을 밀지 않는다.
+        profile=r13_dialogue_source_profile(who,pose,r13_say_actor_h())
+        if profile:return tuple(profile["canvas"])
         spec = r13_fullbody_spec(who, pose)
         if not spec:
             return None
