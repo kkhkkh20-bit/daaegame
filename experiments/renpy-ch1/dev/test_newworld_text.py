@@ -287,7 +287,7 @@ class ContextArtByRecord(Layer):
  def test_approved_day13_cues_have_record_ids_and_match_by_record(self):
   art=json.loads((ROOT/'game/assets/room13-dialogue-context-art.json').read_text())
   cues=[c for c in art['bindings'] if c['identity'].startswith('v111:')]
-  self.assertEqual(len(cues),11)
+  self.assertEqual(len(cues),9)  # 개정 감정과 충돌한 코믹 당황·환호 두 연결은 해제.
   records=source_tests.DATA['records']
   for c in cues:
    self.assertIn(c['line_id'],records);self.assertEqual(records[c['line_id']]['text'],c['text'])

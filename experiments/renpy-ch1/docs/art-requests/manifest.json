@@ -3642,6 +3642,58 @@
         "game/assets/lowerroad-elder/dialogue-gaze116-neutral.webp",
         "game/assets/lowerroad-elder/dialogue-gaze116-surprise_talk.webp"
       ]
+    },
+    {
+      "id": "FIRE118-SITE-COMPARE",
+      "title": "화재 현장 두 위치 확대",
+      "kind": "사건 자료",
+      "status": "delivered_linked",
+      "priority": "P1",
+      "description": "0.20.117 리뷰 뒤 소유자가 어긋난 이미지 수정을 승인. 기존 등잔 단품으로는 현장 두 위치를 비교하기 어렵다. 기존 관찰만 두 확대 장면으로 보여준다. 2026-11-07 확대 원화 납품. 조사 획득 직후와 기존 자료 확대·화재 연결판에서 다시 열도록 연결.",
+      "scenes": [
+        "6일차 식은 창고 조사",
+        "7일차 화재 자료 읽기"
+      ],
+      "branches": [
+        "사전 대피·구조 공통"
+      ],
+      "references": [
+        "game/assets/room13-pixel-panorama-woodshed-ruin.webp",
+        "game/assets/evidence/E06_FIRE.webp",
+        "game/assets/room13-fire-site-observations.webp"
+      ],
+      "sources": [
+        "game/systems/room13_fire_links.rpy",
+        "game/v111/newworld/d07.json"
+      ],
+      "approved_scope": "2026-11-07 소유자: 그러면 그렇게 안맞는 부분 찾아서 수정하자",
+      "contract": {
+        "states": [
+          "차갑게 식은 현장의 뒷벽 물통 옆",
+          "차갑게 식은 문 쪽 흔적"
+        ],
+        "transparent": false,
+        "size_rule": "가로 두 칸 그림. 왼쪽은 뒷벽, 오른쪽은 문 쪽. 화면에서 각 칸을 따로 확대 가능.",
+        "delivery": [
+          "원본 PNG",
+          "품질95 WebP"
+        ]
+      },
+      "required": [
+        "왼쪽: 타지 않은 뒷벽 물통 옆의 닫힌 등잔, 내부에 남은 기름",
+        "오른쪽: 문 쪽의 탄 자국과 그 곁의 탄 천",
+        "기존 폐허 배경의 굵은 도트·푸른 눈·갈색 목재 재질 유지"
+      ],
+      "avoid": [
+        "불의 확산 방향·범인·살해 의도를 그림으로 확정하지 않는다",
+        "사람·피해자·새로운 물증·발자국·기름병·성냥을 추가하지 않는다",
+        "단품 그림을 실제 현장 사진처럼 배치하지 않는다"
+      ],
+      "acceptance": [
+        "두 위치가 구분된다",
+        "기존 서술과 다른 단서를 만들지 않는다",
+        "확대·닫기·자료 보유 조건·저장 복원 확인"
+      ]
     }
   ]
 }

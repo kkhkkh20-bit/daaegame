@@ -6,17 +6,21 @@ location goes stale. Every other field must stay identical.
     python3 dev/refresh_intake21_lines.py
 """
 import json
-from import_resource_intake21 import reviewed_bindings, BATCH, ROOT
+from import_resource_intake21 import reviewed_bindings, BATCH, ROOT, RETIRED_CONTEXT_LINE_IDS
 
 def strip(c):return {k:v for k,v in c.items() if k!='source_line'}
 
 def refresh(path,key):
-    data=json.loads(path.read_text());new=iter(reviewed_bindings());changed=0;out=[]
+    data=json.loads(path.read_text());new={c['key']:c for c in reviewed_bindings()};changed=0;out=[]
     for c in data[key]:
         if key=='bindings' and c.get('batch')!=BATCH:out.append(c);continue
-        n=next(new)
+        # 납품 영수증의 옛 연결은 이력으로 남기며, 현행 연결끼리만 위치를 맞춘다.
+        if c.get('line_id') in RETIRED_CONTEXT_LINE_IDS:
+            out.append(c);continue
+        n=new.pop(c['key'])
         assert strip(c)==strip(n),(c,n)
         changed+=c.get('source_line')!=n.get('source_line');out.append(n)
+    assert not new,('등록되지 않은 현행 문맥',sorted(new))
     data[key]=out;path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
     return changed
 

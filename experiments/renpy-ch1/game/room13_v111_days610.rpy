@@ -422,6 +422,7 @@ label r13_v111_fire_record6:
     call r13_lines(r13_v111_lines(['MS14_D06_S04_L0034']),'v111:MS14_D06_S04_L0034')
     call r13_lines(r13_v111_lines(['MS14_D06_S04_L0035']),'v111:MS14_D06_S04_L0035')
     $ r13_v111_commit('MS14_D06_S04_L0037')
+    call screen r13_pw_picture('V111:E06_FIRE',called=True)
     call r13_v111_travel('school','return_school6')
 
 label r13_v111_bowl_result6:
@@ -552,7 +553,7 @@ label r13_v111_bori_witness7:
     jump r13_v111_bori_witness7
 
 label r13_v111_bori_witness_heard7:
-    call r13_lines([("resident_bori","불이 번지기 전에 누비 씨가 창고 문 앞에 서 있는 건 봤소.",{"no_lead":True})],"v111:bori_fire_door_witness")
+    call r13_lines([("resident_bori","불이 번지기 전에 누비 씨가 창고 문 앞에 서 있는 건 봤소.",{"no_lead":True,"expression":"anxious","pose":"anxious"})],"v111:bori_fire_door_witness")
     $ r13_v111_set("bori_nubi_door_witness_heard",True)
     jump r13_v111_nubi_hypothesis7
 

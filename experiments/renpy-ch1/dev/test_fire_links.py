@@ -113,6 +113,14 @@ class FireLinkModel(unittest.TestCase):
         self.assertEqual(facts(["V111:E06_EMPTY"], False)[0][2], "V111:E06_EMPTY")
         self.assertEqual(facts(["V111:E06_RESCUE"], False)[0][2], "V111:E06_RESCUE")
 
+    def test_site_picture_requires_the_collected_fire_record_without_mutating_sources(self):
+        available = self.ns["r13_fire_site_available"]
+        for owned in ([], ["V111:E06_RESCUE"], ["V111:E06_FIRE"]):
+            before = list(owned)
+            self.assertEqual(available("V111:E06_FIRE", owned), "V111:E06_FIRE" in owned)
+            self.assertFalse(available("V111:E06", owned))
+            self.assertEqual(owned, before)
+
     def test_first_checks_two_observations_and_question_as_one_combination(self):
         # 물증끼리 대조하거나 문 앞 흔적과 실제 목격을 연결하는 두 설명을 허용한다.
         questions = ("door", "lamp_keeper", "wood_owner")

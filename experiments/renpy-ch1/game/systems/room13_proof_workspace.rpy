@@ -752,11 +752,16 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
 screen r13_pw_picture(key,called=False):
     modal True
     zorder 90
+    default fire_focus=None
     $ close_action=Return() if called else Hide("r13_pw_picture")
     use r13_notebook_shell(r13_catalog_title(key),close_action=close_action)
-    $ box=min(420,r13_nb_footer_y()-R13_NB_TOP-28)
-    fixed:
-        xcenter 640 ypos (R13_NB_TOP+12) xysize (box,box)
-        use r13_evidence_picture_box(key,box)
+    if r13_fire_site_available(key,r13_pw_entries()):
+        text "그림을 누르면 크게 봅니다." xpos 1128 xanchor 1.0 ypos 82 size r13_type("small") color r13_nb_muted() font R13_UI_FONT
+        use r13_fire_site_picture(fire_focus)
+    else:
+        $ box=min(420,r13_nb_footer_y()-R13_NB_TOP-28)
+        fixed:
+            xcenter 640 ypos (R13_NB_TOP+12) xysize (box,box)
+            use r13_evidence_picture_box(key,box)
     use r13_nb_footer_button(0,"닫기",close_action,primary=True)
     key "game_menu" action close_action

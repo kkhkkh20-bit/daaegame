@@ -103,6 +103,10 @@ init 160 python:
             Transform("assets/room13-ep-%s.webp"%name,size=(w,h),xpos=x,ypos=y,nearest=True),xysize=(1280,720))
 
     R13_EV_CUT_BOX=(1032,104,220)
+    # 가족이 처음 알아보는 세 물건만 크게 든다. 일반 자료 제시 칸은 그대로 둔다.
+    # 인물은 왼쪽, 물건은 오른쪽에 두고 대사판 위에서 끝낸다.
+    R13_FAMILY_FOCUS_BOX=(820,92,412)
+    R13_FAMILY_FOCUS_KEYS=("E06","D01_FAMILY_DRAWING","D01_SNACK_BAG")
     # 2026-10-28 소유자 「어두운 바탕에 다른 테두리, 도트 느낌이 없어져서 어색」: 매끈한 사각 테두리 대신 도트 한 칸(4px) 단위의
     # 띠를 겹치고 모서리를 계단으로 깎는다. 띠는 바깥부터 차례로 그린다.
     R13_EV_CUT_PX=4
@@ -138,16 +142,18 @@ init 160 python:
             # Mom first, Daram in front of her coat when they are together.
             return Fixed(Transform(mom,xanchor=.5,xpos=(1010 if far else 760),yanchor=1.0,ypos=730),
                 Transform(daram,xanchor=.5,xpos=(250 if far else 590),yanchor=1.0,ypos=730),xysize=(1280,720))
-        if name.startswith("ev:"):
+        if name.startswith("ev:") or (name.startswith("focus:") and name[6:] in R13_FAMILY_FOCUS_KEYS):
             # 0.20.7: a record's own picture held up above the dialogue (same art as the 자료 view).
             # To the right of the speaker's face, above the dialogue.
             # 2026-10-28 소유자 「증거 네모칸이 좌우 길이가 달라서 사이즈를 고정, 정사각형으로, 이미지만 떠도 된다, 겹치면 안 된다」
             # (역전재판 증거 칸) → 시안 B(오른쪽 위), 「테두리가 확실히 있어야 해」. 판은 늘 같은 정사각형이고 그림은 그 안에
             # 비율대로 들어간다. 날짜판 아래 오른쪽 구석이라 1.55배 인물과 겹치지 않는다. 바탕은 어둡게, 테두리는 도트 띠(r13_ev_pixel_frame).
-            x,y,side=R13_EV_CUT_BOX
+            focus=name.startswith("focus:")
+            key=name[6:] if focus else name[3:]
+            x,y,side=R13_FAMILY_FOCUS_BOX if focus else R13_EV_CUT_BOX
             u=R13_EV_CUT_PX;inner=side-2*5*u
             return Fixed(r13_ev_pixel_frame(x,y,side,R13_EV_CUT_FRAME),
-                Transform("assets/evidence/%s.webp"%name[3:],xysize=(inner,inner),fit="contain",nearest=True,xpos=x+side//2,xanchor=.5,ypos=y+side//2,yanchor=.5),xysize=(1280,720))
+                Transform("assets/evidence/%s.webp"%key,xysize=(inner,inner),fit="contain",nearest=True,xpos=x+side//2,xanchor=.5,ypos=y+side//2,yanchor=.5),xysize=(1280,720))
         if name in ("v111_blanket_before","v111_blanket_after"):
             # Existing cut layer/clear lifecycle, preserving the actual school
             # background and the same prop position across the repair beat.
@@ -255,7 +261,7 @@ init 162 python:
     # 증거 칸은 선택창이 열려 있는 동안만 감추고, 닫히면 같은 그림을 다시 띄운다(효과음 없이).
     def r13_ep_cut_suspend():
         cut=getattr(store,"r13_ep_cut_current",None)
-        if cut and str(cut).startswith("ev:") and renpy.showing("r13_ep_cut"):
+        if cut and str(cut).startswith(("ev:","focus:")) and renpy.showing("r13_ep_cut"):
             store.r13_ep_cut_suspended=cut
             renpy.hide("r13_ep_cut")
     def r13_ep_cut_resume():

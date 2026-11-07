@@ -9,6 +9,18 @@ init 352 python:
         ("lamp_keeper","창고 등잔은 누가 관리합니까?"),
         ("wood_owner","뒤창 장작은 누구 것입니까?"),
     )
+    R13_FIRE_SITE_ART="assets/room13-fire-site-observations.webp"
+    R13_FIRE_SITE_PANELS=(
+        ("뒷벽 물통 옆","뚜껑이 닫혀 있다.\n안에 기름이 남아 있다.",(0,0,879,887)),
+        ("문 쪽","탄 자국 곁에 천이 있다.\n천에서 기름 냄새가 났다.",(895,0,879,887)),
+    )
+
+    def r13_fire_site_available(key,owned):
+        # 조사로 얻은 기록을 다시 보는 화면. 미조사 저장에 관찰을 먼저 보여 주지 않는다.
+        return key=="V111:E06_FIRE" and key in owned
+
+    def r13_fire_site_panel(index,size):
+        return Transform(Crop(R13_FIRE_SITE_PANELS[index][2],R13_FIRE_SITE_ART),xysize=(size,size),fit="contain",nearest=True)
 
     def r13_fire_link_clone(row):
         result=dict(row or {})
@@ -179,9 +191,13 @@ screen r13_fire_links(claim,key,can_press=False,investigate=False,chances=None):
                 use r13_control(r13_ev_two_lines(r13_fire_links_text(row,index,first,observations),782,small,2),None,Function(r13_fire_links_change,claim,view=next_view,field=field,page=0,notice=None),enabled=ready,width=842,height=86,label_size=small,control_id=("r13_fire_slot_%d"%index))
         text (("제출 자료 %d장"%len(chosen)) if first else ("덧붙인 자료 %d장"%len(row["extra"]))) xpos 142 ypos 474 size small color muted font R13_UI_FONT
         if row["notice"]:
-            text row["notice"] xpos 142 ypos 508 xsize 1040 size small color r13_nb_accent() font R13_UI_FONT
+            text row["notice"] xpos 142 ypos 508 xsize 730 size small color r13_nb_accent() font R13_UI_FONT
         elif chances:
             text chances.replace("회의 기회","기회") xpos 142 ypos 508 xsize 1040 size small color muted font R13_UI_FONT
+        if r13_fire_site_available("V111:E06_FIRE",owned):
+            fixed:
+                xpos 896 ypos 474 xysize (286,56)
+                use r13_control("현장 그림",None,Show("r13_pw_picture",key="V111:E06_FIRE"),enabled=ready,width=286,height=56,label_size=small,control_id="r13_fire_site")
         fixed:
             xpos 142 ypos footer_y xysize (230,footer_h)
             use r13_control("들은 말 읽기",None,Function(r13_fire_links_change,claim,view="words"),enabled=ready,width=230,height=footer_h,label_size=small,control_id="r13_fire_words")
@@ -264,3 +280,30 @@ screen r13_fire_links(claim,key,can_press=False,investigate=False,chances=None):
             fixed:
                 xpos 842 ypos footer_y xysize (340,footer_h)
                 use r13_control("상대에게 되묻는다",None,Return("press"),enabled=ready,width=340,height=footer_h,label_size=small,control_id="r13_fire_press")
+
+# 같은 자료의 두 위치를 직접 확대한다. 새 자료·정답·기회·사건 상태는 만들지 않는다.
+screen r13_fire_site_picture(focus=None):
+    $ top=R13_NB_TOP+58
+    $ small=r13_type("small")
+    $ box=min(300,r13_nb_body_bottom()-top-small*3-18)
+    if focus is None:
+        for index,(title,facts,crop) in enumerate(R13_FIRE_SITE_PANELS):
+            $ center=398+index*524
+            text title xcenter center ypos R13_NB_TOP size r13_type("emphasis") color r13_nb_ink() font R13_UI_BOLD_FONT
+            button:
+                id ("r13_fire_site_panel_%d"%index)
+                xcenter center ypos top xysize (box,box) padding (0,0) background None
+                action SetScreenVariable("fire_focus",index) alt (title+" 확대")
+                add r13_fire_site_panel(index,box)
+            text facts xcenter center ypos (top+box+10) xmaximum 496 size small color r13_nb_ink() font R13_UI_FONT text_align .5
+    else:
+        $ title,facts,crop=R13_FIRE_SITE_PANELS[focus]
+        $ big=r13_nb_body_bottom()-top
+        add r13_fire_site_panel(focus,big) xpos 158 ypos top
+        vbox:
+            xpos (182+big) ypos (top+18) xsize (1000-big) spacing 24
+            text title size r13_type("subtitle") color r13_nb_ink() font R13_UI_BOLD_FONT
+            text facts size r13_type("emphasis") color r13_nb_ink() font R13_UI_FONT
+    fixed:
+        xpos 142 ypos r13_nb_footer_y() xysize (276,r13_control_height())
+        use r13_control("두 곳 나란히",None,SetScreenVariable("fire_focus",None),chosen=focus is None,width=276,height=r13_control_height(),control_id="r13_fire_site_pair")

@@ -28,6 +28,11 @@ DARAM_IDS = [
  ('09_wipe_tears', 'MS14_D03_S06_L0018'),
  ('10_resolve', 'MS14_D02_S04_L0027'),
 ]
+# 2026-11-07: 개정된 대사는 기존 일반 감정을 사용한다. 승인 원화·납품 기록은 보존한다.
+RETIRED_CONTEXT_LINE_IDS = {
+ 'MS14_D01_S03_L0005',  # 이름에서 빠진 상처에 코믹 웃음을 보이지 않는다.
+ 'MS14_D03_S06_L0003',  # 사망 사건 뒤 조심스러운 온기에 양팔 환호를 보이지 않는다.
+}
 # These legacy scenes already contain these speakers and conditions. No new route.
 OTHER_SCENES = [
  ('kkomi_anxious', 'kid_kkomi', 'wf:hideout:refuse', 1),
@@ -67,6 +72,7 @@ def v111_bindings():
 def reviewed_bindings():
  v=v111_bindings();rows=scene_rows();cues=[]
  for slot,rid in DARAM_IDS:
+  if rid in RETIRED_CONTEXT_LINE_IDS:continue
   cues.append(dict(v[rid],person='daram',slot='intake21_'+slot))
  for asset,person,identity,index in OTHER_SCENES:
   if identity=='ws:soup:all':

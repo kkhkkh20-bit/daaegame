@@ -533,7 +533,8 @@ init 319 python:
                     if row.get("beat") and row["beat"] not in R13_MEETING_BEATS:out.append(where+": unknown meeting beat %s %s"%(nid,row["beat"]))
                     if row.get("fx") and row["fx"] not in R13_NW_FX:out.append(where+": unknown fx %s %s"%(nid,row["fx"]))
                     cut=row.get("cut")
-                    if cut and cut not in R13_NW_CUT_SPECIAL and not (cut.startswith("ev:") and renpy.loadable("assets/evidence/%s.webp"%cut[3:])) and not renpy.loadable("assets/room13-ep-%s.webp"%cut):out.append(where+": missing cut art %s %s"%(nid,cut))
+                    family_focus=(cut and cut.startswith("focus:") and cut[6:] in globals().get("R13_FAMILY_FOCUS_KEYS",()) and renpy.loadable("assets/evidence/%s.webp"%cut[6:]))
+                    if cut and cut not in R13_NW_CUT_SPECIAL and not family_focus and not (cut.startswith("ev:") and renpy.loadable("assets/evidence/%s.webp"%cut[3:])) and not renpy.loadable("assets/room13-ep-%s.webp"%cut):out.append(where+": missing cut art %s %s"%(nid,cut))
         for key in R13_NW_TEXT["evidence"]:
             if key not in R13_V111["evidence"]:out.append("evidence: unknown key "+key)
         return out

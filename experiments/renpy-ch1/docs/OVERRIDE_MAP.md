@@ -246,7 +246,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 160 | `systems/room13_ep_art.rpy:163` | _r13_impact_line_art |
+| 1 | 160 | `systems/room13_ep_art.rpy:169` | _r13_impact_line_art |
 | 2 | 345 | `systems/room13_impact_fx.rpy:65` | _r13_met_line_art |
 | 3 | 346 | `room13_v111_idle.rpy:92` | _r13_end_cut_line_art |
 | 4 | 350 | `systems/room13_end_cut.rpy:83` |  |
@@ -485,7 +485,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 58 | `room13_world_camera.rpy:68` | _r13_ep_art_world_background |
 | 2 | 160 | `systems/room13_ep_art.rpy:86` | _r13_v111_ruin_world |
-| 3 | 162 | `systems/room13_ep_art.rpy:247` |  |
+| 3 | 162 | `systems/room13_ep_art.rpy:253` |  |
 
 ## `r13_acting_spec` (2층)
 
@@ -590,7 +590,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 172 | `systems/room13_dialogue_context_art.rpy:5` | _r13_nw_context_match |
-| 2 | 319 | `room13_v111_newworld_text.rpy:604` |  |
+| 2 | 319 | `room13_v111_newworld_text.rpy:605` |  |
 
 ## `r13_ending_notes` (2층)
 
@@ -604,20 +604,20 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 160 | `systems/room13_ep_art.rpy:37` | _r13_v111_ruin_bg |
-| 2 | 162 | `systems/room13_ep_art.rpy:237` |  |
+| 2 | 162 | `systems/room13_ep_art.rpy:243` |  |
 
 ## `r13_ep_cut_art` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 160 | `systems/room13_ep_art.rpy:130` | _r13_regular_ep_cut_art |
+| 1 | 160 | `systems/room13_ep_art.rpy:134` | _r13_regular_ep_cut_art |
 | 2 | 162 | `systems/room13_special_scenes.rpy:33` |  |
 
 ## `r13_ep_line_art_clear` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 160 | `systems/room13_ep_art.rpy:197` | _r13_end_cut_line_clear |
+| 1 | 160 | `systems/room13_ep_art.rpy:203` | _r13_end_cut_line_clear |
 | 2 | 350 | `systems/room13_end_cut.rpy:91` |  |
 
 ## `r13_evidence_acquired` (2층)
@@ -898,13 +898,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 301 | `room13_v111.rpy:61` | _r13_nw_authored_line |
-| 2 | 319 | `room13_v111_newworld_text.rpy:547` |  |
+| 2 | 319 | `room13_v111_newworld_text.rpy:548` |  |
 
 ## `r13_v111_lines` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 319 | `room13_v111_newworld_text.rpy:585` | _r13_followup_heard_lines |
+| 1 | 319 | `room13_v111_newworld_text.rpy:586` | _r13_followup_heard_lines |
 | 2 | 336 | `room13_v111_reactions.rpy:122` |  |
 
 ## `r13_v111_questions` (2층)
