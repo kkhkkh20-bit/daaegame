@@ -9,6 +9,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 SLOTS = {'neutral', 'joy', 'angry', 'anxious', 'flustered', 'surprise_talk'}
 PEOPLE = {'guard', 'resident_piko', 'resident_bori', 'karo', 'doto', 'neoul', 'resident_siluk', 'resident_seori', 'seryeon'}
+NEW_PEOPLE=set(json.loads((ROOT/'art/dialogue-gaze-20261107/runtime-fit-targets.json').read_text()))
 
 
 def profiles(prefix):
@@ -23,7 +24,7 @@ class PlayerFacingProfiles(unittest.TestCase):
         source = (ROOT / 'game/systems/room13_dialogue_beats.rpy').read_text()
         tree = ast.parse(textwrap.dedent(source.split('init 170 python:', 1)[1]))
         wanted = {'r13_dialogue_fit_profile', 'r13_dialogue_pose_source', 'r13_dialogue_player_profiles',
-                  'r13_dialogue_render_profiles', 'r13_dialogue_source_profile'}
+                  'r13_dialogue_render_profiles', 'r13_dialogue_source_profile', 'r13_dialogue_beat_art'}
         nodes = [n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name in wanted]
         self.original = profiles('original')
         self.front = profiles('front')
@@ -179,7 +180,7 @@ class PlayerFacingProfiles(unittest.TestCase):
 
     def test_registry_reuses_matching_emotions_and_never_adds_side_reaction(self):
         data = json.loads((ROOT / 'game/assets/room13-dialogue-player-facing.json').read_text())['people']
-        self.assertEqual(set(data), PEOPLE)
+        self.assertEqual(set(data), PEOPLE | NEW_PEOPLE)
         for who, entry in data.items():
             self.assertEqual(entry['gaze'], 'player')
             self.assertTrue(entry['status'] == 'approved_runtime' or entry['status'].startswith('HOLD'))
@@ -193,6 +194,69 @@ class PlayerFacingProfiles(unittest.TestCase):
                     self.assertTrue(path.is_file(), (who, height, slot))
                     if slot == 'flustered':self.assertEqual(path.name, who + '-flustered.webp')
                     else:self.assertEqual(path.name, slot + '.webp')
+
+    def test_reviewed_talk_beat_keeps_front_gaze_and_the_authored_surprise(self):
+        plan=dict(person='actor',talk='surprise_talk',react='surprise_react',settled=False,duration=.35)
+        self.env['store'].r13_dialogue_beat=plan
+        self.env['r13_dialogue_beat_ready']=lambda person:person=='actor'
+        self.env['R13DialogueBeat']=lambda actual,profile:(actual,profile)
+        actual,profile=self.env['r13_dialogue_beat_art']('actor',840)
+        self.assertIs(profile,self.front['840'])
+        self.assertEqual(actual['talk'],'surprise_talk')
+        self.assertIsNone(actual['react'])
+        self.assertTrue(actual['settled'])
+        self.assertEqual(plan['react'],'surprise_react')
+        self.assertFalse(plan['settled'])
+        self.assertIsNone(self.env['r13_dialogue_beat_art']('other',840))
+
+    def test_question_portrait_uses_complete_front_set_and_rejects_incomplete_set(self):
+        text=(ROOT/'game/room13_fullbody_dialogue.rpy').read_text().split('init 58 python:',1)[1]
+        tree=ast.parse(textwrap.dedent(text))
+        function=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='r13_question_portrait_height')
+        exec(compile(ast.Module(body=[function],type_ignores=[]),'질문 전신 크기','exec'),self.env)
+        pick=self.env['r13_question_portrait_height']
+        self.assertEqual(pick('actor'),560)
+        self.assertEqual(pick('other'),840)
+        self.env['R13_DIALOGUE_POSE_SOURCE']['people']['actor']=dict(pose_profiles=dict(chair_listen=dict(profiles=profiles('work'))))
+        self.assertEqual(pick('actor','chair_listen'),840)
+        self.env['store'].r13_thought_active=True
+        self.assertEqual(pick('actor'),840)
+        self.env['store'].r13_thought_active=False
+        del self.front['760']['frames']['flustered']
+        self.env['_r13_player_facing_ready'].clear()
+        self.assertEqual(pick('actor'),840)
+
+    def test_panseol_named_tired_frame_keeps_its_expression(self):
+        extra=json.loads((ROOT/'game/assets/room13-dialogue-talk-art-extra.json').read_text())['people']['npc_panseol']
+        self.env['R13_DIALOGUE_TALK_ART']['people']['npc_panseol']=extra
+        source=(ROOT/'game/systems/room13_dialogue_beats.rpy').read_text().split('init 170 python:',1)[1]
+        tree=ast.parse(textwrap.dedent(source))
+        function=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='r13_dialogue_source_neutral')
+        self.env.update(r13_fullbody_emotion=lambda p:'neutral',Fixed=lambda art,**kwargs:art,
+                        Transform=lambda file,**kwargs:dict(file=file,**kwargs))
+        exec(compile(ast.Module(body=[function],type_ignores=[]),'이름 있는 피곤 표정','exec'),self.env)
+        profile=self.env['r13_dialogue_source_profile']('npc_panseol','tired',840)
+        self.assertIn('tired',profile['frames'])
+        art=self.env['r13_dialogue_source_neutral']('npc_panseol','tired',840)
+        self.assertEqual(art['file'],profile['frames']['tired']['file'])
+        self.assertNotEqual(art['file'],profile['frames']['neutral']['file'])
+        self.env['store'].r13_thought_active=True
+        self.assertIsNone(self.env['r13_dialogue_source_profile']('npc_panseol','tired',840))
+
+    def test_panseol_tired_is_authored_only_when_its_existing_art_is_available(self):
+        source=(ROOT/'game/room13_fullbody_dialogue.rpy').read_text().split('init 58 python:',1)[1]
+        tree=ast.parse(textwrap.dedent(source))
+        function=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='r13_fullbody_authored_pose')
+        self.env.update(R13_FULLBODY_DIALOGUE=True,R13_FULLBODY_FILES={'approved-tired'},
+                        R13_FULLBODY=dict(people={'npc_panseol':dict(images=dict(tired=dict(file='approved-tired'))),
+                                                 'other':dict(images=dict(tired=dict(file='approved-tired')))}))
+        exec(compile(ast.Module(body=[function],type_ignores=[]),'판설 전용 표정 범위','exec'),self.env)
+        pick=self.env['r13_fullbody_authored_pose']
+        self.assertTrue(pick('npc_panseol','tired'))
+        self.assertFalse(pick('other','tired'))
+        self.assertFalse(pick('npc_panseol','neutral'))
+        self.env['R13_FULLBODY_FILES'].clear()
+        self.assertFalse(pick('npc_panseol','tired'))
 
 
     def test_guard_pixel_offsets_fit_all_exact_profiles(self):

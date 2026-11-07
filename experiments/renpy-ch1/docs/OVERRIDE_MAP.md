@@ -575,7 +575,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 170 | `systems/room13_dialogue_beats.rpy:260` | _r13_context_beat_art |
+| 1 | 170 | `systems/room13_dialogue_beats.rpy:262` | _r13_context_beat_art |
 | 2 | 172 | `systems/room13_dialogue_context_art.rpy:28` |  |
 
 ## `r13_dialogue_beat_begin` (2층)
@@ -638,7 +638,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 58 | `room13_fullbody_dialogue.rpy:58` | _r13_assets_fullbody_spec |
+| 1 | 58 | `room13_fullbody_dialogue.rpy:60` | _r13_assets_fullbody_spec |
 | 2 | 995 | `systems/room13_asset_domains.rpy:10` |  |
 
 ## `r13_grant` (2층)

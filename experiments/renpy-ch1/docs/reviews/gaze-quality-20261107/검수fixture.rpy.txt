@@ -1,0 +1,1057 @@
+default qa_gaze116_index = -9
+
+init python:
+    def qa_gaze116_export():
+        import json
+        result=[]
+        for person in sorted(R13_DIALOGUE_TALK_ART['people']):
+            for height in (560,760,840,1302):
+                profile=r13_dialogue_source_profile(person,'neutral',height)
+                if not profile:continue
+                for slot,frame in profile['frames'].items():
+                    result.append(dict(person=person,height=height,slot=slot,canvas=list(profile['canvas']),frame=dict(frame),loadable=renpy.loadable(frame['file'])))
+        with open('/tmp/gaze116/after-runtime.json','w') as f:json.dump(result,f,ensure_ascii=False,indent=2)
+
+label qa_gaze116_gallery_label:
+    $ renpy.set_physical_size((1280,720))
+    $ qa_gaze116_export()
+    $ r13_edit(location='school')
+    call r13_scene(R13_PLACES['school'][1],R13_PLACES['school'][0],'calm')
+    $ qa_gaze116_index=-1
+    $ qa_gaze116_index=0
+    $ qa_gaze116_rows=[('resident_teacher','시선과 표정 확인 001',dict(expression='neutral',pose='neutral'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=1
+    $ qa_gaze116_rows=[('resident_teacher','시선과 표정 확인 002',dict(expression='joy',pose='joy'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=2
+    $ qa_gaze116_rows=[('resident_teacher','시선과 표정 확인 003',dict(expression='angry',pose='angry'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=3
+    $ qa_gaze116_rows=[('resident_teacher','시선과 표정 확인 004',dict(expression='anxious',pose='anxious'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=4
+    $ qa_gaze116_rows=[('resident_teacher','시선과 표정 확인 005',dict(expression='flustered',pose='flustered'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=5
+    $ qa_gaze116_rows=[('resident_teacher','시선과 표정 확인 006',dict(expression='surprise',pose='surprise'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=6
+    $ qa_gaze116_rows=[('resident_nubi','시선과 표정 확인 007',dict(expression='neutral',pose='neutral'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=7
+    $ qa_gaze116_rows=[('resident_nubi','시선과 표정 확인 008',dict(expression='joy',pose='joy'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=8
+    $ qa_gaze116_rows=[('resident_nubi','시선과 표정 확인 009',dict(expression='angry',pose='angry'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=9
+    $ qa_gaze116_rows=[('resident_nubi','시선과 표정 확인 010',dict(expression='anxious',pose='anxious'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=10
+    $ qa_gaze116_rows=[('resident_nubi','시선과 표정 확인 011',dict(expression='flustered',pose='flustered'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=11
+    $ qa_gaze116_rows=[('resident_nubi','시선과 표정 확인 012',dict(expression='surprise',pose='surprise'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=12
+    $ qa_gaze116_rows=[('neoul','시선과 표정 확인 013',dict(expression='neutral',pose='neutral'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=13
+    $ qa_gaze116_rows=[('neoul','시선과 표정 확인 014',dict(expression='joy',pose='joy'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=14
+    $ qa_gaze116_rows=[('neoul','시선과 표정 확인 015',dict(expression='angry',pose='angry'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=15
+    $ qa_gaze116_rows=[('neoul','시선과 표정 확인 016',dict(expression='anxious',pose='anxious'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=16
+    $ qa_gaze116_rows=[('neoul','시선과 표정 확인 017',dict(expression='flustered',pose='flustered'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=17
+    $ qa_gaze116_rows=[('neoul','시선과 표정 확인 018',dict(expression='surprise',pose='surprise'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=18
+    $ qa_gaze116_rows=[('granny','시선과 표정 확인 019',dict(expression='neutral',pose='neutral'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=19
+    $ qa_gaze116_rows=[('granny','시선과 표정 확인 020',dict(expression='joy',pose='joy'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=20
+    $ qa_gaze116_rows=[('granny','시선과 표정 확인 021',dict(expression='angry',pose='angry'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=21
+    $ qa_gaze116_rows=[('granny','시선과 표정 확인 022',dict(expression='anxious',pose='anxious'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=22
+    $ qa_gaze116_rows=[('granny','시선과 표정 확인 023',dict(expression='flustered',pose='flustered'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=23
+    $ qa_gaze116_rows=[('granny','시선과 표정 확인 024',dict(expression='surprise',pose='surprise'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=24
+    $ qa_gaze116_rows=[('resident_momo','시선과 표정 확인 025',dict(expression='neutral',pose='neutral'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=25
+    $ qa_gaze116_rows=[('resident_momo','시선과 표정 확인 026',dict(expression='joy',pose='joy'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=26
+    $ qa_gaze116_rows=[('resident_momo','시선과 표정 확인 027',dict(expression='angry',pose='angry'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=27
+    $ qa_gaze116_rows=[('resident_momo','시선과 표정 확인 028',dict(expression='anxious',pose='anxious'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=28
+    $ qa_gaze116_rows=[('resident_momo','시선과 표정 확인 029',dict(expression='flustered',pose='flustered'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=29
+    $ qa_gaze116_rows=[('resident_momo','시선과 표정 확인 030',dict(expression='surprise',pose='surprise'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=30
+    $ qa_gaze116_rows=[('resident_lamplighter','시선과 표정 확인 031',dict(expression='neutral',pose='neutral'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=31
+    $ qa_gaze116_rows=[('resident_lamplighter','시선과 표정 확인 032',dict(expression='joy',pose='joy'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=32
+    $ qa_gaze116_rows=[('resident_lamplighter','시선과 표정 확인 033',dict(expression='angry',pose='angry'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=33
+    $ qa_gaze116_rows=[('resident_lamplighter','시선과 표정 확인 034',dict(expression='anxious',pose='anxious'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=34
+    $ qa_gaze116_rows=[('resident_lamplighter','시선과 표정 확인 035',dict(expression='flustered',pose='flustered'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=35
+    $ qa_gaze116_rows=[('resident_lamplighter','시선과 표정 확인 036',dict(expression='surprise',pose='surprise'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=36
+    $ qa_gaze116_rows=[('resident_tosil','시선과 표정 확인 037',dict(expression='neutral',pose='neutral'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=37
+    $ qa_gaze116_rows=[('resident_tosil','시선과 표정 확인 038',dict(expression='joy',pose='joy'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=38
+    $ qa_gaze116_rows=[('resident_tosil','시선과 표정 확인 039',dict(expression='angry',pose='angry'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=39
+    $ qa_gaze116_rows=[('resident_tosil','시선과 표정 확인 040',dict(expression='anxious',pose='anxious'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=40
+    $ qa_gaze116_rows=[('resident_tosil','시선과 표정 확인 041',dict(expression='flustered',pose='flustered'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=41
+    $ qa_gaze116_rows=[('resident_tosil','시선과 표정 확인 042',dict(expression='surprise',pose='surprise'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=42
+    $ qa_gaze116_rows=[('resident_owlgp','시선과 표정 확인 043',dict(expression='neutral',pose='neutral'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=43
+    $ qa_gaze116_rows=[('resident_owlgp','시선과 표정 확인 044',dict(expression='joy',pose='joy'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=44
+    $ qa_gaze116_rows=[('resident_owlgp','시선과 표정 확인 045',dict(expression='angry',pose='angry'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=45
+    $ qa_gaze116_rows=[('resident_owlgp','시선과 표정 확인 046',dict(expression='anxious',pose='anxious'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=46
+    $ qa_gaze116_rows=[('resident_owlgp','시선과 표정 확인 047',dict(expression='flustered',pose='flustered'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=47
+    $ qa_gaze116_rows=[('resident_owlgp','시선과 표정 확인 048',dict(expression='surprise',pose='surprise'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=48
+    $ qa_gaze116_rows=[('buri','시선과 표정 확인 049',dict(expression='neutral',pose='neutral'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=49
+    $ qa_gaze116_rows=[('buri','시선과 표정 확인 050',dict(expression='joy',pose='joy'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=50
+    $ qa_gaze116_rows=[('buri','시선과 표정 확인 051',dict(expression='angry',pose='angry'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=51
+    $ qa_gaze116_rows=[('buri','시선과 표정 확인 052',dict(expression='anxious',pose='anxious'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=52
+    $ qa_gaze116_rows=[('buri','시선과 표정 확인 053',dict(expression='flustered',pose='flustered'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=53
+    $ qa_gaze116_rows=[('buri','시선과 표정 확인 054',dict(expression='surprise',pose='surprise'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=54
+    $ qa_gaze116_rows=[('resident_dalgeurak','시선과 표정 확인 055',dict(expression='neutral',pose='neutral'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=55
+    $ qa_gaze116_rows=[('resident_dalgeurak','시선과 표정 확인 056',dict(expression='joy',pose='joy'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=56
+    $ qa_gaze116_rows=[('resident_dalgeurak','시선과 표정 확인 057',dict(expression='angry',pose='angry'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=57
+    $ qa_gaze116_rows=[('resident_dalgeurak','시선과 표정 확인 058',dict(expression='anxious',pose='anxious'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=58
+    $ qa_gaze116_rows=[('resident_dalgeurak','시선과 표정 확인 059',dict(expression='flustered',pose='flustered'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=59
+    $ qa_gaze116_rows=[('resident_dalgeurak','시선과 표정 확인 060',dict(expression='surprise',pose='surprise'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=60
+    $ qa_gaze116_rows=[('resident_yeoni','시선과 표정 확인 061',dict(expression='neutral',pose='neutral'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=61
+    $ qa_gaze116_rows=[('resident_yeoni','시선과 표정 확인 062',dict(expression='joy',pose='joy'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=62
+    $ qa_gaze116_rows=[('resident_yeoni','시선과 표정 확인 063',dict(expression='angry',pose='angry'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=63
+    $ qa_gaze116_rows=[('resident_yeoni','시선과 표정 확인 064',dict(expression='anxious',pose='anxious'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=64
+    $ qa_gaze116_rows=[('resident_yeoni','시선과 표정 확인 065',dict(expression='flustered',pose='flustered'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=65
+    $ qa_gaze116_rows=[('resident_yeoni','시선과 표정 확인 066',dict(expression='surprise',pose='surprise'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=66
+    $ qa_gaze116_rows=[('resident_guldol','시선과 표정 확인 067',dict(expression='neutral',pose='neutral'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=67
+    $ qa_gaze116_rows=[('resident_guldol','시선과 표정 확인 068',dict(expression='joy',pose='joy'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=68
+    $ qa_gaze116_rows=[('resident_guldol','시선과 표정 확인 069',dict(expression='angry',pose='angry'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=69
+    $ qa_gaze116_rows=[('resident_guldol','시선과 표정 확인 070',dict(expression='anxious',pose='anxious'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=70
+    $ qa_gaze116_rows=[('resident_guldol','시선과 표정 확인 071',dict(expression='flustered',pose='flustered'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=71
+    $ qa_gaze116_rows=[('resident_guldol','시선과 표정 확인 072',dict(expression='surprise',pose='surprise'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=72
+    $ qa_gaze116_rows=[('resident_tok','시선과 표정 확인 073',dict(expression='neutral',pose='neutral'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=73
+    $ qa_gaze116_rows=[('resident_tok','시선과 표정 확인 074',dict(expression='joy',pose='joy'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=74
+    $ qa_gaze116_rows=[('resident_tok','시선과 표정 확인 075',dict(expression='angry',pose='angry'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=75
+    $ qa_gaze116_rows=[('resident_tok','시선과 표정 확인 076',dict(expression='anxious',pose='anxious'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=76
+    $ qa_gaze116_rows=[('resident_tok','시선과 표정 확인 077',dict(expression='flustered',pose='flustered'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=77
+    $ qa_gaze116_rows=[('resident_tok','시선과 표정 확인 078',dict(expression='surprise',pose='surprise'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=78
+    $ qa_gaze116_rows=[('resident_ppul','시선과 표정 확인 079',dict(expression='neutral',pose='neutral'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=79
+    $ qa_gaze116_rows=[('resident_ppul','시선과 표정 확인 080',dict(expression='joy',pose='joy'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=80
+    $ qa_gaze116_rows=[('resident_ppul','시선과 표정 확인 081',dict(expression='angry',pose='angry'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=81
+    $ qa_gaze116_rows=[('resident_ppul','시선과 표정 확인 082',dict(expression='anxious',pose='anxious'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=82
+    $ qa_gaze116_rows=[('resident_ppul','시선과 표정 확인 083',dict(expression='flustered',pose='flustered'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=83
+    $ qa_gaze116_rows=[('resident_ppul','시선과 표정 확인 084',dict(expression='surprise',pose='surprise'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=84
+    $ qa_gaze116_rows=[('resident_nero','시선과 표정 확인 085',dict(expression='neutral',pose='neutral'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=85
+    $ qa_gaze116_rows=[('resident_nero','시선과 표정 확인 086',dict(expression='joy',pose='joy'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=86
+    $ qa_gaze116_rows=[('resident_nero','시선과 표정 확인 087',dict(expression='angry',pose='angry'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=87
+    $ qa_gaze116_rows=[('resident_nero','시선과 표정 확인 088',dict(expression='anxious',pose='anxious'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=88
+    $ qa_gaze116_rows=[('resident_nero','시선과 표정 확인 089',dict(expression='flustered',pose='flustered'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=89
+    $ qa_gaze116_rows=[('resident_nero','시선과 표정 확인 090',dict(expression='surprise',pose='surprise'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=90
+    $ qa_gaze116_rows=[('resident_siluk','시선과 표정 확인 091',dict(expression='neutral',pose='neutral'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=91
+    $ qa_gaze116_rows=[('resident_siluk','시선과 표정 확인 092',dict(expression='joy',pose='joy'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=92
+    $ qa_gaze116_rows=[('resident_siluk','시선과 표정 확인 093',dict(expression='angry',pose='angry'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=93
+    $ qa_gaze116_rows=[('resident_siluk','시선과 표정 확인 094',dict(expression='anxious',pose='anxious'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=94
+    $ qa_gaze116_rows=[('resident_siluk','시선과 표정 확인 095',dict(expression='flustered',pose='flustered'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=95
+    $ qa_gaze116_rows=[('resident_siluk','시선과 표정 확인 096',dict(expression='surprise',pose='surprise'))]
+    call r13_lines(qa_gaze116_rows,'qa:gaze116')
+    $ qa_gaze116_index=999
+    jump r13_field
+
+testcase qa_gaze116_gallery:
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until screen "r13_hub" timeout 120
+    run Jump("qa_gaze116_gallery_label")
+    pause until eval (qa_gaze116_index==0 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_teacher' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_teacher--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==1 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_teacher' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_teacher--joy.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==2 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_teacher' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_teacher--angry.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==3 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_teacher' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_teacher--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==4 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_teacher' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_teacher--flustered.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==5 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_teacher' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_teacher--surprise.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==6 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_nubi' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_nubi--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==7 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_nubi' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_nubi--joy.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==8 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_nubi' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_nubi--angry.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==9 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_nubi' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_nubi--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==10 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_nubi' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_nubi--flustered.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==11 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_nubi' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_nubi--surprise.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==12 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='neoul' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "neoul--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==13 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='neoul' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "neoul--joy.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==14 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='neoul' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "neoul--angry.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==15 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='neoul' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "neoul--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==16 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='neoul' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "neoul--flustered.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==17 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='neoul' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "neoul--surprise.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==18 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='granny' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "granny--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==19 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='granny' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "granny--joy.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==20 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='granny' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "granny--angry.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==21 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='granny' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "granny--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==22 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='granny' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "granny--flustered.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==23 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='granny' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "granny--surprise.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==24 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_momo' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_momo--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==25 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_momo' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_momo--joy.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==26 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_momo' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_momo--angry.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==27 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_momo' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_momo--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==28 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_momo' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_momo--flustered.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==29 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_momo' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_momo--surprise.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==30 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_lamplighter' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_lamplighter--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==31 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_lamplighter' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_lamplighter--joy.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==32 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_lamplighter' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_lamplighter--angry.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==33 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_lamplighter' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_lamplighter--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==34 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_lamplighter' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_lamplighter--flustered.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==35 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_lamplighter' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_lamplighter--surprise.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==36 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_tosil' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_tosil--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==37 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_tosil' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_tosil--joy.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==38 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_tosil' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_tosil--angry.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==39 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_tosil' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_tosil--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==40 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_tosil' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_tosil--flustered.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==41 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_tosil' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_tosil--surprise.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==42 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_owlgp' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_owlgp--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==43 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_owlgp' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_owlgp--joy.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==44 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_owlgp' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_owlgp--angry.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==45 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_owlgp' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_owlgp--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==46 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_owlgp' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_owlgp--flustered.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==47 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_owlgp' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_owlgp--surprise.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==48 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='buri' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "buri--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==49 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='buri' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "buri--joy.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==50 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='buri' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "buri--angry.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==51 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='buri' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "buri--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==52 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='buri' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "buri--flustered.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==53 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='buri' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "buri--surprise.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==54 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_dalgeurak' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_dalgeurak--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==55 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_dalgeurak' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_dalgeurak--joy.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==56 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_dalgeurak' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_dalgeurak--angry.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==57 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_dalgeurak' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_dalgeurak--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==58 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_dalgeurak' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_dalgeurak--flustered.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==59 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_dalgeurak' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_dalgeurak--surprise.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==60 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_yeoni' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_yeoni--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==61 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_yeoni' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_yeoni--joy.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==62 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_yeoni' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_yeoni--angry.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==63 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_yeoni' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_yeoni--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==64 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_yeoni' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_yeoni--flustered.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==65 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_yeoni' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_yeoni--surprise.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==66 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_guldol' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_guldol--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==67 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_guldol' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_guldol--joy.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==68 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_guldol' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_guldol--angry.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==69 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_guldol' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_guldol--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==70 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_guldol' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_guldol--flustered.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==71 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_guldol' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_guldol--surprise.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==72 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_tok' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_tok--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==73 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_tok' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_tok--joy.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==74 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_tok' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_tok--angry.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==75 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_tok' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_tok--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==76 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_tok' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_tok--flustered.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==77 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_tok' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_tok--surprise.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==78 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_ppul' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_ppul--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==79 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_ppul' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_ppul--joy.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==80 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_ppul' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_ppul--angry.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==81 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_ppul' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_ppul--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==82 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_ppul' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_ppul--flustered.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==83 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_ppul' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_ppul--surprise.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==84 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_nero' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_nero--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==85 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_nero' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_nero--joy.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==86 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_nero' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_nero--angry.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==87 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_nero' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_nero--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==88 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_nero' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_nero--flustered.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==89 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_nero' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_nero--surprise.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==90 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_siluk' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_siluk--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==91 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_siluk' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_siluk--joy.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==92 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_siluk' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_siluk--angry.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==93 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_siluk' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_siluk--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==94 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_siluk' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_siluk--flustered.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==95 and renpy.get_screen("say")) timeout 25
+    pause .45
+    assert eval (r13_motion_person=='resident_siluk' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "resident_siluk--surprise.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==999) timeout 25
+    assert eval (all(row["loadable"] for row in __import__("json").load(open("/tmp/gaze116/after-runtime.json"))))
+
+
+testcase qa_gaze116_seed:
+    pause 1.0
+    click '처음부터'
+    click pos (900,600) until screen 'r13_hub' timeout 120
+    run Jump('qa_gaze116_gallery_label')
+    pause until eval (qa_gaze116_index==0 and renpy.get_screen('say')) timeout 30
+    pause .7
+    assert eval (r13_motion_person=='resident_teacher' and 'r13_visitor' in renpy.get_showing_tags())
+    run Function(renpy.save,'qa-gaze116-before')
+    pause .3
+    screenshot 'before-saved-teacher.png'
+
+
+testcase qa_gaze116_restore:
+    pause 1.0
+    click '처음부터'
+    click pos (900,600) until screen 'r13_hub' timeout 120
+    assert eval ((renpy.slot_json('qa-gaze116-before') or {}).get('_version')=='0.20.115')
+    run Function(renpy.load,'qa-gaze116-before')
+    pause until screen 'say' timeout 30
+    pause .8
+    assert eval (r13_motion_person=='resident_teacher' and 'r13_visitor' in renpy.get_showing_tags())
+    assert eval (config.version=='0.20.116' and r13_packet[0]=='resident_teacher' and '001' in r13_packet[1])
+    assert eval (all('/gaze116/' in frame['file'] for frame in r13_dialogue_source_profile('resident_teacher','neutral',1302)['frames'].values()))
+    screenshot 'after-restored-teacher.png'
+
+
+testcase qa_gaze116_questions:
+    pause 1.0
+    click '처음부터'
+    click pos (900,600) until screen 'r13_hub' timeout 120
+    run Function(renpy.set_physical_size,(1280,720))
+    run Function(renpy.hide,'r13_visitor')
+    run Hide('say')
+    run Show('r13_question_list',person='resident_teacher',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .4
+    assert eval (r13_question_portrait_height('resident_teacher','neutral')==560)
+    screenshot 'resident_teacher--question.png'
+    run Hide('r13_question_list')
+    run Show('r13_question_list',person='resident_nubi',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .4
+    assert eval (r13_question_portrait_height('resident_nubi','neutral')==560)
+    screenshot 'resident_nubi--question.png'
+    run Hide('r13_question_list')
+    run Show('r13_question_list',person='neoul',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .4
+    assert eval (r13_question_portrait_height('neoul','neutral')==560)
+    screenshot 'neoul--question.png'
+    run Hide('r13_question_list')
+    run Show('r13_question_list',person='granny',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .4
+    assert eval (r13_question_portrait_height('granny','neutral')==560)
+    screenshot 'granny--question.png'
+    run Hide('r13_question_list')
+    run Show('r13_question_list',person='resident_momo',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .4
+    assert eval (r13_question_portrait_height('resident_momo','neutral')==560)
+    screenshot 'resident_momo--question.png'
+    run Hide('r13_question_list')
+    run Show('r13_question_list',person='resident_lamplighter',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .4
+    assert eval (r13_question_portrait_height('resident_lamplighter','neutral')==560)
+    screenshot 'resident_lamplighter--question.png'
+    run Hide('r13_question_list')
+    run Show('r13_question_list',person='resident_tosil',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .4
+    assert eval (r13_question_portrait_height('resident_tosil','neutral')==560)
+    screenshot 'resident_tosil--question.png'
+    run Hide('r13_question_list')
+    run Show('r13_question_list',person='resident_owlgp',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .4
+    assert eval (r13_question_portrait_height('resident_owlgp','neutral')==560)
+    screenshot 'resident_owlgp--question.png'
+    run Hide('r13_question_list')
+    run Show('r13_question_list',person='buri',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .4
+    assert eval (r13_question_portrait_height('buri','neutral')==560)
+    screenshot 'buri--question.png'
+    run Hide('r13_question_list')
+    run Show('r13_question_list',person='resident_dalgeurak',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .4
+    assert eval (r13_question_portrait_height('resident_dalgeurak','neutral')==560)
+    screenshot 'resident_dalgeurak--question.png'
+    run Hide('r13_question_list')
+    run Show('r13_question_list',person='resident_yeoni',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .4
+    assert eval (r13_question_portrait_height('resident_yeoni','neutral')==560)
+    screenshot 'resident_yeoni--question.png'
+    run Hide('r13_question_list')
+    run Show('r13_question_list',person='resident_guldol',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .4
+    assert eval (r13_question_portrait_height('resident_guldol','neutral')==560)
+    screenshot 'resident_guldol--question.png'
+    run Hide('r13_question_list')
+    run Show('r13_question_list',person='resident_tok',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .4
+    assert eval (r13_question_portrait_height('resident_tok','neutral')==560)
+    screenshot 'resident_tok--question.png'
+    run Hide('r13_question_list')
+    run Show('r13_question_list',person='resident_ppul',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .4
+    assert eval (r13_question_portrait_height('resident_ppul','neutral')==560)
+    screenshot 'resident_ppul--question.png'
+    run Hide('r13_question_list')
+    run Show('r13_question_list',person='resident_nero',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .4
+    assert eval (r13_question_portrait_height('resident_nero','neutral')==560)
+    screenshot 'resident_nero--question.png'
+    run Hide('r13_question_list')
+    run Show('r13_question_list',person='resident_siluk',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .4
+    assert eval (r13_question_portrait_height('resident_siluk','neutral')==560)
+    screenshot 'resident_siluk--question.png'
+    run Hide('r13_question_list')
+    run Function(renpy.set_physical_size,(844,390))
+    run Show('r13_question_list',person='resident_teacher',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .6
+    screenshot 'resident_teacher--question-mobile.png'
+    run Hide('r13_question_list')
+    run Function(renpy.set_physical_size,(844,390))
+    run Show('r13_question_list',person='granny',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .6
+    screenshot 'granny--question-mobile.png'
+    run Hide('r13_question_list')
+    run Function(renpy.set_physical_size,(844,390))
+    run Show('r13_question_list',person='resident_nubi',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .6
+    screenshot 'resident_nubi--question-mobile.png'
+    run Hide('r13_question_list')
+
+
+init python:
+    def qa_gaze116_name_bounds():
+        for person in R13_DIALOGUE_TALK_ART['people']:
+            if person not in R13_NAMES:continue
+            name=R13_NAMES[person]
+            layout=r13_side_name_layout(name)
+            width=renpy.render(Text(name,font=R13_UI_BOLD_FONT,size=layout['size']),1280,160,0,0).get_size()[0]
+            if width>layout['width']-92 or 78+layout['width']>488:
+                raise Exception('이름표 넘침: '+person)
+        return True
+
+label qa_gaze116_extra_final_label:
+    $ qa_gaze116_index=-1
+    $ renpy.set_physical_size((1280,720))
+    $ r13_edit(location='school')
+    call r13_scene(R13_PLACES['school'][1],R13_PLACES['school'][0],'calm')
+    $ qa_gaze116_index=501
+    call r13_lines([('npc_panseol','기존 자세의 시선 교정 확인',dict(expression='neutral',pose='neutral'))],'qa:gaze116extra')
+    $ qa_gaze116_index=502
+    call r13_lines([('npc_panseol','기존 자세의 시선 교정 확인',dict(expression='anxious',pose='anxious'))],'qa:gaze116extra')
+    $ qa_gaze116_index=503
+    call r13_lines([('npc_panseol','기존 자세의 시선 교정 확인',dict(expression='tired',pose='tired'))],'qa:gaze116extra')
+    $ qa_gaze116_index=504
+    call r13_lines([('v111_lowerroad_elder','기존 자세의 시선 교정 확인',dict(expression='neutral',pose='neutral'))],'qa:gaze116extra')
+    $ qa_gaze116_index=505
+    call r13_lines([('v111_lowerroad_elder','기존 자세의 시선 교정 확인',dict(expression='joy',pose='joy'))],'qa:gaze116extra')
+    $ qa_gaze116_index=506
+    call r13_lines([('v111_lowerroad_elder','기존 자세의 시선 교정 확인',dict(expression='angry',pose='angry'))],'qa:gaze116extra')
+    $ qa_gaze116_index=507
+    call r13_lines([('v111_lowerroad_elder','기존 자세의 시선 교정 확인',dict(expression='anxious',pose='anxious'))],'qa:gaze116extra')
+    $ qa_gaze116_index=508
+    call r13_lines([('v111_lowerroad_elder','기존 자세의 시선 교정 확인',dict(expression='flustered',pose='flustered'))],'qa:gaze116extra')
+    $ qa_gaze116_index=509
+    call r13_lines([('v111_lowerroad_elder','기존 자세의 시선 교정 확인',dict(expression='surprise',pose='surprise'))],'qa:gaze116extra')
+    $ qa_gaze116_index=999
+    jump r13_field
+
+testcase qa_gaze116_existing_hd:
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until screen "r13_hub" timeout 120
+    run Jump("qa_gaze116_extra_final_label")
+    pause until eval (qa_gaze116_index==501 and renpy.get_screen("say")) timeout 30
+    pause .5
+    assert eval (r13_motion_person=='npc_panseol' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "extra-npc_panseol--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==502 and renpy.get_screen("say")) timeout 30
+    pause .5
+    assert eval (r13_motion_person=='npc_panseol' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "extra-npc_panseol--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==503 and renpy.get_screen("say")) timeout 30
+    pause .5
+    assert eval (r13_motion_person=='npc_panseol' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "extra-npc_panseol--tired.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==504 and renpy.get_screen("say")) timeout 30
+    pause .5
+    assert eval (r13_motion_person=='v111_lowerroad_elder' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "extra-v111_lowerroad_elder--neutral.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==505 and renpy.get_screen("say")) timeout 30
+    pause .5
+    assert eval (r13_motion_person=='v111_lowerroad_elder' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "extra-v111_lowerroad_elder--joy.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==506 and renpy.get_screen("say")) timeout 30
+    pause .5
+    assert eval (r13_motion_person=='v111_lowerroad_elder' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "extra-v111_lowerroad_elder--angry.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==507 and renpy.get_screen("say")) timeout 30
+    pause .5
+    assert eval (r13_motion_person=='v111_lowerroad_elder' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "extra-v111_lowerroad_elder--anxious.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==508 and renpy.get_screen("say")) timeout 30
+    pause .5
+    assert eval (r13_motion_person=='v111_lowerroad_elder' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "extra-v111_lowerroad_elder--flustered.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==509 and renpy.get_screen("say")) timeout 30
+    pause .5
+    assert eval (r13_motion_person=='v111_lowerroad_elder' and "r13_visitor" in renpy.get_showing_tags())
+    screenshot "extra-v111_lowerroad_elder--surprise.png"
+    click pos (900,600)
+    pause until eval (qa_gaze116_index==999) timeout 30
+
+
+testcase qa_gaze116_name_bounds:
+    pause 1.0
+    click '처음부터'
+    click pos (900,600) until screen 'r13_hub' timeout 120
+    run Function(renpy.set_physical_size,(1280,720))
+    $ persistent.room13_large_text=False
+    $ persistent.room13_text_small=False
+    pause .4
+    assert eval (qa_gaze116_name_bounds())
+    run Function(renpy.set_physical_size,(1280,720))
+    $ persistent.room13_large_text=True
+    $ persistent.room13_text_small=False
+    pause .4
+    assert eval (qa_gaze116_name_bounds())
+    run Function(renpy.set_physical_size,(844,390))
+    $ persistent.room13_large_text=False
+    $ persistent.room13_text_small=False
+    pause .4
+    assert eval (qa_gaze116_name_bounds())
+    run Function(renpy.hide,'r13_visitor')
+    run Hide('say')
+    run Show('r13_question_list',person='resident_nubi',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .5
+    screenshot 'nameplate-mobile-normal.png'
+    run Hide('r13_question_list')
+    run Function(renpy.set_physical_size,(844,390))
+    $ persistent.room13_large_text=True
+    $ persistent.room13_text_small=False
+    pause .4
+    assert eval (qa_gaze116_name_bounds())
+    run Function(renpy.hide,'r13_visitor')
+    run Hide('say')
+    run Show('r13_question_list',person='resident_nubi',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)
+    pause .5
+    screenshot 'nameplate-mobile-large.png'
+    run Hide('r13_question_list')

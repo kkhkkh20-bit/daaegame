@@ -1,6 +1,19 @@
 # B notebook interview: shared paper components, original question actions and gates.
 init 80 python:
     R13_SIDE_QUESTION_TOP=150
+    _r13_side_name_cache={}
+
+    def r13_side_name_layout(name):
+        # 글자 수 대신 실제 폭으로 잰다. 휴대폰의 ‘누비 아주머니’도 종이 안에 둔다.
+        sizes=tuple(r13_type(level) for level in ("subtitle","emphasis","body","small"))
+        key=(name,R13_UI_BOLD_FONT,sizes)
+        if key not in _r13_side_name_cache:
+            for size in sizes:
+                width=renpy.render(Text(name,font=R13_UI_BOLD_FONT,size=size),1280,160,0,0).get_size()[0]
+                if width<=296:break
+            if len(_r13_side_name_cache)>256:_r13_side_name_cache.clear()
+            _r13_side_name_cache[key]=dict(width=max(246,min(392,int(width)+96)),size=size)
+        return _r13_side_name_cache[key]
 
     def r13_side_question_pages(entries):
         """Fit complete measured rows; overflow uses visible pages, never scrolling."""
@@ -78,7 +91,7 @@ screen r13_side_question_list(person,pose,entries,ready,return_action=None,capti
     $ page=min(page,len(pages)-1)
     $ visible=pages[page]
     add Solid("#29232625")
-    $ question_portrait_height=560 if person=="guard" else 840
+    $ question_portrait_height=r13_question_portrait_height(person,pose)
     add r13_close_art(person,pose,question_portrait_height):
         xpos r13_close_x(person,pose,question_portrait_height)-340 xanchor .5 ypos r13_question_close_y(person,question_portrait_height,110,pose)   # 2026-10-27 외부 리뷰 R07: 발이 화면 안에 들어오는 발 선(room13_fullbody_dialogue.rpy)
     add r13_asset("file:assets/ui-b-question/b_panel_book.png") xpos 488 ypos 144
@@ -89,10 +102,10 @@ screen r13_side_question_list(person,pose,entries,ready,return_action=None,capti
     # 2026-10-27 소유자: 「질문 N개」가 오른쪽 위 테이프·모서리 그림과 겹쳤다. 모서리 그림은 빼고 개수는 제목 띠 오른쪽 끝에 둔다.
     text ("질문 %d개"%len(entries) if len(pages)==1 else "%d / %d쪽"%(page+1,len(pages))) xpos 966 xanchor 1.0 ypos 184 size (r13_type("small")) color (r13_type_color("inverse")) font R13_UI_BOLD_FONT
     # Name stays next to the speaker, clear of the notebook and their face.
-    add Transform(r13_asset_path("file:assets/ui-b-question/nameplate_paper.png"),xysize=(246,94)) xpos 78 ypos 566
+    $ name_layout=r13_side_name_layout(R13_NAMES[person])
+    add Transform(r13_asset_path("file:assets/ui-b-question/nameplate_paper.png"),xysize=(name_layout["width"],94)) xpos 78 ypos 566
     add Transform(Crop((20,16,23,32),r13_asset_path("file:assets/ui-b-question/b_icon_acorn.png")),xysize=(25,34)) xpos 112 ypos 595
-    # 2026-10-28 캡처 검수: 「부엉이 할아버지」(부제목 크기 163px)가 글자 칸 160px 를 넘어 둘째 줄이 판 밖으로 잘렸다. 여덟 자 이상은 한 단 내린다.
-    text R13_NAMES[person] xpos 150 ypos 594 size (r13_type("subtitle") if len(R13_NAMES[person])<8 else r13_type("body")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT xmaximum 160
+    text R13_NAMES[person] xpos 150 ycenter 613 size name_layout["size"] color (r13_type_color("ink")) font R13_UI_BOLD_FONT xmaximum (name_layout["width"]-92)
     vbox:
         pos (572,R13_SIDE_QUESTION_TOP+78) spacing 8
         for i,((label,command,read),height) in enumerate(visible):

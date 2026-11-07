@@ -39,7 +39,7 @@ def build():
   r['markdown']=request_md(r,data['statuses'])
  for e in data['excluded']:reference(e['source'])
  data['summary']={k:sum(r['status']==k for r in data['requests']) for k in data['statuses']}
- intro=['# 그림 제작 요청서','',data['as_of']+' 현재 파일·등록 코드 대조. 이 문서를 외부에 전달하거나 그림을 생성하지 않았다.','',data['scope'],'','## 중복 요청 방지','']+['- '+p for p in data['policies']]
+ intro=['# 그림 제작 요청서','',data['as_of']+' 현재 파일·등록 코드 대조. 이 포털 재생성은 외부 전송·이미지 생성을 실행하지 않는다. 개별 제작·연결 상태는 각 항목의 기록을 따른다.','',data['scope'],'','## 중복 요청 방지','']+['- '+p for p in data['policies']]
  intro+=['','## 현황','']+['- '+data['statuses'][k]+': '+str(n)+'건' for k,n in data['summary'].items()]
  intro+=['','기본 제작 검토 목록은 전용 그림 미납품과 납품·제작 필요 확인 항목이다. 납품된 배경/자료/인물은 아래 대조 이력에 남기며 새 제작 요청에서 제외한다.','']
  md='\n'.join(intro)+'\n\n'+'\n\n---\n\n'.join(r['markdown'] for r in data['requests'])+'\n\n## 그림 요청에서 제외한 과거 화면 작업\n\n'+'\n'.join('- '+e['id']+': '+e['reason'] for e in data['excluded'])+'\n'

@@ -1,0 +1,48 @@
+"""실제 첫 돌목 대화와 외형 검증용 상태를 구분한다."""
+import asyncio,json,os
+from pathlib import Path
+from playwright.async_api import async_playwright
+from qa_v111_play import Fast
+from qa_novel_adaptation import until,save_and_load
+OUT=Path('/tmp/gaze116/web-final');OUT.mkdir(exist_ok=True)
+PEOPLE=list(json.loads(Path('/workspace/daaegame/experiments/renpy-ch1/art/dialogue-gaze-20261107/runtime-fit-targets.json').read_text()))
+PEOPLE+=['npc_panseol','v111_lowerroad_elder']
+async def main():
+ async with async_playwright() as pw:
+  browser=await pw.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox','--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required'])
+  context=await browser.new_context(viewport={'width':1280,'height':720},has_touch=False)
+  pg=await context.new_page();q=Fast(pg,OUT);errors=[];pg.on('pageerror',lambda e:errors.append(str(e)));report={'checks':[],'fixtures':[]}
+  try:
+   await pg.goto('http://localhost:8766/preview/room13-dev/?v=0.20.116',wait_until='domcontentloaded',timeout=180000)
+   await pg.wait_for_function("typeof renpy_exec==='function'",timeout=180000);await q.wait('main_menu')
+   assert await q.py('import renpy;result=renpy.store.config.version')=='0.20.116'
+   await q.py('import renpy;renpy.store.preferences.text_cps=0;result=True')
+   await q.press('처음부터');await until(q,text='흠흠.')
+   before=await q.py('import renpy;s=renpy.store;result=dict(packet=s.r13_packet,person=s.r13_motion_person,day=s.room13["day"],period=s.room13["period"])')
+   assert before['person']=='guard',before
+   await save_and_load(q)
+   after=await q.py('import renpy;s=renpy.store;result=dict(packet=s.r13_packet,person=s.r13_motion_person,day=s.room13["day"],period=s.room13["period"])')
+   assert before==after;(OUT/'first-guard-save.json').write_text(json.dumps(after,ensure_ascii=False,indent=2))
+   report['checks'].append('새 게임 첫 돌목 실제 대화와 현재판 저장·불러오기')
+   for person in PEOPLE:
+    code='import renpy;s=renpy.store;s.r13_dialogue_beat=None;s.r13_thought_active=False;s.r13_speaker('+repr(person)+',"neutral","neutral");renpy.exports.show_screen("say",who=s.R13_NAMES['+repr(person)+'],what="시선과 표정 검수용 화면입니다.");renpy.exports.restart_interaction();p=s.r13_dialogue_source_profile('+repr(person)+',"neutral",1302);result=dict(person=s.r13_motion_person,file=p["frames"]["neutral"]["file"],scale=p["frames"]["neutral"]["scale"])'
+    snap=await q.py(code);assert snap['person']==person and ('/gaze116/' in snap['file'] or 'dialogue-gaze116-' in snap['file']) and snap['scale']<=1.05,snap
+    await asyncio.sleep(.9);assert not await q.py('import renpy;result=bool(renpy.display.screen.get_screen("_exception"))')
+    await pg.screenshot(path=str(OUT/(person+'-say-pc.png')));report['fixtures'].append(snap)
+   for person,emotion in [('resident_nubi','anxious'),('granny','flustered'),('neoul','surprise')]:
+    await q.py('import renpy;s=renpy.store;s.r13_dialogue_beat=None;s.r13_speaker('+repr(person)+','+repr(emotion)+','+repr(emotion)+');renpy.exports.show_screen("say",who=s.R13_NAMES['+repr(person)+'],what="시선과 표정 검수용 화면입니다.");renpy.exports.restart_interaction();result=True')
+    await asyncio.sleep(.8);await pg.screenshot(path=str(OUT/(person+'-'+emotion+'-pc.png')))
+   await q.py('import renpy;renpy.exports.hide("r13_visitor");renpy.exports.hide_screen("say");result=True')
+   for person in ['resident_teacher','resident_nubi','granny','resident_nero','resident_siluk','resident_dalgeurak','npc_panseol','v111_lowerroad_elder']:
+    await q.py('import renpy;s=renpy.store;s.r13_dialogue_beat=None;renpy.exports.show_screen("r13_question_list",person='+repr(person)+',pose="neutral",title="질문",entries=[("그동안 어떻게 지내셨습니까?",s.NullAction(),False)],ready=True);renpy.exports.restart_interaction();result=s.r13_question_portrait_height('+repr(person)+',"neutral")')
+    await asyncio.sleep(.6);await pg.screenshot(path=str(OUT/(person+'-question-pc.png')))
+    await pg.set_viewport_size({'width':844,'height':390});await asyncio.sleep(.6);await pg.screenshot(path=str(OUT/(person+'-question-mobile.png')))
+    await pg.set_viewport_size({'width':1280,'height':720})
+    await q.py('import renpy;renpy.exports.hide_screen("r13_question_list");result=True')
+   report['checks']+=['18명 정면 원본의 실제 브라우저 렌더 fixture','걱정·당황·놀람 fixture','8명 질문 PC1280×720/휴대폰844×390 fixture']
+   assert not errors,errors
+   report.update(status='통과',version='0.20.116',pageerrors=errors)
+  finally:
+   (OUT/'결과.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');await browser.close()
+ print(json.dumps(report,ensure_ascii=False),flush=True)
+asyncio.run(main())

@@ -1,0 +1,43 @@
+from pathlib import Path
+stage=Path('/tmp/gaze116/native-after');p=stage/'game/qa_tests/zz_gaze116_audit.rpy'
+script='''
+
+init python:
+    def qa_gaze116_name_bounds():
+        for person in R13_DIALOGUE_TALK_ART['people']:
+            if person not in R13_NAMES:continue
+            name=R13_NAMES[person]
+            layout=r13_side_name_layout(name)
+            width=renpy.render(Text(name,font=R13_UI_BOLD_FONT,size=layout['size']),1280,160,0,0).get_size()[0]
+            if width>layout['width']-92 or 78+layout['width']>488:
+                raise Exception('이름표 넘침: '+person)
+        return True
+
+label qa_gaze116_extra_final_label:
+    $ qa_gaze116_index=-1
+    $ renpy.set_physical_size((1280,720))
+    $ r13_edit(location='school')
+    call r13_scene(R13_PLACES['school'][1],R13_PLACES['school'][0],'calm')
+'''
+rows=[('npc_panseol',e) for e in ('neutral','anxious','tired')]+[('v111_lowerroad_elder',e) for e in ('neutral','joy','angry','anxious','flustered','surprise')]
+for i,(person,e) in enumerate(rows):
+ script+=f"    $ qa_gaze116_index={501+i}\n    call r13_lines([({person!r},'기존 자세의 시선 교정 확인',dict(expression={e!r},pose={e!r}))],'qa:gaze116extra')\n"
+script+='    $ qa_gaze116_index=999\n    jump r13_field\n\ntestcase qa_gaze116_existing_hd:\n    pause 1.0\n    click "처음부터"\n    click pos (900,600) until screen "r13_hub" timeout 120\n    run Jump("qa_gaze116_extra_final_label")\n'
+for i,(person,e) in enumerate(rows):
+ script+=f'    pause until eval (qa_gaze116_index=={501+i} and renpy.get_screen("say")) timeout 30\n    pause .5\n    assert eval (r13_motion_person=={person!r} and "r13_visitor" in renpy.get_showing_tags())\n    screenshot "extra-{person}--{e}.png"\n    click pos (900,600)\n'
+script+='    pause until eval (qa_gaze116_index==999) timeout 30\n'
+script+='''
+
+testcase qa_gaze116_name_bounds:
+    pause 1.0
+    click '처음부터'
+    click pos (900,600) until screen 'r13_hub' timeout 120
+'''
+for width,height in [(1280,720),(844,390)]:
+ for large in [False,True]:
+  script+=f"    run Function(renpy.set_physical_size,({width},{height}))\n    $ persistent.room13_large_text={large}\n    $ persistent.room13_text_small=False\n    pause .4\n    assert eval (qa_gaze116_name_bounds())\n"
+  if height==390:
+   suffix='large' if large else 'normal'
+   script+=f"    run Function(renpy.hide,'r13_visitor')\n    run Hide('say')\n    run Show('r13_question_list',person='resident_nubi',pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)\n    pause .5\n    screenshot 'nameplate-mobile-{suffix}.png'\n    run Hide('r13_question_list')\n"
+with p.open('a') as f:f.write(script)
+print(p)

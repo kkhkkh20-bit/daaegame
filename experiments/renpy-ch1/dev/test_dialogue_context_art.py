@@ -1,4 +1,4 @@
-import json,textwrap,types,unittest
+import ast,json,textwrap,types,unittest
 from pathlib import Path
 from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
@@ -27,4 +27,53 @@ class ContextArt(unittest.TestCase):
      x,y=f['offset'];self.assertGreaterEqual(x+b[0],0);self.assertGreaterEqual(y+b[1],0);self.assertLessEqual(x+b[2],p['canvas'][0]);self.assertLessEqual(y+b[3],p['canvas'][1])
  def test_wrong_mother_role_is_not_registered(self):
   self.assertFalse(any(e['person'] in ('mom','chorong_mother') for e in self.data['entries'].values()))
+
+ def rendering_environment(self,plan):
+  def function(path,name):
+   text=path.read_text().split(' python:',1)[1]
+   tree=ast.parse(textwrap.dedent(text))
+   return next(node for node in tree.body if isinstance(node,ast.FunctionDef) and node.name==name)
+  fit=function(ROOT/'game/systems/room13_dialogue_beats.rpy','r13_dialogue_fit_profile')
+  render=function(ROOT/'game/systems/room13_dialogue_context_art.rpy','r13_dialogue_beat_art')
+  fallback=object()
+  env=dict(store=types.SimpleNamespace(r13_dialogue_beat=plan),R13_DIALOGUE_CONTEXT_ART=self.data,
+           R13DialogueBeat=lambda chosen,profile:(chosen,profile),_r13_context_beat_art=lambda *args:fallback)
+  exec(compile(ast.Module(body=[fit,render],type_ignores=[]),'문맥 표정 크기 맞춤','exec'),env)
+  return env,fallback
+
+ def test_actual_say_height_keeps_each_authored_context_frame(self):
+  # 840 키만 찾던 경로는 1302 대사에서 전용 표정을 버리고 일반 중립 그림으로 돌아갔다.
+  for key,entry in self.data['entries'].items():
+   plan=dict(person=entry['person'],talk=entry['slot'],react=None,context_key=key)
+   env,fallback=self.rendering_environment(plan)
+   chosen,profile=env['r13_dialogue_beat_art'](entry['person'],1302)
+   original=entry['profiles']['840'];ratio=1302/840
+   self.assertIs(chosen,plan)
+   self.assertEqual(set(profile['frames']),set(original['frames']))
+   self.assertEqual(profile['canvas'],[round(n*ratio) for n in original['canvas']])
+   frame=profile['frames'][plan['talk']];source=original['frames'][plan['talk']]
+   self.assertEqual(frame['file'],source['file'])
+   self.assertEqual(frame['offset'],[round(n*ratio) for n in source['offset']])
+   self.assertAlmostEqual(frame['scale'],source.get('scale',1)*ratio)
+   self.assertNotEqual((chosen,profile),fallback)
+
+ def test_exact_sizes_and_other_fitted_height_keep_same_emotion(self):
+  key='bami:small_relief';entry=self.data['entries'][key]
+  plan=dict(person=entry['person'],talk=entry['slot'],react=None,context_key=key)
+  env,_=self.rendering_environment(plan);render=env['r13_dialogue_beat_art']
+  for h in (560,760,840):
+   self.assertIs(render(entry['person'],h)[1],entry['profiles'][str(h)])
+  chosen,profile=render(entry['person'],740)
+  self.assertEqual(chosen['talk'],'small_relief')
+  self.assertEqual(profile['frames']['small_relief']['file'],entry['profiles']['760']['frames']['small_relief']['file'])
+
+ def test_other_speaker_and_missing_context_keep_existing_beat_path(self):
+  key='bami:small_relief';entry=self.data['entries'][key]
+  plan=dict(person=entry['person'],talk=entry['slot'],react=None,context_key=key)
+  env,fallback=self.rendering_environment(plan);render=env['r13_dialogue_beat_art']
+  self.assertIs(render('mom',1302),fallback)
+  env['store'].r13_dialogue_beat=dict(plan,context_key='미등록 문맥')
+  self.assertIs(render(entry['person'],1302),fallback)
+  env['store'].r13_dialogue_beat=None
+  self.assertIs(render(entry['person'],1302),fallback)
 if __name__=='__main__':unittest.main()

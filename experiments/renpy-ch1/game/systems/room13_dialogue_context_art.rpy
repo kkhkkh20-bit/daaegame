@@ -29,6 +29,7 @@ init 172 python:
         plan = getattr(store,"r13_dialogue_beat",None) or {}
         if plan.get("context_key") and plan.get("person")==person:
             entry = R13_DIALOGUE_CONTEXT_ART["entries"].get(plan["context_key"],{})
-            profile = entry.get("profiles",{}).get(str(int(height)))
+            # 일반 대사의 1302처럼 등록 크기와 다른 높이에서도 문맥 표정을 같은 비율로 유지한다.
+            profile = r13_dialogue_fit_profile(entry.get("profiles",{}),height)
             if profile:return R13DialogueBeat(plan,profile)
         return _r13_context_beat_art(person,height)

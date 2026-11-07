@@ -2946,5 +2946,46 @@
       },
       "art_dot_v2": "2026-10-27 단역 공용 그림, 같은 도트 크기, 자리는 꼬미 를 본뜸(165도트) / v111_child 그림을 같이 씀"
     }
+  },
+  "source_resolution_notes": {
+    "smooth_mapping": "room13-closeup-smooth.json: 두 인물은 기존 승인 원본의 시선을 교정한 같은 크기의 대화 전용 파일을 쓴다. 현장·초상 파일은 유지한다.",
+    "existing_approved_masters": {
+      "npc_panseol": "assets/panseol/panseol-{neutral,anxious,tired}.webp (1024x1536)",
+      "v111_lowerroad_elder": "assets/lowerroad-elder/v111_lowerroad_elder-{neutral,joy,flustered,angry,anxious,surprise}.webp (1024x1536)"
+    },
+    "unverified_high_resolution_sources": {
+      "art_ids": [
+        "v111_patrol",
+        "v111_resident",
+        "v111_child"
+      ],
+      "people": [
+        "v111_patrol",
+        "v111_resident",
+        "v111_lower_resident",
+        "ms14_clinician",
+        "ms14_attendant",
+        "v111_child",
+        "v111_siluk_child",
+        "kid_nubi3"
+      ],
+      "status": "저장소에서 같은 그림의 승인 고해상도 원본을 확인하지 못했다. 기존 도트 그림·역할·6감정을 유지하며 임의 대체하지 않는다.",
+      "evidence": "docs/art-requests/bundle-20261027/답변.md 5-2"
+    },
+    "player_facing_dialogue_masters": {
+      "npc_panseol": {
+        "neutral": "assets/panseol/dialogue-gaze116-neutral.webp",
+        "anxious": "assets/panseol/dialogue-gaze116-anxious.webp",
+        "tired": "assets/panseol/dialogue-gaze116-tired.webp"
+      },
+      "v111_lowerroad_elder": {
+        "neutral": "assets/lowerroad-elder/dialogue-gaze116-neutral.webp",
+        "joy": "assets/lowerroad-elder/dialogue-gaze116-joy.webp",
+        "angry": "assets/lowerroad-elder/dialogue-gaze116-angry.webp",
+        "anxious": "assets/lowerroad-elder/dialogue-gaze116-anxious.webp",
+        "flustered": "assets/lowerroad-elder/dialogue-gaze116-flustered.webp",
+        "surprise_talk": "assets/lowerroad-elder/dialogue-gaze116-surprise_talk.webp"
+      }
+    }
   }
 }

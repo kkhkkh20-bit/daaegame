@@ -223,7 +223,8 @@ init 170 python:
         posed=r13_dialogue_pose_source(person,pose)
         if posed:return r13_dialogue_fit_profile(posed["profiles"],height)
         if getattr(store,"r13_thought_active",False) and person!="resident_solbang":return None
-        if r13_fullbody_key(pose) not in R13_FULLBODY_PLAIN:return None
+        key=r13_fullbody_key(pose)
+        if key not in R13_FULLBODY_PLAIN and not (person=="npc_panseol" and key=="tired"):return None
         entry=R13_DIALOGUE_TALK_ART["people"].get(person,{})
         if entry.get("status")!="approved_runtime":return None
         return r13_dialogue_fit_profile(r13_dialogue_render_profiles(person,entry,player_facing=True),height)
@@ -234,7 +235,8 @@ init 170 python:
         # 0.19.98 (owner 2026-10-22: "대사에 맞는 표정들도 많이 부족해서"): every line shows the
         # expression it was written with, not only meeting lines and reviewed cues. Lines with no
         # expression are still neutral; a missing frame keeps the nearest approved one below.
-        emotion=r13_fullbody_emotion(pose)
+        key=r13_fullbody_key(pose)
+        emotion=key if key in profile["frames"] else r13_fullbody_emotion(pose)
         emotion={"surprise":"surprise_talk"}.get(emotion,emotion)
         # 2026-10-26 전신 묶음은 당황을 따로 그렸다. 없는 인물은 예전처럼 불안 그림을 빌린다.
         if emotion=="flustered" and "flustered" not in profile["frames"]:emotion="anxious"
@@ -259,7 +261,13 @@ init 170 python:
 
     def r13_dialogue_beat_art(person,height):
         if not r13_dialogue_beat_ready(person):return None
-        profile=r13_dialogue_fit_profile(r13_dialogue_render_profiles(person,R13_DIALOGUE_TALK_ART["people"][person]),height)
-        return R13DialogueBeat(store.r13_dialogue_beat,profile) if profile else None
+        # 일반 대사의 검토된 감정 연출도 같은 정면 원본을 쓴다. 문맥 전용 그림은 바깥 래퍼가 유지한다.
+        profile=r13_dialogue_fit_profile(r13_dialogue_render_profiles(person,R13_DIALOGUE_TALK_ART["people"][person],player_facing=True),height)
+        if not profile:return None
+        plan=store.r13_dialogue_beat
+        # 별도 움찔 그림이 없는 정면 묶음은 지정된 놀람 표정을 바로 보인다.
+        if plan.get("react") and plan["react"] not in profile["frames"]:
+            plan=dict(plan,react=None,settled=True)
+        return R13DialogueBeat(plan,profile)
 
     config.after_load_callbacks.append(r13_dialogue_beat_after_load)

@@ -1,0 +1,77 @@
+from pathlib import Path
+import shutil,sys,json
+src=Path('/workspace/daaegame/experiments/renpy-ch1');base=Path('/tmp/gaze116');mode=sys.argv[1];stage=base/('native-'+mode)
+stage.mkdir(exist_ok=True);game=stage/'game'
+if (stage/'tests').exists():shutil.rmtree(stage/'tests')
+if game.exists():shutil.rmtree(game)
+shutil.copytree(src/'game',game,ignore=shutil.ignore_patterns('assets','cache','saves','*.rpyc','*.rpyb','*.rpymc'))
+(game/'assets').symlink_to(src/'game/assets',target_is_directory=True)
+people=['resident_teacher','resident_nubi','neoul','granny','resident_momo','resident_lamplighter','resident_tosil','resident_owlgp','buri','resident_dalgeurak','resident_yeoni','resident_guldol','resident_tok','resident_ppul','resident_nero','resident_siluk']
+slots=['neutral'] if mode=='before' else ['neutral','joy','angry','anxious','flustered','surprise']
+rows=[(p,e) for p in people for e in slots]
+script='''default qa_gaze116_index = -9
+
+init python:
+    def qa_gaze116_export():
+        import json
+        result=[]
+        for person in sorted(R13_DIALOGUE_TALK_ART['people']):
+            for height in (560,760,840,1302):
+                profile=r13_dialogue_source_profile(person,'neutral',height)
+                if not profile:continue
+                for slot,frame in profile['frames'].items():
+                    result.append(dict(person=person,height=height,slot=slot,canvas=list(profile['canvas']),frame=dict(frame),loadable=renpy.loadable(frame['file'])))
+        with open('/tmp/gaze116/MODE-runtime.json','w') as f:json.dump(result,f,ensure_ascii=False,indent=2)
+
+label qa_gaze116_gallery_label:
+    $ renpy.set_physical_size((1280,720))
+    $ qa_gaze116_export()
+    $ r13_edit(location='school')
+    call r13_scene(R13_PLACES['school'][1],R13_PLACES['school'][0],'calm')
+    $ qa_gaze116_index=-1
+'''.replace('MODE',mode)
+for i,(p,e) in enumerate(rows):
+ script+=f"    $ qa_gaze116_index={i}\n    $ qa_gaze116_rows=[({p!r},'시선과 표정 확인 {i+1:03d}',dict(expression={e!r},pose={e!r}))]\n    call r13_lines(qa_gaze116_rows,'qa:gaze116')\n"
+script+='    $ qa_gaze116_index=999\n    jump r13_field\n\ntestcase qa_gaze116_gallery:\n    pause 1.0\n    click "처음부터"\n    click pos (900,600) until screen "r13_hub" timeout 120\n    run Jump("qa_gaze116_gallery_label")\n'
+for i,(p,e) in enumerate(rows):
+ script+=f'    pause until eval (qa_gaze116_index=={i} and renpy.get_screen("say")) timeout 25\n    pause .45\n    assert eval (r13_motion_person=={p!r} and "r13_visitor" in renpy.get_showing_tags())\n    screenshot "{p}--{e}.png"\n    click pos (900,600)\n'
+script+='    pause until eval (qa_gaze116_index==999) timeout 25\n    assert eval (all(row["loadable"] for row in __import__("json").load(open("/tmp/gaze116/'+mode+'-runtime.json"))))\n'
+(game/'qa_tests/zz_gaze116_audit.rpy').write_text(script)
+(base/(mode+'-gallery-keys.json')).write_text(json.dumps(rows));print(stage)
+extra='''
+
+testcase qa_gaze116_seed:
+    pause 1.0
+    click '처음부터'
+    click pos (900,600) until screen 'r13_hub' timeout 120
+    run Jump('qa_gaze116_gallery_label')
+    pause until eval (qa_gaze116_index==0 and renpy.get_screen('say')) timeout 30
+    pause .7
+    assert eval (r13_motion_person=='resident_teacher' and 'r13_visitor' in renpy.get_showing_tags())
+    run Function(renpy.save,'qa-gaze116-before')
+    pause .3
+    screenshot 'before-saved-teacher.png'
+
+
+testcase qa_gaze116_restore:
+    pause 1.0
+    click '처음부터'
+    click pos (900,600) until screen 'r13_hub' timeout 120
+    assert eval ((renpy.slot_json('qa-gaze116-before') or {}).get('_version')=='0.20.115')
+    run Function(renpy.load,'qa-gaze116-before')
+    pause until screen 'say' timeout 30
+    pause .8
+    assert eval (r13_motion_person=='resident_teacher' and 'r13_visitor' in renpy.get_showing_tags())
+    assert eval (config.version=='0.20.116' and r13_packet[0]=='resident_teacher' and '001' in r13_packet[1])
+    assert eval (all('/gaze116/' in frame['file'] for frame in r13_dialogue_source_profile('resident_teacher','neutral',1302)['frames'].values()))
+    screenshot 'after-restored-teacher.png'
+'''
+with (game/'qa_tests/zz_gaze116_audit.rpy').open('a') as f:f.write(extra)
+
+# 같은 실제 질문 UI로 전신·귀·소품·발끝을 캡처한다.
+question_test="""\n\ntestcase qa_gaze116_questions:\n    pause 1.0\n    click '처음부터'\n    click pos (900,600) until screen 'r13_hub' timeout 120\n    run Function(renpy.set_physical_size,(1280,720))\n    run Function(renpy.hide,'r13_visitor')\n    run Hide('say')\n"""
+for person in people:
+    question_test += f"    run Show('r13_question_list',person={person!r},pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)\n    pause .4\n    assert eval (r13_question_portrait_height({person!r},'neutral')==560)\n    screenshot '{person}--question.png'\n    run Hide('r13_question_list')\n"
+for person in ('resident_teacher','granny','resident_nubi'):
+    question_test += f"    run Function(renpy.set_physical_size,(844,390))\n    run Show('r13_question_list',person={person!r},pose='neutral',title='질문',entries=[('그동안 어떻게 지내셨습니까?',NullAction(),False)],ready=True)\n    pause .6\n    screenshot '{person}--question-mobile.png'\n    run Hide('r13_question_list')\n"
+with (game/'qa_tests/zz_gaze116_audit.rpy').open('a') as f:f.write(question_test)

@@ -52,6 +52,8 @@ init 58 python:
 
     def r13_fullbody_authored_pose(person,pose):
         entry=R13_FULLBODY.get("people",{}).get(person,{})
+        if person=="npc_panseol" and r13_fullbody_key(pose)=="tired":
+            return bool(R13_FULLBODY_DIALOGUE and entry.get("images",{}).get("tired",{}).get("file") in R13_FULLBODY_FILES)
         posed=entry.get("poses",{}).get(r13_fullbody_key(pose))
         return bool(R13_FULLBODY_DIALOGUE and posed and posed.get("file") in R13_FULLBODY_FILES)
 
@@ -183,8 +185,16 @@ init 58 python:
     # 잘렸다. 전신을 다 보이는 구성이라 도트 그림은 발을 화면 안 704 에 세운다(아래 여백 16px). 도트가 아닌 그림은 머리 기준 그대로.
     R13_QUESTION_FEET_LINE=704
 
+    def r13_question_portrait_height(person,pose="interview_neutral"):
+        # 정면 원본은 전신이 들어가는 같은 질문용 크기를 쓴다. 일반 대사는 기존 근접 크기다.
+        front=r13_dialogue_player_profiles(person)
+        chosen=r13_dialogue_source_profile(person,pose,840)
+        return 560 if front and chosen is front.get("840") else 840
+
     def r13_question_close_y(person,height=840,top=110,pose="interview_neutral"):
         profile=r13_dialogue_source_profile(person,pose,height)
+        if height==560 and profile and "question_top" in profile:
+            return profile["question_top"]
         if profile and profile.get("dot_scale"):
             return int(round(R13_QUESTION_FEET_LINE*height/840.0-r13_dot_feet(profile)))
         return r13_close_y(person,height,top,pose)
