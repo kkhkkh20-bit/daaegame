@@ -15,8 +15,30 @@ import json,sys,os
 from pathlib import Path
 from PIL import Image
 import numpy as np
-sys.path.insert(0,str(Path(__file__).parent))
-from dotlib import bb,palette,regrid
+
+# 최초 작업 환경에만 있던 dotlib 대신 같은 생성 규칙을 이 파일에 둔다.
+# 원화는 읽기만 하며, 칸 평균·48색·알파 110 문턱으로 1배 도트 그림을 만든다.
+def bb(im):
+    ys,xs=np.where(np.asarray(im.convert("RGBA"))[...,3]>16)
+    if not len(xs):raise ValueError("불투명한 인물 영역이 없습니다")
+    return int(xs.min()),int(ys.min()),int(xs.max()+1),int(ys.max()+1)
+
+def palette(im):
+    pixels=np.asarray(im.convert("RGBA"))
+    rgb=pixels[pixels[...,3]>=110,:3]
+    if not len(rgb):raise ValueError("팔레트를 만들 인물 영역이 없습니다")
+    sample=Image.fromarray(rgb.reshape((-1,1,3)))
+    quantized=sample.quantize(colors=48,method=Image.Quantize.MEDIANCUT,dither=Image.Dither.NONE)
+    colors=quantized.getpalette()[:48*3]
+    out=Image.new("P",(1,1));out.putpalette((colors*16)[:768])
+    return out
+
+def regrid(im,scale,pal):
+    size=(max(1,int(round(im.width*scale))),max(1,int(round(im.height*scale))))
+    small=im.convert("RGBA").resize(size,Image.Resampling.BOX)
+    out=small.convert("RGB").quantize(palette=pal,dither=Image.Dither.NONE).convert("RGBA")
+    out.putalpha(Image.fromarray(np.where(np.asarray(small)[...,3]>=110,255,0).astype("uint8")))
+    return out
 
 game=Path(sys.argv[1])
 OUT=game/"assets/field-dot-v2"
@@ -28,8 +50,8 @@ TEEN={"buri"}
 BIG={"resident_bori","resident_guldol","resident_musoe","resident_teacher","karo"}
 def target_dots(p):
     if p in BIG:return 230
-    if p in KID or p.startswith("kid_"):return 165
     if p in SMALL:return 132
+    if p in KID or p.startswith("kid_"):return 165
     if p in OLD:return 195
     if p in TEEN:return 185
     return 210
@@ -140,7 +162,9 @@ def main():
         if entries:table[person]=dict(target_dots=T,poses=entries)
     json.dump(dict(schema="room13-field-dot-v2/1",note="현장 인물 그림을 대화 도트판과 같은 도트 수로 다시 찍은 표. 좌표는 모두 도트(1배) 기준.",people=table),
         open(TABLE,"w"),ensure_ascii=False,indent=1)
-    json.dump(report,open(Path(__file__).parent.parent/"field"/"build_report.json","w"),ensure_ascii=False,indent=0)
+    report_path=Path(__file__).parent.parent/"field"/"build_report.json"
+    report_path.parent.mkdir(parents=True,exist_ok=True)
+    json.dump(report,open(report_path,"w"),ensure_ascii=False,indent=0)
     print(len(table),"명",sum(len(v["poses"]) for v in table.values()),"장")
 
-main()
+if __name__=="__main__":main()

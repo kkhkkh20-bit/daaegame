@@ -102,6 +102,8 @@ def main():
         data=json.loads(registry.read_text());data['people'].update(prepared)
         normalize_question_layout(data['people'])
         registry.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+        from build_dialogue_size_fit import refresh_if_present
+        refresh_if_present()
     print(json.dumps(dict(people=len(prepared),frames=len(prepared)*len(SLOTS),applied=args.apply),ensure_ascii=False))
 
 

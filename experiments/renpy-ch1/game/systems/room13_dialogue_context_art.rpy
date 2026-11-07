@@ -30,6 +30,9 @@ init 172 python:
         if plan.get("context_key") and plan.get("person")==person:
             entry = R13_DIALOGUE_CONTEXT_ART["entries"].get(plan["context_key"],{})
             # 일반 대사의 1302처럼 등록 크기와 다른 높이에서도 문맥 표정을 같은 비율로 유지한다.
-            profile = r13_dialogue_fit_profile(entry.get("profiles",{}),height)
+            profiles = entry.get("profiles",{})
+            normalize = globals().get("r13_dialogue_size_profiles")
+            if normalize:profiles=normalize(person,profiles,plan["context_key"])
+            profile = r13_dialogue_fit_profile(profiles,height)
             if profile:return R13DialogueBeat(plan,profile)
         return _r13_context_beat_art(person,height)

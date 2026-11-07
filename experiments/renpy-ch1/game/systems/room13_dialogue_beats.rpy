@@ -13,6 +13,23 @@ init 170 python:
     # 원래 도트 등록·reviewed beat는 유지하고, 직접 상대를 보는 대화 원본만 별도로 선택한다.
     R13_DIALOGUE_PLAYER_FACING=json.load(renpy.file("assets/room13-dialogue-player-facing.json"))
     _r13_player_facing_ready={}
+    # 원화·감정·자세는 그대로 두고, 최종 source 프로필의 표시 키만 현장 키에 맞춘다.
+    R13_DIALOGUE_SIZE_FIT=json.load(renpy.file("assets/room13-dialogue-size-fit.json"))
+    _r13_dialogue_size_cache={}
+
+    def r13_dialogue_size_profiles(person,profiles,context_key=None):
+        table=globals().get("R13_DIALOGUE_SIZE_FIT",{})
+        row=table.get("contexts",{}).get(context_key) if context_key else table.get("people",{}).get(person)
+        if not row:return profiles
+        cache=globals().get("_r13_dialogue_size_cache",{})
+        key=(person,context_key,id(profiles))
+        cached=cache.get(key)
+        if cached and cached[0] is profiles:return cached[1]
+        signature={h:dict(canvas=p["canvas"],frames={k:[f["file"],f["offset"],f.get("scale",1.0)] for k,f in p["frames"].items()}) for h,p in profiles.items()}
+        # 승인 원본·프로필을 다시 납품하면 오래된 크기표를 임의로 적용하지 않는다.
+        result=row["profiles"] if signature==row["input_profiles"] else profiles
+        cache[key]=(profiles,result)
+        return result
 
 
     def r13_dialogue_plan(identity, index, packet, pose, cues, people, binding=None):
@@ -211,14 +228,18 @@ init 170 python:
         # 회의는 기존처럼 직접 정면 요청을 받은 단독 초점만 바꾸며, 다른 인물의 beat는 유지한다.
         if (player_facing and (not meeting or solo_focus)) or (person=="guard" and not meeting):
             profiles=r13_dialogue_player_profiles(person)
-            if profiles:return profiles
+            if profiles:
+                normalize=globals().get("r13_dialogue_size_profiles")
+                return normalize(person,profiles) if normalize else profiles
 
         # Approved B expressions are dialogue-only; meeting art keeps its original profiles.
         if not getattr(store,"r13_meeting_active",False) and globals().get("R13_DIALOGUE_B_ART_ON",True) and R13_DIALOGUE_B_ART.get(person):
             profiles=R13_DIALOGUE_B_ART[person]
         else:profiles=entry.get("profiles",{})
         # 시험(dev/test_b_dialogue_art.py)은 함수만 떼어 돌리므로 전역이 없으면 그대로 돌려준다.
-        return r13_closeup_smooth_profiles(person,profiles) if globals().get("R13_CLOSEUP_SMOOTH") else profiles
+        profiles=r13_closeup_smooth_profiles(person,profiles) if globals().get("R13_CLOSEUP_SMOOTH") else profiles
+        normalize=globals().get("r13_dialogue_size_profiles")
+        return normalize(person,profiles) if normalize and (not meeting or solo_focus) else profiles
 
     def r13_dialogue_source_profile(person,pose,height):
         # Authored poses retain their own smooth source, even during narration/thought.

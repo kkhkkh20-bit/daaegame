@@ -50,7 +50,12 @@ init 40 python:
         active=beat.get("person")==who
         token=(beat.get("context_key"),beat.get("talk"),beat.get("react")) if active else None
         context=(globals().get("R13_DIALOGUE_CONTEXT_ART",{}).get("entries",{}) or {}).get(beat.get("context_key"),{}) if active else {}
-        profile=r13_dialogue_fit_profile(context.get("profiles",{}),h) if context else r13_dialogue_source_profile(who,pose,h)
+        if context:
+            profiles=context.get("profiles",{})
+            normalize=globals().get("r13_dialogue_size_profiles")
+            if normalize:profiles=normalize(who,profiles,beat.get("context_key"))
+            profile=r13_dialogue_fit_profile(profiles,h)
+        else:profile=r13_dialogue_source_profile(who,pose,h)
         geometry=(tuple(profile["canvas"]),tuple((k,f["file"],tuple(f["offset"]),f.get("scale",1.0)) for k,f in sorted(profile["frames"].items()))) if profile else None
         key=(who,pose,h,token,geometry)
         if key not in _R13_SAY_DRAWN_TOP:

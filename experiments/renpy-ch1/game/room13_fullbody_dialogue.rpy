@@ -186,17 +186,36 @@ init 58 python:
     R13_QUESTION_FEET_LINE=704
 
     def r13_question_portrait_height(person,pose="interview_neutral"):
-        # 정면 원본은 전신이 들어가는 같은 질문용 크기를 쓴다. 일반 대사는 기존 근접 크기다.
+        # 승인된 일반 입석은 모두 질문 전신을 쓴다. 명시 자세·생각·회의는 기존 선택을 보존한다.
+        question=r13_dialogue_source_profile(person,pose,560)
+        if question and "question_top" in question:return 560
         front=r13_dialogue_player_profiles(person)
         chosen=r13_dialogue_source_profile(person,pose,840)
         return 560 if front and chosen is front.get("840") else 840
 
     def r13_question_close_y(person,height=840,top=110,pose="interview_neutral"):
         profile=r13_dialogue_source_profile(person,pose,height)
+        # 질문을 열 때 마지막 문맥 표정이 남아 있으면 그 실제 그림의 발 기준을 쓴다.
+        plan=getattr(globals().get("store"),"r13_dialogue_beat",None) or {}
+        if (height==560 and plan.get("person")==person and plan.get("context_key")
+                and not getattr(store,"r13_meeting_active",False) and not getattr(store,"r13_thought_active",False)
+                and r13_fullbody_key(pose) in R13_FULLBODY_PLAIN):
+            entry=globals().get("R13_DIALOGUE_CONTEXT_ART",{}).get("entries",{}).get(plan["context_key"],{})
+            profiles=entry.get("profiles",{})
+            normalize=globals().get("r13_dialogue_size_profiles")
+            if normalize:profiles=normalize(person,profiles,plan["context_key"])
+            context=r13_dialogue_fit_profile(profiles,height)
+            if context and "question_top" in context:return context["question_top"]
         if height==560 and profile and "question_top" in profile:
             return profile["question_top"]
         if profile and profile.get("dot_scale"):
             return int(round(R13_QUESTION_FEET_LINE*height/840.0-r13_dot_feet(profile)))
+        # 우체국 의자 자세는 키·그림을 바꾸지 않고 질문 화면의 바닥만 안으로 올린다.
+        poses=globals().get("R13_DIALOGUE_SIZE_FIT",{}).get("question_poses",{})
+        row=poses.get(person+":"+r13_fullbody_key(pose)) if poses else None
+        if row and profile and height==row["height"]:
+            signature=dict(canvas=profile["canvas"],frames={k:[f["file"],f["offset"],f.get("scale",1.0)] for k,f in profile["frames"].items()})
+            if signature==row["profile"]:return row["top"]
         return r13_close_y(person,height,top,pose)
 
     def r13_fullbody_line_emotion(identity,index,person,text,expression,pose):
@@ -216,10 +235,12 @@ init 58 python:
         # Redraw only the current conversation partner with the same speaker,
         # expression and pose; the line, choice and scene stay as saved.
         if not R13_FULLBODY_DIALOGUE or "r13_visitor" not in renpy.get_showing_tags():return
+        if getattr(store,"r13_camera","stage")!="stage":return
         choice_screen=renpy.get_screen("choice")
         actor=choice_screen.scope.get("choice_actor") if choice_screen else store.r13_motion_person
-        if actor not in CAST or not r13_fullbody_spec(actor,store.r13_current_pose):return
+        if actor not in CAST:return
         pose=choice_screen.scope.get("choice_pose",store.r13_current_pose) if choice_screen else store.r13_current_pose
+        if not r13_fullbody_spec(actor,pose) and not r13_dialogue_source_profile(actor,pose,r13_say_actor_h()):return
         saved_speaker=store.dialogue_speaker
         renpy.hide("r13_visitor")
         r13_speaker(actor,store.dialogue_expression,pose)

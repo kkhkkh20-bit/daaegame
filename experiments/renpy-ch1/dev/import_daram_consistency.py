@@ -127,6 +127,8 @@ def main():
                    question_visible_height=QUESTION_VISIBLE_HEIGHT,question_feet_line=708,sources=sources,
                    unchanged=['대사·바인딩','마차8착석','현장도트','기타작업특수','다른인물등록'],
                    scope='다람 일반6·활성몸짓8만. 전체 인물·전체 특수 그림의 작화 통일을 뜻하지 않는다.'))
+        from build_dialogue_size_fit import refresh_if_present
+        refresh_if_present()
     print(json.dumps(dict(general=len(GENERAL),active_context=len(CONTEXT),preserved_inactive=len(INACTIVE),
                          visible_height_840=VISIBLE_HEIGHT_840,applied=args.apply),ensure_ascii=False))
 
