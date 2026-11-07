@@ -190,19 +190,19 @@ testcase proof_reading_fire_empty_shared:
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_pw_part1_fire,True)
     run Jump("r13_v111_empty_fire_basis7")
-    pause until screen "r13_proof_workspace" timeout 40
+    pause until screen "r13_fire_links" timeout 40
     pause .5
     $ qa_pw_read_before=qa_pw_read_domain()
-    assert eval (v111_claim=="v111:불의 원인과 빈 창고 진압을 구분한다" and qa_pw_read_scope()["view"]=="list")
-    assert eval (not qa_pw_read_has("r13_pw_fold") and qa_pw_read_scope()["L"]["quote_h"]==0)
-    if eval (not qa_pw_read_has("r13_pw_check_E06_FIRE")):
-        click id "r13_pw_next" until eval qa_pw_read_has("r13_pw_check_E06_FIRE") timeout 20
-    click id "r13_pw_check_E06_FIRE"
-    assert eval (qa_pw_read_selection(["V111:E06_FIRE"]))
-    click id "r13_pw_open_E06_FIRE"
-    click id "r13_pw_origin"
+    assert eval (v111_claim=="v111:불의 원인과 빈 창고 진압을 구분한다" and qa_fire_link_row()["view"]=="board")
+    click id "r13_fire_slot_0"
+    click id "r13_fire_tab_all"
+    click id "r13_fire_pick_E06_FIRE"
+    assert eval (qa_pw_read_selection(["V111:E06_FIRE"]) and qa_fire_link_row()["roles"][0]=="V111:E06_FIRE")
+    click id "r13_fire_slot_0"
+    click id "r13_fire_read_E06_FIRE"
+    click id "r13_fire_origin"
     pause .3
-    assert eval (qa_pw_read_selection(["V111:E06_FIRE"]) and qa_pw_read_scope()["origin_open"])
+    assert eval (qa_pw_read_selection(["V111:E06_FIRE"]) and qa_fire_link_row()["origin"])
     assert eval (qa_pw_read_domain()==qa_pw_read_before and r13_v111_value("meeting:fire") is None)
     screenshot "part1-fire-empty-read-keeps-selection.png"
 
@@ -213,19 +213,19 @@ testcase proof_reading_fire_rescue_shared:
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_pw_part1_fire,False)
     run Jump("r13_v111_rescue_fire_basis7")
-    pause until screen "r13_proof_workspace" timeout 40
+    pause until screen "r13_fire_links" timeout 40
     pause .5
     $ qa_pw_read_before=qa_pw_read_domain()
-    assert eval (v111_claim=="v111:불의 원인과 아이 구조를 구분한다" and qa_pw_read_scope()["view"]=="list")
-    assert eval (not qa_pw_read_has("r13_pw_fold") and qa_pw_read_scope()["L"]["quote_h"]==0)
-    if eval (not qa_pw_read_has("r13_pw_check_E06_FIRE")):
-        click id "r13_pw_next" until eval qa_pw_read_has("r13_pw_check_E06_FIRE") timeout 20
-    click id "r13_pw_check_E06_FIRE"
-    assert eval (qa_pw_read_selection(["V111:E06_FIRE"]))
-    click id "r13_pw_open_E06_FIRE"
-    click id "r13_pw_origin"
+    assert eval (v111_claim=="v111:불의 원인과 아이 구조를 구분한다" and qa_fire_link_row()["view"]=="board")
+    click id "r13_fire_slot_0"
+    click id "r13_fire_tab_all"
+    click id "r13_fire_pick_E06_FIRE"
+    assert eval (qa_pw_read_selection(["V111:E06_FIRE"]) and qa_fire_link_row()["roles"][0]=="V111:E06_FIRE")
+    click id "r13_fire_slot_0"
+    click id "r13_fire_read_E06_FIRE"
+    click id "r13_fire_origin"
     pause .3
-    assert eval (qa_pw_read_selection(["V111:E06_FIRE"]) and qa_pw_read_scope()["origin_open"])
+    assert eval (qa_pw_read_selection(["V111:E06_FIRE"]) and qa_fire_link_row()["origin"])
     assert eval (qa_pw_read_domain()==qa_pw_read_before and r13_v111_value("meeting:fire") is None)
     screenshot "part1-fire-rescue-read-keeps-selection.png"
 

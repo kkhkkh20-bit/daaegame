@@ -562,22 +562,12 @@ label r13_v111_nubi_hypothesis7:
     if not r13_v111_value("fire_lamp_defense_heard"):
         call r13_lines(r13_nw_block('nubi_lamp_defense7'),'nw:nubi_lamp_defense7')
         $ r13_v111_set("fire_lamp_defense_heard",True)
-    if r13_v111_value("fire_origin_hypothesis"):
-        jump r13_v111_nubi_proof7
-    menu:
-        '등잔에서 문 쪽으로 불이 번졌다':
-            call r13_lines(r13_nw_block('nubi_owner_rebut7'),'nw:nubi_owner_rebut7')
-            jump r13_v111_nubi_hypothesis7
-        '문 쪽 천에서 안으로 불이 번졌다':
-            $ r13_v111_set("fire_origin_hypothesis",True)
-        '뒤창 장작에서 안으로 불이 번졌다':
-            call r13_lines(r13_nw_block('nubi_presence_rebut7'),'nw:nubi_presence_rebut7')
-            jump r13_v111_nubi_hypothesis7
+    # 0.20.117: 관찰과 목격을 한 번에 연결한다. 보기 하나로 가설을 확정하지 않는다.
     jump r13_v111_nubi_proof7
 
 label r13_v111_nubi_proof7:
     $ r13_meeting_checkpoint("fire")
-    if not r13_v111_value("fire_origin_hypothesis"):
+    if not r13_v111_value("bori_nubi_door_witness_heard") or not r13_v111_value("fire_lamp_defense_heard"):
         jump r13_v111_nubi_hypothesis7
     call r13_v111_proof('불이 시작된 곳과 진술을 대조한다',['E06_FIRE'],'r13_v111_nubi_first_question7','r13_v111_nubi_wrong7',None,review_return='r13_v111_bori_witness7')
     jump expression _return
@@ -602,6 +592,7 @@ label r13_v111_nubi_first_question7:
     if not r13_v111_value("fire_lamp_defense_heard"):
         call r13_lines(r13_nw_block('nubi_lamp_defense7'),'nw:nubi_lamp_defense7:old_success')
         $ r13_v111_set("fire_lamp_defense_heard",True)
+    $ r13_v111_set("fire_origin_hypothesis",True)
     call r13_lines(r13_nw_block('nubi_origin_checked7'),'nw:nubi_origin_checked7')
     jump r13_v111_nubi_admission7
 

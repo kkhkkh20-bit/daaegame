@@ -1,0 +1,29 @@
+{
+  "version": "0.20.117",
+  "scope": "이전 실제6일말 진행 저장을 복사해7일 화재의 관찰 연결·자백·책임 구분·학교 인수를 실제 UI로 검사. 자동화 도우미를 보완하며 구간을 같은 진행 저장에서 이어 검증했다. 새 게임부터7일까지의 연속 재주행이나 초견 이용자 시험이 아니다.",
+  "stop": {
+    "day": 7,
+    "gate": "free_day7",
+    "location": "school"
+  },
+  "checks": [
+    "첫 연결과 질문 실제 제출",
+    "설정의 실제6칸 저장·불러오기로 중간 관찰·제출 자료·기회·보유 사실 복원",
+    "자백 뒤 불의 흔적·누비 근거·빈 창고 진압 배치와 승리",
+    "PC1280×720·휴대폰844×390 및 큰 글씨",
+    "학교 인수와7일 오후 도달"
+  ],
+  "values": {
+    "meeting:fire": "win",
+    "tries:fire": null,
+    "NUBI_admitted_setting_fire": true,
+    "NUBI_intent_to_kill": "unproven",
+    "FIRE_EVACUATED": true,
+    "KKOMI_ALIVE": true,
+    "D07_S02_handover_completed": true,
+    "D07_S02_message_completed": true,
+    "grand:fire": null,
+    "neoul_promise_proven": null
+  },
+  "page_errors": []
+}

@@ -98,15 +98,33 @@ testcase v111_gw_fire_grand:
     run Function(r13_edit,location="school")
     run Function(r13_v111_arrive,["nabi","resident_bori","resident_nubi","neoul"])
     run Jump("r13_v111_rescue_fire_basis7")
-    pause 1.5
-    assert screen "r13_proof_workspace"
-    click id "r13_pw_check_E06_FIRE"
-    pause 0.8
-    click id "r13_pw_check_E06_RESCUE"
-    pause 0.8
-    click id "r13_pw_check_NW_NUBI_TICKET"
-    pause 0.8
-    click id "r13_pw_submit"
+    pause until screen "r13_fire_links" timeout 45
+    pause .5
+    click id "r13_fire_slot_0"
+    pause .3
+    click id "r13_fire_tab_all"
+    pause .3
+    if eval (renpy.get_widget("r13_fire_links","r13_fire_pick_E06_FIRE") is None):
+        click id "r13_fire_next" until eval (renpy.get_widget("r13_fire_links","r13_fire_pick_E06_FIRE") is not None) timeout 20
+    click id "r13_fire_pick_E06_FIRE"
+    pause .3
+    click id "r13_fire_slot_1"
+    pause .3
+    click id "r13_fire_tab_all"
+    pause .3
+    if eval (renpy.get_widget("r13_fire_links","r13_fire_pick_NW_NUBI_TICKET") is None):
+        click id "r13_fire_next" until eval (renpy.get_widget("r13_fire_links","r13_fire_pick_NW_NUBI_TICKET") is not None) timeout 20
+    click id "r13_fire_pick_NW_NUBI_TICKET"
+    pause .3
+    click id "r13_fire_slot_2"
+    pause .3
+    click id "r13_fire_tab_all"
+    pause .3
+    if eval (renpy.get_widget("r13_fire_links","r13_fire_pick_E06_RESCUE") is None):
+        click id "r13_fire_next" until eval (renpy.get_widget("r13_fire_links","r13_fire_pick_E06_RESCUE") is not None) timeout 20
+    click id "r13_fire_pick_E06_RESCUE"
+    pause .3
+    click id "r13_fire_submit"
     click pos (900,600) until eval (qa_nw_seen("너울이 이번에는 그 종이를 본다")) timeout 120
     assert eval (r13_v111_value("meeting:fire")=="win" and r13_v111_value("grand:fire") is True and r13_v111_value("neoul_promise_proven") is True)
     assert eval (qa_nw_seen("기록철 사이에 끼운다") and not qa_nw_seen("끝까지 그 종이를 보지 않는다"))
@@ -122,14 +140,33 @@ testcase v111_gw_fire_plain:
     run Function(r13_edit,location="school")
     run Function(r13_v111_arrive,["nabi","resident_bori","resident_nubi","neoul"])
     run Jump("r13_v111_rescue_fire_basis7")
-    pause 1.5
-    click id "r13_pw_check_E06_FIRE"
-    pause 0.8
-    click id "r13_pw_check_E06_RESCUE"
-    pause 0.8
-    click id "r13_pw_check_E07_NUBI"
-    pause 0.8
-    click id "r13_pw_submit"
+    pause until screen "r13_fire_links" timeout 45
+    pause .5
+    click id "r13_fire_slot_0"
+    pause .3
+    click id "r13_fire_tab_all"
+    pause .3
+    if eval (renpy.get_widget("r13_fire_links","r13_fire_pick_E06_FIRE") is None):
+        click id "r13_fire_next" until eval (renpy.get_widget("r13_fire_links","r13_fire_pick_E06_FIRE") is not None) timeout 20
+    click id "r13_fire_pick_E06_FIRE"
+    pause .3
+    click id "r13_fire_slot_1"
+    pause .3
+    click id "r13_fire_tab_all"
+    pause .3
+    if eval (renpy.get_widget("r13_fire_links","r13_fire_pick_E07_NUBI") is None):
+        click id "r13_fire_next" until eval (renpy.get_widget("r13_fire_links","r13_fire_pick_E07_NUBI") is not None) timeout 20
+    click id "r13_fire_pick_E07_NUBI"
+    pause .3
+    click id "r13_fire_slot_2"
+    pause .3
+    click id "r13_fire_tab_all"
+    pause .3
+    if eval (renpy.get_widget("r13_fire_links","r13_fire_pick_E06_RESCUE") is None):
+        click id "r13_fire_next" until eval (renpy.get_widget("r13_fire_links","r13_fire_pick_E06_RESCUE") is not None) timeout 20
+    click id "r13_fire_pick_E06_RESCUE"
+    pause .3
+    click id "r13_fire_submit"
     click pos (900,600) until eval (qa_nw_seen("끝까지 그 종이를 보지 않는다")) timeout 120
     assert eval (r13_v111_value("meeting:fire")=="win" and r13_v111_value("grand:fire") is not True and r13_v111_value("neoul_promise_proven") is not True)
     assert eval (not qa_nw_seen("기록철 사이에 끼운다"))

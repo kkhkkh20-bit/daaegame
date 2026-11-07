@@ -438,7 +438,9 @@ label r13_v111_proof_again:
     # 2026-10-27 UX 인계서 D01~D03·D06: 시범 쟁점(systems/room13_proof_workspace.rpy R13_PW_CONTEXT)은 통합 화면.
     # 반환값("argue"/"press"/"investigate"/("remove",키)/("toggle",키))은 아래 기존 분기로 그대로 흐른다.
     # 그 밖의 쟁점과 옛 캠페인은 기존 자료 대조 패널 + 자료 고르기 책(r13_v111_proof_pick)이다.
-    if r13_pw_active(key):
+    if r13_fire_links_active(key):
+        call screen r13_fire_links(v111_claim,key,can_press=bool(hint) or key in R13_PROOF_RANGE,investigate=bool(review_return),chances=r13_v111_proof_chances(key))
+    elif r13_pw_active(key):
         call screen r13_proof_workspace(v111_claim,key,can_press=bool(hint) or key in R13_PROOF_RANGE,investigate=bool(review_return),chances=r13_v111_proof_chances(key))
     else:
         call screen r13_crisis_proof(v111_claim,heading="기록 · 자료 대조",can_press=bool(hint) or key in R13_PROOF_RANGE,need_evidence=True,leave_label="자료 다시 보기",chances=r13_v111_proof_chances(key),investigate=bool(review_return))
