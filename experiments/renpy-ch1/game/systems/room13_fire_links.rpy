@@ -239,7 +239,7 @@ screen r13_fire_links(claim,key,can_press=False,investigate=False,chances=None):
             use r13_control("들은 말 읽기",None,Function(r13_fire_links_change,claim,view="words"),enabled=ready,width=230,height=footer_h,label_size=small,control_id="r13_fire_words")
         fixed:
             xpos 386 ypos footer_y xysize (230,footer_h)
-            use r13_control("조사 계속" if investigate else "자료 읽기",None,Return("investigate") if investigate else Function(r13_fire_links_change,claim,view="library",field=None,page=0),enabled=ready,width=230,height=footer_h,label_size=small,control_id="r13_fire_investigate")
+            use r13_control("현장으로" if investigate else "자료 읽기",None,Return("investigate") if investigate else Function(r13_fire_links_change,claim,view="library",field=None,page=0),enabled=ready,width=230,height=footer_h,label_size=small,control_id="r13_fire_investigate")
         fixed:
             xpos 630 ypos footer_y xysize (240,footer_h)
             use r13_control("자료 읽기" if first else "덧붙일 자료",None,Function(r13_fire_links_change,claim,view="library",field=None if first else "extra",page=0,library_return="board"),enabled=ready,width=240,height=footer_h,label_size=small,control_id="r13_fire_materials")

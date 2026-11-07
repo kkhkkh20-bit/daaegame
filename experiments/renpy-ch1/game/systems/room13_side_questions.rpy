@@ -73,9 +73,8 @@ init 80 python:
         return Fixed(Transform(Crop((16,16,640,84),path),zoom=width/640.0,align=(.5,.5)))
 
     def r13_notebook_question_surface(read=False,focused=False):
-        # 2026-10-26 소유자: 「클릭하는 임팩트가 없고 버튼인지 헷갈려」. 올리면 따뜻한 바탕과 왼쪽 빨간 줄이 생긴다.
-        if not focused:return Solid("#00000000")
-        return Fixed(Solid("#f3dcb0d9"),Transform(Solid("#b83b32"),xsize=6))
+        # 호버가 없는 휴대폰에서도 행 전체가 누르는 종이임을 보인다. 읽은 표시는 글자·체크로 유지한다.
+        return Transform(R13SoftButtonSurface(hovered=focused),alpha=(1.0 if focused else .45 if read else .65))
 
     def r13_notebook_button_icon(icon,color="#503525"):
         boxes={"icon_document":(14,8,36,48),"icon_book_open":(8,18,48,27),"icon_arrow_left_bold":(8,18,48,27),"b_icon_more":(16,20,32,24)}
@@ -147,7 +146,6 @@ screen r13_side_question_list(person,pose,entries,ready,return_action=None,capti
                 activate_sound R13_MAP_TICK
                 at r13_question_row_motion
                 fixed:
-                    add Solid("#8c71552b",xsize=L["width"]-(52 if r13_touch_ui() else 32),ysize=1) xpos (36 if r13_touch_ui() else 16) ypos (height-1)
                     if len(r13_question_summary(label))<15:
                         add Transform(r13_notebook_lineart(label),xysize=(204,78),alpha=.22) xalign 1.0 yalign .5
                     add Transform(Crop((20,16,24,32),r13_asset_path("file:assets/ui-b-question/b_icon_acorn_done.png") if read else r13_asset_path("file:assets/ui-b-question/b_icon_acorn.png")),xysize=(27,36)) xpos (L["text_left"]-62) yalign .5

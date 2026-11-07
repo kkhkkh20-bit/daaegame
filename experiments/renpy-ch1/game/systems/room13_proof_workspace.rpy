@@ -681,7 +681,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     if quote_text:
         fixed:
             xpos 982 ypos 54 xysize (176,64 if not touch else 88)
-            use r13_control("발언 접기" if quote_open else "발언 보기",None,ToggleScreenVariable("quote_open"),enabled=ready,width=176,height=(64 if not touch else 88),label_size=small,control_id="r13_pw_fold")
+            use r13_control(("안내 접기" if quote_open else "비교 안내") if mode=="compare" else ("발언 접기" if quote_open else "발언 보기"),None,ToggleScreenVariable("quote_open"),enabled=ready,width=176,height=(64 if not touch else 88),label_size=small,control_id="r13_pw_fold")
     if quote_open and layout_quote:
         frame:
             area (L["left"],L["quote_y"],L["width"],L["quote_h"]) padding (16,10) background r13_field_paper()
@@ -745,7 +745,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
         text ("현재 두 장" if pair_submission else "체크로 두 장" if mode=="compare" and len(chosen)<2 else "제출 자료" if persistent.room13_pw_controls_seen else "체크로 선택") size small color muted font R13_UI_FONT
     $ secondary=[]
     if can_review:
-        $ secondary.append(("조사 계속",review_action,"r13_pw_investigate"))
+        $ secondary.append(("현장으로",review_action,"r13_pw_investigate"))
     if view=="pair" and r13_pw_observe_available(key,live_pair):
         $ secondary.append(("짚기 그만" if observe else "문서 짚기",[Function(r13_pw_remember_pair,claim,pair),SetScreenVariable("quote_open",False),ToggleScreenVariable("observe")],"r13_pw_observe"))
     if can_press:

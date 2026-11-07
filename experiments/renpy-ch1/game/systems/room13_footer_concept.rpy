@@ -11,7 +11,7 @@ screen r13_concept_more():
     # 2026-10-27 소유자 "대화 도구에 불필요한 건 다 삭제해": 자료 기록(허브의 기록), 저장·불러오기·메인화면(설정),
     # 다시 시작할 아침은 뺐다. 대화를 읽는 데 필요한 것만 남긴다.
     $ items=[("대화 기록","backlog",[Hide("r13_more_tools"),Show("r13_backlog")],True),
-        ("자동 읽기","auto",[Hide("r13_more_tools"),Preference("auto-forward","toggle")],active),
+        ("자동 읽기 켜짐" if _preferences.afm_enable else "자동 읽기 꺼짐","auto",[Hide("r13_more_tools"),Preference("auto-forward","toggle")],active),
         ("읽은 대사 빠르게","skip",[Hide("r13_more_tools"),Function(r13_toggle_read_skip)],active),
         ("대화창 숨기기","dialogue",[Hide("r13_more_tools"),HideInterface()],active),
         ("설정","settings",[Hide("r13_more_tools"),ShowMenu("pause_menu")],True)]
@@ -20,8 +20,9 @@ screen r13_concept_more():
     button:
         area (0,0,1280,720) background None action Hide("r13_more_tools") alt "닫기"
     $ row_height=88 if r13_touch_ui() else 64
+    $ header_height=row_height
     $ menu_rows=(len(items)+1)//2
-    $ panel_height=menu_rows*(row_height+16)+74
+    $ panel_height=menu_rows*(row_height+16)+header_height+44
     # Same paper and navy notebook material as the approved settings screen.
     frame:
         # 2026-10-27 소유자: 제목이 왼쪽에 쏠리고 고리가 버튼 왼쪽을 덮었다. 왼쪽 여백을 고리 폭만큼(56) 둔다.
@@ -29,7 +30,12 @@ screen r13_concept_more():
         vbox:
             spacing 16
             # 2026-10-27 타이포 시안: 더보기 판 제목 subtitle, 항목 body(종이 위 ink, 비활성 disabled).
-            text "대화 도구" size (r13_type("subtitle")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT
+            fixed:
+                xysize (592,header_height)
+                text "대화 도구" yalign .5 size r13_type("subtitle") color r13_type_color("ink") font R13_UI_BOLD_FONT
+                fixed:
+                    xpos 488 xysize (104,header_height)
+                    use r13_control("닫기",None,Hide("r13_more_tools"),width=104,height=header_height,label_size=r13_type("body"),control_id="r13_more_close")
             # 항목이 홀수면 마지막 것은 두 칸 폭으로 두어 빈칸이 남지 않게 한다(2026-10-27 검수).
             $ paired=items[:len(items)-(len(items)%2)]
             $ paired_rows=len(paired)//2
