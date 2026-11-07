@@ -121,6 +121,27 @@ class FireLinkModel(unittest.TestCase):
             self.assertFalse(available("V111:E06", owned))
             self.assertEqual(owned, before)
 
+    def test_sources_are_derived_from_selected_owned_facts_without_assuming_verdict(self):
+        sources=self.ns["r13_fire_link_sources"]
+        facts=self.ns["r13_fire_link_observations"](self.owned,True)
+        for selected,expected in ((["lamp","door"],["V111:E06_FIRE"]),
+                                  (["door","witness"],["V111:E06_FIRE"]),
+                                  (["bori","door"],["V111:E06_EMPTY","V111:E06_FIRE"]),
+                                  (["witness",None],[]),(["missing","lamp"],["V111:E06_FIRE"])):
+            row=dict(observations=selected,materials=[],source_manual=False)
+            before=copy.deepcopy((row,self.owned,facts))
+            self.assertEqual(sources(row,self.owned,facts),expected)
+            self.assertEqual((row,self.owned,facts),before)
+        self.assertEqual(sources(dict(observations=["lamp","door"]),[],[]),[])
+
+    def test_source_changes_and_legacy_materials_are_not_replaced_with_correct_record(self):
+        sources=self.ns["r13_fire_link_sources"]
+        facts=self.ns["r13_fire_link_observations"](self.owned,True)
+        for row in (dict(observations=["lamp","door"],materials=["V111:E01"]),
+                    dict(observations=["door","witness"],materials=["V111:E01"],source_manual=True)):
+            self.assertEqual(sources(row,self.owned,facts),["V111:E01"])
+        self.assertEqual(sources(dict(observations=["lamp","door"],materials=["V111:E99"],source_manual=True),self.owned,facts),[])
+
     def test_first_checks_two_observations_and_question_as_one_combination(self):
         # 물증끼리 대조하거나 문 앞 흔적과 실제 목격을 연결하는 두 설명을 허용한다.
         questions = ("door", "lamp_keeper", "wood_owner")
@@ -289,6 +310,64 @@ class FireLinkRuntime(unittest.TestCase):
         self.ns["r13_fire_links_pick"](self.claim, ORIGIN, "obs0", "witness")
         self.ns["r13_fire_links_pick"](self.claim, ORIGIN, "materials", "V111:E99")
         self.assertEqual((self.ns["r13_fire_link_views"], self.room), before)
+
+    def test_picking_facts_only_proposes_sources_until_explicit_confirm(self):
+        before=copy.deepcopy((self.values,self.owned))
+        for field,value in (("obs0","lamp"),("obs1","door"),("question","door")):
+            self.ns["r13_fire_links_pick"](self.claim,ORIGIN,field,value)
+        row=self.ns["r13_fire_links_state"](self.claim)
+        self.assertEqual(row["materials"],[])
+        self.assertFalse(row["source_manual"])
+        self.assertEqual(self.room["arguments"].get(self.claim,[]),[])
+        self.ns["r13_fire_links_change"](self.claim,view="sources")
+        self.assertEqual(self.room["arguments"].get(self.claim,[]),[])
+        self.assertEqual(self.ended,[])
+        self.ns["r13_fire_links_submit"](self.claim,ORIGIN)
+        self.assertEqual(self.room["arguments"][self.claim],["V111:E06_FIRE"])
+        self.assertEqual(self.ended,["argue"])
+        self.assertEqual((self.values,self.owned),before)
+
+    def test_source_editor_preserves_explicit_wrong_selection_for_original_verdict(self):
+        for field,value in (("obs0","door"),("obs1","witness"),("question","door")):
+            self.ns["r13_fire_links_pick"](self.claim,ORIGIN,field,value)
+        self.ns["r13_fire_links_edit_sources"](self.claim)
+        row=self.ns["r13_fire_links_state"](self.claim)
+        self.assertEqual(row["materials"],["V111:E06_FIRE"])
+        self.assertTrue(row["source_manual"])
+        self.assertEqual(self.room["arguments"].get(self.claim,[]),[])
+        self.ns["r13_fire_links_pick"](self.claim,ORIGIN,"materials","V111:E06_FIRE")
+        self.ns["r13_fire_links_pick"](self.claim,ORIGIN,"materials","V111:E01")
+        self.ns["r13_fire_links_submit"](self.claim,ORIGIN)
+        self.assertEqual(self.room["arguments"][self.claim],["V111:E01"])
+        self.assertEqual(self.ended,["argue"])
+
+    def test_source_preview_save_round_trip_has_no_story_or_argument_mutation(self):
+        for field,value in (("obs0","door"),("obs1","witness"),("question","door")):
+            self.ns["r13_fire_links_pick"](self.claim,ORIGIN,field,value)
+        self.ns["r13_fire_links_change"](self.claim,view="sources")
+        saved=copy.deepcopy(self.ns["r13_fire_links_state"](self.claim))
+        domain=copy.deepcopy(self.room)
+        self.ns["r13_fire_link_views"]=json.loads(json.dumps(self.ns["r13_fire_link_views"]))
+        self.ns["r13_fire_links_enter"](self.claim,ORIGIN)
+        self.assertEqual(self.ns["r13_fire_links_state"](self.claim),saved)
+        self.assertEqual(self.room,domain)
+        self.assertEqual(self.ended,[])
+
+    def test_pending_manual_source_survives_save_before_any_submission(self):
+        for field,value in (("obs0","lamp"),("obs1","door"),("question","door")):
+            self.ns["r13_fire_links_pick"](self.claim,ORIGIN,field,value)
+        self.ns["r13_fire_links_edit_sources"](self.claim)
+        self.ns["r13_fire_links_pick"](self.claim,ORIGIN,"materials","V111:E06_FIRE")
+        self.ns["r13_fire_links_pick"](self.claim,ORIGIN,"materials","V111:E01")
+        draft=copy.deepcopy(self.ns["r13_fire_links_state"](self.claim))
+        self.assertTrue(draft["source_pending"])
+        self.assertEqual(draft["materials"],["V111:E01"])
+        domain=copy.deepcopy(self.room)
+        self.ns["r13_fire_link_views"]=json.loads(json.dumps(self.ns["r13_fire_link_views"]))
+        self.ns["r13_fire_links_enter"](self.claim,ORIGIN)
+        self.assertEqual(self.ns["r13_fire_links_state"](self.claim),draft)
+        self.assertEqual(self.room,domain)
+        self.assertEqual(self.ended,[])
 
     def test_saved_partial_connection_restores_without_granting_story_progress(self):
         row = dict(view="choices", field="obs1", observations=["door", None],

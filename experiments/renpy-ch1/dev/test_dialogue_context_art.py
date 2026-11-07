@@ -17,14 +17,15 @@ class ContextArt(unittest.TestCase):
    self.assertIsNone(match(cue['identity']+'other',*args[1:],'neutral'))
    self.assertIsNone(match(cue['identity'],cue['index'],('mom',cue['text']),'neutral'))
  def test_profiles_preserve_normal_canvas_and_have_files(self):
-  base=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people'];self.assertEqual(len(base),59);self.assertTrue({'bami:small_relief','resident_lamplighter:guarded_relief','kid_kkomi:resilient_pride','resident_tosil:empathetic_confusion'}.issubset(self.data['entries']))
+  base=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people'];front=json.loads((ROOT/'game/assets/room13-dialogue-player-facing.json').read_text())['people'];self.assertEqual(len(base),59);self.assertTrue({'bami:small_relief','resident_lamplighter:guarded_relief','kid_kkomi:resilient_pride','resident_tosil:empathetic_confusion'}.issubset(self.data['entries']))
   for entry in self.data['entries'].values():
    for height,p in entry['profiles'].items():
-    self.assertEqual(p['canvas'],base[entry['person']]['profiles'][height]['canvas'])
+    reference=front[entry['person']] if entry.get('art_revision')=='daram-consistency-20261107' else base[entry['person']]
+    self.assertEqual(p['canvas'],reference['profiles'][height]['canvas'])
     for f in p['frames'].values():
      with Image.open(ROOT/'game'/f['file']) as im:
       b=im.getchannel('A').point(lambda a:255 if a>=16 else 0).getbbox()
-     x,y=f['offset'];self.assertGreaterEqual(x+b[0],0);self.assertGreaterEqual(y+b[1],0);self.assertLessEqual(x+b[2],p['canvas'][0]);self.assertLessEqual(y+b[3],p['canvas'][1])
+     x,y=f['offset'];scale=f.get('scale',1);self.assertGreaterEqual(x+b[0]*scale,0);self.assertGreaterEqual(y+b[1]*scale,0);self.assertLessEqual(x+b[2]*scale,p['canvas'][0]);self.assertLessEqual(y+b[3]*scale,p['canvas'][1])
  def test_wrong_mother_role_is_not_registered(self):
   self.assertFalse(any(e['person'] in ('mom','chorong_mother') for e in self.data['entries'].values()))
 

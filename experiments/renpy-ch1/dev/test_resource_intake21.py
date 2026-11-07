@@ -77,6 +77,7 @@ class ResourceIntake(unittest.TestCase):
    with self.assertRaises(AssertionError):refresh(path,'bindings')
  def test_common_daram_scale_and_neutral_foot_canvas(self):
   base=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people']
+  front=json.loads((ROOT/'game/assets/room13-dialogue-player-facing.json').read_text())['people']
   rows=self.receipt['profiles'];self.assertEqual(len(rows),48)
   for height in ('560','760','840'):
    daram=[r for r in rows if r['person']=='daram' and r['height']==height]
@@ -89,9 +90,22 @@ class ResourceIntake(unittest.TestCase):
    with Image.open(ROOT/'game'/f['file']) as im:bb=im.getchannel('A').point(lambda a:255 if a>=16 else 0).getbbox()
    self.assertEqual(row['foot'],f['offset'][1]+bb[3])
    self.assertEqual(row['canvas'],p['canvas'])
-   profile=self.data['entries'][row['person']+':'+row['slot']]['profiles'][row['height']]
+   entry=self.data['entries'][row['person']+':'+row['slot']]
+   profile=entry['profiles'][row['height']]
    path=ROOT/'game'/profile['frames'][row['slot']]['file']
-   self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),row['output_sha256'])
+   # 48행 영수증과 받은 옛 출력은 새 작화와 별개로 계속 보존·검증한다.
+   legacy=ROOT/'game/assets/dialogue-context-master'/row['person']/row['height']/(row['slot']+'.webp')
+   self.assertEqual(hashlib.sha256(legacy.read_bytes()).hexdigest(),row['output_sha256'])
+   if entry.get('art_revision')=='daram-consistency-20261107':
+    from import_daram_consistency import CONTEXT,VISIBLE_HEIGHT_840,QUESTION_VISIBLE_HEIGHT
+    self.assertEqual(row['person'],'daram');self.assertIn(row['slot'],CONTEXT)
+    self.assertEqual(profile['canvas'],front['daram']['profiles'][row['height']]['canvas'])
+    frame=profile['frames'][row['slot']]
+    self.assertTrue(frame['file'].startswith('assets/dialogue-player-facing/daram-consistency-20261107/'))
+    with Image.open(path) as im:bounds=im.getchannel('A').point(lambda a:255 if a>=40 else 0).getbbox()
+    visible=QUESTION_VISIBLE_HEIGHT if row['height']=='560' else VISIBLE_HEIGHT_840*int(row['height'])/840
+    self.assertAlmostEqual((bounds[3]-bounds[1])*frame['scale'],visible,delta=.00001)
+   else:self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),row['output_sha256'])
  def test_context_application_does_not_touch_story_state(self):
   source=(ROOT/'game/systems/room13_dialogue_context_art.rpy').read_text().split('init 172 python:\n',1)[1]
   source=source[source.index('    def r13_dialogue_context_match'):]
@@ -115,7 +129,8 @@ class ResourceIntake(unittest.TestCase):
    if cue.get('batch')!=BATCH or cue['person']!='daram':continue
    for profile in data[cue['key']]['profiles'].values():
     path=profile['frames'][cue['slot']]['file']
-    self.assertEqual(startup_media(path,set()),cue['slot']=='intake21_01_bravado',path)
+    refreshed=data[cue['key']].get('art_revision')=='daram-consistency-20261107'
+    self.assertEqual(startup_media(path,set()),not refreshed and cue['slot']=='intake21_01_bravado',path)
  def test_held_icons_are_not_registered(self):
   records=json.loads((ROOT/'game/v111/records.json').read_text())['records']
   for asset in self.receipt['held_icons']['assets']:

@@ -99,6 +99,7 @@ class PlayReviewField(unittest.TestCase):
                           Text=lambda text, **kw: text,
                           renpy=SimpleNamespace(render=lambda text,*a: SimpleNamespace(get_size=lambda: (506, 60 if len(text)>20 else 28))))
                 upper=load_function('game/systems/room13_side_questions.rpy','r13_notebook_topic_y',ns)()
+                ns['r13_side_question_layout']=load_function('game/systems/room13_side_questions.rpy', 'r13_side_question_layout', ns)
                 pages = load_function('game/systems/room13_side_questions.rpy', 'r13_side_question_pages', ns)
                 entries = [('반복 확인하는 긴 질문입니다. '+str(i), i, False) for i in range(30)]
                 result = pages(entries)

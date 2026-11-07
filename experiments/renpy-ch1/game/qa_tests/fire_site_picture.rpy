@@ -21,10 +21,6 @@ testcase fire_site_picture_restore_and_back:
     pause .4
     click id 'r13_fire_slot_0'
     click id 'r13_fire_choice_lamp'
-    click id 'r13_fire_materials'
-    click id 'r13_fire_tab_all'
-    click id 'r13_fire_pick_E06_FIRE'
-    click id 'r13_fire_back'
     run Function(qa_fire_site_remember)
     click id 'r13_fire_site'
     pause .5
@@ -47,7 +43,7 @@ testcase fire_site_picture_restore_and_back:
     assert screen 'r13_fire_links'
     assert not screen 'r13_pw_picture'
     assert eval (qa_fire_link_domain()==renpy.test.fire_site_domain and room13['arguments']==renpy.test.fire_site_arguments)
-    assert eval (qa_fire_link_row()['observations']==['lamp',None] and room13['arguments'][v111_claim]==['V111:E06_FIRE'])
+    assert eval (qa_fire_link_row()['observations']==['lamp',None] and not room13['arguments'][v111_claim])
     $ qa_site_touch_before=r13_touch_ui
     $ qa_site_large_before=persistent.room13_large_text
     $ r13_touch_ui=lambda:True

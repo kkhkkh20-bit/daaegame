@@ -3694,6 +3694,64 @@
         "기존 서술과 다른 단서를 만들지 않는다",
         "확대·닫기·자료 보유 조건·저장 복원 확인"
       ]
+    },
+    {
+      "id": "DARAM119-CONSISTENCY",
+      "title": "다람 대화 표정과 전용 몸짓의 작화 통일",
+      "kind": "인물",
+      "status": "delivered_linked",
+      "priority": "P1",
+      "description": "판매 준비 리뷰에서 일반 표정·다른 주민·전용 몸짓의 도트 밀도와 얼굴 비율 차이 확인. 일반6표정과 현재사용8몸짓을 같은 정면 원화 기준으로 제작하고 몸짓 순간 아이 크기 확대도 수정한다. 원화14장과 WebP14장 납품·연결, 동일canvas/일반·몸짓키와 질문용2/3키 검증.",
+      "scenes": [
+        "1부1~7일 일반대화",
+        "다람 전용몸짓 대화"
+      ],
+      "branches": [
+        "공통"
+      ],
+      "references": [
+        "game/assets/dialogue-source-master-v2/daram/760/neutral.webp",
+        "game/assets/dialogue-source-master/resident_bori/760/neutral.webp",
+        "game/assets/dialogue-context-master/daram/760/intake21_10_resolve.webp",
+        "art/daram-consistency-20261107/import-manifest.json",
+        "game/assets/dialogue-player-facing/daram-consistency-20261107/neutral.webp"
+      ],
+      "sources": [
+        "game/systems/room13_dialogue_beats.rpy",
+        "game/systems/room13_dialogue_context_art.rpy"
+      ],
+      "approved_scope": "2026-11-07 소유자: 그러면 개선하자",
+      "contract": {
+        "states": [
+          "일반6표정",
+          "현재사용8몸짓"
+        ],
+        "transparent": true,
+        "size_rule": "개별1024×1536 이상 RGBA, 발끝까지, 프로필560/760/840에서 같은 아이 키",
+        "delivery": [
+          "독립 PNG원본14장",
+          "품질95 WebP14장",
+          "검수표"
+        ]
+      },
+      "required": [
+        "현재다람의빨간모자·리본·큰줄무늬꼬리·남색옷·청록브로치·수첩·가방 유지",
+        "주민과어울리는섬세한도트·또렷한윤곽",
+        "동일한눈크기·얼굴비율·조명·옷 색",
+        "전용몸짓의 의미와 일반대사 대비 아이크기 유지"
+      ],
+      "avoid": [
+        "흰스티커테두리·회색배경·발끝잘림",
+        "몸짓순간키커짐",
+        "삭제된코믹포즈바인딩부활",
+        "판정·대사·생사변경"
+      ],
+      "acceptance": [
+        "일반6과전용8동일원화규격",
+        "일반/울음/경고 크기연속성",
+        "PC/모바일 질문전신표시",
+        "첫로딩일괄다운로드금지"
+      ]
     }
   ]
 }

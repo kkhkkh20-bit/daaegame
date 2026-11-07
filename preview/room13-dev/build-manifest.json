@@ -1,18 +1,18 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 17350034,
-  "archive_sha256": "8883b830279308d8bc6665c0bad5901e36809034db63475911da5d1b9579e52d",
+  "archive_bytes": 17364410,
+  "archive_sha256": "591f0097ffafdd87e214f026d3ec3a10be06652f66bf407ebba7c086d127b99f",
   "parts": [
    {
     "file": "game.part01",
     "bytes": 10485760,
-    "sha256": "1684101409b07797bffb6567457de983d730a80ea229b0a88df68f43dddde0fd"
+    "sha256": "cac191ce3a23f25022639f9e9e3bddde3b31d5f07830bc37354f4054ac6b2937"
    },
    {
     "file": "game.part02",
-    "bytes": 6864274,
-    "sha256": "8a45e4b1aa99df7256aba97350624e69644cfc15eb63ea2bbee12b4b25e2f86a"
+    "bytes": 6878650,
+    "sha256": "ecbdc856ec0b9a99cef876e482085997060cc96175a7e60dea9633163ddc8b7e"
    }
   ]
  },
@@ -34,16 +34,16 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 508473,
-   "sha256": "fa79ccb97e0b0190e1a9af80a440f223b21669285b4395890faa5fe95e131f07"
+   "bytes": 512812,
+   "sha256": "3c94c5181e5b95773d11d8fe9b3d35d67d898cd5af160fe460b403d24e46fbcf"
   },
   "game.part01": {
    "bytes": 10485760,
-   "sha256": "1684101409b07797bffb6567457de983d730a80ea229b0a88df68f43dddde0fd"
+   "sha256": "cac191ce3a23f25022639f9e9e3bddde3b31d5f07830bc37354f4054ac6b2937"
   },
   "game.part02": {
-   "bytes": 6864274,
-   "sha256": "8a45e4b1aa99df7256aba97350624e69644cfc15eb63ea2bbee12b4b25e2f86a"
+   "bytes": 6878650,
+   "sha256": "ecbdc856ec0b9a99cef876e482085997060cc96175a7e60dea9633163ddc8b7e"
   },
   "game/assets/Pretendard-Bold.otf": {
    "bytes": 415444,
@@ -2676,6 +2676,62 @@
   "game/assets/dialogue-dot-v2/v111_resident/760/surprise_talk.webp": {
    "bytes": 9070,
    "sha256": "27d6a38d9fc003b798801c0c5cf399874956a959a716dafdf0917ad6836bd9d0"
+  },
+  "game/assets/dialogue-player-facing/daram-consistency-20261107/angry.webp": {
+   "bytes": 187424,
+   "sha256": "a2e2d88c6477f3243c6b9de887265b2be9f278109b1c218c6efa27b3c1e49676"
+  },
+  "game/assets/dialogue-player-facing/daram-consistency-20261107/anxious.webp": {
+   "bytes": 190388,
+   "sha256": "06f2d837e98441ef04cad4aee89771bb49cdd008105f0963395ab4990d0871d1"
+  },
+  "game/assets/dialogue-player-facing/daram-consistency-20261107/daram-flustered.webp": {
+   "bytes": 192840,
+   "sha256": "e0a3aa23a86436fa7113cb65d27edaabec7c74a679b1c18c1a3e2e5f84fc389d"
+  },
+  "game/assets/dialogue-player-facing/daram-consistency-20261107/intake21_01_bravado.webp": {
+   "bytes": 193174,
+   "sha256": "7b734440cd22cba092b6ebc92c44b6361461530d5c87dbc5ce437b8f23fa5c8f"
+  },
+  "game/assets/dialogue-player-facing/daram-consistency-20261107/intake21_02_reproach_lean.webp": {
+   "bytes": 179624,
+   "sha256": "bb4587cf109fda7bfecfcc8a78728b8e6829d0c3c74513e58813c80ba98efb57"
+  },
+  "game/assets/dialogue-player-facing/daram-consistency-20261107/intake21_03_stubborn.webp": {
+   "bytes": 186684,
+   "sha256": "7cef30361e38b390dd9c7b964145e07228a1f3c619a09f431a4b5d78620945ec"
+  },
+  "game/assets/dialogue-player-facing/daram-consistency-20261107/intake21_05_playful_evasion.webp": {
+   "bytes": 188460,
+   "sha256": "c7442a64d3e4f3571b6bc281a4f0ea28417decbd702829a62dfc11f25e4ea570"
+  },
+  "game/assets/dialogue-player-facing/daram-consistency-20261107/intake21_06_eureka.webp": {
+   "bytes": 183718,
+   "sha256": "98d0fa664db4b8b2ea697dbe77f8b96358ad07b74e15ca1869172c595a39a2e8"
+  },
+  "game/assets/dialogue-player-facing/daram-consistency-20261107/intake21_08_scared_brave.webp": {
+   "bytes": 192690,
+   "sha256": "4652f396cc30dbba4dc04480108f709b353c3f0fc68702cdcf1b6dc5036dda96"
+  },
+  "game/assets/dialogue-player-facing/daram-consistency-20261107/intake21_09_wipe_tears.webp": {
+   "bytes": 189878,
+   "sha256": "8d72f1f6b2c0694820080e7c4ade14ad2ef774a8087ac512bdf2073ac1d58e9d"
+  },
+  "game/assets/dialogue-player-facing/daram-consistency-20261107/intake21_10_resolve.webp": {
+   "bytes": 182862,
+   "sha256": "2ea62cab49b5571c9ac29acf6bf33d439d72eaf9dc1263a9b4380edb02892287"
+  },
+  "game/assets/dialogue-player-facing/daram-consistency-20261107/joy.webp": {
+   "bytes": 192620,
+   "sha256": "8e0b3570a384bb6cb5948db90d3093b003cb003293cd3acb1660c2b05b96537b"
+  },
+  "game/assets/dialogue-player-facing/daram-consistency-20261107/neutral.webp": {
+   "bytes": 177812,
+   "sha256": "67e0349ff5c5992c938174b5224ccc62f4078a43b30cd339399373160da162f6"
+  },
+  "game/assets/dialogue-player-facing/daram-consistency-20261107/surprise_talk.webp": {
+   "bytes": 189028,
+   "sha256": "259d56340c72fc3e5a3fc6479ccb8b5b338ce3f7a54db6833f990244078d44fe"
   },
   "game/assets/dialogue-player-facing/doto-flustered.webp": {
    "bytes": 199996,
@@ -19422,5 +19478,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 827916304
+ "total_bytes": 830562221
 }

@@ -3,6 +3,15 @@ init 80 python:
     R13_SIDE_QUESTION_TOP=150
     _r13_side_name_cache={}
 
+    def r13_side_question_layout():
+        # 휴대폰은 종이 안 좌우 여백만 줄인다. 인물·이름표·책 그림은 원래 자리에 둔다.
+        touch=r13_touch_ui()
+        return dict(left=552 if touch else 572,width=640 if touch else 608,
+                    text_left=102 if touch else 82,text_width=518 if touch else 506,
+                    tool_width=154 if touch else 146,
+                    body_size=r13_type("subtitle" if touch else "emphasis"),
+                    tool_size=r13_type("subtitle" if touch else "body"))
+
     def r13_side_name_layout(name):
         # 글자 수 대신 실제 폭으로 잰다. 휴대폰의 ‘누비 아주머니’도 종이 안에 둔다.
         sizes=tuple(r13_type(level) for level in ("subtitle","emphasis","body","small"))
@@ -17,12 +26,12 @@ init 80 python:
 
     def r13_side_question_pages(entries):
         """Fit complete measured rows; overflow uses visible pages, never scrolling."""
-        rows=[]
+        rows=[];layout=r13_side_question_layout()
         for title,action,read in entries:
             label=r13_question_caption(title,False,mark_unread=False)
-            # 2026-10-27 타이포 시안: 질문 항목은 emphasis. 줄 수 측정과 화면 글자 크기가 같은 식이어야 한다.
-            text=Text(label,font=R13_UI_BOLD_FONT,size=(r13_type("emphasis")),xsize=506,line_spacing=2)
-            height=int(renpy.render(text,506,720,0,0).get_size()[1])
+            # 측정과 표시가 같은 글자 단계·폭을 쓴다. 휴대폰의 큰 글씨도 온전한 줄 단위로 넘긴다.
+            text=Text(label,font=R13_UI_BOLD_FONT,size=layout["body_size"],xsize=layout["text_width"],line_spacing=2)
+            height=int(renpy.render(text,layout["text_width"],720,0,0).get_size()[1])
             rows.append(((title,action,read),max(88 if r13_touch_ui() else 84,height+20)))
         def pack(cap):
             pages=[];page=[];used=0
@@ -72,21 +81,41 @@ init 80 python:
         boxes={"icon_document":(14,8,36,48),"icon_book_open":(8,18,48,27),"icon_arrow_left_bold":(8,18,48,27),"b_icon_more":(16,20,32,24)}
         return Transform(Crop(boxes[icon],r13_asset_path("file:"+("assets/ui-b-question/"+icon+".png"))),xysize=(24,24),fit="contain")
 
+    def r13_side_tool_surface(width,hovered=False,enabled=True):
+        # 원래 질문 도구의 크림 종이를 재사용한다. 52px 판에 글자를 맞춰 줄이던 대신
+        # 휴대폰의 88px 터치 칸 안에 72px 종이를 놓아 32/34px 글자를 그대로 읽게 한다.
+        return Fixed(Transform(R13SoftButtonSurface(hovered=hovered,disabled=not enabled),
+                               xysize=(width,72),align=(.5,.5)),xysize=(width,88))
+
 screen r13_notebook_topic_action(x,w,caption,command,ready=True,primary=False,icon=None,control_id=None):
     fixed:
         area (x,r13_notebook_topic_y(),w,88 if r13_touch_ui() else 64)
         $ state_icon=r13_notebook_button_icon(icon) if icon else None
         # 2026-10-27 소유자: 네 버튼 크기 통일. 주 버튼도 같은 바탕(standard)을 쓰고 글자색으로만 구분한다(primary 바탕은 크기가 달랐다).
-        use r13_state_button(caption,command,w,88 if r13_touch_ui() else 64,family="question_flat_standard",enabled=ready,icon=state_icon,text_size=(r13_type("body")),control_id=control_id or ("r13_notebook_"+caption))
+        if r13_touch_ui():
+            button:
+                id (control_id or ("r13_notebook_"+caption))
+                xysize (w,88) padding (0,0)
+                background r13_side_tool_surface(w,enabled=ready)
+                hover_background r13_side_tool_surface(w,True,ready)
+                insensitive_background r13_side_tool_surface(w,enabled=False)
+                action command sensitive ready
+                activate_sound ("<volume 0.65>"+r13_asset_path("file:assets/diary-sounds/paper-selection.mp3"))
+                alt caption
+                text caption xsize (w-8) align (.5,.5) text_align .5 size r13_side_question_layout()["tool_size"] color r13_type_color("ink" if ready else "disabled") hover_color r13_type_color("accent") font R13_UI_BOLD_FONT
+        else:
+            use r13_state_button(caption,command,w,64,family="question_flat_standard",enabled=ready,icon=state_icon,text_size=(r13_type("body")),control_id=control_id or ("r13_notebook_"+caption))
 
 screen r13_notebook_topic_tools(ready,person,present_action):
+    $ L=r13_side_question_layout()
     if present_action is not None:
-        use r13_notebook_topic_action(572,146,"자료 제시",present_action,ready,True,None)
-    use r13_notebook_topic_action(726,146,"기록",Show("r13_records",target=person,present_action=present_action),ready,icon=None)
-    use r13_notebook_topic_action(880,146,"더보기",Show("r13_more_tools"),ready,icon=None)
+        use r13_notebook_topic_action(L["left"],L["tool_width"],"자료 제시",present_action,ready,True,None)
+    use r13_notebook_topic_action(L["left"]+L["tool_width"]+8,L["tool_width"],"기록",Show("r13_records",target=person,present_action=present_action),ready,icon=None)
+    use r13_notebook_topic_action(L["left"]+2*(L["tool_width"]+8),L["tool_width"],"더보기",Show("r13_more_tools"),ready,icon=None)
 
 screen r13_side_question_list(person,pose,entries,ready,return_action=None,caption=""):
     default page=0
+    $ L=r13_side_question_layout()
     $ pages=r13_side_question_pages(entries)
     $ page=min(page,len(pages)-1)
     $ visible=pages[page]
@@ -107,46 +136,46 @@ screen r13_side_question_list(person,pose,entries,ready,return_action=None,capti
     add Transform(Crop((20,16,23,32),r13_asset_path("file:assets/ui-b-question/b_icon_acorn.png")),xysize=(25,34)) xpos 112 ypos 595
     text R13_NAMES[person] xpos 150 ycenter 613 size name_layout["size"] color (r13_type_color("ink")) font R13_UI_BOLD_FONT xmaximum (name_layout["width"]-92)
     vbox:
-        pos (572,R13_SIDE_QUESTION_TOP+78) spacing 8
+        pos (L["left"],R13_SIDE_QUESTION_TOP+78) spacing 8
         for i,((label,command,read),height) in enumerate(visible):
             button:
                 id ("r13_side_topic_"+str(i+1))
-                xsize 608 ysize height padding (0,0)
+                xsize L["width"] ysize height padding (0,0)
                 background r13_notebook_question_surface(read)
                 hover_background r13_notebook_question_surface(read,True)
                 action r13_safe_question_action(command) sensitive ready
                 activate_sound R13_MAP_TICK
                 at r13_question_row_motion
                 fixed:
-                    add Solid("#8c71552b",xsize=576,ysize=1) xpos 16 ypos (height-1)
+                    add Solid("#8c71552b",xsize=L["width"]-(52 if r13_touch_ui() else 32),ysize=1) xpos (36 if r13_touch_ui() else 16) ypos (height-1)
                     if len(r13_question_summary(label))<15:
                         add Transform(r13_notebook_lineart(label),xysize=(204,78),alpha=.22) xalign 1.0 yalign .5
-                    add Transform(Crop((20,16,24,32),r13_asset_path("file:assets/ui-b-question/b_icon_acorn_done.png") if read else r13_asset_path("file:assets/ui-b-question/b_icon_acorn.png")),xysize=(27,36)) xpos 20 yalign .5
-                    text str(i+1) xpos 53 yalign .5 size (r13_type("small")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT
-                    text r13_question_caption(label,False,mark_unread=False) xpos 82 yalign .5 xsize 506 size (r13_type("emphasis")) line_spacing 2 color ((r13_type_color("muted")) if read else (r13_type_color("ink"))) hover_color (r13_type_color("accent")) font R13_UI_BOLD_FONT
+                    add Transform(Crop((20,16,24,32),r13_asset_path("file:assets/ui-b-question/b_icon_acorn_done.png") if read else r13_asset_path("file:assets/ui-b-question/b_icon_acorn.png")),xysize=(27,36)) xpos (L["text_left"]-62) yalign .5
+                    text str(i+1) xpos (L["text_left"]-29) yalign .5 size (r13_type("small")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT
+                    text r13_question_caption(label,False,mark_unread=False) xpos L["text_left"] yalign .5 xsize L["text_width"] size L["body_size"] line_spacing 2 color ((r13_type_color("muted")) if read else (r13_type_color("ink"))) hover_color (r13_type_color("accent")) font R13_UI_BOLD_FONT
                     if read:
-                        text "✓" xpos 30 yalign .74 size r13_type("small") color "#6c765a" font "assets/Room13Sans.ttf"
+                        text "✓" xpos (L["text_left"]-52) yalign .74 size r13_type("small") color "#6c765a" font "assets/Room13Sans.ttf"
         if not entries:
             frame:
-                xsize 608 padding (22,20) background Frame(Crop((16,16,640,84),r13_asset_path("file:assets/ui-b-question/b_panel_card.png")),80,24)
+                xsize L["width"] padding (22,20) background Frame(Crop((16,16,640,84),r13_asset_path("file:assets/ui-b-question/b_panel_card.png")),80,24)
                 text "지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다." xsize 592 size (r13_type("subtitle")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT
     if len(pages)>1:
         textbutton "← 이전 질문":
             id "r13_topics_previous"
-            area (572,r13_notebook_topic_y()-(96 if r13_touch_ui() else 60),296,(88 if r13_touch_ui() else 48))
-            background None hover_background None text_color (r13_type_color("muted")) text_hover_color (r13_type_color("accent")) text_insensitive_color (r13_type_color("disabled")) text_font R13_UI_BOLD_FONT text_size (r13_type("body")) padding (12,4) text_yalign .5
+            area (L["left"],r13_notebook_topic_y()-(96 if r13_touch_ui() else 60),(L["width"]-16)//2,(88 if r13_touch_ui() else 48))
+            background None hover_background None text_color (r13_type_color("muted")) text_hover_color (r13_type_color("accent")) text_insensitive_color (r13_type_color("disabled")) text_font R13_UI_BOLD_FONT text_size L["tool_size"] padding (12,4) text_yalign .5
             action SetLocalVariable("page",page-1) sensitive ready and page>0
         textbutton "다음 질문 →":
             id "r13_topics_next"
-            area (884,r13_notebook_topic_y()-(96 if r13_touch_ui() else 60),296,(88 if r13_touch_ui() else 48))
-            background None hover_background None text_color (r13_type_color("muted")) text_hover_color (r13_type_color("accent")) text_insensitive_color (r13_type_color("disabled")) text_font R13_UI_BOLD_FONT text_size (r13_type("body")) padding (12,4) text_yalign .5
+            area (L["left"]+(L["width"]+16)//2,r13_notebook_topic_y()-(96 if r13_touch_ui() else 60),(L["width"]-16)//2,(88 if r13_touch_ui() else 48))
+            background None hover_background None text_color (r13_type_color("muted")) text_hover_color (r13_type_color("accent")) text_insensitive_color (r13_type_color("disabled")) text_font R13_UI_BOLD_FONT text_size L["tool_size"] padding (12,4) text_yalign .5
             action SetLocalVariable("page",page+1) sensitive ready and page<len(pages)-1
     if ready:
         for i,((label,command,read),height) in enumerate(visible):
             key ("K_%d"%(i+1)) action r13_safe_question_action(command)
             key ("K_KP%d"%(i+1)) action r13_safe_question_action(command)
     if return_action is not None:
-        use r13_notebook_topic_action(1034,146,"돌아가기",return_action,ready,icon=None)
+        use r13_notebook_topic_action(L["left"]+3*(L["tool_width"]+8),L["tool_width"],"돌아가기",return_action,ready,icon=None)
 
 
 # 질문 한 줄: 올리면 살짝 오른쪽으로 나와 「누를 수 있다」를 보이고, 내리면 제자리.

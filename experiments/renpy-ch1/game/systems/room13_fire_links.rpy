@@ -52,6 +52,19 @@ init 352 python:
             if value in owned and value not in result:result.append(value)
         return result
 
+    def r13_fire_link_sources(state,owned,observations):
+        """고른 사실의 실제 출처 제안. 명시적으로 바꾼 자료·구 저장의 선택은 그대로 둔다.
+        이 함수는 arguments에 쓰지 않는다. 출처 확인 화면의 명시적 제출에서만 실제 묶음이 된다.
+        """
+        if state.get("source_manual",bool(state.get("materials"))):
+            return r13_fire_link_union(state,owned,True)
+        sources=dict((fact,source) for fact,text,source in observations)
+        result=[]
+        for fact in state.get("observations",()):
+            source=sources.get(fact)
+            if source in owned and source not in result:result.append(source)
+        return result
+
     def r13_fire_link_check(key,state,owned,observations):
         """연결 문법만 검사한다. 틀린 자료는 원래 판정으로 보내며 정답 함수를 호출하지 않는다."""
         first=key==R13_FIRE_LINK_FIRST
@@ -88,6 +101,10 @@ init 353 python:
         row.setdefault("observations",[None,None]);row.setdefault("question",None)
         row.setdefault("roles",[None,None,None]);row.setdefault("extra",[])
         row.setdefault("materials",list((room13.get("arguments") or {}).get(claim,())))
+        # 이 값이 없는 구 저장의 직접 선택을 출처 제안으로 덮어쓰지 않는다.
+        row.setdefault("source_manual",bool(row["materials"]))
+        row.setdefault("source_pending",False)
+        row.setdefault("library_return","board");row.setdefault("read_return","library")
         row.setdefault("detail",None);row.setdefault("origin",False);row.setdefault("notice",None)
         return row
 
@@ -103,7 +120,8 @@ init 353 python:
     def r13_fire_links_enter(claim,key):
         row=r13_fire_links_state(claim);owned=r13_pw_entries()
         args=[k for k in (room13.get("arguments") or {}).get(claim,()) if k in owned]
-        if key==R13_FIRE_LINK_FIRST:row["materials"]=args
+        if key==R13_FIRE_LINK_FIRST:
+            if not row["source_pending"]:row["materials"]=args
         else:
             row["roles"]=[k if k in args else None for k in row["roles"]]
             row["extra"]=[k for k in args if k not in row["roles"]]
@@ -113,7 +131,9 @@ init 353 python:
 
     def r13_fire_links_sync(claim,key,row):
         r13_fire_links_write(claim,row)
-        r13_pw_set_arguments(claim,r13_fire_link_union(row,r13_pw_entries(),key==R13_FIRE_LINK_FIRST))
+        # 첫 쟁점은 출처 확인의 제출 전까지 후보만 저장한다. 둘째 쟁점의 역할 배치는 기존처럼 동기화한다.
+        if key!=R13_FIRE_LINK_FIRST:
+            r13_pw_set_arguments(claim,r13_fire_link_union(row,r13_pw_entries(),False))
         renpy.restart_interaction()
 
     def r13_fire_links_pick(claim,key,field,value):
@@ -132,6 +152,7 @@ init 353 python:
         elif field in ("materials","extra"):
             if value not in owned:return
             chosen=list(row[field]);row[field]=[k for k in chosen if k!=value] if value in chosen else chosen+[value]
+            if field=="materials":row.update(source_manual=True,source_pending=True)
             row["notice"]=None;r13_fire_links_sync(claim,key,row);return
         else:return
         row.update(view="board",notice=None);r13_fire_links_sync(claim,key,row)
@@ -139,13 +160,28 @@ init 353 python:
     def r13_fire_links_submit(claim,key):
         row=r13_fire_links_state(claim);owned=r13_pw_entries()
         observations=r13_fire_link_observations(owned,r13_v111_value("bori_nubi_door_witness_heard") is True)
+        if key==R13_FIRE_LINK_FIRST:
+            # 관찰을 고르는 동안에는 제안만 보인다. 출처 확인의 제출이 자료 묶음을 확정한다.
+            row["materials"]=r13_fire_link_sources(row,owned,observations)
         check=r13_fire_link_check(key,row,owned,observations)
         if check!="ready":
             messages={"empty":"제시할 자료를 먼저 고르세요.","incomplete":"빈 연결 자리를 채운 뒤 함께 읽어 보세요.",
                 "links":"고른 관찰에서 그 질문이 이어지는지 다시 읽어 보자.","roles":"고른 자료가 각 자리에서 무엇을 설명하는지 다시 읽어 보자."}
             r13_fire_links_change(claim,notice=messages[check]);return
-        r13_fire_links_sync(claim,key,row)
+        if key==R13_FIRE_LINK_FIRST:
+            row["source_pending"]=False
+            r13_fire_links_write(claim,row)
+            r13_pw_set_arguments(claim,row["materials"])
+        else:r13_fire_links_sync(claim,key,row)
         renpy.end_interaction("argue")
+
+    def r13_fire_links_edit_sources(claim):
+        row=r13_fire_links_state(claim);owned=r13_pw_entries()
+        observations=r13_fire_link_observations(owned,r13_v111_value("bori_nubi_door_witness_heard") is True)
+        row["materials"]=r13_fire_link_sources(row,owned,observations)
+        row.update(source_manual=True,source_pending=True,view="library",field="materials",page=0,library_return="sources",notice=None)
+        # 바꾸기 창을 연 것만으로 제출할 자료나 기회를 바꾸지 않는다.
+        r13_fire_links_write(claim,row);renpy.restart_interaction()
 
     def r13_fire_links_clear(claim,key,field):
         if field not in ("role0","role1","role2"):return
@@ -171,7 +207,7 @@ screen r13_fire_links(claim,key,can_press=False,investigate=False,chances=None):
     $ first=key==R13_FIRE_LINK_FIRST
     $ owned=r13_pw_entries()
     $ observations=r13_fire_link_observations(owned,r13_v111_value("bori_nubi_door_witness_heard") is True)
-    $ chosen=r13_fire_link_union(row,owned,first)
+    $ chosen=r13_fire_link_sources(row,owned,observations) if first else r13_fire_link_union(row,owned,False)
     $ ink=r13_nb_ink()
     $ muted=r13_nb_muted()
     $ small=r13_type("small")
@@ -189,7 +225,7 @@ screen r13_fire_links(claim,key,can_press=False,investigate=False,chances=None):
             fixed:
                 xpos 340 ypos yy xysize (842,86)
                 use r13_control(r13_ev_two_lines(r13_fire_links_text(row,index,first,observations),782,small,2),None,Function(r13_fire_links_change,claim,view=next_view,field=field,page=0,notice=None),enabled=ready,width=842,height=86,label_size=small,control_id=("r13_fire_slot_%d"%index))
-        text (("제출 자료 %d장"%len(chosen)) if first else ("덧붙인 자료 %d장"%len(row["extra"]))) xpos 142 ypos 474 size small color muted font R13_UI_FONT
+        text (("관찰의 출처 %d장"%len(chosen)) if first else ("덧붙인 자료 %d장"%len(row["extra"]))) xpos 142 ypos 474 size small color muted font R13_UI_FONT
         if row["notice"]:
             text row["notice"] xpos 142 ypos 508 xsize 730 size small color r13_nb_accent() font R13_UI_FONT
         elif chances:
@@ -206,10 +242,45 @@ screen r13_fire_links(claim,key,can_press=False,investigate=False,chances=None):
             use r13_control("조사 계속" if investigate else "자료 읽기",None,Return("investigate") if investigate else Function(r13_fire_links_change,claim,view="library",field=None,page=0),enabled=ready,width=230,height=footer_h,label_size=small,control_id="r13_fire_investigate")
         fixed:
             xpos 630 ypos footer_y xysize (240,footer_h)
-            use r13_control("자료 고르기" if first else "덧붙일 자료",None,Function(r13_fire_links_change,claim,view="library",field="materials" if first else "extra",page=0),enabled=ready,width=240,height=footer_h,label_size=small,control_id="r13_fire_materials")
+            use r13_control("자료 읽기" if first else "덧붙일 자료",None,Function(r13_fire_links_change,claim,view="library",field=None if first else "extra",page=0,library_return="board"),enabled=ready,width=240,height=footer_h,label_size=small,control_id="r13_fire_materials")
         fixed:
             xpos 884 ypos footer_y xysize (298,footer_h)
-            use r13_control("연결한 근거 제시",None,Function(r13_fire_links_submit,claim,key),enabled=ready and bool(chosen),primary=True,width=298,height=footer_h,label_size=small,control_id="r13_fire_submit")
+            use r13_control("출처 확인" if first else "연결한 근거 제시",None,Function(r13_fire_links_change,claim,view="sources",notice=None) if first else Function(r13_fire_links_submit,claim,key),enabled=ready and (first or bool(chosen)),primary=True,width=298,height=footer_h,label_size=small,control_id="r13_fire_submit")
+    elif row["view"]=="sources" and first:
+        viewport:
+            id "r13_fire_sources_view"
+            area (142,194,1040,r13_nb_body_bottom()-194-50) mousewheel True draggable True scrollbars "vertical"
+            vscrollbar_unscrollable "hide"
+            vbox:
+                xsize 1016 spacing 14
+                for material in chosen:
+                    button:
+                        id r13_pw_id("r13_fire_source_read_",material)
+                        xsize 1016 padding (0,4) background None hover_background Solid("#c9a86a22")
+                        action Function(r13_fire_links_change,claim,view="read",detail=material,origin=True,read_return="sources") sensitive ready
+                        alt ("자료 전체 읽기 · "+r13_catalog_title(material))
+                        text r13_catalog_title(material) size r13_type("title") color ink font R13_UI_BOLD_FONT xsize 996
+                    use r13_evidence_read_facts(material,1000)
+                    text ("출처: "+r13_catalog_origin(material)) size small color muted font R13_UI_FONT xsize 1000
+                    if material in room13.get("records",{}):
+                        text ("얻은 곳: "+r13_record_source_label(material)) size small color muted font R13_UI_FONT xsize 1000
+                    add Solid("#c9a86a99") xsize 1000 ysize 1
+                if "witness" in row["observations"] and r13_v111_value("bori_nubi_door_witness_heard") is True:
+                    text "보리에게 들은 말" size r13_type("subtitle") color ink font R13_UI_BOLD_FONT
+                    text "불이 번지기 전에 누비 씨가 창고 문 앞에 서 있는 건 봤소." size r13_type("emphasis") color ink font R13_UI_FONT xsize 1000
+                if not chosen:
+                    text "제출할 자료가 없습니다. 연결한 관찰과 출처를 다시 확인하세요." size r13_type("emphasis") color ink font R13_UI_FONT xsize 1000
+        if row["notice"]:
+            text row["notice"] xpos 142 ypos (r13_nb_body_bottom()-44) xsize 1040 size small color r13_nb_accent() font R13_UI_FONT
+        fixed:
+            xpos 142 ypos footer_y xysize (284,footer_h)
+            use r13_control("연결판으로",None,Function(r13_fire_links_change,claim,view="board"),enabled=ready,width=284,height=footer_h,label_size=small,control_id="r13_fire_back")
+        fixed:
+            xpos 440 ypos footer_y xysize (274,footer_h)
+            use r13_control("자료 바꾸기",None,Function(r13_fire_links_edit_sources,claim),enabled=ready,width=274,height=footer_h,label_size=small,control_id="r13_fire_sources_change")
+        fixed:
+            xpos 884 ypos footer_y xysize (298,footer_h)
+            use r13_control("확인한 출처 제시",None,Function(r13_fire_links_submit,claim,key),enabled=ready and bool(chosen),primary=True,width=298,height=footer_h,label_size=small,control_id="r13_fire_sources_submit")
     elif row["view"]=="choices":
         $ choices=R13_FIRE_LINK_QUESTIONS if row["field"]=="question" else [(k,t) for k,t,source in observations]
         for index,(value,caption) in enumerate(choices):
@@ -232,7 +303,7 @@ screen r13_fire_links(claim,key,can_press=False,investigate=False,chances=None):
             $ yy=254+index*84
             fixed:
                 xpos 142 ypos yy xysize (766,76)
-                use r13_control(r13_ev_two_lines(r13_catalog_title(material),706,small,2),None,Function(r13_fire_links_change,claim,view="read",detail=material,origin=False),enabled=ready,width=766,height=76,label_size=small,control_id=r13_pw_id("r13_fire_read_",material))
+                use r13_control(r13_ev_two_lines(r13_catalog_title(material),706,small,2),None,Function(r13_fire_links_change,claim,view="read",detail=material,origin=False,read_return="library"),enabled=ready,width=766,height=76,label_size=small,control_id=r13_pw_id("r13_fire_read_",material))
             if row["field"]:
                 $ is_chosen=(material in row.get(row["field"],[]) if row["field"] in ("materials","extra") else material in chosen)
                 fixed:
@@ -241,7 +312,7 @@ screen r13_fire_links(claim,key,can_press=False,investigate=False,chances=None):
         text ("%d / %d쪽"%(page+1,max(1,(len(listed)+2)//3))) xpos 876 ypos 514 size small color muted font R13_UI_FONT
         fixed:
             xpos 142 ypos footer_y xysize (284,footer_h)
-            use r13_control("연결판으로",None,Function(r13_fire_links_change,claim,view="board"),enabled=ready,width=284,height=footer_h,label_size=small,control_id="r13_fire_back")
+            use r13_control("출처 확인으로" if row["library_return"]=="sources" else "연결판으로",None,Function(r13_fire_links_change,claim,view=row["library_return"]),enabled=ready,width=284,height=footer_h,label_size=small,control_id="r13_fire_back")
         if row["field"] in ("role0","role1","role2"):
             fixed:
                 xpos 440 ypos footer_y xysize (274,footer_h)
@@ -257,7 +328,7 @@ screen r13_fire_links(claim,key,can_press=False,investigate=False,chances=None):
         use r13_pw_read_card(detail,142,194,1040,r13_nb_body_bottom()-194,row["origin"],ready)
         fixed:
             xpos 142 ypos footer_y xysize (284,footer_h)
-            use r13_control("자료 목록으로",None,Function(r13_fire_links_change,claim,view="library"),enabled=ready,width=284,height=footer_h,label_size=small,control_id="r13_fire_back")
+            use r13_control("출처 확인으로" if row["read_return"]=="sources" else "자료 목록으로",None,Function(r13_fire_links_change,claim,view=row["read_return"]),enabled=ready,width=284,height=footer_h,label_size=small,control_id="r13_fire_back")
         fixed:
             xpos 842 ypos footer_y xysize (340,footer_h)
             use r13_control("출처 접기" if row["origin"] else "출처와 전체 내용",None,Function(r13_fire_links_change,claim,origin=not row["origin"]),enabled=ready and bool(detail),width=340,height=footer_h,label_size=small,control_id="r13_fire_origin")
@@ -284,8 +355,8 @@ screen r13_fire_links(claim,key,can_press=False,investigate=False,chances=None):
 # 같은 자료의 두 위치를 직접 확대한다. 새 자료·정답·기회·사건 상태는 만들지 않는다.
 screen r13_fire_site_picture(focus=None):
     $ top=R13_NB_TOP+58
-    $ small=r13_type("small")
-    $ box=min(300,r13_nb_body_bottom()-top-small*3-18)
+    $ small=r13_type("emphasis" if r13_touch_ui() else "small")
+    $ box=min(300,r13_nb_body_bottom()-top-small*2-18)
     if focus is None:
         for index,(title,facts,crop) in enumerate(R13_FIRE_SITE_PANELS):
             $ center=398+index*524
@@ -306,4 +377,4 @@ screen r13_fire_site_picture(focus=None):
             text facts size r13_type("emphasis") color r13_nb_ink() font R13_UI_FONT
     fixed:
         xpos 142 ypos r13_nb_footer_y() xysize (276,r13_control_height())
-        use r13_control("두 곳 나란히",None,SetScreenVariable("fire_focus",None),chosen=focus is None,width=276,height=r13_control_height(),control_id="r13_fire_site_pair")
+        use r13_control("두 곳 나란히",None,SetScreenVariable("fire_focus",None),chosen=focus is None,width=276,height=r13_control_height(),label_size=small,control_id="r13_fire_site_pair")

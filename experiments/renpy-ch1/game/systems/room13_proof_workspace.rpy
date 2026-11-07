@@ -756,12 +756,15 @@ screen r13_pw_picture(key,called=False):
     $ close_action=Return() if called else Hide("r13_pw_picture")
     use r13_notebook_shell(r13_catalog_title(key),close_action=close_action)
     if r13_fire_site_available(key,r13_pw_entries()):
-        text "그림을 누르면 크게 봅니다." xpos 1128 xanchor 1.0 ypos 82 size r13_type("small") color r13_nb_muted() font R13_UI_FONT
+        text "그림을 누르면 크게 봅니다." xpos 1128 xanchor 1.0 ypos 82 size r13_type("emphasis" if r13_touch_ui() else "small") color r13_nb_muted() font R13_UI_FONT
         use r13_fire_site_picture(fire_focus)
+        fixed:
+            xpos 1006 ypos r13_nb_footer_y() xysize (200,r13_control_height())
+            use r13_control("닫기",None,close_action,primary=True,width=200,height=r13_control_height(),label_size=r13_type("emphasis"),control_id="r13_fire_picture_close")
     else:
         $ box=min(420,r13_nb_footer_y()-R13_NB_TOP-28)
         fixed:
             xcenter 640 ypos (R13_NB_TOP+12) xysize (box,box)
             use r13_evidence_picture_box(key,box)
-    use r13_nb_footer_button(0,"닫기",close_action,primary=True)
+        use r13_nb_footer_button(0,"닫기",close_action,primary=True)
     key "game_menu" action close_action
