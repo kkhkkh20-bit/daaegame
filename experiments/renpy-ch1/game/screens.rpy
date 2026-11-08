@@ -149,7 +149,10 @@ screen say(who,what):
         # 2026-10-27 소유자: 회의(오답 뒤) 상태로 돌아온 현장에서 규칙판을 읽어도 돌목·다람 무대가 떴다.
         # 현장 물건 설명(r13_field_reading)은 무대 없이 현장 그대로 읽는다.
         if r13_meeting_active and r13_nw_meeting_claim(r13_meeting_claim) and not r13_field_reading:
-            use r13_meeting_stage(r13_meeting_claim,r13_meeting_focus_person(r13_meeting_claim),True)
+            # 행주를 쥔 손의 근접 장면은 main 층의 그림이다. 이때만 초상 무대로 덮지 않는다.
+            # 일반 자료 그림·가족 물건 확대는 원래 무대와 함께 보여 준다.
+            if r13_ep_cut_current not in ("d07-nubi-fold","d07-sleeve-hold") or not renpy.showing("r13_ep_cut"):
+                use r13_meeting_stage(r13_meeting_claim,r13_meeting_focus_person(r13_meeting_claim),True)
             use r13_meeting_chrome(r13_meeting_claim)
             if r13_nw_comparison=="knife_tip":
                 use r13_nw_knife_comparison

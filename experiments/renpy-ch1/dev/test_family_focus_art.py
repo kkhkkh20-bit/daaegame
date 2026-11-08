@@ -65,6 +65,14 @@ class FamilyFocusArt(unittest.TestCase):
         self.assertEqual(shown[0][1]['what']['items'][1]['art'], 'assets/evidence/E06.webp')
         self.assertEqual(state.r13_ep_cut_current, 'focus:E06')
 
+    def test_action_closeups_downscale_smoothly_without_changing_existing_scene_cuts(self):
+        for key in ('d07-nubi-fold', 'd07-sleeve-hold'):
+            cut = self.env['r13_ep_cut_art'](key)
+            self.assertFalse(cut['nearest'])
+            self.assertEqual(cut['size'], (1280, 720))
+            self.assertTrue((ROOT / 'game' / cut['art']).is_file())
+        self.assertTrue(self.env['r13_ep_cut_art']('piko-death3')['nearest'])
+
     def test_authored_cut_validation_requires_a_known_family_prop_and_real_asset(self):
         source = (ROOT / 'game/room13_v111_newworld_text.rpy').read_text()
         tree = ast.parse(textwrap.dedent(source.split('init 319 python:', 1)[1]))

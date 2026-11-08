@@ -2427,258 +2427,290 @@
       "gaze": "player",
       "art_style": "storybook_source",
       "source_kind": "source_master",
-      "art_revision": "gaze-quality-20261107",
-      "approval": "소유자: 캐릭터 나를 보게 시선 바꾸고 이미지 퀄리티 체크",
+      "art_revision": "nubi-consistency-20261108",
+      "approval": "소유자: 화질·작화 일관성 리뷰 개선 승인",
       "profiles": {
         "560": {
           "canvas": [
-            332,
+            325,
             608
           ],
           "frames": {
             "neutral": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/neutral.webp",
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/neutral.webp",
               "offset": [
-                -21,
+                -22,
                 12
               ],
-              "scale": 0.377612947,
+              "scale": 0.378378378,
               "nearest": false,
               "native_detail": true,
               "anchor": [
-                495.0,
-                1514
+                488.5,
+                1512
               ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/neutral.png",
-              "source_sha256": "252c56629ede580627b3c70bb01bbb9a9d9916f74701ea9e4b24888e4c48225d"
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/neutral.png",
+              "source_sha256": "31ef1c9b62fc056dbcf7b0ed57919479affbbd854b154e5c8f8ce19b5b332537"
             },
             "joy": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/joy.webp",
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/joy.webp",
               "offset": [
-                -21,
-                13
+                -22,
+                12
               ],
-              "scale": 0.377104377,
+              "scale": 0.377867746,
               "nearest": false,
               "native_detail": true,
               "anchor": [
-                495.0,
-                1515
+                488.5,
+                1513
               ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/joy.png",
-              "source_sha256": "13bb9495694dc0d6a5487bee2fd772c693e04c3186ef639b7c1a1e2e41e1b37d"
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/joy.png",
+              "source_sha256": "17f1b5092af2d89ee44cbd88db74feb774b0628c9e6ab0ff90e6df60f79a9556"
             },
             "angry": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/angry.webp",
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/angry.webp",
               "offset": [
-                -21,
+                -22,
                 12
+              ],
+              "scale": 0.377867746,
+              "nearest": false,
+              "native_detail": true,
+              "anchor": [
+                488.0,
+                1513
+              ],
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/angry.png",
+              "source_sha256": "d3c785ac1c786487e4772350b9e86018648ba45edd2957120ab6689cba8dde60"
+            },
+            "anxious": {
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/anxious.webp",
+              "offset": [
+                -22,
+                13
+              ],
+              "scale": 0.377358491,
+              "nearest": false,
+              "native_detail": true,
+              "anchor": [
+                488.5,
+                1513
+              ],
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/anxious.png",
+              "source_sha256": "1c5f88cec7d95eaab13fb907cc398b0d6a8f028a1c4379ee3883b96697c6df77"
+            },
+            "flustered": {
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/resident_nubi-flustered.webp",
+              "offset": [
+                -22,
+                13
               ],
               "scale": 0.377612947,
               "nearest": false,
               "native_detail": true,
               "anchor": [
-                496.0,
-                1514
+                488.5,
+                1513
               ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/angry.png",
-              "source_sha256": "1f6f8b42b482889f2f48058ab99a91ab1914bb6eb5e853eedf10ba0adfea719e"
-            },
-            "anxious": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/anxious.webp",
-              "offset": [
-                -21,
-                13
-              ],
-              "scale": 0.376850606,
-              "nearest": false,
-              "native_detail": true,
-              "anchor": [
-                495.5,
-                1515
-              ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/anxious.png",
-              "source_sha256": "ce178303212ef5357cd51b9ded2eaa20143debee9e1b0d31925ef843420979b6"
-            },
-            "flustered": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/resident_nubi-flustered.webp",
-              "offset": [
-                -21,
-                13
-              ],
-              "scale": 0.376850606,
-              "nearest": false,
-              "native_detail": true,
-              "anchor": [
-                495.5,
-                1516
-              ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/flustered.png",
-              "source_sha256": "f3c4cadbd9e8f56944f073f4f989b377959a75d28f7ddbbc16308b913bc4d060"
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/flustered.png",
+              "source_sha256": "9fe6098c522735f99cc629455aed5e61884c173299b53812f6494052d6696925"
             },
             "surprise_talk": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/surprise_talk.webp",
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/surprise_talk.webp",
               "offset": [
-                -21,
-                13
+                -22,
+                12
               ],
-              "scale": 0.376597176,
+              "scale": 0.377867746,
               "nearest": false,
               "native_detail": true,
               "anchor": [
-                496.0,
-                1515
+                488.5,
+                1513
               ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/surprise_talk.png",
-              "source_sha256": "e238e212dba4fd66d0c7780d53f740c42304023063c6a336561d0b643c173094"
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/surprise_talk.png",
+              "source_sha256": "d8ba54209b906b2bceabff5826d97a21f12f58363acc96a9fdd02318a4380508"
             }
           },
           "question_top": 118
         },
         "760": {
           "canvas": [
-            336,
+            329,
             617
           ],
           "frames": {
             "neutral": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/neutral.webp",
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/neutral.webp",
               "offset": [
-                -22,
-                13
+                -23,
+                12
               ],
-              "scale": 0.383314846,
+              "scale": 0.384091835,
               "nearest": false,
               "native_detail": true,
               "anchor": [
-                495.0,
-                1514
+                488.5,
+                1512
               ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/neutral.png",
-              "source_sha256": "252c56629ede580627b3c70bb01bbb9a9d9916f74701ea9e4b24888e4c48225d"
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/neutral.png",
+              "source_sha256": "31ef1c9b62fc056dbcf7b0ed57919479affbbd854b154e5c8f8ce19b5b332537"
             },
             "joy": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/joy.webp",
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/joy.webp",
               "offset": [
-                -21,
+                -23,
                 13
               ],
-              "scale": 0.382798597,
+              "scale": 0.383573493,
               "nearest": false,
               "native_detail": true,
               "anchor": [
-                495.0,
-                1515
+                488.5,
+                1513
               ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/joy.png",
-              "source_sha256": "13bb9495694dc0d6a5487bee2fd772c693e04c3186ef639b7c1a1e2e41e1b37d"
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/joy.png",
+              "source_sha256": "17f1b5092af2d89ee44cbd88db74feb774b0628c9e6ab0ff90e6df60f79a9556"
             },
             "angry": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/angry.webp",
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/angry.webp",
               "offset": [
-                -22,
+                -23,
+                13
+              ],
+              "scale": 0.383573493,
+              "nearest": false,
+              "native_detail": true,
+              "anchor": [
+                488.0,
+                1513
+              ],
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/angry.png",
+              "source_sha256": "d3c785ac1c786487e4772350b9e86018648ba45edd2957120ab6689cba8dde60"
+            },
+            "anxious": {
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/anxious.webp",
+              "offset": [
+                -23,
+                13
+              ],
+              "scale": 0.383056547,
+              "nearest": false,
+              "native_detail": true,
+              "anchor": [
+                488.5,
+                1513
+              ],
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/anxious.png",
+              "source_sha256": "1c5f88cec7d95eaab13fb907cc398b0d6a8f028a1c4379ee3883b96697c6df77"
+            },
+            "flustered": {
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/resident_nubi-flustered.webp",
+              "offset": [
+                -23,
                 13
               ],
               "scale": 0.383314846,
               "nearest": false,
               "native_detail": true,
               "anchor": [
-                496.0,
-                1514
+                488.5,
+                1513
               ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/angry.png",
-              "source_sha256": "1f6f8b42b482889f2f48058ab99a91ab1914bb6eb5e853eedf10ba0adfea719e"
-            },
-            "anxious": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/anxious.webp",
-              "offset": [
-                -22,
-                13
-              ],
-              "scale": 0.382540993,
-              "nearest": false,
-              "native_detail": true,
-              "anchor": [
-                495.5,
-                1515
-              ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/anxious.png",
-              "source_sha256": "ce178303212ef5357cd51b9ded2eaa20143debee9e1b0d31925ef843420979b6"
-            },
-            "flustered": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/resident_nubi-flustered.webp",
-              "offset": [
-                -22,
-                13
-              ],
-              "scale": 0.382540993,
-              "nearest": false,
-              "native_detail": true,
-              "anchor": [
-                495.5,
-                1516
-              ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/flustered.png",
-              "source_sha256": "f3c4cadbd9e8f56944f073f4f989b377959a75d28f7ddbbc16308b913bc4d060"
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/flustered.png",
+              "source_sha256": "9fe6098c522735f99cc629455aed5e61884c173299b53812f6494052d6696925"
             },
             "surprise_talk": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/surprise_talk.webp",
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/surprise_talk.webp",
               "offset": [
-                -22,
-                14
+                -23,
+                13
               ],
-              "scale": 0.382283736,
+              "scale": 0.383573493,
               "nearest": false,
               "native_detail": true,
               "anchor": [
-                496.0,
-                1515
+                488.5,
+                1513
               ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/surprise_talk.png",
-              "source_sha256": "e238e212dba4fd66d0c7780d53f740c42304023063c6a336561d0b643c173094"
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/surprise_talk.png",
+              "source_sha256": "d8ba54209b906b2bceabff5826d97a21f12f58363acc96a9fdd02318a4380508"
             }
           }
         },
         "840": {
           "canvas": [
-            366,
+            359,
             677
           ],
           "frames": {
             "neutral": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/neutral.webp",
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/neutral.webp",
               "offset": [
-                -27,
-                12
+                -28,
+                11
               ],
-              "scale": 0.423663777,
+              "scale": 0.424522555,
               "nearest": false,
               "native_detail": true,
               "anchor": [
-                495.0,
-                1514
+                488.5,
+                1512
               ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/neutral.png",
-              "source_sha256": "252c56629ede580627b3c70bb01bbb9a9d9916f74701ea9e4b24888e4c48225d"
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/neutral.png",
+              "source_sha256": "31ef1c9b62fc056dbcf7b0ed57919479affbbd854b154e5c8f8ce19b5b332537"
             },
             "joy": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/joy.webp",
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/joy.webp",
               "offset": [
-                -26,
+                -28,
                 12
               ],
-              "scale": 0.423093186,
+              "scale": 0.42394965,
               "nearest": false,
               "native_detail": true,
               "anchor": [
-                495.0,
-                1515
+                488.5,
+                1513
               ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/joy.png",
-              "source_sha256": "13bb9495694dc0d6a5487bee2fd772c693e04c3186ef639b7c1a1e2e41e1b37d"
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/joy.png",
+              "source_sha256": "17f1b5092af2d89ee44cbd88db74feb774b0628c9e6ab0ff90e6df60f79a9556"
             },
             "angry": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/angry.webp",
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/angry.webp",
+              "offset": [
+                -27,
+                12
+              ],
+              "scale": 0.42394965,
+              "nearest": false,
+              "native_detail": true,
+              "anchor": [
+                488.0,
+                1513
+              ],
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/angry.png",
+              "source_sha256": "d3c785ac1c786487e4772350b9e86018648ba45edd2957120ab6689cba8dde60"
+            },
+            "anxious": {
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/anxious.webp",
+              "offset": [
+                -27,
+                12
+              ],
+              "scale": 0.423378289,
+              "nearest": false,
+              "native_detail": true,
+              "anchor": [
+                488.5,
+                1513
+              ],
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/anxious.png",
+              "source_sha256": "1c5f88cec7d95eaab13fb907cc398b0d6a8f028a1c4379ee3883b96697c6df77"
+            },
+            "flustered": {
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/resident_nubi-flustered.webp",
               "offset": [
                 -27,
                 12
@@ -2687,59 +2719,27 @@
               "nearest": false,
               "native_detail": true,
               "anchor": [
-                496.0,
-                1514
+                488.5,
+                1513
               ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/angry.png",
-              "source_sha256": "1f6f8b42b482889f2f48058ab99a91ab1914bb6eb5e853eedf10ba0adfea719e"
-            },
-            "anxious": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/anxious.webp",
-              "offset": [
-                -27,
-                12
-              ],
-              "scale": 0.422808466,
-              "nearest": false,
-              "native_detail": true,
-              "anchor": [
-                495.5,
-                1515
-              ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/anxious.png",
-              "source_sha256": "ce178303212ef5357cd51b9ded2eaa20143debee9e1b0d31925ef843420979b6"
-            },
-            "flustered": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/resident_nubi-flustered.webp",
-              "offset": [
-                -27,
-                12
-              ],
-              "scale": 0.422808466,
-              "nearest": false,
-              "native_detail": true,
-              "anchor": [
-                495.5,
-                1516
-              ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/flustered.png",
-              "source_sha256": "f3c4cadbd9e8f56944f073f4f989b377959a75d28f7ddbbc16308b913bc4d060"
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/flustered.png",
+              "source_sha256": "9fe6098c522735f99cc629455aed5e61884c173299b53812f6494052d6696925"
             },
             "surprise_talk": {
-              "file": "assets/dialogue-player-facing/gaze116/resident_nubi/surprise_talk.webp",
+              "file": "assets/dialogue-player-facing/consistency20261108/resident_nubi/surprise_talk.webp",
               "offset": [
-                -27,
-                13
+                -28,
+                12
               ],
-              "scale": 0.42252413,
+              "scale": 0.42394965,
               "nearest": false,
               "native_detail": true,
               "anchor": [
-                496.0,
-                1515
+                488.5,
+                1513
               ],
-              "source_master": "art/dialogue-gaze-20261107/resident_nubi/surprise_talk.png",
-              "source_sha256": "e238e212dba4fd66d0c7780d53f740c42304023063c6a336561d0b643c173094"
+              "source_master": "art/dialogue-consistency-20261108/resident_nubi/surprise_talk.png",
+              "source_sha256": "d8ba54209b906b2bceabff5826d97a21f12f58363acc96a9fdd02318a4380508"
             }
           }
         }

@@ -1,0 +1,62 @@
+{
+  "action": {
+    "cg": false,
+    "cut": "d07-nubi-fold",
+    "cut_showing": true,
+    "packet": "(None, '누비가 젖은 행주를 접고 또 접는다. 행주가 손바닥만 해진다.', {'no_lead': True, 'expression': 'neutral', 'pose': 'neutral', 'cut': 'd07-nubi-fold', 'line_id': 'MS14_D07_S01_L0031'})",
+    "outcome": null
+  },
+  "state": {
+    "screens": [
+      "say"
+    ],
+    "day": 7,
+    "place": "마을 빨래터",
+    "who": "누비",
+    "say": "나가라고……{w=.4} 하려고 했어요.",
+    "meeting": {
+      "active": true,
+      "claim": "NW:fire",
+      "direction": {
+        "beat": "listen",
+        "claim": "NW:fire"
+      },
+      "reaction": null,
+      "focus": "resident_nubi",
+      "listener": null,
+      "comparison": null,
+      "followup": null,
+      "expression": "distressed",
+      "slots": {}
+    },
+    "audio": {
+      "music": "assets/bgm-snow.mp3",
+      "ambience": "assets/amb-wind.mp3",
+      "scene_fx": null
+    },
+    "gains": {
+      "music": 1,
+      "ambience": 1
+    },
+    "line": {
+      "identity": null,
+      "index": 0
+    },
+    "settings": {
+      "cps": 55,
+      "motion": true
+    },
+    "effects": []
+  },
+  "pageerrors": [],
+  "version": "0.20.126",
+  "status": "PASSED",
+  "scope": "준비한 7일차 상태에서 실제 대사·회의·저장 UI. 전체 연속 플레이 아님.",
+  "checks": [
+    "새 게임 시작 버전·입구 도착",
+    "행주 컷 PC1280×720·모바일844×390 표시",
+    "컷 중 실제 저장→새로고침→이어하기→컷 복원",
+    "다음 누비 발언에서 컷 해제·새 불안 표정",
+    "별도 준비한 질문 UI의 전신·발선 표시"
+  ]
+}

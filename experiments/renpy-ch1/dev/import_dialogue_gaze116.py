@@ -73,6 +73,12 @@ def main():
     parser.add_argument('--apply',action='store_true')
     args=parser.parse_args()
     targets=json.loads((ART/'runtime-fit-targets.json').read_text())
+    registry=ROOT/'game/assets/room13-dialogue-player-facing.json'
+    current=json.loads(registry.read_text())['people']
+    # 이후 검수·납품된 누비 묶음은 전용 importer가 관리한다. 예전 전체
+    # 시선 교정 가져오기로 새 작화를 되돌리지 않는다.
+    if current.get('resident_nubi',{}).get('art_revision')=='nubi-consistency-20261108':
+        targets.pop('resident_nubi',None)
     prepared={}
     for person,target in targets.items():
         sources={}
@@ -98,7 +104,6 @@ def main():
             for frame,data in zip(frames,pool.map(encode,(ROOT/frame['source_master'] for frame in frames))):
                 target=ROOT/'game'/frame['file'];target.parent.mkdir(parents=True,exist_ok=True)
                 target.write_bytes(data)
-        registry=ROOT/'game/assets/room13-dialogue-player-facing.json'
         data=json.loads(registry.read_text());data['people'].update(prepared)
         normalize_question_layout(data['people'])
         registry.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')

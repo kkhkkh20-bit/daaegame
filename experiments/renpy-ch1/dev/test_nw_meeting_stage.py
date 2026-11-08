@@ -53,7 +53,11 @@ class MeetingStage(unittest.TestCase):
         # dialogue with the same meeting stage and header.
         self.assertIn('r13_meeting_claim in R13_DEBATE and not r13_nw_meeting_claim(r13_meeting_claim)',say)
         # 2026-10-27: 회의 상태로 돌아온 현장에서 물건을 읽을 때(r13_field_reading)는 무대를 깔지 않는다.
-        self.assertIn('if r13_meeting_active and r13_nw_meeting_claim(r13_meeting_claim) and not r13_field_reading:\n            use r13_meeting_stage(',say)
+        self.assertIn('if r13_meeting_active and r13_nw_meeting_claim(r13_meeting_claim) and not r13_field_reading:',say)
+        # 행동 근접 컷에는 무대를 잠깐 비우되 회의 상단과 일반 대사의 무대는 남는다.
+        meeting=say.split('if r13_meeting_active and r13_nw_meeting_claim(r13_meeting_claim) and not r13_field_reading:',1)[1].split('$ b_face',1)[0]
+        self.assertIn('use r13_meeting_stage(',meeting)
+        self.assertIn('use r13_meeting_chrome(',meeting)
         self.assertIn('use r13_meeting_tools(r13_meeting_claim,r13_meeting_live_target())',say)
         more=(GAME/'systems/room13_playback.rpy').read_text()
         self.assertIn('if r13_meeting_active and not r13_nw_meeting_claim(r13_meeting_claim):\n        use r13_meeting_more_tools',more)

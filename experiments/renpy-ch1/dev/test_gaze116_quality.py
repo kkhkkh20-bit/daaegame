@@ -20,7 +20,9 @@ class GazeQuality(unittest.TestCase):
     def test_new_frames_are_full_resolution_transparent_originals_and_matching_runtime_files(self):
         for person in TARGETS:
             entry=self.people[person]
-            self.assertEqual(entry.get('art_revision'),'gaze-quality-20261107')
+            expected_revision=('nubi-consistency-20261108' if person=='resident_nubi'
+                               else 'gaze-quality-20261107')
+            self.assertEqual(entry.get('art_revision'),expected_revision)
             self.assertEqual(set(entry['profiles']['840']['frames']),set(SLOTS))
             for slot,frame in entry['profiles']['840']['frames'].items():
                 path=ROOT/frame['source_master'];row=read_source(path)

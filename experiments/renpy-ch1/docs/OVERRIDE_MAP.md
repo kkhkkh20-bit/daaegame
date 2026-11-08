@@ -246,7 +246,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 160 | `systems/room13_ep_art.rpy:169` | _r13_impact_line_art |
+| 1 | 160 | `systems/room13_ep_art.rpy:172` | _r13_impact_line_art |
 | 2 | 345 | `systems/room13_impact_fx.rpy:65` | _r13_met_line_art |
 | 3 | 346 | `room13_v111_idle.rpy:92` | _r13_end_cut_line_art |
 | 4 | 350 | `systems/room13_end_cut.rpy:83` |  |
@@ -485,7 +485,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 58 | `room13_world_camera.rpy:68` | _r13_ep_art_world_background |
 | 2 | 160 | `systems/room13_ep_art.rpy:86` | _r13_v111_ruin_world |
-| 3 | 162 | `systems/room13_ep_art.rpy:253` |  |
+| 3 | 162 | `systems/room13_ep_art.rpy:256` |  |
 
 ## `r13_acting_spec` (2층)
 
@@ -604,7 +604,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 160 | `systems/room13_ep_art.rpy:37` | _r13_v111_ruin_bg |
-| 2 | 162 | `systems/room13_ep_art.rpy:243` |  |
+| 2 | 162 | `systems/room13_ep_art.rpy:246` |  |
 
 ## `r13_ep_cut_art` (2층)
 
@@ -617,7 +617,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 160 | `systems/room13_ep_art.rpy:203` | _r13_end_cut_line_clear |
+| 1 | 160 | `systems/room13_ep_art.rpy:206` | _r13_end_cut_line_clear |
 | 2 | 350 | `systems/room13_end_cut.rpy:91` |  |
 
 ## `r13_evidence_acquired` (2층)

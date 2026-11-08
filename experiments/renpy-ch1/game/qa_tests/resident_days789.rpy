@@ -64,6 +64,12 @@ testcase resident7_nubi_admission:
     # 자백 직전 검수는 이미 논증을 통과한 상태로 준비한다. 자료 소유만으로는 자백하지 않는다.
     run Function(r13_v111_set,'proof_given:'+R13_FIRE_LINK_FIRST,['V111:E06_FIRE'])
     run Jump('r13_v111_nubi_admission7')
+    click pos (900,600) until eval (r13_packet and '행주가 손바닥만' in r13_packet[1].replace('\n',' ')) timeout 45
+    assert eval (renpy.showing('r13_ep_cut') and r13_ep_cut_current=='d07-nubi-fold')
+    pause .5
+    screenshot 'resident7_nubi_fold.png'
+    click pos (900,600) until eval (r13_packet and '나가라고' in r13_packet[1].replace('\n',' ')) timeout 30
+    assert eval (not renpy.showing('r13_ep_cut'))
     click pos (900,600) until eval (r13_packet and '아이들을 내보내려고 문 앞에서' in r13_packet[1].replace('\n',' ')) timeout 60
     assert eval (not renpy.get_screen('r13_fire_recheck'))
     assert eval (r13_meeting_focus=='resident_nubi' and r13_meeting_direct_pose('resident_nubi')=='anxious')
@@ -74,6 +80,43 @@ testcase resident7_nubi_admission:
     assert eval (r13_v111_value('NUBI_admitted_setting_fire') is True and r13_v111_value('NUBI_intent_to_kill')=='unproven')
     assert eval (r13_v111_owned('E07_NUBI'))
 
+
+# 후속판의 손목 장면 세 줄만 실제 대사 재생기로 읽는다. 공개 1부 종료 경계는 바꾸지 않는다.
+label qa_resident7_sleeve_cut:
+    $ qa_resident789(7)
+    $ r13_edit(period=2,location='room13')
+    $ room13['v111']['scene']='MS14_D07_S04'
+    $ r13_flag('v111:entered:MS14_D07_S04')
+    $ r13_v111_set('location:daram','room13')
+    $ r13_v111_set('DARAM_location','with_dad')
+    $ r13_v111_arrive(['daram','neoul','karo'])
+    call r13_scene(R13_PLACES['room13'][1],R13_PLACES['room13'][0],'calm')
+    call r13_lines(r13_v111_lines(['MS14_D07_S04_L0030']),'qa:sleeve7:action')
+    call r13_lines(r13_v111_lines(['MS14_D07_S04_L0031']),'qa:sleeve7:father')
+    call r13_lines(r13_v111_lines(['MS14_D07_S04_L0033']),'qa:sleeve7:daram')
+    call screen r13_hub
+    return
+
+testcase resident7_sleeve_cut_returns_to_daram:
+    pause 1.0
+    click '처음부터'
+    click pos (900,600) until '편지를 외투 안에' timeout 60
+    click pos (900,600) until screen 'r13_hub' timeout 90
+    $ qa_sleeve_part1_public=R13_PART1_PUBLIC
+    run Jump('qa_resident7_sleeve_cut')
+    click pos (900,600) until eval (r13_packet and '손목을 잡는다' in r13_packet[1].replace('\n',' ')) timeout 45
+    assert eval (renpy.showing('r13_ep_cut') and r13_ep_cut_current=='d07-sleeve-hold')
+    pause .5
+    screenshot 'resident7_sleeve_cut.png'
+    click pos (900,600) until eval (r13_packet and '이름부터 말해요' in r13_packet[1].replace('\n',' ')) timeout 30
+    assert eval (renpy.showing('r13_ep_cut') and r13_ep_cut_current=='d07-sleeve-hold')
+    click pos (900,600) until eval (r13_packet and '내가 그런 줄 알아?' in r13_packet[1].replace('\n',' ')) timeout 30
+    assert eval (not renpy.showing('r13_ep_cut') and r13_ep_cut_current is None)
+    assert eval (r13_packet[0]=='daram' and r13_fullbody_emotion(r13_directed_pose)=='anxious')
+    assert eval (r13_motion_person=='daram' and renpy.showing('r13_visitor'))
+    assert eval (R13_PART1_PUBLIC==qa_sleeve_part1_public and not r13_v111_value('DARAM_DETAINED'))
+    pause .5
+    screenshot 'resident7_sleeve_daram_return.png'
 
 testcase resident8_custody_care:
     pause 1.0

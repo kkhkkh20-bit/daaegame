@@ -164,6 +164,9 @@ init 160 python:
             u=R13_EV_CUT_PX;inner=side-2*5*u
             return Fixed(r13_ev_pixel_frame(x,y,side,R13_EV_CUT_FRAME),
                 Transform("assets/room13-v111-blanket-%s.webp"%state,xysize=(inner,inner),fit="contain",nearest=True,xpos=x+side//2,xanchor=.5,ypos=y+side//2,yanchor=.5),xysize=(1280,720))
+        # 손·천의 정제된 근접 원화는 1672px에서 줄여 보여 준다. 이 두 컷만 부드럽게 축소한다.
+        if name in ("d07-nubi-fold","d07-sleeve-hold"):
+            return Transform("assets/room13-ep-%s.webp"%name,size=(1280,720),nearest=False)
         return Transform("assets/room13-ep-%s.webp"%name,size=(1280,720),nearest=True)
 
     def r13_ep_line_art(packet):
