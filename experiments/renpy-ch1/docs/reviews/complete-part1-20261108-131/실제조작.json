@@ -1,0 +1,5220 @@
+[
+  {
+    "log_row": 73,
+    "action": "현장행동",
+    "day": 1,
+    "scene": "MS14_D01_S02",
+    "gate": "gate_request",
+    "claim": null,
+    "evidence_count": 1,
+    "extra": {
+      "title": "초소 처리 명단을 읽는다",
+      "location": "gate",
+      "guard": [],
+      "object": "ledger",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 82,
+    "action": "현장행동",
+    "day": 1,
+    "scene": "MS14_D01_S02",
+    "gate": "gate_choice",
+    "claim": null,
+    "evidence_count": 2,
+    "extra": {
+      "title": "신청서를 찾으러 선반으로 간다",
+      "location": "gate",
+      "guard": [],
+      "object": "booth",
+      "index": 1
+    }
+  },
+  {
+    "log_row": 84,
+    "action": "선택지",
+    "day": 1,
+    "scene": "MS14_D01_S02",
+    "gate": "gate_choice",
+    "claim": null,
+    "evidence_count": 2,
+    "extra": {
+      "items": [
+        "목요일 칸을 꺼낸다",
+        "금요일 칸을 꺼낸다",
+        "토요일 칸을 꺼낸다"
+      ],
+      "pick": "금요일 칸을 꺼낸다"
+    }
+  },
+  {
+    "log_row": 87,
+    "action": "현장행동",
+    "day": 1,
+    "scene": "MS14_D01_S02",
+    "gate": "gate_investigate",
+    "claim": null,
+    "evidence_count": 2,
+    "extra": {
+      "title": "신청 원본을 읽는다",
+      "location": "gate",
+      "guard": [],
+      "object": "gate_documents",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 96,
+    "action": "현장행동",
+    "day": 1,
+    "scene": "MS14_D01_S03",
+    "gate": "gate_investigate",
+    "claim": null,
+    "evidence_count": 3,
+    "extra": {
+      "title": "겨울철 입장 규칙을 읽는다",
+      "location": "gate",
+      "guard": [],
+      "object": "rules",
+      "index": 1
+    }
+  },
+  {
+    "log_row": 97,
+    "action": "현장행동",
+    "day": 1,
+    "scene": "MS14_D01_S03",
+    "gate": "gate_investigate",
+    "claim": null,
+    "evidence_count": 3,
+    "extra": {
+      "title": "겨울철 입장 규칙을 읽는다",
+      "location": "gate",
+      "guard": [],
+      "object": "rules",
+      "index": 1
+    }
+  },
+  {
+    "log_row": 100,
+    "action": "현장행동",
+    "day": 1,
+    "scene": "MS14_D01_S03",
+    "gate": "gate_investigate",
+    "claim": null,
+    "evidence_count": 4,
+    "extra": {
+      "title": "근거를 대겠습니다. 둘 다 들여보내 주십시오.",
+      "location": "gate",
+      "guard": [],
+      "person": "guard",
+      "index": 5
+    }
+  },
+  {
+    "log_row": 101,
+    "action": "질문",
+    "day": 1,
+    "scene": "MS14_D01_S03",
+    "gate": "gate_investigate",
+    "claim": null,
+    "evidence_count": 4,
+    "extra": {
+      "title": "근거를 대겠습니다. 둘 다 들여보내 주십시오.",
+      "location": "gate",
+      "guard": [],
+      "person": "guard",
+      "index": 5
+    }
+  },
+  {
+    "log_row": 102,
+    "action": "자료조작",
+    "day": 1,
+    "scene": "MS14_D01_S03",
+    "gate": "gate_investigate",
+    "claim": "v111:함께 들어갈 근거를 고른다",
+    "evidence_count": 4,
+    "extra": null
+  },
+  {
+    "log_row": 103,
+    "action": "자료조작",
+    "day": 1,
+    "scene": "MS14_D01_S03",
+    "gate": "gate_investigate",
+    "claim": "v111:함께 들어갈 근거를 고른다",
+    "evidence_count": 4,
+    "extra": null
+  },
+  {
+    "log_row": 104,
+    "action": "자료조작",
+    "day": 1,
+    "scene": "MS14_D01_S03",
+    "gate": "gate_investigate",
+    "claim": "v111:함께 들어갈 근거를 고른다",
+    "evidence_count": 4,
+    "extra": null
+  },
+  {
+    "log_row": 105,
+    "action": "자료조작",
+    "day": 1,
+    "scene": "MS14_D01_S03",
+    "gate": "gate_investigate",
+    "claim": "v111:함께 들어갈 근거를 고른다",
+    "evidence_count": 4,
+    "extra": null
+  },
+  {
+    "log_row": 132,
+    "action": "질문",
+    "day": 1,
+    "scene": "MS14_D01_S04",
+    "gate": "registered_menu",
+    "claim": "v111:함께 들어갈 근거를 고른다",
+    "evidence_count": 5,
+    "extra": {
+      "title": "명단은 어떻게 옮겨 적으신 겁니까?",
+      "location": "gate",
+      "guard": [
+        [
+          "state",
+          "reason_heard",
+          false
+        ]
+      ],
+      "person": "guard",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 139,
+    "action": "현장행동",
+    "day": 1,
+    "scene": "MS14_D01_S04",
+    "gate": "registered_menu",
+    "claim": "v111:함께 들어갈 근거를 고른다",
+    "evidence_count": 5,
+    "extra": {
+      "title": "짐을 찾아 여관으로 간다",
+      "location": "inn",
+      "guard": [],
+      "move": "inn",
+      "index": 1
+    }
+  },
+  {
+    "log_row": 140,
+    "action": "지도이동",
+    "day": 1,
+    "scene": "MS14_D01_S04",
+    "gate": "registered_menu",
+    "claim": "v111:함께 들어갈 근거를 고른다",
+    "evidence_count": 5,
+    "extra": "inn"
+  },
+  {
+    "log_row": 183,
+    "action": "현장행동",
+    "day": 1,
+    "scene": "MS14_D01_S05",
+    "gate": "travel",
+    "claim": "v111:함께 들어갈 근거를 고른다",
+    "evidence_count": 5,
+    "extra": {
+      "title": "여관 2층 · 13호실",
+      "location": "room13",
+      "move": "room13"
+    }
+  },
+  {
+    "log_row": 184,
+    "action": "지도이동",
+    "day": 1,
+    "scene": "MS14_D01_S05",
+    "gate": "travel",
+    "claim": "v111:함께 들어갈 근거를 고른다",
+    "evidence_count": 5,
+    "extra": "room13"
+  },
+  {
+    "log_row": 194,
+    "action": "현장행동",
+    "day": 1,
+    "scene": "MS14_D01_S05",
+    "gate": "note_pick",
+    "claim": "v111:함께 들어갈 근거를 고른다",
+    "evidence_count": 5,
+    "extra": {
+      "title": "책상 메모를 집는다",
+      "location": "room13",
+      "guard": [],
+      "object": "mother_note",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 212,
+    "action": "자료조작",
+    "day": 1,
+    "scene": "MS14_D01_S05",
+    "gate": "note_pick",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": null
+  },
+  {
+    "log_row": 213,
+    "action": "실행중단",
+    "day": 1,
+    "scene": "MS14_D01_S05",
+    "gate": "note_pick",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": "('widget absent', 'r13_proof_workspace', 'r13_pw_document_tail_E06')"
+  },
+  {
+    "log_row": 214,
+    "action": "자료조작",
+    "day": 1,
+    "scene": "MS14_D01_S05",
+    "gate": "note_pick",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": null
+  },
+  {
+    "log_row": 220,
+    "action": "자료조작",
+    "day": 1,
+    "scene": "MS14_D01_S05",
+    "gate": "note_pick",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": null
+  },
+  {
+    "log_row": 221,
+    "action": "자료조작",
+    "day": 1,
+    "scene": "MS14_D01_S05",
+    "gate": "note_pick",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": null
+  },
+  {
+    "log_row": 229,
+    "action": "선택지",
+    "day": 1,
+    "scene": "MS14_D01_S05",
+    "gate": "note_pick",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": {
+      "items": [
+        "할머니에게 초롱의 행방을 묻는다",
+        "방을 더 둘러본다"
+      ],
+      "pick": "할머니에게 초롱의 행방을 묻는다"
+    }
+  },
+  {
+    "log_row": 254,
+    "action": "현장행동",
+    "day": 1,
+    "scene": "MS14_D01_S05",
+    "gate": "sleep1",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": {
+      "title": "과자를 두고 잠든다",
+      "location": "room13",
+      "guard": [],
+      "object": "bed",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 255,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": {
+      "title": "눈에 막힌 입구",
+      "location": "gate",
+      "move": "gate"
+    }
+  },
+  {
+    "log_row": 256,
+    "action": "지도이동",
+    "day": 2,
+    "scene": "MS14_D02_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": "gate"
+  },
+  {
+    "log_row": 280,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": {
+      "title": "돌이 있는 광장",
+      "location": "square",
+      "move": "square"
+    }
+  },
+  {
+    "log_row": 281,
+    "action": "지도이동",
+    "day": 2,
+    "scene": "MS14_D02_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": "square"
+  },
+  {
+    "log_row": 293,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S01",
+    "gate": "lamp_rope",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": {
+      "title": "덮개 지지 끈을 잡는다",
+      "location": "square",
+      "guard": [],
+      "object": "lamp",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 319,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S01",
+    "gate": "go_box",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": {
+      "title": "초롱과 교환함으로 간다",
+      "location": "forest",
+      "guard": [],
+      "move": "forest",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 320,
+    "action": "지도이동",
+    "day": 2,
+    "scene": "MS14_D02_S01",
+    "gate": "go_box",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": "forest"
+  },
+  {
+    "log_row": 323,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S01",
+    "gate": "box_inspect",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": {
+      "title": "함과 주변을 직접 확인한다",
+      "location": "forest",
+      "guard": [],
+      "object": "v111_box",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 331,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S01",
+    "gate": "box_note",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": {
+      "title": "도착 쪽지를 직접 넣는다",
+      "location": "forest",
+      "guard": [],
+      "object": "v111_box",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 345,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S02",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": {
+      "title": "우체국 입구",
+      "location": "post",
+      "move": "post"
+    }
+  },
+  {
+    "log_row": 346,
+    "action": "지도이동",
+    "day": 2,
+    "scene": "MS14_D02_S02",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": "post"
+  },
+  {
+    "log_row": 353,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S02",
+    "gate": "envelope_show",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": {
+      "title": "초대 편지의 봉투를 보여 준다",
+      "location": "post",
+      "guard": [],
+      "person": "seryeon",
+      "present": "V111:E01",
+      "present_only": true,
+      "index": 0
+    }
+  },
+  {
+    "log_row": 354,
+    "action": "실행중단",
+    "day": 2,
+    "scene": "MS14_D02_S02",
+    "gate": "envelope_show",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": "('제시계획 없음', {'version': '0.20.131', 'screens': ['r13_book'], 'day': 2, 'period': 0, 'location': 'post', 'gate': 'envelope_show', 'scene': 'MS14_D02_S02', 'who': '', 'say': '', 'choice': None, 'claim': 'v111:두 편지를 나란히 본다', 'values': {'day': 2, 'carriage_stopped': True, 'father_with_daram': True, 'piko_sheltered': False, 'piko_alive': True, 'portrait': 'none', 'gate_registered': True, 'gate_basis_proven': True, 'reason_heard': True, 'purpose_difference_known': True, 'invitation_author': 'unknown', 'mother_warning_received': False, 'public_stones': 'with_baek', 'silluk_status': 'free', 'silluk_labor_transfer_known': False, 'unverified_stones_status': 'with_baek', 'nero_bedding_reserved': False, 'carried_dry_blankets': 0, 'bami_status': 'free', 'musoe_alive': True, 'mother_box_checked_day2': True, 'nero_met_day2': False, 'nero_supply_route_known': False, 'under_desk_checked': True, 'lamp_theft_supported': False, 'nero_contact_lead': False, 'box_rechecked_day2': False, 'rumor_not_eyewitness': False, 'inn_information_hub_risk_known': False, 'K01a': True, 'K01b': True, 'K05': True, 'lamp_part_0': False, 'lamp_part_1': False, 'lamp_part_2': False, 'lamp_part_3': False, 'd4_fence_seen': False, 'd4_tracks_seen': False, 'd4_bucket_seen': False, 'afternoon_visit_declined': False, 'somi_entry_consent': False, 'mother_denies_invitation': False, 'supply_contact_pending': False, 'family_safety_changed': False, 'KKOMI_ALIVE': True, 'OWL_ALIVE': True, 'TOK_ALIVE': True, 'tok_workshop_present': True, 'tok_hearing_present': True, 'DARAM_DETAINED': False, 'route7': 'uncommitted', 'prevention': None, 'grandmother_custody': 'free', 'E01.variant': 'observed', 'location:karo': 'gate', 'location:guard': 'gate', 'elapsed_minutes': 65, 'E02.variant': 'observed', 'E03.variant': 'observed', 'E04.variant': 'observed', 'talked:MS14_D01_S03:guard': True, 'ui_topic_read:gate_investigate:5': True, 'proof_given:함께 들어갈 근거를 고른다': ['V111:E02', 'V111:E03'], 'meeting:gate': 'win', 'E05.variant': 'observed', 'talked:MS14_D01_S04:guard': True, 'ui_topic_read:registered_menu:0': True, 'location:daram': 'square', 'location:neoul': 'gate', 'gate_mother_report_instruction_heard': True, 'heard_inn_order1': True, 'location:granny': 'inn', 'ui_room_arrival_seen': True, 'E06.variant': 'observed', 'E30.variant': 'observed', 'letter_tail_observed': True, 'proof_given:두 편지를 나란히 본다': ['V111:E01', 'V111:E06'], 'cookie.location': 'room13_plate', 'return_transport_inquiry_pending': True, 'location:resident_ppul': 'square', 'location:resident_lamplighter': 'square', 'arrival_note_sent': True, 'location:seryeon': 'post', 'talked:MS14_D02_S02:seryeon': True}, 'owned': ['V111:E01', 'V111:E02', 'V111:E03', 'V111:E04', 'V111:E05', 'V111:E06', 'V111:E30'], 'arguments': {'v111:함께 들어갈 근거를 고른다': ['V111:E02', 'V111:E03'], 'v111:두 편지를 나란히 본다': ['V111:E01', 'V111:E06']}, 'binding': {'location': 'post', 'people': ['seryeon', 'daram'], 'options': [{'title': '초대 편지의 봉투를 보여 준다', 'location': 'post', 'guard': [], 'person': 'seryeon', 'present': 'V111:E01', 'present_only': True, 'index': 0}]}, 'packet': [None, '우체국 안은 종이와 젖은 털실 냄새가 난다. 세련이 책상 아래 서랍 하나를 열려다 도로 닫는다. 그사이 어젯밤 침구를 가져다준 여관 종업원이 우편 묶음을 창구에 내려놓고, 아무 말 없이 나간다.', {'no_lead': True, 'expression': 'neutral', 'pose': 'neutral'}], 'index': 4})"
+  },
+  {
+    "log_row": 355,
+    "action": "자료제시",
+    "day": 2,
+    "scene": "MS14_D02_S02",
+    "gate": "envelope_show",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": "V111:E01"
+  },
+  {
+    "log_row": 356,
+    "action": "실행중단",
+    "day": 2,
+    "scene": "MS14_D02_S02",
+    "gate": "envelope_show",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": "('버튼 없음', '지난 사건', {'screens': ['r13_book'], 'room': {'campaign_id': 'room13_v1', 'version': 3, 'story_revision': 'father-pov-fire-pooling-v3', 'day': 2, 'period': 0, 'location': 'post', 'kitchen_switch': False, 'passage_open': False, 'secret_route_unlocked': False, 'case_state': 'pending', 'victim_state': 'alive', 'daram_state': 'with_dad', 'granny_state': 'trusted', 'trial_result': 'pending', 'evidence': ['V111:E01', 'V111:E02', 'V111:E03', 'V111:E04', 'V111:E05', 'V111:E06', 'V111:E30'], 'records': {'V111:E01': {'day': 1, 'period': 0, 'source': 'MS14_D01_S01_L0010', 'place': 'gate'}, 'V111:E02': {'day': 1, 'period': 0, 'source': 'MS14_D01_S02_L0019', 'place': 'gate'}, 'V111:E03': {'day': 1, 'period': 0, 'source': 'MS14_D01_S03_L0002', 'place': 'gate'}, 'V111:E04': {'day': 1, 'period': 0, 'source': 'MS14_D01_S03_L0007', 'place': 'gate'}, 'V111:E05': {'day': 1, 'period': 0, 'source': 'MS14_D01_S04_L0008', 'place': 'gate'}, 'V111:E06': {'day': 1, 'period': 0, 'source': 'MS14_D01_S05_L0019', 'place': 'room13'}, 'V111:E30': {'day': 1, 'period': 0, 'source': 'MS14_D01_S05_L0022', 'place': 'room13'}}, 'flags': ['lodging', 'v111:entered:MS14_D01_S01', 'v111:applied:MS14_D01_S01_L0010', 'v111:applied:MS14_D01_S01_L0015', 'v111:applied:MS14_D01_S01_L0016', 'v111:applied:option:leave_carriage:0', 'v111:entered:MS14_D01_S02', 'v111:time:1:inspect:gate_request:ledger', 'v111:applied:MS14_D01_S02_L0019', 'v111:applied:MS14_D01_S02_L0022_O2', 'v111:time:1:inspect:gate_investigate:gate_documents', 'v111:entered:MS14_D01_S03', 'v111:applied:MS14_D01_S03_L0002', 'v111:time:1:inspect:gate_investigate:rules', 'v111:applied:MS14_D01_S03_L0007', 'v111:time:1:topic:gate_investigate:5', 'v111:applied:MS14_D01_S03_L0008_O3', 'v111:applied:MS14_D01_S03_L0023', 'v111:entered:MS14_D01_S04', 'v111:applied:MS14_D01_S04_L0008', 'v111:time:1:topic:registered_menu:0', 'v111:applied:MS14_D01_S04_L0012_O1', 'v111:applied:MS14_D01_S04_L0016', 'v111:time:1:move:registered_menu:inn', 'v111:applied:MS14_D01_S04_L0012_O2', 'v111:applied:MS14_D01_S04_L0020', 'v111:entered:MS14_D01_S05', 'v111:time:1:move:travel:room13', 'v111:line:MS14_D01_S05_L0016', 'v111:time:1:inspect:note_pick:mother_note', 'v111:applied:MS14_D01_S05_L0019', 'v111:applied:MS14_D01_S05_L0022', 'v111:applied:MS14_D01_S05_L0031', 'v111:applied:MS14_D01_S05_L0048', 'v111:time:1:inspect:sleep1:bed', 'v111:applied:option:sleep1:0', 'v111:entered:MS14_D02_S01', 'v111:time:2:move:travel:gate', 'v111:applied:MS14_D02_S01_L0008', 'v111:time:2:move:travel:square', 'v111:time:2:inspect:lamp_rope:lamp', 'v111:time:2:move:go_box:forest', 'v111:time:2:inspect:box_inspect:v111_box', 'v111:applied:MS14_D02_S01_L0033', 'v111:time:2:inspect:box_note:v111_box', 'v111:applied:MS14_D02_S01_L0039', 'v111:entered:MS14_D02_S02', 'v111:time:2:move:travel:post'], 'read_topics': [], 'done': [], 'checks': {}, 'encounters': [{'person': 'karo', 'day': 1, 'period': 0, 'place': 'gate'}, {'person': 'guard', 'day': 1, 'period': 0, 'place': 'gate'}, {'person': 'neoul', 'day': 1, 'period': 0, 'place': 'gate'}, {'person': 'granny', 'day': 1, 'period': 0, 'place': 'inn'}, {'person': 'resident_ppul', 'day': 2, 'period': 0, 'place': 'square'}, {'person': 'resident_lamplighter', 'day': 2, 'period': 0, 'place': 'square'}, {'person': 'seryeon', 'day': 2, 'period': 0, 'place': 'post'}], 'resident_knowledge': {}, 'propositions': [], 'arguments': {'v111:함께 들어갈 근거를 고른다': ['V111:E02', 'V111:E03'], 'v111:두 편지를 나란히 본다': ['V111:E01', 'V111:E06']}, 'log': [], 'trial_ended': False, 'life_poc': True, 'learning_archive': [], 'mom_state': 'hidden', 'ending': None, 'events': [], 'convoy_revision': 0, 'scout_revision': -1, 'observations': {}, 'week2_started': False, 'finale_started': False, 'world_art_revisions': {'inn': 'ee4c4d10004e82b4ba9e0afa656e5b0fca535f7d03a65038a3a098e32f825c50', 'school': '002ece0c658efd6ce90754a1717cc1248b581458304198897db0f7d10de8917d', 'workshop': '990aa728b7f042940e56070145516d14c83623de625cbf2cd0b19756b1aa0cbb', 'square': 'fb4f5e962660489d3199d06d7fc6a943d57a977a73f22cd8ca1400fb9669c1a2', 'gate': '1e478a7915c1e2b179a238032106f3a7556b70b4173e5b289ac5f41340dc3974', 'clinic': '3f40df1612c0ab33648592fb27b5fb2080a98e062c4079c023d50a9213592fb6', 'store': '71552da835a41752feedca5900357658cc0642be5b31bb050e55c3635ebe743b', 'greenhouse': 'ca7bbee7242a52ba81a11a38866d06f988810a4e0ba16a0c5cde5e4231d00c0a', 'facility': 'e93d12bf3cfa29a97fdc933c7d841f7b81d9b46851db665cc407d2369c6b9852', 'altar': 'c12d8a6d6d5cbee725f9624b57256514fa3b58e5b980c3797442657600775136', 'kitchen': '873d5990cc565429f7bcd7f936a409abe5f8de01c3497bbd562802faf98b3c56', 'dining': 'a55eee24f1e6e7be107606e3c99fa759ba0d6e9674ac5b3cfac12b109989708a', 'passage': '1744c533ff0dd5baa6051c7c4b9f2543dc46700f441addd488b4a53866221064', 'hall': '84c3fbf3e2250a0e59c0b3436b0b77cdf459244985a6f855da3b88ada508d451', 'room13': '53d781748409f1c6c1a8c7364ae6b12b99a1bc8b1decd5febbc19e2ad26a1dbb', 'post': '5c81cff14feead2295d40bd11c22788544144f5509da230f321c297afdb40612', 'river': '85fc6a5b85a7c24935be067145db94c31f90f304f7b41d885a868ef19f94322e', 'forest': 'edf72724072a4c4d4f133831563bf40ff39c38eefec240b610f2fb10175b9f84', 'market': '099d28f3eecd90974f3024b4819c2c072e7625e64d73153425e5c304c378928d', 'ancient': 'cb1961477b1c2e9d99ccad1c2c4540b63e5607ed75baeac623461f4db1f1607c', 'ms14_somi': 'd519a7af34ea8934e4d99c5e7ea82e67b45a8a45e2ae9fe19187af793d38401f', 'ms14_guardroom': 'f9da9d3aecdababff3f935607eb4fd4751b30fba29993290af079d5f0ec376b4', 'ms14_somi_inside': 'eead32079d05d7a8392d118949457625568ae7eedf6041aee4e9196f5ba4a73b', 'laundry': '3fb44d630b04d62e6f15c79cb179fa062102ef7874f273c8defde983ccba4567', 'v111_labor': '7fcaff01659757c03dc0f6358b4326f8a7403943eb405ee2f4f96d9e702ab3d0', 'v111_woodshed': '16f11792cec843ce40052e0d991552eff0b15b31c1cd5345ce6c7d9b6b43d0ad', 'v111_fire': '903447816b8338f5cdb9c694c954156771358acd58d7da41e3c21d5ee5a7cdc7', 'v111_ruin': '18fc49545edaa76b8b28af4b9abe28e6bc6dc07474381b13eec8a683ab97f897', 'hidden_base14': 'c02e7019667dcc648a5039e2e7341875cfdcfbdccc8e35cea3028b21d4e523a2', 'hidden_pandol': 'a96fa8d6bf5183691246a975397b7d72c42a8ae6c66f703dfeb7af93c5344cdd'}, 'carriage_art_file': 'assets/room13-pixel-carriage-letter0153-morning.webp', 'interaction_revision': 2, 'last_inspection': None, 'visual_revision': 'pixel-b-front-v3', 'v111': {'version': '1.1.1', 'values': {'day': 2, 'carriage_stopped': True, 'father_with_daram': True, 'piko_sheltered': False, 'piko_alive': True, 'portrait': 'none', 'gate_registered': True, 'gate_basis_proven': True, 'reason_heard': True, 'purpose_difference_known': True, 'invitation_author': 'unknown', 'mother_warning_received': False, 'public_stones': 'with_baek', 'silluk_status': 'free', 'silluk_labor_transfer_known': False, 'unverified_stones_status': 'with_baek', 'nero_bedding_reserved': False, 'carried_dry_blankets': 0, 'bami_status': 'free', 'musoe_alive': True, 'mother_box_checked_day2': True, 'nero_met_day2': False, 'nero_supply_route_known': False, 'under_desk_checked': True, 'lamp_theft_supported': False, 'nero_contact_lead': False, 'box_rechecked_day2': False, 'rumor_not_eyewitness': False, 'inn_information_hub_risk_known': False, 'K01a': True, 'K01b': True, 'K05': True, 'lamp_part_0': False, 'lamp_part_1': False, 'lamp_part_2': False, 'lamp_part_3': False, 'd4_fence_seen': False, 'd4_tracks_seen': False, 'd4_bucket_seen': False, 'afternoon_visit_declined': False, 'somi_entry_consent': False, 'mother_denies_invitation': False, 'supply_contact_pending': False, 'family_safety_changed': False, 'KKOMI_ALIVE': True, 'OWL_ALIVE': True, 'TOK_ALIVE': True, 'tok_workshop_present': True, 'tok_hearing_present': True, 'DARAM_DETAINED': False, 'route7': 'uncommitted', 'prevention': None, 'grandmother_custody': 'free', 'E01.variant': 'observed', 'location:karo': 'gate', 'location:guard': 'gate', 'elapsed_minutes': 65, 'E02.variant': 'observed', 'E03.variant': 'observed', 'E04.variant': 'observed', 'talked:MS14_D01_S03:guard': True, 'ui_topic_read:gate_investigate:5': True, 'proof_given:함께 들어갈 근거를 고른다': ['V111:E02', 'V111:E03'], 'meeting:gate': 'win', 'E05.variant': 'observed', 'talked:MS14_D01_S04:guard': True, 'ui_topic_read:registered_menu:0': True, 'location:daram': 'square', 'location:neoul': 'gate', 'gate_mother_report_instruction_heard': True, 'heard_inn_order1': True, 'location:granny': 'inn', 'ui_room_arrival_seen': True, 'E06.variant': 'observed', 'E30.variant': 'observed', 'letter_tail_observed': True, 'proof_given:두 편지를 나란히 본다': ['V111:E01', 'V111:E06'], 'cookie.location': 'room13_plate', 'return_transport_inquiry_pending': True, 'location:resident_ppul': 'square', 'location:resident_lamplighter': 'square', 'arrival_note_sent': True, 'location:seryeon': 'post', 'talked:MS14_D02_S02:seryeon': True}, 'gate': 'envelope_show', 'people': ['seryeon'], 'fork_run': 1, 'thought_scene': 'MS14_D02_S01', 'thought_pending': False, 'scene': 'MS14_D02_S02', 'travel_to': 'post'}, 'question_cues_revision': 1, 'run_token': 'efbd2d6ea31e', 'morning_ids': {'1': '6e28e2d4', '2': '56b1526a'}}, 'say': '', 'buttons': [{'text': '자료', 'value': '', 'rect': [258, 64, 88, 48]}, {'text': '  ', 'value': 'False', 'rect': [1176, 60, 52, 52]}, {'text': '      이번', 'value': '', 'rect': [934, 68, 72, 40]}, {'text': '      지난', 'value': '', 'rect': [1012, 68, 72, 40]}, {'text': '      사람별', 'value': '', 'rect': [1090, 68, 78, 40]}, {'text': '       방의 메모       쪽지 1 ●', 'value': '', 'rect': [136, 168, 256, 79]}, {'text': '세련에게 먼저 보여주고, 건넬지는 대화 후 결정합니다.', 'value': '', 'rect': [910, 140, 297, 340]}, {'text': '      돌아가기', 'value': 'False', 'rect': [910, 572, 296, 64]}]})"
+  },
+  {
+    "log_row": 357,
+    "action": "자료제시",
+    "day": 2,
+    "scene": "MS14_D02_S02",
+    "gate": "envelope_show",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": "V111:E01"
+  },
+  {
+    "log_row": 358,
+    "action": "자료제시",
+    "day": 2,
+    "scene": "MS14_D02_S02",
+    "gate": "envelope_show",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 7,
+    "extra": "V111:E01"
+  },
+  {
+    "log_row": 373,
+    "action": "질문",
+    "day": 2,
+    "scene": "MS14_D02_S02",
+    "gate": "post_menu",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 8,
+    "extra": {
+      "title": "제 편지, 돌려주시겠습니까?",
+      "location": "post",
+      "guard": [],
+      "person": "seryeon",
+      "index": 1
+    }
+  },
+  {
+    "log_row": 401,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S03",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 8,
+    "extra": {
+      "title": "돌이 있는 광장",
+      "location": "square",
+      "move": "square"
+    }
+  },
+  {
+    "log_row": 402,
+    "action": "지도이동",
+    "day": 2,
+    "scene": "MS14_D02_S03",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 8,
+    "extra": "square"
+  },
+  {
+    "log_row": 416,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S03",
+    "gate": "portrait_ask",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 8,
+    "extra": {
+      "title": "제가 그려 본 건데, 아내를 그려 주실 수 있습니까?",
+      "location": "square",
+      "guard": [],
+      "person": "resident_piko",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 447,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S03",
+    "gate": "lamp_observe",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 9,
+    "extra": {
+      "title": "번호판을 본다",
+      "location": "square",
+      "guard": [],
+      "object": "lamp",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 448,
+    "action": "선택지",
+    "day": 2,
+    "scene": "MS14_D02_S03",
+    "gate": "lamp_observe",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 9,
+    "extra": {
+      "items": [
+        "번호판을 본다",
+        "덮개를 본다",
+        "담요를 본다",
+        "받침과 바닥을 본다"
+      ],
+      "pick": "번호판을 본다"
+    }
+  },
+  {
+    "log_row": 450,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S03",
+    "gate": "lamp_observe",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 9,
+    "extra": {
+      "title": "덮개를 본다",
+      "location": "square",
+      "guard": [],
+      "object": "lamp",
+      "index": 1
+    }
+  },
+  {
+    "log_row": 451,
+    "action": "선택지",
+    "day": 2,
+    "scene": "MS14_D02_S03",
+    "gate": "lamp_observe",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 9,
+    "extra": {
+      "items": [
+        "번호판을 본다",
+        "덮개를 본다",
+        "담요를 본다",
+        "받침과 바닥을 본다"
+      ],
+      "pick": "덮개를 본다"
+    }
+  },
+  {
+    "log_row": 453,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S03",
+    "gate": "lamp_observe",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 9,
+    "extra": {
+      "title": "담요를 본다",
+      "location": "square",
+      "guard": [],
+      "object": "lamp",
+      "index": 2
+    }
+  },
+  {
+    "log_row": 454,
+    "action": "선택지",
+    "day": 2,
+    "scene": "MS14_D02_S03",
+    "gate": "lamp_observe",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 9,
+    "extra": {
+      "items": [
+        "번호판을 본다",
+        "덮개를 본다",
+        "담요를 본다",
+        "받침과 바닥을 본다"
+      ],
+      "pick": "담요를 본다"
+    }
+  },
+  {
+    "log_row": 456,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S03",
+    "gate": "lamp_observe",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 9,
+    "extra": {
+      "title": "받침과 바닥을 본다",
+      "location": "square",
+      "guard": [],
+      "object": "lamp",
+      "index": 3
+    }
+  },
+  {
+    "log_row": 457,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S03",
+    "gate": "lamp_observe",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 9,
+    "extra": {
+      "title": "받침과 바닥을 본다",
+      "location": "square",
+      "guard": [],
+      "object": "lamp",
+      "index": 3
+    }
+  },
+  {
+    "log_row": 458,
+    "action": "선택지",
+    "day": 2,
+    "scene": "MS14_D02_S03",
+    "gate": "lamp_observe",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 9,
+    "extra": {
+      "items": [
+        "번호판을 본다",
+        "덮개를 본다",
+        "담요를 본다",
+        "받침과 바닥을 본다"
+      ],
+      "pick": "받침과 바닥을 본다"
+    }
+  },
+  {
+    "log_row": 493,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S04",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 10,
+    "extra": {
+      "title": "여관 식당",
+      "location": "dining",
+      "move": "dining"
+    }
+  },
+  {
+    "log_row": 494,
+    "action": "지도이동",
+    "day": 2,
+    "scene": "MS14_D02_S04",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 10,
+    "extra": "dining"
+  },
+  {
+    "log_row": 520,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S04",
+    "gate": "afternoon2",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 10,
+    "extra": {
+      "index": 3,
+      "title": "숲으로 가서 네로를 돕는다",
+      "location": "forest",
+      "move": "forest",
+      "move_by_story": true,
+      "guard": []
+    }
+  },
+  {
+    "log_row": 521,
+    "action": "지도이동",
+    "day": 2,
+    "scene": "MS14_D02_S04",
+    "gate": "afternoon2",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 10,
+    "extra": "forest"
+  },
+  {
+    "log_row": 571,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S04",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 10,
+    "extra": {
+      "title": "돌이 있는 광장",
+      "location": "square",
+      "move": "square"
+    }
+  },
+  {
+    "log_row": 572,
+    "action": "지도이동",
+    "day": 2,
+    "scene": "MS14_D02_S04",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 10,
+    "extra": "square"
+  },
+  {
+    "log_row": 582,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S04",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 10,
+    "extra": {
+      "title": "여관 접수대",
+      "location": "inn",
+      "move": "inn"
+    }
+  },
+  {
+    "log_row": 583,
+    "action": "지도이동",
+    "day": 2,
+    "scene": "MS14_D02_S04",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 10,
+    "extra": "inn"
+  },
+  {
+    "log_row": 587,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S04",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 10,
+    "extra": {
+      "title": "여관 2층 · 13호실",
+      "location": "room13",
+      "move": "room13"
+    }
+  },
+  {
+    "log_row": 588,
+    "action": "지도이동",
+    "day": 2,
+    "scene": "MS14_D02_S04",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 10,
+    "extra": "room13"
+  },
+  {
+    "log_row": 593,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S05",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 12,
+    "extra": {
+      "title": "여관 접수대",
+      "location": "inn",
+      "move": "inn"
+    }
+  },
+  {
+    "log_row": 594,
+    "action": "지도이동",
+    "day": 2,
+    "scene": "MS14_D02_S05",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 12,
+    "extra": "inn"
+  },
+  {
+    "log_row": 605,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S05",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 12,
+    "extra": {
+      "title": "여관 2층 · 13호실",
+      "location": "room13",
+      "move": "room13"
+    }
+  },
+  {
+    "log_row": 606,
+    "action": "지도이동",
+    "day": 2,
+    "scene": "MS14_D02_S05",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 12,
+    "extra": "room13"
+  },
+  {
+    "log_row": 613,
+    "action": "현장행동",
+    "day": 2,
+    "scene": "MS14_D02_S05",
+    "gate": "lamp_prep2",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 12,
+    "extra": {
+      "title": "아침 약속을 적고 잠든다",
+      "location": "room13",
+      "object": "bed",
+      "bed_to": "sleep2",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 614,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 12,
+    "extra": {
+      "title": "돌이 있는 광장",
+      "location": "square",
+      "move": "square"
+    }
+  },
+  {
+    "log_row": 615,
+    "action": "지도이동",
+    "day": 3,
+    "scene": "MS14_D03_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 12,
+    "extra": "square"
+  },
+  {
+    "log_row": 653,
+    "action": "미지원화면",
+    "day": 3,
+    "scene": "MS14_D03_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 13,
+    "extra": {
+      "screens": [
+        "r13_piko_scene"
+      ],
+      "room": {
+        "campaign_id": "room13_v1",
+        "version": 3,
+        "story_revision": "father-pov-fire-pooling-v3",
+        "day": 3,
+        "period": 0,
+        "location": "square",
+        "kitchen_switch": false,
+        "passage_open": false,
+        "secret_route_unlocked": false,
+        "case_state": "pending",
+        "victim_state": "alive",
+        "daram_state": "with_dad",
+        "granny_state": "trusted",
+        "trial_result": "pending",
+        "evidence": [
+          "V111:E01",
+          "V111:E02",
+          "V111:E03",
+          "V111:E04",
+          "V111:E05",
+          "V111:E06",
+          "V111:E30",
+          "V111:E07",
+          "V111:NW_PIKO_TREMOR",
+          "V111:E08",
+          "V111:E31",
+          "V111:E35",
+          "V111:E09"
+        ],
+        "records": {
+          "V111:E01": {
+            "day": 1,
+            "period": 0,
+            "source": "MS14_D01_S01_L0010",
+            "place": "gate"
+          },
+          "V111:E02": {
+            "day": 1,
+            "period": 0,
+            "source": "MS14_D01_S02_L0019",
+            "place": "gate"
+          },
+          "V111:E03": {
+            "day": 1,
+            "period": 0,
+            "source": "MS14_D01_S03_L0002",
+            "place": "gate"
+          },
+          "V111:E04": {
+            "day": 1,
+            "period": 0,
+            "source": "MS14_D01_S03_L0007",
+            "place": "gate"
+          },
+          "V111:E05": {
+            "day": 1,
+            "period": 0,
+            "source": "MS14_D01_S04_L0008",
+            "place": "gate"
+          },
+          "V111:E06": {
+            "day": 1,
+            "period": 0,
+            "source": "MS14_D01_S05_L0019",
+            "place": "room13"
+          },
+          "V111:E30": {
+            "day": 1,
+            "period": 0,
+            "source": "MS14_D01_S05_L0022",
+            "place": "room13"
+          },
+          "V111:E07": {
+            "day": 2,
+            "period": 0,
+            "source": "MS14_D02_S02_L0005",
+            "place": "post"
+          },
+          "V111:NW_PIKO_TREMOR": {
+            "day": 2,
+            "period": 0,
+            "source": "nw:acquire:NW_PIKO_TREMOR",
+            "place": "square"
+          },
+          "V111:E08": {
+            "day": 2,
+            "period": 0,
+            "source": "MS14_D02_S03_L0025",
+            "place": "square"
+          },
+          "V111:E31": {
+            "day": 2,
+            "period": 1,
+            "source": "MS14_D02_S04_L0083",
+            "place": "room13"
+          },
+          "V111:E35": {
+            "day": 2,
+            "period": 1,
+            "source": "MS14_D02_S04_L0083",
+            "place": "room13"
+          },
+          "V111:E09": {
+            "day": 3,
+            "period": 0,
+            "source": "MS14_D03_S01_L0021",
+            "place": "square"
+          }
+        },
+        "flags": [
+          "lodging",
+          "v111:entered:MS14_D01_S01",
+          "v111:applied:MS14_D01_S01_L0010",
+          "v111:applied:MS14_D01_S01_L0015",
+          "v111:applied:MS14_D01_S01_L0016",
+          "v111:applied:option:leave_carriage:0",
+          "v111:entered:MS14_D01_S02",
+          "v111:time:1:inspect:gate_request:ledger",
+          "v111:applied:MS14_D01_S02_L0019",
+          "v111:applied:MS14_D01_S02_L0022_O2",
+          "v111:time:1:inspect:gate_investigate:gate_documents",
+          "v111:entered:MS14_D01_S03",
+          "v111:applied:MS14_D01_S03_L0002",
+          "v111:time:1:inspect:gate_investigate:rules",
+          "v111:applied:MS14_D01_S03_L0007",
+          "v111:time:1:topic:gate_investigate:5",
+          "v111:applied:MS14_D01_S03_L0008_O3",
+          "v111:applied:MS14_D01_S03_L0023",
+          "v111:entered:MS14_D01_S04",
+          "v111:applied:MS14_D01_S04_L0008",
+          "v111:time:1:topic:registered_menu:0",
+          "v111:applied:MS14_D01_S04_L0012_O1",
+          "v111:applied:MS14_D01_S04_L0016",
+          "v111:time:1:move:registered_menu:inn",
+          "v111:applied:MS14_D01_S04_L0012_O2",
+          "v111:applied:MS14_D01_S04_L0020",
+          "v111:entered:MS14_D01_S05",
+          "v111:time:1:move:travel:room13",
+          "v111:line:MS14_D01_S05_L0016",
+          "v111:time:1:inspect:note_pick:mother_note",
+          "v111:applied:MS14_D01_S05_L0019",
+          "v111:applied:MS14_D01_S05_L0022",
+          "v111:applied:MS14_D01_S05_L0031",
+          "v111:applied:MS14_D01_S05_L0048",
+          "v111:time:1:inspect:sleep1:bed",
+          "v111:applied:option:sleep1:0",
+          "v111:entered:MS14_D02_S01",
+          "v111:time:2:move:travel:gate",
+          "v111:applied:MS14_D02_S01_L0008",
+          "v111:time:2:move:travel:square",
+          "v111:time:2:inspect:lamp_rope:lamp",
+          "v111:time:2:move:go_box:forest",
+          "v111:time:2:inspect:box_inspect:v111_box",
+          "v111:applied:MS14_D02_S01_L0033",
+          "v111:time:2:inspect:box_note:v111_box",
+          "v111:applied:MS14_D02_S01_L0039",
+          "v111:entered:MS14_D02_S02",
+          "v111:time:2:move:travel:post",
+          "v111:applied:MS14_D02_S02_L0005",
+          "v111:time:2:topic:post_menu:1",
+          "v111:applied:MS14_D02_S02_L0015_O2",
+          "v111:applied:MS14_D02_S02_L0025",
+          "v111:entered:MS14_D02_S03",
+          "v111:time:2:topic:portrait_ask:0",
+          "v111:applied:MS14_D02_S03_L0020",
+          "v111:applied:nw:acquire:NW_PIKO_TREMOR",
+          "v111:applied:lamp_seen_0",
+          "v111:applied:lamp_seen_1",
+          "v111:applied:lamp_seen_2",
+          "v111:applied:lamp_seen_3",
+          "v111:applied:MS14_D02_S03_L0025",
+          "v111:applied:MS14_D02_S03_L0047",
+          "v111:entered:MS14_D02_S04",
+          "v111:time:2:move:travel:dining",
+          "v111:time:2:move:afternoon2:forest",
+          "v111:applied:MS14_D02_S04_L0020_O2",
+          "v111:applied:option:afternoon:1",
+          "v111:time:2:move:travel:inn",
+          "v111:time:2:move:travel:room13",
+          "v111:applied:MS14_D02_S04_L0083",
+          "v111:entered:MS14_D02_S05",
+          "v111:time:2:inspect:lamp_prep2:bed",
+          "v111:applied:option:sleep2:0",
+          "v111:entered:MS14_D03_S01",
+          "v111:time:3:move:travel:square",
+          "piko_dead",
+          "v111:applied:MS14_D03_S01_L0021"
+        ],
+        "read_topics": [],
+        "done": [],
+        "checks": {},
+        "encounters": [
+          {
+            "person": "karo",
+            "day": 1,
+            "period": 0,
+            "place": "gate"
+          },
+          {
+            "person": "guard",
+            "day": 1,
+            "period": 0,
+            "place": "gate"
+          },
+          {
+            "person": "neoul",
+            "day": 1,
+            "period": 0,
+            "place": "gate"
+          },
+          {
+            "person": "granny",
+            "day": 1,
+            "period": 0,
+            "place": "inn"
+          },
+          {
+            "person": "resident_ppul",
+            "day": 2,
+            "period": 0,
+            "place": "square"
+          },
+          {
+            "person": "resident_lamplighter",
+            "day": 2,
+            "period": 0,
+            "place": "square"
+          },
+          {
+            "person": "seryeon",
+            "day": 2,
+            "period": 0,
+            "place": "post"
+          },
+          {
+            "person": "resident_momo",
+            "day": 2,
+            "period": 0,
+            "place": "post"
+          },
+          {
+            "person": "resident_piko",
+            "day": 2,
+            "period": 0,
+            "place": "square"
+          },
+          {
+            "person": "nabi",
+            "day": 2,
+            "period": 1,
+            "place": "dining"
+          },
+          {
+            "person": "resident_nero",
+            "day": 2,
+            "period": 1,
+            "place": "forest"
+          }
+        ],
+        "resident_knowledge": {},
+        "propositions": [],
+        "arguments": {
+          "v111:함께 들어갈 근거를 고른다": [
+            "V111:E02",
+            "V111:E03"
+          ],
+          "v111:두 편지를 나란히 본다": [
+            "V111:E01",
+            "V111:E06"
+          ]
+        },
+        "log": [],
+        "trial_ended": false,
+        "life_poc": true,
+        "learning_archive": [],
+        "mom_state": "hidden",
+        "ending": null,
+        "events": [],
+        "convoy_revision": 0,
+        "scout_revision": -1,
+        "observations": {},
+        "week2_started": false,
+        "finale_started": false,
+        "world_art_revisions": {
+          "inn": "ee4c4d10004e82b4ba9e0afa656e5b0fca535f7d03a65038a3a098e32f825c50",
+          "school": "002ece0c658efd6ce90754a1717cc1248b581458304198897db0f7d10de8917d",
+          "workshop": "990aa728b7f042940e56070145516d14c83623de625cbf2cd0b19756b1aa0cbb",
+          "square": "fb4f5e962660489d3199d06d7fc6a943d57a977a73f22cd8ca1400fb9669c1a2",
+          "gate": "1e478a7915c1e2b179a238032106f3a7556b70b4173e5b289ac5f41340dc3974",
+          "clinic": "3f40df1612c0ab33648592fb27b5fb2080a98e062c4079c023d50a9213592fb6",
+          "store": "71552da835a41752feedca5900357658cc0642be5b31bb050e55c3635ebe743b",
+          "greenhouse": "ca7bbee7242a52ba81a11a38866d06f988810a4e0ba16a0c5cde5e4231d00c0a",
+          "facility": "e93d12bf3cfa29a97fdc933c7d841f7b81d9b46851db665cc407d2369c6b9852",
+          "altar": "c12d8a6d6d5cbee725f9624b57256514fa3b58e5b980c3797442657600775136",
+          "kitchen": "873d5990cc565429f7bcd7f936a409abe5f8de01c3497bbd562802faf98b3c56",
+          "dining": "a55eee24f1e6e7be107606e3c99fa759ba0d6e9674ac5b3cfac12b109989708a",
+          "passage": "1744c533ff0dd5baa6051c7c4b9f2543dc46700f441addd488b4a53866221064",
+          "hall": "84c3fbf3e2250a0e59c0b3436b0b77cdf459244985a6f855da3b88ada508d451",
+          "room13": "53d781748409f1c6c1a8c7364ae6b12b99a1bc8b1decd5febbc19e2ad26a1dbb",
+          "post": "5c81cff14feead2295d40bd11c22788544144f5509da230f321c297afdb40612",
+          "river": "85fc6a5b85a7c24935be067145db94c31f90f304f7b41d885a868ef19f94322e",
+          "forest": "edf72724072a4c4d4f133831563bf40ff39c38eefec240b610f2fb10175b9f84",
+          "market": "099d28f3eecd90974f3024b4819c2c072e7625e64d73153425e5c304c378928d",
+          "ancient": "cb1961477b1c2e9d99ccad1c2c4540b63e5607ed75baeac623461f4db1f1607c",
+          "ms14_somi": "d519a7af34ea8934e4d99c5e7ea82e67b45a8a45e2ae9fe19187af793d38401f",
+          "ms14_guardroom": "f9da9d3aecdababff3f935607eb4fd4751b30fba29993290af079d5f0ec376b4",
+          "ms14_somi_inside": "eead32079d05d7a8392d118949457625568ae7eedf6041aee4e9196f5ba4a73b",
+          "laundry": "3fb44d630b04d62e6f15c79cb179fa062102ef7874f273c8defde983ccba4567",
+          "v111_labor": "7fcaff01659757c03dc0f6358b4326f8a7403943eb405ee2f4f96d9e702ab3d0",
+          "v111_woodshed": "16f11792cec843ce40052e0d991552eff0b15b31c1cd5345ce6c7d9b6b43d0ad",
+          "v111_fire": "903447816b8338f5cdb9c694c954156771358acd58d7da41e3c21d5ee5a7cdc7",
+          "v111_ruin": "18fc49545edaa76b8b28af4b9abe28e6bc6dc07474381b13eec8a683ab97f897",
+          "hidden_base14": "c02e7019667dcc648a5039e2e7341875cfdcfbdccc8e35cea3028b21d4e523a2",
+          "hidden_pandol": "a96fa8d6bf5183691246a975397b7d72c42a8ae6c66f703dfeb7af93c5344cdd"
+        },
+        "carriage_art_file": "assets/room13-pixel-carriage-letter0153-morning.webp",
+        "interaction_revision": 2,
+        "last_inspection": null,
+        "visual_revision": "pixel-b-front-v3",
+        "v111": {
+          "version": "1.1.1",
+          "values": {
+            "day": 3,
+            "carriage_stopped": true,
+            "father_with_daram": true,
+            "piko_sheltered": false,
+            "piko_alive": false,
+            "portrait": "unfinished",
+            "gate_registered": true,
+            "gate_basis_proven": true,
+            "reason_heard": true,
+            "purpose_difference_known": true,
+            "invitation_author": "unknown",
+            "mother_warning_received": false,
+            "public_stones": "with_baek",
+            "silluk_status": "free",
+            "silluk_labor_transfer_known": false,
+            "unverified_stones_status": "with_baek",
+            "nero_bedding_reserved": true,
+            "carried_dry_blankets": 0,
+            "bami_status": "free",
+            "musoe_alive": true,
+            "mother_box_checked_day2": true,
+            "nero_met_day2": true,
+            "nero_supply_route_known": true,
+            "under_desk_checked": true,
+            "lamp_theft_supported": false,
+            "nero_contact_lead": true,
+            "box_rechecked_day2": true,
+            "rumor_not_eyewitness": false,
+            "inn_information_hub_risk_known": false,
+            "K01a": true,
+            "K01b": true,
+            "K05": true,
+            "lamp_part_0": true,
+            "lamp_part_1": true,
+            "lamp_part_2": true,
+            "lamp_part_3": true,
+            "d4_fence_seen": false,
+            "d4_tracks_seen": false,
+            "d4_bucket_seen": false,
+            "afternoon_visit_declined": false,
+            "somi_entry_consent": false,
+            "mother_denies_invitation": false,
+            "supply_contact_pending": false,
+            "family_safety_changed": false,
+            "KKOMI_ALIVE": true,
+            "OWL_ALIVE": true,
+            "TOK_ALIVE": true,
+            "tok_workshop_present": true,
+            "tok_hearing_present": true,
+            "DARAM_DETAINED": false,
+            "route7": "uncommitted",
+            "prevention": null,
+            "grandmother_custody": "free",
+            "E01.variant": "observed",
+            "location:karo": "gate",
+            "location:guard": "gate",
+            "elapsed_minutes": 5,
+            "E02.variant": "observed",
+            "E03.variant": "observed",
+            "E04.variant": "observed",
+            "talked:MS14_D01_S03:guard": true,
+            "ui_topic_read:gate_investigate:5": true,
+            "proof_given:함께 들어갈 근거를 고른다": [
+              "V111:E02",
+              "V111:E03"
+            ],
+            "meeting:gate": "win",
+            "E05.variant": "observed",
+            "talked:MS14_D01_S04:guard": true,
+            "ui_topic_read:registered_menu:0": true,
+            "location:daram": "square",
+            "location:neoul": "gate",
+            "gate_mother_report_instruction_heard": true,
+            "heard_inn_order1": true,
+            "location:granny": "inn",
+            "ui_room_arrival_seen": true,
+            "E06.variant": "observed",
+            "E30.variant": "observed",
+            "letter_tail_observed": true,
+            "proof_given:두 편지를 나란히 본다": [
+              "V111:E01",
+              "V111:E06"
+            ],
+            "cookie.location": "room13_plate",
+            "return_transport_inquiry_pending": true,
+            "location:resident_ppul": "square",
+            "location:resident_lamplighter": "square",
+            "arrival_note_sent": true,
+            "location:seryeon": "post",
+            "talked:MS14_D02_S02:seryeon": true,
+            "E07.variant": "observed",
+            "ui_topic_read:post_menu:1": true,
+            "pending_post_search": true,
+            "location:resident_momo": "square",
+            "location:resident_piko": "square",
+            "talked:MS14_D02_S03:resident_piko": true,
+            "ui_topic_read:portrait_ask:0": true,
+            "portrait_commissioned": true,
+            "NW_PIKO_TREMOR.variant": "observed",
+            "E08.variant": "observed",
+            "location:nabi": "dining",
+            "D02_afternoon": "nero",
+            "location:resident_nero": "forest",
+            "E31.variant": "observed",
+            "E35.variant": "reserved",
+            "selected_afternoon_work_completed": true,
+            "lamp_prep_done2": true,
+            "fate:fate_piko": "lost",
+            "E09.variant": "unfinished"
+          },
+          "gate": "travel",
+          "people": [
+            "daram",
+            "resident_lamplighter"
+          ],
+          "fork_run": 1,
+          "thought_scene": "MS14_D02_S05",
+          "thought_pending": false,
+          "scene": "MS14_D03_S01",
+          "travel_to": "square"
+        },
+        "question_cues_revision": 1,
+        "run_token": "efbd2d6ea31e",
+        "morning_ids": {
+          "1": "6e28e2d4",
+          "2": "56b1526a",
+          "3": "167d4376"
+        },
+        "record_ui": {
+          "seen": [
+            "V111:E01"
+          ]
+        },
+        "question_cues": {
+          "life:resident_piko:work": {
+            "source": "v111:piko2:MS14_D02_S03_L0002",
+            "day": 2,
+            "period": 0
+          }
+        },
+        "rel_dates": {
+          "piko_dead": [
+            3,
+            0
+          ],
+          "nw:piko_alive": [
+            3,
+            0
+          ]
+        }
+      },
+      "say": "",
+      "buttons": []
+    }
+  },
+  {
+    "log_row": 654,
+    "action": "피코현장질문",
+    "day": 3,
+    "scene": "MS14_D03_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 13,
+    "extra": "posture"
+  },
+  {
+    "log_row": 659,
+    "action": "피코현장질문",
+    "day": 3,
+    "scene": "MS14_D03_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 13,
+    "extra": "portrait"
+  },
+  {
+    "log_row": 660,
+    "action": "미지원화면",
+    "day": 3,
+    "scene": "MS14_D03_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 13,
+    "extra": {
+      "screens": [
+        "r13_pw_picture"
+      ],
+      "room": {
+        "campaign_id": "room13_v1",
+        "version": 3,
+        "story_revision": "father-pov-fire-pooling-v3",
+        "day": 3,
+        "period": 0,
+        "location": "square",
+        "kitchen_switch": false,
+        "passage_open": false,
+        "secret_route_unlocked": false,
+        "case_state": "pending",
+        "victim_state": "alive",
+        "daram_state": "with_dad",
+        "granny_state": "trusted",
+        "trial_result": "pending",
+        "evidence": [
+          "V111:E01",
+          "V111:E02",
+          "V111:E03",
+          "V111:E04",
+          "V111:E05",
+          "V111:E06",
+          "V111:E30",
+          "V111:E07",
+          "V111:NW_PIKO_TREMOR",
+          "V111:E08",
+          "V111:E31",
+          "V111:E35",
+          "V111:E09"
+        ],
+        "records": {
+          "V111:E01": {
+            "day": 1,
+            "period": 0,
+            "source": "MS14_D01_S01_L0010",
+            "place": "gate"
+          },
+          "V111:E02": {
+            "day": 1,
+            "period": 0,
+            "source": "MS14_D01_S02_L0019",
+            "place": "gate"
+          },
+          "V111:E03": {
+            "day": 1,
+            "period": 0,
+            "source": "MS14_D01_S03_L0002",
+            "place": "gate"
+          },
+          "V111:E04": {
+            "day": 1,
+            "period": 0,
+            "source": "MS14_D01_S03_L0007",
+            "place": "gate"
+          },
+          "V111:E05": {
+            "day": 1,
+            "period": 0,
+            "source": "MS14_D01_S04_L0008",
+            "place": "gate"
+          },
+          "V111:E06": {
+            "day": 1,
+            "period": 0,
+            "source": "MS14_D01_S05_L0019",
+            "place": "room13"
+          },
+          "V111:E30": {
+            "day": 1,
+            "period": 0,
+            "source": "MS14_D01_S05_L0022",
+            "place": "room13"
+          },
+          "V111:E07": {
+            "day": 2,
+            "period": 0,
+            "source": "MS14_D02_S02_L0005",
+            "place": "post"
+          },
+          "V111:NW_PIKO_TREMOR": {
+            "day": 2,
+            "period": 0,
+            "source": "nw:acquire:NW_PIKO_TREMOR",
+            "place": "square"
+          },
+          "V111:E08": {
+            "day": 2,
+            "period": 0,
+            "source": "MS14_D02_S03_L0025",
+            "place": "square"
+          },
+          "V111:E31": {
+            "day": 2,
+            "period": 1,
+            "source": "MS14_D02_S04_L0083",
+            "place": "room13"
+          },
+          "V111:E35": {
+            "day": 2,
+            "period": 1,
+            "source": "MS14_D02_S04_L0083",
+            "place": "room13"
+          },
+          "V111:E09": {
+            "day": 3,
+            "period": 0,
+            "source": "MS14_D03_S01_L0021",
+            "place": "square"
+          }
+        },
+        "flags": [
+          "lodging",
+          "v111:entered:MS14_D01_S01",
+          "v111:applied:MS14_D01_S01_L0010",
+          "v111:applied:MS14_D01_S01_L0015",
+          "v111:applied:MS14_D01_S01_L0016",
+          "v111:applied:option:leave_carriage:0",
+          "v111:entered:MS14_D01_S02",
+          "v111:time:1:inspect:gate_request:ledger",
+          "v111:applied:MS14_D01_S02_L0019",
+          "v111:applied:MS14_D01_S02_L0022_O2",
+          "v111:time:1:inspect:gate_investigate:gate_documents",
+          "v111:entered:MS14_D01_S03",
+          "v111:applied:MS14_D01_S03_L0002",
+          "v111:time:1:inspect:gate_investigate:rules",
+          "v111:applied:MS14_D01_S03_L0007",
+          "v111:time:1:topic:gate_investigate:5",
+          "v111:applied:MS14_D01_S03_L0008_O3",
+          "v111:applied:MS14_D01_S03_L0023",
+          "v111:entered:MS14_D01_S04",
+          "v111:applied:MS14_D01_S04_L0008",
+          "v111:time:1:topic:registered_menu:0",
+          "v111:applied:MS14_D01_S04_L0012_O1",
+          "v111:applied:MS14_D01_S04_L0016",
+          "v111:time:1:move:registered_menu:inn",
+          "v111:applied:MS14_D01_S04_L0012_O2",
+          "v111:applied:MS14_D01_S04_L0020",
+          "v111:entered:MS14_D01_S05",
+          "v111:time:1:move:travel:room13",
+          "v111:line:MS14_D01_S05_L0016",
+          "v111:time:1:inspect:note_pick:mother_note",
+          "v111:applied:MS14_D01_S05_L0019",
+          "v111:applied:MS14_D01_S05_L0022",
+          "v111:applied:MS14_D01_S05_L0031",
+          "v111:applied:MS14_D01_S05_L0048",
+          "v111:time:1:inspect:sleep1:bed",
+          "v111:applied:option:sleep1:0",
+          "v111:entered:MS14_D02_S01",
+          "v111:time:2:move:travel:gate",
+          "v111:applied:MS14_D02_S01_L0008",
+          "v111:time:2:move:travel:square",
+          "v111:time:2:inspect:lamp_rope:lamp",
+          "v111:time:2:move:go_box:forest",
+          "v111:time:2:inspect:box_inspect:v111_box",
+          "v111:applied:MS14_D02_S01_L0033",
+          "v111:time:2:inspect:box_note:v111_box",
+          "v111:applied:MS14_D02_S01_L0039",
+          "v111:entered:MS14_D02_S02",
+          "v111:time:2:move:travel:post",
+          "v111:applied:MS14_D02_S02_L0005",
+          "v111:time:2:topic:post_menu:1",
+          "v111:applied:MS14_D02_S02_L0015_O2",
+          "v111:applied:MS14_D02_S02_L0025",
+          "v111:entered:MS14_D02_S03",
+          "v111:time:2:topic:portrait_ask:0",
+          "v111:applied:MS14_D02_S03_L0020",
+          "v111:applied:nw:acquire:NW_PIKO_TREMOR",
+          "v111:applied:lamp_seen_0",
+          "v111:applied:lamp_seen_1",
+          "v111:applied:lamp_seen_2",
+          "v111:applied:lamp_seen_3",
+          "v111:applied:MS14_D02_S03_L0025",
+          "v111:applied:MS14_D02_S03_L0047",
+          "v111:entered:MS14_D02_S04",
+          "v111:time:2:move:travel:dining",
+          "v111:time:2:move:afternoon2:forest",
+          "v111:applied:MS14_D02_S04_L0020_O2",
+          "v111:applied:option:afternoon:1",
+          "v111:time:2:move:travel:inn",
+          "v111:time:2:move:travel:room13",
+          "v111:applied:MS14_D02_S04_L0083",
+          "v111:entered:MS14_D02_S05",
+          "v111:time:2:inspect:lamp_prep2:bed",
+          "v111:applied:option:sleep2:0",
+          "v111:entered:MS14_D03_S01",
+          "v111:time:3:move:travel:square",
+          "piko_dead",
+          "v111:applied:MS14_D03_S01_L0021"
+        ],
+        "read_topics": [],
+        "done": [],
+        "checks": {},
+        "encounters": [
+          {
+            "person": "karo",
+            "day": 1,
+            "period": 0,
+            "place": "gate"
+          },
+          {
+            "person": "guard",
+            "day": 1,
+            "period": 0,
+            "place": "gate"
+          },
+          {
+            "person": "neoul",
+            "day": 1,
+            "period": 0,
+            "place": "gate"
+          },
+          {
+            "person": "granny",
+            "day": 1,
+            "period": 0,
+            "place": "inn"
+          },
+          {
+            "person": "resident_ppul",
+            "day": 2,
+            "period": 0,
+            "place": "square"
+          },
+          {
+            "person": "resident_lamplighter",
+            "day": 2,
+            "period": 0,
+            "place": "square"
+          },
+          {
+            "person": "seryeon",
+            "day": 2,
+            "period": 0,
+            "place": "post"
+          },
+          {
+            "person": "resident_momo",
+            "day": 2,
+            "period": 0,
+            "place": "post"
+          },
+          {
+            "person": "resident_piko",
+            "day": 2,
+            "period": 0,
+            "place": "square"
+          },
+          {
+            "person": "nabi",
+            "day": 2,
+            "period": 1,
+            "place": "dining"
+          },
+          {
+            "person": "resident_nero",
+            "day": 2,
+            "period": 1,
+            "place": "forest"
+          }
+        ],
+        "resident_knowledge": {},
+        "propositions": [],
+        "arguments": {
+          "v111:함께 들어갈 근거를 고른다": [
+            "V111:E02",
+            "V111:E03"
+          ],
+          "v111:두 편지를 나란히 본다": [
+            "V111:E01",
+            "V111:E06"
+          ]
+        },
+        "log": [],
+        "trial_ended": false,
+        "life_poc": true,
+        "learning_archive": [],
+        "mom_state": "hidden",
+        "ending": null,
+        "events": [],
+        "convoy_revision": 0,
+        "scout_revision": -1,
+        "observations": {},
+        "week2_started": false,
+        "finale_started": false,
+        "world_art_revisions": {
+          "inn": "ee4c4d10004e82b4ba9e0afa656e5b0fca535f7d03a65038a3a098e32f825c50",
+          "school": "002ece0c658efd6ce90754a1717cc1248b581458304198897db0f7d10de8917d",
+          "workshop": "990aa728b7f042940e56070145516d14c83623de625cbf2cd0b19756b1aa0cbb",
+          "square": "fb4f5e962660489d3199d06d7fc6a943d57a977a73f22cd8ca1400fb9669c1a2",
+          "gate": "1e478a7915c1e2b179a238032106f3a7556b70b4173e5b289ac5f41340dc3974",
+          "clinic": "3f40df1612c0ab33648592fb27b5fb2080a98e062c4079c023d50a9213592fb6",
+          "store": "71552da835a41752feedca5900357658cc0642be5b31bb050e55c3635ebe743b",
+          "greenhouse": "ca7bbee7242a52ba81a11a38866d06f988810a4e0ba16a0c5cde5e4231d00c0a",
+          "facility": "e93d12bf3cfa29a97fdc933c7d841f7b81d9b46851db665cc407d2369c6b9852",
+          "altar": "c12d8a6d6d5cbee725f9624b57256514fa3b58e5b980c3797442657600775136",
+          "kitchen": "873d5990cc565429f7bcd7f936a409abe5f8de01c3497bbd562802faf98b3c56",
+          "dining": "a55eee24f1e6e7be107606e3c99fa759ba0d6e9674ac5b3cfac12b109989708a",
+          "passage": "1744c533ff0dd5baa6051c7c4b9f2543dc46700f441addd488b4a53866221064",
+          "hall": "84c3fbf3e2250a0e59c0b3436b0b77cdf459244985a6f855da3b88ada508d451",
+          "room13": "53d781748409f1c6c1a8c7364ae6b12b99a1bc8b1decd5febbc19e2ad26a1dbb",
+          "post": "5c81cff14feead2295d40bd11c22788544144f5509da230f321c297afdb40612",
+          "river": "85fc6a5b85a7c24935be067145db94c31f90f304f7b41d885a868ef19f94322e",
+          "forest": "edf72724072a4c4d4f133831563bf40ff39c38eefec240b610f2fb10175b9f84",
+          "market": "099d28f3eecd90974f3024b4819c2c072e7625e64d73153425e5c304c378928d",
+          "ancient": "cb1961477b1c2e9d99ccad1c2c4540b63e5607ed75baeac623461f4db1f1607c",
+          "ms14_somi": "d519a7af34ea8934e4d99c5e7ea82e67b45a8a45e2ae9fe19187af793d38401f",
+          "ms14_guardroom": "f9da9d3aecdababff3f935607eb4fd4751b30fba29993290af079d5f0ec376b4",
+          "ms14_somi_inside": "eead32079d05d7a8392d118949457625568ae7eedf6041aee4e9196f5ba4a73b",
+          "laundry": "3fb44d630b04d62e6f15c79cb179fa062102ef7874f273c8defde983ccba4567",
+          "v111_labor": "7fcaff01659757c03dc0f6358b4326f8a7403943eb405ee2f4f96d9e702ab3d0",
+          "v111_woodshed": "16f11792cec843ce40052e0d991552eff0b15b31c1cd5345ce6c7d9b6b43d0ad",
+          "v111_fire": "903447816b8338f5cdb9c694c954156771358acd58d7da41e3c21d5ee5a7cdc7",
+          "v111_ruin": "18fc49545edaa76b8b28af4b9abe28e6bc6dc07474381b13eec8a683ab97f897",
+          "hidden_base14": "c02e7019667dcc648a5039e2e7341875cfdcfbdccc8e35cea3028b21d4e523a2",
+          "hidden_pandol": "a96fa8d6bf5183691246a975397b7d72c42a8ae6c66f703dfeb7af93c5344cdd"
+        },
+        "carriage_art_file": "assets/room13-pixel-carriage-letter0153-morning.webp",
+        "interaction_revision": 2,
+        "last_inspection": null,
+        "visual_revision": "pixel-b-front-v3",
+        "v111": {
+          "version": "1.1.1",
+          "values": {
+            "day": 3,
+            "carriage_stopped": true,
+            "father_with_daram": true,
+            "piko_sheltered": false,
+            "piko_alive": false,
+            "portrait": "unfinished",
+            "gate_registered": true,
+            "gate_basis_proven": true,
+            "reason_heard": true,
+            "purpose_difference_known": true,
+            "invitation_author": "unknown",
+            "mother_warning_received": false,
+            "public_stones": "with_baek",
+            "silluk_status": "free",
+            "silluk_labor_transfer_known": false,
+            "unverified_stones_status": "with_baek",
+            "nero_bedding_reserved": true,
+            "carried_dry_blankets": 0,
+            "bami_status": "free",
+            "musoe_alive": true,
+            "mother_box_checked_day2": true,
+            "nero_met_day2": true,
+            "nero_supply_route_known": true,
+            "under_desk_checked": true,
+            "lamp_theft_supported": false,
+            "nero_contact_lead": true,
+            "box_rechecked_day2": true,
+            "rumor_not_eyewitness": false,
+            "inn_information_hub_risk_known": false,
+            "K01a": true,
+            "K01b": true,
+            "K05": true,
+            "lamp_part_0": true,
+            "lamp_part_1": true,
+            "lamp_part_2": true,
+            "lamp_part_3": true,
+            "d4_fence_seen": false,
+            "d4_tracks_seen": false,
+            "d4_bucket_seen": false,
+            "afternoon_visit_declined": false,
+            "somi_entry_consent": false,
+            "mother_denies_invitation": false,
+            "supply_contact_pending": false,
+            "family_safety_changed": false,
+            "KKOMI_ALIVE": true,
+            "OWL_ALIVE": true,
+            "TOK_ALIVE": true,
+            "tok_workshop_present": true,
+            "tok_hearing_present": true,
+            "DARAM_DETAINED": false,
+            "route7": "uncommitted",
+            "prevention": null,
+            "grandmother_custody": "free",
+            "E01.variant": "observed",
+            "location:karo": "gate",
+            "location:guard": "gate",
+            "elapsed_minutes": 5,
+            "E02.variant": "observed",
+            "E03.variant": "observed",
+            "E04.variant": "observed",
+            "talked:MS14_D01_S03:guard": true,
+            "ui_topic_read:gate_investigate:5": true,
+            "proof_given:함께 들어갈 근거를 고른다": [
+              "V111:E02",
+              "V111:E03"
+            ],
+            "meeting:gate": "win",
+            "E05.variant": "observed",
+            "talked:MS14_D01_S04:guard": true,
+            "ui_topic_read:registered_menu:0": true,
+            "location:daram": "square",
+            "location:neoul": "gate",
+            "gate_mother_report_instruction_heard": true,
+            "heard_inn_order1": true,
+            "location:granny": "inn",
+            "ui_room_arrival_seen": true,
+            "E06.variant": "observed",
+            "E30.variant": "observed",
+            "letter_tail_observed": true,
+            "proof_given:두 편지를 나란히 본다": [
+              "V111:E01",
+              "V111:E06"
+            ],
+            "cookie.location": "room13_plate",
+            "return_transport_inquiry_pending": true,
+            "location:resident_ppul": "square",
+            "location:resident_lamplighter": "square",
+            "arrival_note_sent": true,
+            "location:seryeon": "post",
+            "talked:MS14_D02_S02:seryeon": true,
+            "E07.variant": "observed",
+            "ui_topic_read:post_menu:1": true,
+            "pending_post_search": true,
+            "location:resident_momo": "square",
+            "location:resident_piko": "square",
+            "talked:MS14_D02_S03:resident_piko": true,
+            "ui_topic_read:portrait_ask:0": true,
+            "portrait_commissioned": true,
+            "NW_PIKO_TREMOR.variant": "observed",
+            "E08.variant": "observed",
+            "location:nabi": "dining",
+            "D02_afternoon": "nero",
+            "location:resident_nero": "forest",
+            "E31.variant": "observed",
+            "E35.variant": "reserved",
+            "selected_afternoon_work_completed": true,
+            "lamp_prep_done2": true,
+            "fate:fate_piko": "lost",
+            "E09.variant": "unfinished",
+            "piko_scene_read:posture": true
+          },
+          "gate": "travel",
+          "people": [
+            "daram",
+            "resident_lamplighter"
+          ],
+          "fork_run": 1,
+          "thought_scene": "MS14_D02_S05",
+          "thought_pending": false,
+          "scene": "MS14_D03_S01",
+          "travel_to": "square"
+        },
+        "question_cues_revision": 1,
+        "run_token": "efbd2d6ea31e",
+        "morning_ids": {
+          "1": "6e28e2d4",
+          "2": "56b1526a",
+          "3": "167d4376"
+        },
+        "record_ui": {
+          "seen": [
+            "V111:E01"
+          ]
+        },
+        "question_cues": {
+          "life:resident_piko:work": {
+            "source": "v111:piko2:MS14_D02_S03_L0002",
+            "day": 2,
+            "period": 0
+          }
+        },
+        "rel_dates": {
+          "piko_dead": [
+            3,
+            0
+          ],
+          "nw:piko_alive": [
+            3,
+            0
+          ]
+        }
+      },
+      "say": "",
+      "buttons": [
+        {
+          "text": "  ",
+          "value": "None",
+          "rect": [
+            1176,
+            60,
+            52,
+            52
+          ]
+        },
+        {
+          "text": "      닫기",
+          "value": "None",
+          "rect": [
+            1070,
+            572,
+            136,
+            64
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "log_row": 668,
+    "action": "피코현장질문",
+    "day": 3,
+    "scene": "MS14_D03_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 13,
+    "extra": "daram"
+  },
+  {
+    "log_row": 674,
+    "action": "피코현장질문",
+    "day": 3,
+    "scene": "MS14_D03_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 13,
+    "extra": "leave"
+  },
+  {
+    "log_row": 717,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S02",
+    "gate": "lamp_inspect3",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 13,
+    "extra": {
+      "title": "번호판·받침·자국을 살핀다",
+      "location": "square",
+      "guard": [],
+      "object": "lamp",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 724,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S02",
+    "gate": "fragment_request",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 14,
+    "extra": {
+      "title": "톡 씨, 안쪽 조각 좀 봐 주시겠습니까?",
+      "location": "square",
+      "guard": [],
+      "person": "resident_tok",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 725,
+    "action": "질문",
+    "day": 3,
+    "scene": "MS14_D03_S02",
+    "gate": "fragment_request",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 14,
+    "extra": {
+      "title": "톡 씨, 안쪽 조각 좀 봐 주시겠습니까?",
+      "location": "square",
+      "guard": [],
+      "person": "resident_tok",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 746,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S02",
+    "gate": "lamp_log_request",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 15,
+    "extra": {
+      "title": "점검장을 보여 주시겠어요?",
+      "location": "square",
+      "guard": [],
+      "person": "resident_lamplighter",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 747,
+    "action": "질문",
+    "day": 3,
+    "scene": "MS14_D03_S02",
+    "gate": "lamp_log_request",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 15,
+    "extra": {
+      "title": "점검장을 보여 주시겠어요?",
+      "location": "square",
+      "guard": [],
+      "person": "resident_lamplighter",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 753,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S03",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 16,
+    "extra": {
+      "title": "수리점",
+      "location": "workshop",
+      "move": "workshop"
+    }
+  },
+  {
+    "log_row": 754,
+    "action": "지도이동",
+    "day": 3,
+    "scene": "MS14_D03_S03",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 16,
+    "extra": "workshop"
+  },
+  {
+    "log_row": 767,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S03",
+    "gate": "loan_read",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 16,
+    "extra": {
+      "title": "대여 쪽지를 읽는다",
+      "location": "workshop",
+      "guard": [],
+      "object": "tools",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 779,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S03",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 17,
+    "extra": {
+      "title": "임시 진료실",
+      "location": "clinic",
+      "move": "clinic"
+    }
+  },
+  {
+    "log_row": 780,
+    "action": "지도이동",
+    "day": 3,
+    "scene": "MS14_D03_S03",
+    "gate": "travel",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 17,
+    "extra": "clinic"
+  },
+  {
+    "log_row": 799,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S03",
+    "gate": "measurement_read",
+    "claim": "v111:두 편지를 나란히 본다",
+    "evidence_count": 17,
+    "extra": {
+      "title": "측정지를 읽는다",
+      "location": "clinic",
+      "guard": [],
+      "object": "notes",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 806,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S03",
+    "gate": "measurement_read",
+    "claim": "v111:측정 종료와 점검 기록을 대조한다",
+    "evidence_count": 18,
+    "extra": null
+  },
+  {
+    "log_row": 807,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S03",
+    "gate": "measurement_read",
+    "claim": "v111:측정 종료와 점검 기록을 대조한다",
+    "evidence_count": 18,
+    "extra": null
+  },
+  {
+    "log_row": 808,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S03",
+    "gate": "measurement_read",
+    "claim": "v111:측정 종료와 점검 기록을 대조한다",
+    "evidence_count": 18,
+    "extra": null
+  },
+  {
+    "log_row": 809,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S03",
+    "gate": "measurement_read",
+    "claim": "v111:측정 종료와 점검 기록을 대조한다",
+    "evidence_count": 18,
+    "extra": null
+  },
+  {
+    "log_row": 840,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S04",
+    "gate": "travel",
+    "claim": "v111:측정 종료와 점검 기록을 대조한다",
+    "evidence_count": 18,
+    "extra": {
+      "title": "돌이 있는 광장",
+      "location": "square",
+      "move": "square"
+    }
+  },
+  {
+    "log_row": 841,
+    "action": "지도이동",
+    "day": 3,
+    "scene": "MS14_D03_S04",
+    "gate": "travel",
+    "claim": "v111:측정 종료와 점검 기록을 대조한다",
+    "evidence_count": 18,
+    "extra": "square"
+  },
+  {
+    "log_row": 856,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S04",
+    "gate": "transport_read",
+    "claim": "v111:측정 종료와 점검 기록을 대조한다",
+    "evidence_count": 18,
+    "extra": {
+      "title": "운반표를 보여 주시겠습니까?",
+      "location": "square",
+      "guard": [],
+      "person": "resident_siluk",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 857,
+    "action": "질문",
+    "day": 3,
+    "scene": "MS14_D03_S04",
+    "gate": "transport_read",
+    "claim": "v111:측정 종료와 점검 기록을 대조한다",
+    "evidence_count": 18,
+    "extra": {
+      "title": "운반표를 보여 주시겠습니까?",
+      "location": "square",
+      "guard": [],
+      "person": "resident_siluk",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 859,
+    "action": "질문",
+    "day": 3,
+    "scene": "MS14_D03_S04",
+    "gate": "knife_permission",
+    "claim": "v111:측정 종료와 점검 기록을 대조한다",
+    "evidence_count": 19,
+    "extra": {
+      "title": "그 칼, 잠깐 보여 주시겠습니까?",
+      "location": "square",
+      "guard": [],
+      "person": "resident_siluk",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 873,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S04",
+    "gate": "store_visit",
+    "claim": "v111:측정 종료와 점검 기록을 대조한다",
+    "evidence_count": 19,
+    "extra": {
+      "title": "수취 창고에서 확인한다",
+      "location": "store",
+      "guard": [],
+      "move": "store",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 874,
+    "action": "지도이동",
+    "day": 3,
+    "scene": "MS14_D03_S04",
+    "gate": "store_visit",
+    "claim": "v111:측정 종료와 점검 기록을 대조한다",
+    "evidence_count": 19,
+    "extra": "store"
+  },
+  {
+    "log_row": 883,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S04",
+    "gate": "stone_check",
+    "claim": "v111:측정 종료와 점검 기록을 대조한다",
+    "evidence_count": 19,
+    "extra": {
+      "title": "톡 씨, 이 돌 번호 좀 봐 주십시오.",
+      "location": "store",
+      "guard": [],
+      "person": "resident_tok",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 884,
+    "action": "질문",
+    "day": 3,
+    "scene": "MS14_D03_S04",
+    "gate": "stone_check",
+    "claim": "v111:측정 종료와 점검 기록을 대조한다",
+    "evidence_count": 19,
+    "extra": {
+      "title": "톡 씨, 이 돌 번호 좀 봐 주십시오.",
+      "location": "store",
+      "guard": [],
+      "person": "resident_tok",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 897,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S04",
+    "gate": "sale_check",
+    "claim": "v111:측정 종료와 점검 기록을 대조한다",
+    "evidence_count": 20,
+    "extra": {
+      "title": "매입 기록을 본다",
+      "location": "store",
+      "guard": [],
+      "object": "ledger",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 911,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S04",
+    "gate": "travel",
+    "claim": "v111:측정 종료와 점검 기록을 대조한다",
+    "evidence_count": 23,
+    "extra": {
+      "title": "수리점",
+      "location": "workshop",
+      "move": "workshop"
+    }
+  },
+  {
+    "log_row": 912,
+    "action": "지도이동",
+    "day": 3,
+    "scene": "MS14_D03_S04",
+    "gate": "travel",
+    "claim": "v111:측정 종료와 점검 기록을 대조한다",
+    "evidence_count": 23,
+    "extra": "workshop"
+  },
+  {
+    "log_row": 921,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:수리와 반출을 가릴 자료를 낸다",
+    "evidence_count": 23,
+    "extra": null
+  },
+  {
+    "log_row": 922,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:수리와 반출을 가릴 자료를 낸다",
+    "evidence_count": 23,
+    "extra": null
+  },
+  {
+    "log_row": 923,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:수리와 반출을 가릴 자료를 낸다",
+    "evidence_count": 23,
+    "extra": null
+  },
+  {
+    "log_row": 924,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:수리와 반출을 가릴 자료를 낸다",
+    "evidence_count": 23,
+    "extra": null
+  },
+  {
+    "log_row": 925,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:수리와 반출을 가릴 자료를 낸다",
+    "evidence_count": 23,
+    "extra": null
+  },
+  {
+    "log_row": 933,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:돌과 매입 기록을 낸다",
+    "evidence_count": 23,
+    "extra": null
+  },
+  {
+    "log_row": 934,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:돌과 매입 기록을 낸다",
+    "evidence_count": 23,
+    "extra": null
+  },
+  {
+    "log_row": 935,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:돌과 매입 기록을 낸다",
+    "evidence_count": 23,
+    "extra": null
+  },
+  {
+    "log_row": 936,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:돌과 매입 기록을 낸다",
+    "evidence_count": 23,
+    "extra": null
+  },
+  {
+    "log_row": 942,
+    "action": "선택지",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "menu:trial_knife",
+    "evidence_count": 23,
+    "extra": {
+      "items": [
+        "칼날과 안벽 자국을 맞춰 본다",
+        "칼끝과 안쪽 조각을 맞춰 본다",
+        "이 자국은 실룩 씨 칼이 냈습니다",
+        "자료를 다시 본다"
+      ],
+      "pick": "칼끝과 안쪽 조각을 맞춰 본다"
+    }
+  },
+  {
+    "log_row": 956,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:바깥 걸쇠 주장과 발견 위치를 대조한다",
+    "evidence_count": 25,
+    "extra": null
+  },
+  {
+    "log_row": 957,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:바깥 걸쇠 주장과 발견 위치를 대조한다",
+    "evidence_count": 25,
+    "extra": null
+  },
+  {
+    "log_row": 958,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:바깥 걸쇠 주장과 발견 위치를 대조한다",
+    "evidence_count": 25,
+    "extra": null
+  },
+  {
+    "log_row": 959,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:바깥 걸쇠 주장과 발견 위치를 대조한다",
+    "evidence_count": 25,
+    "extra": null
+  },
+  {
+    "log_row": 960,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:바깥 걸쇠 주장과 발견 위치를 대조한다",
+    "evidence_count": 25,
+    "extra": null
+  },
+  {
+    "log_row": 961,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:바깥 걸쇠 주장과 발견 위치를 대조한다",
+    "evidence_count": 25,
+    "extra": null
+  },
+  {
+    "log_row": 962,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:바깥 걸쇠 주장과 발견 위치를 대조한다",
+    "evidence_count": 25,
+    "extra": null
+  },
+  {
+    "log_row": 963,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:바깥 걸쇠 주장과 발견 위치를 대조한다",
+    "evidence_count": 25,
+    "extra": null
+  },
+  {
+    "log_row": 985,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": null
+  },
+  {
+    "log_row": 986,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": null
+  },
+  {
+    "log_row": 987,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": null
+  },
+  {
+    "log_row": 988,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": null
+  },
+  {
+    "log_row": 989,
+    "action": "자료조작",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": null
+  },
+  {
+    "log_row": 1018,
+    "action": "선택지",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": {
+      "items": [
+        "확인된 3번 돌을 돌려 달라고 한다",
+        "오늘은 반환 요구를 보류한다"
+      ],
+      "pick": "확인된 3번 돌을 돌려 달라고 한다"
+    }
+  },
+  {
+    "log_row": 1025,
+    "action": "선택지",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": {
+      "items": [
+        "지금 데려가지 못하게 하고 내일 다시 나오게 한다",
+        "증거를 넘기고 너울이 실룩을 데려가게 한다"
+      ],
+      "pick": "지금 데려가지 못하게 하고 내일 다시 나오게 한다"
+    }
+  },
+  {
+    "log_row": 1053,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": {
+      "title": "돌이 있는 광장",
+      "location": "square",
+      "move": "square"
+    }
+  },
+  {
+    "log_row": 1054,
+    "action": "지도이동",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": "square"
+  },
+  {
+    "log_row": 1055,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S05",
+    "gate": "restore_input",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": {
+      "title": "톡·초롱과 3번 돌을 복구한다",
+      "location": "square",
+      "guard": [],
+      "object": "lamp",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1084,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S06",
+    "gate": "blankets_receive",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": {
+      "title": "어제 이름 적어 둔 침구, 받으러 왔습니다.",
+      "location": "square",
+      "guard": [],
+      "person": "resident_nero",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1085,
+    "action": "실행중단",
+    "day": 3,
+    "scene": "MS14_D03_S06",
+    "gate": "blankets_receive",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": "('No direct target', ('person', 'resident_nero'), {'screens': ['r13_hub'], 'room': {'campaign_id': 'room13_v1', 'version': 3, 'story_revision': 'father-pov-fire-pooling-v3', 'day': 3, 'period': 2, 'location': 'square', 'kitchen_switch': False, 'passage_open': False, 'secret_route_unlocked': False, 'case_state': 'pending', 'victim_state': 'alive', 'daram_state': 'with_dad', 'granny_state': 'trusted', 'trial_result': 'pending', 'evidence': ['V111:E01', 'V111:E02', 'V111:E03', 'V111:E04', 'V111:E05', 'V111:E06', 'V111:E30', 'V111:E07', 'V111:NW_PIKO_TREMOR', 'V111:E08', 'V111:E31', 'V111:E35', 'V111:E09', 'V111:E10', 'V111:E32', 'V111:E11', 'V111:E12', 'V111:E13', 'V111:E14', 'V111:E15', 'V111:E16', 'V111:NW_INNER_PRICE', 'V111:NW_KEEPER_DATE', 'V111:E33', 'V111:E17'], 'records': {'V111:E01': {'day': 1, 'period': 0, 'source': 'MS14_D01_S01_L0010', 'place': 'gate'}, 'V111:E02': {'day': 1, 'period': 0, 'source': 'MS14_D01_S02_L0019', 'place': 'gate'}, 'V111:E03': {'day': 1, 'period': 0, 'source': 'MS14_D01_S03_L0002', 'place': 'gate'}, 'V111:E04': {'day': 1, 'period': 0, 'source': 'MS14_D01_S03_L0007', 'place': 'gate'}, 'V111:E05': {'day': 1, 'period': 0, 'source': 'MS14_D01_S04_L0008', 'place': 'gate'}, 'V111:E06': {'day': 1, 'period': 0, 'source': 'MS14_D01_S05_L0019', 'place': 'room13'}, 'V111:E30': {'day': 1, 'period': 0, 'source': 'MS14_D01_S05_L0022', 'place': 'room13'}, 'V111:E07': {'day': 2, 'period': 0, 'source': 'MS14_D02_S02_L0005', 'place': 'post'}, 'V111:NW_PIKO_TREMOR': {'day': 2, 'period': 0, 'source': 'nw:acquire:NW_PIKO_TREMOR', 'place': 'square'}, 'V111:E08': {'day': 2, 'period': 0, 'source': 'MS14_D02_S03_L0025', 'place': 'square'}, 'V111:E31': {'day': 2, 'period': 1, 'source': 'MS14_D02_S04_L0083', 'place': 'room13'}, 'V111:E35': {'day': 2, 'period': 1, 'source': 'MS14_D02_S04_L0083', 'place': 'room13'}, 'V111:E09': {'day': 3, 'period': 0, 'source': 'MS14_D03_S01_L0021', 'place': 'square'}, 'V111:E10': {'day': 3, 'period': 0, 'source': 'MS14_D03_S02_L0012', 'place': 'square'}, 'V111:E32': {'day': 3, 'period': 0, 'source': 'MS14_D03_S02_L0016', 'place': 'square'}, 'V111:E11': {'day': 3, 'period': 0, 'source': 'MS14_D03_S02_L0027', 'place': 'square'}, 'V111:E12': {'day': 3, 'period': 0, 'source': 'MS14_D03_S03_L0008', 'place': 'workshop'}, 'V111:E13': {'day': 3, 'period': 0, 'source': 'MS14_D03_S03_L0027', 'place': 'clinic'}, 'V111:E14': {'day': 3, 'period': 0, 'source': 'MS14_D03_S04_L0009', 'place': 'square'}, 'V111:E15': {'day': 3, 'period': 0, 'source': 'MS14_D03_S04_L0028', 'place': 'store'}, 'V111:E16': {'day': 3, 'period': 0, 'source': 'MS14_D03_S04_L0032', 'place': 'store'}, 'V111:NW_INNER_PRICE': {'day': 3, 'period': 0, 'source': 'nw:acquire:NW_INNER_PRICE', 'place': 'store'}, 'V111:NW_KEEPER_DATE': {'day': 3, 'period': 0, 'source': 'nw:acquire:NW_KEEPER_DATE', 'place': 'store'}, 'V111:E33': {'day': 3, 'period': 1, 'source': 'MS14_D03_S05_L0018', 'place': 'workshop'}, 'V111:E17': {'day': 3, 'period': 1, 'source': 'MS14_D03_S05_L0018', 'place': 'workshop'}}, 'flags': ['lodging', 'v111:entered:MS14_D01_S01', 'v111:applied:MS14_D01_S01_L0010', 'v111:applied:MS14_D01_S01_L0015', 'v111:applied:MS14_D01_S01_L0016', 'v111:applied:option:leave_carriage:0', 'v111:entered:MS14_D01_S02', 'v111:time:1:inspect:gate_request:ledger', 'v111:applied:MS14_D01_S02_L0019', 'v111:applied:MS14_D01_S02_L0022_O2', 'v111:time:1:inspect:gate_investigate:gate_documents', 'v111:entered:MS14_D01_S03', 'v111:applied:MS14_D01_S03_L0002', 'v111:time:1:inspect:gate_investigate:rules', 'v111:applied:MS14_D01_S03_L0007', 'v111:time:1:topic:gate_investigate:5', 'v111:applied:MS14_D01_S03_L0008_O3', 'v111:applied:MS14_D01_S03_L0023', 'v111:entered:MS14_D01_S04', 'v111:applied:MS14_D01_S04_L0008', 'v111:time:1:topic:registered_menu:0', 'v111:applied:MS14_D01_S04_L0012_O1', 'v111:applied:MS14_D01_S04_L0016', 'v111:time:1:move:registered_menu:inn', 'v111:applied:MS14_D01_S04_L0012_O2', 'v111:applied:MS14_D01_S04_L0020', 'v111:entered:MS14_D01_S05', 'v111:time:1:move:travel:room13', 'v111:line:MS14_D01_S05_L0016', 'v111:time:1:inspect:note_pick:mother_note', 'v111:applied:MS14_D01_S05_L0019', 'v111:applied:MS14_D01_S05_L0022', 'v111:applied:MS14_D01_S05_L0031', 'v111:applied:MS14_D01_S05_L0048', 'v111:time:1:inspect:sleep1:bed', 'v111:applied:option:sleep1:0', 'v111:entered:MS14_D02_S01', 'v111:time:2:move:travel:gate', 'v111:applied:MS14_D02_S01_L0008', 'v111:time:2:move:travel:square', 'v111:time:2:inspect:lamp_rope:lamp', 'v111:time:2:move:go_box:forest', 'v111:time:2:inspect:box_inspect:v111_box', 'v111:applied:MS14_D02_S01_L0033', 'v111:time:2:inspect:box_note:v111_box', 'v111:applied:MS14_D02_S01_L0039', 'v111:entered:MS14_D02_S02', 'v111:time:2:move:travel:post', 'v111:applied:MS14_D02_S02_L0005', 'v111:time:2:topic:post_menu:1', 'v111:applied:MS14_D02_S02_L0015_O2', 'v111:applied:MS14_D02_S02_L0025', 'v111:entered:MS14_D02_S03', 'v111:time:2:topic:portrait_ask:0', 'v111:applied:MS14_D02_S03_L0020', 'v111:applied:nw:acquire:NW_PIKO_TREMOR', 'v111:applied:lamp_seen_0', 'v111:applied:lamp_seen_1', 'v111:applied:lamp_seen_2', 'v111:applied:lamp_seen_3', 'v111:applied:MS14_D02_S03_L0025', 'v111:applied:MS14_D02_S03_L0047', 'v111:entered:MS14_D02_S04', 'v111:time:2:move:travel:dining', 'v111:time:2:move:afternoon2:forest', 'v111:applied:MS14_D02_S04_L0020_O2', 'v111:applied:option:afternoon:1', 'v111:time:2:move:travel:inn', 'v111:time:2:move:travel:room13', 'v111:applied:MS14_D02_S04_L0083', 'v111:entered:MS14_D02_S05', 'v111:time:2:inspect:lamp_prep2:bed', 'v111:applied:option:sleep2:0', 'v111:entered:MS14_D03_S01', 'v111:time:3:move:travel:square', 'piko_dead', 'v111:applied:MS14_D03_S01_L0021', 'v111:entered:MS14_D03_S02', 'v111:time:3:inspect:lamp_inspect3:lamp', 'v111:applied:MS14_D03_S02_L0012', 'v111:time:3:topic:fragment_request:0', 'v111:applied:MS14_D03_S02_L0016', 'v111:time:3:topic:lamp_log_request:0', 'v111:applied:MS14_D03_S02_L0027', 'v111:entered:MS14_D03_S03', 'v111:time:3:move:travel:workshop', 'v111:time:3:inspect:loan_read:tools', 'v111:applied:MS14_D03_S03_L0008', 'v111:time:3:move:travel:clinic', 'v111:time:3:inspect:measurement_read:notes', 'v111:applied:MS14_D03_S03_L0027', 'v111:applied:MS14_D03_S03_L0035', 'v111:entered:MS14_D03_S04', 'v111:time:3:topic:transport_read:0', 'v111:applied:MS14_D03_S04_L0009', 'v111:time:3:topic:knife_permission:0', 'v111:applied:MS14_D03_S04_L0016', 'v111:time:3:move:store_visit:store', 'v111:time:3:topic:stone_check:0', 'v111:applied:MS14_D03_S04_L0028', 'v111:time:3:inspect:sale_check:ledger', 'v111:applied:MS14_D03_S04_L0032', 'v111:applied:nw:acquire:NW_INNER_PRICE', 'v111:applied:nw:acquire:NW_KEEPER_DATE', 'v111:applied:MS14_D03_S04_L0037', 'v111:entered:MS14_D03_S05', 'v111:applied:MS14_D03_S05_L0005', 'v111:applied:MS14_D03_S05_L0018', 'v111:applied:MS14_D03_S05_L0025', 'v111:applied:MS14_D03_S05_L0029', 'v111:applied:MS14_D03_S05_L0048_O1', 'v111:applied:MS14_D03_S05_L0052', 'v111:applied:MS14_D03_S05_L0056_O1', 'v111:applied:MS14_D03_S05_L0062', 'v111:time:3:inspect:restore_input:lamp', 'v111:entered:MS14_D03_S06', 'v111:applied:MS14_D03_S06_L0004', 'v111:applied:MS14_D03_S06_L0022'], 'read_topics': [], 'done': [], 'checks': {}, 'encounters': [{'person': 'karo', 'day': 1, 'period': 0, 'place': 'gate'}, {'person': 'guard', 'day': 1, 'period': 0, 'place': 'gate'}, {'person': 'neoul', 'day': 1, 'period': 0, 'place': 'gate'}, {'person': 'granny', 'day': 1, 'period': 0, 'place': 'inn'}, {'person': 'resident_ppul', 'day': 2, 'period': 0, 'place': 'square'}, {'person': 'resident_lamplighter', 'day': 2, 'period': 0, 'place': 'square'}, {'person': 'seryeon', 'day': 2, 'period': 0, 'place': 'post'}, {'person': 'resident_momo', 'day': 2, 'period': 0, 'place': 'post'}, {'person': 'resident_piko', 'day': 2, 'period': 0, 'place': 'square'}, {'person': 'nabi', 'day': 2, 'period': 1, 'place': 'dining'}, {'person': 'resident_nero', 'day': 2, 'period': 1, 'place': 'forest'}, {'person': 'resident_siluk', 'day': 3, 'period': 0, 'place': 'square'}, {'person': 'resident_tok', 'day': 3, 'period': 0, 'place': 'square'}, {'person': 'buri', 'day': 3, 'period': 0, 'place': 'workshop'}, {'person': 'resident_ubak', 'day': 3, 'period': 0, 'place': 'clinic'}, {'person': 'resident_owlgp', 'day': 3, 'period': 0, 'place': 'workshop'}, {'person': 'v111_siluk_child', 'day': 3, 'period': 0, 'place': 'square'}, {'person': 'resident_madam', 'day': 3, 'period': 0, 'place': 'store'}, {'person': 'resident_badook', 'day': 3, 'period': 1, 'place': 'workshop'}], 'resident_knowledge': {}, 'propositions': [], 'arguments': {'v111:함께 들어갈 근거를 고른다': ['V111:E02', 'V111:E03'], 'v111:두 편지를 나란히 본다': ['V111:E01', 'V111:E06'], 'v111:측정 종료와 점검 기록을 대조한다': ['V111:E11', 'V111:E13'], 'v111:수리와 반출을 가릴 자료를 낸다': ['V111:E11', 'V111:E12', 'V111:E13'], 'v111:돌과 매입 기록을 낸다': ['V111:E15', 'V111:E16'], 'v111:바깥 걸쇠 주장과 발견 위치를 대조한다': ['V111:E17', 'V111:E32', 'V111:E33'], 'v111:마지막 점검과 인수한 돌을 연결한다': ['V111:E11', 'V111:E15', 'V111:E16']}, 'log': [], 'trial_ended': False, 'life_poc': True, 'learning_archive': [], 'mom_state': 'hidden', 'ending': None, 'events': [], 'convoy_revision': 0, 'scout_revision': -1, 'observations': {}, 'week2_started': False, 'finale_started': False, 'world_art_revisions': {'inn': 'ee4c4d10004e82b4ba9e0afa656e5b0fca535f7d03a65038a3a098e32f825c50', 'school': '002ece0c658efd6ce90754a1717cc1248b581458304198897db0f7d10de8917d', 'workshop': '990aa728b7f042940e56070145516d14c83623de625cbf2cd0b19756b1aa0cbb', 'square': 'fb4f5e962660489d3199d06d7fc6a943d57a977a73f22cd8ca1400fb9669c1a2', 'gate': '1e478a7915c1e2b179a238032106f3a7556b70b4173e5b289ac5f41340dc3974', 'clinic': '3f40df1612c0ab33648592fb27b5fb2080a98e062c4079c023d50a9213592fb6', 'store': '71552da835a41752feedca5900357658cc0642be5b31bb050e55c3635ebe743b', 'greenhouse': 'ca7bbee7242a52ba81a11a38866d06f988810a4e0ba16a0c5cde5e4231d00c0a', 'facility': 'e93d12bf3cfa29a97fdc933c7d841f7b81d9b46851db665cc407d2369c6b9852', 'altar': 'c12d8a6d6d5cbee725f9624b57256514fa3b58e5b980c3797442657600775136', 'kitchen': '873d5990cc565429f7bcd7f936a409abe5f8de01c3497bbd562802faf98b3c56', 'dining': 'a55eee24f1e6e7be107606e3c99fa759ba0d6e9674ac5b3cfac12b109989708a', 'passage': '1744c533ff0dd5baa6051c7c4b9f2543dc46700f441addd488b4a53866221064', 'hall': '84c3fbf3e2250a0e59c0b3436b0b77cdf459244985a6f855da3b88ada508d451', 'room13': '53d781748409f1c6c1a8c7364ae6b12b99a1bc8b1decd5febbc19e2ad26a1dbb', 'post': '5c81cff14feead2295d40bd11c22788544144f5509da230f321c297afdb40612', 'river': '85fc6a5b85a7c24935be067145db94c31f90f304f7b41d885a868ef19f94322e', 'forest': 'edf72724072a4c4d4f133831563bf40ff39c38eefec240b610f2fb10175b9f84', 'market': '099d28f3eecd90974f3024b4819c2c072e7625e64d73153425e5c304c378928d', 'ancient': 'cb1961477b1c2e9d99ccad1c2c4540b63e5607ed75baeac623461f4db1f1607c', 'ms14_somi': 'd519a7af34ea8934e4d99c5e7ea82e67b45a8a45e2ae9fe19187af793d38401f', 'ms14_guardroom': 'f9da9d3aecdababff3f935607eb4fd4751b30fba29993290af079d5f0ec376b4', 'ms14_somi_inside': 'eead32079d05d7a8392d118949457625568ae7eedf6041aee4e9196f5ba4a73b', 'laundry': '3fb44d630b04d62e6f15c79cb179fa062102ef7874f273c8defde983ccba4567', 'v111_labor': '7fcaff01659757c03dc0f6358b4326f8a7403943eb405ee2f4f96d9e702ab3d0', 'v111_woodshed': '16f11792cec843ce40052e0d991552eff0b15b31c1cd5345ce6c7d9b6b43d0ad', 'v111_fire': '903447816b8338f5cdb9c694c954156771358acd58d7da41e3c21d5ee5a7cdc7', 'v111_ruin': '18fc49545edaa76b8b28af4b9abe28e6bc6dc07474381b13eec8a683ab97f897', 'hidden_base14': 'c02e7019667dcc648a5039e2e7341875cfdcfbdccc8e35cea3028b21d4e523a2', 'hidden_pandol': 'a96fa8d6bf5183691246a975397b7d72c42a8ae6c66f703dfeb7af93c5344cdd'}, 'carriage_art_file': 'assets/room13-pixel-carriage-letter0153-morning.webp', 'interaction_revision': 2, 'last_inspection': None, 'visual_revision': 'pixel-b-front-v3', 'v111': {'version': '1.1.1', 'values': {'day': 3, 'carriage_stopped': True, 'father_with_daram': True, 'piko_sheltered': False, 'piko_alive': False, 'portrait': 'unfinished', 'gate_registered': True, 'gate_basis_proven': True, 'reason_heard': True, 'purpose_difference_known': True, 'invitation_author': 'unknown', 'mother_warning_received': False, 'public_stones': 'restored', 'silluk_status': 'reporting_obligation', 'silluk_labor_transfer_known': False, 'unverified_stones_status': 'with_baek', 'nero_bedding_reserved': True, 'carried_dry_blankets': 0, 'bami_status': 'free', 'musoe_alive': True, 'mother_box_checked_day2': True, 'nero_met_day2': True, 'nero_supply_route_known': True, 'under_desk_checked': True, 'lamp_theft_supported': True, 'nero_contact_lead': True, 'box_rechecked_day2': True, 'rumor_not_eyewitness': False, 'inn_information_hub_risk_known': False, 'K01a': True, 'K01b': True, 'K05': True, 'lamp_part_0': True, 'lamp_part_1': True, 'lamp_part_2': True, 'lamp_part_3': True, 'd4_fence_seen': False, 'd4_tracks_seen': False, 'd4_bucket_seen': False, 'afternoon_visit_declined': False, 'somi_entry_consent': False, 'mother_denies_invitation': False, 'supply_contact_pending': False, 'family_safety_changed': False, 'KKOMI_ALIVE': True, 'OWL_ALIVE': True, 'TOK_ALIVE': True, 'tok_workshop_present': True, 'tok_hearing_present': True, 'DARAM_DETAINED': False, 'route7': 'uncommitted', 'prevention': None, 'grandmother_custody': 'free', 'E01.variant': 'observed', 'location:karo': 'square', 'location:guard': 'gate', 'elapsed_minutes': 145, 'E02.variant': 'observed', 'E03.variant': 'observed', 'E04.variant': 'observed', 'talked:MS14_D01_S03:guard': True, 'ui_topic_read:gate_investigate:5': True, 'proof_given:함께 들어갈 근거를 고른다': ['V111:E02', 'V111:E03'], 'meeting:gate': 'win', 'E05.variant': 'observed', 'talked:MS14_D01_S04:guard': True, 'ui_topic_read:registered_menu:0': True, 'location:daram': 'square', 'location:neoul': 'workshop', 'gate_mother_report_instruction_heard': True, 'heard_inn_order1': True, 'location:granny': 'inn', 'ui_room_arrival_seen': True, 'E06.variant': 'observed', 'E30.variant': 'observed', 'letter_tail_observed': True, 'proof_given:두 편지를 나란히 본다': ['V111:E01', 'V111:E06'], 'cookie.location': 'room13_plate', 'return_transport_inquiry_pending': True, 'location:resident_ppul': 'square', 'location:resident_lamplighter': 'square', 'arrival_note_sent': True, 'location:seryeon': 'post', 'talked:MS14_D02_S02:seryeon': True, 'E07.variant': 'observed', 'ui_topic_read:post_menu:1': True, 'pending_post_search': True, 'location:resident_momo': 'square', 'location:resident_piko': 'square', 'talked:MS14_D02_S03:resident_piko': True, 'ui_topic_read:portrait_ask:0': True, 'portrait_commissioned': True, 'NW_PIKO_TREMOR.variant': 'observed', 'E08.variant': 'observed', 'location:nabi': 'dining', 'D02_afternoon': 'nero', 'location:resident_nero': 'forest', 'E31.variant': 'observed', 'E35.variant': 'reserved', 'selected_afternoon_work_completed': True, 'lamp_prep_done2': True, 'fate:fate_piko': 'lost', 'E09.variant': 'unfinished', 'piko_scene_read:posture': True, 'piko_scene_read:portrait': True, 'piko_scene_read:daram': True, 'location:resident_siluk': 'workshop', 'location:resident_tok': 'square', 'E10.variant': 'observed', 'talked:MS14_D03_S02:resident_tok': True, 'ui_topic_read:fragment_request:0': True, 'E32.variant': 'observed', 'followup_heard:NW_RX_F007': True, 'talked:MS14_D03_S02:resident_lamplighter': True, 'ui_topic_read:lamp_log_request:0': True, 'E11.variant': 'observed', 'location:buri': 'workshop', 'piko_news3:buri': True, 'E12.variant': 'observed', 'location:resident_ubak': 'clinic', 'E13.variant': 'observed', 'proof_given:측정 종료와 점검 기록을 대조한다': ['V111:E11', 'V111:E13'], 'measurement_separated_from_theft': True, 'location:resident_owlgp': 'workshop', 'location:v111_siluk_child': 'square', 'talked:MS14_D03_S04:resident_siluk': True, 'ui_topic_read:transport_read:0': True, 'E14.variant': 'observed', 'ui_topic_read:knife_permission:0': True, 'silluk_knife_comparison_consent': True, 'followup_heard:NW_RX_F009': True, 'location:resident_madam': 'workshop', 'talked:MS14_D03_S04:resident_tok': True, 'ui_topic_read:stone_check:0': True, 'E15.variant': 'observed', 'E16.variant': 'observed', 'NW_INNER_PRICE.variant': 'observed', 'NW_KEEPER_DATE.variant': 'observed', 'silluk.children.location': 'workshop_with_buri', 'proof_given:수리와 반출을 가릴 자료를 낸다': ['V111:E11', 'V111:E12', 'V111:E13'], 'repair_opening_separated': True, 'proof_given:돌과 매입 기록을 낸다': ['V111:E15', 'V111:E16'], 'E33.variant': 'observed', 'E17.variant': 'observed', 'proof_given:바깥 걸쇠 주장과 발견 위치를 대조한다': ['V111:E17', 'V111:E32', 'V111:E33'], 'outer_latch_claim_refuted': True, 'proof_given:마지막 점검과 인수한 돌을 연결한다': ['V111:E11', 'V111:E15', 'V111:E16'], 'meeting:lamp': 'win', 'location:resident_badook': 'workshop', 'stone_choice_completed': True, 'piko_custody_heard3:buri': 'report', 'stone_warm_felt3': True, 'portrait_waiting_for_mom': True}, 'gate': 'blankets_receive', 'people': ['resident_tok', 'resident_lamplighter'], 'fork_run': 1, 'thought_scene': 'MS14_D03_S05', 'thought_pending': False, 'scene': 'MS14_D03_S06', 'travel_to': 'square'}, 'question_cues_revision': 1, 'run_token': 'efbd2d6ea31e', 'morning_ids': {'1': '6e28e2d4', '2': '56b1526a', '3': '167d4376'}, 'record_ui': {'seen': ['V111:E01']}, 'question_cues': {'life:resident_piko:work': {'source': 'v111:piko2:MS14_D02_S03_L0002', 'day': 2, 'period': 0}, 'life:resident_tok:work': {'source': 'v111:lamp_interior3:MS14_D03_S02_L9101', 'day': 3, 'period': 0}, 'life:resident_owlgp:work': {'source': 'nw:owl_tongs3', 'day': 3, 'period': 0}, 'life:resident_badook:work': {'source': 'v111:badugi_arrives:MS14_D03_S05_L0030', 'day': 3, 'period': 1}, 'door_locks': {'source': 'nw:piko_children_report3', 'day': 3, 'period': 1}}, 'rel_dates': {'piko_dead': [3, 0], 'nw:piko_alive': [3, 0]}}, 'say': '', 'buttons': [{'text': '', 'value': '', 'rect': [0, 0, 1280, 720]}, {'text': '  ', 'value': '', 'rect': [0, 269, 128, 236]}, {'text': '  ', 'value': '', 'rect': [221, 475, 121, 52]}, {'text': '  ', 'value': '', 'rect': [264, 270, 187, 201]}, {'text': '  ', 'value': '', 'rect': [888, 309, 242, 176]}, {'text': '  ', 'value': '', 'rect': [1078, 462, 202, 186]}, {'text': '  ', 'value': '', 'rect': [553, 391, 278, 175]}, {'text': '', 'value': \"('person', 'doto')\", 'rect': [77, 411, 104, 211]}, {'text': '  ', 'value': '', 'rect': [0, 269, 128, 236]}, {'text': '      도토', 'value': \"('person', 'doto')\", 'rect': [136, 373, 64, 30]}, {'text': '        ', 'value': '', 'rect': [12, 240, 72, 72]}, {'text': '  지도', 'value': \"('menu', 'map')\", 'rect': [24, 84, 144, 64]}, {'text': '  새 생각', 'value': '', 'rect': [336, 84, 160, 64]}, {'text': '  기록', 'value': '', 'rect': [180, 84, 144, 64]}, {'text': ' ', 'value': '', 'rect': [1190, 20, 64, 64]}, {'text': '‹', 'value': 'pan', 'rect': [12, 240, 72, 72]}]})"
+  },
+  {
+    "log_row": 1086,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S06",
+    "gate": "blankets_receive",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": {
+      "title": "어제 이름 적어 둔 침구, 받으러 왔습니다.",
+      "location": "square",
+      "guard": [],
+      "person": "resident_nero",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1087,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S06",
+    "gate": "blankets_receive",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": {
+      "title": "어제 이름 적어 둔 침구, 받으러 왔습니다.",
+      "location": "square",
+      "guard": [],
+      "person": "resident_nero",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1088,
+    "action": "질문",
+    "day": 3,
+    "scene": "MS14_D03_S06",
+    "gate": "blankets_receive",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": {
+      "title": "어제 이름 적어 둔 침구, 받으러 왔습니다.",
+      "location": "square",
+      "guard": [],
+      "person": "resident_nero",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1098,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S06",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": {
+      "title": "여관 2층 · 13호실",
+      "location": "room13",
+      "move": "room13"
+    }
+  },
+  {
+    "log_row": 1099,
+    "action": "지도이동",
+    "day": 3,
+    "scene": "MS14_D03_S06",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": "room13"
+  },
+  {
+    "log_row": 1100,
+    "action": "현장행동",
+    "day": 3,
+    "scene": "MS14_D03_S06",
+    "gate": "sleep3",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": {
+      "title": "그림을 세워 두고 잠든다",
+      "location": "room13",
+      "guard": [],
+      "object": "bed",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1101,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S01",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": {
+      "title": "솜이네 골목",
+      "location": "ms14_somi",
+      "move": "ms14_somi"
+    }
+  },
+  {
+    "log_row": 1102,
+    "action": "지도이동",
+    "day": 4,
+    "scene": "MS14_D04_S01",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": "ms14_somi"
+  },
+  {
+    "log_row": 1107,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S01",
+    "gate": "portrait_show4",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": {
+      "title": "이분을 보셨습니까?",
+      "location": "ms14_somi",
+      "person": "resident_nero",
+      "present": "V111:E09",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1108,
+    "action": "질문",
+    "day": 4,
+    "scene": "MS14_D04_S01",
+    "gate": "portrait_show4",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 25,
+    "extra": {
+      "title": "이분을 보셨습니까?",
+      "location": "ms14_somi",
+      "person": "resident_nero",
+      "present": "V111:E09",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1154,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S02",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 26,
+    "extra": {
+      "title": "돌이 있는 광장",
+      "location": "square",
+      "move": "square"
+    }
+  },
+  {
+    "log_row": 1155,
+    "action": "지도이동",
+    "day": 4,
+    "scene": "MS14_D04_S02",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 26,
+    "extra": "square"
+  },
+  {
+    "log_row": 1186,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S02",
+    "gate": "portrait_place4",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 26,
+    "extra": {
+      "title": "여기 두고 물러날게.",
+      "location": "square",
+      "person": "bami",
+      "present": "V111:E09",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1187,
+    "action": "질문",
+    "day": 4,
+    "scene": "MS14_D04_S02",
+    "gate": "portrait_place4",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 26,
+    "extra": {
+      "title": "여기 두고 물러날게.",
+      "location": "square",
+      "person": "bami",
+      "present": "V111:E09",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1200,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S02",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 27,
+    "extra": {
+      "title": "솜이네 골목",
+      "location": "ms14_somi",
+      "move": "ms14_somi"
+    }
+  },
+  {
+    "log_row": 1201,
+    "action": "지도이동",
+    "day": 4,
+    "scene": "MS14_D04_S02",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 27,
+    "extra": "ms14_somi"
+  },
+  {
+    "log_row": 1208,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S03",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 27,
+    "extra": {
+      "title": "눈에 막힌 입구",
+      "location": "gate",
+      "move": "gate"
+    }
+  },
+  {
+    "log_row": 1209,
+    "action": "지도이동",
+    "day": 4,
+    "scene": "MS14_D04_S03",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 27,
+    "extra": "gate"
+  },
+  {
+    "log_row": 1214,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S03",
+    "gate": "look_gate4",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 27,
+    "extra": {
+      "title": "밝은 쪽에서 살핀다",
+      "location": "gate",
+      "object": "gate_documents",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1247,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 28,
+    "extra": {
+      "title": "밝은 초소 안",
+      "location": "ms14_guardroom",
+      "move": "ms14_guardroom"
+    }
+  },
+  {
+    "log_row": 1248,
+    "action": "지도이동",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 28,
+    "extra": "ms14_guardroom"
+  },
+  {
+    "log_row": 1255,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "bami_ask4",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 28,
+    "extra": {
+      "title": "어디서 봤니?",
+      "location": "ms14_guardroom",
+      "person": "bami",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1256,
+    "action": "질문",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "bami_ask4",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 28,
+    "extra": {
+      "title": "어디서 봤니?",
+      "location": "ms14_guardroom",
+      "person": "bami",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1289,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 29,
+    "extra": {
+      "title": "눈에 막힌 입구",
+      "location": "gate",
+      "move": "gate"
+    }
+  },
+  {
+    "log_row": 1290,
+    "action": "지도이동",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 29,
+    "extra": "gate"
+  },
+  {
+    "log_row": 1291,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "inspect_gate4",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 29,
+    "extra": {
+      "title": "울타리 천",
+      "location": "gate",
+      "object": "v111_fence",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1293,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "inspect_gate4",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 29,
+    "extra": {
+      "title": "겹친 발자국",
+      "location": "gate",
+      "object": "road",
+      "index": 1
+    }
+  },
+  {
+    "log_row": 1295,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "inspect_gate4",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 29,
+    "extra": {
+      "title": "엎어진 양동이",
+      "location": "gate",
+      "object": "v111_bucket",
+      "index": 2
+    }
+  },
+  {
+    "log_row": 1296,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "inspect_gate4",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 29,
+    "extra": {
+      "title": "엎어진 양동이",
+      "location": "gate",
+      "object": "v111_bucket",
+      "index": 2
+    }
+  },
+  {
+    "log_row": 1303,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "collect4",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 29,
+    "extra": {
+      "title": "같이 천을 수거해 주십시오.",
+      "location": "gate",
+      "person": "resident_badook",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1304,
+    "action": "질문",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "collect4",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 29,
+    "extra": {
+      "title": "같이 천을 수거해 주십시오.",
+      "location": "gate",
+      "person": "resident_badook",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1319,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 30,
+    "extra": {
+      "title": "여관 식당",
+      "location": "dining",
+      "move": "dining"
+    }
+  },
+  {
+    "log_row": 1320,
+    "action": "지도이동",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 30,
+    "extra": "dining"
+  },
+  {
+    "log_row": 1349,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 30,
+    "extra": {
+      "title": "돌이 있는 광장",
+      "location": "square",
+      "move": "square"
+    }
+  },
+  {
+    "log_row": 1350,
+    "action": "지도이동",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 30,
+    "extra": "square"
+  },
+  {
+    "log_row": 1356,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 30,
+    "extra": {
+      "title": "여관 2층 · 13호실",
+      "location": "room13",
+      "move": "room13"
+    }
+  },
+  {
+    "log_row": 1357,
+    "action": "지도이동",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 30,
+    "extra": "room13"
+  },
+  {
+    "log_row": 1358,
+    "action": "현장행동",
+    "day": 4,
+    "scene": "MS14_D04_S04",
+    "gate": "sleep4",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 30,
+    "extra": {
+      "title": "관찰과 추측을 나눠 적고 잔다",
+      "location": "room13",
+      "object": "bed",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1359,
+    "action": "현장행동",
+    "day": 5,
+    "scene": "MS14_D05_S01",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 30,
+    "extra": {
+      "title": "솜이네 골목",
+      "location": "ms14_somi",
+      "move": "ms14_somi"
+    }
+  },
+  {
+    "log_row": 1360,
+    "action": "지도이동",
+    "day": 5,
+    "scene": "MS14_D05_S01",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 30,
+    "extra": "ms14_somi"
+  },
+  {
+    "log_row": 1370,
+    "action": "현장행동",
+    "day": 5,
+    "scene": "MS14_D05_S01",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 30,
+    "extra": {
+      "title": "솜이네 방",
+      "location": "ms14_somi_inside",
+      "move": "ms14_somi_inside"
+    }
+  },
+  {
+    "log_row": 1371,
+    "action": "지도이동",
+    "day": 5,
+    "scene": "MS14_D05_S01",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 30,
+    "extra": "ms14_somi_inside"
+  },
+  {
+    "log_row": 1427,
+    "action": "현장행동",
+    "day": 5,
+    "scene": "MS14_D05_S02",
+    "gate": "compare_cloth5",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 31,
+    "extra": {
+      "title": "허락받은 옷과 천을 대조한다",
+      "location": "ms14_somi_inside",
+      "object": "v111_coat",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1428,
+    "action": "현장행동",
+    "day": 5,
+    "scene": "MS14_D05_S02",
+    "gate": "compare_cloth5",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 31,
+    "extra": {
+      "title": "허락받은 옷과 천을 대조한다",
+      "location": "ms14_somi_inside",
+      "object": "v111_coat",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1447,
+    "action": "현장행동",
+    "day": 5,
+    "scene": "MS14_D05_S02",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 33,
+    "extra": {
+      "title": "임시 진료실",
+      "location": "clinic",
+      "move": "clinic"
+    }
+  },
+  {
+    "log_row": 1448,
+    "action": "지도이동",
+    "day": 5,
+    "scene": "MS14_D05_S02",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 33,
+    "extra": "clinic"
+  },
+  {
+    "log_row": 1452,
+    "action": "현장행동",
+    "day": 5,
+    "scene": "MS14_D05_S02",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 33,
+    "extra": {
+      "title": "여관 식당",
+      "location": "dining",
+      "move": "dining"
+    }
+  },
+  {
+    "log_row": 1453,
+    "action": "지도이동",
+    "day": 5,
+    "scene": "MS14_D05_S02",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 33,
+    "extra": "dining"
+  },
+  {
+    "log_row": 1464,
+    "action": "현장행동",
+    "day": 5,
+    "scene": "MS14_D05_S03",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 33,
+    "extra": {
+      "title": "눈에 막힌 입구",
+      "location": "gate",
+      "move": "gate"
+    }
+  },
+  {
+    "log_row": 1465,
+    "action": "지도이동",
+    "day": 5,
+    "scene": "MS14_D05_S03",
+    "gate": "travel",
+    "claim": "v111:마지막 점검과 인수한 돌을 연결한다",
+    "evidence_count": 33,
+    "extra": "gate"
+  },
+  {
+    "log_row": 1474,
+    "action": "자료조작",
+    "day": 5,
+    "scene": "MS14_D05_S03",
+    "gate": "travel",
+    "claim": "v111:밤이 혐의의 근거를 확인한다",
+    "evidence_count": 33,
+    "extra": null
+  },
+  {
+    "log_row": 1475,
+    "action": "자료조작",
+    "day": 5,
+    "scene": "MS14_D05_S03",
+    "gate": "travel",
+    "claim": "v111:밤이 혐의의 근거를 확인한다",
+    "evidence_count": 33,
+    "extra": null
+  },
+  {
+    "log_row": 1476,
+    "action": "자료조작",
+    "day": 5,
+    "scene": "MS14_D05_S03",
+    "gate": "travel",
+    "claim": "v111:밤이 혐의의 근거를 확인한다",
+    "evidence_count": 33,
+    "extra": null
+  },
+  {
+    "log_row": 1477,
+    "action": "자료조작",
+    "day": 5,
+    "scene": "MS14_D05_S03",
+    "gate": "travel",
+    "claim": "v111:밤이 혐의의 근거를 확인한다",
+    "evidence_count": 33,
+    "extra": null
+  },
+  {
+    "log_row": 1478,
+    "action": "자료조작",
+    "day": 5,
+    "scene": "MS14_D05_S03",
+    "gate": "travel",
+    "claim": "v111:밤이 혐의의 근거를 확인한다",
+    "evidence_count": 33,
+    "extra": null
+  },
+  {
+    "log_row": 1479,
+    "action": "자료조작",
+    "day": 5,
+    "scene": "MS14_D05_S03",
+    "gate": "travel",
+    "claim": "v111:밤이 혐의의 근거를 확인한다",
+    "evidence_count": 33,
+    "extra": null
+  },
+  {
+    "log_row": 1485,
+    "action": "선택지",
+    "day": 5,
+    "scene": "MS14_D05_S03",
+    "gate": "travel",
+    "claim": "v111:밤이 혐의의 근거를 확인한다",
+    "evidence_count": 33,
+    "extra": {
+      "items": [
+        "돌목 씨, 얼굴을 보셨습니까?",
+        "네로 씨, 그 옷을 입었습니까?",
+        "네로 씨, 그 시각 어디 있었죠?"
+      ],
+      "pick": "돌목 씨, 얼굴을 보셨습니까?"
+    }
+  },
+  {
+    "log_row": 1535,
+    "action": "현장행동",
+    "day": 5,
+    "scene": "MS14_D05_S04",
+    "gate": "envelope5",
+    "claim": "v111:밤이 혐의의 근거를 확인한다",
+    "evidence_count": 35,
+    "extra": {
+      "title": "봉투를 받겠습니다.",
+      "location": "gate",
+      "person": "resident_lamplighter",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1536,
+    "action": "질문",
+    "day": 5,
+    "scene": "MS14_D05_S04",
+    "gate": "envelope5",
+    "claim": "v111:밤이 혐의의 근거를 확인한다",
+    "evidence_count": 35,
+    "extra": {
+      "title": "봉투를 받겠습니다.",
+      "location": "gate",
+      "person": "resident_lamplighter",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1563,
+    "action": "자료조작",
+    "day": 5,
+    "scene": "MS14_D05_S04",
+    "gate": "envelope5",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 36,
+    "extra": null
+  },
+  {
+    "log_row": 1564,
+    "action": "자료조작",
+    "day": 5,
+    "scene": "MS14_D05_S04",
+    "gate": "envelope5",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 36,
+    "extra": null
+  },
+  {
+    "log_row": 1565,
+    "action": "자료조작",
+    "day": 5,
+    "scene": "MS14_D05_S04",
+    "gate": "envelope5",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 36,
+    "extra": null
+  },
+  {
+    "log_row": 1566,
+    "action": "자료조작",
+    "day": 5,
+    "scene": "MS14_D05_S04",
+    "gate": "envelope5",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 36,
+    "extra": null
+  },
+  {
+    "log_row": 1567,
+    "action": "자료조작",
+    "day": 5,
+    "scene": "MS14_D05_S04",
+    "gate": "envelope5",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 36,
+    "extra": null
+  },
+  {
+    "log_row": 1568,
+    "action": "자료조작",
+    "day": 5,
+    "scene": "MS14_D05_S04",
+    "gate": "envelope5",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 36,
+    "extra": null
+  },
+  {
+    "log_row": 1569,
+    "action": "자료조작",
+    "day": 5,
+    "scene": "MS14_D05_S04",
+    "gate": "envelope5",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 36,
+    "extra": null
+  },
+  {
+    "log_row": 1570,
+    "action": "자료조작",
+    "day": 5,
+    "scene": "MS14_D05_S04",
+    "gate": "envelope5",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 36,
+    "extra": null
+  },
+  {
+    "log_row": 1571,
+    "action": "자료조작",
+    "day": 5,
+    "scene": "MS14_D05_S04",
+    "gate": "envelope5",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 36,
+    "extra": null
+  },
+  {
+    "log_row": 1572,
+    "action": "자료조작",
+    "day": 5,
+    "scene": "MS14_D05_S04",
+    "gate": "envelope5",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 36,
+    "extra": null
+  },
+  {
+    "log_row": 1574,
+    "action": "선택지",
+    "day": 5,
+    "scene": "MS14_D05_S04",
+    "gate": "envelope5",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 36,
+    "extra": {
+      "items": [
+        "첫날 기록을 다시 본다",
+        "답장을 쓴다"
+      ],
+      "pick": "첫날 기록을 다시 본다"
+    }
+  },
+  {
+    "log_row": 1600,
+    "action": "질문",
+    "day": 5,
+    "scene": "MS14_D05_S04",
+    "gate": "reply_handoff5",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 37,
+    "extra": {
+      "title": "답장을 맡기겠습니다.",
+      "location": "gate",
+      "person": "resident_lamplighter",
+      "present": "V111:E28",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1603,
+    "action": "현장행동",
+    "day": 5,
+    "scene": "MS14_D05_S05",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 37,
+    "extra": {
+      "title": "솜이네 방",
+      "location": "ms14_somi_inside",
+      "move": "ms14_somi_inside"
+    }
+  },
+  {
+    "log_row": 1604,
+    "action": "지도이동",
+    "day": 5,
+    "scene": "MS14_D05_S05",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 37,
+    "extra": "ms14_somi_inside"
+  },
+  {
+    "log_row": 1630,
+    "action": "현장행동",
+    "day": 5,
+    "scene": "MS14_D05_S05",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 37,
+    "extra": {
+      "title": "여관 식당",
+      "location": "dining",
+      "move": "dining"
+    }
+  },
+  {
+    "log_row": 1631,
+    "action": "지도이동",
+    "day": 5,
+    "scene": "MS14_D05_S05",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 37,
+    "extra": "dining"
+  },
+  {
+    "log_row": 1662,
+    "action": "현장행동",
+    "day": 5,
+    "scene": "MS14_D05_S05",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 37,
+    "extra": {
+      "title": "여관 접수대",
+      "location": "inn",
+      "move": "inn"
+    }
+  },
+  {
+    "log_row": 1663,
+    "action": "지도이동",
+    "day": 5,
+    "scene": "MS14_D05_S05",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 37,
+    "extra": "inn"
+  },
+  {
+    "log_row": 1675,
+    "action": "현장행동",
+    "day": 5,
+    "scene": "MS14_D05_S05",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 38,
+    "extra": {
+      "title": "여관 2층 복도",
+      "location": "hall",
+      "move": "hall"
+    }
+  },
+  {
+    "log_row": 1676,
+    "action": "지도이동",
+    "day": 5,
+    "scene": "MS14_D05_S05",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 38,
+    "extra": "hall"
+  },
+  {
+    "log_row": 1682,
+    "action": "현장행동",
+    "day": 5,
+    "scene": "MS14_D05_S05",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 38,
+    "extra": {
+      "title": "여관 2층 · 13호실",
+      "location": "room13",
+      "move": "room13"
+    }
+  },
+  {
+    "log_row": 1683,
+    "action": "지도이동",
+    "day": 5,
+    "scene": "MS14_D05_S05",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 38,
+    "extra": "room13"
+  },
+  {
+    "log_row": 1684,
+    "action": "현장행동",
+    "day": 5,
+    "scene": "MS14_D05_S05",
+    "gate": "lock_check5",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 38,
+    "extra": {
+      "title": "문과 창문 잠금을 확인한다",
+      "location": "room13",
+      "object": "window",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1705,
+    "action": "현장행동",
+    "day": 5,
+    "scene": "MS14_D05_S05",
+    "gate": "sleep5",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 38,
+    "extra": {
+      "title": "아침 일정을 정하고 잔다",
+      "location": "room13",
+      "object": "bed",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1719,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 38,
+    "extra": {
+      "title": "마을 학교",
+      "location": "school",
+      "move": "school"
+    }
+  },
+  {
+    "log_row": 1720,
+    "action": "지도이동",
+    "day": 6,
+    "scene": "MS14_D06_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 38,
+    "extra": "school"
+  },
+  {
+    "log_row": 1765,
+    "action": "선택지",
+    "day": 6,
+    "scene": "MS14_D06_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 38,
+    "extra": {
+      "items": [
+        "그릇을 돌려주러 같이 가자.",
+        "오늘은 먹었니?\n먹을 것부터 알아보자."
+      ],
+      "pick": "그릇을 돌려주러 같이 가자."
+    }
+  },
+  {
+    "log_row": 1785,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_S01",
+    "gate": "board6",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 38,
+    "extra": {
+      "title": "공개 보급판을 확인한다",
+      "location": "dining",
+      "object": "table",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1800,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_S01",
+    "gate": "hp_meal6",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 38,
+    "extra": {
+      "index": 0,
+      "title": "다람아, 애들한테 가자.",
+      "location": "dining",
+      "person": "daram"
+    }
+  },
+  {
+    "log_row": 1803,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_S02",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 39,
+    "extra": {
+      "title": "학교 뒤 장작 창고",
+      "location": "v111_woodshed",
+      "move": "v111_woodshed"
+    }
+  },
+  {
+    "log_row": 1804,
+    "action": "지도이동",
+    "day": 6,
+    "scene": "MS14_D06_S02",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 39,
+    "extra": "v111_woodshed"
+  },
+  {
+    "log_row": 1818,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_S02",
+    "gate": "woodshed_check6",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": {
+      "title": "문 앞과 뒤창을 살핀다",
+      "location": "v111_woodshed",
+      "object": "v111_wood",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1851,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_S02",
+    "gate": "afternoon6",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": {
+      "title": "선생님, 학교에 아이 자리가 있겠습니까?",
+      "location": "school",
+      "person": "resident_teacher",
+      "guard": [
+        [
+          "state",
+          "kkomi_seat6",
+          null
+        ]
+      ],
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1852,
+    "action": "지도이동",
+    "day": 6,
+    "scene": "MS14_D06_S02",
+    "gate": "afternoon6",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": "school"
+  },
+  {
+    "log_row": 1853,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_S02",
+    "gate": "afternoon6",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": {
+      "title": "선생님, 학교에 아이 자리가 있겠습니까?",
+      "location": "school",
+      "person": "resident_teacher",
+      "guard": [
+        [
+          "state",
+          "kkomi_seat6",
+          null
+        ]
+      ],
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1854,
+    "action": "질문",
+    "day": 6,
+    "scene": "MS14_D06_S02",
+    "gate": "afternoon6",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": {
+      "title": "선생님, 학교에 아이 자리가 있겠습니까?",
+      "location": "school",
+      "person": "resident_teacher",
+      "guard": [
+        [
+          "state",
+          "kkomi_seat6",
+          null
+        ]
+      ],
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1865,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_P01",
+    "gate": "afternoon6",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": {
+      "index": 80,
+      "title": "깡통 줄을 살핀다",
+      "location": "v111_woodshed",
+      "object": "v111_can",
+      "guard": [
+        [
+          "state",
+          "kkomi_can_seen6",
+          null
+        ]
+      ]
+    }
+  },
+  {
+    "log_row": 1866,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_P01",
+    "gate": "afternoon6",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": {
+      "index": 80,
+      "title": "깡통 줄을 살핀다",
+      "location": "v111_woodshed",
+      "object": "v111_can",
+      "guard": [
+        [
+          "state",
+          "kkomi_can_seen6",
+          null
+        ]
+      ]
+    }
+  },
+  {
+    "log_row": 1871,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_P01",
+    "gate": "afternoon6",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": {
+      "index": 81,
+      "title": "줄을 풀고 도토리를 챙긴다",
+      "location": "v111_woodshed",
+      "object": "v111_can",
+      "guard": [
+        [
+          "state",
+          "kkomi_can_seen6",
+          true
+        ],
+        [
+          "state",
+          "acorn_recovered",
+          null
+        ]
+      ]
+    }
+  },
+  {
+    "log_row": 1872,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_P01",
+    "gate": "afternoon6",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": {
+      "index": 81,
+      "title": "줄을 풀고 도토리를 챙긴다",
+      "location": "v111_woodshed",
+      "object": "v111_can",
+      "guard": [
+        [
+          "state",
+          "kkomi_can_seen6",
+          true
+        ],
+        [
+          "state",
+          "acorn_recovered",
+          null
+        ]
+      ]
+    }
+  },
+  {
+    "log_row": 1879,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_P01",
+    "gate": "afternoon6",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": {
+      "title": "학교에 자리가 났어. 같이 갈래?",
+      "location": "v111_woodshed",
+      "person": "kid_kkomi",
+      "guard": [
+        [
+          "state",
+          "kkomi_seat6",
+          true
+        ]
+      ],
+      "index": 1
+    }
+  },
+  {
+    "log_row": 1880,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_P01",
+    "gate": "afternoon6",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": {
+      "title": "학교에 자리가 났어. 같이 갈래?",
+      "location": "v111_woodshed",
+      "person": "kid_kkomi",
+      "guard": [
+        [
+          "state",
+          "kkomi_seat6",
+          true
+        ]
+      ],
+      "index": 1
+    }
+  },
+  {
+    "log_row": 1881,
+    "action": "질문",
+    "day": 6,
+    "scene": "MS14_D06_P01",
+    "gate": "afternoon6",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": {
+      "title": "학교에 자리가 났어. 같이 갈래?",
+      "location": "v111_woodshed",
+      "person": "kid_kkomi",
+      "guard": [
+        [
+          "state",
+          "kkomi_seat6",
+          true
+        ]
+      ],
+      "index": 1
+    }
+  },
+  {
+    "log_row": 1896,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_P01",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": {
+      "title": "학교 뒤 장작 창고",
+      "location": "v111_woodshed",
+      "move": "v111_woodshed"
+    }
+  },
+  {
+    "log_row": 1897,
+    "action": "지도이동",
+    "day": 6,
+    "scene": "MS14_D06_P01",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": "v111_woodshed"
+  },
+  {
+    "log_row": 1917,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_P01",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": {
+      "title": "마을 학교",
+      "location": "school",
+      "move": "school"
+    }
+  },
+  {
+    "log_row": 1918,
+    "action": "지도이동",
+    "day": 6,
+    "scene": "MS14_D06_P01",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": "school"
+  },
+  {
+    "log_row": 1919,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_P01",
+    "gate": "handoff6",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": {
+      "title": "네 아이와 물자를 확인한다",
+      "location": "school",
+      "object": "blankets",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1939,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_S03P",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": {
+      "title": "장작 창고 바깥",
+      "location": "v111_fire",
+      "move": "v111_fire"
+    }
+  },
+  {
+    "log_row": 1940,
+    "action": "지도이동",
+    "day": 6,
+    "scene": "MS14_D06_S03P",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": "v111_fire"
+  },
+  {
+    "log_row": 1949,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_S04",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": {
+      "title": "마을 학교",
+      "location": "school",
+      "move": "school"
+    }
+  },
+  {
+    "log_row": 1950,
+    "action": "지도이동",
+    "day": 6,
+    "scene": "MS14_D06_S04",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 40,
+    "extra": "school"
+  },
+  {
+    "log_row": 1975,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_S04",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 41,
+    "extra": {
+      "title": "식은 장작 창고 터",
+      "location": "v111_ruin",
+      "move": "v111_ruin"
+    }
+  },
+  {
+    "log_row": 1976,
+    "action": "지도이동",
+    "day": 6,
+    "scene": "MS14_D06_S04",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 41,
+    "extra": "v111_ruin"
+  },
+  {
+    "log_row": 1977,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_S04",
+    "gate": "fire_evidence6",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 41,
+    "extra": {
+      "title": "등잔과 천을 따로 확인한다",
+      "location": "v111_ruin",
+      "object": "v111_lamp",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 1985,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_S04",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 42,
+    "extra": {
+      "title": "마을 학교",
+      "location": "school",
+      "move": "school"
+    }
+  },
+  {
+    "log_row": 1986,
+    "action": "지도이동",
+    "day": 6,
+    "scene": "MS14_D06_S04",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 42,
+    "extra": "school"
+  },
+  {
+    "log_row": 1995,
+    "action": "현장행동",
+    "day": 6,
+    "scene": "MS14_D06_S04",
+    "gate": "sleep6_input",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 42,
+    "extra": {
+      "title": "잠자리를 정리한다",
+      "location": "school",
+      "object": "blankets",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 2009,
+    "action": "현장행동",
+    "day": 7,
+    "scene": "MS14_D07_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 42,
+    "extra": {
+      "title": "마을 빨래터",
+      "location": "laundry",
+      "move": "laundry"
+    }
+  },
+  {
+    "log_row": 2010,
+    "action": "지도이동",
+    "day": 7,
+    "scene": "MS14_D07_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 42,
+    "extra": "laundry"
+  },
+  {
+    "log_row": 2036,
+    "action": "선택지",
+    "day": 7,
+    "scene": "MS14_D07_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 42,
+    "extra": {
+      "items": [
+        "아이들은 학교에서 기다리게 하자.",
+        "여기서 계속 묻는다."
+      ],
+      "pick": "아이들은 학교에서 기다리게 하자."
+    }
+  },
+  {
+    "log_row": 2043,
+    "action": "현장행동",
+    "day": 7,
+    "scene": "MS14_D07_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 42,
+    "extra": {
+      "title": "마을 학교",
+      "location": "school",
+      "move": "school"
+    }
+  },
+  {
+    "log_row": 2044,
+    "action": "지도이동",
+    "day": 7,
+    "scene": "MS14_D07_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 42,
+    "extra": "school"
+  },
+  {
+    "log_row": 2045,
+    "action": "현장행동",
+    "day": 7,
+    "scene": "MS14_D07_S01",
+    "gate": "nubi_children_receipt7",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 42,
+    "extra": {
+      "title": "선생님, 누비 씨 아이 셋을 맡아 주셨습니까?",
+      "location": "school",
+      "person": "resident_teacher",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 2051,
+    "action": "현장행동",
+    "day": 7,
+    "scene": "MS14_D07_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 42,
+    "extra": {
+      "title": "마을 빨래터",
+      "location": "laundry",
+      "move": "laundry"
+    }
+  },
+  {
+    "log_row": 2052,
+    "action": "지도이동",
+    "day": 7,
+    "scene": "MS14_D07_S01",
+    "gate": "travel",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 42,
+    "extra": "laundry"
+  },
+  {
+    "log_row": 2053,
+    "action": "현장행동",
+    "day": 7,
+    "scene": "MS14_D07_S01",
+    "gate": "bori_witness7",
+    "claim": "v111:두 편지의 초대를 대조한다",
+    "evidence_count": 42,
+    "extra": {
+      "title": "창고 문 앞에서 무엇을 보셨습니까?",
+      "location": "laundry",
+      "person": "resident_bori",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 2058,
+    "action": "화재연결",
+    "day": 7,
+    "scene": "MS14_D07_S01",
+    "gate": "bori_witness7",
+    "claim": "v111:불이 시작된 곳과 진술을 대조한다",
+    "evidence_count": 42,
+    "extra": {
+      "row": {
+        "view": "board",
+        "field": null,
+        "page": 0,
+        "tab": "now",
+        "observations": [
+          null,
+          null
+        ],
+        "question": null,
+        "roles": [
+          null,
+          null,
+          null
+        ],
+        "extra": [],
+        "materials": [],
+        "source_manual": false,
+        "source_pending": false,
+        "library_return": "board",
+        "read_return": "library",
+        "detail": null,
+        "origin": false,
+        "notice": null
+      },
+      "first": true,
+      "listed": [],
+      "ready": true
+    }
+  },
+  {
+    "log_row": 2059,
+    "action": "화재연결",
+    "day": 7,
+    "scene": "MS14_D07_S01",
+    "gate": "bori_witness7",
+    "claim": "v111:불이 시작된 곳과 진술을 대조한다",
+    "evidence_count": 42,
+    "extra": {
+      "row": {
+        "view": "choices",
+        "field": "obs0",
+        "page": 0,
+        "tab": "now",
+        "observations": [
+          null,
+          null
+        ],
+        "question": null,
+        "roles": [
+          null,
+          null,
+          null
+        ],
+        "extra": [],
+        "materials": [],
+        "source_manual": false,
+        "source_pending": false,
+        "library_return": "board",
+        "read_return": "library",
+        "detail": null,
+        "origin": false,
+        "notice": null
+      },
+      "first": true,
+      "listed": [],
+      "ready": true
+    }
+  },
+  {
+    "log_row": 2060,
+    "action": "화재연결",
+    "day": 7,
+    "scene": "MS14_D07_S01",
+    "gate": "bori_witness7",
+    "claim": "v111:불이 시작된 곳과 진술을 대조한다",
+    "evidence_count": 42,
+    "extra": {
+      "row": {
+        "view": "board",
+        "field": "obs0",
+        "page": 0,
+        "tab": "now",
+        "observations": [
+          "lamp",
+          null
+        ],
+        "question": null,
+        "roles": [
+          null,
+          null,
+          null
+        ],
+        "extra": [],
+        "materials": [],
+        "source_manual": false,
+        "source_pending": false,
+        "library_return": "board",
+        "read_return": "library",
+        "detail": null,
+        "origin": false,
+        "notice": null
+      },
+      "first": true,
+      "listed": [],
+      "ready": true
+    }
+  },
+  {
+    "log_row": 2061,
+    "action": "화재연결",
+    "day": 7,
+    "scene": "MS14_D07_S01",
+    "gate": "bori_witness7",
+    "claim": "v111:불이 시작된 곳과 진술을 대조한다",
+    "evidence_count": 42,
+    "extra": {
+      "row": {
+        "view": "choices",
+        "field": "obs1",
+        "page": 0,
+        "tab": "now",
+        "observations": [
+          "lamp",
+          null
+        ],
+        "question": null,
+        "roles": [
+          null,
+          null,
+          null
+        ],
+        "extra": [],
+        "materials": [],
+        "source_manual": false,
+        "source_pending": false,
+        "library_return": "board",
+        "read_return": "library",
+        "detail": null,
+        "origin": false,
+        "notice": null
+      },
+      "first": true,
+      "listed": [],
+      "ready": true
+    }
+  },
+  {
+    "log_row": 2062,
+    "action": "화재연결",
+    "day": 7,
+    "scene": "MS14_D07_S01",
+    "gate": "bori_witness7",
+    "claim": "v111:불이 시작된 곳과 진술을 대조한다",
+    "evidence_count": 42,
+    "extra": {
+      "row": {
+        "view": "board",
+        "field": "obs1",
+        "page": 0,
+        "tab": "now",
+        "observations": [
+          "lamp",
+          "door"
+        ],
+        "question": null,
+        "roles": [
+          null,
+          null,
+          null
+        ],
+        "extra": [],
+        "materials": [],
+        "source_manual": false,
+        "source_pending": false,
+        "library_return": "board",
+        "read_return": "library",
+        "detail": null,
+        "origin": false,
+        "notice": null
+      },
+      "first": true,
+      "listed": [],
+      "ready": true
+    }
+  },
+  {
+    "log_row": 2063,
+    "action": "화재연결",
+    "day": 7,
+    "scene": "MS14_D07_S01",
+    "gate": "bori_witness7",
+    "claim": "v111:불이 시작된 곳과 진술을 대조한다",
+    "evidence_count": 42,
+    "extra": {
+      "row": {
+        "view": "choices",
+        "field": "question",
+        "page": 0,
+        "tab": "now",
+        "observations": [
+          "lamp",
+          "door"
+        ],
+        "question": null,
+        "roles": [
+          null,
+          null,
+          null
+        ],
+        "extra": [],
+        "materials": [],
+        "source_manual": false,
+        "source_pending": false,
+        "library_return": "board",
+        "read_return": "library",
+        "detail": null,
+        "origin": false,
+        "notice": null
+      },
+      "first": true,
+      "listed": [],
+      "ready": true
+    }
+  },
+  {
+    "log_row": 2064,
+    "action": "화재연결",
+    "day": 7,
+    "scene": "MS14_D07_S01",
+    "gate": "bori_witness7",
+    "claim": "v111:불이 시작된 곳과 진술을 대조한다",
+    "evidence_count": 42,
+    "extra": {
+      "row": {
+        "view": "board",
+        "field": "question",
+        "page": 0,
+        "tab": "now",
+        "observations": [
+          "lamp",
+          "door"
+        ],
+        "question": "door",
+        "roles": [
+          null,
+          null,
+          null
+        ],
+        "extra": [],
+        "materials": [],
+        "source_manual": false,
+        "source_pending": false,
+        "library_return": "board",
+        "read_return": "library",
+        "detail": null,
+        "origin": false,
+        "notice": null
+      },
+      "first": true,
+      "listed": [],
+      "ready": true
+    }
+  },
+  {
+    "log_row": 2076,
+    "action": "실행중단",
+    "day": 7,
+    "scene": "MS14_D07_S01",
+    "gate": "bori_witness7",
+    "claim": "v111:불이 시작된 곳과 진술을 대조한다",
+    "evidence_count": 42,
+    "extra": "('widget absent', 'r13_fire_recheck', 'r13_fire_recheck_trace')"
+  },
+  {
+    "log_row": 2093,
+    "action": "현장행동",
+    "day": 7,
+    "scene": "MS14_D07_S02",
+    "gate": "travel",
+    "claim": "v111:불이 시작된 곳과 진술을 대조한다",
+    "evidence_count": 43,
+    "extra": {
+      "title": "마을 학교",
+      "location": "school",
+      "move": "school"
+    }
+  },
+  {
+    "log_row": 2094,
+    "action": "지도이동",
+    "day": 7,
+    "scene": "MS14_D07_S02",
+    "gate": "travel",
+    "claim": "v111:불이 시작된 곳과 진술을 대조한다",
+    "evidence_count": 43,
+    "extra": "school"
+  },
+  {
+    "log_row": 2098,
+    "action": "화재연결",
+    "day": 7,
+    "scene": "MS14_D07_S02",
+    "gate": "travel",
+    "claim": "v111:불의 원인과 빈 창고 진압을 구분한다",
+    "evidence_count": 43,
+    "extra": {
+      "row": {
+        "view": "board",
+        "field": null,
+        "page": 0,
+        "tab": "now",
+        "observations": [
+          null,
+          null
+        ],
+        "question": null,
+        "roles": [
+          null,
+          null,
+          null
+        ],
+        "extra": [],
+        "materials": [],
+        "source_manual": false,
+        "source_pending": false,
+        "library_return": "board",
+        "read_return": "library",
+        "detail": null,
+        "origin": false,
+        "notice": null
+      },
+      "first": false,
+      "listed": [],
+      "ready": true
+    }
+  },
+  {
+    "log_row": 2099,
+    "action": "화재연결",
+    "day": 7,
+    "scene": "MS14_D07_S02",
+    "gate": "travel",
+    "claim": "v111:불의 원인과 빈 창고 진압을 구분한다",
+    "evidence_count": 43,
+    "extra": {
+      "row": {
+        "view": "library",
+        "field": "role0",
+        "page": 0,
+        "tab": "now",
+        "observations": [
+          null,
+          null
+        ],
+        "question": null,
+        "roles": [
+          null,
+          null,
+          null
+        ],
+        "extra": [],
+        "materials": [],
+        "source_manual": false,
+        "source_pending": false,
+        "library_return": "board",
+        "read_return": "library",
+        "detail": null,
+        "origin": false,
+        "notice": null
+      },
+      "first": false,
+      "listed": [
+        "V111:E07_NUBI",
+        "V111:E06_CONTACT",
+        "V111:NW_KKOMI_NOSTONE",
+        "V111:E06_EMPTY",
+        "V111:E06_FIRE",
+        "V111:E27",
+        "V111:E28",
+        "V111:E29"
+      ],
+      "ready": true
+    }
+  },
+  {
+    "log_row": 2100,
+    "action": "화재연결",
+    "day": 7,
+    "scene": "MS14_D07_S02",
+    "gate": "travel",
+    "claim": "v111:불의 원인과 빈 창고 진압을 구분한다",
+    "evidence_count": 43,
+    "extra": {
+      "row": {
+        "view": "library",
+        "field": "role0",
+        "page": 1,
+        "tab": "now",
+        "observations": [
+          null,
+          null
+        ],
+        "question": null,
+        "roles": [
+          null,
+          null,
+          null
+        ],
+        "extra": [],
+        "materials": [],
+        "source_manual": false,
+        "source_pending": false,
+        "library_return": "board",
+        "read_return": "library",
+        "detail": null,
+        "origin": false,
+        "notice": null
+      },
+      "first": false,
+      "listed": [
+        "V111:E07_NUBI",
+        "V111:E06_CONTACT",
+        "V111:NW_KKOMI_NOSTONE",
+        "V111:E06_EMPTY",
+        "V111:E06_FIRE",
+        "V111:E27",
+        "V111:E28",
+        "V111:E29"
+      ],
+      "ready": true
+    }
+  },
+  {
+    "log_row": 2101,
+    "action": "화재연결",
+    "day": 7,
+    "scene": "MS14_D07_S02",
+    "gate": "travel",
+    "claim": "v111:불의 원인과 빈 창고 진압을 구분한다",
+    "evidence_count": 43,
+    "extra": {
+      "row": {
+        "view": "board",
+        "field": "role0",
+        "page": 1,
+        "tab": "now",
+        "observations": [
+          null,
+          null
+        ],
+        "question": null,
+        "roles": [
+          "V111:E06_FIRE",
+          null,
+          null
+        ],
+        "extra": [],
+        "materials": [],
+        "source_manual": false,
+        "source_pending": false,
+        "library_return": "board",
+        "read_return": "library",
+        "detail": null,
+        "origin": false,
+        "notice": null
+      },
+      "first": false,
+      "listed": [
+        "V111:E07_NUBI",
+        "V111:E06_CONTACT",
+        "V111:NW_KKOMI_NOSTONE",
+        "V111:E06_EMPTY",
+        "V111:E06_FIRE",
+        "V111:E27",
+        "V111:E28",
+        "V111:E29"
+      ],
+      "ready": true
+    }
+  },
+  {
+    "log_row": 2102,
+    "action": "화재연결",
+    "day": 7,
+    "scene": "MS14_D07_S02",
+    "gate": "travel",
+    "claim": "v111:불의 원인과 빈 창고 진압을 구분한다",
+    "evidence_count": 43,
+    "extra": {
+      "row": {
+        "view": "library",
+        "field": "role1",
+        "page": 0,
+        "tab": "now",
+        "observations": [
+          null,
+          null
+        ],
+        "question": null,
+        "roles": [
+          "V111:E06_FIRE",
+          null,
+          null
+        ],
+        "extra": [],
+        "materials": [],
+        "source_manual": false,
+        "source_pending": false,
+        "library_return": "board",
+        "read_return": "library",
+        "detail": null,
+        "origin": false,
+        "notice": null
+      },
+      "first": false,
+      "listed": [
+        "V111:E07_NUBI",
+        "V111:E06_CONTACT",
+        "V111:NW_KKOMI_NOSTONE",
+        "V111:E06_EMPTY",
+        "V111:E06_FIRE",
+        "V111:E27",
+        "V111:E28",
+        "V111:E29"
+      ],
+      "ready": true
+    }
+  },
+  {
+    "log_row": 2103,
+    "action": "화재연결",
+    "day": 7,
+    "scene": "MS14_D07_S02",
+    "gate": "travel",
+    "claim": "v111:불의 원인과 빈 창고 진압을 구분한다",
+    "evidence_count": 43,
+    "extra": {
+      "row": {
+        "view": "board",
+        "field": "role1",
+        "page": 0,
+        "tab": "now",
+        "observations": [
+          null,
+          null
+        ],
+        "question": null,
+        "roles": [
+          "V111:E06_FIRE",
+          "V111:E07_NUBI",
+          null
+        ],
+        "extra": [],
+        "materials": [],
+        "source_manual": false,
+        "source_pending": false,
+        "library_return": "board",
+        "read_return": "library",
+        "detail": null,
+        "origin": false,
+        "notice": null
+      },
+      "first": false,
+      "listed": [
+        "V111:E07_NUBI",
+        "V111:E06_CONTACT",
+        "V111:NW_KKOMI_NOSTONE",
+        "V111:E06_EMPTY",
+        "V111:E06_FIRE",
+        "V111:E27",
+        "V111:E28",
+        "V111:E29"
+      ],
+      "ready": true
+    }
+  },
+  {
+    "log_row": 2104,
+    "action": "화재연결",
+    "day": 7,
+    "scene": "MS14_D07_S02",
+    "gate": "travel",
+    "claim": "v111:불의 원인과 빈 창고 진압을 구분한다",
+    "evidence_count": 43,
+    "extra": {
+      "row": {
+        "view": "library",
+        "field": "role2",
+        "page": 0,
+        "tab": "now",
+        "observations": [
+          null,
+          null
+        ],
+        "question": null,
+        "roles": [
+          "V111:E06_FIRE",
+          "V111:E07_NUBI",
+          null
+        ],
+        "extra": [],
+        "materials": [],
+        "source_manual": false,
+        "source_pending": false,
+        "library_return": "board",
+        "read_return": "library",
+        "detail": null,
+        "origin": false,
+        "notice": null
+      },
+      "first": false,
+      "listed": [
+        "V111:E07_NUBI",
+        "V111:E06_CONTACT",
+        "V111:NW_KKOMI_NOSTONE",
+        "V111:E06_EMPTY",
+        "V111:E06_FIRE",
+        "V111:E27",
+        "V111:E28",
+        "V111:E29"
+      ],
+      "ready": true
+    }
+  },
+  {
+    "log_row": 2105,
+    "action": "화재연결",
+    "day": 7,
+    "scene": "MS14_D07_S02",
+    "gate": "travel",
+    "claim": "v111:불의 원인과 빈 창고 진압을 구분한다",
+    "evidence_count": 43,
+    "extra": {
+      "row": {
+        "view": "library",
+        "field": "role2",
+        "page": 1,
+        "tab": "now",
+        "observations": [
+          null,
+          null
+        ],
+        "question": null,
+        "roles": [
+          "V111:E06_FIRE",
+          "V111:E07_NUBI",
+          null
+        ],
+        "extra": [],
+        "materials": [],
+        "source_manual": false,
+        "source_pending": false,
+        "library_return": "board",
+        "read_return": "library",
+        "detail": null,
+        "origin": false,
+        "notice": null
+      },
+      "first": false,
+      "listed": [
+        "V111:E07_NUBI",
+        "V111:E06_CONTACT",
+        "V111:NW_KKOMI_NOSTONE",
+        "V111:E06_EMPTY",
+        "V111:E06_FIRE",
+        "V111:E27",
+        "V111:E28",
+        "V111:E29"
+      ],
+      "ready": true
+    }
+  },
+  {
+    "log_row": 2106,
+    "action": "화재연결",
+    "day": 7,
+    "scene": "MS14_D07_S02",
+    "gate": "travel",
+    "claim": "v111:불의 원인과 빈 창고 진압을 구분한다",
+    "evidence_count": 43,
+    "extra": {
+      "row": {
+        "view": "board",
+        "field": "role2",
+        "page": 1,
+        "tab": "now",
+        "observations": [
+          null,
+          null
+        ],
+        "question": null,
+        "roles": [
+          "V111:E06_FIRE",
+          "V111:E07_NUBI",
+          "V111:E06_EMPTY"
+        ],
+        "extra": [],
+        "materials": [],
+        "source_manual": false,
+        "source_pending": false,
+        "library_return": "board",
+        "read_return": "library",
+        "detail": null,
+        "origin": false,
+        "notice": null
+      },
+      "first": false,
+      "listed": [
+        "V111:E07_NUBI",
+        "V111:E06_CONTACT",
+        "V111:NW_KKOMI_NOSTONE",
+        "V111:E06_EMPTY",
+        "V111:E06_FIRE",
+        "V111:E27",
+        "V111:E28",
+        "V111:E29"
+      ],
+      "ready": true
+    }
+  },
+  {
+    "log_row": 2128,
+    "action": "현장행동",
+    "day": 7,
+    "scene": "MS14_D07_S02",
+    "gate": "school_names7",
+    "claim": "v111:불의 원인과 빈 창고 진압을 구분한다",
+    "evidence_count": 43,
+    "extra": {
+      "title": "명부와 실제 침구를 확인한다",
+      "location": "school",
+      "object": "desks",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 2189,
+    "action": "현장행동",
+    "day": 7,
+    "scene": "MS14_D07_S02",
+    "gate": "free_day7",
+    "claim": "v111:불의 원인과 빈 창고 진압을 구분한다",
+    "evidence_count": 43,
+    "extra": {
+      "title": "다람아, 오늘 조사는 여기서 마치자.",
+      "location": "school",
+      "person": "daram",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 2190,
+    "action": "질문",
+    "day": 7,
+    "scene": "MS14_D07_S02",
+    "gate": "free_day7",
+    "claim": "v111:불의 원인과 빈 창고 진압을 구분한다",
+    "evidence_count": 43,
+    "extra": {
+      "title": "다람아, 오늘 조사는 여기서 마치자.",
+      "location": "school",
+      "person": "daram",
+      "index": 0
+    }
+  },
+  {
+    "log_row": 2208,
+    "action": "완주",
+    "day": 7,
+    "scene": "MS14_D07_S02",
+    "gate": "free_day7",
+    "claim": "v111:불의 원인과 빈 창고 진압을 구분한다",
+    "evidence_count": 43,
+    "extra": null
+  }
+]
