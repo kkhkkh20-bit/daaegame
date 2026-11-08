@@ -13,6 +13,9 @@ SOURCES={
  'surprise_talk':'exec-c5a80bdf-abc3-4140-be37-a3f46fd780a3.png',
 }
 def main():
+ datafile=ROOT/'game/assets/room13-dialogue-player-facing.json'
+ if json.loads(datafile.read_text())['people'].get('guard',{}).get('art_revision')=='guard-pixel-consistency-20261108':
+  print('새 돌목 도트 원화를 유지합니다. 재가져오기는 dev/import_guard_pixel.py 사용.');return
  art=ROOT/'art/dolmok-redraw-20261105';masters=art/'sources';masters.mkdir(parents=True,exist_ok=True)
  target=ROOT/'game/assets/dialogue-player-facing/guard-redesign';target.mkdir(parents=True,exist_ok=True)
  rows={}

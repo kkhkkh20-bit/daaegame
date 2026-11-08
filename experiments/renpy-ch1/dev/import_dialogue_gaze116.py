@@ -77,7 +77,7 @@ def main():
     current=json.loads(registry.read_text())['people']
     # 이후 검수·납품된 누비 묶음은 전용 importer가 관리한다. 예전 전체
     # 시선 교정 가져오기로 새 작화를 되돌리지 않는다.
-    if current.get('resident_nubi',{}).get('art_revision')=='nubi-consistency-20261108':
+    if current.get('resident_nubi',{}).get('art_revision') in ('nubi-consistency-20261108','nubi-pixel-consistency-20261108'):
         targets.pop('resident_nubi',None)
     prepared={}
     for person,target in targets.items():

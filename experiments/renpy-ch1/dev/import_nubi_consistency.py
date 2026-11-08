@@ -4,7 +4,8 @@ python3 dev/import_nubi_consistency.py          # 원본·해시 확인만
 python3 dev/import_nubi_consistency.py --apply  # WebP·정면 연결·크기표 갱신
 
 새 납품은 art/dialogue-consistency-20261108/resident_nubi/manifest.json으로
-추적한다. 예전 gaze116 전체 가져오기는 이 새 리비전을 덮지 않는다.
+추적했다. 현재 도트 재납품은 art/pixel-consistency-20261108/resident_nubi/
+manifest.json으로 추적한다. 예전 gaze116 전체 가져오기는 새 리비전을 덮지 않는다.
 """
 import argparse
 import json
@@ -14,7 +15,7 @@ from import_art import encode
 from import_dialogue_gaze116 import SLOTS, build_profiles, normalize_question_layout, read_source
 
 ROOT = Path(__file__).resolve().parents[1]
-ART = ROOT / 'art/dialogue-consistency-20261108/resident_nubi'
+ART = ROOT / 'art/pixel-consistency-20261108/resident_nubi'
 REGISTRY = ROOT / 'game/assets/room13-dialogue-player-facing.json'
 
 
@@ -47,7 +48,7 @@ def main():
         data = json.loads(REGISTRY.read_text())
         entry = dict(data['people']['resident_nubi'],
                      art_revision=manifest['art_revision'],
-                     approval='소유자: 화질·작화 일관성 리뷰 개선 승인', profiles=profiles)
+                     approval=manifest['approval'], profiles=profiles)
         normalize_question_layout({'resident_nubi': entry})
         data['people']['resident_nubi'] = entry
         REGISTRY.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
