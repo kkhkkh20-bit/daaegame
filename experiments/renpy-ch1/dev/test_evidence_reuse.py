@@ -13,7 +13,7 @@ EV|=set(json.loads((GAME/'v111/newworld/lamp_attempt.json').read_text()).get('ne
 def table(name):
     return RULES.split(name+'={',1)[1].split('\n    }',1)[0]
 PROOF_KEYS=set(re.findall(r"call r13_v111_proof\(\s*['\"]([^'\"]+)['\"]",''.join(f.read_text() for f in GAME.glob('room13_v111_days*.rpy'))))
-# 이번에 다시 쓰이게 한 10건 중 회의에 붙인 것과 새 사실 1건(E09 초상의 바늘):
+# 회의에 덧붙인 자료와 실제로 관찰할 수 있는 초상 묘사:
 # (문항, 덧붙인 자료, 그 자료를 짚는 조건 이름). 한 문항에 덧붙임이 둘 이상일 수 있다.
 REUSED=[
     ("초롱과 피코의 하루를 대조한다","E28","hyp1_won_with_e28"),
@@ -44,18 +44,18 @@ class EvidenceReuse(unittest.TestCase):
         self.assertIn('"반송·필사본·초대 발송을 대조한다":(("E01","E27","E09_MAIL"),)',body)
         # E09(초상)는 덧붙임만이다. 피코는 엄마를 앞에 두고 그리지 않았으므로 대체 세트가 될 수 없다.
         self.assertNotIn('"E09"',body)
-    def test_portrait_needle_is_set_up_before_day10(self):
-        """2일에 다람이 바늘을 주문하고, 3일 두 판(피코 생존·사망) 모두 그림 속 바늘이 보인 뒤에 10일에 짚는다."""
+    def test_portrait_observation_keeps_art_and_day10_scope(self):
+        """초상에는 얼굴·목도리만 보인다. 생존/사망 변형도 없는 손을 주장하지 않고, 10일에 발송자를 증명하지 않는다."""
         def day(n):return json.loads((GAME/('v111/newworld/d%02d.json'%n)).read_text())
         d2,d3,d10=day(2),day(3),day(10)
-        self.assertIn('바늘',' '.join(r['text'] for r in d2['after']['MS14_D02_S03_L0018']))
-        self.assertIn('바늘을 쥐고',' '.join(r['text'] for r in d3['after']['MS14_D03_S01_L0036']))   # 피코 생존
-        self.assertIn('손까지는 다 그려져',' '.join(r['text'] for r in d3['after']['MS14_D03_S01_L9101']))  # 피코 사망
-        for v in d3['evidence']['E09']['variants'].values():self.assertIn('바늘',v)
+        self.assertIn('바느질',' '.join(r['text'] for r in d2['after']['MS14_D02_S03_L0018']))
+        self.assertIn('목도리',' '.join(r['text'] for r in d3['after']['MS14_D03_S01_L0036']))   # 피코 생존
+        self.assertIn('코가 있어야 할 자리만 비어',' '.join(r['text'] for r in d3['after']['MS14_D03_S01_L9101']))  # 피코 사망
+        for v in d3['evidence']['E09']['variants'].values():self.assertIn('목도리',v);self.assertNotIn('바늘',v);self.assertNotIn('무릎',v)
         facts=json.loads((GAME/'v111/evidence-facts.json').read_text())['E09']
-        for lines in facts.values():self.assertLessEqual(len(lines),3);self.assertTrue(any('바늘' in l for l in lines))
+        for lines in facts.values():self.assertLessEqual(len(lines),3);self.assertTrue(any('목도리' in l for l in lines));self.assertFalse(any('바늘' in l or '손이 그려' in l for l in lines))
         rows=d10['after']['MS14_D10_P01_L0032']
         self.assertTrue(rows and all(r.get('when')=='writing_won_with_e09' for r in rows))
-        # 그림은 그날의 손을 증명하지 못한다: 아빠는 「그날 아프지 않았다」고 말하지 않는다.
+        # 초상은 편지의 발송자를 증명하지 못한다. 관찰할 수 없는 손 상태도 주장하지 않는다.
         self.assertNotIn('그날',' '.join(r['text'] for r in rows))
 if __name__=='__main__':unittest.main()

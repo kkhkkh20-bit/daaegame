@@ -769,7 +769,16 @@
         "location": "gate",
         "object": "gate_documents"
       }
-    ]
+    ],
+    "approach": {
+      "guard": {
+        "object": "gate_documents",
+        "question": "돌목 씨, 어디를 다치셨습니까? 밝은 쪽에서 봐도 되겠습니까?"
+      }
+    },
+    "object_labels": {
+      "gate_documents": "초소 앞 · 밝은 자리"
+    }
   },
   "bami_ask4": {
     "location": "ms14_guardroom",
@@ -807,7 +816,11 @@
         "location": "gate",
         "object": "v111_bucket"
       }
-    ]
+    ],
+    "object_labels": {
+      "road": "고갯길 · 겹친 발자국",
+      "v111_bucket": "엎어진 양동이"
+    }
   },
   "collect4": {
     "location": "gate",
@@ -905,7 +918,10 @@
           ]
         ]
       }
-    ]
+    ],
+    "object_labels": {
+      "window": "창문 · 잠금 확인"
+    }
   },
   "sleep5": {
     "location": "room13",
@@ -932,7 +948,16 @@
         "location": "dining",
         "object": "table"
       }
-    ]
+    ],
+    "approach": {
+      "nabi": {
+        "object": "table",
+        "question": "나비 씨, 여기 놓인 보급판을 봐도 되겠습니까?"
+      }
+    },
+    "object_labels": {
+      "table": "식탁 · 공개 보급판"
+    }
   },
   "woodshed_check6": {
     "location": "v111_woodshed",
@@ -963,7 +988,16 @@
         "location": "school",
         "object": "blankets"
       }
-    ]
+    ],
+    "approach": {
+      "resident_teacher": {
+        "object": "blankets",
+        "question": "선생님, 아이 넷과 가져온 물자를 함께 확인해 주십시오."
+      }
+    },
+    "object_labels": {
+      "blankets": "담요 · 아이들 자리"
+    }
   },
   "wet_cloth6": {
     "location": "v111_fire",
@@ -1029,7 +1063,20 @@
         "location": "school",
         "object": "desks"
       }
-    ]
+    ],
+    "approach": {
+      "resident_teacher": {
+        "object": "desks",
+        "question": "오늘 밤 아이들 자리와 곁에 있을 분을 함께 확인하겠습니다."
+      },
+      "nabi": {
+        "object": "desks",
+        "question": "오늘 밤 아이들 자리와 곁에 있을 분을 함께 확인하겠습니다."
+      }
+    },
+    "object_labels": {
+      "desks": "책상 · 아이들 명부"
+    }
   },
   "sleep7": {
     "location": "school",
@@ -2064,6 +2111,9 @@
           ]
         ]
       }
+    ],
+    "direct_people": [
+      "resident_bori"
     ]
   },
   "sleep6_input": {
@@ -2456,7 +2506,10 @@
         ]
       }
     ],
-    "daram_if_free": true
+    "daram_if_free": true,
+    "direct_people": [
+      "resident_teacher"
+    ]
   },
   "carrier_receipt12": {
     "location": "school",
@@ -2700,7 +2753,10 @@
           ]
         ]
       }
-    ]
+    ],
+    "object_labels": {
+      "v111_can": "깡통 줄 · 살피기"
+    }
   },
   "laundry5": {
     "location": "laundry",
@@ -3216,6 +3272,9 @@
           ]
         ]
       }
+    ],
+    "direct_people": [
+      "daram"
     ]
   },
   "hp_house11": {

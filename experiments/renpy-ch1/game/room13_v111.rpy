@@ -120,6 +120,22 @@ init 301 python:
             if option.get("present")==shown and option.get("person")==person and option.get("location")==store.room13["location"]:
                 return option.get("index",i)
         return None
+    def r13_v111_person_object(binding,person,location):
+        # 같은 장면의 담당자에게 말을 걸어도, 물건을 눌렀을 때와 같은 확인을 시작한다.
+        # 기존 선택지의 index만 돌려주므로 자료 획득·조건·분기는 원래 라벨을 따른다.
+        entry=binding.get("approach",{}).get(person)
+        if not entry:return None
+        matches=[o for o in binding.get("options",[]) if o.get("object")==entry.get("object") and o.get("location")==location]
+        if len(matches)!=1:return None
+        return matches[0]["index"],entry["question"]
+    def r13_v111_object_caption(key):
+        if not r13_v111_active():return None
+        binding=r13_v111_binding()
+        if binding.get("location")!=store.room13.get("location"):return None
+        if key=="v111_can" and store.room13["v111"].get("gate")=="afternoon6":
+            if r13_v111_value("acorn_recovered"):return "깡통 줄 · 회수함"
+            if r13_v111_value("kkomi_can_seen6"):return "깡통 줄 · 풀어 챙기기"
+        return binding.get("object_labels",{}).get(key)
     def r13_v111_context(key):
         n=winter_copy.deepcopy(store.room13);n["v111"]["gate"]=key
         # 2026-10-24 행동 검수 4(소유자 승인 「구조 수정」): 이동 말고 다른 대기에 닿으면 지금 장면의
@@ -148,7 +164,13 @@ init 301 python:
         if b.get("auto") and len(options)==1:return options[0]["index"]
         return None
 
-    def r13_v111_direct_topic(key,person,location,options,questions):
+    def r13_v111_direct_topic(key,person,location,options,questions,direct_people=()):
+        # 지정한 단일 진행 질문만 인물 클릭에 잇는다. 자료 제시·후속 질문·갈림길은 남긴다.
+        if person in direct_people and len(questions)==1:
+            value=getattr(questions[0][1],"value",None)
+            matches=[o for o in options if o.get("person")==person and o.get("location")==location
+                     and o.get("index")==value and not o.get("present") and not o.get("present_only")]
+            if type(value) is int and len(matches)==1:return value
         # 1~3일 첫 플레이 검수: 이미 말을 건 상대에게 질문이 없거나 하나뿐인 두 관문만 잇는다.
         # 후속 질문·새 선택이 생긴 저장에서는 기존 질문지를 보이며, 자료 선택과 수신자 판정은 건너뛰지 않는다.
         route={"envelope_show":("seryeon","post"),"portrait_ask":("resident_piko","square")}
@@ -337,6 +359,11 @@ label r13_v111_wait_again:
             call r13_v111_gate_ledger_hand
             $ r13_v111_time("inspect:gate_request:ledger",15)
             return 0
+        $ v111_person_object=r13_v111_person_object(v111_binding,v111_person,room13["location"]) if v111_person in r13_visible_people() else None
+        if v111_person_object is not None:
+            call r13_lines([r13_nw_added_line(dict(speaker="아빠",text=v111_person_object[1],kind="dialogue"))],"v111:approach:"+key+":"+v111_person)
+            $ r13_v111_time("inspect:"+key+":"+v111_binding["approach"][v111_person]["object"],15)
+            return v111_person_object[0]
         if v111_person in r13_visible_people():
             call r13_piko_report(v111_person)
             $ v111_piko_reported=bool(_return)
@@ -350,7 +377,7 @@ label r13_v111_wait_again:
             # 0.20.10 (4~14일 리뷰 P07): 물을 것이 없는 다람은 장면마다 처음 한 번 먼저 대답한다.
             if v111_person=="daram" and r13_v111_daram_hello_due():
                 call r13_lines(r13_v111_daram_hello(),"v111:daram_hello")
-            $ v111_topic_direct=r13_v111_direct_topic(key,v111_person,room13["location"],v111_binding.get("options",[]),r13_v111_questions(v111_person))
+            $ v111_topic_direct=r13_v111_direct_topic(key,v111_person,room13["location"],v111_binding.get("options",[]),r13_v111_questions(v111_person),v111_binding.get("direct_people",()))
             if v111_topic_direct is None:
                 call screen r13_topics(v111_person)
             else:

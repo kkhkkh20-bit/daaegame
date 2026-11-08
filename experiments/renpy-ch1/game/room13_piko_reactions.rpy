@@ -15,13 +15,25 @@ init 354 python:
         return (r13_piko_resident_available(person) and r13_v111_value("piko_alive") is False
                 and r13_v111_owned("E09"))
 
+    def r13_piko_current_activity(person):
+        # 사람에게 직접 붙은 질문뿐 아니라, 함께 하던 물건 조사·인계도 현재 대화다.
+        # 예: 나비와 보급판을 읽는 중에는 식탁 조사나 다람의 출발 질문이 남아 있다.
+        # 자유 탐색의 종료 질문은 진행 중인 업무가 아니다. 주민 본인의 질문은 기존 business가 맡는다.
+        if (store.room13.get("v111") or {}).get("gate")=="free_day7":return False
+        binding=r13_v111_binding()
+        participants=binding.get("people",[])+(store.room13.get("v111") or {}).get("people",[])
+        if person not in participants:return False
+        here=store.room13.get("location")
+        return any(option.get("location")==here and any(option.get(kind) for kind in ("person","object","move","present"))
+                   for option in binding.get("options",[]))
+
     def r13_piko_report_due(person):
         day=(store.room13 or {}).get("day")
         if not r13_piko_news_available(person) or r13_v111_value("piko_news3:"+person):return False
         if day==3:return True
         # 3일에 식당을 찾지 않은 경우도 실제 대면으로만 전한다. 필수 문답과 당면 사건은 먼저다.
         return (person=="nabi" and day in (4,5,6,7) and not r13_v111_tense_context()
-                and not r13_v111_has_business(person))
+                and not r13_v111_has_business(person) and not r13_piko_current_activity(person))
 
     def r13_piko_report_lines(person):
         # 조회·예측은 정보를 저장하지 않는다. 실제 라벨의 대화 반환 뒤에만 아래에서 표시한다.
@@ -51,7 +63,7 @@ init 354 python:
         day=(store.room13 or {}).get("day")
         if day not in (3,4,5,6,7) or not r13_piko_resident_available(person):return []
         # 현재 사건·필수 질문·자료 반응·바쁜 일은 짧은 잔향보다 먼저다.
-        if r13_v111_tense_context() or r13_v111_has_business(person):return []
+        if r13_v111_tense_context() or r13_v111_has_business(person) or r13_piko_current_activity(person):return []
         # 처리 결과는 피코가 살아 있는 도난판에도 직접 들었다. 사망 소식과 별개의 기억이다.
         custody=r13_v111_value("piko_custody_heard3:buri") if person=="buri" and not r13_v111_value("lamp_bound2") else None
         if custody not in ("report","transfer"):custody=None

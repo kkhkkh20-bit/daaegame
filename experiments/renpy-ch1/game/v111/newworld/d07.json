@@ -215,7 +215,7 @@
       "expression": "anxious"
     },
     "MS14_D07_S01_L0037": {
-      "text": "문 앞에다 부었냐고 묻잖소!",
+      "text": "어디에 부었소?{w=.3} 창고 문 앞이오?",
       "expression": "angry"
     },
     "MS14_D07_S01_L0039": {
@@ -1279,7 +1279,9 @@
       }
     ]
   },
-  "drop": [],
+  "drop": [
+    "MS14_D07_S02_L0028"
+  ],
   "evidence": {},
   "blocks": {
     "nubi_children_received7": [
@@ -2360,14 +2362,7 @@
         "id": "NW_D07_OR07",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "등잔은 뒷벽 물통 옆에 있었습니다. 뚜껑이 닫혀 있었고, 기름도 남아 있었죠.\n그런데 기름 냄새가 나는 천과 탄 자국은 문 쪽에 있었습니다.",
-        "expression": "neutral"
-      },
-      {
-        "id": "NW_D07_OR08",
-        "speaker": "아빠",
-        "kind": "dialogue",
-        "text": "등잔에서 번졌다는 설명만으로는 문 앞 흔적을 설명할 수 없습니다.",
+        "text": "그 등잔에서 번졌다면, 문 앞의 탄 자국과 기름 냄새는 어떻게 설명하시겠습니까?",
         "expression": "neutral"
       }
     ],
@@ -2741,7 +2736,7 @@
         "id": "NW_FIRE_RECHECK_TRACE",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "말씀만 하신 겁니까? 문 앞에서 나온 이 천에는 기름 냄새가 났습니다.",
+        "text": "아이들을 내보내려고 문 앞에서 무엇을 하신 겁니까? 이 천에는 기름 냄새가 났습니다.",
         "expression": "neutral"
       }
     ],

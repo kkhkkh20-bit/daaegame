@@ -462,3 +462,59 @@ testcase proof_reading_letter_observation_controls:
     click id "r13_pw_swap_E01"
     assert eval (qa_pw_read_scope()["replace_pending"] is None and qa_pw_read_selection(["V111:E03","V111:E06"]))
     assert eval (qa_pw_read_domain()==qa_pw_read_before)
+
+# 실제 체크 두 장을 다시 고르지 않고 펼치며, 읽기는 제출·획득 상태를 바꾸지 않는다.
+testcase proof_reading_checked_pair_pc:
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(qa_pw_read_prepare,False,False)
+    run Jump("r13_v111_trial_open")
+    click pos (900,600) until screen "r13_proof_workspace" timeout 60
+    pause .6
+    $ qa_pw_read_before=qa_pw_read_domain()
+    if eval (not qa_pw_read_has("r13_pw_check_E11")):
+        click id "r13_pw_next" until eval qa_pw_read_has("r13_pw_check_E11") timeout 20
+    click id "r13_pw_check_E11"
+    if eval (not qa_pw_read_has("r13_pw_check_E13")):
+        click id "r13_pw_next" until eval qa_pw_read_has("r13_pw_check_E13") timeout 20
+    click id "r13_pw_check_E13"
+    assert eval (qa_pw_read_selection(["V111:E11","V111:E13"]))
+    click id "r13_pw_pair"
+    pause .5
+    assert eval (qa_pw_read_scope()["live_pair"]==("V111:E11","V111:E13"))
+    assert eval (qa_pw_read_selection(["V111:E11","V111:E13"]) and qa_pw_read_domain()==qa_pw_read_before)
+    screenshot "checked-pair-pc.png"
+    click id "r13_pw_back_list"
+    assert screen "r13_proof_workspace"
+    assert eval (qa_pw_read_selection(["V111:E11","V111:E13"]) and qa_pw_read_domain()==qa_pw_read_before)
+    run Function(qa_pw_read_restore)
+
+# 실제 체크 두 장을 다시 고르지 않고 펼치며, 읽기는 제출·획득 상태를 바꾸지 않는다.
+testcase proof_reading_checked_pair_touch:
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(qa_pw_read_prepare,True,False)
+    run Jump("r13_v111_trial_open")
+    click pos (900,600) until screen "r13_proof_workspace" timeout 60
+    pause .6
+    $ qa_pw_read_before=qa_pw_read_domain()
+    if eval (not qa_pw_read_has("r13_pw_check_E11")):
+        click id "r13_pw_next" until eval qa_pw_read_has("r13_pw_check_E11") timeout 20
+    click id "r13_pw_check_E11"
+    if eval (not qa_pw_read_has("r13_pw_check_E13")):
+        click id "r13_pw_next" until eval qa_pw_read_has("r13_pw_check_E13") timeout 20
+    click id "r13_pw_check_E13"
+    assert eval (qa_pw_read_selection(["V111:E11","V111:E13"]))
+    click id "r13_pw_pair"
+    pause .5
+    assert eval (qa_pw_read_scope()["live_pair"]==("V111:E11","V111:E13"))
+    assert eval (qa_pw_read_selection(["V111:E11","V111:E13"]) and qa_pw_read_domain()==qa_pw_read_before)
+    screenshot "checked-pair-touch.png"
+    click id "r13_pw_back_list"
+    assert screen "r13_proof_workspace"
+    assert eval (qa_pw_read_selection(["V111:E11","V111:E13"]) and qa_pw_read_domain()==qa_pw_read_before)
+    run Function(qa_pw_read_restore)

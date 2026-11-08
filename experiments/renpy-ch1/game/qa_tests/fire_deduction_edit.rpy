@@ -73,7 +73,7 @@ testcase fire7_hypothesis_rebut_and_submit:
     screenshot 'fire7_evidence.png'
     click id 'r13_fire_submit'
     click id 'r13_fire_sources_submit'
-    click pos (900,600) until eval (r13_packet and '문 앞 흔적을 설명할 수 없습니다' in r13_packet[1].replace('\n',' ')) timeout 60
+    click pos (900,600) until eval (r13_packet and '문 앞의 탄 자국과 기름 냄새' in r13_packet[1].replace('\n',' ')) timeout 60
     assert eval (not r13_v111_owned('E07_NUBI') and not r13_v111_value('NUBI_admitted_setting_fire'))
     screenshot 'fire7_checked.png'
     click pos (900,600) until screen 'r13_fire_recheck' timeout 60
@@ -107,7 +107,7 @@ testcase fire7_investigate_retry:
     click pos (900,600) until screen 'r13_hub' timeout 60
     assert eval (not r13_v111_value('tries:fire') and not r13_v111_value('NUBI_admitted_setting_fire'))
     click '보리'
-    click '창고 문 앞에서 무엇을 보셨습니까?'
+    # 단일 진행 질문은 담당자를 누르면 바로 주고받기로 이어진다.
     click pos (900,600) until screen 'r13_fire_links' timeout 60
     pause .5
     assert eval (not room13['arguments'][v111_claim] and qa_fire_link_row()['observations']==['lamp','door'])
@@ -129,7 +129,7 @@ testcase fire7_investigate_retry:
     click id 'r13_fire_pick_E06_FIRE'
     click id 'r13_fire_back'
     click id 'r13_fire_sources_submit'
-    click pos (900,600) until eval (r13_packet and '문 앞 흔적을 설명할 수 없습니다' in r13_packet[1].replace('\n',' ')) timeout 60
+    click pos (900,600) until eval (r13_packet and '문 앞의 탄 자국과 기름 냄새' in r13_packet[1].replace('\n',' ')) timeout 60
     assert eval (r13_v111_value('tries:fire')==1 and not r13_v111_owned('E07_NUBI'))
 
 
@@ -143,7 +143,7 @@ testcase fire7_old_success_entry:
     run Function(r13_v111_set,'proof_given:'+R13_FIRE_LINK_FIRST,['V111:E06_FIRE'])
     run Function(r13_v111_set,'fire_laundry_exchange_heard7',True)
     run Call('qa_rr_scene','r13_v111_nubi_first_question7')
-    click pos (900,600) until eval (r13_packet and '문 앞 흔적을 설명할 수 없습니다' in r13_packet[1].replace('\n',' ')) timeout 60
+    click pos (900,600) until eval (r13_packet and '문 앞의 탄 자국과 기름 냄새' in r13_packet[1].replace('\n',' ')) timeout 60
     assert eval (r13_v111_value('fire_lamp_defense_heard') is True and not r13_v111_owned('E07_NUBI'))
     click pos (900,600) until screen 'r13_fire_recheck' timeout 60
     pause .5
@@ -227,7 +227,7 @@ testcase fire7_sources_no_reselect_and_restore:
     $ persistent.room13_large_text=qa_fire_source_large_before
     run Function(renpy.set_physical_size,(1280,720))
     click id 'r13_fire_sources_submit'
-    click pos (900,600) until eval (r13_packet and '문 앞 흔적을 설명할 수 없습니다' in r13_packet[1].replace('\n',' ')) timeout 60
+    click pos (900,600) until eval (r13_packet and '문 앞의 탄 자국과 기름 냄새' in r13_packet[1].replace('\n',' ')) timeout 60
     assert eval (not r13_v111_value('tries:fire') and not r13_v111_owned('E07_NUBI'))
 
 

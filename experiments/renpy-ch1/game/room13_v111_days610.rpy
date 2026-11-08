@@ -151,7 +151,11 @@ label r13_v111_afternoon6:
     if v111_answer==80:
         call r13_lines(r13_nw_block('can_look6'),'nw:can_look6')
         $ r13_v111_set('kkomi_can_seen6',True)
-        jump r13_v111_afternoon6
+        # 함께 가기로 한 뒤 꼬미가 깡통을 챙겨 달라고 한 경우, 살핀 줄을 다시 누르게 하지 않는다.
+        if r13_v111_value('kkomi_seat6') and r13_v111_value('kkomi_can_wait6'):
+            $ v111_answer=81
+        else:
+            jump r13_v111_afternoon6
     if v111_answer==81:
         call r13_lines(r13_nw_block('can_pack6'),'nw:can_pack6')
         $ r13_v111_set('acorn_recovered',True)
@@ -286,6 +290,7 @@ label r13_v111_empty_fire6:
     $ r13_v111_scene('MS14_D06_S03P')
     $ r13_edit(period=2)
     $ room13["v111"]["people"]=[]
+    call r13_lines(r13_nw_block('empty_fire_notice6'),'nw:empty_fire_notice6')
     call r13_v111_travel('v111_fire','empty_fire6',[])
     $ r13_v111_arrive(['resident_bori', 'doto'])
     $ r13_v111_score()

@@ -25,6 +25,7 @@ class PikoResidentNews(unittest.TestCase):
                  r13_v111_owned=lambda key:"V111:"+key in room["evidence"],
                  r13_v111_actor_ready=lambda person:person in ready,r13_visible_people=lambda:list(visible),
                  r13_v111_tense_context=lambda:context[0],r13_v111_has_business=lambda person:person in business,
+                 r13_v111_binding=lambda:dict(people=[],options=[]),
                  r13_nw_added_line=lambda row:dict(row),r13_v111_idle_lines=lambda person:[("original",person)])
         code=SOURCE.split("init 354 python:\n",1)[1].split("\nlabel ",1)[0]
         exec(compile(textwrap.dedent(code),"피코 소식과 잔향","exec"),env)
@@ -254,6 +255,65 @@ class PikoResidentNews(unittest.TestCase):
         for day in (2,8):
             env,*_=self.make(day=day)
             self.assertFalse(env['r13_piko_report_due']('nabi'))
+
+    def test_late_nabi_news_yields_to_shared_object_and_other_person_activity(self):
+        bindings=json.loads((ROOT/'game/v111/field-bindings.json').read_text())
+        for gate in ('board6','hp_meal6','handoff6','school_names7'):
+            for heard in (False,True):
+                with self.subTest(gate=gate,heard=heard):
+                    env,s,*rest=self.make(day=6 if gate!='school_names7' else 7)
+                    binding=copy.deepcopy(bindings[gate])
+                    s.room13['location']=binding['location']
+                    s.room13['v111']['gate']=gate
+                    # 담요를 빌리는 대사에서 합류한 나비도 실제 인계 현장 참여자다.
+                    if gate=='handoff6':s.room13['v111']['people']=['nabi','daram']
+                    if heard:s.room13['v111']['values']['piko_news3:nabi']=True
+                    env['r13_v111_binding']=lambda:binding
+                    before=copy.deepcopy(s.room13)
+                    self.assertTrue(env['r13_piko_current_activity']('nabi'))
+                    self.assertFalse(env['r13_piko_report_due']('nabi'))
+                    self.assertEqual(env['r13_piko_echo_lines']('nabi'),[])
+                    self.assertEqual(before,s.room13)
+                    self.assertEqual(rest[-1],[])
+                    # 현재 조작이 없는 평시에는 실제 대면 알림과 개인별 잔향을 그대로 둔다.
+                    binding['options']=[]
+                    self.assertEqual(env['r13_piko_report_due']('nabi'),not heard)
+                    self.assertEqual(bool(env['r13_piko_echo_lines']('nabi')),heard)
+
+    def test_another_place_or_nonparticipant_does_not_suppress_late_news(self):
+        for binding in (dict(people=['daram'],options=[dict(location='dining',object='table')]),
+                        dict(people=['nabi'],options=[dict(location='school',object='blankets')])):
+            with self.subTest(binding=binding):
+                env,s,*_=self.make(day=6)
+                s.room13['location']='dining'
+                env['r13_v111_binding']=lambda:binding
+                self.assertFalse(env['r13_piko_current_activity']('nabi'))
+                self.assertTrue(env['r13_piko_report_due']('nabi'))
+
+    def test_day3_first_report_keeps_existing_order(self):
+        env,*_=self.make(day=3)
+        env['r13_v111_binding']=lambda:dict(people=['nabi'],options=[dict(location='workshop',object='table')])
+        self.assertTrue(env['r13_piko_report_due']('nabi'))
+
+    def test_actual_free_day7_exit_question_does_not_silence_nabi(self):
+        binding=json.loads((ROOT/'game/v111/field-bindings.json').read_text())['free_day7']
+        env,s,_,_,business,_,writes=self.make(day=7)
+        s.room13['location']='school'
+        s.room13['v111'].update(gate='free_day7',people=['nabi','resident_teacher','daram'])
+        env['r13_v111_binding']=lambda:binding
+        self.assertTrue(any(o.get('person')=='daram' and o.get('location')=='school' for o in binding['options']))
+        before=copy.deepcopy(s.room13)
+        self.assertFalse(env['r13_piko_current_activity']('nabi'))
+        self.assertTrue(env['r13_piko_report_due']('nabi'))
+        self.assertEqual(s.room13,before)
+        s.room13['v111']['values']['piko_news3:nabi']=True
+        self.assertTrue(env['r13_piko_echo_lines']('nabi'))
+        # 자유 탐색이라도 나비 본인에게 진행할 질문이 있으면 그 일이 먼저다.
+        business.add('nabi')
+        self.assertEqual(env['r13_piko_echo_lines']('nabi'),[])
+        s.room13['v111']['values'].pop('piko_news3:nabi')
+        self.assertFalse(env['r13_piko_report_due']('nabi'))
+        self.assertEqual(writes,[])
 
     def test_existing_hub_consumes_first_report_return_before_idle_echo(self):
         # 실제 person 클릭의 같은 실행 블록을 점검한다. 첫 보고 반환 뒤의 idle은 다음 클릭까지 보류된다.

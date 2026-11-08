@@ -90,6 +90,8 @@ init 61 python:
             store.r13_choice_hidden_actor=None
 
     def r13_object_name(key):
+        caption=globals().get("r13_v111_object_caption",lambda key:None)(key)
+        if caption:return caption
         return R13_OBJECT_NAMES.get(key,key)
 
     def r13_object_actions(key):

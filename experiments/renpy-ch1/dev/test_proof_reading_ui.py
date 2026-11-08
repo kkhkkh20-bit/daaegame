@@ -33,7 +33,10 @@ def load_function(path, name, namespace):
 
 class ProofReadingPair(unittest.TestCase):
     def setUp(self):
-        self.read_pair = load_function(WORKSPACE, "r13_pw_read_pair", {})
+        self.ns = {}
+        self.read_pair = load_function(WORKSPACE, "r13_pw_read_pair", self.ns)
+        load_function(WORKSPACE, "r13_pw_pair_live", self.ns)
+        self.open_pair = load_function(WORKSPACE, "r13_pw_pair_on_open", self.ns)
 
     def test_empty_slots_fill_without_touching_submit_selection(self):
         pair = [None, None]
@@ -60,6 +63,30 @@ class ProofReadingPair(unittest.TestCase):
         for slot in (None, -1, 2):
             self.assertEqual(self.read_pair(pair, "V111:E32", slot), tuple(pair))
         self.assertEqual(pair, ["V111:E11", "V111:E13"])
+
+    def test_open_reads_the_two_explicit_checks_without_submitting(self):
+        checked = ["V111:E11", "V111:E13"]
+        old_pair = ["V111:E01", None]
+        before = copy.deepcopy((checked, old_pair))
+        self.assertEqual(self.open_pair(checked, old_pair, "V111:E01", checked + ["V111:E01"]), tuple(checked))
+        self.assertEqual((checked, old_pair), before)
+
+    def test_open_does_not_guess_which_two_of_three_to_read(self):
+        owned = ["V111:E01", "V111:E11", "V111:E13"]
+        self.assertEqual(self.open_pair(owned, (owned[0], owned[1]), owned[2], owned), (owned[0], owned[1]))
+        self.assertEqual(self.open_pair(owned, None, owned[2], owned), (owned[2], None))
+
+    def test_open_drops_missing_records_and_keeps_one_check_independent(self):
+        owned = ["V111:E11", "V111:E13"]
+        self.assertEqual(self.open_pair([owned[0]], (owned[1], "missing"), owned[0], owned), (owned[1], None))
+        self.assertEqual(self.open_pair([owned[0], "missing"], None, "missing", owned), (None, None))
+
+    def test_compare_starts_with_past_and_current_documents_visible(self):
+        initial = load_function(WORKSPACE, "r13_pw_initial_tab", {})
+        owned = [str(i) for i in range(20)]
+        self.assertEqual(initial("compare", True, owned, owned[:2]), "all")
+        self.assertEqual(initial("proof", True, owned, owned[:2]), "now")
+        self.assertEqual(initial("proof", True, owned, []), "all")
 
 
 class ProofReadingGroups(unittest.TestCase):

@@ -136,6 +136,18 @@ init 350 python:
         if a is None and b is None:return None
         return (a,b)
 
+    def r13_pw_pair_on_open(chosen,pair,detail,owned):
+        """직접 체크한 두 장을 펼친다. 읽기만 바꾸며 제출 묶음은 건드리지 않는다."""
+        selected=tuple(chosen or ())
+        if len(selected)==2 and selected[0]!=selected[1] and all(k in owned for k in selected):
+            return selected
+        live=r13_pw_pair_live(pair,owned)
+        return live or (detail if detail in owned else None,None)
+
+    def r13_pw_initial_tab(mode,use_drawer,entries,current):
+        # 비교는 지난 자료와도 견주므로 처음부터 보유 목록 전체를 연다.
+        return "now" if mode!="compare" and use_drawer and len(entries)>=13 and current else "all"
+
     def r13_pw_read_pair(pair,key,slot):
         """읽을 자리만 바꾼다. 중복 자료는 다른 자리에서 비우며 제출 선택은 받지 않는다."""
         items=list((tuple(pair or ())+(None,None))[:2])
@@ -635,7 +647,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ ctx=r13_pw_context(key) or dict(mode="proof",speaker=None,quote=None,quote_when=None)
     $ mode=ctx["mode"]
     $ remembered=(r13_pw_views or {}).get(claim,{})
-    default tab=remembered.get("tab",("now" if (r13_drawer_active() and len(r13_pw_entries())>=13 and r13_drawer_now(r13_pw_entries())) else "all"))
+    default tab=remembered.get("tab",r13_pw_initial_tab(mode,r13_drawer_active(),r13_pw_entries(),r13_drawer_now(r13_pw_entries())))
     default detail=remembered.get("detail")
     default pair=remembered.get("pair")
     default view=remembered.get("view") or ("pair" if pair else ("single" if detail else "list"))
@@ -676,7 +688,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
         use r13_control("한 장만 보기",None,[SetScreenVariable("detail",detail or (live_pair[0] if live_pair[0] else (owned[0] if owned else None))),SetScreenVariable("view","single"),SetScreenVariable("pick_slot",None),SetScreenVariable("observe",False)],enabled=ready and bool(owned),chosen=view=="single",width=208,height=(88 if touch else 64),label_size=r13_type("body"),control_id="r13_pw_single")
     fixed:
         xpos 724 ypos 54 xysize (240,88 if touch else 64)
-        use r13_control("나란히 읽기",None,[SetScreenVariable("pair",pair or (detail,None)),SetScreenVariable("view","pair"),SetScreenVariable("pick_slot",None)],enabled=ready and len(owned)>1,chosen=view=="pair",width=240,height=(88 if touch else 64),label_size=r13_type("body"),control_id="r13_pw_pair")
+        use r13_control("나란히 읽기",None,[SetScreenVariable("pair",r13_pw_pair_on_open(chosen,pair,detail,owned)),SetScreenVariable("view","pair"),SetScreenVariable("pick_slot",None)],enabled=ready and len(owned)>1,chosen=view=="pair",width=240,height=(88 if touch else 64),label_size=r13_type("body"),control_id="r13_pw_pair")
     text title xpos L["left"] ypos L["context_y"] xsize L["title_w"] size r13_type("emphasis") color ink font R13_UI_BOLD_FONT
     if quote_text:
         fixed:
