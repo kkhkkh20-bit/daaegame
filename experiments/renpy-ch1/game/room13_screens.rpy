@@ -77,6 +77,7 @@ screen r13_hub(entry=False):
     # 위 단추(지도·기록·생각)는 그대로 .15 — 잠깐이라도 흐려 보이지 않게 한다.
     default world_ready=False
     default world_delay=r13_field_ready_delay()
+    default world_poll_left=12
     timer world_delay action SetScreenVariable("world_ready",True)
     default world_moving=False
     $ input_ready=ready and not world_moving
@@ -133,14 +134,9 @@ screen r13_hub(entry=False):
     elif not entry and not r13_v111_active() and room13.get("life_poc") and r13_campaign_goal():
         use r13_goal_fold(r13_campaign_goal(),input_ready)
     use r13_toolbar(mode="field",ready=input_ready)
-    $ hint=GetTooltip()
-    if hint:
-        frame:
-            xpos max(12,min(980,renpy.get_mouse_pos()[0]+18)) ypos max(90,min(594,renpy.get_mouse_pos()[1]+22)) padding (14,9) background r13_field_paper()
-            hbox:
-                spacing 6
-                text hint size (r13_type("body")) color (r13_type_color("ink")) yalign .5
-
+    if not world_ready and world_poll_left>0:
+        add R13FieldPointerGate()
+        timer .05 repeat True action Function(r13_poll_field_pointer,_update_screens=False)
     if world_moving:
         timer .05 repeat True action Function(r13_world_pan_finish,world_adjustment,_update_screens=False)
         # Eat pointer presses and releases through the entire slide, including
@@ -162,9 +158,9 @@ screen r13_world_contents(entry=False,ready=False):
         if r13_object_visible(spec):
             button:
                 area r13_object_target_rect(key,spec)
-                background None hover_background None insensitive_background None padding (0,0)
+                background None hover_background R13ObjectHover(r13_object_target_rect(key,spec)[2:]) insensitive_background None padding (0,0)
                 action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready
-                tooltip r13_object_name(key) alt r13_object_name(key)
+                alt r13_object_name(key)
     # 0.18.63: separate prop layers (systems/room13_map_actions.rpy), behind the residents.
     for prop,px,py in r13_world_props(entry):
         add prop xpos px ypos py
@@ -175,9 +171,9 @@ screen r13_world_contents(entry=False,ready=False):
     for key,rect,mask in r13_objects_over_actors(entry):
         button:
             area rect focus_mask mask
-            background None hover_background None insensitive_background None padding (0,0)
+            background None hover_background R13ObjectHover(rect[2:]) insensitive_background None padding (0,0)
             action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready
-            tooltip r13_object_name(key) alt r13_object_name(key)
+            alt r13_object_name(key)
     # Inspection ticks sit under the name tags, never on top of a name.
     for key,point in room13["checks"].items():
         $ point=r13_check_point(key,point)
@@ -214,7 +210,7 @@ screen r13_resident_stage(entry=False,ready=False):
             area tuple(actor["rect"]) background None hover_background None insensitive_background None padding (0,0)
             focus_mask r13_actor_hit_mask(actor)
             action r13_person_action(actor["person"],entry) sensitive ready
-            tooltip (R13_EVENT_OFFERS[r13_offer_for_person(actor["person"])][0] if not entry and r13_offer_for_person(actor["person"]) else r13_person_caption(actor["person"])+" · 말 걸기")
+            alt (R13_EVENT_OFFERS[r13_offer_for_person(actor["person"])][0] if not entry and r13_offer_for_person(actor["person"]) else r13_person_caption(actor["person"])+" · 말 걸기")
 
 
 screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=420,list_width=760,animate=True,return_action=None,caption=""):

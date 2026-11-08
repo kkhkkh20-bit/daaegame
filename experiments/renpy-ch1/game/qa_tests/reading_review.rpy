@@ -48,15 +48,9 @@ testcase reading_review_room_targets:
     screenshot "13호실_조사.png"
     # 기존 사각형 밖 5px, 새 허용 범위 안. 정답·획득 순서는 같은 라벨에서 처리한다.
     click pos (155,407)
-    click pos (900,600) until eval (r13_v111_owned("E06") and renpy.get_screen("r13_hub")) timeout 60
-    assert eval (room13["v111"]["gate"]=="bundle_open" and not r13_v111_owned("E30"))
-    pause 1.0
-    if eval (r13_world_offset()>0):
-        click pos (48,276)
-        pause .8
-    screenshot "13호실_보따리.png"
-    click pos (616,630)
-    pause until screen "choice" timeout 10
-    click "책상 아래 보따리를 연다"
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     assert eval (r13_v111_owned("E06") and r13_v111_owned("E30"))
+    assert eval (renpy.get_screen("r13_proof_workspace").scope.get("view")=="pair")
+    assert eval (tuple(renpy.get_screen("r13_proof_workspace").scope.get("pair"))==("V111:E01","V111:E06"))
+    assert eval (not room13["arguments"].get("v111:두 편지를 나란히 본다"))
+    screenshot "13호실_편지두장.png"

@@ -427,16 +427,8 @@ testcase proof_reading_letter_observation_controls:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .5
     $ qa_pw_read_before=qa_pw_read_domain()
-    click id "r13_pw_pair"
-    click id "r13_pw_pick_0"
-    if eval (not qa_pw_read_has("r13_pw_open_E01")):
-        click id "r13_pw_next" until eval qa_pw_read_has("r13_pw_open_E01") timeout 20
-    click id "r13_pw_open_E01"
-    click id "r13_pw_pick_1"
-    if eval (not qa_pw_read_has("r13_pw_open_E06")):
-        click id "r13_pw_next" until eval qa_pw_read_has("r13_pw_open_E06") timeout 20
-    click id "r13_pw_open_E06"
-    pause .5
+    # 책상에서 함께 펼친 두 글은 읽는 자리만 미리 열고, 제출 선택은 비워 둔다.
+    assert eval (qa_pw_read_scope()["view"]=="pair")
     assert eval (qa_pw_read_scope()["mode"]=="compare" and qa_pw_read_selection([]))
     assert eval (qa_pw_read_scope()["live_pair"]==("V111:E01","V111:E06") and qa_pw_read_has("r13_pw_observe"))
     click id "r13_pw_observe"

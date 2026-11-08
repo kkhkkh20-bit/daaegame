@@ -82,7 +82,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 17 | 340 | `systems/room13_field_dot.rpy:61` | _r13_stage_cache_inner |
 | 18 | 341 | `systems/room13_stage_cache.rpy:17` |  |
 
-## `r13_object_visible` (11층)
+## `r13_object_visible` (12층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
@@ -96,7 +96,8 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 8 | 120 | `systems/room13_inn_change.rpy:28` | _r13_note_spot_visible |
 | 9 | 129 | `systems/room13_mother_note_spot.rpy:22` | _r13_new_places_visible |
 | 10 | 130 | `systems/room13_new_places.rpy:51` | _r13_v111_object_visible |
-| 11 | 301 | `room13_v111.rpy:277` |  |
+| 11 | 301 | `room13_v111.rpy:277` | _r13_room_documents_object_visible |
+| 12 | 356 | `systems/room13_room_documents.rpy:34` |  |
 
 ## `r13_conversation_topic_lines` (10층)
 
@@ -375,6 +376,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 191 | `systems/room13_q1_arguments.rpy:145` | _r13_qh_statements |
 | 3 | 192 | `systems/room13_q1_difficulty.rpy:173` |  |
 
+## `r13_evidence_art_path` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 330 | `systems/room13_evidence_view.rpy:124` | _r13_room_documents_evidence_art_path |
+| 2 | 356 | `systems/room13_room_documents.rpy:24` | _r13_assets_evidence_art |
+| 3 | 995 | `systems/room13_asset_domains.rpy:27` |  |
+
 ## `r13_finish_action` (3층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -398,6 +407,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 59 | `room13_acting.rpy:95` | _r13_mood_line_performance |
 | 2 | 141 | `systems/room13_daram_mood.rpy:28` | _r13_carriage_line_performance |
 | 3 | 306 | `room13_carriage_direction.rpy:97` |  |
+
+## `r13_material_art` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 150 | `systems/room13_material_art.rpy:8` | _r13_v111_material_art |
+| 2 | 302 | `room13_v111.rpy:566` | _r13_room_documents_material_art |
+| 3 | 356 | `systems/room13_room_documents.rpy:18` |  |
 
 ## `r13_meeting_cast` (3층)
 
@@ -512,7 +529,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 69 | `room13_feedback.rpy:8` | _r13_sound_click_feedback |
+| 1 | 69 | `room13_feedback.rpy:31` | _r13_sound_click_feedback |
 | 2 | 150 | `systems/room13_sound.rpy:214` |  |
 
 ## `r13_close_spec` (2층)
@@ -624,15 +641,8 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 69 | `room13_feedback.rpy:3` | _r13_sound_evidence_acquired |
+| 1 | 69 | `room13_feedback.rpy:26` | _r13_sound_evidence_acquired |
 | 2 | 150 | `systems/room13_sound.rpy:200` |  |
-
-## `r13_evidence_art_path` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 330 | `systems/room13_evidence_view.rpy:124` | _r13_assets_evidence_art |
-| 2 | 995 | `systems/room13_asset_domains.rpy:27` |  |
 
 ## `r13_fullbody_spec` (2층)
 
@@ -703,13 +713,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 60 | `room13_navigation.rpy:35` | _r13_firstday_connections |
 | 2 | 94 | `systems/room13_first_day_flow.rpy:25` |  |
-
-## `r13_material_art` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 150 | `systems/room13_material_art.rpy:8` | _r13_v111_material_art |
-| 2 | 302 | `room13_v111.rpy:566` |  |
 
 ## `r13_meeting_direct_line` (2층)
 

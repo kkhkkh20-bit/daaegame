@@ -1,5 +1,28 @@
 # Feedback never awards evidence or advances narrative time.
 init 69 python:
+    class R13FieldPointerGate(renpy.Displayable):
+        def render(self,width,height,st,at):
+            return renpy.Render(0,0)
+        def event(self,ev,x,y,st):
+            # 터치도 새 지점의 down/motion에서 먼저 열어 같은 탭의 up이
+            # 원래 물건 버튼으로 간다. 이 감시자는 클릭을 소비하지 않는다.
+            if hasattr(ev,"pos"):r13_wake_field_pointer()
+            return None
+
+    class R13ObjectHover(renpy.Displayable):
+        # 조사할 물건의 모서리만 짧게 표시한다. 이름 팝업·새 클릭 단계는 없다.
+        def __init__(self,size,**kwargs):
+            super(R13ObjectHover,self).__init__(**kwargs)
+            self.size=tuple(max(1,int(value)) for value in size)
+        def render(self,width,height,st,at):
+            w,h=self.size
+            out=renpy.Render(w,h)
+            c=out.canvas()
+            p=2;n=max(1,min(8,(w-4)//3,(h-4)//3))
+            for x,y,dx,dy in ((p,p,1,1),(w-p-1,p,-1,1),(p,h-p-1,1,-1),(w-p-1,h-p-1,-1,-1)):
+                c.lines("#6c4e36aa",False,[(x,y+dy*n),(x,y),(x+dx*n,y)],1)
+            return out
+
     def r13_evidence_acquired(keys):
         if keys:
             renpy.hide_screen("r13_evidence_found")
@@ -8,7 +31,10 @@ init 69 python:
     def r13_click_feedback(key):
         spec=ROOM13["objects"].get(store.room13["location"],{}).get(key)
         if not spec:return
-        x,y,w,h=spec["rect"]
+        # 메모처럼 터치 범위를 넓힌 물건도 실제로 누른 지점에서 반응한다.
+        # 키보드로 고른 경우에만 물건 가운데를 쓴다.
+        target_rect=globals().get("r13_object_target_rect",lambda key,spec:tuple(spec["rect"]))
+        x,y,w,h=target_rect(key,spec)
         wx,wy=r13_screen_to_world(renpy.get_mouse_pos())
         target=(wx,wy) if x<=wx<=x+w and y<=wy<=y+h else (x+w/2.0,y+h/2.0)
         point=r13_world_to_screen(target)
@@ -16,16 +42,14 @@ init 69 python:
 
     class R13ClickGlint(renpy.Displayable):
         def render(self,width,height,st,at):
-            out=renpy.Render(60,60)
+            out=renpy.Render(32,32)
             c=out.canvas()
-            c.lines("#f5dfa0",True,[(30,4),(56,30),(30,56),(4,30)],2)
-            c.lines("#fff9de",False,[(18,30),(27,39),(42,22)],3)
+            c.circle("#fff4df99",(16,16),8,1)
             return out
 
 transform r13_click_pulse:
-    alpha 1.0 zoom .55
-    easeout .2 zoom 1.05
-    linear .4 alpha 0.0 zoom 1.3
+    alpha .7 zoom .9
+    linear .2 alpha 0.0 zoom 1.0
 
 transform r13_evidence_reveal:
     alpha 0.0 xoffset -14
@@ -35,7 +59,7 @@ transform r13_evidence_reveal:
 screen r13_click_glint(point):
     zorder 90
     add R13ClickGlint() xpos point[0] ypos point[1] xanchor .5 yanchor .5 at r13_click_pulse
-    timer .65 action Hide("r13_click_glint")
+    timer .25 action Hide("r13_click_glint")
 
 # 0.18.33 (owner): top right, clear of the person and the questions.
 # 0.18.46 (owner): only the icon and the record's name, the frame hugging them, a little larger

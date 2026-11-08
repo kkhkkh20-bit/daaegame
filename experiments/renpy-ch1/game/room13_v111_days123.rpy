@@ -368,7 +368,9 @@ label r13_v111_room_note:
     call r13_lines(r13_v111_lines(['MS14_D01_S05_L0018']), 'v111:room_note:MS14_D01_S05_L0018')
     $ r13_v111_commit('MS14_D01_S05_L0019')
     call r13_lines(r13_v111_lines(['MS14_D01_S05_L9101', 'MS14_D01_S05_L0020', 'MS14_D01_S05_L0021']), 'v111:room_note:MS14_D01_S05_L9101')
-    jump r13_v111_bundle_open
+    # 책상 편지를 조사한 한 동작에서 그 밑의 접힌 그림도 함께 확인한다.
+    # 예전 보따리 대기 라벨은 그 안에서 저장한 판의 복귀용으로 남긴다.
+    jump r13_v111_bundle
 
 label r13_v111_bundle_open:
     call r13_v111_travel('room13','bundle_open')
@@ -390,6 +392,7 @@ label r13_v111_bundle:
     jump r13_v111_letter_compare
 
 label r13_v111_letter_compare:
+    $ r13_room_letters_open()
     call r13_v111_proof('두 편지를 나란히 본다',['E01', 'E06'],'r13_v111_room_compare','r13_v111_letter_retry',None,review_return='r13_v111_letter_compare_review')
     jump expression _return
 
@@ -447,6 +450,10 @@ label r13_v111_room_compare:
 label r13_v111_sleep1:
     call r13_v111_travel('room13','sleep1')
     call r13_v111_wait('sleep1')
+    if _return==100:
+        # 필수 보따리 대기를 없애도 첫날 서랍 종이를 살필 기회는 남긴다.
+        call r13_hidden_base_paper1
+        jump r13_v111_sleep1
     $ v111_answer=_return
     if v111_answer==0:
         $ r13_v111_apply('option:sleep1:0',[{'op': 'set', 'field': 'day', 'value': 2}])

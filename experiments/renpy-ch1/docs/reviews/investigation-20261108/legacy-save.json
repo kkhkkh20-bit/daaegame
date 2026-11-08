@@ -1,0 +1,41 @@
+{
+  "version": "0.20.130",
+  "gate": "note_pick",
+  "day": 1,
+  "owned": [
+    "V111:E01",
+    "V111:E06",
+    "V111:E30"
+  ],
+  "arguments": {
+    "v111:두 편지를 나란히 본다": []
+  },
+  "views": {
+    "v111:두 편지를 나란히 본다": {
+      "tab": "all",
+      "detail": "V111:E06",
+      "view": "pair",
+      "pair": [
+        "V111:E01",
+        "V111:E06"
+      ],
+      "quote_open": false,
+      "origin_open": false,
+      "room_letters_130": true
+    }
+  },
+  "scope": {
+    "view": "pair",
+    "pair": [
+      "V111:E01",
+      "V111:E06"
+    ],
+    "live_pair": [
+      "V111:E01",
+      "V111:E06"
+    ],
+    "chosen": [],
+    "key": "두 편지를 나란히 본다"
+  },
+  "ready": null
+}

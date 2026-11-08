@@ -44,7 +44,8 @@ testcase letter_compare_zero_selection_cancel_and_resume:
     click '책상 위 접힌 종이'
     pause until screen 'r13_proof_workspace' timeout 30
     pause .4
-    assert eval (qa_pw_read_scope()['view']=='single' and qa_pw_read_scope()['detail']=='V111:E01' and qa_pw_read_scope()['quote_open'])
+    # 옛 한 장 읽기 저장의 첫 재진입은 두 글 읽기로 맞춘다. 제출 선택은 바꾸지 않는다.
+    assert eval (qa_pw_read_scope()['view']=='pair' and qa_pw_read_scope()['live_pair']==('V111:E01','V111:E06') and not qa_pw_read_scope()['quote_open'])
     assert eval (qa_letter_exit_domain()==qa_letter_before and qa_pw_read_selection([]))
     click id 'r13_pw_back_list'
     if eval (not qa_pw_read_has('r13_pw_check_E03')):
@@ -65,7 +66,10 @@ testcase letter_compare_zero_selection_cancel_and_resume:
     if eval (not qa_pw_read_has('r13_pw_open_E01')):
         click id 'r13_pw_prev' until eval qa_pw_read_has('r13_pw_open_E01') timeout 20
     click id 'r13_pw_open_E01'
-    click id 'r13_pw_pick_1'
+    if eval (qa_pw_read_has('r13_pw_pick_1')):
+        click id 'r13_pw_pick_1'
+    else:
+        click id 'r13_pw_change_1'
     if eval (not qa_pw_read_has('r13_pw_open_E06')):
         click id 'r13_pw_next' until eval qa_pw_read_has('r13_pw_open_E06') timeout 20
     click id 'r13_pw_open_E06'

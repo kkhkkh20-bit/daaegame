@@ -507,6 +507,18 @@ init 350 python:
     def r13_pw_observe_available(key,pair):
         return key==R13_PW_OBSERVE_KEY and bool(pair) and len(pair)==2 and all(k in ("V111:E01","V111:E06") for k in pair)
 
+screen r13_pw_document_original(key,width):
+    $ document=r13_room_document_original(key)
+    vbox:
+        xsize width spacing 6
+        text "원문" size r13_pw_small() color r13_nb_accent() font R13_UI_BOLD_FONT
+        text document["text"] size r13_ev_fact_size() color r13_nb_ink() font R13_UI_BOLD_FONT xsize width
+        if key in ("V111:E01","V111:E06"):
+            fixed:
+                xsize width ysize 52
+                if document["mark"]:
+                    add Transform(document["mark"],xysize=(48,48),nearest=True) xpos 8 ypos 0
+
 screen r13_pw_pair(pair,x,y,w,h,observe=False,ready=True):
     $ small=r13_pw_small()
     $ col_w=(w-16)//2
@@ -530,8 +542,7 @@ screen r13_pw_pair(pair,x,y,w,h,observe=False,ready=True):
                 if key is not None:
                     use r13_evidence_heading(key,inner,title_size)
                     if key in R13_PW_ORIGINAL_FIRST:
-                        text "원문" size small color r13_nb_accent() font R13_UI_BOLD_FONT
-                        text r13_material_body(r13_catalog_record(key)) size r13_ev_fact_size() color r13_nb_ink() font R13_UI_BOLD_FONT xsize inner
+                        use r13_pw_document_original(key,inner)
                     fixed:
                         xsize inner ysize pic
                         fixed:
@@ -617,8 +628,7 @@ screen r13_pw_read_card(key,x,y,w,h,origin_open,ready,slot=None):
                                 else:
                                     add r13_evidence_picture(key,32) yalign .5
                         if key in R13_PW_ORIGINAL_FIRST:
-                            text "원문" size r13_type("small") color r13_nb_muted() font R13_UI_BOLD_FONT
-                            text r13_material_body(r13_catalog_record(key)) size r13_ev_fact_size() color r13_nb_ink() font R13_UI_FONT xsize (inner-12)
+                            use r13_pw_document_original(key,inner-12)
                         use r13_evidence_read_facts(key,inner-12)
                         if r13_drawer_active():
                             use r13_drawer_note_blocks(key,inner-12)

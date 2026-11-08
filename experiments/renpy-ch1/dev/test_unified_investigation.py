@@ -19,7 +19,10 @@ class UnifiedInvestigation(unittest.TestCase):
   self.assertEqual(world.count('Return(("object",key))] sensitive ready'),2)
   self.assertIn('area rect focus_mask mask',world)
   self.assertNotIn('r13_field_view',world)
-  self.assertEqual(world.count('tooltip r13_object_name(key) alt r13_object_name(key)'),2)
+  self.assertEqual(world.count('alt r13_object_name(key)'),2)
+  self.assertNotIn('tooltip ',world)
+  self.assertNotIn('GetTooltip()',SCREEN)
+  self.assertEqual(world.count('hover_background R13ObjectHover('),2)
  def test_masked_objects_keep_faces_and_names_reachable(self):
   world=SCREEN.split('screen r13_world_contents(',1)[1].split('\nscreen r13_resident_stage',1)[0]
   self.assertLess(world.index('for key,spec in ROOM13'),world.index('use r13_resident_stage(entry,ready)'))

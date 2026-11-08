@@ -183,16 +183,16 @@
     ],
     "options": [
       {
-        "title": "책상 아래 보따리를 연다",
+        "title": "메모 밑 접힌 그림을 펼친다",
         "location": "room13",
         "guard": [],
-        "object": "family_bundle"
+        "object": "mother_note"
       },
       {
         "index": 100,
         "title": "서랍 밑 종이를 빼낸다",
         "location": "room13",
-        "object": "family_bundle",
+        "object": "mother_note",
         "guard": [
           [
             "state",
@@ -214,6 +214,19 @@
         "location": "room13",
         "guard": [],
         "object": "bed"
+      },
+      {
+        "index": 100,
+        "title": "서랍 밑 종이를 빼낸다",
+        "location": "room13",
+        "object": "desk",
+        "guard": [
+          [
+            "state",
+            "hidden_base:paper",
+            null
+          ]
+        ]
       }
     ]
   },
