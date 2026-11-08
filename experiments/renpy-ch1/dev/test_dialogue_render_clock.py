@@ -11,11 +11,15 @@ class RenderClock(unittest.TestCase):
   tree=ast.parse(textwrap.dedent(src));cls=next(n for n in tree.body if isinstance(n,ast.ClassDef));exec(compile(ast.Module(body=[cls],type_ignores=[]),'renderer','exec'),env)
   profile=dict(canvas=[100,200],frames={key:dict(file=key,offset=[0,0]) for key in ('surprise_talk','surprise_react')})
   art=env['R13DialogueBeat'](plan,profile)
+  self.assertEqual(set(art.visit()),{'surprise_talk','surprise_react'})
   self.assertEqual(art.render(100,200,100,100),'surprise_react')
   self.assertEqual(art.render(100,200,100.2,100.2),'surprise_react')
   self.assertEqual(art.render(100,200,100.36,100.36),'surprise_talk')
   self.assertTrue(env['store'].r13_dialogue_beat['settled'])
+  self.assertEqual(art.visit(),['surprise_talk'])
   rebuilt=env['R13DialogueBeat'](env['store'].r13_dialogue_beat,profile)
+  self.assertEqual(set(rebuilt.frames),{'surprise_talk'})
+  self.assertEqual(rebuilt.visit(),['surprise_talk'])
   self.assertEqual(rebuilt.render(100,200,200,200),'surprise_talk')
  def test_stale_dialogue_plan_cannot_replace_meeting_or_action_art(self):
   from check_dialogue_bindings import load_functions

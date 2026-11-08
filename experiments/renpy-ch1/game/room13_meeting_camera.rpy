@@ -183,8 +183,11 @@ init 175 python:
             self.pan_plate=Transform(self.plate,xysize=(1440,810),nearest=True) if globals().get("R13_MEETING_SOLO") and self.kind in ("room","field") else None
             self.art={};self.offsets={}
             base=r13_meeting_orbit_height(self.session)
-            # Build/predict each portrait once per shot, never inside the frame loop.
-            for person in self.people:
+            # 한 사람 모드는 화면에 나오는 화자만 만든다. 숨긴 좌석의 그림까지
+            # visit()에 넣으면 엔진 예측이 불필요한 전원 원화를 내려받고 디코드한다.
+            # self.people은 배경 이동/좌석 순서 계산용으로 원래 명단을 보존한다.
+            shown_people=[self.focus] if globals().get("R13_MEETING_SOLO") and self.focus in self.people else self.people
+            for person in shown_people:
                 pose=self.poses.get(person,"neutral")
                 art=r13_meeting_slot_art(person,base)
                 if art is None:art=r13_fullbody_close_art(person,pose,base)

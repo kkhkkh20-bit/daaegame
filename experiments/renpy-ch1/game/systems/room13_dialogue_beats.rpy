@@ -112,14 +112,17 @@ init 170 python:
                 for slot in ("talk","react"):
                     if plan.get(slot) and plan[slot] not in profile["frames"]:plan[slot]="neutral"
                 self.plan=plan
-            for key in (plan["talk"],plan["react"]):
+            # 끝난 놀람/저장 복원은 듣는 표정 하나만 쓴다. 이미 끝난 반응 원화까지
+            # 예측하면 화면에 나타나지 않는 고해상도 그림을 다시 디코드할 수 있다.
+            keys=(plan["talk"],) if plan["settled"] else (plan["talk"],plan["react"])
+            for key in keys:
                 if key and key not in self.frames:
                     frame=profile["frames"][key]
                     self.frames[key]=Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=bool(frame.get("nearest")),subpixel=not frame.get("nearest")),xysize=tuple(profile["canvas"]))
                     if profile.get("pixel_grid")==2 and not frame.get("native_detail"):
                         self.frames[key]=r13_pixel_scale(self.frames[key],profile["canvas"][0],profile["canvas"][1],2)
         def visit(self):
-            return list(self.frames.values())
+            return [self.frames[self.plan["talk"]]] if self.finished or self.plan["settled"] else list(self.frames.values())
         def render(self,width,height,st,at):
             if self.started_st is None:self.started_st=st
             elapsed=max(0.0,st-self.started_st)

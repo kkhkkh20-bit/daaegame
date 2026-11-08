@@ -23,20 +23,37 @@ class CharacterLoading(unittest.TestCase):
         self.assertIn('assets/room13-pixel-world-daram-gray-gutter.webp', files)
         self.assertIn('assets/dialogue-source-master/granny/760/neutral.webp', files)  # 예전 판도 공개본에 남긴다
         self.assertIn('assets/dialogue-source-master-v2/granny/760/neutral.webp', files)
+        self.assertIn('assets/dialogue-player-facing/cast20261108/resident_piko/neutral.webp',files)
+        self.assertIn('assets/dialogue-player-facing/gaze116/granny/neutral.webp',files)
+        self.assertIn('assets/field-dot-v2/karo/neutral.webp',files)
         self.assertNotIn('assets/room13-title-winter020.webp', files)
 
     def test_day_one_warms_only_runtime_profile_in_story_order(self):
         files = character_prefetch(ROOT / 'game')
         self.assertEqual(len(files), len(set(files)))
-        # 2026-10-26 전신 묶음으로 경로가 dialogue-source-master-v2 로 바뀐 인물이 있다. 연결표가 가리키는 파일로 본다.
-        import json
-        talk = json.loads((ROOT / 'game/assets/room13-dialogue-talk-art.json').read_text())['people']
-        # 도트 통일(0.20.61)은 840 도 3배라 760 그림을 같이 쓴다. 840 연결표가 가리키는 파일은 허용한다.
-        runtime = {f['file'] for e in talk.values() for f in e.get('profiles', {}).get('840', {}).get('frames', {}).values()}
-        self.assertTrue(all(f in runtime or ('/560/' not in f and '/760/' not in f) for f in files))
-        neutral = lambda who: talk[who]['profiles']['840']['frames']['neutral']['file']
+        table = json.loads((ROOT / 'game/assets/room13-dialogue-size-fit.json').read_text())['people']
+        field = json.loads((ROOT / 'game/assets/room13-field-dot-v2.json').read_text())['people']
+        neutral = lambda who: table[who]['profiles']['840']['frames']['neutral']['file']
         self.assertLess(files.index(neutral('karo')), files.index(neutral('granny')))
         self.assertIn(neutral('neoul'), files)
+        self.assertIn(field['karo']['poses']['neutral']['file'],files)
+        # 일반대화에 쓰지 않는 옛 작화와 표정 전부를 중복 다운로드하지 않는다.
+        legacy=json.loads((ROOT / 'game/assets/room13-dialogue-talk-art.json').read_text())['people']
+        self.assertNotIn(legacy['karo']['profiles']['840']['frames']['neutral']['file'],files)
+        self.assertNotIn(table['karo']['profiles']['840']['frames']['joy']['file'],files)
+        self.assertTrue(all('/dad/' not in file for file in files))
+        self.assertLess(len(files),20)
+
+    def test_selected_people_warm_current_portraits_without_changing_released_files(self):
+        table = json.loads((ROOT / 'game/assets/room13-dialogue-size-fit.json').read_text())['people']
+        for who in ('resident_piko','resident_kongi','resident_ubak','seryeon'):
+            files=character_prefetch(ROOT/'game',[who])
+            self.assertEqual(files[0],table[who]['profiles']['840']['frames']['neutral']['file'])
+            self.assertLessEqual(len(files),2)
+            self.assertTrue(all((ROOT/'game'/path).is_file() for path in files))
+        # 예열에서 빠진 특수/옛 파일은 character_files/빌드의 점진 로더에서 계속 제공한다.
+        files=character_files(ROOT/'game')
+        self.assertIn('assets/dialogue-context-master/resident_ubak/840/intake21_ubak_angry.webp',files)
 
     def test_background_fetch_waits_for_input_and_shares_one_deduplicated_queue(self):
         script = """const assert=require('assert');const Module={preRun:[]};

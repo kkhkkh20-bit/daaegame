@@ -1,0 +1,27 @@
+{
+  "version": "0.20.129",
+  "status": "PASSED",
+  "old_save": "0.20.128 복원은 boot_after 확인",
+  "new_save": "0.20.129",
+  "page_errors": [],
+  "tracks": {
+    "music": "assets/bgm-inn.mp3",
+    "ambience": "assets/amb-fire.mp3"
+  },
+  "audio_responses": [
+    {
+      "url": "http://127.0.0.1:8769/game/assets/bgm-inn.mp3?v=25ca8a64977b",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8769/game/assets/amb-fire.mp3?v=ccdfa2c468a2",
+      "status": 200
+    }
+  ],
+  "checks": [
+    "단독회의PC·휴대폰",
+    "새저장→새로고침→이어하기 동일대사",
+    "자동예열제외한여관음악/환경음실제재생"
+  ],
+  "scope": "준비상태로관련장면검수.전체7일연속완주아님."
+}

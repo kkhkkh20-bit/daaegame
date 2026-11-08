@@ -186,6 +186,7 @@ def character_manifests(game):
     names = ("cast", "resident-art", "room13-avatars", "room13-portraits",
              "room13-fullbody-dialogue", "room13-dialogue-talk-art", "room13-dialogue-talk-art-extra",
              "room13-dialogue-context-art", "room13-dialogue-pose-source-art",
+             "room13-dialogue-player-facing", "room13-dialogue-size-fit", "room13-field-dot-v2",
              "room13-meeting-seated", "room13-meeting-source-art", "room13-profile-source-art",
              "room13-pixel-acting", "room13-pixel-motion")
     manifests = [json.loads((game / "assets" / (name + ".json")).read_text())
@@ -254,26 +255,33 @@ def day_prefetch(game, day):
     return list(dict.fromkeys(files))
 
 def character_prefetch(game, people=None):
-    # r13_speaker / r13_question_list call r13_close_art(..., 840).
-    # Never warm the alternate 560/760 profiles or the old fullbody atlases.
+    # 실제 선택된 중립 대화/현장 그림만 예열한다. 옛 작화·모든 표정·특수
+    # 자세를 합산해 받으면 하루 진입 뒤 수십MB의 불필요한 다운로드가 이어진다.
+    # 다른 감정·물건·자료·배경은 원래 점진 로더가 실제 표시 시 받는다.
     if people is None:
-        people = ["daram", "dad", "karo"] + [p for p in day_people(game, 1) if p not in ("daram", "dad", "karo")]
+        people = ["daram", "karo"] + [p for p in day_people(game, 1) if p not in ("daram", "dad", "karo")]
         # Nabi is available in the first-day free exploration, outside the directed records.
         if "nabi" not in people:
             people.append("nabi")
-    manifests = character_manifests(game)
+    def table(name):
+        path=game / "assets" / (name + ".json")
+        return json.loads(path.read_text()).get("people",{}) if path.exists() else {}
+    fitted=table("room13-dialogue-size-fit")
+    front=table("room13-dialogue-player-facing")
+    talk=table("room13-dialogue-talk-art")
+    talk.update(table("room13-dialogue-talk-art-extra"))
+    field=table("room13-field-dot-v2")
     result = []
     for person in people:
-        for manifest in manifests:
-            # Source art, profile and field art only; old fullbody assets stay on demand.
-            if "people" in manifest:
-                entry = manifest["people"].get(person, {})
-                if "images" in entry: continue
-            elif "entries" in manifest:
-                entry = {k: v for k, v in manifest["entries"].items() if v.get("person") == person}
-            else:
-                entry = manifest.get(person, {})
-            result.extend(asset_files(entry, 840))
+        if person=="dad":continue  # 플레이어 시점 인물의 옛 초상은 예열하지 않는다.
+        entry=fitted.get(person) or front.get(person) or talk.get(person,{})
+        profile=entry.get("profiles",{}).get("840",{})
+        neutral=profile.get("frames",{}).get("neutral",{})
+        if neutral.get("file"):result.append(neutral["file"])
+        field_person=fitted.get(person,{}).get("field_person",person)
+        poses=field.get(field_person,{}).get("poses",{})
+        neutral=poses.get("neutral") or next(iter(poses.values()),{})
+        if neutral.get("file"):result.append(neutral["file"])
     return list(dict.fromkeys(result))
 
 def superseded_art():
@@ -755,7 +763,9 @@ def main():
         if old.is_file() and old not in shipped:
             removed.append(old.relative_to(release).as_posix()); old.unlink()
     preload_entries.sort(key=lambda item: item["file"] != "game/" + menu_music)
-    warm = character_prefetch(game) + ["assets/bgm-snow.mp3", "assets/amb-wind.mp3", "assets/bgm-inn.mp3", "assets/amb-fire.mp3"]
+    # 첫 화면과 마차 음악은 START_FILES로 준비한다. 이후 장소 음악은 실제
+    # 재생 시 점진 로더로 받으며, 여러 장소의 MP3를 시작 직후 함께 받지 않는다.
+    warm = character_prefetch(game)
     transport = {"multipart": True, "archive_bytes": size, "archive_sha256": digest, "parts": parts,
                  "preload": preload_entries, "asset_versions": {"game/"+r: sha((game/r).read_bytes())[:12] for r in remote},
                  "prefetch": ["game/"+r for r in dict.fromkeys(warm) if r in remote],
