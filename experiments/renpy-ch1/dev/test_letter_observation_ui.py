@@ -11,11 +11,21 @@ SOURCE=(ROOT/'game/systems/room13_proof_workspace.rpy').read_text()
 
 class LetterObservationUI(unittest.TestCase):
     def setUp(self):
-        self.env={}
+        self.env={"R13_PW_OBSERVE_KEY":"두 편지를 나란히 본다"}
         for block in re.findall(r'^init \d+ python:\n((?:[ \t].*\n|\n)*)',SOURCE,re.M):
             tree=ast.parse(textwrap.dedent(block))
-            nodes=[node for node in tree.body if isinstance(node,ast.FunctionDef) and node.name=='r13_pw_observe_spots']
+            nodes=[node for node in tree.body if isinstance(node,ast.FunctionDef) and node.name in ('r13_pw_observe_spots','r13_pw_observe_available')]
             if nodes:exec(compile(ast.Module(body=nodes,type_ignores=[]),'편지 관찰 버튼','exec'),self.env)
+
+    def test_only_distinct_owned_letter_pair_has_letter_regions(self):
+        available=self.env['r13_pw_observe_available']
+        key=self.env['R13_PW_OBSERVE_KEY']
+        self.assertTrue(available(key,('V111:E01','V111:E06')))
+        self.assertTrue(available(key,('V111:E06','V111:E01')))
+        for pair in (None,(),('V111:E01',),('V111:E01','V111:E01'),
+                     ('V111:E06','V111:E06'),('V111:E01',None),('V111:E01','V111:E03')):
+            self.assertFalse(available(key,pair))
+        self.assertFalse(available('두 편지의 초대를 대조한다',('V111:E01','V111:E06')))
 
     def test_four_equal_buttons_share_one_row_inside_the_whole_pair(self):
         for width in (508,516,561,1080,1140):

@@ -107,6 +107,7 @@ init 160 python:
     # 인물은 왼쪽, 물건은 오른쪽에 두고 대사판 위에서 끝낸다.
     R13_FAMILY_FOCUS_BOX=(820,92,412)
     R13_FAMILY_FOCUS_KEYS=("E06","D01_FAMILY_DRAWING","D01_SNACK_BAG")
+    R13_FAMILY_DRAWING_ART="assets/evidence/D01_FAMILY_DRAWING_131.webp"
     # 2026-10-28 소유자 「어두운 바탕에 다른 테두리, 도트 느낌이 없어져서 어색」: 매끈한 사각 테두리 대신 도트 한 칸(4px) 단위의
     # 띠를 겹치고 모서리를 계단으로 깎는다. 띠는 바깥부터 차례로 그린다.
     R13_EV_CUT_PX=4
@@ -153,7 +154,7 @@ init 160 python:
             x,y,side=R13_FAMILY_FOCUS_BOX if focus else R13_EV_CUT_BOX
             u=R13_EV_CUT_PX;inner=side-2*5*u
             return Fixed(r13_ev_pixel_frame(x,y,side,R13_EV_CUT_FRAME),
-                Transform("assets/evidence/%s.webp"%key,xysize=(inner,inner),fit="contain",nearest=True,xpos=x+side//2,xanchor=.5,ypos=y+side//2,yanchor=.5),xysize=(1280,720))
+                Transform(R13_FAMILY_DRAWING_ART if key=="D01_FAMILY_DRAWING" else "assets/evidence/%s.webp"%key,xysize=(inner,inner),fit="contain",nearest=True,xpos=x+side//2,xanchor=.5,ypos=y+side//2,yanchor=.5),xysize=(1280,720))
         if name in ("v111_blanket_before","v111_blanket_after"):
             # Existing cut layer/clear lifecycle, preserving the actual school
             # background and the same prop position across the repair beat.

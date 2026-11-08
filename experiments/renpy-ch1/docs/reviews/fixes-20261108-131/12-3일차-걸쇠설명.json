@@ -1,0 +1,42 @@
+{
+  "screens": [
+    "say"
+  ],
+  "day": 3,
+  "place": "수리점",
+  "who": "톡",
+  "say": "현장에서 그린 그림을 봐요.\n여기가 바깥 판이에요.",
+  "meeting": {
+    "active": true,
+    "claim": "NW:lamp",
+    "direction": {
+      "beat": "listen",
+      "claim": "NW:lamp"
+    },
+    "reaction": null,
+    "focus": "resident_tok",
+    "listener": null,
+    "comparison": null,
+    "followup": null,
+    "expression": "neutral",
+    "slots": {}
+  },
+  "audio": {
+    "music": "assets/bgm-council.mp3",
+    "ambience": null,
+    "scene_fx": null
+  },
+  "gains": {
+    "music": 1,
+    "ambience": 1
+  },
+  "line": {
+    "identity": null,
+    "index": 1
+  },
+  "settings": {
+    "cps": 0,
+    "motion": true
+  },
+  "effects": []
+}

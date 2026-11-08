@@ -22,6 +22,7 @@ label qa_letter_exit_legacy_call:
 
 testcase letter_compare_zero_selection_cancel_and_resume:
     $ preferences.text_cps=0
+    run Function(renpy.set_physical_size,(1280,720))
     pause 1.0
     click '처음부터'
     click pos (900,600) until '편지를 외투 안에' timeout 60
@@ -34,6 +35,7 @@ testcase letter_compare_zero_selection_cancel_and_resume:
     assert eval (qa_pw_read_selection([]) and not r13_pw_submit_ok([],"compare"))
     $ qa_letter_before=qa_letter_exit_domain()
     screenshot 'letter-compare-zero-selection-detail.png'
+    pause until eval (qa_pw_read_scope().get('ready')) timeout 10
     click id 'r13_ev_close'
     pause until screen 'r13_hub' timeout 30
     assert eval (room13['location']=='room13' and room13['v111']['gate']=='letter_compare_review')
@@ -85,11 +87,19 @@ testcase letter_compare_zero_selection_cancel_and_resume:
     assert eval (qa_pw_read_scope()['view']=='pair' and qa_pw_read_scope()['live_pair']==('V111:E01','V111:E06'))
     screenshot 'letter-compare-explicit-pair-submit.png'
     click id 'r13_pw_submit'
+    pause until eval (qa_pw_read_scope().get('observe')) timeout 15
+    assert eval (not r13_v111_value('proof_given:두 편지를 나란히 본다') and qa_letter_exit_domain()==qa_letter_before)
+    click id 'r13_pw_spot_0_tail'
+    click pos (900,600) until screen 'r13_proof_workspace' timeout 45
+    assert eval (r13_v111_value('letter_tail_observed') is True)
+    pause until eval (qa_pw_read_scope().get('ready')) timeout 10
+    click id 'r13_pw_submit'
     click pos (900,600) until screen 'choice' timeout 45
     assert eval (r13_v111_value('proof_given:두 편지를 나란히 본다')==['V111:E01','V111:E06'] and room13['period']==2)
 
 testcase letter_compare_wrong_read_pair_uses_original_verdict:
     $ preferences.text_cps=0
+    run Function(renpy.set_physical_size,(1280,720))
     pause 1.0
     click '처음부터'
     click pos (900,600) until '편지를 외투 안에' timeout 60
@@ -125,6 +135,12 @@ testcase letter_compare_wrong_read_pair_uses_original_verdict:
     if eval (not qa_pw_read_has('r13_pw_open_E06')):
         click id 'r13_pw_next' until eval qa_pw_read_has('r13_pw_open_E06') timeout 20
     click id 'r13_pw_open_E06'
+    click id 'r13_pw_submit'
+    pause until eval (qa_pw_read_scope().get('observe')) timeout 15
+    click id 'r13_pw_spot_0_tail'
+    click pos (900,600) until screen 'r13_proof_workspace' timeout 45
+    assert eval (r13_v111_value('letter_tail_observed') is True)
+    pause until eval (qa_pw_read_scope().get('ready')) timeout 10
     click id 'r13_pw_submit'
     click pos (900,600) until screen 'choice' timeout 45
     assert eval (r13_v111_value('proof_given:두 편지를 나란히 본다')==['V111:E01','V111:E06'])

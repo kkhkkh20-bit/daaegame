@@ -419,6 +419,10 @@ label r13_v111_wait_again:
         jump r13_v111_wait_again
     if v111_pick[0]=="object":
         $ v111_pick=("object",r13_v111_object_key(v111_pick[1]))
+        if key=="gate_request" and v111_pick[1]=="ledger":
+            call r13_v111_gate_ledger_hand
+            $ r13_v111_time("inspect:gate_request:ledger",15)
+            return 0
         $ v111_matches=[i for i,o in enumerate(v111_binding.get("options",[])) if o.get("object")==v111_pick[1] and o.get("location")==room13["location"]]
         if len(v111_matches)==1:
             $ r13_v111_bed_pending=v111_binding["options"][v111_matches[0]].get("bed_to")   # 2026-10-29: 침대 한 번으로 잠자리까지(r13_v111_auto_index)
@@ -494,6 +498,10 @@ label r13_v111_proof_again:
         jump r13_v111_proof_again
     if _return=="argue" and not room13["arguments"][v111_claim]:
         jump r13_v111_proof_again  # 0.20.5 (Codex A01): an empty submission costs nothing
+    if _return=="argue" and r13_room_letters_discovery_pending(key,room13["arguments"][v111_claim]):
+        # 저장된 반환이나 옛 자료 고르기로 들어와도 첫 비교의 관찰을 건너뛰지 않는다.
+        $ r13_room_letters_begin_discovery(v111_claim,room13["arguments"][v111_claim])
+        jump r13_v111_proof_again
     if _return=="argue":
         # D04: 오답 안내가 「다 있었다」를 거짓으로 말하지 않도록, 정답 세트 하나를 보유 자료만으로 꾸릴 수 있는지를 지금 적어 둔다.
         $ r13_nw_can_solve=(key,any(need<=set(room13["evidence"]) for need in r13_v111_proof_sets(key,correct)))

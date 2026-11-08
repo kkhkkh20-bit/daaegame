@@ -13,7 +13,7 @@ class FamilyFocusArt(unittest.TestCase):
         source = (ROOT / 'game/systems/room13_ep_art.rpy').read_text()
         block = source.split('init 160 python:', 1)[1].split('\ntransform ', 1)[0]
         tree = ast.parse(textwrap.dedent(block))
-        names = {'R13_EV_CUT_BOX', 'R13_FAMILY_FOCUS_BOX', 'R13_FAMILY_FOCUS_KEYS',
+        names = {'R13_EV_CUT_BOX', 'R13_FAMILY_FOCUS_BOX', 'R13_FAMILY_FOCUS_KEYS', 'R13_FAMILY_DRAWING_ART',
                  'R13_EV_CUT_PX', 'R13_EV_CUT_FRAMES', 'R13_EV_CUT_FRAME',
                  'r13_ev_pixel_frame', 'r13_ep_cut_art'}
         selected = [node for node in tree.body if
@@ -28,13 +28,13 @@ class FamilyFocusArt(unittest.TestCase):
         for key in self.env['R13_FAMILY_FOCUS_KEYS']:
             regular = self.env['r13_ep_cut_art']('ev:' + key)
             self.assertEqual(regular['items'][1]['xysize'], (180, 180))
-            self.assertEqual(regular['items'][1]['art'], 'assets/evidence/' + key + '.webp')
+            self.assertEqual(regular['items'][1]['art'], self.env['R13_FAMILY_DRAWING_ART'] if key=='D01_FAMILY_DRAWING' else 'assets/evidence/' + key + '.webp')
 
     def test_only_three_existing_family_props_get_readable_focus_size(self):
         self.assertEqual(set(self.env['R13_FAMILY_FOCUS_KEYS']), {'E06', 'D01_FAMILY_DRAWING', 'D01_SNACK_BAG'})
         for key in self.env['R13_FAMILY_FOCUS_KEYS']:
             focused = self.env['r13_ep_cut_art']('focus:' + key)['items'][1]
-            self.assertEqual(focused['art'], 'assets/evidence/' + key + '.webp')
+            self.assertEqual(focused['art'], self.env['R13_FAMILY_DRAWING_ART'] if key=='D01_FAMILY_DRAWING' else 'assets/evidence/' + key + '.webp')
             self.assertTrue((ROOT / 'game' / focused['art']).is_file())
             self.assertEqual(focused['xysize'], (372, 372))
             self.assertEqual(focused['fit'], 'contain')

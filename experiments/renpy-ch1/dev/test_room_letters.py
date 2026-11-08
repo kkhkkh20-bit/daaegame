@@ -14,13 +14,16 @@ PAIR=('V111:E01','V111:E06')
 
 
 class RoomLetters(unittest.TestCase):
-    def environment(self,owned=PAIR,views=None,screen=None):
+    def environment(self,owned=PAIR,views=None,screen=None,values=None,flags=()):
         state=types.SimpleNamespace(room13=dict(evidence=list(owned),arguments={CLAIM:[]},day=1,period=1),
                                     r13_pw_views=copy.deepcopy(views or {}))
         callbacks=[]
-        env=dict(store=state,renpy=types.SimpleNamespace(get_screen=lambda name:screen),
+        state.room13.update(v111=dict(values=dict(values or {})),flags=list(flags))
+        env=dict(store=state,renpy=types.SimpleNamespace(get_screen=lambda name:screen,restart_interaction=lambda:None),
                  config=types.SimpleNamespace(after_load_callbacks=callbacks),
-                 R13_V111_STEP_GOALS={},R13_V111_RECORD_LATER={})
+                 R13_V111_STEP_GOALS={},R13_V111_RECORD_LATER={},
+                 r13_v111_value=lambda key:state.room13['v111']['values'].get(key),
+                 r13_has=lambda key:key in state.room13['flags'])
         source=(GAME/'systems/room13_room_letters.rpy').read_text().split('init 355 python:',1)[1]
         exec(compile(ast.parse(textwrap.dedent(source)),'첫 방 읽기','exec'),env)
         return env,state,callbacks
@@ -49,6 +52,57 @@ class RoomLetters(unittest.TestCase):
         before=copy.deepcopy(state.r13_pw_views)
         self.assertFalse(env['r13_room_letters_open']())
         self.assertEqual(state.r13_pw_views,before)
+
+    def test_only_unfinished_first_room_pair_requires_discovery(self):
+        env,state,_=self.environment()
+        pending=env['r13_room_letters_discovery_pending']
+        self.assertTrue(pending('두 편지를 나란히 본다',PAIR))
+        self.assertTrue(pending(CLAIM,tuple(reversed(PAIR))))
+        for key,pair in [('함께 들어갈 근거를 고른다',PAIR),
+                         ('두 편지의 초대를 대조한다',PAIR),
+                         (CLAIM,('V111:E01','V111:E03')),
+                         (CLAIM,('V111:E01',None)),(CLAIM,('V111:E01','V111:E01'))]:
+            self.assertFalse(pending(key,pair))
+        state.room13['v111']['values']['letter_tail_observed']=True
+        self.assertFalse(pending(CLAIM,PAIR))
+
+    def test_completed_old_saves_do_not_gain_a_new_required_step(self):
+        for values,flags in [({'proof_given:두 편지를 나란히 본다':list(PAIR)},()),
+                             ({},('v111:applied:MS14_D01_S05_L0031',))]:
+            env,state,_=self.environment(values=values,flags=flags)
+            before=copy.deepcopy(vars(state))
+            self.assertFalse(env['r13_room_letters_discovery_pending'](CLAIM,PAIR))
+            self.assertFalse(env['r13_room_letters_begin_discovery'](CLAIM,PAIR))
+            self.assertEqual(vars(state),before)
+
+    def test_begin_discovery_only_changes_reading_ui_and_survives_reopen(self):
+        screen=types.SimpleNamespace(scope=dict(view='list',observe=False,pick_slot=0))
+        env,state,_=self.environment(screen=screen)
+        before=copy.deepcopy(state.room13)
+        self.assertTrue(env['r13_room_letters_begin_discovery'](CLAIM,PAIR))
+        self.assertEqual(state.room13,before)
+        self.assertEqual(screen.scope['pair'],PAIR)
+        self.assertEqual(screen.scope['view'],'pair')
+        self.assertTrue(screen.scope['observe'])
+        self.assertIsNone(screen.scope['pick_slot'])
+        self.assertTrue(state.r13_pw_views[CLAIM]['room_letters_discovery'])
+
+    def test_wrong_pair_does_not_receive_a_discovery_repair(self):
+        env,state,_=self.environment()
+        before=copy.deepcopy(vars(state))
+        self.assertFalse(env['r13_room_letters_begin_discovery'](CLAIM,('V111:E01','V111:E03')))
+        self.assertEqual(vars(state),before)
+
+    def test_screen_and_legacy_return_use_the_same_no_penalty_discovery_guard(self):
+        screen=(GAME/'systems/room13_proof_workspace.rpy').read_text()
+        self.assertIn('r13_room_letters_begin_discovery(claim,chosen)',screen)
+        self.assertIn('Function(r13_pw_submit_selected,claim)',screen)
+        self.assertIn('id r13_pw_id("r13_pw_document_tail_",key)',screen)
+        self.assertIn('action Return(("observe","tail")) sensitive ready',screen)
+        flow=(GAME/'room13_v111.rpy').read_text().split('label r13_v111_proof_again:',1)[1]
+        guard=flow.index('if _return=="argue" and r13_room_letters_discovery_pending')
+        self.assertLess(guard,flow.index('r13_v111_proof_accepts('))
+        self.assertNotIn('r13_nw_retry(',flow[guard:flow.index('    if _return=="argue":',guard)])
 
     def test_saved_open_single_document_screen_is_migrated_only_in_first_room_comparison(self):
         screen=types.SimpleNamespace(scope=dict(key='두 편지를 나란히 본다',view='single',pair=('V111:E01',None)))

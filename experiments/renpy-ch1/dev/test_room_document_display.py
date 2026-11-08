@@ -20,6 +20,7 @@ class RoomDocumentDisplay(unittest.TestCase):
             _r13_room_documents_evidence_art_path=lambda key:'old:'+key,
             _r13_room_documents_material_art=lambda key:'old:'+key,
             _r13_room_documents_object_visible=lambda spec:True,
+            R13_FAMILY_DRAWING_ART='assets/evidence/D01_FAMILY_DRAWING_131.webp',
             Transform=lambda file,**kw:(file,kw))
         exec(compile(ast.Module(body=functions,type_ignores=[]),'방 서류 표시','exec'),env)
         return env
@@ -45,8 +46,8 @@ class RoomDocumentDisplay(unittest.TestCase):
         self.assertFalse(any(p['file']=='assets/room13-under-desk-cloth-bundle.webp' for p in layout.get('props',[])))
         self.assertFalse(env['r13_object_visible'](dict(retired_room_bundle=True)))
         self.assertTrue(env['r13_object_visible'](dict(mother_note_spot=True)))
-        self.assertEqual(env['r13_evidence_art_path']('V111:E30'),'assets/evidence/D01_FAMILY_DRAWING.webp')
-        self.assertEqual(env['r13_material_art']('V111:E30')[0],'assets/evidence/D01_FAMILY_DRAWING.webp')
+        self.assertEqual(env['r13_evidence_art_path']('V111:E30'),'assets/evidence/D01_FAMILY_DRAWING_131.webp')
+        self.assertEqual(env['r13_material_art']('V111:E30')[0],'assets/evidence/D01_FAMILY_DRAWING_131.webp')
         env['r13_v111_active']=lambda:False
         self.assertTrue(env['r13_object_visible'](dict(retired_room_bundle=True)))
         self.assertEqual(env['r13_evidence_art_path']('legacy'),'old:legacy')

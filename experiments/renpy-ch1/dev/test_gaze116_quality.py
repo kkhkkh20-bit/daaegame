@@ -21,6 +21,7 @@ class GazeQuality(unittest.TestCase):
         for person in TARGETS:
             entry=self.people[person]
             expected_revision=('nubi-pixel-consistency-20261108' if person=='resident_nubi'
+                               else 'neoul-pixel-consistency-20261108' if person=='neoul'
                                else 'gaze-quality-20261107')
             self.assertEqual(entry.get('art_revision'),expected_revision)
             self.assertEqual(set(entry['profiles']['840']['frames']),set(SLOTS))

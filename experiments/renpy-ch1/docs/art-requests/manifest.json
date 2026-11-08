@@ -4096,6 +4096,105 @@
           "manifest SHA·전후합성·실제게임캡처"
         ]
       }
+    },
+    {
+      "kind": "인물·자료 교정",
+      "status": "delivered_linked",
+      "priority": "P1",
+      "branches": [
+        "현행 1부 공통"
+      ],
+      "approved_scope": "2026-11-08 소유자: 검수한 다섯 항목을 고치고 이어서 리뷰",
+      "contract": {
+        "states": [
+          "가족 그림"
+        ],
+        "transparent": true,
+        "delivery": [
+          "원본 PNG",
+          "런타임 WebP",
+          "연결 영수증"
+        ],
+        "size_rule": "기존 그림의 위치·기능을 보존해 교정한다."
+      },
+      "required": [
+        "왼쪽 큰 아빠는 팔 세 개",
+        "오른쪽 작은 다람은 팔 두 개",
+        "기존 세 가족·종이·어린이 그림 표현 유지"
+      ],
+      "avoid": [
+        "새 증거·진상 추가",
+        "기존 파일 임의 삭제"
+      ],
+      "acceptance": [
+        "대사와 실제 그림의 특징이 같다.",
+        "PC·휴대폰의 활성 화면으로 확인한다."
+      ],
+      "id": "FIX131-FAMILY",
+      "title": "가족 그림의 아빠 팔 세 개 교정",
+      "references": [
+        "game/assets/evidence/D01_FAMILY_DRAWING.webp",
+        "art/family-drawing-20261108/manifest.json",
+        "game/assets/evidence/D01_FAMILY_DRAWING_131.webp"
+      ],
+      "scenes": [
+        "1일차 입구·13호실"
+      ],
+      "sources": [
+        "docs/reviews/play-review-20261108-130/검수.md",
+        "docs/reviews/fixes-20261108-131/검수.md"
+      ],
+      "description": "실제 화면에서 아빠의 세 팔 농담과 그림이 다르다. 소유자 승인으로 기존 그림을 교정한다."
+    },
+    {
+      "kind": "인물·자료 교정",
+      "status": "delivered_linked",
+      "priority": "P1",
+      "branches": [
+        "현행 1부 공통"
+      ],
+      "approved_scope": "2026-11-08 소유자: 검수한 다섯 항목을 고치고 이어서 리뷰",
+      "contract": {
+        "states": [
+          "여섯 기본 표정·활성 별도 동작"
+        ],
+        "transparent": true,
+        "delivery": [
+          "원본 PNG",
+          "런타임 WebP",
+          "연결 영수증"
+        ],
+        "size_rule": "기존 그림의 위치·기능을 보존해 교정한다."
+      },
+      "required": [
+        "금빛 털·안경·크림 코트·청록 목도리·갈색 조끼 유지",
+        "현행 다람·돌목과 같은 계단 윤곽과 제한된 명암",
+        "정면 시선·동일 발선·자세 대응 유지"
+      ],
+      "avoid": [
+        "새 증거·진상 추가",
+        "기존 파일 임의 삭제"
+      ],
+      "acceptance": [
+        "대사와 실제 그림의 특징이 같다.",
+        "PC·휴대폰의 활성 화면으로 확인한다."
+      ],
+      "id": "FIX131-NEOUL",
+      "title": "너울 대화 그림 도트 화풍 교정",
+      "references": [
+        "art/dialogue-gaze-20261107/neoul/neutral.png",
+        "art/daram-consistency-20261107/source/neutral.png",
+        "art/neoul-pixel-20261108/manifest.json",
+        "art/neoul-pixel-20261108/source-gallery.png"
+      ],
+      "scenes": [
+        "너울 일반 대화·회의·질문"
+      ],
+      "sources": [
+        "docs/reviews/play-review-20261108-130/검수.md",
+        "docs/reviews/fixes-20261108-131/검수.md"
+      ],
+      "description": "현행 너울이 최근 교정한 다람·돌목보다 선과 명암이 세밀하다. 기존 외형과 행동을 보존해 도트 기준에 맞춘다."
     }
   ]
 }

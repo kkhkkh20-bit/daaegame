@@ -166,6 +166,7 @@ class ProofWorkspacePure(unittest.TestCase):
         writes=[];returns=[]
         namespace=dict(self.ns,r13_pw_entries=lambda:['V111:E01','V111:E06','V111:E03'],
                        r13_pw_set_arguments=lambda claim,pair:writes.append((claim,list(pair))),
+                       r13_room_letters_begin_discovery=lambda claim,pair:False,
                        renpy=SimpleNamespace(end_interaction=returns.append))
         exec(compile(ast.Module(body=[node],type_ignores=[]),'읽는 쌍의 명시 제출','exec'),namespace)
         action=namespace['r13_pw_submit_pair']
@@ -174,6 +175,11 @@ class ProofWorkspacePure(unittest.TestCase):
         self.assertEqual(returns,['argue'])
         for pair,mode in ((('V111:E01',None),'compare'),(('V111:E01','V111:E99'),'compare'),(('V111:E01','V111:E06'),'proof')):
             action('claim',pair,mode)
+        self.assertEqual(len(writes),1)
+        self.assertEqual(returns,['argue'])
+        # 첫 방의 미관찰 쌍이면 읽는 화면만 열고 제출/상태 쓰기는 멈춘다.
+        namespace['r13_room_letters_begin_discovery']=lambda claim,pair:True
+        action('claim',('V111:E01','V111:E06'),'compare')
         self.assertEqual(len(writes),1)
         self.assertEqual(returns,['argue'])
 

@@ -17,13 +17,13 @@ init 356 python:
     _r13_room_documents_material_art=r13_material_art
     def r13_material_art(key):
         if key=="V111:E30" and r13_v111_active():
-            return Transform("assets/evidence/D01_FAMILY_DRAWING.webp",xysize=(160,100),fit="contain",nearest=True)
+            return Transform(R13_FAMILY_DRAWING_ART,xysize=(160,100),fit="contain",nearest=True)
         return _r13_room_documents_material_art(key)
 
     _r13_room_documents_evidence_art_path=r13_evidence_art_path
     def r13_evidence_art_path(key):
         if key=="V111:E30" and r13_v111_active():
-            return "assets/evidence/D01_FAMILY_DRAWING.webp"
+            return R13_FAMILY_DRAWING_ART
         return _r13_room_documents_evidence_art_path(key)
 
     # 구저장에 남은 물건 키는 보존하되, 없앤 주머니의 투명 클릭 영역은 노출하지 않는다.

@@ -219,7 +219,13 @@ init 351 python:
     def r13_pw_submit_pair(claim,pair,mode):
         chosen=r13_pw_pair_submission(pair,r13_pw_entries(),mode)
         if chosen is None:return
+        if r13_room_letters_begin_discovery(claim,chosen):return
         r13_pw_set_arguments(claim,chosen)
+        renpy.end_interaction("argue")
+
+    def r13_pw_submit_selected(claim):
+        chosen=list((store.room13.get("arguments") or {}).get(claim,[]))
+        if r13_room_letters_begin_discovery(claim,chosen):return
         renpy.end_interaction("argue")
 
     def r13_pw_toggle_action(claim,key,mode):
@@ -505,19 +511,30 @@ init 350 python:
     # 맞는지 아닌지는 여전히 표시하지 않는다.
     R13_PW_ORIGINAL_FIRST=("V111:E01","V111:E06","V111:E27")
     def r13_pw_observe_available(key,pair):
-        return key==R13_PW_OBSERVE_KEY and bool(pair) and len(pair)==2 and all(k in ("V111:E01","V111:E06") for k in pair)
+        return key==R13_PW_OBSERVE_KEY and bool(pair) and len(pair)==2 and set(pair)=={"V111:E01","V111:E06"}
 
-screen r13_pw_document_original(key,width):
+screen r13_pw_document_original(key,width,inspect=False,ready=True):
     $ document=r13_room_document_original(key)
     vbox:
         xsize width spacing 6
         text "원문" size r13_pw_small() color r13_nb_accent() font R13_UI_BOLD_FONT
         text document["text"] size r13_ev_fact_size() color r13_nb_ink() font R13_UI_BOLD_FONT xsize width
         if key in ("V111:E01","V111:E06"):
-            fixed:
-                xsize width ysize 52
-                if document["mark"]:
-                    add Transform(document["mark"],xysize=(48,48),nearest=True) xpos 8 ypos 0
+            $ tail_h=88 if inspect and r13_touch_ui() else 52
+            if inspect:
+                button:
+                    id r13_pw_id("r13_pw_document_tail_",key)
+                    xysize (width,tail_h) padding (0,0)
+                    background None hover_background Solid("#c9a86a22")
+                    action Return(("observe","tail")) sensitive ready
+                    alt (r13_catalog_title(key)+" · 끝부분 살펴보기")
+                    if document["mark"]:
+                        add Transform(document["mark"],xysize=(48,48),nearest=True) xpos 8 ypos ((tail_h-48)//2)
+            else:
+                fixed:
+                    xsize width ysize tail_h
+                    if document["mark"]:
+                        add Transform(document["mark"],xysize=(48,48),nearest=True) xpos 8 ypos 0
 
 screen r13_pw_pair(pair,x,y,w,h,observe=False,ready=True):
     $ small=r13_pw_small()
@@ -542,7 +559,7 @@ screen r13_pw_pair(pair,x,y,w,h,observe=False,ready=True):
                 if key is not None:
                     use r13_evidence_heading(key,inner,title_size)
                     if key in R13_PW_ORIGINAL_FIRST:
-                        use r13_pw_document_original(key,inner)
+                        use r13_pw_document_original(key,inner,inspect=observe,ready=ready)
                     fixed:
                         xsize inner ysize pic
                         fixed:
@@ -602,7 +619,7 @@ screen r13_pw_chips(claim,chosen,mode,L,replace_pending,ready):
                         text ("+%d개"%(len(chosen)-fit)) size small color r13_nb_muted() font R13_UI_BOLD_FONT yalign .5
 
 # 읽는 화면과 제출할 묶음은 독립이다. 원문·그림은 사실 다음에 펼치며 판단 함수는 호출하지 않는다.
-screen r13_pw_read_card(key,x,y,w,h,origin_open,ready,slot=None):
+screen r13_pw_read_card(key,x,y,w,h,origin_open,ready,slot=None,inspect=False):
     $ inner=w-32
     frame:
         area (x,y,w,h) padding (1,1) background Solid("#c9a86a")
@@ -628,7 +645,7 @@ screen r13_pw_read_card(key,x,y,w,h,origin_open,ready,slot=None):
                                 else:
                                     add r13_evidence_picture(key,32) yalign .5
                         if key in R13_PW_ORIGINAL_FIRST:
-                            use r13_pw_document_original(key,inner-12)
+                            use r13_pw_document_original(key,inner-12,inspect=inspect,ready=ready)
                         use r13_evidence_read_facts(key,inner-12)
                         if r13_drawer_active():
                             use r13_drawer_note_blocks(key,inner-12)
@@ -665,7 +682,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     default origin_open=remembered.get("origin_open",False)
     default page=0
     default pick_slot=None
-    default observe=False
+    default observe=bool(remembered.get("room_letters_discovery")) and r13_room_letters_discovery_needed(key)
     default replace_pending=None
     on "hide" action Function(r13_pw_remember,claim,tab,detail,quote_open,view,pair,origin_open)
     $ owned=r13_pw_entries()
@@ -688,6 +705,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ can_review=bool(r13_pw_review_target(key,"investigate" if investigate else None))
     $ review_action=Return("investigate") if can_review else None
     $ pair_submission=r13_pw_pair_submission(live_pair,owned,mode) if view=="pair" else None
+    $ discovery_pending=r13_room_letters_discovery_pending(key,pair_submission or chosen)
     use r13_notebook_shell("자료 대조",close_action=review_action,rule_y=(148 if touch else 128))
     if can_review:
         key "game_menu" action review_action
@@ -746,7 +764,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
         else:
             $ col=(L["width"]-24)//2
             for slot,k in enumerate(live_pair):
-                use r13_pw_read_card(k,L["left"]+slot*(col+24),L["body_top"],col,L["body_h"],origin_open,ready,slot)
+                use r13_pw_read_card(k,L["left"]+slot*(col+24),L["body_top"],col,L["body_h"],origin_open,ready,slot,inspect=r13_pw_observe_available(key,live_pair))
     elif detail:
         use r13_pw_read_card(detail,L["left"],L["body_top"],L["width"],L["body_h"],origin_open,ready)
     else:
@@ -781,7 +799,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
         use r13_control("접기" if origin_open else "출처",None,ToggleScreenVariable("origin_open"),enabled=ready and view!="list",width=128,label_size=small,control_id="r13_pw_origin")
     fixed:
         xpos 966 ypos L["footer_y"] xysize (240,L["footer_h"])
-        use r13_control("이 두 장 비교" if pair_submission else r13_pw_main_label(mode),None,Function(r13_pw_submit_pair,claim,live_pair,mode) if pair_submission else Return("argue"),enabled=ready and (bool(pair_submission) or (r13_pw_submit_ok(stored,mode) and r13_pw_submit_ok(chosen,mode))),primary=True,width=240,control_id="r13_pw_submit")
+        use r13_control("다른 부분 짚기" if discovery_pending else "이 두 장 비교" if pair_submission else r13_pw_main_label(mode),None,Function(r13_pw_submit_pair,claim,live_pair,mode) if pair_submission else Function(r13_pw_submit_selected,claim),enabled=ready and (bool(pair_submission) or (r13_pw_submit_ok(stored,mode) and r13_pw_submit_ok(chosen,mode))),primary=True,width=240,control_id="r13_pw_submit")
     if replace_pending:
         button:
             xysize (1280,720) background Solid("#05070f88") action NullAction()

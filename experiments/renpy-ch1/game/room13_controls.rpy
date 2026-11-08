@@ -1,5 +1,22 @@
 # Shared controls: composition, geometry and state treatment live here.
 init 110 python:
+    # 자료를 읽고 돌아가는 보조 행동도 질문지와 같은 가는 갈색 종이 판을 쓴다.
+    # 명시한 자료창 ID만 적용해 현장·메뉴·선택 탭의 기존 표현은 보존한다.
+    R13_SOFT_SUPPORT_CONTROLS=frozenset((
+        "r13_pw_prev","r13_pw_next","r13_pw_back_list","r13_pw_investigate",
+        "r13_pw_observe","r13_pw_press","r13_pw_origin","r13_pw_fold",
+        "r13_pw_enlarge","r13_pw_swap_cancel",
+        "r13_fire_site","r13_fire_words","r13_fire_investigate",
+        "r13_fire_sources","r13_fire_materials","r13_fire_back",
+        "r13_fire_sources_change","r13_fire_clear","r13_fire_prev",
+        "r13_fire_next","r13_fire_origin","r13_fire_press",
+        "r13_fire_recheck_picture",
+    ))
+
+    def r13_control_soft_support(control_id,primary=False):
+        # 제출은 같은 ID를 재사용하더라도 주 행동의 빨강을 유지한다.
+        return not primary and control_id in R13_SOFT_SUPPORT_CONTROLS
+
     class R13ConfirmPaper(renpy.Displayable):
         """Approved confirmation card: existing paper rim over a shallow shadow."""
         def render(self,width,height,st,at):
@@ -58,13 +75,14 @@ init 111:
 screen r13_control(caption,icon,command,enabled=True,chosen=False,primary=False,width=None,height=None,label_size=None,icon_size=None,control_id=None):
     $ ch=height or r13_control_height()
     $ cw=width or R13_CONTROL["width"]
+    $ soft_support=r13_control_soft_support(control_id,primary)
     button:
         id (control_id or ("r13_control_"+caption))
         xsize cw ysize ch padding (R13_CONTROL["padding"],8)
-        background R13ControlSurface(primary=primary,chosen=chosen)
-        hover_background R13ControlSurface(primary=primary,chosen=chosen,hovered=True)
-        selected_background R13ControlSurface(primary=primary,chosen=True)
-        insensitive_background R13ControlSurface(disabled=True)
+        background (R13SoftButtonSurface(chosen=chosen) if soft_support else R13ControlSurface(primary=primary,chosen=chosen))
+        hover_background (R13SoftButtonSurface(chosen=chosen,hovered=True) if soft_support else R13ControlSurface(primary=primary,chosen=chosen,hovered=True))
+        selected_background (R13SoftButtonSurface(chosen=True) if soft_support else R13ControlSurface(primary=primary,chosen=True))
+        insensitive_background (R13SoftButtonSurface(disabled=True) if soft_support else R13ControlSurface(disabled=True))
         action command sensitive enabled selected chosen alt (caption or "메뉴")
         hbox:
             align (.5,.5) spacing R13_CONTROL["icon_gap"]
@@ -72,8 +90,8 @@ screen r13_control(caption,icon,command,enabled=True,chosen=False,primary=False,
                 add R13AntiqueIcon(icon,size=icon_size or R13_CONTROL["icon"]) yalign .5 alpha (1.0 if enabled else .5)
             text caption:
                 font R13_UI_BOLD_FONT size (label_size or r13_read_size(R13_CONTROL["text"],R13_CONTROL["large_text"]))
-                color ("#978572" if not enabled else "#fff7e8" if primary or chosen else "#493323")
-                hover_color ("#fff7e8" if primary or chosen else "#793e2a")
+                color (("#8b8175" if not enabled else "#4b3420") if soft_support else "#978572" if not enabled else "#fff7e8" if primary or chosen else "#493323")
+                hover_color ("#4b3420" if soft_support else "#fff7e8" if primary or chosen else "#793e2a")
                 yalign .5
 
 screen r13_footer_control(column,caption,icon,command,enabled=True,chosen=False,primary=False):

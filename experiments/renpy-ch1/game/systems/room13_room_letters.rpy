@@ -7,6 +7,44 @@ init 355 python:
     })
     R13_V111_RECORD_LATER[("room13","family_bundle")]="책상 위 접힌 종이. 먼저 그 위의 메모부터 읽어 보자."
 
+    R13_ROOM_LETTERS_KEY="두 편지를 나란히 본다"
+    R13_ROOM_LETTERS_PAIR=("V111:E01","V111:E06")
+
+    def r13_room_letters_discovery_needed(key):
+        if key not in (R13_ROOM_LETTERS_KEY,"v111:"+R13_ROOM_LETTERS_KEY):
+            return False
+        if r13_v111_value("letter_tail_observed") is True:
+            return False
+        # 이미 비교를 마친 판에는 새 조사 단계를 소급하지 않는다.
+        given=r13_v111_value("proof_given:"+R13_ROOM_LETTERS_KEY)
+        if given and set(given)==set(R13_ROOM_LETTERS_PAIR):
+            return False
+        return not r13_has("v111:applied:MS14_D01_S05_L0031")
+
+    def r13_room_letters_discovery_pending(key,pair):
+        values=tuple(pair or ())
+        return (len(values)==2 and set(values)==set(R13_ROOM_LETTERS_PAIR)
+                and r13_room_letters_discovery_needed(key))
+
+    def r13_room_letters_begin_discovery(claim,pair):
+        # 자료를 읽는 편의는 유지하되, 차이를 짚기 전에는 제출하지 않는다.
+        # 이 동작은 UI 기억만 바꾸며 보유 자료·선택·기회·시간은 그대로다.
+        if not r13_room_letters_discovery_pending(claim,pair):
+            return False
+        views=dict(getattr(store,"r13_pw_views",{}) or {})
+        remembered=dict(views.get(claim,{}) or {})
+        remembered.update(view="pair",pair=tuple(pair),quote_open=False,
+                          origin_open=False,room_letters_discovery=True)
+        views[claim]=remembered
+        store.r13_pw_views=views
+        screen=renpy.get_screen("r13_proof_workspace")
+        if screen:
+            for field,value in (("view","pair"),("pair",tuple(pair)),("observe",True),
+                                ("quote_open",False),("origin_open",False),("pick_slot",None)):
+                screen.scope[field]=value
+            renpy.restart_interaction()
+        return True
+
     def r13_room_letters_open():
         keys=("V111:E01","V111:E06")
         if not all(key in store.room13.get("evidence",[]) for key in keys):
