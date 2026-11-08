@@ -1,0 +1,63 @@
+{
+  "screens": [
+    "say"
+  ],
+  "day": 3,
+  "place": "수리점",
+  "who": "실룩",
+  "say": "그, 그래도……{w=.3} 내가 판 돌이 그 돌인지는…….",
+  "meeting": {
+    "active": true,
+    "claim": "NW:lamp",
+    "direction": {
+      "beat": "shaken",
+      "claim": "NW:lamp"
+    },
+    "reaction": {
+      "token": [
+        "nw",
+        [
+          "v111:trial_latch_ok:MS14_D03_S05_L0020",
+          16,
+          "resident_siluk",
+          "그, 그래도……{w=.3} 내가 판 돌이 그 돌인지는……."
+        ],
+        0
+      ],
+      "person": "resident_siluk",
+      "phase": "pending",
+      "pose": "flustered"
+    },
+    "focus": "resident_siluk",
+    "listener": null,
+    "comparison": null,
+    "followup": null,
+    "expression": "distressed",
+    "slots": {}
+  },
+  "audio": {
+    "music": "assets/bgm-council.mp3",
+    "ambience": null,
+    "scene_fx": null
+  },
+  "gains": {
+    "music": 0.64,
+    "ambience": 1
+  },
+  "line": {
+    "identity": null,
+    "index": 16
+  },
+  "settings": {
+    "cps": 0,
+    "motion": true
+  },
+  "effects": [],
+  "display": {
+    "cut": null,
+    "diagram": false,
+    "pose": "flustered",
+    "current_pose": "anxious",
+    "version": "0.20.132"
+  }
+}

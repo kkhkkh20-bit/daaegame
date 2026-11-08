@@ -1,0 +1,49 @@
+{
+  "screens": [
+    "say"
+  ],
+  "day": 7,
+  "place": "마을 학교",
+  "who": "아빠",
+  "say": "오늘 밤 누가 곁에 있을지와\n잠자리도 확인하고 오겠습니다.",
+  "meeting": {
+    "active": true,
+    "claim": "NW:fire",
+    "direction": {
+      "beat": "listen",
+      "claim": "NW:fire"
+    },
+    "reaction": null,
+    "focus": "resident_nubi",
+    "listener": null,
+    "comparison": null,
+    "followup": null,
+    "expression": "neutral",
+    "slots": {}
+  },
+  "audio": {
+    "music": "assets/bgm-search.mp3",
+    "ambience": "assets/amb-wind.mp3",
+    "scene_fx": null
+  },
+  "gains": {
+    "music": 1,
+    "ambience": 1
+  },
+  "line": {
+    "identity": null,
+    "index": 0
+  },
+  "settings": {
+    "cps": 0,
+    "motion": true
+  },
+  "effects": [],
+  "display": {
+    "cut": null,
+    "diagram": false,
+    "pose": "neutral",
+    "current_pose": "neutral",
+    "version": "0.20.132"
+  }
+}

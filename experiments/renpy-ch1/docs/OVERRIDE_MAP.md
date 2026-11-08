@@ -177,6 +177,16 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 5 | 351 | `room13_v111_idle.rpy:244` | _r13_piko_news_idle_lines |
 | 6 | 354 | `room13_piko_reactions.rpy:103` |  |
 
+## `r13_ep_line_art` (5층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 160 | `systems/room13_ep_art.rpy:173` | _r13_impact_line_art |
+| 2 | 345 | `systems/room13_impact_fx.rpy:65` | _r13_met_line_art |
+| 3 | 346 | `room13_v111_idle.rpy:92` | _r13_end_cut_line_art |
+| 4 | 350 | `systems/room13_end_cut.rpy:83` | _r13_latch132_line_art |
+| 5 | 365 | `systems/room13_latch_diagram132.rpy:64` |  |
+
 ## `r13_finish_topic` (5층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -242,15 +252,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:168` | _r13_continuity_seats |
 | 3 | 162 | `systems/room13_story_continuity.rpy:59` | _r13_qa_seats |
 | 4 | 191 | `systems/room13_q1_arguments.rpy:198` |  |
-
-## `r13_ep_line_art` (4층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 160 | `systems/room13_ep_art.rpy:173` | _r13_impact_line_art |
-| 2 | 345 | `systems/room13_impact_fx.rpy:65` | _r13_met_line_art |
-| 3 | 346 | `room13_v111_idle.rpy:92` | _r13_end_cut_line_art |
-| 4 | 350 | `systems/room13_end_cut.rpy:83` |  |
 
 ## `r13_next_day` (4층)
 
@@ -376,6 +377,22 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 191 | `systems/room13_q1_arguments.rpy:145` | _r13_qh_statements |
 | 3 | 192 | `systems/room13_q1_difficulty.rpy:173` |  |
 
+## `r13_ep_cut_art` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 160 | `systems/room13_ep_art.rpy:135` | _r13_regular_ep_cut_art |
+| 2 | 162 | `systems/room13_special_scenes.rpy:33` | _r13_latch132_cut_art |
+| 3 | 365 | `systems/room13_latch_diagram132.rpy:58` |  |
+
+## `r13_ep_line_art_clear` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 160 | `systems/room13_ep_art.rpy:207` | _r13_end_cut_line_clear |
+| 2 | 350 | `systems/room13_end_cut.rpy:91` | _r13_latch132_line_clear |
+| 3 | 365 | `systems/room13_latch_diagram132.rpy:76` |  |
+
 ## `r13_evidence_art_path` (3층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -479,6 +496,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 55 | `room13_rules.rpy:303` | _r13_v111_speaker_base |
 | 2 | 304 | `room13_v111.rpy:702` | _r13_carriage_speaker |
 | 3 | 306 | `room13_carriage_direction.rpy:103` |  |
+
+## `r13_v111_line` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 301 | `room13_v111.rpy:61` | _r13_nw_authored_line |
+| 2 | 319 | `room13_v111_newworld_text.rpy:548` | _r13_chorong_work132_line |
+| 3 | 391 | `systems/room13_chorong_work132.rpy:6` |  |
 
 ## `r13_v111_present_reaction` (3층)
 
@@ -623,26 +648,19 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 160 | `systems/room13_ep_art.rpy:37` | _r13_v111_ruin_bg |
 | 2 | 162 | `systems/room13_ep_art.rpy:247` |  |
 
-## `r13_ep_cut_art` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 160 | `systems/room13_ep_art.rpy:135` | _r13_regular_ep_cut_art |
-| 2 | 162 | `systems/room13_special_scenes.rpy:33` |  |
-
-## `r13_ep_line_art_clear` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 160 | `systems/room13_ep_art.rpy:207` | _r13_end_cut_line_clear |
-| 2 | 350 | `systems/room13_end_cut.rpy:91` |  |
-
 ## `r13_evidence_acquired` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 69 | `room13_feedback.rpy:26` | _r13_sound_evidence_acquired |
 | 2 | 150 | `systems/room13_sound.rpy:200` |  |
+
+## `r13_fullbody_authored_pose` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 58 | `room13_fullbody_dialogue.rpy:53` | _r13_chorong_work132_authored |
+| 2 | 391 | `systems/room13_chorong_work132.rpy:14` |  |
 
 ## `r13_fullbody_spec` (2층)
 
@@ -895,13 +913,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 301 | `room13_v111.rpy:139` | _r13_follow_context |
 | 2 | 345 | `systems/room13_camera_follow.rpy:10` |  |
-
-## `r13_v111_line` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 301 | `room13_v111.rpy:61` | _r13_nw_authored_line |
-| 2 | 319 | `room13_v111_newworld_text.rpy:548` |  |
 
 ## `r13_v111_lines` (2층)
 

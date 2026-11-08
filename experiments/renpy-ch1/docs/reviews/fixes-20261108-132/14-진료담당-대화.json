@@ -1,0 +1,46 @@
+{
+  "screens": [
+    "say"
+  ],
+  "day": 5,
+  "place": "임시 진료실",
+  "who": "진료 담당자",
+  "say": "언제부터 이러셨는지 아는 분이 같이 들어오세요.\n어르신 상태는 그 시각부터 봐야 해요.",
+  "meeting": {
+    "active": false,
+    "claim": null,
+    "direction": {},
+    "reaction": null,
+    "focus": null,
+    "listener": null,
+    "comparison": null,
+    "followup": null,
+    "expression": "neutral",
+    "slots": {}
+  },
+  "audio": {
+    "music": "assets/bgm-think.mp3",
+    "ambience": "assets/amb-wind.mp3",
+    "scene_fx": null
+  },
+  "gains": {
+    "music": 1,
+    "ambience": 1
+  },
+  "line": {
+    "identity": null,
+    "index": 0
+  },
+  "settings": {
+    "cps": 0,
+    "motion": true
+  },
+  "effects": [],
+  "display": {
+    "cut": null,
+    "diagram": false,
+    "pose": "neutral",
+    "current_pose": "neutral",
+    "version": "0.20.132"
+  }
+}

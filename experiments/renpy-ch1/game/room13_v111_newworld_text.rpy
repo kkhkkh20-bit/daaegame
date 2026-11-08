@@ -489,7 +489,7 @@ init 319 python:
         return lines
     # Impact direction names (systems/room13_impact_fx.rpy; that file loads later, so the names live here).
     R13_NW_FX=("jolt","shake","slam","flash")
-    R13_NW_CUT_SPECIAL=("bell","v111_blanket_before","v111_blanket_after","v111_reunion_far","v111_reunion_close")
+    R13_NW_CUT_SPECIAL=("bell","v111_blanket_before","v111_blanket_after","v111_reunion_far","v111_reunion_close","latch132_outer","latch132_inner")
     def r13_nw_replace_variants(rid):
         """A replace entry is one variant or a list of variants (first whose condition holds wins)."""
         entry=R13_NW_TEXT["replace"].get(rid)

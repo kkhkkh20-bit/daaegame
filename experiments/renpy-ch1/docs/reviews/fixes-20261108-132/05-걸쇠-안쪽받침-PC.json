@@ -1,0 +1,49 @@
+{
+  "screens": [
+    "say"
+  ],
+  "day": 3,
+  "place": "수리점",
+  "who": "톡",
+  "say": "조각이 있던 틈은 그 뒤의 안쪽 받침이에요.\n거기엔 돌 밑으로 날을 넣어야 닿아요.",
+  "meeting": {
+    "active": true,
+    "claim": "NW:lamp",
+    "direction": {
+      "beat": "listen",
+      "claim": "NW:lamp"
+    },
+    "reaction": null,
+    "focus": "resident_tok",
+    "listener": null,
+    "comparison": null,
+    "followup": null,
+    "expression": "neutral",
+    "slots": {}
+  },
+  "audio": {
+    "music": "assets/bgm-council.mp3",
+    "ambience": null,
+    "scene_fx": null
+  },
+  "gains": {
+    "music": 1,
+    "ambience": 1
+  },
+  "line": {
+    "identity": null,
+    "index": 2
+  },
+  "settings": {
+    "cps": 0,
+    "motion": true
+  },
+  "effects": [],
+  "display": {
+    "cut": "latch132_inner",
+    "diagram": true,
+    "pose": "neutral",
+    "current_pose": "anxious",
+    "version": "0.20.132"
+  }
+}
