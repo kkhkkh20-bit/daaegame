@@ -33,10 +33,10 @@ def read_source(path):
                     source_sha256=hashlib.sha256(path.read_bytes()).hexdigest())
 
 
-def build_profiles(sources,visible_height_840):
+def build_profiles(sources,visible_height_840,question_visible_height=560):
     profiles={}
     for height in (560,760,840):
-        visible=560 if height==560 else visible_height_840*height/840
+        visible=question_visible_height if height==560 else visible_height_840*height/840
         scales={slot:visible/(row['bounds'][3]-row['bounds'][1]) for slot,row in sources.items()}
         width=max((row['bounds'][2]-row['bounds'][0])*scales[slot] for slot,row in sources.items())
         canvas=[math.ceil(width)+48,math.ceil(visible)+48]

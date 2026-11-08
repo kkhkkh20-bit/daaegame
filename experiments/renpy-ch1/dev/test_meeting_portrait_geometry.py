@@ -1,5 +1,6 @@
 """회의의 원본 여백이 아이 얼굴을 가리지 않고, 실제 장소 밖을 비추지 않는지 검증한다."""
 import ast
+import copy
 import math
 from pathlib import Path
 import textwrap
@@ -42,6 +43,14 @@ class MeetingPortraitGeometry(unittest.TestCase):
         return p,y,f['offset'][1]+bounds[1]*f.get('scale',1),f['offset'][1]+bounds[3]*f.get('scale',1)
 
     def test_kongi_padding_cannot_place_face_below_dialogue(self):
+        # 새 원화에는 옛 큰 위쪽 여백이 없다. 회귀 조건을 명시적으로
+        # 더해, 새 작화 이후에도 여백을 무시하던 버그를 계속 검증한다.
+        get=self.env['r13_dialogue_source_profile']
+        self.env['store'].r13_meeting_focus='resident_kongi'
+        padded=copy.deepcopy(get('resident_kongi','neutral',840))
+        padded['canvas'][1]+=350
+        for frame in padded['frames'].values():frame['offset'][1]+=350
+        self.env['r13_dialogue_source_profile']=lambda who,pose,height: padded if who=='resident_kongi' and height==840 else get(who,pose,height)
         p,y,head,feet=self.geometry('resident_kongi')
         self.assertGreater(p['frames']['neutral']['offset'][1],300,'원래 여백을 가진 회귀 자료여야 한다')
         # 실제 solo 투영(1.06배)과 대사판 윗변 560을 함께 확인한다.

@@ -8,7 +8,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 SLOTS = {'neutral', 'joy', 'angry', 'anxious', 'flustered', 'surprise_talk'}
-PEOPLE = {'daram', 'guard', 'resident_piko', 'resident_bori', 'karo', 'doto', 'neoul', 'resident_siluk', 'resident_seori', 'seryeon'}
+PEOPLE = {'daram', 'guard', 'resident_piko', 'resident_bori', 'karo', 'doto', 'neoul', 'resident_siluk', 'resident_seori', 'seryeon', 'resident_kongi', 'resident_ubak'}
 NEW_PEOPLE=set(json.loads((ROOT/'art/dialogue-gaze-20261107/runtime-fit-targets.json').read_text()))
 
 

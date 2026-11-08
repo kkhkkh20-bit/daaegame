@@ -1,0 +1,786 @@
+{
+  "scope": "현재 공개1부 D01~D06 전체/D07_S01~S02. qa_tests 제외 본편 r13_v111_lines 직접호출 IDs. 조건별 활성화 여부는 각 requires/분기에서 결정되며 실제 전경로 플레이수 아님.",
+  "note": "정적 호출/블록 목록. 조건부 분기 모두를 실제 플레이했다는 뜻이 아님.",
+  "portraits": [
+    {
+      "person": "bami",
+      "names": [
+        "밤이"
+      ],
+      "direct_lines": 19,
+      "first_line_id": "MS14_D04_S02_L0015",
+      "previous_file": "assets/dialogue-source-master-v2/bami/760/neutral.webp",
+      "has_front": false,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "buri",
+      "names": [
+        "부리"
+      ],
+      "direct_lines": 6,
+      "first_line_id": "MS14_D03_S03_L0002",
+      "previous_file": "assets/dialogue-player-facing/gaze116/buri/neutral.webp",
+      "has_front": true,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "daram",
+      "names": [
+        "다람"
+      ],
+      "direct_lines": 136,
+      "first_line_id": "MS14_D01_S01_L0003",
+      "previous_file": "assets/dialogue-player-facing/daram-consistency-20261107/neutral.webp",
+      "has_front": true,
+      "has_pose": false,
+      "contexts": [
+        {
+          "binding": {
+            "identity": "v111:letter_read:MS14_D01_S01_L9101",
+            "index": 3,
+            "text": "십삼 호. 내가 외웠어. 아빠는 짐 들어.",
+            "line_id": "MS14_D01_S01_L0013",
+            "source": "game/room13_v111_days123.rpy",
+            "source_line": 27,
+            "person": "daram",
+            "slot": "intake21_01_bravado",
+            "key": "daram:intake21_01_bravado",
+            "batch": "resource-intake-20261021"
+          },
+          "frames_840": {
+            "intake21_01_bravado": {
+              "file": "assets/dialogue-player-facing/daram-consistency-20261107/intake21_01_bravado.webp",
+              "offset": [
+                9,
+                5
+              ],
+              "scale": 0.34159871,
+              "nearest": false,
+              "native_detail": true,
+              "anchor": [
+                444.0,
+                1504
+              ],
+              "source_master": "art/daram-consistency-20261107/source/intake21_01_bravado.png",
+              "source_sha256": "f68c23cd91ffec3534e5d801cc17f33aee1845f2b62de2983fb79c6d2908dd00"
+            }
+          },
+          "note": "회의/생각 제외, 정확한 identity·line_id·plain pose 일치 때만 적용"
+        },
+        {
+          "binding": {
+            "identity": "v111:lamp3:MS14_D03_S02_L0002",
+            "index": 5,
+            "text": "어제 고친다고 했잖아.",
+            "line_id": "MS14_D03_S02_L0007",
+            "source": "game/room13_v111_days123.rpy",
+            "source_line": 905,
+            "person": "daram",
+            "slot": "intake21_02_reproach_lean",
+            "key": "daram:intake21_02_reproach_lean",
+            "batch": "resource-intake-20261021"
+          },
+          "frames_840": {
+            "intake21_02_reproach_lean": {
+              "file": "assets/dialogue-player-facing/daram-consistency-20261107/intake21_02_reproach_lean.webp",
+              "offset": [
+                8,
+                5
+              ],
+              "scale": 0.342783171,
+              "nearest": false,
+              "native_detail": true,
+              "anchor": [
+                444.0,
+                1500
+              ],
+              "source_master": "art/daram-consistency-20261107/source/intake21_02_reproach_lean.png",
+              "source_sha256": "2fde5afba33ef9875a296a02d5c13519cff4c1a2defd58dcc79c1d4430ca85eb"
+            }
+          },
+          "note": "회의/생각 제외, 정확한 identity·line_id·plain pose 일치 때만 적용"
+        },
+        {
+          "binding": {
+            "identity": "v111:registered:MS14_D01_S04_L0002",
+            "index": 4,
+            "text": "외 한 명 말고, 다람.",
+            "line_id": "MS14_D01_S04_L0006",
+            "source": "game/room13_v111_days123.rpy",
+            "source_line": 293,
+            "person": "daram",
+            "slot": "intake21_03_stubborn",
+            "key": "daram:intake21_03_stubborn",
+            "batch": "resource-intake-20261021"
+          },
+          "frames_840": {
+            "intake21_03_stubborn": {
+              "file": "assets/dialogue-player-facing/daram-consistency-20261107/intake21_03_stubborn.webp",
+              "offset": [
+                11,
+                16
+              ],
+              "scale": 0.334207798,
+              "nearest": false,
+              "native_detail": true,
+              "anchor": [
+                447.0,
+                1506
+              ],
+              "source_master": "art/daram-consistency-20261107/source/intake21_03_stubborn.png",
+              "source_sha256": "bb5603ebf3f94f0d1b888824d29935c08858ad30f62de7e11a547aa36195a5ec"
+            }
+          },
+          "note": "회의/생각 제외, 정확한 identity·line_id·plain pose 일치 때만 적용"
+        },
+        {
+          "binding": {
+            "identity": "v111:portrait_commission:MS14_D02_S03_L0010",
+            "index": 8,
+            "text": "냄비 또 태웠다고 할 때.",
+            "line_id": "MS14_D02_S03_L0018",
+            "source": "game/room13_v111_days123.rpy",
+            "source_line": 604,
+            "person": "daram",
+            "slot": "intake21_05_playful_evasion",
+            "key": "daram:intake21_05_playful_evasion",
+            "batch": "resource-intake-20261021"
+          },
+          "frames_840": {
+            "intake21_05_playful_evasion": {
+              "file": "assets/dialogue-player-facing/daram-consistency-20261107/intake21_05_playful_evasion.webp",
+              "offset": [
+                12,
+                15
+              ],
+              "scale": 0.334433919,
+              "nearest": false,
+              "native_detail": true,
+              "anchor": [
+                444.5,
+                1506
+              ],
+              "source_master": "art/daram-consistency-20261107/source/intake21_05_playful_evasion.png",
+              "source_sha256": "2e5da835d9cbba8624e13be69853ba7577ef973950e190abe871d8e4565be765"
+            }
+          },
+          "note": "회의/생각 제외, 정확한 identity·line_id·plain pose 일치 때만 적용"
+        },
+        {
+          "binding": {
+            "identity": "v111:clinic3:MS14_D03_S03_L0013",
+            "index": 7,
+            "text": "아빠. 초롱은 돌이 있었댔잖아. 이 사람은 언제 꺼냈는데?",
+            "line_id": "MS14_D03_S03_L0020",
+            "source": "game/room13_v111_days123.rpy",
+            "source_line": 985,
+            "person": "daram",
+            "slot": "intake21_06_eureka",
+            "key": "daram:intake21_06_eureka",
+            "batch": "resource-intake-20261021"
+          },
+          "frames_840": {
+            "intake21_06_eureka": {
+              "file": "assets/dialogue-player-facing/daram-consistency-20261107/intake21_06_eureka.webp",
+              "offset": [
+                12,
+                16
+              ],
+              "scale": 0.333981982,
+              "nearest": false,
+              "native_detail": true,
+              "anchor": [
+                446.0,
+                1507
+              ],
+              "source_master": "art/daram-consistency-20261107/source/intake21_06_eureka.png",
+              "source_sha256": "7a044448ef4403d4b71edf78b3f18a2d50184e9cd01bc8616f01828add7d6641"
+            }
+          },
+          "note": "회의/생각 제외, 정확한 identity·line_id·plain pose 일치 때만 적용"
+        },
+        {
+          "binding": {
+            "identity": "v111:silluk3:MS14_D03_S04_L0002",
+            "index": 1,
+            "text": "아빠, 비켜.",
+            "line_id": "MS14_D03_S04_L0003",
+            "source": "game/room13_v111_days123.rpy",
+            "source_line": 1048,
+            "person": "daram",
+            "slot": "intake21_08_scared_brave",
+            "key": "daram:intake21_08_scared_brave",
+            "batch": "resource-intake-20261021"
+          },
+          "frames_840": {
+            "intake21_08_scared_brave": {
+              "file": "assets/dialogue-player-facing/daram-consistency-20261107/intake21_08_scared_brave.webp",
+              "offset": [
+                11,
+                14
+              ],
+              "scale": 0.335114124,
+              "nearest": false,
+              "native_detail": true,
+              "anchor": [
+                446.5,
+                1506
+              ],
+              "source_master": "art/daram-consistency-20261107/source/intake21_08_scared_brave.png",
+              "source_sha256": "74b6a4d0e18d1f1c73edaf42853b7d5b5d744fd5ed1f1e0690f805af3ba417a7"
+            }
+          },
+          "note": "회의/생각 제외, 정확한 identity·line_id·plain pose 일치 때만 적용"
+        },
+        {
+          "binding": {
+            "identity": "v111:piko_memorial:MS14_D03_S06_L0013",
+            "index": 4,
+            "text": "약속은 내가 했는데, 피코는 못 왔네.",
+            "line_id": "MS14_D03_S06_L0018",
+            "source": "game/room13_v111_days123.rpy",
+            "source_line": 1491,
+            "person": "daram",
+            "slot": "intake21_09_wipe_tears",
+            "key": "daram:intake21_09_wipe_tears",
+            "batch": "resource-intake-20261021"
+          },
+          "frames_840": {
+            "intake21_09_wipe_tears": {
+              "file": "assets/dialogue-player-facing/daram-consistency-20261107/intake21_09_wipe_tears.webp",
+              "offset": [
+                11,
+                15
+              ],
+              "scale": 0.334887082,
+              "nearest": false,
+              "native_detail": true,
+              "anchor": [
+                446.0,
+                1506
+              ],
+              "source_master": "art/daram-consistency-20261107/source/intake21_09_wipe_tears.png",
+              "source_sha256": "3a0da056d5502b7d6c5fefbecb087c0a251bd56ac9e9e963327f8f24612aca9c"
+            }
+          },
+          "note": "회의/생각 제외, 정확한 identity·line_id·plain pose 일치 때만 적용"
+        },
+        {
+          "binding": {
+            "identity": "v111:shelter_prepare:MS14_D02_S04_L0024",
+            "index": 3,
+            "text": "그림 내가 들게. 안 눌리게.",
+            "line_id": "MS14_D02_S04_L0027",
+            "source": "game/room13_v111_days123.rpy",
+            "source_line": 733,
+            "person": "daram",
+            "slot": "intake21_10_resolve",
+            "key": "daram:intake21_10_resolve",
+            "batch": "resource-intake-20261021"
+          },
+          "frames_840": {
+            "intake21_10_resolve": {
+              "file": "assets/dialogue-player-facing/daram-consistency-20261107/intake21_10_resolve.webp",
+              "offset": [
+                9,
+                11
+              ],
+              "scale": 0.338789125,
+              "nearest": false,
+              "native_detail": true,
+              "anchor": [
+                447.5,
+                1500
+              ],
+              "source_master": "art/daram-consistency-20261107/source/intake21_10_resolve.png",
+              "source_sha256": "0f8d8c7591ac8e3eed3730be96c3b6f5303d4b88d68254e1ad80a54bdc178825"
+            }
+          },
+          "note": "회의/생각 제외, 정확한 identity·line_id·plain pose 일치 때만 적용"
+        }
+      ]
+    },
+    {
+      "person": "doto",
+      "names": [
+        "도토"
+      ],
+      "direct_lines": 3,
+      "first_line_id": "MS14_D06_S04_L0035",
+      "previous_file": "assets/dialogue-source-master/doto/840/neutral.webp",
+      "has_front": true,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "granny",
+      "names": [
+        "할머니"
+      ],
+      "direct_lines": 13,
+      "first_line_id": "MS14_D01_S05_L0001",
+      "previous_file": "assets/dialogue-player-facing/gaze116/granny/neutral.webp",
+      "has_front": true,
+      "has_pose": true,
+      "contexts": []
+    },
+    {
+      "person": "guard",
+      "names": [
+        "돌목"
+      ],
+      "direct_lines": 32,
+      "first_line_id": "MS14_D01_S02_L0009",
+      "previous_file": "assets/dialogue-player-facing/pixel20261108/guard/neutral.webp",
+      "has_front": true,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "karo",
+      "names": [
+        "까로"
+      ],
+      "direct_lines": 6,
+      "first_line_id": "MS14_D01_S01_L0022",
+      "previous_file": "assets/dialogue-source-master/karo/840/neutral.webp",
+      "has_front": true,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "kid_bang",
+      "names": [
+        "창고 아이 3"
+      ],
+      "direct_lines": 1,
+      "first_line_id": "MS14_D07_S02_L0018",
+      "previous_file": "assets/dialogue-source-master/kid_bang/840/neutral.webp",
+      "has_front": false,
+      "has_pose": true,
+      "contexts": []
+    },
+    {
+      "person": "kid_dodam",
+      "names": [
+        "도담"
+      ],
+      "direct_lines": 3,
+      "first_line_id": "MS14_D06_S02_L0011",
+      "previous_file": "assets/dialogue-source-master-v2/kid_dodam/760/neutral.webp",
+      "has_front": false,
+      "has_pose": true,
+      "contexts": []
+    },
+    {
+      "person": "kid_kkam",
+      "names": [
+        "창고 아이 1"
+      ],
+      "direct_lines": 1,
+      "first_line_id": "MS14_D07_S02_L0016",
+      "previous_file": "assets/dialogue-source-master/kid_kkam/840/neutral.webp",
+      "has_front": false,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "kid_kkomi",
+      "names": [
+        "꼬미"
+      ],
+      "direct_lines": 16,
+      "first_line_id": "MS14_D06_S01_L0020",
+      "previous_file": "assets/dialogue-source-master-v2/kid_kkomi/760/neutral.webp",
+      "has_front": false,
+      "has_pose": true,
+      "contexts": []
+    },
+    {
+      "person": "kid_mong",
+      "names": [
+        "창고 아이 2"
+      ],
+      "direct_lines": 1,
+      "first_line_id": "MS14_D07_S02_L0017",
+      "previous_file": "assets/dialogue-source-master/kid_mong/840/neutral.webp",
+      "has_front": false,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "kid_nubi1",
+      "names": [
+        "누비의 큰아이"
+      ],
+      "direct_lines": 1,
+      "first_line_id": "MS14_D07_S02_L0020",
+      "previous_file": "assets/dialogue-source-master/kid_nubi1/840/neutral.webp",
+      "has_front": false,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "kid_nubi2",
+      "names": [
+        "누비의 둘째"
+      ],
+      "direct_lines": 1,
+      "first_line_id": "MS14_D07_S02_L0021",
+      "previous_file": "assets/dialogue-source-master/kid_nubi2/840/neutral.webp",
+      "has_front": false,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "kid_nubi3",
+      "names": [
+        "누비의 막내"
+      ],
+      "direct_lines": 1,
+      "first_line_id": "MS14_D07_S02_L0023",
+      "previous_file": "assets/dialogue-dot-v2/v111_child/760/neutral.webp",
+      "has_front": false,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "ms14_attendant",
+      "names": [
+        "종업원"
+      ],
+      "direct_lines": 1,
+      "first_line_id": "MS14_D05_S05_L0034",
+      "previous_file": "assets/dialogue-dot-v2/v111_resident/760/neutral.webp",
+      "has_front": false,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "ms14_clinician",
+      "names": [
+        "진료 담당자"
+      ],
+      "direct_lines": 1,
+      "first_line_id": "MS14_D05_S02_L0030",
+      "previous_file": "assets/dialogue-dot-v2/v111_resident/760/neutral.webp",
+      "has_front": false,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "nabi",
+      "names": [
+        "나비"
+      ],
+      "direct_lines": 27,
+      "first_line_id": "MS14_D02_S04_L0003",
+      "previous_file": "assets/dialogue-source-master-v2/nabi/760/neutral.webp",
+      "has_front": false,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "neoul",
+      "names": [
+        "너울"
+      ],
+      "direct_lines": 33,
+      "first_line_id": "MS14_D01_S04_L0018",
+      "previous_file": "assets/dialogue-player-facing/gaze116/neoul/neutral.webp",
+      "has_front": true,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "resident_badook",
+      "names": [
+        "바둑이"
+      ],
+      "direct_lines": 21,
+      "first_line_id": "MS14_D03_S05_L0032",
+      "previous_file": "assets/dialogue-source-master-v2/resident_badook/760/neutral.webp",
+      "has_front": false,
+      "has_pose": true,
+      "contexts": []
+    },
+    {
+      "person": "resident_bori",
+      "names": [
+        "보리"
+      ],
+      "direct_lines": 25,
+      "first_line_id": "MS14_D06_S02_L0007",
+      "previous_file": "assets/dialogue-source-master/resident_bori/840/neutral.webp",
+      "has_front": true,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "resident_kongi",
+      "names": [
+        "콩이"
+      ],
+      "direct_lines": 12,
+      "first_line_id": "MS14_D04_S02_L0002",
+      "previous_file": "assets/dialogue-source-master-v2/resident_kongi/760/neutral.webp",
+      "has_front": false,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "resident_lamplighter",
+      "names": [
+        "초롱"
+      ],
+      "direct_lines": 44,
+      "first_line_id": "MS14_D02_S01_L0011",
+      "previous_file": "assets/dialogue-player-facing/gaze116/resident_lamplighter/neutral.webp",
+      "has_front": true,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "resident_madam",
+      "names": [
+        "백 부인"
+      ],
+      "direct_lines": 10,
+      "first_line_id": "MS14_D03_S04_L0022",
+      "previous_file": "assets/dialogue-source-master-v2/resident_madam/760/neutral.webp",
+      "has_front": false,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "resident_momo",
+      "names": [
+        "모모"
+      ],
+      "direct_lines": 1,
+      "first_line_id": "MS14_D02_S03_L0002",
+      "previous_file": "assets/dialogue-player-facing/gaze116/resident_momo/neutral.webp",
+      "has_front": true,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "resident_musoe",
+      "names": [
+        "무쇠"
+      ],
+      "direct_lines": 9,
+      "first_line_id": "MS14_D05_S01_L0009",
+      "previous_file": "assets/dialogue-source-master-v2/resident_musoe/760/neutral.webp",
+      "has_front": false,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "resident_nero",
+      "names": [
+        "네로"
+      ],
+      "direct_lines": 35,
+      "first_line_id": "MS14_D02_S04_L0051",
+      "previous_file": "assets/dialogue-player-facing/gaze116/resident_nero/neutral.webp",
+      "has_front": true,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "resident_nubi",
+      "names": [
+        "누비"
+      ],
+      "direct_lines": 17,
+      "first_line_id": "MS14_D07_S01_L0002",
+      "previous_file": "assets/dialogue-player-facing/pixel20261108/resident_nubi/neutral.webp",
+      "has_front": true,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "resident_piko",
+      "names": [
+        "피코"
+      ],
+      "direct_lines": 34,
+      "first_line_id": "MS14_D02_S03_L0003",
+      "previous_file": "assets/dialogue-source-master/resident_piko/840/neutral.webp",
+      "has_front": true,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "resident_siluk",
+      "names": [
+        "실룩"
+      ],
+      "direct_lines": 20,
+      "first_line_id": "MS14_D03_S04_L0002",
+      "previous_file": "assets/dialogue-player-facing/gaze116/resident_siluk/neutral.webp",
+      "has_front": true,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "resident_somi",
+      "names": [
+        "솜이"
+      ],
+      "direct_lines": 23,
+      "first_line_id": "MS14_D04_S01_L0041",
+      "previous_file": "assets/dialogue-source-master-v2/resident_somi/760/neutral.webp",
+      "has_front": false,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "resident_teacher",
+      "names": [
+        "사자 선생님"
+      ],
+      "direct_lines": 5,
+      "first_line_id": "MS14_D06_S01_L0008",
+      "previous_file": "assets/dialogue-player-facing/gaze116/resident_teacher/neutral.webp",
+      "has_front": true,
+      "has_pose": true,
+      "contexts": []
+    },
+    {
+      "person": "resident_tok",
+      "names": [
+        "톡"
+      ],
+      "direct_lines": 13,
+      "first_line_id": "MS14_D03_S02_L0003",
+      "previous_file": "assets/dialogue-player-facing/gaze116/resident_tok/neutral.webp",
+      "has_front": true,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "resident_tosil",
+      "names": [
+        "토실"
+      ],
+      "direct_lines": 1,
+      "first_line_id": "MS14_D04_S02_L0010",
+      "previous_file": "assets/dialogue-player-facing/gaze116/resident_tosil/neutral.webp",
+      "has_front": true,
+      "has_pose": true,
+      "contexts": []
+    },
+    {
+      "person": "resident_ubak",
+      "names": [
+        "우박"
+      ],
+      "direct_lines": 8,
+      "first_line_id": "MS14_D03_S03_L0013",
+      "previous_file": "assets/dialogue-source-master-v2/resident_ubak/760/neutral.webp",
+      "has_front": false,
+      "has_pose": false,
+      "contexts": [
+        {
+          "binding": {
+            "identity": "v111:clinic3:MS14_D03_S03_L0013",
+            "index": 10,
+            "text": "말을 끝까지 좀 들으세요.",
+            "line_id": "MS14_D03_S03_L0023",
+            "source": "game/room13_v111_days123.rpy",
+            "source_line": 985,
+            "person": "resident_ubak",
+            "slot": "intake21_ubak_angry",
+            "key": "resident_ubak:intake21_ubak_angry",
+            "batch": "resource-intake-20261021"
+          },
+          "frames_840": {
+            "intake21_ubak_angry": {
+              "file": "assets/dialogue-context-master/resident_ubak/840/intake21_ubak_angry.webp",
+              "offset": [
+                91,
+                21
+              ],
+              "source_master": "masters/ubak_angry.png",
+              "source_sha256": "c301f796b0f0ac363ea46e4d7d6b5328ef940a43738f0139da336ce8e267c7ce",
+              "source_commit": "ae62bf081fce0e08eebbbf2dcd8896292175bd56",
+              "scale": 0.7277235934182591,
+              "source_alpha_bounds": [
+                65,
+                4,
+                501,
+                868
+              ]
+            }
+          },
+          "note": "회의/생각 제외, 정확한 identity·line_id·plain pose 일치 때만 적용"
+        }
+      ]
+    },
+    {
+      "person": "seryeon",
+      "names": [
+        "세련"
+      ],
+      "direct_lines": 11,
+      "first_line_id": "MS14_D02_S02_L0002",
+      "previous_file": "assets/dialogue-source-master/seryeon/840/neutral.webp",
+      "has_front": true,
+      "has_pose": true,
+      "contexts": []
+    },
+    {
+      "person": "v111_child",
+      "names": [
+        "아이"
+      ],
+      "direct_lines": 1,
+      "first_line_id": "MS14_D07_S01_L0015",
+      "previous_file": "assets/dialogue-dot-v2/v111_child/760/neutral.webp",
+      "has_front": false,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "v111_siluk_child",
+      "names": [
+        "실룩의 아이"
+      ],
+      "direct_lines": 1,
+      "first_line_id": "MS14_D03_S04_L0005",
+      "previous_file": "assets/dialogue-dot-v2/v111_child/760/neutral.webp",
+      "has_front": false,
+      "has_pose": false,
+      "contexts": []
+    },
+    {
+      "person": "resident_owlgp",
+      "blocks": [
+        "owl_glove5",
+        "owl_tongs3",
+        "owl_well7"
+      ],
+      "previous_file": "assets/dialogue-player-facing/gaze116/resident_owlgp/neutral.webp"
+    },
+    {
+      "person": "v111_lowerroad_elder",
+      "blocks": [
+        "elder_cane4"
+      ],
+      "previous_file": "assets/lowerroad-elder/dialogue-gaze116-neutral.webp"
+    },
+    {
+      "person": "resident_seori",
+      "blocks": [
+        "promise_care7",
+        "promise_room7"
+      ],
+      "previous_file": "assets/dialogue-source-master/resident_seori/840/neutral.webp"
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "person": "seryeon",
+  "art_revision": "cast-pixel-consistency-20261108",
+  "approval": "소유자: 대화할 때 나오는 인물 그림 차이 교정, 메인 중립 육안 승인",
+  "style_reference": [
+    "art/daram-consistency-20261107/source/neutral.png",
+    "art/pixel-consistency-20261108/guard/neutral.png"
+  ],
+  "identity_reference": "game/assets/dialogue-source-master/seryeon/840/neutral.webp",
+  "visible_height_840": 630,
+  "frames": [
+    {
+      "slot": "neutral",
+      "source_master": "art/dialogue-cast-unify-20261108/seryeon/neutral.png",
+      "source_sha256": "1aadd7f733fee2c6eebceec2a695e17c162364bdc64552ffce79c2e9bf1c3b24",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/seryeon/neutral.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        89,
+        27,
+        777,
+        1511
+      ]
+    },
+    {
+      "slot": "joy",
+      "source_master": "art/dialogue-cast-unify-20261108/seryeon/joy.png",
+      "source_sha256": "5a212cf400db99998df8c0938a905d027a7cca715413d5f87df49f30145ad3b0",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/seryeon/joy.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        88,
+        26,
+        770,
+        1510
+      ]
+    },
+    {
+      "slot": "angry",
+      "source_master": "art/dialogue-cast-unify-20261108/seryeon/angry.png",
+      "source_sha256": "bb73762f963bde3234668676f910604fce783d191f81f0fa4712fe055cff732e",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/seryeon/angry.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        88,
+        25,
+        817,
+        1510
+      ]
+    },
+    {
+      "slot": "anxious",
+      "source_master": "art/dialogue-cast-unify-20261108/seryeon/anxious.png",
+      "source_sha256": "b724d00ac68eea43ca72881bd24e0b61f77b72746908b221c8b14c28145db068",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/seryeon/anxious.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        91,
+        27,
+        792,
+        1510
+      ]
+    },
+    {
+      "slot": "flustered",
+      "source_master": "art/dialogue-cast-unify-20261108/seryeon/flustered.png",
+      "source_sha256": "33a094c42958236a4c45e2baa142fb33cbea2f5b515a60caac25330399e0128b",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/seryeon/seryeon-flustered.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        111,
+        26,
+        818,
+        1510
+      ]
+    },
+    {
+      "slot": "surprise_talk",
+      "source_master": "art/dialogue-cast-unify-20261108/seryeon/surprise_talk.png",
+      "source_sha256": "4d977d4b4c6f404336de6caf5fc49b96a654869fcb10fabfa2fc87deb4715e97",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/seryeon/surprise_talk.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        88,
+        26,
+        777,
+        1511
+      ]
+    }
+  ],
+  "pose_frames": [
+    {
+      "pose": "chair_read",
+      "source_master": "art/dialogue-cast-unify-20261108/seryeon/chair_read.png",
+      "source_sha256": "8ddcdcbfdfc38d9428858a24f71626cddb88bb10ed9f64384d4fda441457f70b",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/seryeon/chair_read/source.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        110,
+        64,
+        942,
+        1488
+      ]
+    },
+    {
+      "pose": "chair_listen",
+      "source_master": "art/dialogue-cast-unify-20261108/seryeon/chair_listen.png",
+      "source_sha256": "86c073e04651e2e547b1e13cbff73d082ec55ab567e09ac5b0e9e2bd41bdb6dc",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/seryeon/chair_listen/source.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        171,
+        36,
+        964,
+        1488
+      ]
+    }
+  ],
+  "inspection": {
+    "identity": "성인 남성 주황 여우, 파란 긴 코트·금단추·노랑 조끼·빨강 넥타이·장갑·갈색 바지·버클 구두·편지 유지",
+    "acting": "원본 기쁨 목깃, 분노 허리짚기, 불안/당황 귀내림과 편지쥐기 보존. anxious와 flustered는 홍조·땀으로 구분",
+    "pose": "chair_read는 앉아 편지 아래보기, chair_listen은 앉아 한손턱·플레이어응시. 의자 없는 원본 전신 구도 유지",
+    "alpha": "전신 경계 내부, 모서리 알파0, 주변 갈색은 alpha0 RGB 프리뷰. 스티커 테두리 없음",
+    "scope": "원본 PNG/납품 manifest만 작성. runtime·등록표·대사·분기 변경 없음"
+  }
+}

@@ -105,6 +105,14 @@ class ResourceIntake(unittest.TestCase):
     with Image.open(path) as im:bounds=im.getchannel('A').point(lambda a:255 if a>=40 else 0).getbbox()
     visible=QUESTION_VISIBLE_HEIGHT if row['height']=='560' else VISIBLE_HEIGHT_840*int(row['height'])/840
     self.assertAlmostEqual((bounds[3]-bounds[1])*frame['scale'],visible,delta=.00001)
+   elif entry.get('art_revision')=='dialogue-cast-pixel-20261108':
+    self.assertEqual(row['person'],'resident_ubak')
+    self.assertIn(row['slot'],('intake21_ubak_angry','intake21_ubak_anxious'))
+    self.assertEqual(profile['canvas'],front[row['person']]['profiles'][row['height']]['canvas'])
+    frame=profile['frames'][row['slot']]
+    self.assertTrue(frame['file'].startswith('assets/dialogue-player-facing/cast20261108/resident_ubak/contexts/'))
+    source=ROOT/frame['source_master']
+    self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(),frame['source_sha256'])
    else:self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),row['output_sha256'])
  def test_context_application_does_not_touch_story_state(self):
   source=(ROOT/'game/systems/room13_dialogue_context_art.rpy').read_text().split('init 172 python:\n',1)[1]

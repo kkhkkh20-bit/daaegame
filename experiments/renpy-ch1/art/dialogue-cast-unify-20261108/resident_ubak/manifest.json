@@ -1,0 +1,154 @@
+{
+  "person": "resident_ubak",
+  "art_revision": "dialogue-cast-unify-20261108",
+  "visible_height_840": 628.753,
+  "approval": "소유자 대화 인물 그림체 차이 교정; 메인 중립 검수 승인",
+  "identity_reference": "game/assets/dialogue-source-master-v2/resident_ubak/760/neutral.webp",
+  "style_references": [
+    "art/daram-consistency-20261107/source/neutral.png",
+    "art/pixel-consistency-20261108/guard/neutral.png"
+  ],
+  "frames": [
+    {
+      "slot": "neutral",
+      "source_master": "art/dialogue-cast-unify-20261108/resident_ubak/neutral.png",
+      "source_sha256": "ea44f2df11e2984cec312cc7110a63b75c1bb55440fb7656df89921efdfac72c",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/resident_ubak/neutral.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        137,
+        35,
+        884,
+        1510
+      ]
+    },
+    {
+      "slot": "joy",
+      "source_master": "art/dialogue-cast-unify-20261108/resident_ubak/joy.png",
+      "source_sha256": "be14020957e96684f4e6b6afa8552f9acfa8228dc46db80b24cbedddae892220",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/resident_ubak/joy.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        137,
+        35,
+        884,
+        1509
+      ]
+    },
+    {
+      "slot": "angry",
+      "source_master": "art/dialogue-cast-unify-20261108/resident_ubak/angry.png",
+      "source_sha256": "a85b8578a90e9e92d2693ae518c7ef3f674ace1fcbfbe387533b41f1d982d4a9",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/resident_ubak/angry.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        137,
+        34,
+        883,
+        1508
+      ]
+    },
+    {
+      "slot": "anxious",
+      "source_master": "art/dialogue-cast-unify-20261108/resident_ubak/anxious.png",
+      "source_sha256": "ad15ad4e0c04aeeb6d783cc870ca5177384dd0e6aaa36227496acfe35e954925",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/resident_ubak/anxious.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        173,
+        34,
+        827,
+        1509
+      ]
+    },
+    {
+      "slot": "flustered",
+      "source_master": "art/dialogue-cast-unify-20261108/resident_ubak/flustered.png",
+      "source_sha256": "e92661f5c95b71cd58d4eb0ff8d929f20a2cd70aff173b3b5025ebe0cde52ccb",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/resident_ubak/resident_ubak-flustered.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        173,
+        35,
+        827,
+        1509
+      ]
+    },
+    {
+      "slot": "surprise_talk",
+      "source_master": "art/dialogue-cast-unify-20261108/resident_ubak/surprise_talk.png",
+      "source_sha256": "847b4263fc7d636f4ec6900e604947e6dcd70ad5701789bd6e281357290d5c1a",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/resident_ubak/surprise_talk.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        119,
+        35,
+        905,
+        1509
+      ]
+    }
+  ],
+  "context_frames": [
+    {
+      "slot": "intake21_ubak_angry",
+      "source_master": "art/dialogue-cast-unify-20261108/resident_ubak/intake21_ubak_angry.png",
+      "source_sha256": "29b8464be60f99c4108554f4d7a15cdf602cef3134c996b02777a575c7eac496",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/resident_ubak/contexts/intake21_ubak_angry.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        144,
+        35,
+        856,
+        1509
+      ]
+    },
+    {
+      "slot": "intake21_ubak_anxious",
+      "source_master": "art/dialogue-cast-unify-20261108/resident_ubak/intake21_ubak_anxious.png",
+      "source_sha256": "0be3e1626e5d958a94e7e55c6a79e57cd79e3a862a334393cb0578a93c493f14",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/resident_ubak/contexts/intake21_ubak_anxious.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        186,
+        34,
+        824,
+        1509
+      ]
+    }
+  ],
+  "context_rationale": {
+    "intake21_ubak_angry": "MS14_D03_S03_L0019 집게를 등 뒤로 당긴다; L0023 말을 끝까지 듣길 요구한다. 회중시계 동작은 없으므로 온도집게와 측정 종이로 일치.",
+    "intake21_ubak_anxious": "ep1:ubak 그 아주머니가 저 때문이에요? 불안하게 집게와 종이를 가슴 앞에 움켜쥔다. 회중시계 동작 없음."
+  },
+  "checks": [
+    "1024x1536 RGBA 전신 원본",
+    "알파40 경계와 네 모서리<=4 확인",
+    "고유 6감정 및 특수 몸짓2 보존",
+    "종이에 정답/단서 문구 추가 없음",
+    "runtime/registry 파일은 메인 통합 담당"
+  ]
+}

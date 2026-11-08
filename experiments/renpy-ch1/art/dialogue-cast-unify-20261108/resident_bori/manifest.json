@@ -1,0 +1,113 @@
+{
+  "person": "resident_bori",
+  "art_revision": "dialogue-cast-unify-20261108",
+  "approval": "소유자: 대화 인물 그림체 차이 교정; 메인 중립 육안 승인 뒤 여섯 표정 생성",
+  "visible_height_840": 690,
+  "style_reference": [
+    "art/daram-consistency-20261107/source/neutral.png",
+    "art/pixel-consistency-20261108/guard/neutral.png"
+  ],
+  "notes": [
+    "생성 PNG 원본 그대로 보관; 리사이즈·필터 없음",
+    "기존 감정별 몸짓 보존: 기쁨 배 위 손과 펼친 손, 분노 외투자락 쥠, 불안·당황 손목 쥠",
+    "일반 그림 6개만 납품; 실행 연결과 크기 정규화는 메인 담당"
+  ],
+  "frames": [
+    {
+      "slot": "neutral",
+      "source_master": "art/dialogue-cast-unify-20261108/resident_bori/neutral.png",
+      "source_sha256": "f3548aac6e0b8b6250bb304bcc5ea15c0c11f52c785a685b9923c574dd4b44a5",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/resident_bori/neutral.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        78,
+        38,
+        942,
+        1503
+      ]
+    },
+    {
+      "slot": "joy",
+      "source_master": "art/dialogue-cast-unify-20261108/resident_bori/joy.png",
+      "source_sha256": "4c32400dbd45536dd766efa5ca1b67dce6658ef7cb84d7f66fd905e561c67e58",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/resident_bori/joy.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        83,
+        37,
+        1007,
+        1503
+      ]
+    },
+    {
+      "slot": "angry",
+      "source_master": "art/dialogue-cast-unify-20261108/resident_bori/angry.png",
+      "source_sha256": "bbcf76adeeb71d48eb85fca44be54b5e65c40c24893ef1951b14b92cbd150084",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/resident_bori/angry.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        78,
+        37,
+        950,
+        1504
+      ]
+    },
+    {
+      "slot": "anxious",
+      "source_master": "art/dialogue-cast-unify-20261108/resident_bori/anxious.png",
+      "source_sha256": "420625b9fab369a00bfeb1b15e8c949f78136b21a1e62ed6ddef5baca3f40d7e",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/resident_bori/anxious.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        186,
+        36,
+        826,
+        1503
+      ]
+    },
+    {
+      "slot": "flustered",
+      "source_master": "art/dialogue-cast-unify-20261108/resident_bori/flustered.png",
+      "source_sha256": "80ed1dbd432f2f0f6264bf19b8eb732fa182af7db9fa785256bbad68b0da84a7",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/resident_bori/resident_bori-flustered.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        170,
+        37,
+        848,
+        1502
+      ]
+    },
+    {
+      "slot": "surprise_talk",
+      "source_master": "art/dialogue-cast-unify-20261108/resident_bori/surprise_talk.png",
+      "source_sha256": "5e1bc18b518aba762944496c38afb39a3f4a5c89522682c482f15791c43ad1d3",
+      "runtime_file": "assets/dialogue-player-facing/cast20261108/resident_bori/surprise_talk.webp",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_bounds_40": [
+        78,
+        38,
+        942,
+        1504
+      ]
+    }
+  ]
+}

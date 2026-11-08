@@ -20,7 +20,7 @@ class ContextArt(unittest.TestCase):
   base=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people'];front=json.loads((ROOT/'game/assets/room13-dialogue-player-facing.json').read_text())['people'];self.assertEqual(len(base),59);self.assertTrue({'bami:small_relief','resident_lamplighter:guarded_relief','kid_kkomi:resilient_pride','resident_tosil:empathetic_confusion'}.issubset(self.data['entries']))
   for entry in self.data['entries'].values():
    for height,p in entry['profiles'].items():
-    reference=front[entry['person']] if entry.get('art_revision')=='daram-consistency-20261107' else base[entry['person']]
+    reference=front[entry['person']] if entry.get('art_revision') in ('daram-consistency-20261107','dialogue-cast-pixel-20261108') else base[entry['person']]
     self.assertEqual(p['canvas'],reference['profiles'][height]['canvas'])
     for f in p['frames'].values():
      with Image.open(ROOT/'game'/f['file']) as im:
