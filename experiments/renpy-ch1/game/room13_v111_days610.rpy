@@ -584,20 +584,7 @@ label r13_v111_fire_question7(payload):
     $ v111_fire_response=r13_fire_question_validate(payload)
     if v111_fire_response=="incomplete":
         return
-    $ v111_fire_fact_index=0
-    while v111_fire_fact_index<2:
-        $ v111_fire_fact=payload["observations"][v111_fire_fact_index]
-        if v111_fire_fact=="lamp":
-            call r13_lines(r13_nw_block('fire_fact_lamp7'),'nw:fire_fact_lamp7')
-        elif v111_fire_fact=="door":
-            call r13_lines(r13_nw_block('fire_fact_door7'),'nw:fire_fact_door7')
-        elif v111_fire_fact=="witness":
-            call r13_lines(r13_nw_block('fire_fact_witness7'),'nw:fire_fact_witness7')
-        elif "V111:E06_EMPTY" in r13_pw_entries():
-            call r13_lines(r13_nw_block('fire_fact_bori_empty7'),'nw:fire_fact_bori_empty7')
-        else:
-            call r13_lines(r13_nw_block('fire_fact_bori_rescue7'),'nw:fire_fact_bori_rescue7')
-        $ v111_fire_fact_index+=1
+    # 관찰 두 개는 플레이어가 방금 연결판에서 읽었다. 같은 내용을 재낭독하지 않고 상대에게 묻는다.
     if v111_fire_response=="lamp_keeper":
         call r13_lines(r13_nw_block('fire_question_lamp_keeper7'),'nw:fire_question_lamp_keeper7')
     elif v111_fire_response=="wood_owner":
@@ -654,7 +641,8 @@ label r13_v111_nubi_admission7:
     $ v111_fire_recheck_options=r13_fire_recheck_options(r13_pw_entries(),r13_v111_value('fire_laundry_exchange_heard7') is True)
     if v111_fire_recheck_options and not r13_v111_value('NUBI_admitted_setting_fire'):
         $ r13_fire_recheck_focus=None
-        $ v111_fire_recheck_pick=None
+        # 대조할 내용이 하나뿐이면 선택창을 덧붙이지 않고 실제 되묻기로 이어 간다.
+        $ v111_fire_recheck_pick=v111_fire_recheck_options[0] if len(v111_fire_recheck_options)==1 else None
         while v111_fire_recheck_pick not in v111_fire_recheck_options:
             call screen r13_fire_recheck(v111_fire_recheck_options)
             $ v111_fire_recheck_pick=_return

@@ -1215,8 +1215,8 @@ label r13_v111_knife_wrong:
     jump r13_v111_trial_choices
 
 label r13_v111_trial_latch:
-    if not r13_v111_value("lamp_latch_question3"):
-        call r13_v111_latch_question3
+    # 비교할 방향을 고른 직후 같은 자료를 다시 고르던 중간 메뉴를 없앤다.
+    # 기존 자료 묶음으로 플레이어가 직접 가설을 검증한다. 구 저장의 메뉴 라벨은 아래 보존한다.
     call r13_v111_proof('바깥 걸쇠 주장과 발견 위치를 대조한다',['E17', 'E32', 'E33'],'r13_v111_trial_latch_ok','r13_v111_trial_wrong_latch','r13_v111_trial_hint_latch')
     jump expression _return
 

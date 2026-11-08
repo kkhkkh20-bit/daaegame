@@ -183,6 +183,8 @@ init 68 python:
     R13_RECORD_ICON_SHEET=json.load(renpy.file("assets/room13-evidence-icons.json")) if renpy.loadable("assets/room13-evidence-icons.json") else {}
     def r13_record_icon(key):
         if isinstance(key,str) and key.startswith(("bag:","tool:")):return r13_catalog_object_icon(key)
+        comparison_art=globals().get("r13_nw_knife_record_art",lambda k:None)(key)
+        if comparison_art is not None:return comparison_art
         # Testimony portraits come only from authored evidence_sources.
         who=ROOM13["evidence_sources"].get(key) if r13_record_category(key)=="testimony" else None
         if who:return r13_art(who,"avatar_neutral")

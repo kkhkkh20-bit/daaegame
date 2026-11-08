@@ -151,6 +151,8 @@ screen say(who,what):
         if r13_meeting_active and r13_nw_meeting_claim(r13_meeting_claim) and not r13_field_reading:
             use r13_meeting_stage(r13_meeting_claim,r13_meeting_focus_person(r13_meeting_claim),True)
             use r13_meeting_chrome(r13_meeting_claim)
+            if r13_nw_comparison=="knife_tip":
+                use r13_nw_knife_comparison
         $ b_face = r13_bdialogue_face(r13_packet[0],r13_fullbody_emotion(r13_directed_pose)) if who and r13_packet and not r13_thought_active and "r13_visitor" not in renpy.get_showing_tags() else None
         # 2026-10-28 소유자 「대사창 좌우가 너무 기니까 역전재판처럼 살짝 중앙으로」: 글자 칸을 좌우 안쪽으로 들였다(R13_SAY_TEXT_*).
         $ b_text_x = R13_SAY_TEXT_X+(R13_SAY_FACE_W if b_face else 0)

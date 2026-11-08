@@ -560,6 +560,10 @@ init 319 python:
             # 0.19.99: impact direction for the line (systems/room13_impact_fx.rpy).
             if revised.get("fx") and len(packet)>2 and isinstance(packet[2],dict):
                 packet=(packet[0],packet[1],dict(packet[2],fx=revised["fx"]))+tuple(packet[3:])
+            if revised.get("beat") and len(packet)>2 and isinstance(packet[2],dict):
+                packet=(packet[0],packet[1],dict(packet[2],beat=revised["beat"]))+tuple(packet[3:])
+            if revised.get("comparison") and len(packet)>2 and isinstance(packet[2],dict):
+                packet=(packet[0],packet[1],dict(packet[2],comparison=revised["comparison"]))+tuple(packet[3:])
         return packet
     def r13_nw_added_line(row):
         if row.get("kind")=="thought":
@@ -574,6 +578,10 @@ init 319 python:
         if row.get("endcut"):options["endcut"]=row["endcut"]
         # Meeting stage beat (systems/room13_meeting_direction.rpy), used only inside a meeting.
         if row.get("beat"):options["beat"]=row["beat"]
+        if row.get("comparison"):options["comparison"]=row["comparison"]
+        if row.get("listener") in MS14_SPEAKERS:
+            options["listener"]=MS14_SPEAKERS[row["listener"]]
+            options["listener_pose"]=row.get("listener_expression","neutral")
         if row.get("fx"):options["fx"]=row["fx"]
         return (who,row["text"],options)
     def r13_nw_wrong_final_lines():

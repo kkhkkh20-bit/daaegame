@@ -1,0 +1,154 @@
+[
+  {
+    "case": "gate",
+    "version": "0.20.125",
+    "settings": {
+      "cps": 55,
+      "motion": true
+    },
+    "errors": [],
+    "screens": [
+      "r13_hub"
+    ],
+    "meeting": {
+      "active": false,
+      "claim": null,
+      "direction": {},
+      "reaction": null,
+      "focus": null,
+      "listener": null,
+      "comparison": null,
+      "followup": null,
+      "expression": "neutral",
+      "slots": {}
+    },
+    "gains": {
+      "music": 1,
+      "ambience": 1
+    }
+  },
+  {
+    "case": "day5",
+    "version": "0.20.125",
+    "settings": {
+      "cps": 55,
+      "motion": true
+    },
+    "errors": [],
+    "screens": [
+      "say"
+    ],
+    "meeting": {
+      "active": true,
+      "claim": "NW:gate_post",
+      "direction": {
+        "beat": "listen",
+        "claim": "NW:gate_post"
+      },
+      "reaction": null,
+      "focus": "nabi",
+      "listener": null,
+      "comparison": null,
+      "followup": "네로 씨는 그 시각에 어디 있었나",
+      "expression": "neutral",
+      "slots": {}
+    },
+    "gains": {
+      "music": 1,
+      "ambience": 1
+    }
+  },
+  {
+    "case": "knife",
+    "version": "0.20.125",
+    "settings": {
+      "cps": 55,
+      "motion": true
+    },
+    "errors": [],
+    "screens": [
+      "r13_proof_workspace"
+    ],
+    "meeting": {
+      "active": true,
+      "claim": "NW:lamp",
+      "direction": {
+        "beat": "listen",
+        "claim": "NW:lamp"
+      },
+      "reaction": null,
+      "focus": "resident_siluk",
+      "listener": null,
+      "comparison": null,
+      "followup": null,
+      "expression": "neutral",
+      "slots": {}
+    },
+    "gains": {
+      "music": 1,
+      "ambience": 1
+    }
+  },
+  {
+    "case": "fire",
+    "version": "0.20.125",
+    "settings": {
+      "cps": 55,
+      "motion": true
+    },
+    "errors": [],
+    "screens": [
+      "say"
+    ],
+    "meeting": {
+      "active": true,
+      "claim": "NW:fire",
+      "direction": {
+        "beat": "press",
+        "claim": "NW:fire"
+      },
+      "reaction": null,
+      "focus": "resident_nubi",
+      "listener": "resident_nubi",
+      "comparison": null,
+      "followup": null,
+      "expression": "neutral",
+      "slots": {}
+    },
+    "gains": {
+      "music": 0.9,
+      "ambience": 1
+    }
+  },
+  {
+    "case": "save",
+    "version": "0.20.125",
+    "settings": {
+      "cps": 55,
+      "motion": true
+    },
+    "errors": [],
+    "screens": [
+      "say"
+    ],
+    "meeting": {
+      "active": true,
+      "claim": "NW:fire",
+      "direction": {
+        "beat": "press",
+        "claim": "NW:fire"
+      },
+      "reaction": null,
+      "focus": "resident_nubi",
+      "listener": "resident_nubi",
+      "comparison": null,
+      "followup": null,
+      "expression": "neutral",
+      "slots": {}
+    },
+    "gains": {
+      "music": 0.9,
+      "ambience": 1
+    }
+  }
+]

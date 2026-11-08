@@ -75,6 +75,9 @@ init 321 python:
     def r13_nw_stage_end():
         if not r13_nw_meeting_claim(getattr(store,"r13_meeting_claim",None)):return
         r13_meeting_direct_end()
+        store.r13_nw_submit_cue=None
+        store.r13_nw_followup_issue=None
+        store.r13_nw_comparison=None
         store.r13_meeting_active=False
         store.r13_meeting_claim=None
         store.r13_meeting_focus=None
@@ -162,8 +165,17 @@ init 321 python:
         claim=getattr(store,"r13_meeting_claim",None)
         if getattr(store,"r13_meeting_active",False) and r13_nw_meeting_claim(claim):
             options=packet[2] if len(packet)>2 and isinstance(packet[2],dict) else {}
-            beat=options.get("beat") if options.get("beat") in R13_MEETING_BEATS else "listen"
             person=packet[0]
+            token=(identity,index,person,packet[1])
+            fresh=token!=getattr(store,"r13_meeting_line_token",None)
+            cue=getattr(store,"r13_nw_submit_cue",None)
+            beat=r13_nw_line_beat(options,person,cue) if fresh else (getattr(store,"r13_meeting_direction",{}) or {}).get("beat","listen")
+            store.r13_nw_comparison=options.get("comparison") if claim=="NW:lamp" else None
+            if fresh:
+                r13_meeting_reaction_settle()
+                store.r13_meeting_reaction=None
+                if cue and cue.get("remaining",0)>0:
+                    store.r13_nw_submit_cue=dict(cue,remaining=cue["remaining"]-1)
             speaking=person in CAST and person!=r13_viewpoint()
             # Someone who joins mid-meeting (e.g. Badook arriving) takes a seat when first speaking.
             people=list(getattr(store,"r13_nw_meeting_cast",None) or [])
@@ -171,17 +183,32 @@ init 321 python:
                 store.r13_nw_meeting_cast=people+[person]
             store.r13_meeting_direction=dict(beat=beat,claim=claim)
             # The orbit camera reads the speaker's pose from here (room13_meeting_camera.rpy).
-            store.r13_meeting_line_token=(identity,index,person,packet[1])
+            store.r13_meeting_line_token=token
             store.r13_meeting_direction_poses={person:pose} if speaking else {}
             store.r13_meeting_listener=None
             store.r13_meeting_art_slots={}
-            store.r13_meeting_reaction=None
-            if beat=="interrupt" and persistent.room13_motion and not renpy.is_skipping():
+            listener=options.get("listener")
+            if person==r13_viewpoint() and listener in people and r13_v111_person_alive(listener):
+                store.r13_meeting_listener=listener
+                store.r13_meeting_direction_poses[listener]=options.get("listener_pose","neutral")
+            # 회의 답변에 저자가 지정한 놀람만 한 번 보인다. 일반 증언을 놀람으로 바꾸거나
+            # 아빠의 말이 끝나기 전에 상대가 무너진 표정을 먼저 보여 주지 않는다.
+            if fresh and r13_nw_meeting_key(claim) in R13_NW_FEEDBACK_MEETINGS and speaking and beat in ("shaken","cornered") and pose in ("neutral","surprise","flustered","anxious"):
+                reaction_token=("nw",token,getattr(store,"r13_nw_submission_serial",0))
+                seen=list(getattr(store,"r13_meeting_reaction_tokens",[]) or [])
+                if reaction_token not in seen:
+                    store.r13_meeting_reaction_tokens=seen+[reaction_token]
+                    store.r13_meeting_reaction=dict(token=reaction_token,person=person,phase="pending",pose=pose)
+            r13_nw_direct_audio(beat)
+            if fresh and beat=="interrupt" and persistent.room13_motion and not renpy.is_skipping():
                 renpy.show_screen("r13_meeting_cut_in",caption=R13_MEETING_BEATS[beat][0])
             return expression,pose
         return _r13_nw_meeting_direct_line(identity,index,packet,expression,pose)
 
 default r13_nw_pending = None
+default r13_nw_submit_cue = None
+default r13_nw_submission_serial = 0
+default r13_nw_followup_issue = None
 default r13_nw_meeting_cast = []
 
 screen r13_nw_meeting_chrome(claim):
@@ -198,7 +225,7 @@ screen r13_nw_meeting_chrome(claim):
             spacing 3
             # 타이포 V2 단계는 r13_meeting_chrome 과 같다(머리띠 86px 안에 subtitle+title 이 안 들어가 small+body).
             text (r13_meeting_header(r13_debate_session(claim))+("" if r13_nw_unlimited(key) or decided else "  ·  남은 기회 %d / %d"%(left,r13_nw_tries_max(key)))) size (r13_type("small")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT
-            text ("판정 뒤 · 이어서 정할 일" if decided else "쟁점 · "+r13_nw_meeting_issue(key)) size (r13_type("body")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT
+            text (("추가 확인 · "+r13_nw_followup_issue) if r13_nw_followup_issue else "판정 뒤 · 이어서 정할 일" if decided else "쟁점 · "+r13_nw_meeting_issue(key)) size (r13_type("body")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT
         add Solid("#d6bf98") xpos 0 ypos 64 xysize (860,3)
         if left<r13_nw_tries_max(key) and not decided:
             add Solid("#a88043") xpos 0 ypos 64 xysize (int(860*left/float(r13_nw_tries_max(key))),3)

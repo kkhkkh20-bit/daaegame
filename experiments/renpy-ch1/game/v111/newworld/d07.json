@@ -2564,51 +2564,6 @@
         "text": "응. 같이 가자."
       }
     ],
-    "fire_fact_lamp7": [
-      {
-        "id": "NW_FIRE_FACT_LAMP",
-        "speaker": "아빠",
-        "kind": "dialogue",
-        "text": "등잔은 뒷벽 물통 옆에 있었습니다. 뚜껑이 닫혀 있었고 기름도 남아 있었죠.",
-        "expression": "neutral"
-      }
-    ],
-    "fire_fact_door7": [
-      {
-        "id": "NW_FIRE_FACT_DOOR",
-        "speaker": "아빠",
-        "kind": "dialogue",
-        "text": "문 쪽에는 탄 자국이 있었습니다. 거기서 기름 냄새가 나는 천도 주웠고요.",
-        "expression": "neutral"
-      }
-    ],
-    "fire_fact_witness7": [
-      {
-        "id": "NW_FIRE_FACT_WITNESS",
-        "speaker": "아빠",
-        "kind": "dialogue",
-        "text": "보리 씨는 불이 번지기 전에 누비 씨가 창고 문 앞에 서 있는 걸 봤습니다.",
-        "expression": "neutral"
-      }
-    ],
-    "fire_fact_bori_empty7": [
-      {
-        "id": "NW_FIRE_FACT_EMPTY",
-        "speaker": "아빠",
-        "kind": "dialogue",
-        "text": "아이들은 학교로 옮겨졌습니다. 보리 씨가 빈 창고의 불이 더 번지지 않게 막는 걸 제가 봤습니다.",
-        "expression": "neutral"
-      }
-    ],
-    "fire_fact_bori_rescue7": [
-      {
-        "id": "NW_FIRE_FACT_RESCUE",
-        "speaker": "아빠",
-        "kind": "dialogue",
-        "text": "보리 씨가 아이 하나를 안고 나왔고, 두 아이가 뒤따라 나왔습니다. 제가 봤습니다.",
-        "expression": "neutral"
-      }
-    ],
     "fire_question_lamp_keeper7": [
       {
         "id": "NW_FIRE_LAMP_01",
@@ -2736,8 +2691,11 @@
         "id": "NW_FIRE_RECHECK_TRACE",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "아이들을 내보내려고 문 앞에서 무엇을 하신 겁니까? 이 천에는 기름 냄새가 났습니다.",
-        "expression": "neutral"
+        "text": "누비 씨, 아이들을 내보내려고 문 앞에서 무엇을 하신 겁니까? 이 천에는 기름 냄새가 났습니다.",
+        "expression": "neutral",
+        "listener": "누비",
+        "listener_expression": "anxious",
+        "beat": "press"
       }
     ],
     "fire_admission_pot7": [
@@ -2745,8 +2703,11 @@
         "id": "NW_FIRE_RECHECK_POT",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "솥이 차가웠던 건 해 지기 전이었죠. 그 뒤 저녁에 물을 데울 때, 등유를 쓰셨습니까?",
-        "expression": "neutral"
+        "text": "누비 씨, 솥이 차가웠던 건 해 지기 전이었죠. 그 뒤 저녁에 물을 데울 때, 등유를 쓰셨습니까?",
+        "expression": "neutral",
+        "listener": "누비",
+        "listener_expression": "anxious",
+        "beat": "press"
       }
     ]
   },

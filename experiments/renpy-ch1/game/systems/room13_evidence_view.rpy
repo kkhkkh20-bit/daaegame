@@ -135,6 +135,8 @@ init 330 python:
 
     def r13_evidence_picture(key,size):
         """The big picture: authored evidence art, else the list icon enlarged without smoothing."""
+        comparison_art=globals().get("r13_nw_knife_record_art",lambda k:None)(key)
+        if comparison_art is not None:return Transform(comparison_art,xysize=(size,size),fit="contain",nearest=True)
         if not r13_evidence_portrait_person(key):
             path=r13_evidence_art_path(key)
             if path:return Transform(path,xysize=(size,size),fit="contain",nearest=True)

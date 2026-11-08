@@ -37,10 +37,9 @@ testcase fire7_hypothesis_rebut_and_submit:
     click id 'r13_fire_choice_wood_owner'
     assert eval (not room13['arguments'][v111_claim])
     click id 'r13_fire_submit'
-    assert eval (qa_fire_link_row()['view']=='sources' and not room13['arguments'][v111_claim])
-    click id 'r13_fire_sources_submit'
-    # 서류 판정 전에 누비가 실제로 답한다. 질문·연결을 바꿔도 아직 주장이 아니다.
     pause until screen 'say' timeout 30
+    assert eval (not room13['arguments'][v111_claim] and not renpy.get_screen('r13_fire_links'))
+    # 서류 판정 전에 누비가 실제로 답한다. 질문·연결을 바꿔도 아직 주장이 아니다.
     click pos (900,600) until eval (r13_packet and r13_packet[0]=='resident_nubi') timeout 60
     assert eval (not r13_v111_value('tries:fire') and not r13_v111_owned('E07_NUBI') and not room13['arguments'][v111_claim])
     screenshot 'fire7_hypothesis.png'
@@ -50,7 +49,6 @@ testcase fire7_hypothesis_rebut_and_submit:
     click id 'r13_fire_slot_2'
     click id 'r13_fire_choice_lamp_keeper'
     click id 'r13_fire_submit'
-    click id 'r13_fire_sources_submit'
     pause until screen 'say' timeout 30
     click pos (900,600) until eval (r13_packet and r13_packet[0]=='resident_nubi') timeout 60
     assert eval (not r13_v111_value('tries:fire') and not r13_v111_owned('E07_NUBI') and not room13['arguments'][v111_claim])
@@ -61,7 +59,6 @@ testcase fire7_hypothesis_rebut_and_submit:
     click id 'r13_fire_slot_2'
     click id 'r13_fire_choice_door'
     click id 'r13_fire_submit'
-    click id 'r13_fire_sources_submit'
     pause until screen 'say' timeout 30
     click pos (900,600) until eval (r13_packet and r13_packet[0]=='resident_nubi') timeout 60
     assert eval (not r13_v111_value('tries:fire') and not room13['arguments'][v111_claim])
@@ -72,15 +69,12 @@ testcase fire7_hypothesis_rebut_and_submit:
     click id 'r13_fire_choice_door'
     screenshot 'fire7_evidence.png'
     click id 'r13_fire_submit'
-    click id 'r13_fire_sources_submit'
     click pos (900,600) until eval (r13_packet and '문 앞의 탄 자국과 기름 냄새' in r13_packet[1].replace('\n',' ')) timeout 60
     assert eval (not r13_v111_owned('E07_NUBI') and not r13_v111_value('NUBI_admitted_setting_fire'))
     screenshot 'fire7_checked.png'
-    click pos (900,600) until screen 'r13_fire_recheck' timeout 60
-    pause .5
-    assert eval (renpy.get_screen('r13_fire_recheck').scope['options']==('trace',) and not r13_v111_owned('E07_NUBI'))
-    screenshot 'fire7_admission_recheck_trace.png'
-    click id 'r13_fire_recheck_ask'
+    click pos (900,600) until eval (r13_packet and '아이들을 내보내려고 문 앞에서' in r13_packet[1].replace('\n',' ')) timeout 60
+    assert eval (not renpy.get_screen('r13_fire_recheck') and not r13_v111_owned('E07_NUBI'))
+    screenshot 'fire7_admission_trace_direct.png'
     click pos (900,600) until eval (r13_packet and '가져간다고 안 했어요' in r13_packet[1].replace('\n',' ')) timeout 90
     click pos (900,600) until screen 'r13_hub' timeout 60
     assert eval (r13_v111_owned('E07_NUBI') and r13_v111_value('NUBI_admitted_setting_fire') is True and r13_v111_value('NUBI_intent_to_kill')=='unproven')
@@ -111,7 +105,7 @@ testcase fire7_investigate_retry:
     click pos (900,600) until screen 'r13_fire_links' timeout 60
     pause .5
     assert eval (not room13['arguments'][v111_claim] and qa_fire_link_row()['observations']==['lamp','door'])
-    click id 'r13_fire_submit'
+    click id 'r13_fire_sources'
     click id 'r13_fire_sources_change'
     click id 'r13_fire_tab_all'
     click id 'r13_fire_pick_E06_FIRE'
@@ -123,7 +117,7 @@ testcase fire7_investigate_retry:
     pause .5
     assert eval (r13_v111_value('tries:fire')==1 and not r13_v111_owned('E07_NUBI'))
     screenshot 'fire7_retry.png'
-    click id 'r13_fire_submit'
+    click id 'r13_fire_sources'
     click id 'r13_fire_sources_change'
     click id 'r13_fire_tab_all'
     click id 'r13_fire_pick_E06_FIRE'
@@ -179,7 +173,7 @@ testcase fire7_unproven_direct_entry_cannot_admit:
     assert eval (not r13_v111_value('tries:fire') and not r13_v111_value('proof_given:'+R13_FIRE_LINK_FIRST) and not room13['arguments'][v111_claim])
 
 
-# 관찰을 고른 출처를 직접 읽고 확인한다. 같은 기록을 목록에서 다시 찾지 않는다.
+# 관찰 출처는 선택 열람이다. 열람·저장·복원은 제출이나 판정을 만들지 않는다.
 testcase fire7_sources_no_reselect_and_restore:
     pause 1.0
     click '처음부터'
@@ -197,7 +191,7 @@ testcase fire7_sources_no_reselect_and_restore:
     click id 'r13_fire_slot_2'
     click id 'r13_fire_choice_door'
     assert eval (not room13['arguments'][v111_claim] and not qa_fire_link_row()['materials'])
-    click id 'r13_fire_submit'
+    click id 'r13_fire_sources'
     pause .4
     assert eval (qa_fire_link_row()['view']=='sources' and not room13['arguments'][v111_claim])
     assert eval (renpy.get_screen('r13_fire_links').scope['chosen']==['V111:E06_FIRE'])

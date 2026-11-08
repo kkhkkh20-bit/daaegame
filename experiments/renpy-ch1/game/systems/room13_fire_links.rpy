@@ -55,7 +55,7 @@ init 352 python:
 
     def r13_fire_link_sources(state,owned,observations):
         """고른 사실의 실제 출처 제안. 명시적으로 바꾼 자료·구 저장의 선택은 그대로 둔다.
-        이 함수는 arguments에 쓰지 않는다. 출처 확인 화면의 명시적 제출에서만 실제 묶음이 된다.
+        이 함수는 arguments에 쓰지 않는다. 질문 제출 뒤 실제 문답을 마쳐야 묶음이 된다.
         """
         if state.get("source_manual",bool(state.get("materials"))):
             return r13_fire_link_union(state,owned,True)
@@ -152,7 +152,7 @@ init 353 python:
 
     def r13_fire_links_sync(claim,key,row):
         r13_fire_links_write(claim,row)
-        # 첫 쟁점은 출처 확인의 제출 전까지 후보만 저장한다. 둘째 쟁점의 역할 배치는 기존처럼 동기화한다.
+        # 첫 쟁점은 질문 제출 전까지 후보만 저장한다. 둘째 쟁점의 역할 배치는 기존처럼 동기화한다.
         if key!=R13_FIRE_LINK_FIRST:
             r13_pw_set_arguments(claim,r13_fire_link_union(row,r13_pw_entries(),False))
         renpy.restart_interaction()
@@ -182,7 +182,7 @@ init 353 python:
         row=r13_fire_links_state(claim);owned=r13_pw_entries()
         observations=r13_fire_link_observations(owned,r13_v111_value("bori_nubi_door_witness_heard") is True)
         if key==R13_FIRE_LINK_FIRST:
-            # 관찰을 고르는 동안에는 제안만 보인다. 출처 확인의 제출이 자료 묶음을 확정한다.
+            # 관찰을 고르는 동안에는 제안만 보인다. 연결판과 출처 열람의 질문 제출은 같은 문답으로 이어진다.
             row["materials"]=r13_fire_link_sources(row,owned,observations)
         check=r13_fire_link_check(key,row,owned,observations)
         if check!="ready":
@@ -332,10 +332,10 @@ screen r13_fire_links(claim,key,can_press=False,investigate=False,chances=None):
             use r13_control("현장으로" if investigate else "자료 읽기",None,Return("investigate") if investigate else Function(r13_fire_links_change,claim,view="library",field=None,page=0),enabled=ready,width=230,height=footer_h,label_size=small,control_id="r13_fire_investigate")
         fixed:
             xpos 630 ypos footer_y xysize (240,footer_h)
-            use r13_control("자료 읽기" if first else "덧붙일 자료",None,Function(r13_fire_links_change,claim,view="library",field=None if first else "extra",page=0,library_return="board"),enabled=ready,width=240,height=footer_h,label_size=small,control_id="r13_fire_materials")
+            use r13_control("출처 읽기" if first else "덧붙일 자료",None,Function(r13_fire_links_change,claim,view="sources",notice=None) if first else Function(r13_fire_links_change,claim,view="library",field="extra",page=0,library_return="board"),enabled=ready,width=240,height=footer_h,label_size=small,control_id="r13_fire_sources" if first else "r13_fire_materials")
         fixed:
             xpos 884 ypos footer_y xysize (298,footer_h)
-            use r13_control("출처 확인" if first else "연결한 근거 제시",None,Function(r13_fire_links_change,claim,view="sources",notice=None) if first else Function(r13_fire_links_submit,claim,key),enabled=ready and (first or bool(chosen)),primary=True,width=298,height=footer_h,label_size=small,control_id="r13_fire_submit")
+            use r13_control("이 내용으로 묻는다" if first else "연결한 근거 제시",None,Function(r13_fire_links_submit,claim,key),enabled=ready and (first or bool(chosen)),primary=True,width=298,height=footer_h,label_size=small,control_id="r13_fire_submit")
     elif row["view"]=="sources" and first:
         viewport:
             id "r13_fire_sources_view"

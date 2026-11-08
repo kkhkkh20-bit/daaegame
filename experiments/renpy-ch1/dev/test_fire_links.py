@@ -385,7 +385,7 @@ class FireLinkRuntime(unittest.TestCase):
         self.ns["r13_fire_links_pick"](self.claim, ORIGIN, "materials", "V111:E99")
         self.assertEqual((self.ns["r13_fire_link_views"], self.room), before)
 
-    def test_picking_facts_only_proposes_sources_until_explicit_confirm(self):
+    def test_board_question_can_submit_without_opening_source_preview(self):
         before=copy.deepcopy((self.values,self.owned))
         for field,value in (("obs0","lamp"),("obs1","door"),("question","door")):
             self.ns["r13_fire_links_pick"](self.claim,ORIGIN,field,value)
@@ -393,8 +393,7 @@ class FireLinkRuntime(unittest.TestCase):
         self.assertEqual(row["materials"],[])
         self.assertFalse(row["source_manual"])
         self.assertEqual(self.room["arguments"].get(self.claim,[]),[])
-        self.ns["r13_fire_links_change"](self.claim,view="sources")
-        self.assertEqual(self.room["arguments"].get(self.claim,[]),[])
+        self.assertEqual(row["view"],"board")
         self.assertEqual(self.ended,[])
         self.ns["r13_fire_links_submit"](self.claim,ORIGIN)
         self.assertEqual(self.room["arguments"].get(self.claim,[]),[])

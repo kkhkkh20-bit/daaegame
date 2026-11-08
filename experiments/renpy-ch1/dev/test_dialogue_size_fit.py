@@ -68,7 +68,13 @@ class DialogueSizeFit(unittest.TestCase):
             self.assertTrue(row['preserved_840'])
             raw = data('room13-dialogue-player-facing.json')['people'][who]['profiles']['840']
             self.assertEqual(row['profiles']['840']['canvas'], raw['canvas'])
-            self.assertEqual(row['profiles']['840']['frames'], raw['frames'])
+            self.assertEqual({k:{n:v for n,v in f.items() if n!='source_alpha_bounds'}
+                for k,f in row['profiles']['840']['frames'].items()},raw['frames'])
+        for section in ('people','contexts'):
+            for row in self.table[section].values():
+                for profile in row['profiles'].values():
+                    for frame in profile['frames'].values():
+                        self.assertEqual(frame['source_alpha_bounds'],list(alpha_bounds(frame['file'])))
 
     def test_all_runtime_sources_use_final_smooth_geometry_and_proportional_760(self):
         env = self.environment(); get = env['r13_dialogue_source_profile']

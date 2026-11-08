@@ -74,6 +74,9 @@ testcase v111_nw_d05_extra_e21_wins:
             click id "r13_pw_next" until eval (renpy.get_widget("r13_proof_workspace","r13_pw_check_E24") is not None) timeout 20
     click id "r13_pw_check_E24"
     click id "r13_pw_submit"
+    click pos (900,600) until screen "choice" timeout 90
+    assert eval (v111_menu_owner=="hearing_counter5")
+    click "네로 씨, 그 시각 어디 있었죠?"
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("meeting:gate_post")=="win" and r13_v111_value("listed:bami") is not True)
     assert eval (qa_nw_seen("아이 말은 그렇다 치고") and not qa_nw_seen("의심받는 아이 말로"))

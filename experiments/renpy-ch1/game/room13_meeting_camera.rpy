@@ -45,6 +45,46 @@ init 175 python:
     def r13_meeting_portrait_x(session,x,width,focused=False):
         return x
 
+    _R13_MEETING_SOURCE_BOUNDS={}
+    def r13_meeting_portrait_y(person,height,top,pose):
+        fallback=r13_fullbody_close_y(person,height,top,pose)
+        profile=r13_dialogue_source_profile(person,pose,height)
+        # 크기 정규화는 오래된 캔버스 여백을 남길 수 있다. 그 여백을 머리 위치로
+        # 쓰면 콩이처럼 작은 인물의 얼굴이 대사판 아래로 내려간다. 그림 크기는
+        # 유지하고 실제 원본의 발끝을 같은 선에 세운다. 전용 자세는 기존 좌표를 쓴다.
+        if not profile:return fallback
+        if (getattr(store,"r13_meeting_art_slots",{}) or {}).get(person):
+            return fallback
+        frame=profile["frames"].get("neutral")
+        if not frame:return fallback
+        # 웹에서는 Surface 직접 읽기가 실패해도 생성 시 측정한 원본 경계를 쓴다.
+        # 중간 높이로 비례 변환해도 이 값은 원본 픽셀 좌표이므로 그대로 유효하다.
+        source_bounds=frame.get("source_alpha_bounds")
+        if source_bounds and len(source_bounds)==4:
+            bounds=(source_bounds[1],source_bounds[3])
+        elif profile.get("size_fit_revision"):
+            path=frame["file"]
+            if path not in _R13_MEETING_SOURCE_BOUNDS:
+                try:
+                    rect=renpy.display.im.Image(path).load().get_bounding_rect(min_alpha=40)
+                    _R13_MEETING_SOURCE_BOUNDS[path]=(rect.top,rect.bottom) if rect.height else None
+                except Exception:
+                    _R13_MEETING_SOURCE_BOUNDS[path]=None
+            bounds=_R13_MEETING_SOURCE_BOUNDS[path]
+        else:return fallback
+        if bounds is None:return fallback
+        scale=frame.get("scale",1.0);ratio=float(height)/840
+        head=frame["offset"][1]+bounds[0]*scale
+        feet=frame["offset"][1]+bounds[1]*scale
+        # 840 근접의 기존 보통 어른 발선(760)을 유지한다. 큰 귀·머리도
+        # 쟁점 띠 아래로 나오게 하고, 아이에게는 자기 키만큼 낮은 머리선을 준다.
+        return int(round(max(top+664*ratio-feet,top+24*ratio-head)))
+
+    def r13_meeting_background_x(view,count,width):
+        # 한 장의 실제 장소 안에서만 움직인다. 건물 두 동을 거울처럼 잇지 않는다.
+        phase=2*r13_orbit_math.pi*view/max(1,count)
+        return -(width-1280)*(.5+.5*r13_orbit_math.sin(phase))
+
     def r13_meeting_world_tiles(out,normal,mirror,position,y=0):
         width=normal.get_size()[0]
         start=-(position%(2*width))
@@ -138,6 +178,9 @@ init 175 python:
             self.plate=Transform(plate,
                 matrixcolor=TintMatrix(tint)*SaturationMatrix(.86)*BrightnessMatrix(-.035-self.shade))
             self.flip=Transform(self.plate,xzoom=-1)
+            # 실내·현장 한 사람 회의는 한 장소 그림을 약간 넓혀 따라간다.
+            # 원탁·제단의 다인 좌석과 앞 테이블은 기존 회전 투영을 유지한다.
+            self.pan_plate=Transform(self.plate,xysize=(1440,810),nearest=True) if globals().get("R13_MEETING_SOLO") and self.kind in ("room","field") else None
             self.art={};self.offsets={}
             base=r13_meeting_orbit_height(self.session)
             # Build/predict each portrait once per shot, never inside the frame loop.
@@ -150,15 +193,19 @@ init 175 python:
                 art=r13_meeting_reaction_art(person,pose,base,art)
                 gain=(.065 if self.beat in ("interrupt","explain","shaken","gasp","cornered") else .0) if person==self.focus else (-.01 if person==listener else -.05)-self.shade*.35
                 self.art[person]=Transform(art,nearest=not bool(r13_dialogue_source_profile(person,pose,base)),subpixel=True,matrixcolor=BrightnessMatrix(gain))
-                self.offsets[person]=(r13_close_x(person,pose,base)-640,r13_fullbody_close_y(person,base,96,pose))
+                self.offsets[person]=(r13_close_x(person,pose,base)-640,r13_meeting_portrait_y(person,base,96,pose))
             self.surface=R13MeetingSurface(self.session,0,len(self.people),self.shade) if self.kind in ("round","stone") else None
             self.foreground=AlphaMask(self.surface,R13MeetingForeground(self.session,True)) if self.surface is not None else None
         def render(self,width,height,st,at):
             out=renpy.Render(1280,720)
             if renpy.predicting():view=float(self.people.index(self.focus)) if self.focus in self.people else 0.0;moving=False
             else:view,moving=r13_meeting_world_view(self.claim,self.focus)
-            a=renpy.render(self.plate,1280,720,st,at);b=renpy.render(self.flip,1280,720,st,at)
-            r13_meeting_world_tiles(out,a,b,view*2560.0/max(1,len(self.people)))
+            if self.pan_plate is not None:
+                backdrop=renpy.render(self.pan_plate,1440,810,st,at)
+                out.subpixel_blit(backdrop,(r13_meeting_background_x(view,len(self.people),1440),-45))
+            else:
+                a=renpy.render(self.plate,1280,720,st,at);b=renpy.render(self.flip,1280,720,st,at)
+                r13_meeting_world_tiles(out,a,b,view*2560.0/max(1,len(self.people)))
             slots=[]
             if globals().get("R13_MEETING_SOLO") and self.focus in self.people:
                 # 한 사람 모드: 말하는 사람만 가운데에, 한 단(6%) 크게. 옆 사람은 그리지 않는다.
@@ -185,4 +232,4 @@ init 175 python:
                 out.blit(foreground,(0,0))
             if moving:renpy.redraw(self,0)
             return out
-        def visit(self):return [self.plate,self.flip]+list(self.art.values())+([self.foreground] if self.foreground is not None else [])
+        def visit(self):return ([self.pan_plate] if self.pan_plate is not None else [self.plate,self.flip])+list(self.art.values())+([self.foreground] if self.foreground is not None else [])

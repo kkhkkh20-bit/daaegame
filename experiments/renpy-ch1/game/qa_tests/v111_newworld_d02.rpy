@@ -129,18 +129,18 @@ testcase v111_nw_d05_piko_sketch:
     run Function(qa_nw_day5,[])
     run Jump("r13_v111_proof5")
     pause 1.5
-    assert screen "r13_crisis_proof"
-    click "자료 고르기"
-    pause 0.5
-    click "QA V111:E20"
-    pause 0.8
-    click "QA V111:E22"
-    pause 0.8
-    click "QA V111:NW_PIKO_SKETCH4"
-    pause 0.8
-    click "QA 닫기"
-    pause 0.5
-    click "선택한 근거 제출"
+    assert screen "r13_proof_workspace"
+    click id "r13_pw_tab_all"
+    click id "r13_pw_next" until eval (renpy.get_widget('r13_proof_workspace','r13_pw_check_E20') is not None) timeout 20
+    click id "r13_pw_check_E20"
+    click id "r13_pw_next" until eval (renpy.get_widget('r13_proof_workspace','r13_pw_check_E22') is not None) timeout 20
+    click id "r13_pw_check_E22"
+    click id "r13_pw_next" until eval (renpy.get_widget('r13_proof_workspace','r13_pw_check_NW_PIKO_SKETCH4') is not None) timeout 20
+    click id "r13_pw_check_NW_PIKO_SKETCH4"
+    click id "r13_pw_submit"
+    click pos (900,600) until screen "choice" timeout 90
+    assert eval (v111_menu_owner=="hearing_counter5")
+    click "네로 씨, 그 시각 어디 있었죠?"
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("meeting:gate_post")=="win" and r13_v111_value("listed:bami") is not True)
     assert eval (qa_nw_seen("내가 움켜쥔 데가 딱 여기였소") and qa_nw_seen("그림쟁이 낙서 한 장으로"))

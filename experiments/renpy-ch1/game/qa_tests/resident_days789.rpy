@@ -64,8 +64,9 @@ testcase resident7_nubi_admission:
     # 자백 직전 검수는 이미 논증을 통과한 상태로 준비한다. 자료 소유만으로는 자백하지 않는다.
     run Function(r13_v111_set,'proof_given:'+R13_FIRE_LINK_FIRST,['V111:E06_FIRE'])
     run Jump('r13_v111_nubi_admission7')
-    click pos (900,600) until screen 'r13_fire_recheck' timeout 60
-    click id 'r13_fire_recheck_ask'
+    click pos (900,600) until eval (r13_packet and '아이들을 내보내려고 문 앞에서' in r13_packet[1].replace('\n',' ')) timeout 60
+    assert eval (not renpy.get_screen('r13_fire_recheck'))
+    assert eval (r13_meeting_focus=='resident_nubi' and r13_meeting_direct_pose('resident_nubi')=='anxious')
     click pos (900,600) until eval (r13_packet and '가져간다고 안 했어요' in r13_packet[1].replace('\n',' ')) timeout 90
     assert eval (not r13_v111_value('D07_S01_admission_completed') and not r13_v111_owned('E07_NUBI'))
     screenshot 'resident7_nubi.png'

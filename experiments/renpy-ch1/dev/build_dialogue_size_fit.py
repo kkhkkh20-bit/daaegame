@@ -139,6 +139,13 @@ def build():
         p = authored[pose]['profiles']['840']
         feet = [f['offset'][1] + alpha_bounds(f['file'])[3] * f.get('scale', 1.0) for f in p['frames'].values()]
         output['question_poses']['seryeon:' + pose] = dict(height=840, profile=signature({'840': p})['840'], top=math.floor(708 - max(feet)))
+    # 웹판은 이미지의 pygame Surface에 직접 접근하지 못할 수 있다. 원본 픽셀
+    # 기준 경계를 함께 싣고, preserved_840도 같은 메타데이터로 배치한다.
+    for section in ('people', 'contexts'):
+        for entry in output[section].values():
+            for profile in entry['profiles'].values():
+                for frame in profile['frames'].values():
+                    frame['source_alpha_bounds'] = list(alpha_bounds(frame['file']))
     return output
 
 

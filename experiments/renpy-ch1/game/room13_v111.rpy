@@ -500,9 +500,11 @@ label r13_v111_proof_again:
         if r13_v111_proof_accepts(key,correct,room13["arguments"][v111_claim]):
             $ r13_v111_set("proof_given:"+key,sorted(room13["arguments"][v111_claim]))
             $ r13_proof_guide_finish()  # 2026-10-27: 첫 제출 성공 뒤에는 단계 안내를 줄인다.
+            call r13_nw_proof_feedback(key,True)
             return success
         $ v111_last_presented=list(room13["arguments"][v111_claim])
         $ v111_wrong_target="r13_v111_gate_number" if v111_claim=="v111:함께 들어갈 근거를 고른다" and room13["arguments"][v111_claim]==["V111:E03"] and not r13_v111_value("gate_hardened") else wrong
+        call r13_nw_proof_feedback(key,False)
         $ v111_copy=winter_copy.deepcopy(room13); v111_copy["arguments"][v111_claim]=r13_v111_proof_kept(key,correct,v111_last_presented); room13=v111_copy
         if v111_wrong_target:
             return v111_wrong_target

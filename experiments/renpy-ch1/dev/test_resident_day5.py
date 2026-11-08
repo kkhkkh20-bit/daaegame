@@ -33,7 +33,7 @@ class ResidentDay5(Layer):
         self.assertLess(win.index("r13_v111_join(['nabi'])"),win.index("r13_nw_block('nabi_hearing5')"))
         self.assertNotIn("r13_nw_block('nabi_hearing5')",self.label('r13_v111_wrong5'))
         hearing=env['r13_nw_block']('nabi_hearing5')
-        self.assertTrue(any('그 시각엔 네로 씨가 제 물통을' in r[1] for r in hearing))
+        self.assertTrue(any('네로 씨가 식당에서 제 물통을' in r[1] for r in hearing))
 
     def test_bami_takes_paper_only_after_existing_name_check_and_original_commit(self):
         env=self.load()
@@ -53,6 +53,36 @@ class ResidentDay5(Layer):
         self.assertTrue(env['r13_v111_owned']('E26'))
         self.assertEqual(env['r13_v111_value']('bami_status'),'cleared')
         self.assertEqual(env['r13_v111_value']('musoe_care'),'nero_badugi_night_rotation')
+
+    def test_mid_hearing_questions_check_different_facts_without_a_second_proof_or_cost(self):
+        env=self.load()
+        source=self.label('r13_v111_bami_clear5')
+        menu=ast.literal_eval(re.search(r'v111_menu=(\[[^\n]+\])',source).group(1))
+        self.assertEqual(len(menu),3)
+        self.assertEqual([value for _,value in menu],[0,1,2])
+        self.assertTrue(all(len(text)<=24 for text,_ in menu))
+        self.assertLess(source.index("v111_menu_owner='hearing_counter5'"),source.index("r13_v111_join(['nabi'])"))
+        self.assertLess(source.index("r13_nw_block('nabi_hearing5')"),source.index("r13_nw_followup_issue=None"))
+        self.assertNotIn('r13_v111_proof(',source,'첫 성공 뒤 같은 자료를 다시 내도록 요구하지 않는다')
+        self.assertNotIn('r13_nw_retry(',source,'추가 질문으로 이미 이긴 판의 기회를 깎지 않는다')
+        self.assertIn("getattr(store,'v111_hearing_question5',None) in (0,2)",source,'기존 나비 증언 뒤에서 재개하는 구 저장은 새 변수 없이도 이어진다')
+        expected={'hearing_face5':('guard','못 봤소'),
+                  'hearing_coat5':('resident_nero','어르신께 걸쳐'),
+                  'hearing_place5':('resident_nero','물통')}
+        for sketch in (False,True):
+            # E24가 없는 초상화 대체 정답으로 이긴 판도 새 질문을 모두 진행할 수 있다.
+            self.state.room13['evidence']=['V111:E20','V111:E22',
+                'V111:NW_PIKO_SKETCH4' if sketch else 'V111:E24']
+            env['r13_v111_set']('meeting:gate_post','win')
+            env['r13_v111_set']('tries:gate_post',2)
+            for name,(speaker,fact) in expected.items():
+                with self.subTest(sketch=sketch,question=name):
+                    before=copy.deepcopy(self.state.room13)
+                    rows=env['r13_nw_block'](name)
+                    self.assertTrue(any(r[0]==speaker and fact in r[1] for r in rows))
+                    self.assertEqual(before,self.state.room13)
+        self.assertNotIn('NW_D05_S03_A01B',(ROOT/'game/v111/newworld/d05.json').read_text())
+        self.assertNotIn('NW_D05_S03_A01C',(ROOT/'game/v111/newworld/d05.json').read_text())
 
     def test_bami_demands_record_on_loss_but_remains_listed_without_a_guarantee(self):
         env=self.load()

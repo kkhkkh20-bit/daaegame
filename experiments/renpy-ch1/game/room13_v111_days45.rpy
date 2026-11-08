@@ -519,8 +519,25 @@ label r13_v111_bami_clear5:
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0013']),'v111:MS14_D05_S03_L0013')
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0014']),'v111:MS14_D05_S03_L0014')
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0015']),'v111:MS14_D05_S03_L0015')
+    # 밤이 혐의의 기존 승패는 확정됐다. 새 반박에는 플레이어가 확인할 범위를 골라 직접 묻는다.
+    # 세 질문은 각각 목격 범위·착용자·소재를 확인한 뒤 실제 식당 증언으로 이어진다.
+    # 추가 자료나 기회를 요구하지 않아 초상화로 이긴 판과 예전 저장도 같은 결론에 도달한다.
+    $ r13_nw_followup_issue='네로 씨는 그 시각에 어디 있었나'
+    $ v111_menu_owner='hearing_counter5'
+    $ v111_menu=[('돌목 씨, 얼굴을 보셨습니까?',0),('네로 씨, 그 옷을 입었습니까?',1),('네로 씨, 그 시각 어디 있었죠?',2)]
+    $ v111_hearing_question5=renpy.display_menu(v111_menu)
+    if v111_hearing_question5==0:
+        call r13_lines(r13_nw_block('hearing_face5'),'nw:hearing_face5')
+    elif v111_hearing_question5==1:
+        call r13_lines(r13_nw_block('hearing_coat5'),'nw:hearing_coat5')
+    else:
+        call r13_lines(r13_nw_block('hearing_place5'),'nw:hearing_place5')
     $ r13_v111_join(['nabi'])
     call r13_lines(r13_nw_block('nabi_hearing5'),'nw:nabi_hearing5')
+    # 예전 저장이 기존 나비 증언 call 뒤에서 재개되면 새 질문 변수는 없다.
+    if getattr(store,'v111_hearing_question5',None) in (0,2):
+        call r13_lines(r13_nw_block('hearing_coat_answer5'),'nw:hearing_coat_answer5')
+    $ r13_nw_followup_issue=None
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0016']),'v111:MS14_D05_S03_L0016')
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0017']),'v111:MS14_D05_S03_L0017')
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0018']),'v111:MS14_D05_S03_L0018')

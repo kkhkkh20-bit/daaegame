@@ -25,28 +25,17 @@ testcase piko112_latch_hypothesis_and_retry:
     click pos (900,600) until screen 'r13_hub' timeout 90
     run Function(qa_piko112_meeting)
     run Call('qa_rr_scene','r13_v111_knife_fit')
-    click pos (900,600) until screen 'choice' timeout 60
+    click pos (900,600) until screen 'r13_proof_workspace' timeout 60
     assert eval (r13_v111_owned('E33') and r13_v111_owned('E17') and not r13_v111_value('lamp_theft_supported'))
     pause 1.0
-    screenshot 'piko112-hypothesis.png'
-    pause .4
-    keysym 'K_1'
-    click pos (900,600) until screen 'choice' timeout 45
-    assert eval (not r13_v111_value('tries:lamp') and not r13_v111_value('lamp_latch_question3'))
-    pause .4
-    keysym 'K_2'
-    click pos (900,600) until screen 'choice' timeout 45
-    assert eval (not r13_v111_value('tries:lamp') and not r13_v111_value('lamp_latch_question3'))
-    pause .4
-    keysym 'K_3'
-    pause until screen 'r13_proof_workspace' timeout 30
+    screenshot 'piko112-direct-evidence.png'
     pause .5
     click id 'r13_pw_next' until eval (renpy.get_widget('r13_proof_workspace','r13_pw_check_E17') is not None) timeout 20
     click id 'r13_pw_check_E17'
     pause .4
     click id 'r13_pw_submit'
     click pos (900,600) until screen 'r13_proof_workspace' timeout 60
-    assert eval (r13_v111_value('tries:lamp')==1 and r13_v111_value('lamp_latch_question3') is True and not r13_v111_value('lamp_theft_supported'))
+    assert eval (r13_v111_value('tries:lamp')==1 and not r13_v111_value('lamp_latch_question3') and not r13_v111_value('lamp_theft_supported'))
     pause .5
     click id 'r13_pw_next' until eval (renpy.get_widget('r13_proof_workspace','r13_pw_check_E32') is not None) timeout 20
     click id 'r13_pw_check_E32'

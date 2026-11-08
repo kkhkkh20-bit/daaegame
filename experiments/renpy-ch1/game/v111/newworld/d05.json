@@ -219,11 +219,11 @@
     },
     "MS14_D05_S03_L0013": [
       {
-        "text": "밤이가 물었다는 걸 본 사람은 없습니다. 그림을 보십시오. 숙였는데도 처마 기둥 반을 넘습니다. 아이 키가 아닙니다. 그림 속 사람도 소매가 찢어져 있습니다.",
+        "text": "그림을 보십시오. 숙였는데도 처마 기둥 반을 넘고, 소매도 찢어져 있습니다. 밤이의 모습이 아닙니다.",
         "when": "gate_post_won_with_sketch_only"
       },
       {
-        "text": "밤이가 무는 걸 본 사람은 없습니다. 울타리의 천은 어르신 옷에 맞고, 어르신이 돌아오신 건 네로 씨가 봤습니다. 그런데도 밤이를 잡아 두겠습니까?"
+        "text": "울타리의 천은 어르신 옷에 맞습니다. 네로 씨는 그 옷을 입고 돌아온 어르신을 봤고요."
       }
     ],
     "MS14_D05_S03_L0014": [
@@ -241,11 +241,11 @@
     ],
     "MS14_D05_S03_L0015": [
       {
-        "text": "그림만으로 누가 물었는지까지 정할 수는 없습니다.{w=.3}\n오늘 확인한 겉옷과 네로 씨가 본 일도 들어 보십시오.",
+        "text": "그림만으로 물린 순간까지 정할 수는 없습니다. 직접 본 분들께 묻겠습니다.",
         "when": "gate_post_won_with_sketch_only"
       },
       {
-        "text": "어르신은 그날 밤 일을 기억도 못 하십니다.{w=.3}\n장부에 '물었다' 한 줄로 끝낼 일이 아닙니다. 네로 씨 얘기도 들어 보십시오."
+        "text": "어르신은 그날 밤 일을 기억하지 못하십니다. 직접 본 분들께 묻겠습니다."
       }
     ],
     "MS14_D05_S03_L0017": {
@@ -915,22 +915,6 @@
         "kind": "dialogue",
         "text": "그럼 네로가 어디 있었는지도 들읍시다.{w=.4} 어르신을 집에 두겠다고 이 일을 빈칸으로 남길 순 없소.",
         "expression": "neutral"
-      },
-      {
-        "id": "NW_D05_S03_A01B",
-        "speaker": "아빠",
-        "kind": "dialogue",
-        "text": "그 시각 네로 씨는 식당 물통을 날랐습니다.{w=.3}\n어젯밤 나비 씨에게 그렇게 들었습니다.",
-        "expression": "neutral",
-        "when": "gate_post_won_without_e24"
-      },
-      {
-        "id": "NW_D05_S03_A01C",
-        "speaker": "아빠",
-        "kind": "dialogue",
-        "text": "그 겉옷을 입고 소매가 찢긴 채 돌아온 건 어르신입니다. 네로 씨가 그 모습을 봤다고 했고요.{w=.3} 그 시각 네로 씨는 식당 물통을 날랐습니다. 어젯밤 나비 씨에게 그렇게 들었습니다.",
-        "expression": "neutral",
-        "when": "gate_post_won_with_e24"
       }
     ],
     "MS14_D05_S03_L0039": [
@@ -1044,7 +1028,7 @@
         "id": "NW_BD5_NE01",
         "speaker": null,
         "kind": "narration",
-        "text": "덮인 장부 틈에서 주판알 하나가 빠져 바닥을 구른다. 다람의 발끝에서 멈춘다.",
+        "text": "장부 틈에서 주판알 하나가 굴러 나와 다람의 발끝에서 멈춘다.",
         "when": "daram_ready"
       },
       {
@@ -1067,23 +1051,15 @@
         "id": "NW_BD5_NE04",
         "speaker": "다람",
         "kind": "dialogue",
-        "text": "하나 없으면 틀리잖아요.{w=.3} 우리 아빠가 그랬어요.",
+        "text": "하나 없으면 틀리잖아요.",
         "expression": "angry",
-        "when": "daram_ready"
-      },
-      {
-        "id": "NW_BD5_NE05",
-        "speaker": "아빠",
-        "kind": "dialogue",
-        "text": "다, 다람아.{w=.3} 그냥 드려.",
-        "expression": "neutral",
         "when": "daram_ready"
       },
       {
         "id": "NW_BD5_NE06",
         "speaker": null,
         "kind": "narration",
-        "text": "너울이 알을 받아 쥔다. 장부에 끼우지 않고 주머니에 넣는다.",
+        "text": "너울이 알을 받아 주머니에 넣는다.",
         "when": "daram_ready"
       },
       {
@@ -1649,7 +1625,7 @@
         "id": "NW_D05_S03_A02",
         "speaker": "나비",
         "kind": "dialogue",
-        "text": "맞아요.{w=.3} 그 시각엔 네로 씨가 제 물통을 날랐어요.\n식당에서요. 그래서 신발도 다 젖었고요.",
+        "text": "제가 봤어요. 그 시각엔 네로 씨가 식당에서 제 물통을 날랐어요.",
         "expression": "neutral"
       },
       {
@@ -1657,13 +1633,6 @@
         "speaker": null,
         "kind": "narration",
         "text": "너울은 더 말하지 않는다. 네로는 나비 쪽을 보지 않는다."
-      },
-      {
-        "id": "NW_D05_S03_A03N",
-        "speaker": "네로",
-        "kind": "dialogue",
-        "text": "……그 겉옷은 제가 어르신께 걸쳐 드린 거예요.\n그날 저녁, 처마 밑에서 떨고 계셔서요.",
-        "expression": "anxious"
       }
     ],
     "warning_private5": [
@@ -1679,6 +1648,84 @@
         "speaker": null,
         "kind": "narration",
         "text": "초롱이 자리를 뜬 뒤, 나는 다람 쪽으로 봉투를 낮춘다."
+      }
+    ],
+    "hearing_coat_answer5": [
+      {
+        "id": "NW_D05_S03_A03N",
+        "speaker": "네로",
+        "kind": "dialogue",
+        "text": "……그 겉옷은 제가 어르신께 걸쳐 드린 거예요.\n그날 저녁, 처마 밑에서 떨고 계셔서요.",
+        "expression": "anxious"
+      }
+    ],
+    "hearing_face5": [
+      {
+        "id": "NW_MEET5_FACE01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "돌목 씨, 물린 순간 네로 씨 얼굴을 보셨습니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_MEET5_FACE02",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "못 봤소. 검은 게 털인지 옷인지도 몰랐소.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_MEET5_FACE03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "그럼 옷 주인이라는 이유로는 못 정합니다. 그 시각 네로 씨를 본 분께 묻겠습니다.",
+        "expression": "neutral"
+      }
+    ],
+    "hearing_coat5": [
+      {
+        "id": "NW_MEET5_COAT01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "네로 씨, 그날 밤에도 그 겉옷을 입고 있었습니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_MEET5_COAT02",
+        "speaker": "네로",
+        "kind": "dialogue",
+        "text": "아뇨. 그날 저녁 어르신께 걸쳐 드렸어요. 처마 밑에서 떨고 계셔서요.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_MEET5_COAT03",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "빌려줬다는 것도 본인 말이오.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_MEET5_COAT04",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "그러니 그 시각 어디 있었는지, 직접 본 분께 묻겠습니다.",
+        "expression": "neutral"
+      }
+    ],
+    "hearing_place5": [
+      {
+        "id": "NW_MEET5_PLACE01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "네로 씨, 초소에서 소리가 났을 때 어디 있었습니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_MEET5_PLACE02",
+        "speaker": "네로",
+        "kind": "dialogue",
+        "text": "……식당이요. 나비 씨 물통을 날랐어요.",
+        "expression": "anxious"
       }
     ]
   }
