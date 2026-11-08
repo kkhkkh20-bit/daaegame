@@ -1,0 +1,23 @@
+{
+  "day": 7,
+  "scene": "MS14_D07_S01",
+  "location": "laundry",
+  "actors": [
+    "resident_nubi",
+    "resident_bori"
+  ],
+  "values": {
+    "route7": "uncommitted",
+    "OWL_ALIVE": true,
+    "DARAM_DETAINED": false,
+    "location:daram": "school",
+    "DARAM_location": "school",
+    "TOK_ALIVE": true,
+    "tok_workshop_present": true,
+    "tok_hearing_present": false,
+    "KKOMI_ALIVE": false
+  },
+  "label": "r13_v111_bori_witness_heard7",
+  "extra": "s.r13_grant(['V111:E06_FIRE','V111:E06_RESCUE'],'검수상태');s.r13_edit(period=0)",
+  "scenario": "준비한7일차-화재회의"
+}

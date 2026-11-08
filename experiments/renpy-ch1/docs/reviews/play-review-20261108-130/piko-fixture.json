@@ -1,0 +1,18 @@
+{
+  "day": 3,
+  "scene": "MS14_D03_S01",
+  "location": "square",
+  "actors": [
+    "daram",
+    "guard",
+    "neoul"
+  ],
+  "values": {
+    "piko_alive": false,
+    "piko_sheltered": false,
+    "lamp_bound2": false
+  },
+  "label": "r13_v111_piko_dead3",
+  "extra": "s.r13_grant(['V111:E09'],'검수상태');s.r13_edit(period=0)",
+  "scenario": "준비한3일차-피코사건"
+}
