@@ -10,7 +10,7 @@ def meetings():
 SPEAKERS=ast.literal_eval(re.search(r'MS14_SPEAKERS = (\{.*?\})\n',(GAME/'room13_v111_source_cast.rpy').read_text(),re.S).group(1))
 for _m in re.finditer(r'MS14_SPEAKERS\.update\((\{.*?\})\)',(GAME/'room13_v111_later_bindings.rpy').read_text()):SPEAKERS.update(ast.literal_eval(_m.group(1)))
 GENERATED=''.join((GAME/f).read_text() for f in ('room13_v111_days123.rpy','room13_v111_days45.rpy','room13_v111_days610.rpy','room13_v111_days1114.rpy'))
-LABELS=set(re.findall(r'^label (r13_v111_\w+):',GENERATED,re.M))
+LABELS=set(re.findall(r'^label (r13_v111_\w+)(?:\([^\n]*\))?:',GENERATED,re.M))
 RULES=(GAME/'room13_v111_newworld_rules.rpy').read_text()
 
 class MeetingStage(unittest.TestCase):
@@ -33,7 +33,7 @@ class MeetingStage(unittest.TestCase):
     def test_each_meeting_contains_its_proof_and_result(self):
         body={};cur=None
         for line in GENERATED.split('\n'):
-            mm=re.match(r'label (r13_v111_\w+):',line)
+            mm=re.match(r'label (r13_v111_\w+)(?:\([^\n]*\))?:',line)
             if mm:cur=mm.group(1);body[cur]=[];continue
             if cur:body[cur].append(line)
         for key,m in meetings().items():

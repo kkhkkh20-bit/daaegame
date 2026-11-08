@@ -1,5 +1,6 @@
 # 화재의 관찰·질문·책임을 직접 연결한다. 제출 판정과 기회는 기존 proof 라벨이 맡는다.
 default r13_fire_link_views = {}
+default r13_fire_recheck_focus = None
 
 init 352 python:
     R13_FIRE_LINK_FIRST="불이 시작된 곳과 진술을 대조한다"
@@ -74,8 +75,8 @@ init 352 python:
             facts=tuple(state.get("observations",(None,None)))
             available={r[0] for r in observations}
             if len(facts)!=2 or any(f not in available for f in facts) or facts[0]==facts[1]:return "incomplete"
-            # 문 앞 흔적은 등잔 상태와도, 실제 목격과도 연결할 수 있다. 범인은 아직 확정하지 않는다.
-            if set(facts) not in ({"lamp","door"},{"door","witness"}) or state.get("question")!="door":return "links"
+            # 화면은 선택의 문법만 검사한다. 질문의 타당성은 실제 누비의 답변으로 확인한다.
+            if state.get("question") not in dict(R13_FIRE_LINK_QUESTIONS):return "incomplete"
             return "ready"
         roles=list(state.get("roles",(None,None,None)))
         if len(roles)!=3:return "incomplete"
@@ -87,6 +88,26 @@ init 352 python:
         if set(chosen)<=allowed and "V111:E06_FIRE" in chosen and action in chosen and set(chosen)&who:
             if roles[0]!="V111:E06_FIRE" or roles[1] not in who or roles[2]!=action:return "roles"
         return "ready"
+
+    def r13_fire_question_route(payload,observations):
+        """상대가 답할 대목. UI 정답 표시나 자료 판정을 하지 않는다."""
+        if not isinstance(payload,dict):return "incomplete"
+        facts=payload.get("observations")
+        if not isinstance(facts,(list,tuple)) or len(facts)!=2:return "incomplete"
+        available={row[0] for row in observations}
+        if any(not isinstance(fact,str) or fact not in available for fact in facts) or facts[0]==facts[1]:return "incomplete"
+        question=payload.get("question")
+        if not isinstance(question,str) or question not in dict(R13_FIRE_LINK_QUESTIONS):return "incomplete"
+        if question!="door":return question
+        if set(facts) in ({"lamp","door"},{"door","witness"}):return "challenge"
+        return "action" if "bori" in facts else "presence"
+
+    def r13_fire_recheck_options(owned,pot_heard=False):
+        """자백 전 실제로 읽을 수 있는 기록·청취만. 둘 다 합리적인 되물음이다."""
+        options=[]
+        if "V111:E06_FIRE" in owned:options.append("trace")
+        if pot_heard:options.append("pot")
+        return tuple(options)
 
 init 353 python:
     def r13_fire_links_active(key):
@@ -166,14 +187,47 @@ init 353 python:
         check=r13_fire_link_check(key,row,owned,observations)
         if check!="ready":
             messages={"empty":"제시할 자료를 먼저 고르세요.","incomplete":"빈 연결 자리를 채운 뒤 함께 읽어 보세요.",
-                "links":"고른 관찰에서 그 질문이 이어지는지 다시 읽어 보자.","roles":"고른 자료가 각 자리에서 무엇을 설명하는지 다시 읽어 보자."}
+                "roles":"고른 자료가 각 자리에서 무엇을 설명하는지 다시 읽어 보자."}
             r13_fire_links_change(claim,notice=messages[check]);return
         if key==R13_FIRE_LINK_FIRST:
-            row["source_pending"]=False
+            # 문답이 끝나기 전에는 기존 제출 자료를 바꾸거나 성공을 기록하지 않는다.
+            row["source_pending"]=True
             r13_fire_links_write(claim,row)
-            r13_pw_set_arguments(claim,row["materials"])
+            payload=dict(question=row["question"],observations=list(row["observations"]),materials=list(row["materials"]))
+            renpy.end_interaction(("fire_question",payload));return
         else:r13_fire_links_sync(claim,key,row)
         renpy.end_interaction("argue")
+
+    def r13_fire_question_validate(payload):
+        """저장·재진입 때도 현재 소유/선택과 일치하는 문답만 실행한다. 조회는 무변경."""
+        if not isinstance(payload,dict):return "incomplete"
+        claim="v111:"+R13_FIRE_LINK_FIRST
+        row=r13_fire_links_state(claim);owned=r13_pw_entries()
+        observations=r13_fire_link_observations(owned,r13_v111_value("bori_nubi_door_witness_heard") is True)
+        route=r13_fire_question_route(payload,observations)
+        materials=payload.get("materials")
+        if route=="incomplete" or not isinstance(materials,(list,tuple)) or not materials:return "incomplete"
+        if any(not isinstance(material,str) or material not in owned for material in materials):return "incomplete"
+        if list(payload["observations"])!=row["observations"] or payload["question"]!=row["question"]:return "incomplete"
+        if list(materials)!=r13_fire_link_sources(row,owned,observations):return "incomplete"
+        return route
+
+    def r13_fire_question_finish(payload,argue=False):
+        claim="v111:"+R13_FIRE_LINK_FIRST
+        route=r13_fire_question_validate(payload)
+        if route=="incomplete" or (argue and route!="challenge"):return False
+        row=r13_fire_links_state(claim);row.update(view="board",notice=None)
+        if argue:
+            row["source_pending"]=False
+            r13_pw_set_arguments(claim,list(payload["materials"]))
+        r13_fire_links_write(claim,row)
+        return True
+
+    def r13_fire_admission_ready():
+        # 이미 마친 저장은 다시 묻지 않는다. 자료 소유만으로 성공한 것으로 간주하지 않는다.
+        if r13_v111_value("NUBI_admitted_setting_fire"):return True
+        given=r13_v111_value("proof_given:"+R13_FIRE_LINK_FIRST) or []
+        return r13_v111_owned("E06_FIRE") and r13_v111_proof_accepts(R13_FIRE_LINK_FIRST,["E06_FIRE"],given)
 
     def r13_fire_links_edit_sources(claim):
         row=r13_fire_links_state(claim);owned=r13_pw_entries()
@@ -196,6 +250,42 @@ init 353 python:
             return dict(R13_FIRE_LINK_QUESTIONS).get(row["question"],"이어 물을 질문을 고른다")
         value=row["roles"][index]
         return r13_catalog_title(value) if value in r13_pw_entries() else "자료를 놓는다"
+
+screen r13_fire_recheck(options):
+    modal True
+    zorder 50
+    $ focus=r13_fire_recheck_focus if r13_fire_recheck_focus in options else options[0]
+    default ready=False
+    timer .15 action SetScreenVariable("ready",True)
+    $ ink=r13_nb_ink()
+    $ muted=r13_nb_muted()
+    $ small=r13_type("small")
+    $ footer_y=r13_nb_footer_y()
+    $ footer_h=r13_control_height()
+    use r13_notebook_shell("누비의 말과 대조한다",rule_y=132)
+    text "누비: “나가라고…… 하려고 했어요.”" xpos 142 ypos 150 xsize 1040 size r13_type("emphasis") color ink font R13_UI_BOLD_FONT
+    text "확인한 기록이나 앞서 들은 말을 펴고, 그 대목을 직접 묻는다." xpos 142 ypos 202 xsize 1040 size small color muted font R13_UI_FONT
+    for index,option in enumerate(options):
+        fixed:
+            xpos (142+index*530) ypos 252 xysize (510,64)
+            use r13_control("문 앞에서 확인한 것" if option=="trace" else "물을 데웠다는 말",None,[SetVariable("r13_fire_recheck_focus",option),Function(renpy.retain_after_load)],enabled=ready,chosen=focus==option,width=510,height=64,label_size=small,control_id="r13_fire_recheck_"+option)
+    viewport:
+        area (142,334,1040,r13_nb_body_bottom()-334) mousewheel True draggable True scrollbars "vertical"
+        vscrollbar_unscrollable "hide"
+        vbox:
+            xsize 1016 spacing 16
+            if focus=="trace":
+                text r13_catalog_title("V111:E06_FIRE") size r13_type("subtitle") color ink font R13_UI_BOLD_FONT xsize 1000
+                text "문 쪽에서 탄 자국과 기름 냄새 나는 천을 확인했다." size r13_type("emphasis") color ink font R13_UI_FONT xsize 1000
+                text ("출처: "+r13_catalog_origin("V111:E06_FIRE")) size small color muted font R13_UI_FONT xsize 1000
+                use r13_control("현장 그림",None,Show("r13_pw_picture",key="V111:E06_FIRE"),enabled=ready,width=286,height=64,label_size=small,control_id="r13_fire_recheck_picture")
+            else:
+                text "오늘 빨래터에서 직접 들은 말" size r13_type("subtitle") color ink font R13_UI_BOLD_FONT xsize 1000
+                text "누비: “데웠죠. 왜요?”" size r13_type("emphasis") color ink font R13_UI_FONT xsize 1000
+                text "보리: “어제 솥은 차가웠소. 해 지기 전에 내가 물 한 바가지 달라고 했잖소.”" size r13_type("emphasis") color ink font R13_UI_FONT xsize 1000
+    fixed:
+        xpos 742 ypos footer_y xysize (440,footer_h)
+        use r13_control("이 대목으로 되묻는다",None,Return(focus),enabled=ready,primary=True,width=440,height=footer_h,label_size=small,control_id="r13_fire_recheck_ask")
 
 screen r13_fire_links(claim,key,can_press=False,investigate=False,chances=None):
     modal True
@@ -280,7 +370,7 @@ screen r13_fire_links(claim,key,can_press=False,investigate=False,chances=None):
             use r13_control("자료 바꾸기",None,Function(r13_fire_links_edit_sources,claim),enabled=ready,width=274,height=footer_h,label_size=small,control_id="r13_fire_sources_change")
         fixed:
             xpos 884 ypos footer_y xysize (298,footer_h)
-            use r13_control("확인한 출처 제시",None,Function(r13_fire_links_submit,claim,key),enabled=ready and bool(chosen),primary=True,width=298,height=footer_h,label_size=small,control_id="r13_fire_sources_submit")
+            use r13_control("이 내용으로 묻는다",None,Function(r13_fire_links_submit,claim,key),enabled=ready and bool(chosen),primary=True,width=298,height=footer_h,label_size=small,control_id="r13_fire_sources_submit")
     elif row["view"]=="choices":
         $ choices=R13_FIRE_LINK_QUESTIONS if row["field"]=="question" else [(k,t) for k,t,source in observations]
         for index,(value,caption) in enumerate(choices):

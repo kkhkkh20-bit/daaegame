@@ -3,7 +3,7 @@ init 97 python:
     _r13_previous_afm_callback=config.afm_callback
     def r13_auto_can_advance():
         if getattr(store,"room13_mode",False):
-            blocked=("choice","r13_topics","r13_backlog","r13_records","r13_book",
+            blocked=("r13_fire_recheck","choice","r13_topics","r13_backlog","r13_records","r13_book",
                 "r13_map","r13_learning_notes","r13_more_tools","r13_confirm","r13_work_board","pause_menu","save","load",
                 "r13_record_compare","r13_mystery_notebook","r13_item_bag",
                 "r13_tool_notebook","r13_cinematic_view","r13_debate_board","r13_meeting_agenda","r13_meeting_ballot")

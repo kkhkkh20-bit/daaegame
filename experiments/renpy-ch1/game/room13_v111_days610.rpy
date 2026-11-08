@@ -484,6 +484,7 @@ label r13_v111_day7:
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0009']),'v111:MS14_D07_S01_L0009')
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0010']),'v111:MS14_D07_S01_L0010')
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0011']),'v111:MS14_D07_S01_L0011')
+    $ r13_v111_set("fire_laundry_exchange_heard7",True)
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0012']),'v111:MS14_D07_S01_L0012')
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0013']),'v111:MS14_D07_S01_L0013')
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0014']),'v111:MS14_D07_S01_L0014')
@@ -573,6 +574,40 @@ label r13_v111_nubi_proof7:
     call r13_v111_proof('불이 시작된 곳과 진술을 대조한다',['E06_FIRE'],'r13_v111_nubi_first_question7','r13_v111_nubi_wrong7',None,review_return='r13_v111_bori_witness7')
     jump expression _return
 
+label r13_v111_fire_question7(payload):
+    # 첫 연결의 타당성은 상대가 답한다. 기록 정답·기회 처리는 호출한 proof가 그대로 맡는다.
+    $ v111_fire_response=r13_fire_question_validate(payload)
+    if v111_fire_response=="incomplete":
+        return
+    $ v111_fire_fact_index=0
+    while v111_fire_fact_index<2:
+        $ v111_fire_fact=payload["observations"][v111_fire_fact_index]
+        if v111_fire_fact=="lamp":
+            call r13_lines(r13_nw_block('fire_fact_lamp7'),'nw:fire_fact_lamp7')
+        elif v111_fire_fact=="door":
+            call r13_lines(r13_nw_block('fire_fact_door7'),'nw:fire_fact_door7')
+        elif v111_fire_fact=="witness":
+            call r13_lines(r13_nw_block('fire_fact_witness7'),'nw:fire_fact_witness7')
+        elif "V111:E06_EMPTY" in r13_pw_entries():
+            call r13_lines(r13_nw_block('fire_fact_bori_empty7'),'nw:fire_fact_bori_empty7')
+        else:
+            call r13_lines(r13_nw_block('fire_fact_bori_rescue7'),'nw:fire_fact_bori_rescue7')
+        $ v111_fire_fact_index+=1
+    if v111_fire_response=="lamp_keeper":
+        call r13_lines(r13_nw_block('fire_question_lamp_keeper7'),'nw:fire_question_lamp_keeper7')
+    elif v111_fire_response=="wood_owner":
+        call r13_lines(r13_nw_block('fire_question_wood_owner7'),'nw:fire_question_wood_owner7')
+    elif v111_fire_response=="presence":
+        call r13_lines(r13_nw_block('fire_question_presence7'),'nw:fire_question_presence7')
+    elif v111_fire_response=="action":
+        call r13_lines(r13_nw_block('fire_question_action7'),'nw:fire_question_action7')
+    else:
+        call r13_lines(r13_nw_block('fire_question_challenge7'),'nw:fire_question_challenge7')
+    if v111_fire_response=="challenge" and r13_fire_question_finish(payload,argue=True):
+        return "argue"
+    $ r13_fire_question_finish(payload)
+    return
+
 label r13_v111_nubi_wrong7:
     if r13_nw_retry("fire"):
         call r13_lines(r13_v111_lines(["MS14_D07_S01_L0046","MS14_D07_S01_L0047"]),"v111:nubi_wrong7:retry")
@@ -590,6 +625,8 @@ label r13_v111_nubi_first_question7:
     # 이전 판에서 자료 제출을 마친 저장도 이 라벨로 이어진다. 재제출을 요구하지 않는다.
     if not r13_v111_value("bori_nubi_door_witness_heard"):
         jump r13_v111_bori_witness7
+    if not r13_fire_admission_ready():
+        jump r13_v111_nubi_proof7
     if not r13_v111_value("fire_lamp_defense_heard"):
         call r13_lines(r13_nw_block('nubi_lamp_defense7'),'nw:nubi_lamp_defense7:old_success')
         $ r13_v111_set("fire_lamp_defense_heard",True)
@@ -600,11 +637,26 @@ label r13_v111_nubi_first_question7:
 label r13_v111_nubi_admission7:
     if not r13_v111_value("bori_nubi_door_witness_heard"):
         jump r13_v111_bori_witness7
+    if not r13_fire_admission_ready():
+        jump r13_v111_nubi_proof7
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0030']),'v111:MS14_D07_S01_L0030')
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0031']),'v111:MS14_D07_S01_L0031')
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0032']),'v111:MS14_D07_S01_L0032')
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0033']),'v111:MS14_D07_S01_L0033')
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0034']),'v111:MS14_D07_S01_L0034')
+    # 말만으로는 행동을 확정하지 않는다. 이미 가진 흔적이나 실제 청취를 그 말에 대본다.
+    # 옛 저장이 이 지점으로 직접 들어와도 미소유/미청취 내용은 새로 보여 주지 않는다.
+    $ v111_fire_recheck_options=r13_fire_recheck_options(r13_pw_entries(),r13_v111_value('fire_laundry_exchange_heard7') is True)
+    if v111_fire_recheck_options and not r13_v111_value('NUBI_admitted_setting_fire'):
+        $ r13_fire_recheck_focus=None
+        $ v111_fire_recheck_pick=None
+        while v111_fire_recheck_pick not in v111_fire_recheck_options:
+            call screen r13_fire_recheck(v111_fire_recheck_options)
+            $ v111_fire_recheck_pick=_return
+        if v111_fire_recheck_pick=='trace':
+            call r13_lines(r13_nw_block('fire_admission_trace7'),'nw:fire_admission_trace7')
+        else:
+            call r13_lines(r13_nw_block('fire_admission_pot7'),'nw:fire_admission_pot7')
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0035']),'v111:MS14_D07_S01_L0035')
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0036']),'v111:MS14_D07_S01_L0036')
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0037']),'v111:MS14_D07_S01_L0037')

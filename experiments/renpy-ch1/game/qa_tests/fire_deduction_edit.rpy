@@ -39,21 +39,35 @@ testcase fire7_hypothesis_rebut_and_submit:
     click id 'r13_fire_submit'
     assert eval (qa_fire_link_row()['view']=='sources' and not room13['arguments'][v111_claim])
     click id 'r13_fire_sources_submit'
-    pause .3
-    $ qa_fire_notice=qa_fire_link_row()['notice']
-    assert eval (qa_fire_notice and not r13_v111_value('tries:fire') and not r13_v111_owned('E07_NUBI'))
+    # 서류 판정 전에 누비가 실제로 답한다. 질문·연결을 바꿔도 아직 주장이 아니다.
+    pause until screen 'say' timeout 30
+    click pos (900,600) until eval (r13_packet and r13_packet[0]=='resident_nubi') timeout 60
+    assert eval (not r13_v111_value('tries:fire') and not r13_v111_owned('E07_NUBI') and not room13['arguments'][v111_claim])
     screenshot 'fire7_hypothesis.png'
-    click id 'r13_fire_back'
+    click pos (900,600) until screen 'r13_fire_links' timeout 60
+    pause .5
+    assert eval (qa_fire_link_row()['view']=='board' and not qa_fire_link_row()['notice'] and not r13_v111_value('proof_given:'+R13_FIRE_LINK_FIRST))
+    click id 'r13_fire_slot_2'
+    click id 'r13_fire_choice_lamp_keeper'
+    click id 'r13_fire_submit'
+    click id 'r13_fire_sources_submit'
+    pause until screen 'say' timeout 30
+    click pos (900,600) until eval (r13_packet and r13_packet[0]=='resident_nubi') timeout 60
+    assert eval (not r13_v111_value('tries:fire') and not r13_v111_owned('E07_NUBI') and not room13['arguments'][v111_claim])
+    click pos (900,600) until screen 'r13_fire_links' timeout 60
+    pause .5
     click id 'r13_fire_slot_1'
     click id 'r13_fire_choice_witness'
     click id 'r13_fire_slot_2'
     click id 'r13_fire_choice_door'
     click id 'r13_fire_submit'
     click id 'r13_fire_sources_submit'
-    pause .3
-    assert eval (qa_fire_link_row()['notice']==qa_fire_notice and not r13_v111_value('tries:fire'))
-    assert eval (not r13_v111_value('fire_origin_hypothesis') and not r13_v111_owned('E07_NUBI'))
-    click id 'r13_fire_back'
+    pause until screen 'say' timeout 30
+    click pos (900,600) until eval (r13_packet and r13_packet[0]=='resident_nubi') timeout 60
+    assert eval (not r13_v111_value('tries:fire') and not room13['arguments'][v111_claim])
+    click pos (900,600) until screen 'r13_fire_links' timeout 60
+    pause .5
+    assert eval (not r13_v111_value('fire_origin_hypothesis') and not r13_v111_owned('E07_NUBI') and not qa_fire_link_row()['notice'])
     click id 'r13_fire_slot_1'
     click id 'r13_fire_choice_door'
     screenshot 'fire7_evidence.png'
@@ -62,6 +76,11 @@ testcase fire7_hypothesis_rebut_and_submit:
     click pos (900,600) until eval (r13_packet and '문 앞 흔적을 설명할 수 없습니다' in r13_packet[1].replace('\n',' ')) timeout 60
     assert eval (not r13_v111_owned('E07_NUBI') and not r13_v111_value('NUBI_admitted_setting_fire'))
     screenshot 'fire7_checked.png'
+    click pos (900,600) until screen 'r13_fire_recheck' timeout 60
+    pause .5
+    assert eval (renpy.get_screen('r13_fire_recheck').scope['options']==('trace',) and not r13_v111_owned('E07_NUBI'))
+    screenshot 'fire7_admission_recheck_trace.png'
+    click id 'r13_fire_recheck_ask'
     click pos (900,600) until eval (r13_packet and '가져간다고 안 했어요' in r13_packet[1].replace('\n',' ')) timeout 90
     click pos (900,600) until screen 'r13_hub' timeout 60
     assert eval (r13_v111_owned('E07_NUBI') and r13_v111_value('NUBI_admitted_setting_fire') is True and r13_v111_value('NUBI_intent_to_kill')=='unproven')
@@ -99,11 +118,12 @@ testcase fire7_investigate_retry:
     click id 'r13_fire_pick_E06_RESCUE'
     click id 'r13_fire_back'
     click id 'r13_fire_sources_submit'
-    pause until eval (r13_v111_value('tries:fire')==1) timeout 30
+    click pos (900,600) until eval (r13_v111_value('tries:fire')==1) timeout 60
     click pos (900,600) until screen 'r13_fire_links' timeout 60
     pause .5
     assert eval (r13_v111_value('tries:fire')==1 and not r13_v111_owned('E07_NUBI'))
     screenshot 'fire7_retry.png'
+    click id 'r13_fire_submit'
     click id 'r13_fire_sources_change'
     click id 'r13_fire_tab_all'
     click id 'r13_fire_pick_E06_FIRE'
@@ -120,12 +140,43 @@ testcase fire7_old_success_entry:
     click pos (900,600) until screen 'r13_hub' timeout 90
     run Function(qa_fire_deduction7)
     run Function(r13_v111_set,'bori_nubi_door_witness_heard',True)
+    run Function(r13_v111_set,'proof_given:'+R13_FIRE_LINK_FIRST,['V111:E06_FIRE'])
+    run Function(r13_v111_set,'fire_laundry_exchange_heard7',True)
     run Call('qa_rr_scene','r13_v111_nubi_first_question7')
     click pos (900,600) until eval (r13_packet and '문 앞 흔적을 설명할 수 없습니다' in r13_packet[1].replace('\n',' ')) timeout 60
     assert eval (r13_v111_value('fire_lamp_defense_heard') is True and not r13_v111_owned('E07_NUBI'))
+    click pos (900,600) until screen 'r13_fire_recheck' timeout 60
+    pause .5
+    assert eval (renpy.get_screen('r13_fire_recheck').scope['options']==('trace','pot') and not r13_v111_value('tries:fire'))
+    click id 'r13_fire_recheck_pot'
+    run Function(renpy.take_screenshot)
+    run Function(renpy.save,'qa-fire-recheck123')
+    click id 'r13_fire_recheck_trace'
+    run Function(renpy.load,'qa-fire-recheck123')
+    pause until screen 'r13_fire_recheck' timeout 30
+    pause .5
+    assert eval (renpy.get_screen('r13_fire_recheck').scope['focus']=='pot' and not r13_v111_owned('E07_NUBI') and not r13_v111_value('tries:fire'))
+    screenshot 'fire7_admission_recheck_pot.png'
+    click id 'r13_fire_recheck_ask'
     click pos (900,600) until eval (r13_packet and '가져간다고 안 했어요' in r13_packet[1].replace('\n',' ')) timeout 90
     click pos (900,600) until screen 'r13_hub' timeout 60
     assert eval (r13_v111_owned('E07_NUBI') and r13_v111_value('NUBI_intent_to_kill')=='unproven')
+
+
+# 증거를 가졌다는 이유만으로 옛 자백 라벨에 들어가 성공을 만들 수 없다.
+testcase fire7_unproven_direct_entry_cannot_admit:
+    pause 1.0
+    click '처음부터'
+    click pos (900,600) until '편지를 외투 안에' timeout 60
+    click pos (900,600) until screen 'r13_hub' timeout 90
+    run Function(qa_fire_deduction7)
+    run Function(r13_v111_set,'bori_nubi_door_witness_heard',True)
+    run Function(r13_v111_set,'fire_lamp_defense_heard',True)
+    run Call('qa_rr_scene','r13_v111_nubi_admission7')
+    click pos (900,600) until screen 'r13_fire_links' timeout 60
+    pause .5
+    assert eval (not r13_v111_value('NUBI_admitted_setting_fire') and not r13_v111_owned('E07_NUBI'))
+    assert eval (not r13_v111_value('tries:fire') and not r13_v111_value('proof_given:'+R13_FIRE_LINK_FIRST) and not room13['arguments'][v111_claim])
 
 
 # 관찰을 고른 출처를 직접 읽고 확인한다. 같은 기록을 목록에서 다시 찾지 않는다.

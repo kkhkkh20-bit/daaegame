@@ -142,15 +142,38 @@ class FireLinkModel(unittest.TestCase):
             self.assertEqual(sources(row,self.owned,facts),["V111:E01"])
         self.assertEqual(sources(dict(observations=["lamp","door"],materials=["V111:E99"],source_manual=True),self.owned,facts),[])
 
-    def test_first_checks_two_observations_and_question_as_one_combination(self):
-        # 물증끼리 대조하거나 문 앞 흔적과 실제 목격을 연결하는 두 설명을 허용한다.
-        questions = ("door", "lamp_keeper", "wood_owner")
-        valid = {frozenset(("lamp", "door")), frozenset(("door", "witness"))}
+    def test_first_ui_checks_complete_syntax_without_pregrading_available_questions(self):
+        # 어느 관찰·질문을 물을지는 상대가 답한다. 화면은 문법이 맞는 질문을 거절하지 않는다.
         for facts in itertools.permutations(("lamp", "door", "witness", "bori"), 2):
-            for question in questions:
+            for question in ("door", "lamp_keeper", "wood_owner"):
                 with self.subTest(facts=facts, question=question):
-                    expected = "ready" if frozenset(facts) in valid and question == "door" else "links"
-                    self.assertEqual(self.check(ORIGIN, self.first(facts, question)), expected)
+                    self.assertEqual(self.check(ORIGIN, self.first(facts, question)), "ready")
+        for question in (None, "unknown"):
+            self.assertEqual(self.check(ORIGIN, self.first(question=question)), "incomplete")
+
+    def test_actual_question_routes_both_relevant_pairs_and_other_questions(self):
+        observations = self.ns["r13_fire_link_observations"](self.owned, True)
+        route = self.ns["r13_fire_question_route"]
+        for facts in (("lamp", "door"), ("door", "lamp"), ("door", "witness"), ("witness", "door")):
+            row = dict(question="door", observations=list(facts))
+            before = copy.deepcopy((row, observations))
+            self.assertEqual(route(row, observations), "challenge")
+            self.assertEqual((row, observations), before)
+        for question in ("lamp_keeper", "wood_owner"):
+            self.assertEqual(route(dict(question=question, observations=["lamp", "door"]), observations), question)
+        self.assertEqual(route(dict(question="door", observations=["lamp", "witness"]), observations), "presence")
+        self.assertEqual(route(dict(question="door", observations=["lamp", "bori"]), observations), "action")
+        for row in (None, {}, dict(question="door", observations=["door", "door"]),
+                    dict(question="door", observations=["door", "unheard"])):
+            self.assertEqual(route(row, observations), "incomplete")
+
+    def test_recheck_lists_only_owned_trace_and_exchange_actually_heard(self):
+        options = self.ns["r13_fire_recheck_options"]
+        self.assertEqual(options([], False), ())
+        self.assertEqual(options(["V111:E06_RESCUE"], False), ())
+        self.assertEqual(options(["V111:E06_FIRE"], False), ("trace",))
+        self.assertEqual(options([], True), ("pot",))
+        self.assertEqual(options(["V111:E06_FIRE"], True), ("trace", "pot"))
 
     def test_missing_duplicate_or_unheard_fact_never_counts_as_complete_link(self):
         for facts in ((None, "door"), ("door", None), ("door", "door"), ("made-up", "door"), ("lamp",)):
@@ -265,6 +288,28 @@ class FireLinkRuntime(unittest.TestCase):
         self.values.pop("fire_origin_hypothesis")
         self.assertEqual(self.room, before)
 
+    def test_direct_admission_requires_formally_accepted_owned_proof_or_completed_old_save(self):
+        self.ns["r13_v111_owned"] = lambda key: "V111:" + key in self.owned
+        self.ns["r13_v111_proof_accepts"] = proof_rules()["r13_v111_proof_accepts"]
+        ready = self.ns["r13_fire_admission_ready"]
+        before = copy.deepcopy(self.room)
+        self.assertFalse(ready())  # 현장 기록을 가진 것만으로 자백하지 않는다.
+        self.assertEqual(self.room, before)
+        key = "proof_given:" + ORIGIN
+        for given, expected in ((["V111:E06_RESCUE"], False),
+                                (["V111:E06_FIRE", "V111:E01"], False),
+                                (["V111:E06_FIRE"], True)):
+            self.values[key] = given
+            before = copy.deepcopy(self.room)
+            self.assertEqual(ready(), expected)
+            self.assertEqual(self.room, before)
+        self.owned.remove("V111:E06_FIRE")
+        self.assertFalse(ready())
+        self.values["NUBI_admitted_setting_fire"] = True
+        before = copy.deepcopy(self.room)
+        self.assertTrue(ready())  # 완료한 옛 저장은 재제출하지 않는다.
+        self.assertEqual(self.room, before)
+
     def test_query_and_caller_edits_do_not_alias_saved_lists_or_arguments(self):
         row = dict(observations=["lamp", "door"], question="door",
                    materials=["V111:E06_FIRE"], roles=[None, None, None], extra=[])
@@ -279,29 +324,58 @@ class FireLinkRuntime(unittest.TestCase):
         self.assertEqual(self.ns["r13_fire_link_views"], saved)
         self.assertEqual(self.room["arguments"], {})
 
-    def test_incorrect_links_have_one_generic_notice_and_never_mark_individual_answers(self):
-        notices = []
+    def test_other_questions_reach_actual_reply_without_story_or_argument_changes(self):
         before = copy.deepcopy(self.room)
-        for facts, question in ((["lamp", "door"], "wood_owner"), (["lamp", "witness"], "door")):
+        for facts, question, route in ((["lamp", "door"], "wood_owner", "wood_owner"),
+                                       (["lamp", "door"], "lamp_keeper", "lamp_keeper"),
+                                       (["lamp", "witness"], "door", "presence")):
             self.ns["r13_fire_links_write"](self.claim, dict(
                 materials=["V111:E06_FIRE"], observations=facts, question=question))
             self.ns["r13_fire_links_submit"](self.claim, ORIGIN)
-            notices.append(self.ns["r13_fire_links_state"](self.claim)["notice"])
-        self.assertEqual(notices[0], notices[1])
-        self.assertTrue(notices[0])
-        self.assertEqual(self.ended, [])
-        self.assertEqual(self.room, before)
+            action, payload = self.ended[-1]
+            self.assertEqual(action, "fire_question")
+            self.assertEqual(self.ns["r13_fire_question_validate"](payload), route)
+            self.assertFalse(self.ns["r13_fire_question_finish"](payload, argue=True))
+            self.assertTrue(self.ns["r13_fire_question_finish"](payload))
+            self.assertEqual(self.ns["r13_fire_links_state"](self.claim)["view"], "board")
+            self.assertFalse(self.ns["r13_fire_links_state"](self.claim)["notice"])
+            self.assertEqual(self.room, before)
 
-    def test_ready_and_wrong_material_submissions_both_use_existing_argue_return(self):
+    def test_actual_valid_reply_alone_commits_materials_for_unchanged_original_verdict(self):
         before = copy.deepcopy(self.values)
         for material in ("V111:E06_FIRE", "V111:E01"):
             self.ns["r13_fire_links_write"](self.claim, dict(
                 materials=[material], observations=["lamp", "door"], question="door"))
+            arguments = copy.deepcopy(self.room["arguments"])
             self.ns["r13_fire_links_submit"](self.claim, ORIGIN)
-            self.assertEqual(self.ended[-1], "argue")
+            action, payload = self.ended[-1]
+            self.assertEqual(action, "fire_question")
+            self.assertEqual(self.room["arguments"], arguments)
+            self.assertTrue(self.ns["r13_fire_question_finish"](payload, argue=True))
             self.assertEqual(self.room["arguments"][self.claim], [material])
+            self.assertEqual(proof_rules()["r13_v111_proof_accepts"](ORIGIN, ["E06_FIRE"], [material]),
+                             material == "V111:E06_FIRE")
         self.assertEqual(self.values, before)
         self.assertNotIn("NUBI_admitted_setting_fire", self.values)
+
+    def test_question_payload_is_a_copy_and_stale_or_unowned_payload_cannot_commit(self):
+        self.ns["r13_fire_links_write"](self.claim, dict(
+            materials=["V111:E06_FIRE"], observations=["lamp", "door"], question="door"))
+        self.ns["r13_fire_links_submit"](self.claim, ORIGIN)
+        _, payload = self.ended[-1]
+        self.assertTrue(self.ns["r13_fire_links_state"](self.claim)["source_pending"])
+        saved = copy.deepcopy(self.ns["r13_fire_link_views"])
+        changed = copy.deepcopy(payload)
+        changed["observations"][0] = "witness"
+        self.assertEqual(self.ns["r13_fire_question_validate"](changed), "incomplete")
+        changed = copy.deepcopy(payload)
+        changed["materials"].append("V111:E99")
+        self.assertFalse(self.ns["r13_fire_question_finish"](changed, argue=True))
+        self.assertEqual(self.ns["r13_fire_link_views"], saved)
+        self.assertEqual(self.room["arguments"], {})
+        payload["observations"].append("bori")
+        payload["materials"].append("V111:E01")
+        self.assertEqual(self.ns["r13_fire_link_views"], saved)
 
     def test_pick_rejects_unowned_record_and_unheard_witness(self):
         self.values["bori_nubi_door_witness_heard"] = False
@@ -323,8 +397,10 @@ class FireLinkRuntime(unittest.TestCase):
         self.assertEqual(self.room["arguments"].get(self.claim,[]),[])
         self.assertEqual(self.ended,[])
         self.ns["r13_fire_links_submit"](self.claim,ORIGIN)
+        self.assertEqual(self.room["arguments"].get(self.claim,[]),[])
+        self.assertEqual(self.ended[0][0],"fire_question")
+        self.assertTrue(self.ns["r13_fire_question_finish"](self.ended[0][1],argue=True))
         self.assertEqual(self.room["arguments"][self.claim],["V111:E06_FIRE"])
-        self.assertEqual(self.ended,["argue"])
         self.assertEqual((self.values,self.owned),before)
 
     def test_source_editor_preserves_explicit_wrong_selection_for_original_verdict(self):
@@ -338,8 +414,10 @@ class FireLinkRuntime(unittest.TestCase):
         self.ns["r13_fire_links_pick"](self.claim,ORIGIN,"materials","V111:E06_FIRE")
         self.ns["r13_fire_links_pick"](self.claim,ORIGIN,"materials","V111:E01")
         self.ns["r13_fire_links_submit"](self.claim,ORIGIN)
+        self.assertEqual(self.room["arguments"].get(self.claim,[]),[])
+        self.assertEqual(self.ended[0][0],"fire_question")
+        self.assertTrue(self.ns["r13_fire_question_finish"](self.ended[0][1],argue=True))
         self.assertEqual(self.room["arguments"][self.claim],["V111:E01"])
-        self.assertEqual(self.ended,["argue"])
 
     def test_source_preview_save_round_trip_has_no_story_or_argument_mutation(self):
         for field,value in (("obs0","door"),("obs1","witness"),("question","door")):

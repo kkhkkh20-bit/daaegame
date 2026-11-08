@@ -20,17 +20,31 @@ testcase v111_wrong_thoughts_knife:
     run Function(qa_nw_day3_meeting_ready)
     run Jump("r13_v111_trial_knife")
     pause 1.5
+    $ qa_knife_before=(tuple(room13['evidence']),r13_v111_value('silluk_knife_comparison_consent'))
+    # 같은 물건을 다시 보는 일은 주장도 오답도 아니다.
     click "칼날과 안벽 자국을 맞춰 본다"
+    click pos (900,600) until screen "choice" timeout 90
+    assert eval (not r13_v111_value('tries:lamp') and not r13_v111_value('meeting:lamp'))
+    assert eval ((tuple(room13['evidence']),r13_v111_value('silluk_knife_comparison_consent'))==qa_knife_before and not r13_v111_owned('E17') and not r13_v111_owned('E33'))
+    click "이 자국은 실룩 씨 칼이 냈습니다"
     pause 1.0
-    click pos (640,300) until "칼날과 안벽 자국을 맞춰 본다" timeout 90
+    click pos (900,600) until screen "choice" timeout 90
+    assert eval (r13_v111_value("tries:lamp")==1 and qa_wt_upto("menu:trial_knife",1) and r13_v111_value("meeting:lamp") is None)
+    click "칼날과 안벽 자국을 맞춰 본다"
+    click pos (900,600) until screen "choice" timeout 90
     assert eval (r13_v111_value("tries:lamp")==1 and qa_wt_upto("menu:trial_knife",1))
-    click "칼날과 안벽 자국을 맞춰 본다"
+    assert eval ((tuple(room13['evidence']),r13_v111_value('silluk_knife_comparison_consent'))==qa_knife_before)
+    click "이 자국은 실룩 씨 칼이 냈습니다"
     pause 1.0
-    click pos (640,300) until "칼날과 안벽 자국을 맞춰 본다" timeout 90
+    click pos (900,600) until screen "choice" timeout 90
+    assert eval (r13_v111_value("tries:lamp")==2 and qa_wt_upto("menu:trial_knife",2) and r13_v111_value("meeting:lamp") is None)
+    click "칼날과 안벽 자국을 맞춰 본다"
+    click pos (900,600) until screen "choice" timeout 90
     assert eval (r13_v111_value("tries:lamp")==2 and qa_wt_upto("menu:trial_knife",2))
-    click "칼날과 안벽 자국을 맞춰 본다"
+    assert eval ((tuple(room13['evidence']),r13_v111_value('silluk_knife_comparison_consent'))==qa_knife_before)
+    click "이 자국은 실룩 씨 칼이 냈습니다"
     pause 1.0
-    click pos (640,300) until "칼날과 안벽 자국을 맞춰 본다" timeout 90
+    click pos (900,600) until screen "choice" timeout 90
     assert eval (r13_v111_value("tries:lamp")==3 and qa_wt_upto("menu:trial_knife",3) and r13_v111_value("meeting:lamp") is None)
 
 testcase v111_wrong_thoughts_room13:

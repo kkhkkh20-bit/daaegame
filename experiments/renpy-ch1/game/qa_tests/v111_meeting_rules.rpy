@@ -39,7 +39,21 @@ testcase v111_rules_knife_no_consent:
     run Function(r13_v111_set,"silluk_knife_comparison_consent",False)
     run Jump("r13_v111_trial_knife")
     pause 1.5
+    $ qa_knife_observe_before=winter_copy.deepcopy((room13['evidence'],room13['arguments'],r13_v111_value('tries:lamp'),r13_v111_value('silluk_knife_comparison_consent')))
+    click "칼날과 안벽 자국을 맞춰 본다"
+    click pos (900,600) until eval qa_nw_seen("실룩이 칼을 다시 거둔다") timeout 30
+    click pos (900,600) until screen "choice" timeout 15
+    assert eval (qa_knife_observe_before==(room13['evidence'],room13['arguments'],r13_v111_value('tries:lamp'),r13_v111_value('silluk_knife_comparison_consent')))
+    screenshot "knife-observe-no-cost.png"
+    click "자료를 다시 본다"
+    pause .5
+    click "QA 닫기"
+    click pos (900,600) until screen "choice" timeout 15
+    assert eval (qa_knife_observe_before==(room13['evidence'],room13['arguments'],r13_v111_value('tries:lamp'),r13_v111_value('silluk_knife_comparison_consent')))
     click "칼끝과 안쪽 조각을 맞춰 본다"
+    click pos (900,600) until "걸쇠와 파편 발견 위치를 대조한다" timeout 90
+    pause .5
+    click "걸쇠와 파편 발견 위치를 대조한다"
     click pos (900,600) until screen "r13_proof_workspace" timeout 90
     assert eval (v111_claim=="v111:바깥 걸쇠 주장과 발견 위치를 대조한다" and not r13_v111_value("tries:lamp") and r13_v111_value("meeting:lamp") is None)
     assert eval qa_nw_seen("이 칼끝입니다")

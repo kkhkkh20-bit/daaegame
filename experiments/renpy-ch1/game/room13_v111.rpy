@@ -444,6 +444,11 @@ label r13_v111_proof_again:
         call screen r13_proof_workspace(v111_claim,key,can_press=bool(hint) or key in R13_PROOF_RANGE,investigate=bool(review_return),chances=r13_v111_proof_chances(key))
     else:
         call screen r13_crisis_proof(v111_claim,heading="기록 · 자료 대조",can_press=bool(hint) or key in R13_PROOF_RANGE,need_evidence=True,leave_label="자료 다시 보기",chances=r13_v111_proof_chances(key),investigate=bool(review_return))
+    if key==R13_FIRE_LINK_FIRST and isinstance(_return,tuple) and len(_return)==2 and _return[0]=="fire_question":
+        # 관찰의 연결은 상대 문답으로 확인한다. 실제 주장일 때만 아래 자료 판정으로 간다.
+        call r13_v111_fire_question7(_return[1])
+        if _return!="argue":
+            jump r13_v111_proof_again
     if _return=="investigate" and r13_pw_review_target(key,review_return):
         return r13_pw_review_target(key,review_return)
     if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="observe":

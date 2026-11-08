@@ -1173,7 +1173,8 @@ label r13_v111_trial_knife:
     # 2026-10-24 지시서 01 1번 (MEETING_RULES_V2.md 1장 2번 「회의는 언제나 깰 수 있다」): 정답 보기는 칼 대조
     # 동의·파편 소지와 상관없이 늘 보인다. 예전에는 동의가 없으면 오답과 「자료를 다시 본다」만 남아 이길 수 없었다.
     # 실룩은 이 회의 자리에서 아빠가 다시 청하자 칼을 내보인다(MS14_D03_S05_L0012~L0014).
-    $ v111_menu=[('칼날과 안벽 자국을 맞춰 본다',1)] + [('칼끝과 안쪽 조각을 맞춰 본다',0) for _ in [0] if True] + [('자료를 다시 본다',2) for _ in [0] if True]
+    # 기존 0·1·2는 유지한다. 새 3은 자국을 보는 조사이며, 특정 칼이라는 주장과 구분한다.
+    $ v111_menu=[('칼날과 안벽 자국을 맞춰 본다',3),('칼끝과 안쪽 조각을 맞춰 본다',0),('이 자국은 실룩 씨 칼이 냈습니다',1),('자료를 다시 본다',2)]
     $ v111_answer=renpy.display_menu(v111_menu)
     if v111_answer==0:
         jump r13_v111_knife_fit
@@ -1181,10 +1182,17 @@ label r13_v111_trial_knife:
         jump r13_v111_knife_wrong
     if v111_answer==2:
         jump r13_v111_trial_knife_records
+    if v111_answer==3:
+        jump r13_v111_knife_scratch_observe3
     jump r13_v111_trial_knife
 
 label r13_v111_trial_knife_records:
     call screen r13_book(called=True)
+    jump r13_v111_trial_knife
+
+label r13_v111_knife_scratch_observe3:
+    # 관찰은 주장·제출이 아니다. 기회·소유 자료·확인 상태를 바꾸지 않고 고르기로 돌아온다.
+    call r13_lines(r13_nw_block('piko_knife_scratch3'),'nw:piko_knife_scratch3')
     jump r13_v111_trial_knife
 
 label r13_v111_knife_fit:
@@ -1197,7 +1205,7 @@ label r13_v111_knife_fit:
 
 label r13_v111_knife_wrong:
     $ r13_v111_scene('MS14_D03_S05')
-    # New world (event 03): naming by the knife's shape alone costs a chance; the third loses the knife issue.
+    # 칼의 겉모양으로 특정 칼이라고 주장할 때만 기존 회의 기회를 쓴다.
     $ r13_v111_score()
     if r13_nw_retry('lamp'):
         call r13_lines(r13_v111_lines(['MS14_D03_S05_L0068', 'MS14_D03_S05_L0069', 'MS14_D03_S05_L0070']), 'v111:knife_wrong:retry')
