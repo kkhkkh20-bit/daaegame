@@ -15,13 +15,15 @@ class FamilyFocusArt(unittest.TestCase):
         tree = ast.parse(textwrap.dedent(block))
         names = {'R13_EV_CUT_BOX', 'R13_FAMILY_FOCUS_BOX', 'R13_FAMILY_FOCUS_KEYS', 'R13_FAMILY_DRAWING_ART',
                  'R13_EV_CUT_PX', 'R13_EV_CUT_FRAMES', 'R13_EV_CUT_FRAME',
-                 'r13_ev_pixel_frame', 'r13_ep_cut_art'}
+                 'r13_ev_pixel_frame', 'r13_ev_pixel_panel', 'r13_ep_cut_art'}
         selected = [node for node in tree.body if
                     isinstance(node, ast.FunctionDef) and node.name in names or
                     isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id in names for t in node.targets)]
         self.env = dict(Fixed=lambda *items, **kw: dict(items=items, **kw),
                         Transform=lambda art=None, **kw: dict(art=art, **kw),
-                        Solid=lambda color, **kw: dict(color=color, **kw))
+                        Solid=lambda color, **kw: dict(color=color, **kw),
+                        Frame=lambda *args: dict(frame=args), Crop=lambda *args: dict(crop=args),
+                        r13_asset_path=lambda role: role[5:])
         exec(compile(ast.Module(body=selected, type_ignores=[]), '가족 첫 발견 컷', 'exec'), self.env)
 
     def test_existing_evidence_presentation_size_and_asset_are_preserved(self):

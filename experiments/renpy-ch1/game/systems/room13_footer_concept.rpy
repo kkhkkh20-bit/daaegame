@@ -53,5 +53,6 @@ screen r13_concept_more_item(title,icon,command,enabled,width,row_height):
         action command sensitive enabled alt title
         hbox:
             align (.5,.5) spacing 10
-            add R13AntiqueIcon(icon,size=(26 if r13_touch_ui() else 20)) yalign .5 alpha (1.0 if enabled else .5)
+            if icon in R13_SUPPLIED_UI_ICONS:
+                add R13AntiqueIcon(icon,size=(26 if r13_touch_ui() else 20)) yalign .5 alpha (1.0 if enabled else .5)
             text title size (r13_type("body")) font R13_UI_BOLD_FONT yalign .5 color ((r13_type_color("ink")) if enabled else (r13_type_color("disabled")))

@@ -103,16 +103,16 @@ screen r13_evidence_card(key,caption="",conversation=False,notice=False,compact=
         # 패널 아래 띠(670~720)의 오른쪽 끝에 한 줄짜리로 내린다 — 그림 36 + 이름, 높이 44 로 패널에 닿지 않는다.
         frame:
             xanchor 1.0 xpos 1230 yanchor 1.0 ypos 718 padding (10,4,12,4)
-            background R13ActionPanel()
+            background r13_ev_pixel_panel()
             at r13_evidence_reveal
             hbox:
                 spacing 10
                 add Transform(r13_record_icon(key),size=(36,36),fit="contain",nearest=True) yalign .5
-                text r13_catalog_title(key) size r13_type("small") color "#fff4df" yalign .5 xmaximum 360
+                text r13_catalog_title(key) size r13_type("small") color "#493b30" yalign .5 xmaximum 360
     else:
         # 2026-10-28 분기 주행 캡처: 알림 카드가 이름 길이마다 폭이 달랐고(이름에 맞춰 틀이 줄었다), 자리도 화면마다
         # 셋으로 갈렸다(대화 1010·조사 1100·선택 1180). 선택창 목록(오른쪽 600~1236, y 240~)과 조사 화면 오른쪽 화살표를 덮었다.
-        # 증거 칸(R13_EV_CUT_BOX)과 같은 놋쇠 도트 틀의 고정 크기 가로 카드로, 날짜판 바로 아래 한 자리에 둔다.
+        # 증거 칸(R13_EV_CUT_BOX)과 같은 납품 종이 틀의 고정 크기 카드로, 날짜판 아래 한 자리에 둔다.
         # 증거 칸이 떠 있으면 그 아래로 내린다(둘이 겹치지 않게).
         $ card_w,card_h=R13_EVIDENCE_NOTICE_SIZE if notice else R13_EVIDENCE_HELD_SIZE
         $ card_y=(R13_EV_CUT_BOX[1]+R13_EV_CUT_BOX[2]+8) if renpy.showing("r13_ep_cut") else R13_EVIDENCE_NOTICE_TOP
@@ -126,10 +126,10 @@ screen r13_evidence_card(key,caption="",conversation=False,notice=False,compact=
                 if notice:
                     vbox:
                         spacing 2 yalign .5
-                        text "증거 획득" size r13_type("small") color "#e0bd7b" font R13_UI_BOLD_FONT
-                        text r13_catalog_title(key) size r13_type("small") color "#fff4df" xmaximum card_w-card_h-20 layout "subtitle"
+                        text "증거 획득" size r13_type("small") color "#8a3d2b" font R13_UI_BOLD_FONT
+                        text r13_catalog_title(key) size r13_type("small") color "#493b30" xmaximum card_w-card_h-20 layout "subtitle"
                 else:
-                    text r13_catalog_title(key) size r13_type("small") color "#fff4df" yalign .5 xmaximum card_w-card_h-20 layout "subtitle"
+                    text r13_catalog_title(key) size r13_type("small") color "#493b30" yalign .5 xmaximum card_w-card_h-20 layout "subtitle"
 
 screen r13_evidence_found(keys,conversation=False):
     # 0.18.48: above the desk close-up (90) and the item bag (95), which reopen right after a

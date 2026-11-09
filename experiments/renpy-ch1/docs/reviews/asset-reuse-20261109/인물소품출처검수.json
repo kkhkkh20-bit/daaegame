@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-09",
+  "scope": "본편 1부 인물·배경·소품 읽기 전용 출처 점검. 기존 파일·manifest·활성 코드 연결 및 명시한 원화 직접 확인. 전체 인물 전표정·모든 배경 정밀 감수는 아님.",
+  "conclusion": "현재 주연과 장소를 일괄 대체할 별도 기성 팩은 확인하지 못함. 단순 파일 에셋과 외부 제작 팩은 같은 개념이 아니며, 등록 자산에도 자체 생성 이력이 있음. 이번 요청의 안전한 즉시 교체는 UI 자체 작도 부품을 납품 UI로 통일하는 쪽.",
+  "items": [
+    {
+      "item": "피코 4일 처마 옆 스케치",
+      "runtime": "game/assets/evidence/NW_PIKO_SKETCH4.webp",
+      "active": "room13_v111_days45.rpy:r13_v111_piko_sketch4에서 피코 생존·미보유 때 NW_PIKO_SKETCH4 획득",
+      "origin": "dev/make_piko_sketch4.py: 가족 그림 종이를 지운 뒤 Pillow로 인물·기둥·울타리·눈금 직접 작도. 코드에 정식 그림 전 임시라고 명시.",
+      "viewed": true,
+      "reusable_replacement": null,
+      "reason": "보유 NW_PIKO_PAINTING.webp는 다른 그림이며 4일 목격 사실을 담지 않는다. 실제 두 파일 대조 완료.",
+      "action": "전용 대체 납품 필요. 이번에는 새 이미지 생성·임의 대체·자료 삭제하지 않음."
+    },
+    {
+      "item": "3일 걸쇠 단면",
+      "runtime": "game/assets/room13-latch-diagram132.webp",
+      "active": "systems/room13_latch_diagram132.rpy: MS14_D03_S05_L0021~L0024 성공 설명",
+      "origin": "art/latch-diagram132-20261108/manifest.json generator=image_gen.imagegen, FIX132-LATCH 명시 승인 납품. 코드 작도 원화가 아님. 명칭·붉은 강조 테두리만 UI가 붙임.",
+      "viewed": true,
+      "reusable_replacement": null,
+      "reason": "동일한 바깥 판·안쪽 받침·파편 틈을 담은 별도 납품 대체는 검색 범위에서 발견 못함.",
+      "action": "자체 생성 원화까지 제거하려는 정책이라면 전용 대체 납품 필요 항목으로 남김. 기존 manifest는 delivered_linked이므로 미납품으로 덮어쓰지 않음."
+    },
+    {
+      "item": "엄마 도토리 서명",
+      "runtime": "game/assets/room13-acorn-ink-crooked.png",
+      "active": "systems/room13_room_documents.rpy:r13_room_document_original의 E06 원문 끝 표시",
+      "origin": "art/acorn-ink-20261022/README.md: image_gen 기본·삐뚤한 변형 생성, Pillow 크기·알파 정리. 원화 자체 코드 작도 아님.",
+      "viewed": true,
+      "reusable_replacement": "design/resource-intake-20261023/b-ui-main-v2/assets/b_icon_acorn.png는 UI 아이콘으로만 재사용 가능",
+      "reason": "도토리 UI 물체와 손글씨 서명은 역할이 다르고, 삐뚤한 변형은 이야기 단서다.",
+      "action": "서명 원화 유지. UI용 도토리에서만 기존 b_icon_acorn 재사용."
+    },
+    {
+      "item": "가족 그림",
+      "runtime": "game/assets/evidence/D01_FAMILY_DRAWING_131.webp",
+      "active": "systems/room13_ep_art.rpy:R13_FAMILY_DRAWING_ART 및 room13_room_documents.rpy:E30",
+      "origin": "art/family-drawing-20261108 및 art-requests FIX131-FAMILY: 아빠 팔 세 개를 지적하는 대사에 맞춰 승인 교정한 납품본.",
+      "viewed": true,
+      "reusable_replacement": null,
+      "reason": "범용 가족 그림은 팔 세 개라는 관찰과 맞지 않는다.",
+      "action": "유지. 기존 납품본을 같은 자료 역할에서 계속 재사용."
+    },
+    {
+      "item": "피코 사망 현장",
+      "runtime": "game/assets/room13-ep-piko-death3.webp",
+      "active": "systems/room13_piko_scene.rpy 및 3일 사망 첫 대화의 piko-death3 컷",
+      "origin": "art-requests manifest SCENE-PIKO-DEATH3 delivered_linked: 2026-11-05 소유자 명시 요청 전용 납품.",
+      "viewed": true,
+      "reusable_replacement": null,
+      "reason": "범용 생존 피코나 빈 광장으로 바꾸면 현장 관찰과 어긋난다.",
+      "action": "유지. 사망 분기의 기존 전용 장면을 재사용."
+    }
+  ],
+  "not_run": [
+    "소스 수정",
+    "새 그림 생성",
+    "외부 에셋 도입",
+    "SDK·웹 빌드",
+    "요청 manifest 수정"
+  ]
+}

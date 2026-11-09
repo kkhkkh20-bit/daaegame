@@ -108,30 +108,18 @@ init 160 python:
     R13_FAMILY_FOCUS_BOX=(820,92,412)
     R13_FAMILY_FOCUS_KEYS=("E06","D01_FAMILY_DRAWING","D01_SNACK_BAG")
     R13_FAMILY_DRAWING_ART="assets/evidence/D01_FAMILY_DRAWING_131.webp"
-    # 2026-10-28 소유자 「어두운 바탕에 다른 테두리, 도트 느낌이 없어져서 어색」: 매끈한 사각 테두리 대신 도트 한 칸(4px) 단위의
-    # 띠를 겹치고 모서리를 계단으로 깎는다. 띠는 바깥부터 차례로 그린다.
+    # 증거 컷·획득 알림도 납품 B 종이 판을 공유한다. 위치·사진 크기는 기존 계약을 유지한다.
     R13_EV_CUT_PX=4
-    R13_EV_CUT_FRAMES=dict(
-        cream=("#14171d","#EFE3C6","#14171d","#2E3138"),
-        brass=("#14171d","#E3C072","#9A7432","#2E3138"),
-    )
-    R13_EV_CUT_FRAME="brass"   # 소유자 10-28 「놋쇠선 좋다」
+    R13_EV_CUT_FRAMES=("cream","brass")
+    R13_EV_CUT_FRAME="cream"
     def r13_ev_pixel_frame(x,y,side,frame):
-        u=R13_EV_CUT_PX;parts=[]
-        for n,color in enumerate(R13_EV_CUT_FRAMES[frame]):
-            o=n*u;w=side-2*o
-            # 가로 띠는 양 끝 한 칸, 세로 띠는 위아래 한 칸을 비워 모서리가 계단처럼 깎인다
-            parts.append(Solid(color,xysize=(w-2*u,w),xpos=x+o+u,ypos=y+o))
-            parts.append(Solid(color,xysize=(w,w-2*u),xpos=x+o,ypos=y+o+u))
-        return Fixed(*parts,xysize=(1280,720))
-    def r13_ev_pixel_panel(w,h,frame=None):
-        """증거 칸과 같은 놋쇠 도트 틀을 (0,0)부터 w x h 로. 자료 알림 카드가 쓴다."""
-        u=R13_EV_CUT_PX;parts=[]
-        for n,color in enumerate(R13_EV_CUT_FRAMES[frame or R13_EV_CUT_FRAME]):
-            o=n*u;ww=w-2*o;hh=h-2*o
-            parts.append(Solid(color,xysize=(ww-2*u,hh),xpos=o+u,ypos=o))
-            parts.append(Solid(color,xysize=(ww,hh-2*u),xpos=o,ypos=o+u))
-        return Fixed(*parts,xysize=(w,h))
+        return Fixed(Transform(r13_ev_pixel_panel(side,side,frame),xpos=x,ypos=y),xysize=(1280,720))
+
+    def r13_ev_pixel_panel(w=None,h=None,frame=None):
+        # 기존 이름/인자는 저장 호환용이다. 납품 원본의 테두리는 고정하고 종이 가운데만 늘린다.
+        paper=Crop((8,8,224,44),r13_asset_path("file:assets/ui-b-field/b_panel_small.png"))
+        panel=Frame(paper,16,16)
+        return Transform(panel,xysize=(w,h)) if w and h else panel
     def r13_ep_cut_art(name):
         if name=="bell":return r13_ep_bell_art()
         if name in ("v111_reunion_far","v111_reunion_close"):

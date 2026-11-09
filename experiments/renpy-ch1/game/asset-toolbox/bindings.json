@@ -50277,7 +50277,7 @@
     "button.main_primary": {
       "label": "메인 빨강 버튼",
       "match": [
-        "pack:button-fit-v1/main_primary"
+        "pack:button-states-v1/primary"
       ],
       "states": [
         "basic",
@@ -50292,8 +50292,8 @@
       },
       "group": "button.main_primary",
       "canvas_size": [
-        200,
-        76
+        160,
+        52
       ],
       "forbid_render": [
         "frame"
@@ -50302,7 +50302,7 @@
     "button.main_standard": {
       "label": "메인 크림 버튼",
       "match": [
-        "pack:button-fit-v1/main_standard"
+        "pack:button-states-v1/standard"
       ],
       "states": [
         "basic",
@@ -50317,8 +50317,8 @@
       },
       "group": "button.main_standard",
       "canvas_size": [
-        200,
-        76
+        160,
+        52
       ],
       "forbid_render": [
         "frame"
@@ -50327,7 +50327,7 @@
     "button.topic_primary": {
       "label": "질문 도구 빨강 버튼",
       "match": [
-        "pack:button-fit-v1/topic_primary"
+        "pack:button-states-v1/primary"
       ],
       "states": [
         "basic",
@@ -50342,8 +50342,8 @@
       },
       "group": "button.topic_primary",
       "canvas_size": [
-        162,
-        68
+        160,
+        52
       ],
       "forbid_render": [
         "frame"
@@ -50352,7 +50352,7 @@
     "button.topic_standard": {
       "label": "질문 도구 크림 버튼",
       "match": [
-        "pack:button-fit-v1/topic_standard"
+        "pack:button-states-v1/standard"
       ],
       "states": [
         "basic",
@@ -50367,8 +50367,8 @@
       },
       "group": "button.topic_standard",
       "canvas_size": [
-        162,
-        68
+        160,
+        52
       ],
       "forbid_render": [
         "frame"
@@ -50617,7 +50617,7 @@
     "button.question_flat_primary": {
       "label": "질문 도구 primary",
       "match": [
-        "pack:question-map-flat-v1/primary"
+        "pack:button-states-v1/primary"
       ],
       "states": [
         "basic",
@@ -50645,7 +50645,7 @@
     "button.question_flat_standard": {
       "label": "질문 도구 standard",
       "match": [
-        "pack:question-map-flat-v1/standard"
+        "pack:button-states-v1/standard"
       ],
       "states": [
         "basic",
@@ -50673,7 +50673,7 @@
     "button.map_flat_primary": {
       "label": "지도 하단 primary",
       "match": [
-        "pack:question-map-flat-v1/primary"
+        "pack:button-states-v1/primary"
       ],
       "states": [
         "basic",
@@ -50701,7 +50701,7 @@
     "button.map_flat_standard": {
       "label": "지도 하단 standard",
       "match": [
-        "pack:question-map-flat-v1/standard"
+        "pack:button-states-v1/standard"
       ],
       "states": [
         "basic",
@@ -79378,6 +79378,58 @@
       ],
       "group": "file:assets/room13-latch-diagram132.webp",
       "refresh": "restart"
+    },
+    "surface.supplied.button.standard": {
+      "label": "납품 B 크림 공통 판",
+      "match": [
+        "pack:supplied-surfaces-v1/standard"
+      ],
+      "states": [
+        "basic",
+        "pressed",
+        "selected",
+        "disabled"
+      ],
+      "media": "image",
+      "refresh": "live",
+      "fallback": {
+        "hover": "pressed"
+      },
+      "group": "surface.supplied.button.standard",
+      "requires_render": [
+        "frame"
+      ],
+      "consumers": [
+        "공통 조작 버튼",
+        "자료 보조 조작",
+        "지도 하단 조작"
+      ]
+    },
+    "surface.supplied.button.primary": {
+      "label": "납품 B 빨강 공통 판",
+      "match": [
+        "pack:supplied-surfaces-v1/primary"
+      ],
+      "states": [
+        "basic",
+        "pressed",
+        "selected",
+        "disabled"
+      ],
+      "media": "image",
+      "refresh": "live",
+      "fallback": {
+        "hover": "pressed"
+      },
+      "group": "surface.supplied.button.primary",
+      "requires_render": [
+        "frame"
+      ],
+      "consumers": [
+        "공통 조작 버튼",
+        "자료 보조 조작",
+        "지도 하단 조작"
+      ]
     }
   }
 }

@@ -23,31 +23,37 @@ init 58 python:
             r.blit(renpy.render(inset,max(1,w-10),max(1,h-10),st,at),(5,5))
             return r
 
+    def r13_supplied_button_surface(primary=False,focused=False,chosen=False,disabled=False):
+        # 납품된 B 버튼의 네 상태를 공통 판의 9-slice 계약으로 조회한다.
+        # 작은 button.* 역할의 원본 비율·균일 배율 계약과 분리한다.
+        state="disabled" if disabled else "pressed" if focused else "selected" if chosen else "basic"
+        face=r13_asset("surface.supplied.button."+("primary" if primary else "standard"),state)
+        return Transform(face,alpha=.55) if disabled else face
+
     class R13ControlSurface(renpy.Displayable):
-        """A whole control, never a small band inside a larger invisible button."""
+        """납품 B 버튼 판을 공통 조작 크기에 맞춘다. 모서리·테두리는 고정한다."""
         def __init__(self,primary=False,chosen=False,hovered=False,disabled=False,**kwargs):
             super(R13ControlSurface,self).__init__(**kwargs)
             self.primary=primary;self.chosen=chosen;self.hovered=hovered;self.disabled=disabled
+            self.face=r13_supplied_button_surface(primary=primary or chosen,focused=hovered,chosen=chosen,disabled=disabled)
+        def visit(self):
+            return [self.face]
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h)
-            face=r13_sticker_button(primary=self.primary or self.chosen,focused=self.hovered,disabled=self.disabled)
-            r.blit(renpy.render(Transform(face,xysize=(w,h)),w,h,st,at),(0,0))
+            r.blit(renpy.render(Transform(self.face,xysize=(w,h)),w,h,st,at),(0,0))
             return r
 
     class R13SoftButtonSurface(renpy.Displayable):
-        """2026-10-26 시안: 눈이 덜 피로한 보조 버튼 판. 연한 종이 바탕에 가는 갈색 테두리, 올리면 빨강."""
+        """자료·질문 보조 조작도 납품된 같은 크림 종이 판을 사용한다."""
         def __init__(self,hovered=False,chosen=False,disabled=False,**kwargs):
             super(R13SoftButtonSurface,self).__init__(**kwargs)
             self.hovered=hovered;self.chosen=chosen;self.disabled=disabled
+            self.face=r13_supplied_button_surface(focused=hovered,chosen=chosen,disabled=disabled)
+        def visit(self):
+            return [self.face]
         def render(self,width,height,st,at):
-            w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h);c=r.canvas()
-            edge="#c9b49a" if self.disabled else "#a3352c" if (self.hovered or self.chosen) else "#b39572"
-            face="#efe6d6" if self.disabled else "#f3dfbb" if (self.hovered or self.chosen) else "#f8efdf"
-            rad=min(10,h//3)
-            for (x,y,ww,hh,col) in ((0,0,w,h,edge),(2,2,w-4,h-4,face)):
-                c.rect(col,(x+rad,y,ww-2*rad,hh));c.rect(col,(x,y+rad,ww,hh-2*rad))
-                for cx,cy in ((x+rad,y+rad),(x+ww-rad-1,y+rad),(x+rad,y+hh-rad-1),(x+ww-rad-1,y+hh-rad-1)):
-                    c.circle(col,(cx,cy),rad)
+            w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h)
+            r.blit(renpy.render(Transform(self.face,xysize=(w,h)),w,h,st,at),(0,0))
             return r
 
     class R13PaperFrame(renpy.Displayable):

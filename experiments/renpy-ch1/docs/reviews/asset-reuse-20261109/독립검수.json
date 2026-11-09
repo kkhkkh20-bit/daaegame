@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-09",
+  "reviewer": "evidence_notice134",
+  "result": "검토 범위에서 추가 차단 사항 없음",
+  "scope": "부모 요청의 세 소스 파일 읽기 전용 독립 검수 및 부모가 실행한 0.20.135 SDK 결과·실제 캡처 대조. SDK·빌드·브라우저 조작은 직접 실행하지 않았다.",
+  "sources": [
+    "game/room13_antique_icons.rpy",
+    "game/room13_feedback.rpy",
+    "game/systems/room13_ep_art.rpy"
+  ],
+  "source_review": {
+    "supplied_reuse": [
+      "아이콘은 ui-b-field/ui-b-question/ui-b-options/ui-b-dialogue/map-status의 기존 납품 PNG와 Crop을 사용한다. Canvas로 직접 만든 기존 장식은 제거되고 전용 납품이 없는 종류는 빈 Render로 남긴다.",
+      "아이콘 종류 16개의 원본 파일 존재 및 Crop 범위가 원본 크기 안에 듦을 확인했다.",
+      "기존 R13AntiqueIcon 클래스 이름과 생성자·kind/size 속성을 유지한다."
+    ],
+    "frame": [
+      "기존 b_panel_small.png(240×60)에서 (8,8,224,44)를 자르고 Frame(...,16,16)으로 모서리를 고정한다.",
+      "증거 컷/획득 알림의 패널만 교체하며 외곽 크기·그림 크기·표시 좌표 계약을 유지한다.",
+      "추가 호출처인 latch_diagram132는 기존의 짙은 글자/안쪽 종이 배경을 유지해 새 종이 테두리로 인한 글자 대비 손실이 없다."
+    ],
+    "state_invariance": [
+      "feedback diff는 패널 배경 및 글자 색 변경만 포함한다.",
+      "획득 queue 병합·중복 방지·메뉴 숨김·index별3.2초 timer 코드는 134와 동일하다.",
+      "세 검수 파일에 서사 값·시간·증거 지급·정답 변경이 없다. 새 이미지 생성이나 배경/인물 이미지 교체가 없다."
+    ]
+  },
+  "visual_review": {
+    "paths": [
+      "native/b_ui_button_states/button-states.png",
+      "native/b_ui_button_states/button-pressed.png",
+      "native/evidence134_hidden_queue_and_append/notice134-original-acquired.png",
+      "native/evidence134_hidden_queue_and_append/notice134-corrected-list-acquired.png"
+    ],
+    "checked": [
+      "빨강·크림·넓은 선택의 기본/선택/비활성 상태가 같은 납품 모서리와 종이·잉크 색으로 보인다. 선택 상태 외곽 표시는 식별된다.",
+      "E03/E05의 실제 증거 이미지·획득 표시·자료명이 새 종이 카드에서 읽힌다.",
+      "본 SDK 화면에서 날짜·상단 버튼·인물 얼굴을 알림 카드가 가리지 않는다."
+    ],
+    "limits": [
+      "PC SDK 캡처 검토이며 모바일/최종 공개 웹 및 전 장면의 그림체 검수를 포함하지 않는다.",
+      "전용 납품이 없는 장식은 없어지므로 모든 종류의 구별 아이콘이 남아 있다는 의미는 아니다. 각 행동/회의의 글자가 의미를 전하는 구현이다."
+    ]
+  },
+  "runtime_results": [
+    {
+      "case": "b_ui_button_states",
+      "status": "PASSED",
+      "seconds": 14.3
+    },
+    {
+      "case": "evidence134_hidden_queue_and_append",
+      "status": "PASSED",
+      "seconds": 35.4
+    },
+    {
+      "case": "proof_reading_pc_selection_independent",
+      "status": "PASSED",
+      "seconds": 22.4
+    },
+    {
+      "case": "b_asset_toolbox",
+      "status": "PASSED",
+      "seconds": 17.3
+    }
+  ],
+  "runtime_notes": "증거 queue SDK 로그에서 0.20.135·7 assertion 모두 PASSED를 확인했다. 부모 실행 결과를 대조한 것이며 검수자가 새 시험을 실행하지 않았다."
+}

@@ -86,7 +86,7 @@ screen r13_control(caption,icon,command,enabled=True,chosen=False,primary=False,
         action command sensitive enabled selected chosen alt (caption or "메뉴")
         hbox:
             align (.5,.5) spacing R13_CONTROL["icon_gap"]
-            if icon:
+            if icon in R13_SUPPLIED_UI_ICONS:
                 add R13AntiqueIcon(icon,size=icon_size or R13_CONTROL["icon"]) yalign .5 alpha (1.0 if enabled else .5)
             text caption:
                 font R13_UI_BOLD_FONT size (label_size or r13_read_size(R13_CONTROL["text"],R13_CONTROL["large_text"]))

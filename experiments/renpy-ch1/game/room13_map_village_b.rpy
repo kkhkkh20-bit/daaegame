@@ -103,38 +103,16 @@ init 65 python:
         return max(144,len(label)*21+24)*((1.3 if r13_touch_ui() else 1.0) if scaled else 1.0)
 
     class R13VillageBSurface(renpy.Displayable):
-        """지도 하단 조작(선택 표시판·지역 탭·이동·현장으로)이 함께 쓰는 한 가지 판.
-
-        2026-10-27 소유자 「버튼 크기·폰트가 각각이고 글씨가 눌린다」: 공통 R13ButtonStateVisual 은 160x52 원본의
-        비율(3.4:1)을 지키려고 버튼 안에 더 작은 종이를 놓고(「마을」 106x44 → 종이 31px) 글자를 그 종이에 맞춰
-        Transform(zoom) 으로 줄였다. 그래서 같은 줄에서 종이 높이가 31·42·44 로 갈리고 「마을」만 20px 로 흐릿하게
-        눌렸다. 그림을 늘이지도 글자를 줄이지도 않고 칸 크기 그대로 캔버스에 그린다 — 평면 버튼 자산과 같은 모양
-        (둥근 네모·남색 2px 테두리·빨강/크림 면). 보조 버튼은 R13_SOFT_FLAT_BUTTONS 가 켜진 동안 같은 연한 판을 쓴다."""
-        PRIMARY={"basic":("#d9434c","#c74850"),"pressed":("#b8323e","#a83641"),"selected":("#c12f3f","#b03441"),"disabled":("#d6b9b7","#d3bab8")}
-        STANDARD={"basic":"#fff5e3","pressed":"#e8dfcd","selected":"#dce8f0","disabled":"#eae6dc"}
+        """지도 조작은 같은 납품 B 판을 쓰며 기존 클릭 영역·글자 크기를 유지한다."""
         def __init__(self,primary=False,chosen=False,hovered=False,disabled=False,**kwargs):
             super(R13VillageBSurface,self).__init__(**kwargs)
             self.primary=primary;self.chosen=chosen;self.hovered=hovered;self.disabled=disabled
-            self.soft=R13SoftButtonSurface(hovered=hovered,chosen=chosen,disabled=disabled)
+            self.face=r13_supplied_button_surface(primary=primary,focused=hovered,chosen=chosen,disabled=disabled)
         def visit(self):
-            return [self.soft]
+            return [self.face]
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h)
-            soft=getattr(store,"R13_SOFT_FLAT_BUTTONS",False)
-            if not self.primary and soft:
-                r.blit(renpy.render(self.soft,w,h,st,at),(0,0))
-                return r
-            state="disabled" if self.disabled else "pressed" if self.hovered else "selected" if self.chosen else "basic"
-            if self.primary:
-                face=self.PRIMARY[state][1 if soft else 0]  # 켜진 동안은 채도 .85 (SaturationMatrix 와 같은 값)
-            else:
-                face=self.STANDARD[state]
-            edge="#a9adb0" if self.disabled else "#293c53"
-            c=r.canvas();rad=min(10,h//3)
-            for (x,y,ww,hh,col) in ((0,0,w,h,edge),(2,2,w-4,h-4,face)):
-                c.rect(col,(x+rad,y,ww-2*rad,hh));c.rect(col,(x,y+rad,ww,hh-2*rad))
-                for cx,cy in ((x+rad,y+rad),(x+ww-rad-1,y+rad),(x+rad,y+hh-rad-1),(x+ww-rad-1,y+hh-rad-1)):
-                    c.circle(col,(cx,cy),rad)
+            r.blit(renpy.render(Transform(self.face,xysize=(w,h)),w,h,st,at),(0,0))
             return r
 
     def r13_village_b_control_text():

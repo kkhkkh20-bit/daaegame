@@ -1,144 +1,32 @@
-# Original compact pixel pictograms, drawn with the UI palette; no bitmap downloads.
+# 납품된 B 수첩 아이콘을 재사용한다. 클래스 이름은 기존 저장 호환을 위해 둔다.
 init 58 python:
+    R13_SUPPLIED_UI_ICONS={
+        "record":("ui-b-field/b_icon_book.png",(19,16,25,32)),
+        "backlog":("ui-b-field/b_icon_book.png",(19,16,25,32)),
+        "testimony":("ui-b-question/icon_document.png",(14,8,36,48)),
+        "evidence":("ui-b-question/icon_document.png",(14,8,36,48)),
+        "present":("ui-b-question/icon_document.png",(14,8,36,48)),
+        "map":("ui-b-field/b_icon_map.png",(16,20,32,23)),
+        "dialogue":("ui-b-field/b_icon_more.png",(16,20,32,24)),
+        "settings":("ui-b-field/b_icon_more.png",(16,20,32,24)),
+        "investigate":("ui-b-options/daram_diary_sticker_magnifier.png",(0,7,404,411)),
+        "skip":("ui-b-dialogue/b_icon_next.png",(18,16,27,32)),
+        "check":("ui-b-question/b_icon_acorn_done.png",(20,16,24,32)),
+        "lock":("map-status/locked.png",(15,7,66,81)),
+    }
+    # 회의 종류는 옆의 제목이 구분한다. 회의 공통 표시는 같은 대화 말풍선을 쓴다.
+    for _r13_icon_meeting in ("round","stone","field","room"):
+        R13_SUPPLIED_UI_ICONS["meeting_"+_r13_icon_meeting]=R13_SUPPLIED_UI_ICONS["dialogue"]
+
     class R13AntiqueIcon(renpy.Displayable):
         def __init__(self,kind,size=24,**kwargs):
             super(R13AntiqueIcon,self).__init__(**kwargs)
             self.kind=kind;self.size=size
         def render(self,width,height,st,at):
-            r=renpy.Render(self.size,self.size);c=r.canvas();z=self.size/32.0
-            ink='#392b25';gold='#b88b49';light='#efd49b';paper='#eedbb1';shade='#bda077';leather='#87503b'
-            def poly(col,points):c.polygon(col,[(int(x*z),int(y*z)) for x,y in points])
-            def box(col,x,y,w,h):c.rect(col,(int(x*z),int(y*z),max(1,int(w*z)),max(1,int(h*z))))
-            def line(col,a,b,n=1):c.line(col,(int(a[0]*z),int(a[1]*z)),(int(b[0]*z),int(b[1]*z)),max(1,int(n*z)))
-            k=self.kind
-            if k=='lock':
-                box(shade,10,3,14,16);box(paper,13,6,8,10)
-                box(shade,6,14,20,16);box(light,9,17,3,10)
-                box(paper,17,20,3,6)
-            elif k=='check':
-                box(ink,2,2,28,28);box(shade,4,4,24,24);box(paper,5,5,22,22)
-                line('#657451',(8,16),(14,22),3);line('#657451',(14,22),(25,9),3)
-            elif k=='investigate':
-                poly(ink,[(18,16),(29,26),(25,30),(15,19)])
-                poly(leather,[(19,19),(27,26),(25,28),(18,21)])
-                ring=[(8,2),(17,2),(23,8),(23,16),(17,22),(8,22),(2,16),(2,8)]
-                poly(ink,ring);poly(gold,[(8,4),(16,4),(21,9),(21,15),(16,20),(9,20),(4,15),(4,9)])
-                poly('#637d7c',[(9,7),(15,7),(18,10),(18,14),(15,17),(10,17),(7,14),(7,10)])
-                line('#d5e1cf',(9,9),(14,9),2);line(light,(5,8),(8,5),2)
-            elif k=='record':
-                poly(ink,[(6,2),(25,2),(28,5),(28,28),(8,31),(4,27),(4,5)])
-                box(shade,8,4,17,25);box(paper,10,7,15,20)
-                poly(leather,[(5,4),(22,4),(22,28),(6,28)])
-                box('#a56643',7,5,3,21);box(gold,17,13,10,6);box(light,19,14,4,2)
-                box('#ae4f3e',13,27,4,4);line('#bf8756',(11,7),(19,7))
-            elif k in ('present','evidence'):
-                poly(ink,[(2,7),(28,7),(30,9),(30,25),(2,25)])
-                box(shade,4,10,24,13);box(paper,4,8,24,13)
-                line('#a58660',(4,10),(16,18),2);line('#a58660',(28,10),(16,18),2)
-                box('#783b32',13,15,7,6);box('#b65841',14,15,5,4);box('#da8a5a',15,15,2,1)
-                if k=='present':
-                    poly(ink,[(12,25),(19,23),(24,24),(22,29),(10,31),(5,28),(5,25)])
-                    poly('#cea779',[(8,26),(13,27),(19,25),(21,25),(20,27),(11,29)])
-            elif k=='map':
-                poly(ink,[(1,7),(10,3),(20,7),(30,3),(30,26),(21,30),(11,26),(1,30)])
-                poly(paper,[(3,8),(10,5),(19,9),(28,6),(28,25),(21,28),(11,24),(3,27)])
-                poly(shade,[(11,6),(19,9),(20,26),(12,24)])
-                line('#749080',(5,12),(9,17),2);line('#749080',(9,17),(17,14),2);line('#749080',(17,14),(25,21),2)
-                line('#994d38',(22,11),(26,15),2);line('#994d38',(26,11),(22,15),2)
-            elif k=='dialogue':
-                poly(ink,[(1,3),(24,3),(24,19),(14,19),(8,25),(8,19),(1,19)])
-                box(paper,3,5,19,12);line(shade,(6,9),(18,9),2)
-                poly(ink,[(15,14),(31,14),(31,27),(28,27),(28,31),(23,27),(15,27)])
-                box(gold,17,16,12,9);line(light,(19,19),(26,19),2)
-            elif k in ('backlog','testimony'):
-                box(ink,6,2,21,27);box(shade,8,4,17,23)
-                box(ink,2,6,22,24);box(paper,4,8,18,20)
-                for y in (12,16,20):line('#94754f',(7,y),(18,y))
-                box(leather,5,25,15,2)
-                if k=='dialogue':
-                    box(gold,16,7,12,9);poly(gold,[(18,15),(18,20),(23,15)])
-                    box(light,18,9,7,2)
-                elif k=='testimony':
-                    poly(ink,[(16,26),(20,11),(28,3),(30,5),(26,16),(20,20)])
-                    poly(light,[(20,18),(22,10),(28,5),(26,14)])
-                    line(gold,(18,25),(26,9),1)
-            elif k=='auto':
-                box(ink,5,2,23,4);box(gold,7,3,19,2);box(ink,5,27,23,4);box(gold,7,28,19,2)
-                poly(ink,[(8,6),(25,6),(24,11),(19,16),(24,22),(25,27),(8,27),(9,22),(14,16),(9,11)])
-                poly('#637978',[(11,7),(22,7),(21,11),(17,15),(21,22),(22,26),(11,26),(12,22),(16,16),(12,11)])
-                poly(light,[(12,10),(21,10),(17,15)]);poly(gold,[(12,25),(16,20),(18,20),(22,25)])
-                box(light,16,16,1,5)
-            elif k=='skip':
-                # Two arrowheads (0.18.46): skip the rest of this conversation.
-                poly(ink,[(3,6),(16,16),(3,26)]);poly(ink,[(15,6),(28,16),(15,26)])
-                poly(gold,[(5,10),(13,16),(5,22)]);poly(gold,[(17,10),(25,16),(17,22)])
-                box(light,6,12,1,4);box(light,18,12,1,4)
-            elif k=='settings':
-                teeth=[(12,1),(20,1),(20,5),(24,6),(27,3),(30,6),(27,10),(28,12),(31,12),(31,20),(27,20),(26,24),(29,27),(26,30),(22,27),(20,28),(20,31),(12,31),(12,27),(8,26),(5,29),(2,26),(5,22),(4,20),(1,20),(1,12),(5,12),(6,8),(3,5),(6,2),(10,5),(12,4)]
-                poly(ink,teeth)
-                poly(gold,[(16+(x-16)*.88,16+(y-16)*.88) for x,y in teeth])
-                line(light,(13,3),(18,3),2);line(light,(4,13),(4,18),2)
-                poly('#dec18a',[(12,8),(20,8),(24,12),(24,20),(20,24),(12,24),(8,20),(8,12)])
-                poly(ink,[(13,10),(19,10),(22,13),(22,19),(19,22),(13,22),(10,19),(10,13)])
-                poly('#65665d',[(14,13),(18,13),(20,15),(20,18),(18,20),(14,20),(12,18),(12,15)])
-            elif k in ('meeting_round','meeting_stone'):
-                poly(ink,[(2,12),(8,7),(24,7),(30,12),(30,23),(24,28),(8,28),(2,23)])
-                poly('#b5aea0' if k=='meeting_stone' else leather,[(4,12),(9,9),(23,9),(28,12),(28,21),(23,25),(9,25),(4,21)])
-                line(light,(9,11),(23,11),2)
-                for x in (7,15,23):box(gold,x,1,4,4)
-                if k=='meeting_stone':line(ink,(17,12),(14,17),1);line(ink,(14,17),(20,21),1)
-            elif k in ('meeting_field','meeting_room'):
-                if k=='meeting_room':
-                    line(leather,(1,10),(16,1),2);line(leather,(16,1),(31,10),2)
-                    line(leather,(3,10),(3,30),2);line(leather,(29,10),(29,30),2)
-                for x,y in ((6,13),(14,9),(22,13)):
-                    box(ink,x-2,y-2,7,7);box(paper,x-1,y-1,5,5)
-                    box(gold,x-3,y+6,9,9)
-                line(shade,(4,29),(29,29),2)
-            elif k.startswith('place_'):
-                place=k[6:]
-                if place=='forest':
-                    for x,y in ((7,2),(19,6)):
-                        box(leather,x+4,y+17,4,10)
-                        poly('#42614f',[(x-2,y+20),(x+6,y),(x+14,y+20)])
-                        poly(paper,[(x+2,y+7),(x+6,y),(x+10,y+7)])
-                elif place=='river':
-                    for y in (8,17,26):
-                        for x in (2,14):
-                            line('#496d77',(x,y),(x+6,y-3),2);line('#496d77',(x+6,y-3),(x+12,y),2)
-                elif place=='post':
-                    box(ink,2,7,28,20);box(paper,4,9,24,16)
-                    line(leather,(4,10),(16,19),2);line(leather,(16,19),(28,10),2)
-                elif place=='clinic':
-                    box('#835344',12,3,8,26);box('#835344',3,12,26,8)
-                elif place=='workshop':
-                    line(ink,(6,26),(23,9),6);line(gold,(6,26),(23,9),3)
-                    poly(leather,[(16,3),(22,7),(28,2),(30,8),(24,15),(17,14),(13,9)])
-                elif place=='square':
-                    box(ink,5,15,22,13);box(shade,7,17,18,9)
-                    line(leather,(8,16),(8,8),2);line(leather,(24,16),(24,8),2)
-                    poly(leather,[(3,9),(16,2),(29,9)]);box(gold,14,11,4,8)
-                else:
-                    box(ink,5,12,22,17);box(paper,7,14,18,13)
-                    poly(leather,[(2,13),(16,2),(30,13)])
-                    if place=='school':
-                        box(gold,13,17,6,5);line(ink,(16,5),(16,1),2)
-                    elif place=='inn':
-                        box(leather,10,18,12,3);box(leather,10,17,2,8);box(leather,20,20,2,5)
-                    elif place=='market':
-                        for x in (6,14,22):box(gold,x,11,4,6)
-                        box(leather,8,23,16,3)
-                    elif place=='gate':
-                        box(leather,12,16,8,13)
-                    else:
-                        box(shade,11,17,10,10);line(leather,(11,17),(21,27),2);line(leather,(21,17),(11,27),2)
-            elif k=='relations':
-                line(gold,(8,8),(24,8),2);line(gold,(8,8),(16,25),2);line(gold,(24,8),(16,25),2)
-                for x,y in ((3,3),(19,3),(11,20)):
-                    box(ink,x,y,10,10);box(paper,x+2,y+2,6,6);box(gold,x+4,y+4,2,2)
-            elif k=='people':
-                poly(ink,[(11,3),(21,3),(25,7),(25,16),(21,20),(28,24),(28,30),(4,30),(4,24),(11,20),(7,16),(7,7)])
-                box(shade,10,6,12,12);box(paper,12,7,8,10)
-                poly(leather,[(11,21),(21,21),(25,25),(25,28),(7,28),(7,25)])
-                box(gold,14,22,4,5)
-            return r
+            spec=R13_SUPPLIED_UI_ICONS.get(self.kind)
+            if not spec:
+                # 전용 납품이 없는 장식은 새로 그리지 않는다. 옆의 행동 글자가 의미를 전한다.
+                return renpy.Render(self.size,self.size)
+            path,crop=spec
+            art=Crop(crop,r13_asset_path("file:assets/"+path))
+            return renpy.render(Transform(art,xysize=(self.size,self.size),fit="contain",nearest=True),self.size,self.size,st,at)

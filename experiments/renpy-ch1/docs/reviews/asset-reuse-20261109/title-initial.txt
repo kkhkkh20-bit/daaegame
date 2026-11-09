@@ -1,0 +1,55 @@
+title_b_navigation FAILED 14.3
+[rpytest] [log] Running 2 test(s) marked with 'only' flag.
+[rpytest] [log] - global::title_b_navigation
+[rpytest] [log] - global::title_b_navigation
+
+[rpytest] Starting test run
+[rpytest] Platform:      Linux-6.18.57-x86_64-with-glibc2.41
+[rpytest] Python:        3.12.8
+[rpytest] Ren'Py:        Ren'Py 8.5.3.26051504
+[rpytest] Game Version:  0.20.135
+
+[rpytest] [exc] + global
+[rpytest] [exc]   - title_b_navigation
+File "/workspace/daaegame/experiments/renpy-ch1/game/qa_tests/title_b_navigation.rpy", line 8, in global::title_b_navigation
+AssertionError: assert eval (renpy.get_screen("main_menu").scope["title_focus"]=="settings")
+
+Full traceback:
+  File "renpy/test/testexecution.py", line 549, in update
+    node_executor.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "renpy/test/testexecution.py", line 471, in execute
+    self.node_state = self.node.execute(self.node_state, elapsed)
+                      ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/test/testast.py", line 1458, in execute
+    renpy.test.testreporter.reporter.log_assert(self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "renpy/test/testreporter.py", line 888, in log_assert
+    raise RenpyTestAssertionError(f"{status.value}: {assert_node}")
+renpy.test.types.RenpyTestAssertionError: failed: <Assert (game/qa_tests/title_b_navigation.rpy:8)>
+
+While running game code:
+renpy.test.types.RenpyTestAssertionError: failed: <Assert (game/qa_tests/title_b_navigation.rpy:8)>
+File "/workspace/work/daram-v2/sdk/renpy-8.5.3-sdk/renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+  python hide:
+
+During testcase execution:
+  File "/workspace/daaegame/experiments/renpy-ch1/.", line 0, in None
+
+  File "/workspace/daaegame/experiments/renpy-ch1/game/qa_tests/title_b_navigation.rpy", line 2, in testsuite global
+    testcase title_b_navigation:
+  File "/workspace/daaegame/experiments/renpy-ch1/game/qa_tests/title_b_navigation.rpy", line 8, in testcase title_b_navigation
+    assert eval (renpy.get_screen("main_menu").scope["title_focus"]=="settings")
+
+====================
+[rpytest] [exc]   - title_b_navigation (3.740 s)
+[rpytest] [exc]   - title_b_navigation (3.740 s)
+
+[rpytest] Test outcomes (Summary)
+[rpytest] Test suites:     1 |     0 passed |     0 xfailed |     1 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Test cases :   548 |     0 passed |     0 xfailed |     1 failed |     0 xpassed |   547 skipped |     0 not run
+[rpytest] Test hooks :     0 |     0 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Assertions :     1 |     0 passed |     0 xfailed |     1 failed |     0 xpassed |
+
+[rpytest] Time: 5.961 s
+[rpytest] Status: FAILED

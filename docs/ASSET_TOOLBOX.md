@@ -113,3 +113,9 @@ HTTP 회귀 테스트는 실제 모델과 작은 버튼 파일을 임시 프로�
 2026-10-25 소유자의 직접 제작 승인에 따라 `experiments/renpy-ch1/game/assets/ui-button-fit/`에 20종을 제작했다. `button.square_standard`, `button.main_primary`, `button.main_standard`, `button.topic_primary`, `button.topic_standard`의 각 4상태로 연결한다. 제작 원본 SVG·manifest·재생성 코드는 `design/generated-ui-button-fit/`, 납품 묶음은 `design/daram_ui_button_fit_20.zip`이다.
 
 크기별 원본을 사용하며 `safe_size`와 `icon_gap`으로 글자·아이콘 영역을 검사한다. 제작·적용·독립 검수를 별도 담당자가 수행했고 실제 화면 비교 결과는 `experiments/renpy-ch1/docs/reviews/button-fit-review/`에 기록한다. 앞서 만든 `pending-ui-buttons-20261025.zip`은 제작 당시의 규격 요청 이력으로 보관한다.
+
+## 납품 에셋 우선 적용 (2026-11-09)
+
+소유자는 자체 제작한 그림을 최대한 줄이고 보유 에셋으로 통일하도록 요청했다. 코드로 그린 공통 UI는 같은 역할의 납품본으로 교체한다. B 수첩의 종이·남색 책·빨강 강조를 기준으로 같은 화면 역할에 같은 부품을 쓴다. 새 SVG·Canvas 장식이나 인물·배경을 만들어 빈칸을 채우지 않는다. 원본 출처와 사용처를 기록하고, 크기별 uniform 버튼 계약과 공통 surface의 Frame 계약을 구분한다.
+
+도토리 서명·가족 그림·피코의 특정 장면 스케치처럼 그림 내용이 증거인 경우는 동일한 사실을 담은 대체본이 있어야 교체한다. 다른 물건 그림으로 임의 대체하지 않는다. 파일 존재·승인 납품·현재 연결을 구분하고, 대체본이 없는 자체 작도 임시물은 잔여 항목으로 보고한다.

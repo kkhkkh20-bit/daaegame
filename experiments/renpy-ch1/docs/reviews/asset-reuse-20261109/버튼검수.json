@@ -1,0 +1,119 @@
+{
+  "scope": "납품 B 버튼의 공통 재사용. 새 그림 생성·기존 파일 삭제 없음. SDK/build는 부모 전용.",
+  "source": "design/resource-intake-20261025/button-states/ui-button-states-v1/source/b_button.png 및 b_button_primary.png 기반 ui-button-states 4상태",
+  "replaced": [
+    "R13SoftButtonSurface Canvas 둥근 사각형",
+    "R13VillageBSurface Canvas 둥근 사각형",
+    "상태 버튼이 등록 이미지를 무시하던 공통 sticker/Soft Surface 덮어쓰기",
+    "main/topic/question_flat/map_flat 기본 매칭의 SVG·flat 자체제작 버튼"
+  ],
+  "kept": [
+    "기존 button.* 역할명과 개별 재매칭·revision 전파",
+    "기존 클릭 width/height·명령·문구·타이포",
+    "button.* uniform/forbid_frame 계약",
+    "정사각80×80 원본: 맞는 납품 원본이 없어서 비율 유지"
+  ],
+  "new_surface_contract": {
+    "roles": [
+      "surface.supplied.button.standard",
+      "surface.supplied.button.primary"
+    ],
+    "states": [
+      "basic",
+      "pressed",
+      "selected",
+      "disabled"
+    ],
+    "canvas": [
+      160,
+      52
+    ],
+    "crop": [
+      12,
+      6,
+      136,
+      40
+    ],
+    "frame": [
+      12,
+      10,
+      12,
+      10
+    ],
+    "allow_frame": true
+  },
+  "tests": [
+    {
+      "name": "test_supplied_buttons135.py",
+      "count": 5,
+      "result": "PASS"
+    },
+    {
+      "name": "test_button_fit_assets.py",
+      "count": 3,
+      "result": "PASS"
+    },
+    {
+      "name": "test_side_question_mobile.py",
+      "count": 3,
+      "result": "PASS"
+    },
+    {
+      "name": "test_map_b.py",
+      "count": 7,
+      "result": "PASS"
+    },
+    {
+      "name": "test_asset_toolbox.py",
+      "count": 18,
+      "result": "PASS"
+    },
+    {
+      "name": "test_map_action27.py",
+      "count": 9,
+      "result": "PASS"
+    }
+  ],
+  "validate": "에셋 연결·상태·비율 검증 통과",
+  "limits": "실제 네이티브 PC·휴대폰은 부모 검증 필요. 정사각버튼은 기존 자체제작 원본 유지. 1부 전체 그림 통일 완료 주장은 하지 않음.",
+  "title_additional_review": {
+    "source": "game/room13_title_art.rpy",
+    "checked": [
+      "R13TitleLink는 Canvas 작도를 제거하고 r13_supplied_button_surface(primary,focused,chosen,disabled)의 동일 납품 상태·Frame 계약을 사용한다.",
+      "화면 버튼의 xysize(width,76), command/action, sensitive, default_focus, hovered 연결은 유지된다.",
+      "처음부터(new)만 빨강 판과 밝은 글자·아이콘, 나머지는 크림 판과 짙은 글자·아이콘 원색으로 대비가 맞는다.",
+      "disabled는 공통 판의 원본 disabled 상태와 alpha .55, 글자 회색·아이콘 alpha .42를 적용한다.",
+      "공통 helper init58 뒤 title init60으로 초기화 순서가 맞고, visit이 실제 납품 Displayable을 반환한다."
+    ],
+    "sdk_result_review": [
+      {
+        "case": "b_ui_button_states",
+        "status": "PASSED",
+        "seconds": 14.3
+      },
+      {
+        "case": "evidence134_hidden_queue_and_append",
+        "status": "PASSED",
+        "seconds": 35.4
+      },
+      {
+        "case": "proof_reading_pc_selection_independent",
+        "status": "PASSED",
+        "seconds": 22.4
+      },
+      {
+        "case": "b_asset_toolbox",
+        "status": "PASSED",
+        "seconds": 17.3
+      },
+      {
+        "case": "title_b_navigation",
+        "status": "PASSED",
+        "seconds": 15.3
+      }
+    ],
+    "title_test_initial_failure": "기존 title_b_navigation은 저장 없음 상태를 전제했다. 수정 검사는 실제 continue/load 활성 여부를 따르며 settings 진입·복귀를 확인한다. 최종 결과 파일에서 PASSED15.3초를 대조했다.",
+    "limits": "추가 검수는 소스·부모가 실행한 결과파일 대조다. 최종 타이틀 빌드 사진은 부모 검증 범위이며 이 검수에서 SDK·build를 실행하지 않았다.",
+    "result": "추가 차단 사항 없음"
+  }
+}

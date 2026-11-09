@@ -32,7 +32,7 @@ class ButtonFitAssets(unittest.TestCase):
                         boxes.append(im.getchannel('A').getbbox())
             self.assertEqual(boxes,[expected]*4)
 
-    def test_role_state_sets_keep_uniform_crop_safe_area_and_original_families(self):
+    def test_runtime_roles_use_supplied_buttons_and_keep_uniform_scaling(self):
         for family,(_,canvas,crop,safe,gap) in FIT_BUTTONS.items():
             role='button.'+family
             rule=self.registry.bindings['bindings'][role]
@@ -40,13 +40,16 @@ class ButtonFitAssets(unittest.TestCase):
             self.assertIn('frame',rule['forbid_render'])
             for state in STATES:
                 result=self.registry.resolve(role,state)
-                self.assertEqual(result['size'],canvas)
-                self.assertEqual(result['render']['crop'],crop)
-                self.assertEqual(result['render']['safe_size'],safe)
-                self.assertEqual(result['render']['icon_gap'],gap)
+                if family=='square_standard':
+                    self.assertEqual(result['size'],canvas)
+                    self.assertEqual(result['render']['crop'],crop)
+                    self.assertEqual(result['render']['safe_size'],safe)
+                    self.assertEqual(result['render']['icon_gap'],gap)
+                else:
+                    self.assertEqual(result['size'],[160,52])
+                    self.assertEqual(result['render']['crop'],[12,6,136,40])
+                    self.assertTrue(result['path'].startswith('assets/ui-button-states/'))
                 self.assertNotIn('frame',result['render'])
-                self.assertLessEqual(safe[0],crop[2])
-                self.assertLessEqual(safe[1],crop[3])
         for family in ('primary','standard','wide_choice'):
             for state in STATES:
                 self.assertTrue(self.registry.resolve('button.'+family,state)['path'].startswith('assets/ui-button-states/'))

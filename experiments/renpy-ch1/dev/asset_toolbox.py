@@ -98,6 +98,18 @@ def scan(project=PROJECT):
             virtual('button.%s.%s'%(family,state),path,[pack,'kind:button','family:'+family,'state:'+state],{'crop':[4,4,232,52] if family=='wide_choice' else [12,6,136,40],'policy':'uniform','text_color':'#8b8175' if state=='disabled' else '#fff5e5' if family=='primary' else '#493324'})
         role('button.'+family,label,[pack],STATES,fallback={'hover':'basic'})
 
+    # 공통 판만 9-slice를 허용한다. 작은 button.*은 균일 배율 계약을 유지한다.
+    for family,label in [('standard','크림'),('primary','빨강')]:
+        surface='surface.supplied.button.'+family
+        pack='pack:supplied-surfaces-v1/'+family
+        for state in STATES:
+            virtual(surface+'.'+state,'assets/ui-button-states/'+family+'_'+state+'.png',
+                    [pack,'kind:surface','state:'+state],
+                    {'crop':[12,6,136,40],'frame':[12,10,12,10],'allow_frame':True},
+                    label='납품 B '+label+' 공통 판 · '+state)
+        role(surface,'납품 B '+label+' 공통 판',[pack],STATES,fallback={'hover':'pressed'})
+        binding['bindings'][surface].setdefault('requires_render',['frame'])
+
     # Newly drawn size-specific originals retain their actual paper proportion.
     # Missing families are not approximated with an old button or a Frame.
     for family,(label,canvas,crop,safe,gap) in FIT_BUTTONS.items():
@@ -114,8 +126,10 @@ def scan(project=PROJECT):
                     dict(crop=crop,policy='uniform',safe_size=safe,icon_gap=gap,
                          text_color='#8b8175' if state=='disabled' else '#fff5e5' if family.endswith('_primary') else '#493324'),
                     label=label+' · '+state)
-        role('button.'+family,label,[pack],STATES,fallback={'hover':'basic'})
-        binding['bindings']['button.'+family].setdefault('canvas_size',canvas)
+        supplied_family='primary' if family.endswith('primary') else 'standard'
+        source_pack=pack if family=='square_standard' else 'pack:button-states-v1/'+supplied_family
+        role('button.'+family,label,[source_pack],STATES,fallback={'hover':'basic'})
+        binding['bindings']['button.'+family].setdefault('canvas_size',canvas if family=='square_standard' else [160,52])
         binding['bindings']['button.'+family].setdefault('forbid_render',['frame'])
 
     sheet='assets/ui-b-sticker/button_sheet.png'

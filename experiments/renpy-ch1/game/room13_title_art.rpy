@@ -17,34 +17,19 @@ init 60 python:
                          mesh=True, shader="r13.title_menu_shade")
 
     class R13TitleLink(renpy.Displayable):
-        """Quiet underline, with warm focus light confined below the label."""
+        """메인 메뉴도 게임 안에서 쓰는 납품 B 버튼 상태를 공유한다."""
         def __init__(self,focused=False,disabled=False,primary=False,**kwargs):
             super(R13TitleLink,self).__init__(**kwargs)
-            self.focused=focused
-            self.disabled=disabled
-            self.primary=primary
+            self.focused=focused;self.disabled=disabled;self.primary=primary
+            self.face=r13_supplied_button_surface(primary=primary,focused=focused,chosen=focused,disabled=disabled)
+        def visit(self):
+            return [self.face]
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height))
-            out=renpy.Render(w,h);c=out.canvas()
-            gold="#ffe3a4" if self.focused else "#c9a362"
-            if self.primary:
-                points=[(17,2),(w-17,2),(w-3,16),(w-3,h-18),(w-17,h-4),(17,h-4),(3,h-18),(3,16)]
-                c.polygon("#03112099",[(x,y+4) for x,y in points])
-                c.polygon(gold,points)
-                inner=[(18,5),(w-18,5),(w-6,17),(w-6,h-19),(w-18,h-7),(18,h-7),(6,h-19),(6,17)]
-                c.polygon("#b8362d" if self.focused else "#a52c29",inner)
-                c.lines("#e4bb77",True,[(21,10),(w-21,10),(w-11,20),(w-11,h-22),(w-21,h-12),(21,h-12),(11,h-22),(11,20)],1)
-            else:
-                if self.focused and not self.disabled:
-                    c.rect("#f7ddaa12",(14,2,w-28,h-7))
-                    c.polygon(gold,[(18,h//2-5),(25,h//2),(18,h//2+5)])
-                line="#79796b" if self.disabled else gold
-                c.line(line,(32,h-4),(w-32,h-4),1)
-                c.polygon(line,[(w//2,h-7),(w//2+4,h-4),(w//2,h-1),(w//2-4,h-4)])
-            return out
+            return renpy.render(Transform(self.face,xysize=(w,h)),w,h,st,at)
 
 screen r13_cover_button(caption,key,icon,width,command,focus,enabled=True,first=False):
-    $ state_icon=Transform(R13AntiqueIcon(icon,size=32) if icon in ("record","settings") else Crop((16,16,32,32),r13_field_icon(icon)),matrixcolor=ColorizeMatrix("#c6a574","#fff0cd"))
+    $ state_icon=Transform(R13AntiqueIcon(icon,size=32) if icon in ("record","settings") else Crop((16,16,32,32),r13_field_icon(icon)),matrixcolor=(ColorizeMatrix("#c6a574","#fff0cd") if key=="new" else None))
     button:
         id ("r13_cover_"+key)
         style "empty"
@@ -60,7 +45,7 @@ screen r13_cover_button(caption,key,icon,width,command,focus,enabled=True,first=
             add state_icon alpha (1.0 if enabled else .42) yalign .5
             text caption:
                 font R13_UI_FONT size r13_type("display") yalign .5
-                color ("#fff0cd" if enabled else "#95978d") hover_color "#fff4db"
+                color ("#8b8175" if not enabled else "#fff0cd" if key=="new" else "#493324") hover_color ("#fff4db" if key=="new" else "#793e2a")
 
 # B 메인 전용 스타일. 이전 화면/저장 호환용 스타일.
 init 81:
