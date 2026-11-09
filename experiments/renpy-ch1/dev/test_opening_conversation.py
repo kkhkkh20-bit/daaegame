@@ -59,12 +59,26 @@ class OpeningConversation(Layer):
                                         'MS14_D01_S05_L0034', 'MS14_D01_S05_L0035'])
                 index = lambda term: next(i for i, text in enumerate(rows) if term in text)
                 self.assertLess(index('도토리'), index('누가 썼는지 모르겠어'))
-                self.assertLess(index('누가 썼는지 모르겠어'), index('메모를 보여 드리고'))
-                self.assertLess(index('메모를 보여 드리고'), index('할머니한테 물어보자'))
+                self.assertLess(index('누가 썼는지 모르겠어'), index('이 편지를 보낸 것도 엄마인지'))
+                self.assertLess(index('이 편지를 보낸 것도 엄마인지'), index('할머니한테 물어보자'))
                 self.assertEqual(sum('편지엔 하나도 없어' in text for text in rows), 1)
                 self.assertEqual(self.state.room13, before)
         self.assertEqual(env['R13_V111']['evidence']['E01']['variants']['observed'],
                          '다람이를 데리고 와 줘. 여관 13호실에서 기다릴게.')
+
+
+    def test_comparison_remembers_whether_granny_was_already_asked(self):
+        env = self.load()
+        env['r13_v111_set']('chorong_whereabouts_asked1', True)
+        before = copy.deepcopy(self.state.room13)
+        heard = ' '.join(self.texts(env, ['MS14_D01_S05_L0035']))
+        self.assertIn('내일 아침', heard)
+        self.assertNotIn('할머니한테 물어보자', heard)
+        self.assertEqual(self.state.room13, before)
+        env['r13_v111_set']('chorong_whereabouts_asked1', False)
+        unheard = ' '.join(self.texts(env, ['MS14_D01_S05_L0035']))
+        self.assertIn('할머니한테 물어보자', unheard)
+        self.assertNotIn('내일 아침', unheard)
 
 
 if __name__ == '__main__':

@@ -104,6 +104,9 @@ init 301 python:
                     if "neoul" not in b["people_by_location"].setdefault(neoul_place,[]):b["people_by_location"][neoul_place]=b["people_by_location"][neoul_place]+["neoul"]
         if v.get("gate")=="device_detach14" and r13_v111_value("buri_device_present"):b["people"]=["mom","daram","buri","resident_ppul","resident_badook","karo"]
         if v.get("gate")=="guard_relief_check14":b["people"]=["guard","resident_siluk",r13_v111_value("guard_relief_person") or "v111_patrol"]
+        if v.get("gate")=="letter_compare_review" and r13_v111_value("chorong_whereabouts_asked1"):
+            for option in b["options"]:
+                if option.get("index")==1:option["title"]="아내나 초롱 씨가 돌아왔습니까?"
         b.setdefault("people",v.get("people",["daram"]))
         if v.get("scene") in ("MS14_D14_S02","MS14_D14_S04") and r13_v111_value("madam_observer_consent") and r13_v111_value("location:resident_madam")==store.room13["location"] and r13_v111_person_alive("resident_madam"):
             b["people"]=list(dict.fromkeys(b["people"]+["resident_madam"]))

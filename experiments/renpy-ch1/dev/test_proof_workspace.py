@@ -134,7 +134,9 @@ class ProofWorkspacePure(unittest.TestCase):
         self.assertEqual(target('다른 쟁점','existing_return'),'existing_return')
         import json
         binding=json.loads((ROOT/'game/v111/field-bindings.json').read_text())['letter_compare_review']
-        self.assertEqual(binding,dict(location='room13',people=['daram'],options=[dict(title='편지와 메모를 다시 대조한다',location='room13',object='mother_note',index=0)]))
+        self.assertEqual(binding['options'][0],dict(title='편지와 메모를 다시 대조한다',location='room13',object='mother_note',index=0))
+        self.assertEqual(binding['options'][1],dict(title='초롱 씨는 지금 어디 계세요?',location='inn',person='granny',index=1))
+        self.assertEqual(binding['people_by_location'],dict(room13=['daram'],inn=['granny']))
         flow=(ROOT/'game/room13_v111.rpy').read_text()
         self.assertIn('if _return=="investigate" and r13_pw_review_target(key,review_return):',flow)
         self.assertIn('return r13_pw_review_target(key,review_return)',flow)

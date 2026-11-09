@@ -397,7 +397,7 @@ label r13_v111_bundle:
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D01_S05_L0022')
     call r13_lines(r13_v111_lines(['MS14_D01_S05_L9102', 'MS14_D01_S05_L0023', 'MS14_D01_S05_L0024', 'MS14_D01_S05_L0025', 'MS14_D01_S05_L0026', 'MS14_D01_S05_L0027', 'MS14_D01_S05_L0028', 'MS14_D01_S05_L0029', 'MS14_D01_S05_L0030']), 'v111:bundle:MS14_D01_S05_L9102')
-    jump r13_v111_letter_compare
+    jump r13_v111_letter_compare_review
 
 label r13_v111_letter_compare:
     $ r13_room_letters_open()
@@ -405,11 +405,26 @@ label r13_v111_letter_compare:
     jump expression _return
 
 label r13_v111_letter_compare_review:
-    # 취소는 완료가 아니다. 같은 방의 메모에서 읽던 쌍과 선택을 그대로 다시 연다.
+    # 두 글을 읽는 일과 메모의 사람을 찾는 일은 어느 쪽부터 해도 된다.
     call r13_v111_wait('letter_compare_review')
     if _return==0:
         jump r13_v111_letter_compare
+    if _return==1:
+        call r13_v111_chorong_whereabouts1
     jump r13_v111_letter_compare_review
+
+label r13_v111_chorong_whereabouts1:
+    if r13_v111_value('chorong_whereabouts_asked1'):
+        call r13_lines(r13_nw_block('chorong_whereabouts_repeat1'),'nw:chorong_whereabouts_repeat1')
+        $ r13_v111_talk_person=None
+        return
+    call r13_lines(r13_nw_block('chorong_whereabouts_ask1'),'nw:chorong_whereabouts_ask1')
+    call r13_lines(r13_v111_lines(['MS14_D01_S05_L0037']), 'v111:chorong_whereabouts1:MS14_D01_S05_L0037')
+    call r13_lines(r13_nw_block('chorong_whereabouts_now1'),'nw:chorong_whereabouts_now1')
+    call r13_lines(r13_v111_lines(['MS14_D01_S05_L0038']), 'v111:chorong_whereabouts1:MS14_D01_S05_L0038')
+    $ r13_v111_set('chorong_whereabouts_asked1',True)
+    $ r13_v111_talk_person=None
+    return
 
 label r13_v111_letter_retry:
     # 0.20.4 (audit d01-05 B): a wrong pair is not a meeting; say so and choose again.
@@ -435,18 +450,30 @@ label r13_v111_letter_observe(spot):
     return
 
 label r13_v111_room_compare:
-    $ r13_edit(period=2)
     $ r13_v111_scene('MS14_D01_S05')
-    call r13_v111_travel('room13','room_compare')
+    call r13_v111_travel('room13','room_compare',direct=True)
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D01_S05_L0031')
     call r13_lines(r13_v111_lines(['MS14_D01_S05_L0032', 'MS14_D01_S05_L0033', 'MS14_D01_S05_L0034', 'MS14_D01_S05_L0035']), 'v111:room_compare:MS14_D01_S05_L0032')
-    # 0.20.6 (owner day-1 play: "할머니에게 초롱의 행방을 묻는다" 같은 바로가기): the purpose goes
-    # straight down and back; looking around first keeps the free move.
-    $ v111_answer=renpy.display_menu([("할머니에게 초롱의 행방을 묻는다",0),("방을 더 둘러본다",1)])
-    call r13_v111_travel('inn','MS14_D01_S05_L0036',direct=(v111_answer==0))
-    call r13_lines(r13_v111_lines(['MS14_D01_S05_L0037', 'MS14_D01_S05_L0038']), 'v111:room_compare:MS14_D01_S05_L0037')
-    call r13_v111_travel('room13','MS14_D01_S05_L0039',direct=(v111_answer==0))
+    if not r13_v111_value('chorong_whereabouts_asked1'):
+        jump r13_v111_chorong_inquiry1
+    jump r13_v111_room_wait1
+
+label r13_v111_chorong_inquiry1:
+    call r13_v111_wait('chorong_inquiry1')
+    if _return==1:
+        call r13_v111_chorong_whereabouts1
+        jump r13_v111_room_wait1
+    jump r13_v111_chorong_inquiry1
+
+label r13_v111_room_wait1:
+    call r13_lines(r13_nw_block('room_wait_decision1'),'nw:room_wait_decision1')
+    call r13_v111_travel('room13','MS14_D01_S05_L0039',direct=True)
+    call r13_lines(r13_nw_block('room_wait_day1'),'nw:room_wait_day1')
+    # 낮 동안의 확인과 기다리는 행동을 보여 준 뒤 밤으로 잇는다. 비교는 시간을 넘기지 않는다.
+    $ r13_edit(period=2)
+    call r13_scene(R13_PLACES['room13'][1],R13_PLACES['room13'][0],'calm')
+    call r13_lines(r13_nw_block('room_wait_evening1'),'nw:room_wait_evening1')
     call r13_lines(r13_v111_lines(['MS14_D01_S05_L0040', 'MS14_D01_S05_L0041', 'MS14_D01_S05_L0042', 'MS14_D01_S05_L0043', 'MS14_D01_S05_L0044', 'MS14_D01_S05_L0045', 'MS14_D01_S05_L0046', 'MS14_D01_S05_L0047', 'MS14_D01_S05_L0048']), 'v111:room_compare:MS14_D01_S05_L0040')
     $ r13_v111_commit('MS14_D01_S05_L0048')
     call r13_lines(r13_v111_lines(['MS14_D01_S05_L0049']), 'v111:room_compare:MS14_D01_S05_L0049')

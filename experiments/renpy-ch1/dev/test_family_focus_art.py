@@ -76,6 +76,20 @@ class FamilyFocusArt(unittest.TestCase):
             self.assertTrue((ROOT / 'game' / cut['art']).is_file())
         self.assertTrue(self.env['r13_ep_cut_art']('piko-death3')['nearest'])
 
+    def test_authored_action_hides_only_the_listener_for_that_narration(self):
+        source = (ROOT / 'game/systems/room13_ep_art.rpy').read_text()
+        tree = ast.parse(textwrap.dedent(source.split('init 160 python:', 1)[1].split('\ntransform ', 1)[0]))
+        node = next(node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name == 'r13_ep_line_art')
+        hidden = []
+        env = dict(renpy=types.SimpleNamespace(hide=lambda tag: hidden.append(tag)))
+        exec(compile(ast.Module(body=[node], type_ignores=[]), '행동 지문의 인물 그림', 'exec'), env)
+        env['r13_ep_line_art']((None, '다람이 과자 봉지 끝을 접는다.', {'hide_listener': True}))
+        self.assertEqual(hidden, ['r13_visitor'])
+        hidden.clear()
+        env['r13_ep_line_art']((None, '다람이 봉지를 바라본다.', {}))
+        env['r13_ep_line_art'](('daram', '엄마 몫이야.', {'hide_listener': True}))
+        self.assertEqual(hidden, [], '인물의 다음 발화나 지정하지 않은 지문에는 숨김을 적용하지 않는다.')
+
     def test_authored_cut_validation_requires_a_known_family_prop_and_real_asset(self):
         source = (ROOT / 'game/room13_v111_newworld_text.rpy').read_text()
         tree = ast.parse(textwrap.dedent(source.split('init 319 python:', 1)[1]))

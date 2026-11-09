@@ -26,9 +26,11 @@ class EvidenceNotice134(unittest.TestCase):
         self.updates=[]
         self.restarts=[]
         self.blocked=set()
-        self.store=SimpleNamespace(r13_nw_comparison=None)
+        self.showing=set()
+        self.store=SimpleNamespace(r13_nw_comparison=None,r13_ep_cut_current=None)
         self.env=dict(store=self.store,r13_feedback_in_conversation=lambda:False,
             renpy=SimpleNamespace(get_screen=lambda name:self.current if name=='r13_evidence_found' else name in self.blocked,
+                showing=lambda name:name in self.showing,
                 show_screen=lambda name,**kwargs:self.shown.append((name,kwargs)),
                 set_screen_variable=lambda name,value,**kw:self.updates.append((name,value,kw)),
                 restart_interaction=lambda:self.restarts.append(True)))
@@ -61,6 +63,16 @@ class EvidenceNotice134(unittest.TestCase):
             self.blocked={name};self.assertFalse(self.visible(),name)
         self.blocked=set();self.assertTrue(self.visible())
         self.store.r13_nw_comparison='knife_tip';self.assertFalse(self.visible())
+    def test_family_focus_defers_notice_until_picture_is_folded(self):
+        self.acquire(['V111:E30'])
+        self.store.r13_ep_cut_current='focus:D01_FAMILY_DRAWING'
+        self.showing={'r13_ep_cut'}
+        self.assertFalse(self.visible())
+        self.assertEqual(self.shown[0][1]['keys'],['V111:E30'])
+        self.showing.clear()
+        self.assertTrue(self.visible(),'컷을 접으면 대기 중인 획득 알림이 같은 자료로 이어진다.')
+        self.store.r13_ep_cut_current='ev:E06';self.showing={'r13_ep_cut'}
+        self.assertTrue(self.visible(),'작은 일반 증거 컷은 기존처럼 알림과 함께 표시한다.')
     def test_only_visible_branch_owns_expiry_timer(self):
         screen=SOURCE.read_text().split('screen r13_evidence_found(',1)[1].split('\n# A quiet',1)[0]
         self.assertIn('if r13_evidence_notice_visible():',screen)

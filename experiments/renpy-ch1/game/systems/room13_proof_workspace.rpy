@@ -294,12 +294,12 @@ init 351 python:
         """일반 기록과 같은 현재 변형의 사실을 읽는다. 기존 저장·호출 이름은 유지한다."""
         return r13_evidence_read_groups(key)
 
-    def r13_pw_read_layout(title,quote_open,quote_text):
+    def r13_pw_read_layout(title,quote_open,quote_text,compact=False):
         """수첩 종이 안의 제목·본문·하단을 계산한다. 긴 발언은 펼쳤을 때만 자리를 쓴다."""
         touch=r13_touch_ui();left=R13_NB_LEFT;width=R13_NB_WIDTH
         footer=r13_nb_footer_y();context_y=156 if touch else 144
         title_w=width
-        title_h=r13_proof_text_size(title,r13_type("emphasis"),title_w)[1]
+        title_h=r13_proof_text_size(title,r13_type("small" if compact else "emphasis"),title_w)[1]
         quote_h=(r13_pw_quote_height(quote_text,width-32)+24) if quote_open and quote_text else 0
         quote_y=context_y+max(36,title_h)+8
         top=quote_y+(quote_h+8 if quote_h else 0)
@@ -630,7 +630,7 @@ screen r13_pw_chips(claim,chosen,mode,L,replace_pending,ready):
                         id "r13_pw_chip_more" ysize ch padding (12,0) background r13_field_paper()
                         text ("+%d개"%(len(chosen)-fit)) size small color r13_nb_muted() font R13_UI_BOLD_FONT yalign .5
 
-# 읽는 화면과 제출할 묶음은 독립이다. 원문·그림은 사실 다음에 펼치며 판단 함수는 호출하지 않는다.
+# 읽는 화면과 제출할 묶음은 독립이다. 문서는 원문, 물증은 관찰 사실을 먼저 읽으며 판단 함수는 호출하지 않는다.
 screen r13_pw_read_card(key,x,y,w,h,origin_open,ready,slot=None,inspect=False):
     $ inner=w-32
     frame:
@@ -658,13 +658,17 @@ screen r13_pw_read_card(key,x,y,w,h,origin_open,ready,slot=None,inspect=False):
                                     add r13_evidence_picture(key,32) yalign .5
                         if key in R13_PW_ORIGINAL_FIRST:
                             use r13_pw_document_original(key,inner-12,inspect=inspect,ready=ready)
-                        use r13_evidence_read_facts(key,inner-12)
+                        else:
+                            use r13_evidence_read_facts(key,inner-12)
                         if r13_drawer_active():
                             use r13_drawer_note_blocks(key,inner-12)
                         if origin_open:
                             add Solid("#c9a86a99") xsize (inner-12) ysize 1
                             text "출처와 전체 내용" size r13_type("small") color r13_nb_accent() font R13_UI_BOLD_FONT
-                            if key not in R13_PW_ORIGINAL_FIRST:
+                            if key in R13_PW_ORIGINAL_FIRST:
+                                # 같은 글을 다시 풀어 쓴 요약 때문에 원문·표식이 밀리지 않게 한다.
+                                use r13_evidence_read_facts(key,inner-12)
+                            else:
                                 text r13_material_body(r13_catalog_record(key)) size r13_ev_fact_size() color r13_nb_ink() font R13_UI_FONT xsize (inner-12)
                             text r13_catalog_origin(key) size r13_type("small") color r13_nb_muted() font R13_UI_FONT xsize (inner-12)
                             if key in room13.get("records",{}):
@@ -708,8 +712,6 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ quote_text=ctx["quote"] if ctx["quote"] and r13_pw_quote_visible_now(key) else None
     $ layout_quote=(((ctx["speaker"]+"  ") if ctx["speaker"] else "")+quote_text) if quote_text else None
     $ title=R13_PROOF_TITLES.get(key,key)
-    $ L=r13_pw_read_layout(title,quote_open,layout_quote)
-    $ touch=L["touch"]
     $ small=r13_type("small")
     $ ink=r13_nb_ink()
     $ muted=r13_nb_muted()
@@ -719,6 +721,11 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ pair_submission=r13_pw_pair_submission(live_pair,owned,mode) if view=="pair" else None
     $ discovery_pending=r13_room_letters_discovery_pending(key,pair_submission or chosen)
     $ room_letters_copy=r13_pw_room_letters_copy(key,pair_submission or chosen,r13_room_letters_discovery_needed(key),r13_v111_value("letter_tail_observed") is True)
+    # 첫 방은 두 문서의 제목이 이미 각 열에 있다. 쟁점·조작 안내를 두 줄로 반복하지 않는다.
+    $ compact_context=bool(room_letters_copy and not quote_open)
+    $ context_text=room_letters_copy[1] if compact_context else title
+    $ L=r13_pw_read_layout(context_text,quote_open,layout_quote,compact=compact_context)
+    $ touch=L["touch"]
     use r13_notebook_shell("자료 대조",close_action=review_action,rule_y=(148 if touch else 128))
     if can_review:
         key "game_menu" action review_action
@@ -730,7 +737,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     fixed:
         xpos 724 ypos 54 xysize (240,88 if touch else 64)
         use r13_control("나란히 읽기",None,[SetScreenVariable("pair",r13_pw_pair_on_open(chosen,pair,detail,owned)),SetScreenVariable("view","pair"),SetScreenVariable("pick_slot",None)],enabled=ready and len(owned)>1,chosen=view=="pair",width=240,height=(88 if touch else 64),label_size=r13_type("body"),control_id="r13_pw_pair")
-    text title xpos L["left"] ypos L["context_y"] xsize L["title_w"] size r13_type("emphasis") color ink font R13_UI_BOLD_FONT
+    text context_text xpos L["left"] ypos L["context_y"] xsize L["title_w"] size (small if compact_context else r13_type("emphasis")) color (accent if compact_context else ink) font R13_UI_BOLD_FONT
     if quote_text:
         fixed:
             xpos 982 ypos 54 xysize (176,64 if not touch else 88)
@@ -739,7 +746,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
         frame:
             area (L["left"],L["quote_y"],L["width"],L["quote_h"]) padding (16,10) background r13_field_paper()
             text layout_quote id "r13_pw_quote_text" size r13_type("emphasis") color ink font R13_UI_FONT xsize (L["width"]-32)
-    if room_letters_copy:
+    if room_letters_copy and not compact_context:
         text room_letters_copy[1] xpos L["left"] ypos L["body_top"] xsize L["width"] size small color accent font R13_UI_BOLD_FONT
         # 안내 한 줄의 높이를 본문에서 빼서 문서·관찰 버튼과 겹치지 않게 한다.
         $ L=dict(L,body_top=L["body_top"]+small+10,body_h=max(60,L["body_h"]-small-10))

@@ -94,8 +94,8 @@ testcase letter_compare_zero_selection_cancel_and_resume:
     assert eval (r13_v111_value('letter_tail_observed') is True)
     pause until eval (qa_pw_read_scope().get('ready')) timeout 10
     click id 'r13_pw_submit'
-    click pos (900,600) until screen 'choice' timeout 45
-    assert eval (r13_v111_value('proof_given:두 편지를 나란히 본다')==['V111:E01','V111:E06'] and room13['period']==2)
+    click pos (900,600) until screen 'r13_hub' timeout 45
+    assert eval (r13_v111_value('proof_given:두 편지를 나란히 본다')==['V111:E01','V111:E06'] and room13['period']==0 and room13['v111']['gate']=='chorong_inquiry1')
 
 testcase letter_compare_wrong_read_pair_uses_original_verdict:
     $ preferences.text_cps=0
@@ -142,5 +142,45 @@ testcase letter_compare_wrong_read_pair_uses_original_verdict:
     assert eval (r13_v111_value('letter_tail_observed') is True)
     pause until eval (qa_pw_read_scope().get('ready')) timeout 10
     click id 'r13_pw_submit'
-    click pos (900,600) until screen 'choice' timeout 45
+    click pos (900,600) until screen 'r13_hub' timeout 45
     assert eval (r13_v111_value('proof_given:두 편지를 나란히 본다')==['V111:E01','V111:E06'])
+
+
+label qa_flow137_ask_before_compare:
+    call r13_v111_chorong_whereabouts1
+    jump r13_v111_letter_compare_review
+
+testcase first_room_chorong_before_compare:
+    $ preferences.text_cps=0
+    run Function(renpy.set_physical_size,(1280,720))
+    pause 1.0
+    click '처음부터'
+    click pos (900,600) until screen 'r13_hub' timeout 90
+    run Function(qa_letter_exit_prepare,False)
+    $ r13_edit(location='inn')
+    $ qa_flow137_owned=tuple(room13['evidence'])
+    run Call('qa_rr_scene','qa_flow137_ask_before_compare')
+    click pos (900,600) until eval (r13_v111_value('chorong_whereabouts_asked1')) timeout 60
+    pause until screen 'r13_hub' timeout 30
+    assert eval (r13_v111_value('chorong_whereabouts_asked1'))
+    assert eval (not r13_v111_value('proof_given:두 편지를 나란히 본다'))
+    assert eval (room13['period']==0 and tuple(room13['evidence'])==qa_flow137_owned)
+    assert eval (set(r13_places())=={'inn','room13'})
+    assert eval (r13_v111_questions('granny')[0][0]=='아내나 초롱 씨가 돌아왔습니까?')
+    screenshot 'flow137-early-inquiry-daytime.png'
+    $ r13_edit(location='room13')
+    run Call('qa_rr_scene','r13_v111_letter_compare')
+    pause until screen 'r13_proof_workspace' timeout 30
+    pause until eval (qa_pw_read_scope().get('ready')) timeout 10
+    click id 'r13_pw_observe'
+    pause until eval (qa_pw_read_scope().get('observe')) timeout 15
+    click id 'r13_pw_spot_0_tail'
+    click pos (900,600) until screen 'r13_proof_workspace' timeout 45
+    pause until eval (qa_pw_read_scope().get('ready')) timeout 10
+    click id 'r13_pw_submit'
+    click pos (900,600) until eval (r13_packet and r13_packet[1].startswith('나는 방과 접수대를 오간다')) timeout 60
+    assert eval (room13['period']==0 and r13_v111_value('K01a') and r13_v111_value('K01b'))
+    screenshot 'flow137-wait-daytime.png'
+    click pos (900,600) until eval (r13_packet and r13_packet[1]=='창밖이 파랗게 어두워진다.') timeout 45
+    assert eval (room13['period']==2)
+    screenshot 'flow137-wait-evening.png'

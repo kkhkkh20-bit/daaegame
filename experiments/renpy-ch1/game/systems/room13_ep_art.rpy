@@ -162,6 +162,10 @@ init 160 python:
 
     def r13_ep_line_art(packet):
         options=packet[2] if len(packet)>2 and isinstance(packet[2],dict) else {}
+        # 기존 대화 그림에 손동작이 없으면 행동 지문만 배경 위에서 읽는다.
+        # 다음 인물 대사에서는 r13_speaker가 같은 보유 그림을 다시 보여 준다.
+        if packet[0] is None and options.get("hide_listener"):
+            renpy.hide("r13_visitor")
         # 선택창 동안 감춘 증거 칸은 다음 대사에서 되살린다(선택창이 닫힐 때 hide 알림이 늘 오지는 않는다).
         if globals().get("r13_ep_cut_suspended") and "cut" not in options:r13_ep_cut_resume()
         # The illustrated opening ends when Tosil speaks holding the physical book.

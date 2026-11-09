@@ -224,30 +224,30 @@
       "fx": "flash"
     },
     "MS14_D01_S03_L0015": {
-      "text": "……동행인 다람.{w=.4} 신청서에 이름이 있군."
+      "text": "……동행인 다람. 신청서에 이름이 있네요."
     },
     "MS14_D01_S03_L0016": {
       "text": "그러니 다람 이름도 올려 주세요.{w=.3} 애 손이 얼었어요."
     },
     "MS14_D01_S03_L0017": {
-      "text": "신청서에는 있는데 명단에는 없군요.{w=.3} 다람 이름을 추가하겠습니다.",
+      "text": "빠진 다람 이름을 추가하겠습니다.",
       "expression": "anxious",
       "beat": "shaken"
     },
     "MS14_D01_S03_L0019": {
-      "text": "다람 이름을 적는 동안만 기다려 주십시오."
+      "text": "잠시만요. 바로 적겠습니다."
     },
     "MS14_D01_S03_L0020": {
-      "text": "신청서에는 동행인 다람이라고 적혀 있습니다.{w=.3} 그런데 옮겨 적은 명단에는 제 이름만 있고요. 빠진 이름을 올려 주십시오."
+      "text": "신청서에는 다람 이름도 있습니다.{w=.3} 명단에서 빠진 이름을 올려 주세요."
     },
     "MS14_D01_S03_L0021": {
-      "text": "……동행인 다람.{w=.4} 신청서에 이름이 있군."
+      "text": "……동행인 다람. 신청서에 이름이 있네요."
     },
     "MS14_D01_S03_L0022": {
       "text": "그러니 다람 이름도 올려 주세요.{w=.3} 애 손이 얼었어요."
     },
     "MS14_D01_S03_L0023": {
-      "text": "신청서에는 있는데 명단에는 없군요.{w=.3} 다람 이름을 추가하겠습니다.",
+      "text": "빠진 다람 이름을 추가하겠습니다.",
       "beat": "shaken",
       "expression": "anxious"
     },
@@ -394,18 +394,25 @@
       "expression": "anxious"
     },
     "MS14_D01_S05_L0034": {
-      "text": "메모엔 초롱 씨에게 소식을 물으라고 했지.\n그분께 메모를 보여 드리고 엄마가 어디로 갔는지 여쭤보자."
+      "text": "초롱 씨에게 물어보자. 엄마가 어디로 갔는지, 이 편지를 보낸 것도 엄마인지."
     },
-    "MS14_D01_S05_L0035": {
-      "text": "초롱이 어딨는지 할머니한테 물어보자.{w=.3}\n나도 같이 갈래.",
-      "expression": "anxious"
-    },
+    "MS14_D01_S05_L0035": [
+      {
+        "when": "chorong_asked1",
+        "text": "내일 아침이지? 그때까지 엄마 안 오면 어떡해?",
+        "expression": "anxious"
+      },
+      {
+        "text": "초롱이 어딨는지 할머니한테 물어보자.{w=.3} 나도 같이 갈래.",
+        "expression": "anxious"
+      }
+    ],
     "MS14_D01_S05_L0037": {
-      "text": "초롱은 오늘 바깥쪽 등을 보고 돌아와요.\n내일 아침이면 광장에 있지.{w=.3} 소식 들으면 나한테도 알려 줘요, 응?",
+      "text": "초롱은 오늘 바깥쪽 등을 보러 갔어요. 내일 아침이면 광장에 있을 거예요.",
       "expression": "anxious"
     },
     "MS14_D01_S05_L0038": {
-      "text": "네. 내일 초롱 씨부터 만나 보겠습니다."
+      "text": "돌아오면 저희가 찾는다고 전해 주세요. 저도 다시 내려와 보겠습니다."
     },
     "MS14_D01_S05_L0040": {
       "text": "아빠……{w=.5} 엄마가 내일도 안 오면?",
@@ -465,7 +472,8 @@
     },
     "MS14_D01_S05_L0045": {
       "text": "다람이 과자 봉지 끝을 두 번 접는다. 꼭꼭 누른다.",
-      "cut": null
+      "cut": null,
+      "hide_listener": true
     },
     "MS14_D01_S05_L0005": {
       "text": "다람이 천으로 감싼 손을 난로 쪽에 내민다. 나는 할머니 앞에 편지를 펼친다."
@@ -588,12 +596,6 @@
     ],
     "MS14_D01_S05_L0032": [
       {
-        "id": "NW_D01_S05_B90",
-        "speaker": null,
-        "kind": "narration",
-        "text": "창밖이 파랗게 어두워진다."
-      },
-      {
         "id": "NW_D01_SR01",
         "speaker": "다람",
         "kind": "dialogue",
@@ -645,15 +647,7 @@
         "when": "gate_won_with_e01"
       }
     ],
-    "MS14_D01_S05_L0037": [
-      {
-        "id": "NW_DLG_D01_02",
-        "speaker": "아빠",
-        "kind": "dialogue",
-        "text": "초롱 씨는 어디 가면 만날 수 있습니까?",
-        "expression": "neutral"
-      }
-    ],
+    "MS14_D01_S05_L0037": [],
     "MS14_D01_S02_L0011": [
       {
         "id": "NW_D01_GATE_LOOKUP01",
@@ -839,22 +833,6 @@
         "speaker": "돌목",
         "kind": "dialogue",
         "text": "여관에 먼저 연락하라…….{w=.5}\n……부탁이라더니.",
-        "expression": "neutral"
-      }
-    ],
-    "MS14_D01_S05_L0037": [
-      {
-        "id": "NW_D01_S05_A02",
-        "speaker": "아빠",
-        "kind": "dialogue",
-        "text": "방 난로가……{w=.3} 꺼져 있던데요.",
-        "expression": "neutral"
-      },
-      {
-        "id": "NW_D01_S05_A03",
-        "speaker": "할머니",
-        "kind": "dialogue",
-        "text": "부인이 첫날부터 돌난로는 끄고 기름등을 켜더라니까.\n추운 데서 자는 게 낫대요.{w=.3} 참, 별난 분이야.",
         "expression": "neutral"
       }
     ],
@@ -1153,6 +1131,22 @@
         "when": "daram_ready",
         "expression": "angry"
       }
+    ],
+    "MS14_D01_S05_L0038": [
+      {
+        "id": "NW_D01_S05_A02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "방 난로가……{w=.3} 꺼져 있던데요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D01_S05_A03",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "부인이 첫날부터 돌난로는 끄고 기름등을 켜더라니까.\n추운 데서 자는 게 낫대요.{w=.3} 참, 별난 분이야.",
+        "expression": "neutral"
+      }
     ]
   },
   "drop": [
@@ -1165,7 +1159,9 @@
     "MS14_D01_S01_L0007",
     "MS14_D01_S01_L0008",
     "MS14_D01_S01_L0009",
-    "MS14_D01_S01_L0017"
+    "MS14_D01_S01_L0017",
+    "MS14_D01_S03_L0016",
+    "MS14_D01_S03_L0022"
   ],
   "evidence": {
     "E02": {
@@ -1262,7 +1258,7 @@
         "id": "NW_D01_OB02",
         "speaker": "다람",
         "kind": "dialogue",
-        "text": "엄마 쪽지엔 도토리가 있어. 엄마는 쪽지 끝에 맨날 도토리 그리잖아. 장 보러 갈 때도.",
+        "text": "메모엔 도토리가 있는데…….",
         "expression": "neutral"
       },
       {
@@ -1365,6 +1361,107 @@
         "speaker": null,
         "kind": "narration",
         "text": "다람이 과자 봉지 끝을 접어 꼭 누른다."
+      }
+    ],
+    "chorong_whereabouts_ask1": [
+      {
+        "speaker": "아빠",
+        "text": "방에 초롱 씨에게 소식을 물으라는 메모가 있었습니다. 어디로 가면 만날 수 있습니까?",
+        "id": "NW_D01_FLOW137_CHORONG_WHEREABOUTS_ASK1_01",
+        "kind": "dialogue"
+      }
+    ],
+    "chorong_whereabouts_now1": [
+      {
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "지금 찾아가 볼 수는 없을까요?",
+        "id": "NW_D01_FLOW137_CHORONG_WHEREABOUTS_NOW1_01"
+      },
+      {
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "지금 어느 등을 보고 있는지는 나도 몰라요. 돌아오면 두 분이 찾는다고 전해 줄게요.",
+        "expression": "anxious",
+        "id": "NW_D01_FLOW137_CHORONG_WHEREABOUTS_NOW1_02"
+      },
+      {
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "엄마도요. 엄마 오면 우리 여기 있다고 말해 주세요.",
+        "expression": "anxious",
+        "id": "NW_D01_FLOW137_CHORONG_WHEREABOUTS_NOW1_03"
+      },
+      {
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "그래요. 꼭 전해 줄게요.",
+        "expression": "anxious",
+        "id": "NW_D01_FLOW137_CHORONG_WHEREABOUTS_NOW1_04"
+      }
+    ],
+    "chorong_whereabouts_repeat1": [
+      {
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "혹시 아내나 초롱 씨가 돌아왔습니까?",
+        "id": "NW_D01_FLOW137_CHORONG_WHEREABOUTS_REPEAT1_01"
+      },
+      {
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "아직 못 봤어요. 오면 바로 알려 줄게요.",
+        "expression": "anxious",
+        "id": "NW_D01_FLOW137_CHORONG_WHEREABOUTS_REPEAT1_02"
+      },
+      {
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "부탁드립니다.",
+        "id": "NW_D01_FLOW137_CHORONG_WHEREABOUTS_REPEAT1_03"
+      }
+    ],
+    "room_wait_decision1": [
+      {
+        "id": "NW_D01_FLOW137_WAIT_ANSWER01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아침이 되면 바로 만나러 가자. 그 전에 엄마가 돌아오는지도 계속 확인할게."
+      },
+      {
+        "speaker": "다람",
+        "text": "우리 나갔을 때 엄마가 오면 어떡해?",
+        "expression": "anxious",
+        "id": "NW_D01_FLOW137_ROOM_WAIT_DECISION1_01",
+        "kind": "dialogue"
+      },
+      {
+        "speaker": "아빠",
+        "text": "우리가 왔다는 건 할머니께 말씀드렸어. 방에 그림도 그대로 두고. 조금 기다려 보고 다시 내려가 보자.",
+        "id": "NW_D01_FLOW137_ROOM_WAIT_DECISION1_02",
+        "kind": "dialogue"
+      }
+    ],
+    "room_wait_day1": [
+      {
+        "speaker": null,
+        "kind": "narration",
+        "text": "나는 방과 접수대를 오간다. 아래층에서 문 열리는 소리가 날 때마다 계단 쪽을 본다.",
+        "id": "NW_D01_FLOW137_ROOM_WAIT_DAY1_01"
+      },
+      {
+        "speaker": null,
+        "kind": "narration",
+        "text": "돌아와서도 다람은 외투를 벗지 않는다. 문 옆에 앉아 과자 봉지를 만지작거린다.",
+        "id": "NW_D01_FLOW137_ROOM_WAIT_DAY1_02"
+      }
+    ],
+    "room_wait_evening1": [
+      {
+        "speaker": null,
+        "kind": "narration",
+        "text": "창밖이 파랗게 어두워진다.",
+        "id": "NW_D01_FLOW137_ROOM_WAIT_EVENING1_01"
       }
     ]
   }

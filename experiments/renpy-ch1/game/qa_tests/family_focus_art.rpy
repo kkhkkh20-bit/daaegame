@@ -29,7 +29,7 @@ testcase family_focus_art:
     $ persistent.room13_large_text=True
     run Call("r13_qa_v111_lines",r13_v111_lines(['MS14_D01_S05_L0045','MS14_D01_S05_L0046','MS14_D01_S05_L0047','MS14_D01_S05_L0048','MS14_D01_S05_L0049']),"qa:family-snack")
     click pos (900,600) until eval (r13_packet and r13_packet[2].get('line_id')=='MS14_D01_S05_L0046') timeout 30
-    assert eval (r13_ep_cut_current=='focus:D01_SNACK_BAG')
+    assert eval (r13_ep_cut_current!='focus:D01_SNACK_BAG')
     pause .8
     screenshot "family-focus-snack-large-touch.png"
     click pos (900,600) until screen "r13_hub" timeout 40

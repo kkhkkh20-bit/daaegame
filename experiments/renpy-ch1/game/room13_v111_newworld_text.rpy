@@ -62,6 +62,7 @@ init 319 python:
         r13_v111_apply("nw:acquire:"+key,[dict(op="acquire",key=key,variant=variant)])
     # Named conditions for added lines. Add one line here when an event needs it.
     R13_NW_WHEN={
+        "chorong_asked1":lambda:bool(r13_v111_value("chorong_whereabouts_asked1")),
         "always":lambda:True,
         # 소설 적용: 실제 행동을 본 새 저장과 이전 장면을 지난 저장을 구별한다.
         "corridor_handover7":lambda:r13_v111_value("corridor_handover7") is True,
@@ -557,6 +558,9 @@ init 319 python:
             # record's picture held up in the scene, owner "편지·그림·과자 봉지를 직접 들여다보게").
             if "cut" in revised and len(packet)>2 and isinstance(packet[2],dict):
                 packet=(packet[0],packet[1],dict(packet[2],cut=revised["cut"]))+tuple(packet[3:])
+            # 행동 지문에 없는 소품을 든 대화 그림이 남지 않게, 집필자가 지정한 줄만 비운다.
+            if revised.get("hide_listener") and len(packet)>2 and isinstance(packet[2],dict):
+                packet=(packet[0],packet[1],dict(packet[2],hide_listener=True))+tuple(packet[3:])
             # 0.19.99: impact direction for the line (systems/room13_impact_fx.rpy).
             if revised.get("fx") and len(packet)>2 and isinstance(packet[2],dict):
                 packet=(packet[0],packet[1],dict(packet[2],fx=revised["fx"]))+tuple(packet[3:])

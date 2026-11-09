@@ -3,7 +3,8 @@ init 355 python:
     R13_V111_STEP_GOALS.update({
         "note_pick":"책상 위 접힌 메모를 펼쳐 보자.",
         "bundle_open":"메모 밑 접힌 그림도 함께 살펴보자.",
-        "letter_compare_review":"책상에서 초대 편지와 방의 메모를 다시 펼쳐 보자.",
+        "letter_compare_review":"초롱 씨는 어디 있을까. 두 글은 같은 사람이 쓴 걸까.",
+        "chorong_inquiry1":"메모에 적힌 초롱 씨는 지금 어디 계실까. 아래층 할머니에게 물어볼 수 있다.",
     })
     R13_V111_RECORD_LATER[("room13","family_bundle")]="책상 위 접힌 종이. 먼저 그 위의 메모부터 읽어 보자."
 

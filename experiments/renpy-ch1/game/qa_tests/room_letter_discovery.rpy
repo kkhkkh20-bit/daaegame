@@ -53,7 +53,7 @@ testcase room_letter_discovery_list_and_legacy_return:
     assert eval (qa_room_letter_discovery_domain()==qa_discovery_domain)
     pause until eval (qa_pw_read_scope().get("ready")) timeout 10
     click id "r13_pw_submit"
-    click pos (900,600) until screen "choice" timeout 45
+    click pos (900,600) until screen "r13_hub" timeout 45
     assert eval (r13_v111_value("proof_given:두 편지를 나란히 본다")==["V111:E01","V111:E06"])
     run Function(qa_room_letter_discovery_restore)
 
@@ -80,7 +80,7 @@ testcase room_letter_discovery_direct_tail_touch:
     screenshot "room-letter-tail-touch-observed.png"
     pause until eval (qa_pw_read_scope().get("ready")) timeout 10
     click id "r13_pw_submit"
-    click pos (900,600) until screen "choice" timeout 45
+    click pos (900,600) until screen "r13_hub" timeout 45
     assert eval (r13_v111_value("proof_given:두 편지를 나란히 본다")==["V111:E01","V111:E06"])
     run Function(qa_room_letter_discovery_restore)
 
@@ -98,6 +98,6 @@ testcase room_letter_discovery_completed_save_compatibility:
     assert eval (not r13_v111_value("letter_tail_observed"))
     pause until eval (qa_pw_read_scope().get("ready")) timeout 10
     click id "r13_pw_submit"
-    click pos (900,600) until screen "choice" timeout 45
+    click pos (900,600) until screen "r13_hub" timeout 45
     assert eval (r13_v111_value("proof_given:두 편지를 나란히 본다")==["V111:E01","V111:E06"] and not r13_v111_value("letter_tail_observed"))
     run Function(qa_room_letter_discovery_restore)
