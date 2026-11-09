@@ -110,6 +110,15 @@ screen r13_hub(entry=False):
         fixed:
             area (24,84,144,88 if r13_touch_ui() else 64)
             use r13_field_top_button("지도","map",Return(("menu","map")),input_ready)
+    if not entry and r13_v111_active():
+        if r13_sidequest_tasks146():
+            fixed:
+                area (504,84,144,r13_control_height())
+                use r13_control("부탁","record",Return(("menu","sidequests")),enabled=input_ready,width=144,height=r13_control_height(),control_id="r13_field_quests")
+        if r13_field_companion_button146():
+            fixed:
+                area (664,84,144,r13_control_height())
+                use r13_control("다람","dialogue",Return(("companion","daram")),enabled=input_ready,width=144,height=r13_control_height(),control_id="r13_field_companion")
     if not entry and r13_v111_rest_option():
         fixed:
             area (1020,352,232,r13_control_height())

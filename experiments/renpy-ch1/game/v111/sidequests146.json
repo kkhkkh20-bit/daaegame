@@ -1,0 +1,779 @@
+{
+  "revision": 1,
+  "quests": {
+    "seam": {
+      "title": "당기지 않는 한 땀",
+      "owner": "resident_yeoni",
+      "owner_name": "여니",
+      "offer_days": [
+        2,
+        5
+      ],
+      "work_place": "inn",
+      "object": "knitting",
+      "offer_title": "바느질을 조금 도와드릴까요?",
+      "work_title": "천을 받치고 한 땀 뜬다",
+      "work_message": "여니가 맡긴 천이 털실 바구니 곁에 놓여 있다. 소매 끝을 함께 손볼까요?",
+      "choices": [
+        {
+          "title": "움직일 틈을 두고 꿰맨다",
+          "result": "room"
+        },
+        {
+          "title": "늘어지지 않게 단단히 꿰맨다",
+          "result": "tight"
+        }
+      ],
+      "song": "「한 땀 남긴 틈으로 작은 팔이 쏙 지나가네」",
+      "objective": "여관 털실 바구니에 놓인 천의 소매 끝을 손본다.",
+      "blocks": {
+        "offer": [
+          {
+            "id": "SQ146_SEAM_OFFER_01",
+            "speaker": "아빠",
+            "text": "바느질을 조금 도와드릴까요?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_SEAM_OFFER_02",
+            "speaker": "여니",
+            "text": "이 소매 끝을 잡아 주실래요? 토리가 입을 건데, 자꾸 손목이 걸린대요.",
+            "expression": "anxious",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_SEAM_OFFER_03",
+            "speaker": "아빠",
+            "text": "꿰매기만 하면 되는 줄 알았는데, 입어 봐야 아는 거군요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_SEAM_OFFER_04",
+            "speaker": "여니",
+            "text": "그렇죠. 곧게 꿰매는 것보다 팔이 편한 게 먼저예요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "accept": [
+          {
+            "id": "SQ146_SEAM_ACCEPT_01",
+            "speaker": "아빠",
+            "text": "제가 한번 해 볼게요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_SEAM_ACCEPT_02",
+            "speaker": "여니",
+            "text": "여관 털실 바구니 옆에 천을 놓을게요. 소매 안쪽을 받치고 손봐 주세요. 바늘은 꽂아 둘게요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "decline": [
+          {
+            "id": "SQ146_SEAM_DECLINE_01",
+            "speaker": "아빠",
+            "text": "지금은 도와드리기 어렵겠습니다.",
+            "expression": "anxious",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_SEAM_DECLINE_02",
+            "speaker": "여니",
+            "text": "괜찮아요. 맡으신 건 아니니까요. 시간이 나면 다시 말씀해 주세요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "defer": [
+          {
+            "id": "SQ146_SEAM_DEFER_01",
+            "speaker": "아빠",
+            "text": "조금 생각해 봐도 될까요?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_SEAM_DEFER_02",
+            "speaker": "여니",
+            "text": "네. 맡겠다는 말만 해 놓고 급하게 하는 것보다는 낫죠.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "work_room": [
+          {
+            "id": "SQ146_SEAM_ROOM_01",
+            "speaker": null,
+            "text": "천을 받치고 소매 안쪽에 손가락 하나가 지날 틈을 남긴다. 느슨한 실 끝을 정리한 뒤 바늘을 바구니에 꽂는다.",
+            "expression": "neutral",
+            "kind": "narration"
+          },
+          {
+            "id": "SQ146_SEAM_ROOM_02",
+            "speaker": "아빠",
+            "text": "입었을 때 편해야 한다고 했지. 여니 씨에게 봐 달라고 하자.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "work_tight": [
+          {
+            "id": "SQ146_SEAM_TIGHT_01",
+            "speaker": null,
+            "text": "천을 받친 뒤 실을 당겨 소매 끝을 단단히 꿰맨다. 바늘을 바구니에 꽂고 손바닥으로 천을 편다. 작은 주름이 남는다.",
+            "expression": "neutral",
+            "kind": "narration"
+          },
+          {
+            "id": "SQ146_SEAM_TIGHT_02",
+            "speaker": "아빠",
+            "text": "다시 풀리지는 않겠는데. 이 정도면 되는지 여니 씨에게 물어보자.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "report_room": [
+          {
+            "id": "SQ146_SEAM_REPORT_ROOM_01",
+            "speaker": "아빠",
+            "text": "맡기신 소매 끝을 손봤습니다. 한번 봐 주시겠어요?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_SEAM_REPORT_ROOM_02",
+            "speaker": "여니",
+            "text": "이 틈을 남겨 주셨네요. 고맙습니다. 토리가 팔을 움직일 때 당기지 않겠어요.",
+            "expression": "joy",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_SEAM_REPORT_ROOM_03",
+            "speaker": "아빠",
+            "text": "한 땀마다 손가락을 넣어 봤습니다. 제 손에는 조금 작더군요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_SEAM_REPORT_ROOM_04",
+            "speaker": "여니",
+            "text": "그걸 억지로 넣으신 건 아니죠? 이제 나머지는 제가 마무리할게요.",
+            "expression": "joy",
+            "kind": "dialogue"
+          }
+        ],
+        "report_tight": [
+          {
+            "id": "SQ146_SEAM_REPORT_TIGHT_01",
+            "speaker": "아빠",
+            "text": "맡기신 소매 끝을 손봤습니다. 조금 단단하게 꿰맸는데요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_SEAM_REPORT_TIGHT_02",
+            "speaker": "여니",
+            "text": "손은 많이 쓰셨네요. 다만 여기, 실을 당기니 천까지 오그라들었어요.",
+            "expression": "anxious",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_SEAM_REPORT_TIGHT_03",
+            "speaker": "아빠",
+            "text": "토리 손목이 또 걸리겠군요.",
+            "expression": "anxious",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_SEAM_REPORT_TIGHT_04",
+            "speaker": "여니",
+            "text": "이 줄만 느슨하게 풀면 돼요. 틀렸다고 전부 버릴 일은 아니에요. 제가 옆에서 마무리할게요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_SEAM_REPORT_TIGHT_05",
+            "speaker": null,
+            "text": "여니가 뭉친 실 한 줄을 풀고 소매 안쪽을 고르게 편다. 바늘을 꽂은 뒤 천을 바구니 옆에 접어 둔다.",
+            "expression": "neutral",
+            "kind": "narration"
+          }
+        ],
+        "reminder": [
+          {
+            "id": "SQ146_SEAM_REMINDER_01",
+            "speaker": "아빠",
+            "text": "맡겨 두신 천은 어디에 있습니까?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_SEAM_REMINDER_02",
+            "speaker": "여니",
+            "text": "여관 털실 바구니 옆이요. 손보고 나면 제게 보여 주세요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "done": [
+          {
+            "id": "SQ146_SEAM_DONE_01",
+            "speaker": "아빠",
+            "text": "그 소매는 이제 괜찮습니까?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_SEAM_DONE_02",
+            "speaker": "여니",
+            "text": "네. 아까 남겨 주신 틈은 그대로 뒀어요. 토리가 오면 직접 팔을 움직여 보라고 할게요.",
+            "expression": "joy",
+            "kind": "dialogue"
+          }
+        ],
+        "passed": [
+          {
+            "id": "SQ146_SEAM_PASSED_01",
+            "speaker": "아빠",
+            "text": "그때 손봐 달라던 소매는 어떻게 됐습니까?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_SEAM_PASSED_02",
+            "speaker": "여니",
+            "text": "제가 마무리했어요. 토리가 실을 잡아 줬고요. 못 오셨다고 미안해하실 일은 아니에요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "done_tight": [
+          {
+            "id": "SQ146_SEAM_DONE_TIGHT_01",
+            "speaker": "아빠",
+            "text": "그 소매는 이제 괜찮습니까?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_SEAM_DONE_TIGHT_02",
+            "speaker": "여니",
+            "text": "네. 아까 당기던 실 한 줄은 제가 풀었죠. 천을 받쳐 주셔서 마무리하기 쉬웠어요.",
+            "expression": "joy",
+            "kind": "dialogue"
+          }
+        ]
+      },
+      "accept_title": "제가 해 볼게요.",
+      "decline_title": "지금은 돕기 어렵겠습니다.",
+      "defer_title": "조금 생각해도 될까요?"
+    },
+    "notice": {
+      "title": "말로도 전하는 종소리",
+      "owner": "resident_seol",
+      "owner_name": "설이",
+      "offer_days": [
+        2,
+        5
+      ],
+      "work_place": "post",
+      "object": "notice",
+      "offer_title": "종소리 안내를 도와드릴까요?",
+      "work_title": "접힌 종소리 안내를 편다",
+      "work_message": "게시판의 종소리 안내 아래쪽이 접혀 있다. 두 가지 뜻을 읽을 수 있도록 펴 둘까요?",
+      "choices": [
+        {
+          "title": "종소리 수가 먼저 보이게 편다",
+          "result": "count"
+        },
+        {
+          "title": "안내 문장이 먼저 보이게 편다",
+          "result": "words"
+        }
+      ],
+      "song": "「접힌 글이 펴지니 종소리 뜻도 두 줄이네」",
+      "objective": "우체국 게시판의 접힌 종소리 안내를 펴 둔다.",
+      "blocks": {
+        "offer": [
+          {
+            "id": "SQ146_NOTICE_OFFER_01",
+            "speaker": "아빠",
+            "text": "종소리 안내를 도와드릴까요?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_NOTICE_OFFER_02",
+            "speaker": "설이",
+            "text": "종을 잘못 들었다는 분이 계셨어요. 제가 더 크게 치면 될 줄 알았는데, 그게 아니더라고요.",
+            "expression": "anxious",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_NOTICE_OFFER_03",
+            "speaker": "아빠",
+            "text": "소리는 들리는데 뜻을 모를 수도 있겠군요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_NOTICE_OFFER_04",
+            "speaker": "설이",
+            "text": "우체국 게시판에 안내를 붙여 뒀어요. 아래가 접혔는지 두 번째 줄이 안 보인대요. 지나가시면 펴 주실래요?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "accept": [
+          {
+            "id": "SQ146_NOTICE_ACCEPT_01",
+            "speaker": "아빠",
+            "text": "게시판에서 두 줄이 다 보이게 해 두겠습니다.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_NOTICE_ACCEPT_02",
+            "speaker": "설이",
+            "text": "고맙습니다. 소리로 알린 뒤에는 말로도 알려야겠어요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "decline": [
+          {
+            "id": "SQ146_NOTICE_DECLINE_01",
+            "speaker": "아빠",
+            "text": "지금은 우체국까지 가기 어렵겠습니다.",
+            "expression": "anxious",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_NOTICE_DECLINE_02",
+            "speaker": "설이",
+            "text": "네. 제가 다음에 내려갈 때 볼게요. 먼저 말씀해 주셔서 고마워요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "defer": [
+          {
+            "id": "SQ146_NOTICE_DEFER_01",
+            "speaker": "아빠",
+            "text": "조금 뒤에 가게 되면 봐도 될까요?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_NOTICE_DEFER_02",
+            "speaker": "설이",
+            "text": "그럼요. 가시게 되면 부탁드릴게요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "work_count": [
+          {
+            "id": "SQ146_NOTICE_COUNT_01",
+            "speaker": null,
+            "text": "접힌 종이를 펴고 위쪽 핀을 다시 눌러 둔다. 종을 짧게 한 번 치는 표시와 길게 치는 표시가 나란히 드러난다.",
+            "expression": "neutral",
+            "kind": "narration"
+          },
+          {
+            "id": "SQ146_NOTICE_COUNT_02",
+            "speaker": "아빠",
+            "text": "통행을 알리는 소리, 대피를 알리는 소리. 이제 두 표시가 다 보인다.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "work_words": [
+          {
+            "id": "SQ146_NOTICE_WORDS_01",
+            "speaker": null,
+            "text": "접힌 종이를 펴서 안내 문장을 가린 모서리를 옆으로 밀어 둔다. 통행과 대피를 설명하는 두 줄이 드러난다.",
+            "expression": "neutral",
+            "kind": "narration"
+          },
+          {
+            "id": "SQ146_NOTICE_WORDS_02",
+            "speaker": "아빠",
+            "text": "소리만 따라 쓰는 것보다 뜻도 함께 읽을 수 있겠군.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "report_count": [
+          {
+            "id": "SQ146_NOTICE_REPORT_COUNT_01",
+            "speaker": "아빠",
+            "text": "게시판 안내를 폈습니다. 두 가지 종소리 표시가 먼저 보이게 해 뒀어요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_NOTICE_REPORT_COUNT_02",
+            "speaker": "설이",
+            "text": "아, 어느 소리를 들었는지 짚어 볼 수 있겠네요. 제가 입으로 낸 소리랑도 맞춰 보고요.",
+            "expression": "joy",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_NOTICE_REPORT_COUNT_03",
+            "speaker": "아빠",
+            "text": "종을 들고 계시니 다들 안다고 여길 뻔했습니다.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_NOTICE_REPORT_COUNT_04",
+            "speaker": "설이",
+            "text": "저도 그랬어요. 누가 모른다고 말해 주셔서 다행이에요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "report_words": [
+          {
+            "id": "SQ146_NOTICE_REPORT_WORDS_01",
+            "speaker": "아빠",
+            "text": "게시판 안내를 폈습니다. 통행과 대피라는 말이 가리지 않게 해 뒀어요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_NOTICE_REPORT_WORDS_02",
+            "speaker": "설이",
+            "text": "고맙습니다. 종소리를 기억 못 해도 그 말을 읽을 수 있겠어요.",
+            "expression": "joy",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_NOTICE_REPORT_WORDS_03",
+            "speaker": "아빠",
+            "text": "말로도 뜻을 알려 주시면 더 좋겠습니다.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_NOTICE_REPORT_WORDS_04",
+            "speaker": "설이",
+            "text": "네. 다시 말하는 건 귀찮지 않아요. 모르는데 그냥 가시는 게 더 걱정이지.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "reminder": [
+          {
+            "id": "SQ146_NOTICE_REMINDER_01",
+            "speaker": "아빠",
+            "text": "안내를 붙인 곳이 어디라고 하셨죠?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_NOTICE_REMINDER_02",
+            "speaker": "설이",
+            "text": "우체국 게시판이에요. 아래쪽 두 줄이 모두 보이는지 봐 주세요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "done": [
+          {
+            "id": "SQ146_NOTICE_DONE_01",
+            "speaker": "아빠",
+            "text": "안내를 펴 둔 뒤에는 좀 괜찮습니까?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_NOTICE_DONE_02",
+            "speaker": "설이",
+            "text": "펴 주신 안내를 두고 저도 뜻을 함께 말하려고요. 모르는데 그냥 가시는 일은 줄여야죠.",
+            "expression": "joy",
+            "kind": "dialogue"
+          }
+        ],
+        "passed": [
+          {
+            "id": "SQ146_NOTICE_PASSED_01",
+            "speaker": "아빠",
+            "text": "그때 접혀 있다던 안내는 어떻게 됐습니까?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_NOTICE_PASSED_02",
+            "speaker": "설이",
+            "text": "제가 내려가서 폈어요. 이제 우편물 가져오면서 아래쪽도 한 번씩 보고 와요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ]
+      },
+      "accept_title": "제가 해 볼게요.",
+      "decline_title": "지금은 돕기 어렵겠습니다.",
+      "defer_title": "조금 생각해도 될까요?"
+    },
+    "parts": {
+      "title": "굴러가지 않는 부품",
+      "owner": "buri",
+      "owner_name": "부리",
+      "offer_days": [
+        2,
+        5
+      ],
+      "work_place": "workshop",
+      "object": "bolts",
+      "offer_title": "부품 정리를 좀 도와줄까?",
+      "work_title": "여분 부품을 천 위에 정리한다",
+      "work_message": "부리가 따로 내둔 여분 부품이 접시에 있다. 천 위에 펼쳐 정리할까요?",
+      "choices": [
+        {
+          "title": "길이가 비슷한 것끼리 놓는다",
+          "result": "length"
+        },
+        {
+          "title": "머리 모양이 같은 것끼리 놓는다",
+          "result": "head"
+        }
+      ],
+      "song": "「굴러가던 나사도 천 한 장에 쉬어 가네」",
+      "objective": "수리점 부품 접시의 여분 나사를 천 위에 정리한다.",
+      "blocks": {
+        "offer": [
+          {
+            "id": "SQ146_PARTS_OFFER_01",
+            "speaker": "아빠",
+            "text": "부품 정리를 좀 도와줄까?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_PARTS_OFFER_02",
+            "speaker": "부리",
+            "text": "접시를 건드릴 때마다 하나씩 굴러가요. 찾느라 일보다 바닥을 더 오래 봐요.",
+            "expression": "anxious",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_PARTS_OFFER_03",
+            "speaker": "아빠",
+            "text": "천 위에 펼쳐 놓으면 덜 구르겠지?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_PARTS_OFFER_04",
+            "speaker": "부리",
+            "text": "네. 접시에 따로 담은 여분 것만요. 작업대에 끼워 둔 건 그대로 놔주세요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "accept": [
+          {
+            "id": "SQ146_PARTS_ACCEPT_01",
+            "speaker": "아빠",
+            "text": "접시에 담은 것부터 정리해 볼게.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_PARTS_ACCEPT_02",
+            "speaker": "부리",
+            "text": "고맙습니다. 어느 쪽으로 나눴는지 끝나면 말해 주세요. 제가 찾을 수 있어야 하니까.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "decline": [
+          {
+            "id": "SQ146_PARTS_DECLINE_01",
+            "speaker": "아빠",
+            "text": "지금은 다른 일을 먼저 해야 할 것 같아.",
+            "expression": "anxious",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_PARTS_DECLINE_02",
+            "speaker": "부리",
+            "text": "알겠어요. 빈손으로 기다리고 있진 않을게요. 시간 나시면 와 주세요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "defer": [
+          {
+            "id": "SQ146_PARTS_DEFER_01",
+            "speaker": "아빠",
+            "text": "조금 있다가 해도 괜찮겠니?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_PARTS_DEFER_02",
+            "speaker": "부리",
+            "text": "네. 맡아 놓고 급하게 섞어 버리지만 않으시면 돼요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "work_length": [
+          {
+            "id": "SQ146_PARTS_LENGTH_01",
+            "speaker": null,
+            "text": "접시의 여분 나사를 천 위에 펼친다. 길이가 비슷한 것끼리 놓고 천의 가장자리를 접어 굴러가지 않게 한다.",
+            "expression": "neutral",
+            "kind": "narration"
+          },
+          {
+            "id": "SQ146_PARTS_LENGTH_02",
+            "speaker": "아빠",
+            "text": "어떤 길이가 필요한지 손으로 집기 쉽겠어. 부리에게 나눈 기준을 말해 주자.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "work_head": [
+          {
+            "id": "SQ146_PARTS_HEAD_01",
+            "speaker": null,
+            "text": "접시의 여분 나사를 천 위에 펼친다. 머리 모양끼리 모은 뒤 천의 가장자리를 접어 굴러가지 않게 한다.",
+            "expression": "neutral",
+            "kind": "narration"
+          },
+          {
+            "id": "SQ146_PARTS_HEAD_02",
+            "speaker": "아빠",
+            "text": "같은 도구로 돌리는 것끼리 모였군. 부리에게 나눈 기준을 말해 주자.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "report_length": [
+          {
+            "id": "SQ146_PARTS_REPORT_LENGTH_01",
+            "speaker": "아빠",
+            "text": "길이가 비슷한 것끼리 놓았어. 긴 건 천 오른쪽이야.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_PARTS_REPORT_LENGTH_02",
+            "speaker": "부리",
+            "text": "다른 데로 옮기기 전에 말해 주셔서 좋아요. 짧은 것부터 손이 가거든요.",
+            "expression": "joy",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_PARTS_REPORT_LENGTH_03",
+            "speaker": "아빠",
+            "text": "그럼 천은 이 자리에 두면 될까?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_PARTS_REPORT_LENGTH_04",
+            "speaker": "부리",
+            "text": "네. 여기 놓아 주세요. 이제 접시 말고 천부터 볼게요.",
+            "expression": "joy",
+            "kind": "dialogue"
+          }
+        ],
+        "report_head": [
+          {
+            "id": "SQ146_PARTS_REPORT_HEAD_01",
+            "speaker": "아빠",
+            "text": "머리 모양이 같은 것끼리 놓았어. 천 가장자리도 접었고.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_PARTS_REPORT_HEAD_02",
+            "speaker": "부리",
+            "text": "드라이버 바꾸는 횟수가 줄겠네요. 천도 그대로 두면 되죠?",
+            "expression": "joy",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_PARTS_REPORT_HEAD_03",
+            "speaker": "아빠",
+            "text": "응. 네가 쓰기 좋게 다시 나눠도 되고.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_PARTS_REPORT_HEAD_04",
+            "speaker": "부리",
+            "text": "제가 다시 놓아도 섭섭해하지 마세요. 이제 제 손으로도 찾아봐야 하니까.",
+            "expression": "joy",
+            "kind": "dialogue"
+          }
+        ],
+        "reminder": [
+          {
+            "id": "SQ146_PARTS_REMINDER_01",
+            "speaker": "아빠",
+            "text": "어느 부품부터 정리하면 될까?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_PARTS_REMINDER_02",
+            "speaker": "부리",
+            "text": "수리점 접시에 담은 여분 나사요. 어떻게 나눴는지 끝나면 제게 말해 주세요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "done": [
+          {
+            "id": "SQ146_PARTS_DONE_01",
+            "speaker": "아빠",
+            "text": "부품은 좀 찾기 쉬워졌니?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_PARTS_DONE_02",
+            "speaker": "부리",
+            "text": "네. 이제 바닥부터 안 봐도 되겠어요. 쓰고 나면 제가 여기 다시 놓을게요.",
+            "expression": "joy",
+            "kind": "dialogue"
+          }
+        ],
+        "passed": [
+          {
+            "id": "SQ146_PARTS_PASSED_01",
+            "speaker": "아빠",
+            "text": "그때 접시의 부품들은 정리했니?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "SQ146_PARTS_PASSED_02",
+            "speaker": "부리",
+            "text": "제가 천 위에 펼쳤어요. 조금씩 나눠 하니까 되네요. 다음엔 제가 먼저 도와드릴 수도 있겠어요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ]
+      },
+      "accept_title": "내가 해 볼게.",
+      "decline_title": "지금은 어렵겠어.",
+      "defer_title": "조금 뒤에 해도 될까?",
+      "status_title": "어디부터 손대면 될까?",
+      "report_title": "부탁한 일을 마쳤어.",
+      "done_title": "그 뒤로 좀 괜찮아?",
+      "close_title": "그때 하던 정리는 어떻게 됐어?"
+    }
+  }
+}

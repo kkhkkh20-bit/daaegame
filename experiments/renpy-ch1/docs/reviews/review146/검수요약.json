@@ -1,0 +1,41 @@
+{
+  "version": "0.20.146",
+  "build_sha256": "9a4b772e5bf61c5c1e2eb359639a9539a1fe093597e479045321947b80484777",
+  "first_game_data_bytes": 36828687,
+  "unit_tests": 1725,
+  "sdk_cases": 12,
+  "ordinary_prepared_states": 189,
+  "prepared_branch_states": 10,
+  "blocked_person_queries": 12,
+  "resident_catalogue_people": 55,
+  "new_dialogue_definitions": 230,
+  "optional_quest_types": 3,
+  "dispersed_routines": 9,
+  "quiet_minor_roles": 4,
+  "natural_main_route": {
+    "days": "1~7",
+    "dialogue_displays": 1941,
+    "log_rows": 2286,
+    "planned_answers": true,
+    "story_state_injection": false,
+    "build": "c63f7bd6a73db3d42953efe8ac023563cf160f1ce734da69e3baab3b72a07b7d",
+    "scope": "주경로 한 번. 피코 사망·꼬미 생존·등불/화재 회의 승리. 4일 실제 UI 저장복원"
+  },
+  "final_build_loaded_actual_completion": true,
+  "actual_day7_inn_roundtrip": true,
+  "all_paths_naturally_completed": false,
+  "limitations": [
+    "정적 버튼 목록과 준비 상태 조회는 모든 버튼의 실제 입력·자연 도달 검증과 구분한다.",
+    "최종 소식·완료경계 보완은 실제 자연 완주 저장과 SDK 실제S02 준비경계로 다시 확인했다.",
+    "초견 인간 독자의 재미·성능 벤치마크·모든 기기 검증은 수행하지 않았다."
+  ],
+  "engine_counts": {
+    "states": 199,
+    "npc_visits": 493,
+    "choices": 1048,
+    "objects": 1525,
+    "issues": 0,
+    "diagnostics": 0
+  },
+  "final_actual_completion_state": "S02/free_day7 실제인계·쪽지완료, 최종빌드에서 탐색복귀·늦은소식·공개왕복확인"
+}

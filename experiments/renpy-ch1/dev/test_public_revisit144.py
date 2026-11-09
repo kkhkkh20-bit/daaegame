@@ -18,7 +18,7 @@ class PublicRevisit144(unittest.TestCase):
             r13_v111_owned=lambda key:'V111:'+key in self.state.room13['evidence'],
             r13_has=lambda key:key in self.state.room13['flags'],r13_v111_binding=lambda:self.binding,
             _r13_v111_places=lambda:['legacy'])
-        for key in ('r13_v111_revisit_allowed','r13_v111_known_public_visits','r13_v111_public_revisit_places','r13_v111_inn_revisit_places','r13_places'):
+        for key in ('r13_v111_free7_ready','r13_v111_revisit_allowed','r13_v111_known_public_visits','r13_v111_public_revisit_places','r13_v111_inn_revisit_places','r13_places'):
             load_function('game/room13_v111.rpy',key,self.env)
         load_function('game/room13_rules.rpy','r13_edit',self.env)
 

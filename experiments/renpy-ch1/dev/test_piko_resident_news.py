@@ -319,7 +319,7 @@ class PikoResidentNews(unittest.TestCase):
         # 실제 person 클릭의 같은 실행 블록을 점검한다. 첫 보고 반환 뒤의 idle은 다음 클릭까지 보류된다.
         hub=(ROOT/'game/room13_v111.rpy').read_text()
         start=hub.index('            call r13_piko_report(v111_person)')
-        end=hub.index('        elif v111_person in r13_visible_people():',start)
+        end=hub.index('        elif r13_v111_dialogue_here146(v111_person):',start)
         part=hub[start:end]
         self.assertIn('$ v111_piko_reported=bool(_return)',part)
         self.assertIn('            if not v111_piko_reported:',part)

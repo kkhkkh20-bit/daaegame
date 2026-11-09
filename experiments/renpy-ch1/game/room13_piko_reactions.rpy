@@ -27,13 +27,17 @@ init 354 python:
         return any(option.get("location")==here and any(option.get(kind) for kind in ("person","object","move","present"))
                    for option in binding.get("options",[]))
 
+    def r13_piko_required_business(person):
+        # 선택 가능한 일상·의뢰 질문은 소식을 전할 일을 영구히 막지 않는다.
+        return globals().get("r13_v111_required_business",r13_v111_has_business)(person)
+
     def r13_piko_report_due(person):
         day=(store.room13 or {}).get("day")
         if not r13_piko_news_available(person) or r13_v111_value("piko_news3:"+person):return False
         if day==3:return True
         # 3일에 식당을 찾지 않은 경우도 실제 대면으로만 전한다. 필수 문답과 당면 사건은 먼저다.
         return (person=="nabi" and day in (4,5,6,7) and not r13_v111_tense_context()
-                and not r13_v111_has_business(person) and not r13_piko_current_activity(person))
+                and not r13_piko_required_business(person) and not r13_piko_current_activity(person))
 
     def r13_piko_report_lines(person):
         # 조회·예측은 정보를 저장하지 않는다. 실제 라벨의 대화 반환 뒤에만 아래에서 표시한다.
@@ -63,7 +67,7 @@ init 354 python:
         day=(store.room13 or {}).get("day")
         if day not in (3,4,5,6,7) or not r13_piko_resident_available(person):return []
         # 현재 사건·필수 질문·자료 반응·바쁜 일은 짧은 잔향보다 먼저다.
-        if r13_v111_tense_context() or r13_v111_has_business(person) or r13_piko_current_activity(person):return []
+        if r13_v111_tense_context() or r13_piko_required_business(person) or r13_piko_current_activity(person):return []
         # 처리 결과는 피코가 살아 있는 도난판에도 직접 들었다. 사망 소식과 별개의 기억이다.
         custody=r13_v111_value("piko_custody_heard3:buri") if person=="buri" and not r13_v111_value("lamp_bound2") else None
         if custody not in ("report","transfer"):custody=None

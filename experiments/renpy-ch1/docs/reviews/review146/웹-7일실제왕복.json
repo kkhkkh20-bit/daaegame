@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "scope": "최종묶음 실제자연완주저장→탐색계속에서 지도 실제클릭으로 학교→여관접수대→학교. 서사상태주입없음. 주민선택지의비어있음/중복/생존및완료된회의문맥유지검사. 다른모든장소자연왕복검증아님.",
+  "visits": [
+    {
+      "day": 7,
+      "place": "inn",
+      "gate": "free_day7",
+      "scene": "MS14_D07_S02",
+      "fire": "win",
+      "news": true,
+      "calm": null,
+      "residents": [
+        {
+          "person": "granny",
+          "ready": true,
+          "choices": 2,
+          "alive": true
+        },
+        {
+          "person": "resident_owlgp",
+          "ready": true,
+          "choices": 2,
+          "alive": true
+        },
+        {
+          "person": "resident_tori",
+          "ready": true,
+          "choices": 2,
+          "alive": true
+        },
+        {
+          "person": "resident_yeoni",
+          "ready": true,
+          "choices": 2,
+          "alive": true
+        },
+        {
+          "person": "resident_hyeoni",
+          "ready": true,
+          "choices": 3,
+          "alive": true
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "place": "school",
+      "gate": "free_day7",
+      "scene": "MS14_D07_S02",
+      "fire": "win",
+      "news": true,
+      "calm": null,
+      "residents": [
+        {
+          "person": "resident_teacher",
+          "ready": true,
+          "choices": 2,
+          "alive": true
+        },
+        {
+          "person": "nabi",
+          "ready": true,
+          "choices": 3,
+          "alive": true
+        },
+        {
+          "person": "daram",
+          "ready": true,
+          "choices": 3,
+          "alive": true
+        }
+      ]
+    }
+  ]
+}

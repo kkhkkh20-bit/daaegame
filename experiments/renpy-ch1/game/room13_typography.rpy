@@ -31,6 +31,8 @@ init 57 python:
                 # (room13_world_camera.rpy) — a name tag never covers them.
                 (offset+8,236,80,80),(offset+1192,236,80,80)]
         if globals().get("r13_v111_rest_option",lambda:None)():rects.append((offset+1020,352,232,h))
+        if globals().get("r13_sidequest_tasks146",lambda:[])():rects.append((offset+504,84,144,h))
+        if globals().get("r13_field_companion_button146",lambda:False)():rects.append((offset+664,84,144,h))
         return rects
 
     R13_UI_PADDING = {

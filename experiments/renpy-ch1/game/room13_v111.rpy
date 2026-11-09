@@ -317,8 +317,10 @@ init 301 python:
         # Keep the existing scenery observations, but never run an old case's
         # grants, latch events, deductions or secret-room handlers in this story.
         if (location,key)==("square","lamp"):return "등 받침에 작은 점검함이 있다."
+        plain=globals().get("R13_FIELD_PLAIN_OBSERVATIONS146",{}).get((location,key))
+        if plain:return plain if _r13_v111_object_visible(spec) else None
         if spec.get("give") or spec.get("flags") or spec.get("special"):
-            return r13_object_name(key) if _r13_v111_object_visible(spec) else None
+            return None
         return spec.get("text") if _r13_v111_object_visible(spec) else None
     _r13_v111_object_visible=r13_object_visible
     def r13_object_visible(spec):
@@ -346,6 +348,16 @@ init 301 python:
             return [(Transform("assets/room13-v111-blanket-before.webp",xysize=(260,180),fit="contain",nearest=True),30,441)]
         return _r13_v111_props(entry)
     _r13_v111_places=r13_places
+    def r13_v111_free7_ready():
+        state=store.room13;story=state.get("v111") or {};values=story.get("values") or {}
+        return (state.get("day")==7 and story.get("gate")=="free_day7"
+                and values.get("meeting:fire") in ("win","partial","lose")
+                and values.get("D07_S02_handover_completed") is True
+                and values.get("D07_S02_message_completed") is True
+                and values.get("route7") in (None,"uncommitted")
+                and not values.get("DARAM_DETAINED") and values.get("OWL_ALIVE") is not False
+                and state.get("case_state")!="occurred")
+
     def r13_v111_revisit_allowed():
         # 일상 조사 대기만 연다. 이동·회의·긴급 대응은 기존 장면의 동선을 따른다.
         state=store.room13;story=state.get("v111",{});here=state.get("location")
@@ -355,9 +367,13 @@ init 301 python:
             "lamp_log_request","loan_read","measurement_read","transport_read","knife_permission","store_visit",
             "stone_check","sale_check","restore_input","lamp_attempt_field3","sleep3","portrait_show4","portrait_place4",
             "look_gate4","inspect_gate4","collect4","sleep4","compare_cloth5","envelope5","reply_handoff5","lock_check5",
-            "sleep5","board6","afternoon6","sleep6_input","free_sleep7_input"}
+            "sleep5","board6","afternoon6","sleep6_input","free_sleep7_input","free_day7"}
         if not 1<=state.get("day",1)<=7 or story.get("gate") not in safe_gates:return False
-        if story.get("scene") in ("MS14_D03_S05","MS14_D05_S03","MS14_D07_S02") or getattr(store,"r13_meeting_active",False):return False
+        free7=r13_v111_free7_ready()
+        if story.get("gate")=="free_day7" and not free7:return False
+        if (story.get("scene") in ("MS14_D03_S05","MS14_D05_S03")
+                or story.get("scene")=="MS14_D07_S02" and not free7
+                or getattr(store,"r13_meeting_active",False)):return False
         if (r13_v111_value("DARAM_DETAINED") or r13_v111_value("OWL_ALIVE") is False
                 or r13_v111_value("route7")=="murder" or state.get("case_state")=="occurred"):return False
         if (r13_v111_value("busy:mom")=="daram_guard" or r13_v111_value("busy:nabi")=="daram_guard"
@@ -413,7 +429,7 @@ label r13_v111_wait_again:
     # 0.20.6 (owner day-1 play: "추가 질문마다 대화를 다시 시작하는 느낌"): after a question, a shown
     # record or a follow-up, the same person's questions open again while they still have
     # something to say and stand here; 「돌아가기」 leaves the conversation.
-    if r13_v111_talk_person and r13_v111_talk_person in r13_visible_people() and not r13_v111_idle_ok(r13_v111_talk_person):
+    if r13_v111_talk_person and r13_v111_dialogue_here146(r13_v111_talk_person) and not r13_v111_idle_ok(r13_v111_talk_person):
         $ v111_pick=("person",r13_v111_talk_person); v111_binding=r13_v111_binding()
     else:
         $ r13_life_field_active=True
@@ -476,6 +492,13 @@ label r13_v111_wait_again:
             $ v111_pick=("object",v111_rest["object"])
         else:
             jump r13_v111_wait_again
+    if v111_pick[0]=="companion":
+        if v111_pick[1]!="daram" or not r13_v111_dialogue_here146("daram"):
+            jump r13_v111_wait_again
+        $ v111_pick=("person","daram")
+    if v111_pick==("menu","sidequests"):
+        call screen r13_sidequest_journal146
+        jump r13_v111_wait_again
     if v111_pick[0]=="person":
         $ v111_person=v111_pick[1]
         $ v111_piko_reported=False
@@ -505,7 +528,7 @@ label r13_v111_wait_again:
                 $ r13_field_reading=True
                 call r13_lines(r13_v111_idle_lines(v111_person),"v111:idle:"+v111_person)
                 $ r13_field_reading=False
-        elif v111_person in r13_visible_people():
+        elif r13_v111_dialogue_here146(v111_person):
             # 0.20.10 (4~14일 리뷰 P07): 물을 것이 없는 다람은 장면마다 처음 한 번 먼저 대답한다.
             if v111_person=="daram" and r13_v111_daram_hello_due():
                 call r13_lines(r13_v111_daram_hello(),"v111:daram_hello")
@@ -546,6 +569,9 @@ label r13_v111_wait_again:
                         call r13_lines(v111_react,"v111:present_reaction:"+v111_person+":"+v111_shown)
                     else:
                         $ renpy.notify("지금은 이 자료로 더 확인할 내용이 없다.")
+            if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="sidequest":
+                if isinstance(_return[1],(tuple,list)) and len(_return[1])==2:
+                    call r13_sidequest_dispatch(_return[1][0],_return[1][1])
             if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="resident_chat":
                 call r13_v111_resident_chat(_return[1])
             if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="followup":
@@ -570,9 +596,10 @@ label r13_v111_wait_again:
             $ r13_v111_time("inspect:"+key+":"+v111_pick[1],0 if key=="letter_compare_review" or (key=="gate_investigate" and v111_pick[1]=="ledger") else 15)
             return v111_binding["options"][v111_matches[0]].get("index",v111_matches[0])
         if len(v111_matches)>1:
-            $ v111_object_options=[("(%s, 어떻게 할까?)"%r13_object_name(v111_pick[1]),None)]+[(v111_binding["options"][i]["title"],i) for i in v111_matches]   # 2026-10-28 캡처 검수: 제목 없이 열리면 직전 대사(「설마 여기서 주무십니까?」)가 물음처럼 떠서 고를 것과 어긋났다. 보기만이 아니라 하는 일(사람 받기)도 있어 「어떻게 할까」로 묻는다
-            $ v111_result=renpy.display_menu(v111_object_options)
-            if not isinstance(v111_result,int) or v111_result not in v111_matches:
+            $ v111_object_options=[dict(title=v111_binding["options"][i]["title"],position=i) for i in v111_matches]
+            call screen r13_v111_object_choices146(v111_pick[1],v111_object_options)
+            $ v111_result=_return
+            if isinstance(v111_result,bool) or not isinstance(v111_result,int) or v111_result not in v111_matches:
                 jump r13_v111_wait_again
             if r13_v111_rest_option() and v111_binding["options"][v111_result]["index"]==0:
                 call r13_v111_rest_confirm
@@ -586,8 +613,13 @@ label r13_v111_wait_again:
             jump r13_v111_wait_again
         if key=="gate_choice" and v111_pick[1] in ("booth","gate_documents"):
             return 1
+        if r13_sidequest_object_actions(v111_pick[1]):
+            call r13_sidequest_object_menu(v111_pick[1])
+            if _return:
+                jump r13_v111_wait_again
         if v111_pick[1]=="bed" and room13["location"] in ("room13","guestroom"):
-            $ renpy.notify("아직 할 일이 남아 있습니다. 준비를 마치면 여기서 잠잘 수 있습니다.")
+            $ v111_bed_hint=r13_v111_ambient_text(v111_pick[1],ROOM13["objects"].get(room13["location"],{}).get(v111_pick[1],{}))
+            $ renpy.notify(v111_bed_hint or "아직 할 일이 남아 있습니다. 준비를 마치면 여기서 잠잘 수 있습니다.")
             jump r13_v111_wait_again
         $ v111_object_spec=ROOM13["objects"].get(room13["location"],{}).get(v111_pick[1],{})
         $ v111_ambient=r13_v111_ambient_text(v111_pick[1],v111_object_spec)

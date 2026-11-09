@@ -230,6 +230,8 @@ init 351 python:
     def r13_v111_tense_context():
         v=store.room13.get("v111") or {}
         scene=v.get("scene")
+        # 1부의 자유 오후는 학교 인계 장면 번호를 유지한다. 완료된 회의를 계속 위기로 세지 않는다.
+        if scene=="MS14_D07_S02" and globals().get("r13_v111_free7_ready",lambda:False)():return None
         # 사망 확인 전과 피코가 살아 있는 아침은 구별한다. 당일 광장 두 장면에만 적용한다.
         if ((store.room13 or {}).get("day")==3 and store.room13.get("location")=="square"
                 and scene in ("MS14_D03_S01","MS14_D03_S02") and r13_v111_value("piko_alive") is False):

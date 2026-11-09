@@ -1,0 +1,50 @@
+{
+  "result": null,
+  "day": 1,
+  "place": "room13",
+  "gate": "bundle_open",
+  "people": [
+    "daram"
+  ],
+  "visible": [],
+  "nabi_where": "dining",
+  "nabi_physical": null,
+  "nabi_busy": null,
+  "nabi_actor_ready": false,
+  "piko_dead": false,
+  "owns_E09": false,
+  "news": null,
+  "report_due": false,
+  "resident_available": false,
+  "required_business": false,
+  "current_activity": false,
+  "followups": [],
+  "binding": {
+    "location": "room13",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "메모 밑 접힌 그림을 펼친다",
+        "location": "room13",
+        "guard": [],
+        "object": "mother_note",
+        "index": 0
+      },
+      {
+        "index": 100,
+        "title": "서랍 밑 종이를 빼낸다",
+        "location": "room13",
+        "object": "mother_note",
+        "guard": [
+          [
+            "state",
+            "hidden_base:paper",
+            null
+          ]
+        ]
+      }
+    ]
+  }
+}

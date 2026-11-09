@@ -1,0 +1,31 @@
+{
+  "version": "0.20.146",
+  "natural_part1_save_loaded_in_final_build": true,
+  "whole_room13_equal_after_load": true,
+  "completion_slot_not_rewritten": true,
+  "returned_to_free_day7": true,
+  "actual_route_nabi_news_delivered": true,
+  "fire_and_piko_choices_coexist": true,
+  "phone_questions": true,
+  "existing_present_and_cancel_preserved": true,
+  "main_state_unchanged_by_optional_news": true,
+  "pageerrors": [],
+  "topics": [
+    {
+      "key": "resident146:nabi:urgent_fire_safe",
+      "context": "fire_safe",
+      "title": "아이들 식사는 챙길 수 있겠습니까?"
+    },
+    {
+      "key": "resident146:nabi:urgent_piko_after",
+      "context": "piko_after",
+      "title": "피코 씨 얘기 뒤로 좀 쉬셨습니까?"
+    },
+    {
+      "key": "resident146:nabi:work",
+      "context": "ordinary",
+      "title": "한꺼번에 밥을 준비하면 헷갈리지 않으세요?"
+    }
+  ],
+  "scope": "최종 빌드에서 이전146후보의 새게임~7일 자연완주 저장을 UI불러오기. 탐색계속→현재실제주민위치이동→나비 실제대면·늦은피코소식·두사건기억·후속읽기·자료함취소. 서사상태준비/주입 없음. text_cps=0 설정만 사용."
+}
