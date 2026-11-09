@@ -342,7 +342,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 148 | `systems/room13_materials.rpy:40` | _r13_v111_catalog_record |
-| 2 | 306 | `room13_v111.rpy:838` | _r13_nw_rules_catalog_record |
+| 2 | 306 | `room13_v111.rpy:840` | _r13_nw_rules_catalog_record |
 | 3 | 318 | `room13_v111_newworld_rules.rpy:14` |  |
 
 ## `r13_conversation_opening` (3층)
@@ -430,7 +430,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 150 | `systems/room13_material_art.rpy:8` | _r13_v111_material_art |
-| 2 | 302 | `room13_v111.rpy:754` | _r13_room_documents_material_art |
+| 2 | 302 | `room13_v111.rpy:756` | _r13_room_documents_material_art |
 | 3 | 356 | `systems/room13_room_documents.rpy:18` |  |
 
 ## `r13_meeting_cast` (3층)
@@ -487,14 +487,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 150 | `systems/room13_sound.rpy:123` | _r13_contrast_scene_music |
 | 2 | 163 | `systems/room13_scene_contrast.rpy:25` | _r13_v111_scene_music |
-| 3 | 307 | `room13_v111.rpy:867` |  |
+| 3 | 307 | `room13_v111.rpy:869` |  |
 
 ## `r13_speaker` (3층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 55 | `room13_rules.rpy:308` | _r13_v111_speaker_base |
-| 2 | 304 | `room13_v111.rpy:882` | _r13_carriage_speaker |
+| 2 | 304 | `room13_v111.rpy:884` | _r13_carriage_speaker |
 | 3 | 306 | `room13_carriage_direction.rpy:103` |  |
 
 ## `r13_v111_line` (3층)
@@ -512,6 +512,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 335 | `room13_v111_reactions.rpy:68` | _r13_idle_present_reaction |
 | 2 | 336 | `room13_v111_idle.rpy:47` | _r13_present_fallback |
 | 3 | 347 | `room13_v111_idle.rpy:153` |  |
+
+## `r13_v111_questions` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 301 | `room13_v111.rpy:156` | _r13_reaction_questions |
+| 2 | 335 | `room13_v111_reactions.rpy:98` | _r13_resident_questions |
+| 3 | 358 | `systems/room13_v111_resident_talk.rpy:67` |  |
 
 ## `r13_v111_set` (3층)
 
@@ -682,6 +690,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 55 | `room13_rules.rpy:109` | _r13_items_has |
 | 2 | 96 | `systems/room13_items.rpy:95` |  |
+
+## `r13_hyeoni_verses` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 145 | `systems/room13_new_cast.rpy:203` | _r13_resident_hyeoni_verses |
+| 2 | 358 | `systems/room13_v111_resident_talk.rpy:63` |  |
 
 ## `r13_intro_direction_lines` (2층)
 
@@ -914,19 +929,19 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 301 | `room13_v111.rpy:150` | _r13_follow_context |
 | 2 | 345 | `systems/room13_camera_follow.rpy:10` |  |
 
+## `r13_v111_has_business` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 336 | `room13_v111_idle.rpy:20` | _r13_resident_business |
+| 2 | 358 | `systems/room13_v111_resident_talk.rpy:75` |  |
+
 ## `r13_v111_lines` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 319 | `room13_v111_newworld_text.rpy:603` | _r13_followup_heard_lines |
 | 2 | 336 | `room13_v111_reactions.rpy:125` |  |
-
-## `r13_v111_questions` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 301 | `room13_v111.rpy:156` | _r13_reaction_questions |
-| 2 | 335 | `room13_v111_reactions.rpy:98` |  |
 
 ## `r13_w2_action_done` (2층)
 

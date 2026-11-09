@@ -546,6 +546,8 @@ label r13_v111_wait_again:
                         call r13_lines(v111_react,"v111:present_reaction:"+v111_person+":"+v111_shown)
                     else:
                         $ renpy.notify("지금은 이 자료로 더 확인할 내용이 없다.")
+            if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="resident_chat":
+                call r13_v111_resident_chat(_return[1])
             if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="followup":
                 $ v111_follow=_return[1]
                 call r13_lines(r13_v111_followup_lines(v111_follow),"v111:followup:"+v111_follow)
