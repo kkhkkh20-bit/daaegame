@@ -490,6 +490,8 @@ label r13_v111_proof(key,correct,success,wrong=None,hint=None,review_return=None
     $ v111_claim="v111:"+key
     $ R13_CLAIMS[v111_claim]=dict(assertion=R13_PROOF_TITLES.get(key,key))
     $ room13["arguments"].setdefault(v111_claim,[])
+    if r13_case_hearing_spec(key):
+        $ r13_v111_set("hearing:base:"+key,list(correct))
 label r13_v111_proof_again:
     # 2026-10-27 UX 인계서 D01~D03·D06: 시범 쟁점(systems/room13_proof_workspace.rpy R13_PW_CONTEXT)은 통합 화면.
     # 반환값("argue"/"press"/"investigate"/("remove",키)/("toggle",키))은 아래 기존 분기로 그대로 흐른다.
@@ -505,6 +507,27 @@ label r13_v111_proof_again:
         call r13_v111_fire_question7(_return[1])
         if _return!="argue":
             jump r13_v111_proof_again
+    if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="hearing_press":
+        $ v111_hearing_block=r13_case_hearing_press_block(key,_return[1])
+        if v111_hearing_block:
+            call r13_lines(r13_nw_block(v111_hearing_block),"v111:hearing_press")
+        jump r13_v111_proof_again
+    if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="hearing_inspect":
+        if _return[1]=="latch" and key=="바깥 걸쇠 주장과 발견 위치를 대조한다":
+            call screen r13_case_inspect("latch")
+        jump r13_v111_proof_again
+    if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="hearing_argue":
+        $ v111_hearing_row=next((row for row in r13_case_hearing_rows(key) if row["target"]==_return[1]),None)
+        if not v111_hearing_row or not room13["arguments"].get(v111_claim):
+            jump r13_v111_proof_again
+        if v111_hearing_row["key"]!=key:
+            # 이미 들은 다른 발언을 검토해도 현재 쟁점의 성공·실패를 대신 판정하지 않는다.
+            # 정답 묶음은 원래 proof 호출에서 받은 것을 그대로 사용한다. 기회는 쓰지 않는다.
+            $ v111_hearing_base=r13_v111_value("hearing:base:"+v111_hearing_row["key"])
+            $ v111_hearing_confirmed=v111_hearing_base is not None and r13_v111_proof_accepts(v111_hearing_row["key"],v111_hearing_base,room13["arguments"][v111_claim])
+            call r13_lines(r13_nw_block("hearing140_review_confirmed" if v111_hearing_confirmed else "hearing140_review_unconfirmed"),"v111:hearing_review")
+            jump r13_v111_proof_again
+        $ _return="argue"
     if _return=="investigate" and r13_pw_review_target(key,review_return):
         return r13_pw_review_target(key,review_return)
     if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="observe":

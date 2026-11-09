@@ -28,9 +28,16 @@ class DynamicBindings(unittest.TestCase):
     self.assertEqual(row['assets'],'HOLD');self.assertNotIn('dynamic:%03d'%i,self.registry['routes']);continue
    if row['binding_status']=='static_exact_binding_available':continue
    checked.add('dynamic:%03d'%i)
-   self.assertIn('call r13_lines(', (ROOT/row['source']).read_text().splitlines()[row['line']-1])
-   source=(ROOT/row['source']).read_text();offset=sum(len(s) for s in source.splitlines(True)[:row['line']-1]);start=source.index('call r13_lines(',offset)+len('call r13_lines');end=line_cues._match_bracket(source,start)
-   actual=ast.parse('f'+source[start:end+1],mode='eval').body;original=ast.parse('f('+row['call_expression']+')',mode='eval').body
+   # 줄 삽입으로 납품 당시 위치가 이동해도 실제 route와 호출 인수는 같아야 한다.
+   # 줄 번호를 건너뛰는 대신 안정된 route가 붙은 호출이 유일한지 검사한다.
+   source=(ROOT/row['source']).read_text();matches=[]
+   for call in re.finditer(r'\bcall r13_lines\(',source):
+    start=call.end()-1;end=line_cues._match_bracket(source,start)
+    self.assertGreater(end,start)
+    candidate=ast.parse('f'+source[start:end+1],mode='eval').body
+    if any(k.arg=='binding_route' and isinstance(k.value,ast.Constant) and k.value.value=='dynamic:%03d'%i for k in candidate.keywords):matches.append(candidate)
+   self.assertEqual(len(matches),1,'dynamic:%03d must identify one live call'%i)
+   actual=matches[0];original=ast.parse('f('+row['call_expression']+')',mode='eval').body
    self.assertEqual([ast.dump(a) for a in actual.args],[ast.dump(a) for a in original.args]);self.assertEqual(actual.keywords[-1].value.value,'dynamic:%03d'%i)
   self.assertEqual(checked,set(self.registry['routes']))
   self.assertEqual(retired,RETIRED);self.assertEqual(held,{803,804,806,807,808,809,810,811,812,813,814})

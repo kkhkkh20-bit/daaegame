@@ -51,6 +51,10 @@ testcase v111_rules_knife_no_consent:
     click pos (900,600) until screen "choice" timeout 15
     assert eval (qa_knife_observe_before==(room13['evidence'],room13['arguments'],r13_v111_value('tries:lamp'),r13_v111_value('silluk_knife_comparison_consent')))
     click "칼끝과 안쪽 조각을 맞춰 본다"
+    click pos (900,600) until screen "r13_case_inspect" timeout 60
+    pause .3
+    click id "r13_case_inspect_fit"
+    click id "r13_case_inspect_confirm"
     click pos (900,600) until screen "r13_proof_workspace" timeout 90
     assert eval (v111_claim=="v111:바깥 걸쇠 주장과 발견 위치를 대조한다" and not r13_v111_value("tries:lamp") and r13_v111_value("meeting:lamp") is None)
     assert eval qa_nw_seen("이 칼끝입니다")

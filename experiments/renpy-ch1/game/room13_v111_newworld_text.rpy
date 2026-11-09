@@ -579,7 +579,7 @@ init 319 python:
         who=MS14_SPEAKERS.get(row.get("speaker")) if row.get("speaker") is not None else None
         if who and not r13_v111_person_alive(who):raise Exception("Absent/dead new-world speaker: "+row["id"])
         slot=row.get("expression") or "neutral"
-        options=dict(no_lead=True,expression=slot,pose=slot)
+        options=dict(no_lead=True,expression=slot,pose=slot,source_id=row.get("id"))
         if row.get("cut"):options["cut"]=row["cut"]
         # 2026-10-29 엔딩 컷(systems/room13_end_cut.rpy): 그림이 납품돼 있을 때만 뜬다.
         if row.get("endcut"):options["endcut"]=row["endcut"]

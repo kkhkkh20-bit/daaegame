@@ -1246,7 +1246,13 @@ label r13_v111_trial_knife:
     $ v111_menu=[('칼날과 안벽 자국을 맞춰 본다',3),('칼끝과 안쪽 조각을 맞춰 본다',0),('이 자국은 실룩 씨 칼이 냈습니다',1),('자료를 다시 본다',2)]
     $ v111_answer=renpy.display_menu(v111_menu)
     if v111_answer==0:
-        jump r13_v111_knife_fit
+        $ r13_v111_scene('MS14_D03_S05')
+        $ r13_v111_score()
+        call r13_lines(r13_v111_lines(['MS14_D03_S05_L0012', 'MS14_D03_S05_L0013', 'MS14_D03_S05_L0014']),'v111:knife_request140')
+        call screen r13_case_inspect("knife")
+        if _return=="knife_fit":
+            jump r13_v111_knife_fit140
+        jump r13_v111_trial_knife
     if v111_answer==1:
         jump r13_v111_knife_wrong
     if v111_answer==2:
@@ -1267,7 +1273,9 @@ label r13_v111_knife_scratch_observe3:
 label r13_v111_knife_fit:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0012', 'MS14_D03_S05_L0013', 'MS14_D03_S05_L0014', 'MS14_D03_S05_L0016', 'MS14_D03_S05_L0017']), 'v111:knife_fit:MS14_D03_S05_L0012')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0012', 'MS14_D03_S05_L0013', 'MS14_D03_S05_L0014']), 'v111:knife_fit:MS14_D03_S05_L0012')
+label r13_v111_knife_fit140:
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0016', 'MS14_D03_S05_L0017']), 'v111:knife_fit:MS14_D03_S05_L0016')
     $ r13_v111_commit('MS14_D03_S05_L0018')
     call r13_lines(r13_v111_lines(['MS14_D03_S05_L9101', 'MS14_D03_S05_L9102']), 'v111:knife_fit:MS14_D03_S05_L9101')
     jump r13_v111_trial_latch

@@ -66,7 +66,7 @@ class ResidentDay5(Layer):
         self.assertNotIn('r13_v111_proof(',source,'첫 성공 뒤 같은 자료를 다시 내도록 요구하지 않는다')
         self.assertNotIn('r13_nw_retry(',source,'추가 질문으로 이미 이긴 판의 기회를 깎지 않는다')
         self.assertIn("getattr(store,'v111_hearing_question5',None) in (0,2)",source,'기존 나비 증언 뒤에서 재개하는 구 저장은 새 변수 없이도 이어진다')
-        expected={'hearing_face5':('guard','못 봤소'),
+        expected={'hearing_face5':('guard','못 봤'),
                   'hearing_coat5':('resident_nero','어르신께 걸쳐'),
                   'hearing_place5':('resident_nero','물통')}
         for sketch in (False,True):
@@ -80,6 +80,11 @@ class ResidentDay5(Layer):
                     before=copy.deepcopy(self.state.room13)
                     rows=env['r13_nw_block'](name)
                     self.assertTrue(any(r[0]==speaker and fact in r[1] for r in rows))
+                    if name=='hearing_face5':
+                        witness=[r[1] for r in rows if r[0]==speaker]
+                        self.assertEqual(len(witness),1)
+                        self.assertRegex(witness[0],r'^못 봤(?:습니다|소|어요)\.')
+                        self.assertIn('털인지 옷인지도 몰랐',witness[0])
                     self.assertEqual(before,self.state.room13)
         self.assertNotIn('NW_D05_S03_A01B',(ROOT/'game/v111/newworld/d05.json').read_text())
         self.assertNotIn('NW_D05_S03_A01C',(ROOT/'game/v111/newworld/d05.json').read_text())

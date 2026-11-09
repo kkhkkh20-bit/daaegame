@@ -1,0 +1,68 @@
+{
+  "cases": {
+    "lamp": {
+      "title": "3번 등 도난 회의",
+      "stages": [
+        {
+          "key": "수리와 반출을 가릴 자료를 낸다",
+          "speaker": "너울",
+          "line_ids": [
+            "MS14_D03_S05_L0002"
+          ],
+          "title": "톡이 등을 연 일과 돌이 없어진 일",
+          "press_block": "hearing140_lamp_repair_press"
+        },
+        {
+          "key": "돌과 매입 기록을 낸다",
+          "speaker": "너울",
+          "line_ids": [
+            "MS14_D03_S05_L0005"
+          ],
+          "title": "사라진 돌의 행방",
+          "press_block": "hearing140_lamp_sale_press"
+        },
+        {
+          "key": "바깥 걸쇠 주장과 발견 위치를 대조한다",
+          "speaker": "실룩",
+          "line_ids": [
+            "MS14_D03_S05_L0017"
+          ],
+          "title": "바깥 걸쇠만 닫았다는 설명",
+          "press_block": "hearing140_lamp_latch_press"
+        },
+        {
+          "key": "마지막 점검과 인수한 돌을 연결한다",
+          "speaker": "실룩",
+          "line_ids": [
+            "MS14_D03_S05_L0025"
+          ],
+          "title": "실룩이 판 돌은 어떤 돌인가",
+          "press_block": "hearing140_lamp_stone_press"
+        }
+      ]
+    },
+    "lamp_attempt": {
+      "title": "3번 등 파손·미수 회의",
+      "stages": [
+        {
+          "key": "수리 뒤 새로 생긴 파손을 가린다",
+          "speaker": "너울",
+          "line_ids": [
+            "NW_LA_LA_OPEN3_2"
+          ],
+          "title": "수리한 사람이 칼끝을 남겼다는 판단",
+          "press_block": "hearing140_attempt_repair_press"
+        },
+        {
+          "key": "남아 있는 돌과 칼의 사용을 연결한다",
+          "speaker": "실룩",
+          "line_ids": [
+            "NW_LA_LA_REPAIR_OK3_2"
+          ],
+          "title": "칼을 바깥 걸쇠에만 썼다는 설명",
+          "press_block": "hearing140_attempt_knife_press"
+        }
+      ]
+    }
+  }
+}

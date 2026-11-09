@@ -224,7 +224,7 @@
         "id": "NW_LA_LA_OPEN3_0",
         "speaker": "너울",
         "kind": "dialogue",
-        "text": "톡이 수리한 등 안에서 칼끝이 나왔소. 책임을 물어야겠소."
+        "text": "톡이 수리한 등 안에서 칼끝이 나왔습니다. 책임을 물어야겠습니다."
       },
       {
         "id": "NW_LA_LA_OPEN3_1",
@@ -236,7 +236,7 @@
         "id": "NW_LA_LA_OPEN3_2",
         "speaker": "너울",
         "kind": "dialogue",
-        "text": "어제 그 등 안을 마지막으로 만진 건 톡이오.{w=.3}\n고친 사람 말고 누가 안쪽까지 손을 넣었겠소?",
+        "text": "어제 그 등 안을 마지막으로 만진 건 톡입니다.{w=.3}\n고친 사람 말고 누가 안쪽까지 손을 넣었겠습니까?",
         "expression": "neutral"
       }
     ],
@@ -264,7 +264,7 @@
         "id": "NW_LA_LA_REPAIR_OK3_3",
         "speaker": "너울",
         "kind": "dialogue",
-        "text": "걸쇠를 닫아 준 걸 죄라고 할 순 없소.{w=.3} 그 말이 틀렸다는 게 아니면 여기서 끝내겠소.",
+        "text": "걸쇠를 닫아 준 걸 죄라고 할 수는 없습니다.{w=.3} 그 설명이 틀렸다는 근거가 없으면 여기서 마치겠습니다.",
         "expression": "neutral"
       }
     ],
@@ -439,6 +439,38 @@
         "text": "칼이 돌 밑까지 들어간 건 알겠소.{w=.3}\n그게 어제 고친 뒤의 일이라는 건 어디 있소?",
         "expression": "neutral",
         "when": "half_la_nocheck3"
+      }
+    ],
+    "hearing140_attempt_repair_press": [
+      {
+        "id": "NW_HEARING140_ATTEMPT_REPAIR_01",
+        "kind": "dialogue",
+        "speaker": "아빠",
+        "text": "등 안의 조각이 톡 씨가 수리할 때 생겼다고 보시는 겁니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_HEARING140_ATTEMPT_REPAIR_02",
+        "kind": "dialogue",
+        "speaker": "너울",
+        "text": "톡이 마지막으로 안쪽을 만졌다는 게 제 판단입니다. 그 뒤에 생겼다는 근거가 있습니까?",
+        "expression": "neutral"
+      }
+    ],
+    "hearing140_attempt_knife_press": [
+      {
+        "id": "NW_HEARING140_ATTEMPT_KNIFE_01",
+        "kind": "dialogue",
+        "speaker": "아빠",
+        "text": "칼끝이 맞는 건 인정하시고, 쓰신 자리가 바깥 걸쇠였다는 말씀이죠?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_HEARING140_ATTEMPT_KNIFE_02",
+        "kind": "dialogue",
+        "speaker": "실룩",
+        "text": "맞아요. 바깥 걸쇠만 닫았어요. 돌은 건드리지 않았다니까요.",
+        "expression": "neutral"
       }
     ]
   },

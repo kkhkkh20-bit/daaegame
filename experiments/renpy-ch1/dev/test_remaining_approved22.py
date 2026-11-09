@@ -8,7 +8,14 @@ class RemainingApproved22(unittest.TestCase):
   for r in receipt['rows']:
    p=ROOT/r['source'];self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),r['source_sha256'])
    with Image.open(p) as im:self.assertEqual(list(im.size),r['source_size'])
-  data=json.loads((ROOT/'game/assets/room13-dialogue-pose-source-art.json').read_text());poses=[(who,key,e) for who,row in data['people'].items() for key,e in row['pose_profiles'].items()];self.assertEqual(len(poses),15)
+  data=json.loads((ROOT/'game/assets/room13-dialogue-pose-source-art.json').read_text())
+  # 납품 22개 중 솔방울을 제외한 승인 포즈 15개를 검증한다. 후속 작업 포즈의
+  # 추가는 허용하지만 기존 승인 포즈 누락이나 파생물 출처 변경은 허용하지 않는다.
+  approved={(r['person'],r['pose']) for r in receipt['rows'] if r['person']!='resident_solbang'}
+  self.assertEqual(len(approved),15)
+  live={(who,key):e for who,row in data['people'].items() for key,e in row['pose_profiles'].items()}
+  self.assertTrue(approved<=set(live),approved-set(live))
+  poses=[(who,key,live[who,key]) for who,key in sorted(approved)]
   for who,key,e in poses:
    for height,p in e['profiles'].items():
     f=p['frames']['neutral'];self.assertTrue((ROOT/'game'/f['file']).is_file());self.assertIn('/'+who+'/'+key+'/',f['file']);self.assertEqual(f['source_sha256'],e['source_sha256'])

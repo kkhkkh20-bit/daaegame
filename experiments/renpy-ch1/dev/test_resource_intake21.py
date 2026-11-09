@@ -65,12 +65,22 @@ class ResourceIntake(unittest.TestCase):
   from import_resource_intake21 import RETIRED_CONTEXT_LINE_IDS
   receipt=copy.deepcopy(self.receipt)
   retired=[c for c in receipt['bindings'] if c.get('line_id') in RETIRED_CONTEXT_LINE_IDS]
-  active=next(c for c in receipt['bindings'] if c.get('line_id') and c['line_id'] not in RETIRED_CONTEXT_LINE_IDS)
-  active['source_line']-=12
   with tempfile.TemporaryDirectory() as tmp:
    path=Path(tmp)/'receipt.json';path.write_text(json.dumps(receipt,ensure_ascii=False))
+   # 실제 원본의 다른 줄 이동이 있어도 이 시험은 의도적으로 옮긴 한 행만 센다.
+   # 먼저 현재 위치로 정상화하며, refresh 자체가 내용 변조를 거부하는 계약은 유지한다.
+   refresh(path,'bindings')
+   self.assertEqual(refresh(path,'bindings'),0)
+   baseline=json.loads(path.read_text())
+   self.assertEqual([{k:v for k,v in c.items() if k!='source_line'} for c in baseline['bindings']],
+                    [{k:v for k,v in c.items() if k!='source_line'} for c in receipt['bindings']])
+   changed=copy.deepcopy(baseline)
+   active=next(c for c in changed['bindings'] if c.get('line_id') and c['line_id'] not in RETIRED_CONTEXT_LINE_IDS)
+   active['source_line']-=12
+   path.write_text(json.dumps(changed,ensure_ascii=False))
    self.assertEqual(refresh(path,'bindings'),1)
    refreshed=json.loads(path.read_text())
+   self.assertEqual(refreshed,baseline)
    self.assertEqual([c for c in refreshed['bindings'] if c.get('line_id') in RETIRED_CONTEXT_LINE_IDS],retired)
    active=next(c for c in refreshed['bindings'] if c['key']==active['key'])
    active['text']+=' 바뀐 대사'

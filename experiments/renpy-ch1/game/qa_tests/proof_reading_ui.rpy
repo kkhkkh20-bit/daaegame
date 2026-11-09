@@ -55,7 +55,7 @@ testcase proof_reading_pc_selection_independent:
     click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_pw_read_prepare,False,False)
-    run Jump("r13_v111_trial_open")
+    run Jump("qa_pw_read_legacy_open")
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .6
     $ qa_pw_read_before=qa_pw_read_domain()
@@ -86,13 +86,8 @@ testcase proof_reading_pc_selection_independent:
     assert eval (all(scroll_range<=1 for scroll_range,value in qa_pw_read_ranges()))
     screenshot "proof_reading_pc_selection_independent-pair-zero-selection.png"
 
-    # 발언은 기본 접힘이다. 펼치고 접어도 제출 묶음·기회가 바뀌지 않는다.
-    click id "r13_pw_fold"
-    pause .3
-    assert eval (qa_pw_read_scope()["quote_open"] and qa_pw_read_scope()["L"]["quote_h"]>0)
-    click id "r13_pw_fold"
-    pause .3
-    assert eval (not qa_pw_read_scope()["quote_open"] and qa_pw_read_scope()["L"]["quote_h"]==0)
+    # 캐시가 없는 옛 저장은 듣지 않은 발언을 만들어 보여 주지 않는다.
+    assert eval (not qa_pw_read_scope()["quote_text"] and not qa_pw_read_has("r13_pw_fold"))
     click id "r13_pw_back_list"
     if eval (not qa_pw_read_has("r13_pw_check_E11")):
         click id "r13_pw_prev" until eval qa_pw_read_has("r13_pw_check_E11") timeout 20
@@ -267,7 +262,7 @@ testcase proof_reading_touch_selection_independent:
     click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_pw_read_prepare,True,False)
-    run Jump("r13_v111_trial_open")
+    run Jump("qa_pw_read_legacy_open")
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .6
     $ qa_pw_read_before=qa_pw_read_domain()
@@ -344,7 +339,7 @@ testcase proof_reading_large_selection_independent:
     click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_pw_read_prepare,True,True)
-    run Jump("r13_v111_trial_open")
+    run Jump("qa_pw_read_legacy_open")
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .6
     $ qa_pw_read_before=qa_pw_read_domain()
@@ -462,7 +457,7 @@ testcase proof_reading_checked_pair_pc:
     click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_pw_read_prepare,False,False)
-    run Jump("r13_v111_trial_open")
+    run Jump("qa_pw_read_legacy_open")
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .6
     $ qa_pw_read_before=qa_pw_read_domain()
@@ -490,7 +485,7 @@ testcase proof_reading_checked_pair_touch:
     click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_pw_read_prepare,True,False)
-    run Jump("r13_v111_trial_open")
+    run Jump("qa_pw_read_legacy_open")
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .6
     $ qa_pw_read_before=qa_pw_read_domain()
@@ -510,3 +505,9 @@ testcase proof_reading_checked_pair_touch:
     assert screen "r13_proof_workspace"
     assert eval (qa_pw_read_selection(["V111:E11","V111:E13"]) and qa_pw_read_domain()==qa_pw_read_before)
     run Function(qa_pw_read_restore)
+
+# 옛 저장에는 청취 캐시가 없다. 그 저장의 기존 읽기 화면도 계속 검증한다.
+label qa_pw_read_legacy_open:
+    $ r13_edit(period=1)
+    $ r13_v111_scene('MS14_D03_S05')
+    jump r13_v111_trial_repair

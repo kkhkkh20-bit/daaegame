@@ -78,6 +78,8 @@ label r13_lines(entries,identity,binding_route=None):
         if not r13_meeting_live_should_stop(identity) and not ((identity==R13_CARRIAGE_IDENTITY or (r13_v111_active() and place=="마차 안")) and r13_carriage_skip):
             $ r13_remember_line(r13_read_id)
             $ r13_meeting_mark_heard(identity,r13_index)
+            if r13_page_i>=len(r13_pages):
+                $ r13_case_hearing_heard(r13_packet)
         $ r13_index+=1
     $ r13_dialogue_beat_settle()
     hide r13_visitor

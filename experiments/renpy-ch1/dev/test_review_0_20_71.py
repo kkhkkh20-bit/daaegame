@@ -80,7 +80,7 @@ class R01FenceFollowsWideGate(unittest.TestCase):
 class R03PhoneQuoteFolded(unittest.TestCase):
     def test_phone_opens_with_the_quote_folded(self):
         source = (ROOT / 'game/systems/room13_proof_workspace.rpy').read_text()
-        self.assertIn('default quote_open=remembered.get("quote_open",False)', source)
+        self.assertIn('default quote_open=remembered.get("quote_open",bool(hearing_rows))', source)
         ns = dict(r13_touch_ui=lambda: True, R13_NB_LEFT=132, R13_NB_RIGHT=1206, R13_NB_WIDTH=1074,
                   R13_NB_TOP=140, r13_nb_footer_y=lambda: 548, r13_control_height=lambda: 88,
                   r13_proof_text_size=lambda *args: (600,36), r13_type=lambda level: 30,

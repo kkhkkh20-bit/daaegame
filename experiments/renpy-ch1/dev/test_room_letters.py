@@ -109,7 +109,7 @@ class RoomLetters(unittest.TestCase):
         self.assertIn('action Return(("observe","tail")) sensitive ready',screen)
         flow=(GAME/'room13_v111.rpy').read_text().split('label r13_v111_proof_again:',1)[1]
         guard=flow.index('if _return=="argue" and r13_room_letters_discovery_pending')
-        self.assertLess(guard,flow.index('r13_v111_proof_accepts('))
+        self.assertLess(guard,flow.index('r13_v111_proof_accepts(key,correct,'))
         self.assertNotIn('r13_nw_retry(',flow[guard:flow.index('    if _return=="argue":',guard)])
 
     def test_saved_open_single_document_screen_is_migrated_only_in_first_room_comparison(self):
