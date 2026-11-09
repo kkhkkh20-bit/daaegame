@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-09",
+  "reviewer": "arrival136_text_review",
+  "result": "검토 범위에서 추가 차단 사항 없음. 주소 안내의 경고 축약은 별도 편집으로 기록 필요.",
+  "scope": "부모 요청의 1~7일 말투 파일 및 greetings/reactions를 HEAD와 현재 JSON으로 읽기 전용 대조. 말투 수정 작성자가 아닌 별도 검수. SDK·웹 실행·빌드는 직접 실행하지 않음.",
+  "text_and_structure": {
+    "existing_text_changes": 246,
+    "new_text_override_for_existing_record": {
+      "id": "MS14_D04_S03_L0008",
+      "speaker": "너울",
+      "base_text": "누가 물었소?",
+      "current_text": "누가 물었습니까?",
+      "meaning": "기존 본편 record의 말투만 override; 새 이야기 record가 아님"
+    },
+    "total_unique_modernized_texts": 247,
+    "existing_text_renpy_tag_changes": 0,
+    "existing_text_number_changes": 0,
+    "tracked_named_entity_add_remove_candidates": 0,
+    "preserved": "기존 JSON의 id·화자·표정·when·operations·증거·분기·조건 값 변경 없음. text 외 diff 예외는 아래 별도 승인 변경이다.",
+    "separate_non_voice_changes": [
+      {
+        "path": "d01.replace.MS14_D01_S05_L0045.cut",
+        "change": "문자열→null",
+        "context": "부모의 단순 과자 대형 컷 제거 범위이며 말투 보존 검사와 구분"
+      },
+      {
+        "path": "d04.replace.MS14_D04_S03_L0008",
+        "change": "기존 base record에 대한 text override 추가",
+        "context": "기존 고유 ID/화자/사실관계 유지"
+      }
+    ]
+  },
+  "human_samples": {
+    "coverage": "1~3일 변경 샘플 약22개, 4~7일 변경 샘플 약13개, 공통49개를 읽고 현재 구조 대조. 고유명사·부정 후보는 추가로 직접 확인.",
+    "checked": [
+      "등록에서 신청서/명단의 이름 누락과 정정의 조건 유지",
+      "3일 칼끝/돌의 유통 연결 부족과 부분 성공의 한계 유지",
+      "4일 채무 노동·돌목 부상·목격 불확실성 유지",
+      "5일 밤이 혐의와 보호시설 의무의 주장 유지",
+      "7일 보리 방화 인정과 꼬미 구출/상실 감정·직접 목격의 범위 유지",
+      "돌목/너울/바둑이의 현대 합쇼체, 보리의 해요체, 굴돌의 하게체 차이를 보존"
+    ],
+    "wording_note": {
+      "id": "MS14_D01_S04_L0018",
+      "before_emphasis": "안 알리면 장부가 당신을 못 찾소",
+      "after_emphasis": "장부에 묵는 곳을 남겨야 해서요",
+      "judgment": "방을 옮기면 알린다는 요구와 기록 목적은 유지되나 경고를 이유 설명으로 정리했다. 단순 종결어미 교체로만 보고하면 부정확하므로 기록에 명시 권고. 별도 서사값·정답 변화는 없음."
+    }
+  },
+  "first_meeting_and_room": {
+    "reviewed_code": [
+      "room13_v111_idle.rpy의 초면 인사는 숙박 확정을 하지 않고 본인 이름만 소개",
+      "room13_v111.rpy의 첫날 bed fallback은 메모/비교 상태에 맞는 다음 행동을 알리며 수면 선택은 기존 sleep1 처리",
+      "systems/room13_v111_goal.rpy는 도토리 관찰 후 복귀 상태에 메모를 눌러 대화를 잇는 행동을 안내"
+    ],
+    "views_opened": [
+      "native/arrival136_first_meeting/arrival136-first-meeting.png",
+      "native/room_letter_discovery_direct_tail_touch/room-letter-tail-touch-observed.png",
+      "web/02-비활성침대-다음행동안내-PC.png"
+    ],
+    "visual_findings": [
+      "실룩 첫 인사에 13호 숙박 확정이 없고 본인 이름이 읽힌다",
+      "관찰 후 안내와 완료 버튼이 발견한 차이를 바탕으로 다람과 대화를 잇는 동작을 설명한다",
+      "침대 클릭에 낱말만 출력되지 않고 책상 메모에서 확인을 마저 하라는 문장이 나온다"
+    ],
+    "capture_limit": "관찰 후 SDK 캡처는 입력 보호 중으로 버튼이 옅게 보이는 프레임이다. 활성 버튼의 실제 클릭 및 웹 마지막 진행 완료는 부모의 최종 웹 검증 범위다."
+  },
+  "runtime_evidence": {
+    "sdk_results": [
+      {
+        "case": "arrival136_first_meeting",
+        "status": "PASSED",
+        "seconds": 19.4
+      },
+      {
+        "case": "room_letter_discovery_list_and_legacy_return",
+        "status": "PASSED",
+        "seconds": 20.3
+      },
+      {
+        "case": "room_letter_discovery_direct_tail_touch",
+        "status": "PASSED",
+        "seconds": 20.4
+      },
+      {
+        "case": "room_letter_discovery_completed_save_compatibility",
+        "status": "PASSED",
+        "seconds": 19.3
+      },
+      {
+        "case": "opening_neoul_map_departure",
+        "status": "PASSED",
+        "seconds": 24.4
+      }
+    ],
+    "assertion": "부모가 실행한 SDK 결과 파일 5개 모두 PASSED를 읽어 대조함. 독립 검수자가 직접 SDK를 실행한 결과가 아님.",
+    "web_limit": "부모의 실제 첫날 웹 진행은 검수 시점에 아직 진행 중이다. 웹 완주·마지막 버튼 클릭 성공을 이 기록에서 확정하지 않음."
+  },
+  "not_changed": "원문·게임 코드·검사기·개인 취향 문서를 수정하지 않았으며 최종독립검수.json 및 비교 결과 scratch만 작성함."
+}

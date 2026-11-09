@@ -96,7 +96,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 8 | 120 | `systems/room13_inn_change.rpy:28` | _r13_note_spot_visible |
 | 9 | 129 | `systems/room13_mother_note_spot.rpy:22` | _r13_new_places_visible |
 | 10 | 130 | `systems/room13_new_places.rpy:51` | _r13_v111_object_visible |
-| 11 | 301 | `room13_v111.rpy:277` | _r13_room_documents_object_visible |
+| 11 | 301 | `room13_v111.rpy:286` | _r13_room_documents_object_visible |
 | 12 | 356 | `systems/room13_room_documents.rpy:34` |  |
 
 ## `r13_conversation_topic_lines` (10층)
@@ -127,7 +127,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 7 | 147 | `systems/room13_alibi.rpy:157` | _r13_review_notes |
 | 8 | 173 | `systems/room13_review_knowledge.rpy:90` | _r13_q1_notes |
 | 9 | 181 | `systems/room13_q1_review.rpy:49` | _r13_v111_notes_before |
-| 10 | 345 | `systems/room13_v111_goal.rpy:201` |  |
+| 10 | 345 | `systems/room13_v111_goal.rpy:203` |  |
 
 ## `r13_where` (10층)
 
@@ -164,7 +164,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 3 | 94 | `systems/room13_first_day_flow.rpy:19` | _r13_new_places |
 | 4 | 130 | `systems/room13_new_places.rpy:18` | _r13_ws_places |
 | 5 | 156 | `systems/room13_ep5_soup.rpy:39` | _r13_v111_places |
-| 6 | 301 | `room13_v111.rpy:302` |  |
+| 6 | 301 | `room13_v111.rpy:311` |  |
 
 ## `r13_v111_idle_lines` (6층)
 
@@ -172,16 +172,16 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 336 | `room13_v111_idle.rpy:55` | _r13_met_idle_lines |
 | 2 | 346 | `room13_v111_idle.rpy:107` | _r13_state_idle_lines |
-| 3 | 348 | `room13_v111_idle.rpy:175` | _r13_guard_idle_lines |
-| 4 | 349 | `room13_v111_idle.rpy:195` | _r13_scene_idle_lines |
-| 5 | 351 | `room13_v111_idle.rpy:244` | _r13_piko_news_idle_lines |
+| 3 | 348 | `room13_v111_idle.rpy:176` | _r13_guard_idle_lines |
+| 4 | 349 | `room13_v111_idle.rpy:196` | _r13_scene_idle_lines |
+| 5 | 351 | `room13_v111_idle.rpy:245` | _r13_piko_news_idle_lines |
 | 6 | 354 | `room13_piko_reactions.rpy:103` |  |
 
 ## `r13_ep_line_art` (5층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 160 | `systems/room13_ep_art.rpy:161` | _r13_impact_line_art |
+| 1 | 160 | `systems/room13_ep_art.rpy:163` | _r13_impact_line_art |
 | 2 | 345 | `systems/room13_impact_fx.rpy:65` | _r13_met_line_art |
 | 3 | 346 | `room13_v111_idle.rpy:92` | _r13_end_cut_line_art |
 | 4 | 350 | `systems/room13_end_cut.rpy:83` | _r13_latch132_line_art |
@@ -286,8 +286,8 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 317 | `room13_v111_later_bindings.rpy:239` | _r13_step_goal |
 | 2 | 341 | `systems/room13_v111_goal.rpy:52` | _r13_goal_before_can6 |
-| 3 | 344 | `systems/room13_v111_goal.rpy:171` | _r13_goal_before_travel |
-| 4 | 349 | `systems/room13_v111_goal.rpy:222` |  |
+| 3 | 344 | `systems/room13_v111_goal.rpy:173` | _r13_goal_before_travel |
+| 4 | 349 | `systems/room13_v111_goal.rpy:224` |  |
 
 ## `r13_activity_text` (3층)
 
@@ -319,7 +319,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 61 | `room13_interaction.rpy:104` | _r13_firstday_bed |
 | 2 | 94 | `systems/room13_first_day_flow.rpy:31` | _r13_v111_bed |
-| 3 | 301 | `room13_v111.rpy:306` |  |
+| 3 | 301 | `room13_v111.rpy:315` |  |
 
 ## `r13_before_line` (3층)
 
@@ -342,7 +342,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 148 | `systems/room13_materials.rpy:40` | _r13_v111_catalog_record |
-| 2 | 306 | `room13_v111.rpy:659` | _r13_nw_rules_catalog_record |
+| 2 | 306 | `room13_v111.rpy:668` | _r13_nw_rules_catalog_record |
 | 3 | 318 | `room13_v111_newworld_rules.rpy:14` |  |
 
 ## `r13_conversation_opening` (3층)
@@ -389,7 +389,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 160 | `systems/room13_ep_art.rpy:195` | _r13_end_cut_line_clear |
+| 1 | 160 | `systems/room13_ep_art.rpy:197` | _r13_end_cut_line_clear |
 | 2 | 350 | `systems/room13_end_cut.rpy:91` | _r13_latch132_line_clear |
 | 3 | 365 | `systems/room13_latch_diagram132.rpy:76` |  |
 
@@ -430,7 +430,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 150 | `systems/room13_material_art.rpy:8` | _r13_v111_material_art |
-| 2 | 302 | `room13_v111.rpy:575` | _r13_room_documents_material_art |
+| 2 | 302 | `room13_v111.rpy:584` | _r13_room_documents_material_art |
 | 3 | 356 | `systems/room13_room_documents.rpy:18` |  |
 
 ## `r13_meeting_cast` (3층)
@@ -487,14 +487,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 150 | `systems/room13_sound.rpy:123` | _r13_contrast_scene_music |
 | 2 | 163 | `systems/room13_scene_contrast.rpy:25` | _r13_v111_scene_music |
-| 3 | 307 | `room13_v111.rpy:688` |  |
+| 3 | 307 | `room13_v111.rpy:697` |  |
 
 ## `r13_speaker` (3층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 55 | `room13_rules.rpy:303` | _r13_v111_speaker_base |
-| 2 | 304 | `room13_v111.rpy:703` | _r13_carriage_speaker |
+| 2 | 304 | `room13_v111.rpy:712` | _r13_carriage_speaker |
 | 3 | 306 | `room13_carriage_direction.rpy:103` |  |
 
 ## `r13_v111_line` (3층)
@@ -511,7 +511,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 335 | `room13_v111_reactions.rpy:68` | _r13_idle_present_reaction |
 | 2 | 336 | `room13_v111_idle.rpy:46` | _r13_present_fallback |
-| 3 | 347 | `room13_v111_idle.rpy:151` |  |
+| 3 | 347 | `room13_v111_idle.rpy:152` |  |
 
 ## `r13_v111_set` (3층)
 
@@ -527,7 +527,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 58 | `room13_world_camera.rpy:68` | _r13_ep_art_world_background |
 | 2 | 160 | `systems/room13_ep_art.rpy:86` | _r13_v111_ruin_world |
-| 3 | 162 | `systems/room13_ep_art.rpy:245` |  |
+| 3 | 162 | `systems/room13_ep_art.rpy:247` |  |
 
 ## `r13_acting_spec` (2층)
 
@@ -646,7 +646,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 160 | `systems/room13_ep_art.rpy:37` | _r13_v111_ruin_bg |
-| 2 | 162 | `systems/room13_ep_art.rpy:235` |  |
+| 2 | 162 | `systems/room13_ep_art.rpy:237` |  |
 
 ## `r13_evidence_acquired` (2층)
 
@@ -961,7 +961,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 125 | `systems/room13_map_actions.rpy:80` | _r13_v111_props |
-| 2 | 301 | `room13_v111.rpy:292` |  |
+| 2 | 301 | `room13_v111.rpy:301` |  |
 
 ## `r13_world_scene_location` (2층)
 

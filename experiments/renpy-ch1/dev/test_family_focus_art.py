@@ -23,7 +23,7 @@ class FamilyFocusArt(unittest.TestCase):
                         Transform=lambda art=None, **kw: dict(art=art, **kw),
                         Solid=lambda color, **kw: dict(color=color, **kw),
                         Frame=lambda *args: dict(frame=args), Crop=lambda *args: dict(crop=args),
-                        r13_asset_path=lambda role: role[5:])
+                        r13_asset_path=lambda role: role[5:], Null=lambda: dict(empty=True))
         exec(compile(ast.Module(body=selected, type_ignores=[]), '가족 첫 발견 컷', 'exec'), self.env)
 
     def test_existing_evidence_presentation_size_and_asset_are_preserved(self):
@@ -32,15 +32,16 @@ class FamilyFocusArt(unittest.TestCase):
             self.assertEqual(regular['items'][1]['xysize'], (180, 180))
             self.assertEqual(regular['items'][1]['art'], self.env['R13_FAMILY_DRAWING_ART'] if key=='D01_FAMILY_DRAWING' else 'assets/evidence/' + key + '.webp')
 
-    def test_only_three_existing_family_props_get_readable_focus_size(self):
+    def test_authored_family_focus_is_preserved_and_placeholder_bag_is_hidden(self):
         self.assertEqual(set(self.env['R13_FAMILY_FOCUS_KEYS']), {'E06', 'D01_FAMILY_DRAWING', 'D01_SNACK_BAG'})
-        for key in self.env['R13_FAMILY_FOCUS_KEYS']:
+        for key in ('E06','D01_FAMILY_DRAWING'):
             focused = self.env['r13_ep_cut_art']('focus:' + key)['items'][1]
             self.assertEqual(focused['art'], self.env['R13_FAMILY_DRAWING_ART'] if key=='D01_FAMILY_DRAWING' else 'assets/evidence/' + key + '.webp')
             self.assertTrue((ROOT / 'game' / focused['art']).is_file())
             self.assertEqual(focused['xysize'], (372, 372))
             self.assertEqual(focused['fit'], 'contain')
             self.assertTrue(focused['nearest'])
+        self.assertEqual(self.env['r13_ep_cut_art']('focus:D01_SNACK_BAG'), dict(empty=True))
         x, y, side = self.env['R13_FAMILY_FOCUS_BOX']
         self.assertGreaterEqual(x, 740)  # 왼쪽 대화 인물을 비운다.
         self.assertLessEqual(x + side, 1280)

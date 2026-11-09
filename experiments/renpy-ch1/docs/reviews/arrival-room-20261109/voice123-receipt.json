@@ -1,0 +1,50 @@
+{
+  "scope": "본편 1~3일. 2일은 변경 대상 없음.",
+  "changed_rows": 82,
+  "by_day": {
+    "1": 45,
+    "2": 0,
+    "3": 37
+  },
+  "by_speaker": {
+    "돌목": 40,
+    "너울": 38,
+    "바둑이": 4
+  },
+  "checks": [
+    {
+      "day": 1,
+      "non_text_unchanged": true,
+      "added_replace": []
+    },
+    {
+      "day": 2,
+      "non_text_unchanged": true,
+      "added_replace": []
+    },
+    {
+      "day": 3,
+      "non_text_unchanged": true,
+      "added_replace": []
+    }
+  ],
+  "digits_and_render_tags_unchanged": true,
+  "slop_rewrite": "guide 없음 --prompt 및 --orig 실제 실행. PASS는 자연스러움 점수로 사용하지 않음.",
+  "meaning_review": "모든 행의 부정·가정·한정·증거 관계를 직접 대조. 조건/ID/화자/when/cut/fx/정답/자료/기회 변경 없음. 원본 records.json 수정 없음. 실제 호출되지 않는 원본2행의 replace추가는 단위검사 지적을 받아 제거했다.",
+  "fidelity_note": "검사기 부정 탈락 2 경고 기록. 주소 미신고 때 장부가 찾지 못한다는 표현을 실제 묵는 곳 기록 필요로 풀었으며 다른 부정은 현대 동사형으로 보존했다.",
+  "source_files": [
+    "game/v111/newworld/d01.json",
+    "game/v111/newworld/d03.json"
+  ],
+  "sdk": "실행하지 않음. 부모 통합 검증 필요.",
+  "art_preservation": "부모가 먼저 적용한 focus:D01_SNACK_BAG cut:null 유지.",
+  "changes": "voice123-changes.json",
+  "tests_to_update": [
+    "test_opening_departure.py의 너울이오/그 방이 당신 주소요/묵는 사람 소식은 여관에 등 옛 문구 고정 기대값"
+  ],
+  "reviewed_rows": 84,
+  "skipped_dead_source": [
+    "MS14_D01_S02_L0027",
+    "MS14_D01_S03_L0026"
+  ]
+}

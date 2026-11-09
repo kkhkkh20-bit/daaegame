@@ -57,8 +57,8 @@ class OpeningDeparture(Layer):
                 texts = [row[1] for row in rows]
                 index = lambda term: next(i for i, text in enumerate(texts) if term in text)
                 self.assertLess(index('초소 안쪽에서 다가온다'), index('너울 씨, 이 두 분'))
-                self.assertLess(index('마을 장부를 맡은 너울이오'), index('아내가 13호실에서 기다린다고'))
-                self.assertLess(index('아내가 13호실에서 기다린다고'), index('그 방이 당신 주소요'))
+                self.assertLess(index('마을 장부를 맡은 너울입니다'), index('아내가 13호실에서 기다린다고'))
+                self.assertLess(index('아내가 13호실에서 기다린다고'), index('그 방을 주소로 등록합니다'))
                 self.assertLess(index('돌목 쪽으로 돌아선다'), index('돌목 씨,'))
                 self.assertLess(index('누가 그런 부탁을'), index('묵는 사람 소식은 여관에'))
                 self.assertLess(index('묵는 사람 소식은 여관에'), index('엄마 어디 갔대'))

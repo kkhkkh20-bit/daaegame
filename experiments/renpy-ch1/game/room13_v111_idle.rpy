@@ -128,7 +128,8 @@ init 346 python:
                 # 아빠 속말만 나와, 소유자 2026-10-27 「사람을 누르면 주고받기가 먼저, 말 없이 지문만 흐르면 안 된다」에 어긋났다.
                 # 아빠가 먼저 인사하고 상대가 첫 인사(row 0, 아는 사이처럼 들리는 사람은 first)로 받는다.
                 first=R13_GREETINGS[person][0]
-                hello="안녕. 아저씨는 여관에 묵어." if r13_v111_is_kid(person) else "안녕하세요. 여관 13호에 묵는 사람입니다."
+                # 첫 만남은 입구에서도 가능하다. 방을 배정받았다는 사실을 앞당기지 않는다.
+                hello="안녕. 아저씨는 다돌이라고 해." if r13_v111_is_kid(person) else "안녕하세요. 다돌입니다."
                 return [("dad",hello,dict(expression="neutral",pose="neutral")),
                         r13_nw_added_line(dict(speaker=name,text=first.get("first") or first["text"],expression=first.get("expression","neutral"),kind="dialogue"))]
         return _r13_met_idle_lines(person)

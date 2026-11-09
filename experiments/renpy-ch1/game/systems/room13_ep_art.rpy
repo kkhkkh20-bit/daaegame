@@ -121,6 +121,8 @@ init 160 python:
         panel=Frame(paper,16,16)
         return Transform(panel,xysize=(w,h)) if w and h else panel
     def r13_ep_cut_art(name):
+        # 옛 저장의 임시 봉투 확대도 숨긴다. 같은 내용의 납품 컷은 아직 없다.
+        if name=="focus:D01_SNACK_BAG":return Null()
         if name=="bell":return r13_ep_bell_art()
         if name in ("v111_reunion_far","v111_reunion_close"):
             # 0.20.7 (owner days 2-14 #4): the reunion is the distance between the two, so both stand

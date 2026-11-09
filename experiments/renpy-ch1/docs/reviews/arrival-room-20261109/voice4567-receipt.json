@@ -1,0 +1,61 @@
+{
+  "scope": "본편1부4~7일. 하오체 대사만 화자별 현대 존댓말로 교정. 아동 상대 반말과 노인의 하게체는 보존.",
+  "changed_lines": 116,
+  "by_day": {
+    "4": 22,
+    "5": 41,
+    "6": 19,
+    "7": 34
+  },
+  "by_speaker": {
+    "너울": 62,
+    "바둑이": 15,
+    "돌목": 10,
+    "무쇠": 1,
+    "보리": 28
+  },
+  "structural_checks": [
+    {
+      "day": 4,
+      "existing_structure_unchanged": true,
+      "added_text_only_replaces": [
+        "MS14_D04_S03_L0008"
+      ]
+    },
+    {
+      "day": 5,
+      "existing_structure_unchanged": true,
+      "added_text_only_replaces": []
+    },
+    {
+      "day": 6,
+      "existing_structure_unchanged": true,
+      "added_text_only_replaces": []
+    },
+    {
+      "day": 7,
+      "existing_structure_unchanged": true,
+      "added_text_only_replaces": []
+    }
+  ],
+  "inline_tags_preserved": true,
+  "remaining_candidates": [],
+  "style_review": [
+    "voice4567-check.txt",
+    "voice4567-extra-check.txt"
+  ],
+  "style_scope": "검사 PASS를 자연스러움 점수로 쓰지 않았다. 적용116개 전후를 직접 대조했으며 주어진 사실·조건·인용·숫자·부정·기억 시점은 유지했다.",
+  "runtime": "SDK/build는 root 담당. 미실행.",
+  "not_applied": [
+    {
+      "id": "MS14_D05_S03_L0011",
+      "reason": "원래실제출력하지않는행.원본보존하며신규replace제거."
+    }
+  ],
+  "unit_check": {
+    "command": "PYTHONPATH=dev python3 -m unittest test_newworld_text",
+    "count": 28,
+    "result": "OK"
+  },
+  "remaining_scope": "실제 출력행의 replace/before/after/blocks 및 미교체 원문 대조. 원래 출력하지 않는 MS14_D05_S03_L0011은 교정 대상에서 제외."
+}

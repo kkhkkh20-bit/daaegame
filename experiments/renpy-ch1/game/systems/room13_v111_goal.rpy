@@ -52,6 +52,8 @@ init 341 python:
     def r13_v111_goal():
         v=store.room13.get("v111") or {}
         gate=v.get("gate")
+        if gate=="letter_compare_review" and r13_v111_value("letter_tail_observed"):
+            return "책상 위 메모를 눌러, 발견한 차이를 다람과 이야기하자."
         text=r13_day2_guidance() or R13_V111_STEP_GOALS.get(gate) or _r13_step_goal()
         for scene,(key,expected,resolved) in R13_V111_RESOLVED_QUESTIONS.items():
             if text and text==R13_V111_QUESTIONS.get(scene) and r13_v111_value(key)==expected:return resolved

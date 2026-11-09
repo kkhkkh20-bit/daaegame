@@ -51,7 +51,7 @@ testcase opening_neoul_map_departure:
     run Function(r13_edit,location="inn")
     run Function(r13_v111_set,"location:daram","inn")
     run Jump("r13_v111_registered_depart")
-    click pos (900,600) until eval (r13_packet and "마을 장부를 맡은 너울이오" in r13_packet[1].replace("\n"," ")) timeout 60
+    click pos (900,600) until eval (r13_packet and "마을 장부를 맡은 너울입니다" in r13_packet[1].replace("\n"," ")) timeout 60
     assert eval (room13["location"]=="gate" and all(r13_v111_value("location:"+p)=="gate" and r13_v111_actor_ready(p) for p in ["guard","daram","karo","neoul"]))
     assert eval (qa_nw_seen("초소 안쪽에서 다가온다") and qa_nw_seen("너울 씨, 이 두 분도"))
     screenshot "opening_neoul_introduction.png"

@@ -262,6 +262,15 @@ init 301 python:
         location=store.room13["location"]
         key=r13_v111_object_key(key)
         spec=ROOM13["objects"].get(location,{}).get(key,spec)
+        if location=="room13" and key=="bed" and store.room13.get("day",1)==1:
+            # 잠자기는 sleep1의 실제 선택지가 처리한다. 그 전에는 낱말 '침대'를 속말로 읽지 않는다.
+            gate=(store.room13.get("v111") or {}).get("gate")
+            if gate=="note_pick":return "책상 위에 접힌 메모가 있다. 먼저 펼쳐 보자."
+            if gate=="letter_compare_review":
+                if r13_v111_value("letter_tail_observed"):
+                    return "책상 위 메모를 다시 펼쳐, 발견한 차이를 다람과 이야기하자."
+                return "두 글을 마저 살펴봐야 한다. 책상 위 메모를 다시 펼쳐 보자."
+            return None
         record=R13_V111_RECORD_OBJECTS.get((location,key))
         if record:
             if r13_v111_owned(record):return ROOM13["evidence"]["V111:"+record]["establishes"]

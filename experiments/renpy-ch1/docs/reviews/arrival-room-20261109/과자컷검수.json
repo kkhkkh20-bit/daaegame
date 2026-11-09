@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-09",
+  "scope": "첫날 엄마 방 저녁 과자 봉투 컷 읽기 전용 검수. 코드·납품 manifest·원화 직접 확인. 소스 수정·새 이미지 생성 없음.",
+  "current": {
+    "file": "game/assets/evidence/D01_SNACK_BAG.webp",
+    "size": [
+      384,
+      384
+    ],
+    "mode": "RGBA",
+    "creator": "art/props-20261022/make_props.py:56~70",
+    "method": "Pillow ImageDraw: 갈색 rounded_rectangle, 접힌 띠 두 개, 붉은 ellipse, 잡음·그림자·회전 후 384px WebP 저장",
+    "runtime": "game/systems/room13_ep_art.rpy:r13_ep_cut_art, R13_FAMILY_FOCUS_BOX=(820,92,412), focus:D01_SNACK_BAG",
+    "cue": "game/v111/newworld/d01.json MS14_D01_S05_L0045: 다람이 과자 봉지 끝을 두 번 접는다. 꼭꼭 누른다.",
+    "issue": "단순 도형으로 만든 작은 소품을 가족 초점 412px칸에서 크게 보여 직접 작도의 단순함이 두드러짐",
+    "viewed": true
+  },
+  "candidate": {
+    "file": "game/assets/resident-props-20261024/sticker_snack.webp",
+    "source": "art/resident-props-delivery-20261024/props/sticker_snack.webp",
+    "manifest": "art/resident-props-delivery-20261024/manifest.json:1966~1973 bag:snack",
+    "size": [
+      256,
+      256
+    ],
+    "mode": "RGBA",
+    "viewed": true,
+    "appearance": "열린 종이 봉지 안에 구운 밤 세 개, 흰 스티커 외곽선",
+    "suitable": false,
+    "reason": "접어 닫은 과자 봉지와 다르며 음식 종류·개수·흰 테두리도 현재 가족 장면과 맞지 않는다. 구운 밤 소지품 bag:snack 용도의 납품이다."
+  },
+  "recommendation": "동일 역할의 납품 대체가 발견되지 않았으므로 이 첫날 focus:D01_SNACK_BAG의 큰 확대를 제거하거나 일반 증거 컷 크기로 낮춘다. 과자 봉투 동작·엄마 몫 감정선·기존 진행·정답·자료는 유지한다. 다른 가족 초점(E06/가족 그림)은 별도로 보존한다.",
+  "limits": "보유 경로에서 snack/cookie/biscuit/과자/봉투/paperbag 검색한 범위. 새 외부 팩 탐색이나 전체 파일 실물 조사는 하지 않음."
+}

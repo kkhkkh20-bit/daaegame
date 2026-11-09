@@ -18,16 +18,16 @@ init 350 python:
     # 발언을 보인다. None 은 늘 보인다. 정답 ID·미획득 자료·미래 대사는 여기 넣지 않는다.
     R13_PW_CONTEXT={
         "함께 들어갈 근거를 고른다":dict(mode="proof",speaker="돌목",
-            quote="지금 이 명단에는 다돌 이름만 있소. 다람 이름은 없으니, 다람은 들어갈 수 없소.",
+            quote="명단에는 다돌 씨 이름만 있습니다. 다람 이름이 없으니 아이는 들여보낼 수 없습니다.",
             quote_when=("flag","v111:entered:MS14_D01_S02")),
         # 2026-11-05 소유자 시안 승인: 3일도 이미 익힌 같은 화면에서 직접 읽고 고른다.
         # 인용은 각 쟁점 직전에 실제로 들은 발언뿐이며, 진료소에는 질문 제목만 둔다.
         "측정 종료와 점검 기록을 대조한다":dict(mode="proof",speaker=None,quote=None,quote_when=None),
         "수리와 반출을 가릴 자료를 낸다":dict(mode="proof",speaker="너울",
-            quote="어제 3번 등을 연 사람은 톡 하나요. 장부에 그렇게 적혀 있소. 그리고 아침엔 돌이 없소.",
+            quote="어제 3번 등을 연 사람은 톡 하나입니다. 장부에 그렇게 적혀 있습니다. 그런데 아침에는 돌이 없었습니다.",
             quote_when=("flag","v111:entered:MS14_D03_S05")),
         "돌과 매입 기록을 낸다":dict(mode="proof",speaker="너울",
-            quote="아침에 없던 그 돌은 지금 어디 있소? 누구 손을 거쳐 갔소?",
+            quote="아침에 없던 그 돌은 지금 어디 있습니까? 누구 손을 거쳐 갔습니까?",
             quote_when=("flag","v111:entered:MS14_D03_S05")),
         "바깥 걸쇠 주장과 발견 위치를 대조한다":dict(mode="proof",speaker="실룩",
             quote="새벽에 간 건 맞아요. 걸쇠가 벌어졌길래 칼로 밀어 닫아 줬죠.",
@@ -158,6 +158,18 @@ init 350 python:
 
     def r13_pw_main_label(mode):
         return "비교 마치기" if mode=="compare" else "근거 제시"
+
+    def r13_pw_room_letters_copy(key,pair,discovery_needed,observed):
+        """첫 방의 실제 읽는 두 글만, 관찰 전후에 맞는 조작 설명을 쓴다."""
+        values=tuple(pair or ())
+        if key not in ("두 편지를 나란히 본다","v111:두 편지를 나란히 본다") or len(values)!=2 or set(values)!={"V111:E01","V111:E06"}:
+            return None
+        if observed:
+            return ("발견한 차이 확인","「발견한 차이 확인」을 눌러 다람과 이야기를 이어 가세요.")
+        if not discovery_needed:
+            # 이미 비교를 끝낸 옛 저장에는 새 관찰을 요구하지 않는다.
+            return ("비교 내용 확인","「비교 내용 확인」을 눌러 이야기를 이어 가세요.")
+        return ("차이 살펴보기","두 글의 다른 부분을 직접 짚어 보세요. 기회는 줄어들지 않습니다.")
 
     def r13_pw_pages(sections,cols,cap,card_h,header_h,gap=8,pager_h=0):
         """목록을 눈에 보이는 쪽으로 나눈다(소유자: 긴 목록은 명시적 쪽 넘김, 숨은 스크롤 없음).
@@ -706,6 +718,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ review_action=Return("investigate") if can_review else None
     $ pair_submission=r13_pw_pair_submission(live_pair,owned,mode) if view=="pair" else None
     $ discovery_pending=r13_room_letters_discovery_pending(key,pair_submission or chosen)
+    $ room_letters_copy=r13_pw_room_letters_copy(key,pair_submission or chosen,r13_room_letters_discovery_needed(key),r13_v111_value("letter_tail_observed") is True)
     use r13_notebook_shell("자료 대조",close_action=review_action,rule_y=(148 if touch else 128))
     if can_review:
         key "game_menu" action review_action
@@ -726,6 +739,10 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
         frame:
             area (L["left"],L["quote_y"],L["width"],L["quote_h"]) padding (16,10) background r13_field_paper()
             text layout_quote id "r13_pw_quote_text" size r13_type("emphasis") color ink font R13_UI_FONT xsize (L["width"]-32)
+    if room_letters_copy:
+        text room_letters_copy[1] xpos L["left"] ypos L["body_top"] xsize L["width"] size small color accent font R13_UI_BOLD_FONT
+        # 안내 한 줄의 높이를 본문에서 빼서 문서·관찰 버튼과 겹치지 않게 한다.
+        $ L=dict(L,body_top=L["body_top"]+small+10,body_h=max(60,L["body_h"]-small-10))
     $ sections=r13_pw_sections(tab,owned)
     $ pages=[[]]
     if view=="list":
@@ -799,7 +816,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
         use r13_control("접기" if origin_open else "출처",None,ToggleScreenVariable("origin_open"),enabled=ready and view!="list",width=128,label_size=small,control_id="r13_pw_origin")
     fixed:
         xpos 966 ypos L["footer_y"] xysize (240,L["footer_h"])
-        use r13_control("다른 부분 짚기" if discovery_pending else "이 두 장 비교" if pair_submission else r13_pw_main_label(mode),None,Function(r13_pw_submit_pair,claim,live_pair,mode) if pair_submission else Function(r13_pw_submit_selected,claim),enabled=ready and (bool(pair_submission) or (r13_pw_submit_ok(stored,mode) and r13_pw_submit_ok(chosen,mode))),primary=True,width=240,control_id="r13_pw_submit")
+        use r13_control(room_letters_copy[0] if room_letters_copy else "다른 부분 짚기" if discovery_pending else "이 두 장 비교" if pair_submission else r13_pw_main_label(mode),None,Function(r13_pw_submit_pair,claim,live_pair,mode) if pair_submission else Function(r13_pw_submit_selected,claim),enabled=ready and (bool(pair_submission) or (r13_pw_submit_ok(stored,mode) and r13_pw_submit_ok(chosen,mode))),primary=True,width=240,control_id="r13_pw_submit")
     if replace_pending:
         button:
             xysize (1280,720) background Solid("#05070f88") action NullAction()

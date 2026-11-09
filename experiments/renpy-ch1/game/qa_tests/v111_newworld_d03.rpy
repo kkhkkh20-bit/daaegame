@@ -19,7 +19,7 @@ testcase v111_nw_d03_lamp_lost:
     pause 1.0
     click pos (900,600) until "확인된 3번 돌을 돌려 달라고 한다" timeout 90
     assert eval (r13_v111_value("meeting:lamp")=="lose" and r13_v111_value("listed:resident_tok") is True)
-    assert eval (qa_nw_seen("그것으로 됐소") and qa_nw_seen("보호시설 명단에도") and qa_nw_seen("톡에게서 받아 내시오") and not qa_nw_seen("제가 이은 순서를"))
+    assert eval (qa_nw_seen("그걸로 충분합니다") and qa_nw_seen("보호시설 명단에도") and qa_nw_seen("톡에게서 받아 내세요") and not qa_nw_seen("제가 이은 순서를"))
     click "확인된 3번 돌을 돌려 달라고 한다"
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval (r13_v111_value("silluk_status")=="released" and r13_v111_value("stone_choice_completed") is True)
@@ -43,7 +43,7 @@ testcase v111_nw_d03_lamp_partial:
     click pos (900,600) until "오늘은 반환 요구를 보류한다" timeout 90
     assert eval (r13_v111_value("meeting:lamp")=="partial" and not r13_v111_value("listed:resident_tok"))
     # The meeting is set up at its start, so the loss counts at the repair step (audit 2026-10-22).
-    assert eval (qa_nw_seen("짐 나른 걸로 사람을 붙잡아 둘 순 없소") and qa_nw_seen("누가 꺼냈는지도 못 밝혔"))
+    assert eval (qa_nw_seen("짐을 나른 것만으로 사람을 붙잡아 둘 순 없습니다") and qa_nw_seen("누가 꺼냈는지도 못 밝혔"))
     click "오늘은 반환 요구를 보류한다"
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("silluk_status")=="released")

@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-09",
+  "scope": "첫 방 E01/E06 비교의 조작 안내·완료 버튼만 변경. 다른 회의와 정답/증거/기회/arguments 경로는 변경하지 않음. SDK·build·웹 실행하지 않음.",
+  "files": [
+    "game/systems/room13_proof_workspace.rpy",
+    "dev/test_room_letters_action136.py"
+  ],
+  "behavior": {
+    "before_observation": {
+      "label": "차이 살펴보기",
+      "guide": "두 글의 다른 부분을 직접 짚어 보세요. 기회는 줄어들지 않습니다.",
+      "no_answer_leak": [
+        "도토리",
+        "서명",
+        "끝부분",
+        "위조",
+        "엄마가 쓴"
+      ]
+    },
+    "after_observation": {
+      "label": "발견한 차이 확인",
+      "guide": "「발견한 차이 확인」을 눌러 다람과 이야기를 이어 가세요."
+    },
+    "old_completed_without_observation": {
+      "label": "비교 내용 확인",
+      "guide": "「비교 내용 확인」을 눌러 이야기를 이어 가세요.",
+      "guard": "기존 r13_room_letters_discovery_needed=False를 받아 완료구저장에새관찰을요구하지않음."
+    }
+  },
+  "preserved": [
+    "r13_pw_submit_pair/r13_pw_submit_selected 호출과 인자",
+    "r13_room_letters_begin_discovery 선행 검사",
+    "room13.arguments 선택값/정답 판정/기회 소모 경로",
+    "다른 compare/proof 쟁점의 기존 caption",
+    "wrong/partial/duplicate 자료 쌍의 기존 동작"
+  ],
+  "layout": "같은 납품 수첩 안에서 안내 한 줄만큼 본문 높이를 줄여 관찰 버튼/문서와 겹침 방지. 기존 footer/action 배치는 불변.",
+  "tests": [
+    {
+      "module": "test_room_letters_action136",
+      "passed": 5
+    },
+    {
+      "module": "test_proof_workspace",
+      "passed": 20
+    },
+    {
+      "module": "test_room_letters",
+      "passed": 12
+    },
+    {
+      "module": "test_letter_observation_ui",
+      "passed": 3
+    },
+    {
+      "module": "test_proof_support_controls",
+      "passed": 4
+    }
+  ],
+  "font_fit": "Pretendard-Bold 22/24/26/28px에서 안내1074px·버튼208px 이내 확인",
+  "validation": "관련단위44개·git diff --check 통과",
+  "runtime_limit": "부모의 SDK/웹에서 본문 안내 위치와 버튼 다음 대사 전환을 최종확인해야 함."
+}

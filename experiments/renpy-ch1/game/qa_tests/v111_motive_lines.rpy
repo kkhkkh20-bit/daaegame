@@ -26,7 +26,7 @@ testcase v111_motive_d03_square:
     run Jump("r13_v111_lamp3")
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (qa_nw_seen("수리점 쪽이 아니라 광장 쪽을") and not qa_nw_seen("꺼진 3번 등 쪽을 한참 보다가"))
-    assert eval (qa_nw_seen("봄까지 못 굴러가요") and qa_nw_seen("장부엔 사정을 안 적소"))
+    assert eval (qa_nw_seen("봄까지 못 굴러가요") and qa_nw_seen("장부에는 사정을 안 적습니다"))
 
 testcase v111_motive_d03_tok_freed:
     # 3일 회의에서 톡이 풀려난 판: 회의가 끝난 공방에서 축 이야기.
