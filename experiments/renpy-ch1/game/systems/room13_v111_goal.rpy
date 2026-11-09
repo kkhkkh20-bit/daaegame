@@ -116,7 +116,7 @@ init 342 python:
     for _gate in ("lamp_prep2","sleep1","sleep2","sleep3","sleep4","sleep5","sleep6_input","free_sleep7_input","detained_bed7",
                   "sleep8_input","sleep9_input","sleep10_input","sleep11_input","sleep12_bed_input","sleep13_input",
                   "sleep13_gate_input","departed_bed13"):
-        R13_V111_STEP_GOALS[_gate]="오늘 할 일은 마쳤다. 잠자리를 정리하자."
+        R13_V111_STEP_GOALS[_gate]="오늘 할 일은 마쳤다. 잠자리를 누르거나 ‘잠자기’를 고르면 다음 날로 넘어갈 수 있다."
     R13_V111_STEP_GOALS.update({
         "teacher_relief_check13":"초소로 가기 전, 선생님 곁을 누가 이어 맡는지 확인하자.",
         "altar_guide14":"제단까지 갈 길을 바둑이에게 확인해 달라고 하자.",

@@ -83,6 +83,9 @@ init 335 python:
         return bool(r13_v111_value("followup_read:"+fid) or r13_v111_value("followup_heard:"+fid))  # 2026-10-29 피드백 G: 자동 대화에서 들은 답
 
     def r13_v111_followups(person):
+        # 이미 읽은 질문도 재독할 수 있지만, 죽었거나 자리를 떠난 사람을 다시 부르지는 않는다.
+        if not r13_v111_person_alive(person) or r13_v111_value("departed:"+person):return []
+        if not globals().get("r13_v111_actor_ready",lambda p:True)(person):return []
         return [spec for spec in R13_REACTIONS.get("followups",[])
                 if spec["person"]==person and r13_v111_owned(spec["after"]) and r13_reaction_day_ok(spec)]
 
@@ -103,7 +106,7 @@ init 335 python:
 
     def r13_v111_followup_lines(fid):
         spec=next((s for s in R13_REACTIONS.get("followups",[]) if s["id"]==fid),None)
-        if spec is None:return []
+        if spec is None or spec not in r13_v111_followups(spec["person"]):return []
         r13_v111_set("followup_read:"+fid,True)
         return r13_reaction_packets(r13_v111_followup_display(spec)["lines"])
 

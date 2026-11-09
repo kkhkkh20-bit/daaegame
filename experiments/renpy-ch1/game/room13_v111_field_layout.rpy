@@ -127,7 +127,7 @@ init 337 python:
             cx=ax+aw/2.0
             # 2026-10-28 다른 길 자동 플레이 3일 광장: 3번 등 옆의 피코가 등(조사 물건)을 피해 오른쪽으로 비키며 첫 화면 밖으로
             # 나갔다(952→1210, 카메라 0). 비킨 자리가 지금 화면 밖으로 1/3 넘게 나가면 붐비는 쪽이라도 안쪽을 고른다.
-            try:view_left=r13_world_offset();view_right=view_left+r13_view_width()
+            try:view_left,view_right=r13_stage_reference_view(width)
             except Exception:view_left,view_right=0,width
             def offscreen(f):
                 hidden=max(0,view_left-(f-aw/2.0))+max(0,(f+aw/2.0)-view_right)
@@ -140,6 +140,14 @@ init 337 python:
             return r13_ma_place(actor,actor["pose"],int(best),foot_y,actor["height"])
         return actor
     R13_CLEAR_STEP_MAX=320
+
+    def r13_stage_reference_view(width):
+        # 인물은 장면의 고정된 바닥에 선다. 카메라를 옮겨도 물건·사람 회피의 기준을 바꾸지 않는다.
+        # 첫 구도의 가시성은 유지하되 현재 카메라 위치를 읽지 않아 좌우 팬으로 자리가 바뀌지 않는다.
+        layout=r13_layout() or {}
+        span=min(width,r13_view_width())
+        left=max(0,min(width-span,layout.get("initial_x",0)))
+        return left,left+span
 
     _r13_clear_stage_people=r13_stage_people
     def r13_stage_people(entry=False):
@@ -186,7 +194,7 @@ init 337 python:
                         return hit
                     feet=[cx+d*s for d in range(90,900,90) for s in (-1,1) if fw/2.0<=cx+d*s<=width-fw/2.0]
                     if not feet:continue
-                    try:view_left=r13_world_offset();view_right=view_left+r13_view_width()
+                    try:view_left,view_right=r13_stage_reference_view(width)
                     except Exception:view_left,view_right=0,width
                     def offscreen(f):
                         hidden=max(0,view_left-(f-fw/2.0))+max(0,(f+fw/2.0)-view_right)
@@ -234,8 +242,8 @@ init 337 python:
         critical=list(critical)+r13_keepout_cover_rects(keepouts)
         height=r13_world_height()
         # 2026-10-28 다른 길 자동 플레이 3일 광장: 등(3번 등)을 피하느라 피코가 오른쪽으로 264px 밀려 첫 화면 밖(1314)으로 나갔다.
-        # 비킨 자리가 지금 화면(카메라 폭) 밖으로 1/3 넘게 나가면 벌점을 둔다 — 보이지 않는 것이 겹침보다 나쁘다.
-        try:view_left=r13_world_offset();view_right=view_left+r13_view_width()
+        # 비킨 자리가 장면의 첫 구도 밖으로 1/3 넘게 나가면 벌점을 둔다. 현재 카메라는 배치에 관여하지 않는다.
+        try:view_left,view_right=r13_stage_reference_view(width)
         except Exception:view_left,view_right=0,width
         def offscreen(rect):
             hidden=max(0,view_left-rect[0])+max(0,rect[0]+rect[2]-view_right)
@@ -290,7 +298,7 @@ init 337 python:
         fixed=("hanging","background_bench","bench_sit","behind_counter","background_chair")
         keepouts=[tuple(r) for r in keepouts]
         critical=list(critical)+r13_keepout_cover_rects(keepouts)
-        try:view_left=r13_world_offset();view_right=view_left+r13_view_width()
+        try:view_left,view_right=r13_stage_reference_view(width)
         except Exception:view_left,view_right=0,width
         def hidden(rect):
             return max(0,view_left-rect[0])+max(0,rect[0]+rect[2]-view_right)

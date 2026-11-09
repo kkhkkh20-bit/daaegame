@@ -110,6 +110,10 @@ screen r13_hub(entry=False):
         fixed:
             area (24,84,144,88 if r13_touch_ui() else 64)
             use r13_field_top_button("지도","map",Return(("menu","map")),input_ready)
+    if not entry and r13_v111_rest_option():
+        fixed:
+            area (1020,352,232,r13_control_height())
+            use r13_control("잠자기","auto",Return(("sleep","bed")),enabled=input_ready,height=r13_control_height(),control_id="r13_rest_sleep")
     if not entry and r13_bed_available("bed"):
         fixed:
             area (1020,264,232,64)

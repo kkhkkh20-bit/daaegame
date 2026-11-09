@@ -94,7 +94,7 @@ testcase v111_nw_d02_afternoon_half_then_nero:
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval (qa_nw_seen("피코가 깨겠지") and not qa_nw_seen("내일 일찍 가야 돼"))
     # 2026-10-29 외부 검토: 2일 저녁 13호. 다람에게 「방으로 들어간다」를 묻지 않는다(다람은 아빠 곁의 동행이라 이제 현장에
-    # 세우지 않는다). 침대를 한 번 누르면 아침 약속을 적고 잠드는 데까지 이어진다.
+    # 세우지 않는다). 침대의 잠자기 확인에 동의하면 아침 약속을 적고 잠드는 데까지 이어진다.
     assert eval (room13["v111"].get("gate")=="lamp_prep2" and room13["location"]=="room13")
     assert eval ([q[0] for q in r13_v111_questions("daram")]==[] and "daram" not in r13_visible_people() and r13_object_visible(ROOM13["objects"]["room13"]["bed"]))
     pause 1.0
@@ -102,6 +102,9 @@ testcase v111_nw_d02_afternoon_half_then_nero:
     run Show('qa_hidden_base_return',value=('object','bed'))
     pause 0.3
     click 'QA 행동'
+    pause until screen 'r13_confirm' timeout 15
+    pause .4
+    click '잠자기'
     click pos (900,600) until eval (r13_v111_value("day")==3) timeout 90
     assert eval (r13_v111_value("lamp_prep_done2") is True and r13_has("v111:applied:option:sleep2:0") and r13_v111_bed_pending is None)
 

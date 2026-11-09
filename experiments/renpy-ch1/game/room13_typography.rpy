@@ -24,12 +24,14 @@ init 57 python:
         # Actual fixed field dock, thought fold and HUD. Shared by staging and
         # labels; touch and large-text geometry must agree with hit targets.
         h=r13_control_height()
-        return [(offset+24,84,472,88 if r13_touch_ui() else 64),
+        rects=[(offset+24,84,472,88 if r13_touch_ui() else 64),
                 (offset+510,100,160,44),
                 (offset+940,20,314,68),(offset+24,20,400,54),
                 # 0.20.11 (owner-approved mockup 2026-10-23): the screen-edge pan arrows
                 # (room13_world_camera.rpy) — a name tag never covers them.
                 (offset+8,236,80,80),(offset+1192,236,80,80)]
+        if globals().get("r13_v111_rest_option",lambda:None)():rects.append((offset+1020,352,232,h))
+        return rects
 
     R13_UI_PADDING = {
         "button": (18,12), "compact": (12,8), "panel": (24,20),

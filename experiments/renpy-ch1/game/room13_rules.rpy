@@ -93,6 +93,11 @@ init 55 python:
             store.r13_inspection_location=None
         n=winter_copy.deepcopy(store.room13)
         n.update(values)
+        if n.get("v111") and "location" in values:
+            visits=list(n["v111"].get("visited_places",[]))
+            for place in (store.room13.get("location"),n.get("location")):
+                if isinstance(place,str) and place not in visits:visits.append(place)
+            n["v111"]["visited_places"]=visits
         store.room13=n
 
     def r13_flag(*keys):

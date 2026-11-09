@@ -13,9 +13,24 @@ init 181 python:
                 CAST[_member["person"]][_member["pose"]] = _spec
                 renpy.image(_member["person"]+" "+_member["pose"], Transform(Crop(tuple(_spec["crop"]), _spec["file"]), nearest=True))
 
+    def r13_life_v111_allowed(row):
+        if not globals().get("r13_v111_active",lambda:False)():return True
+        s=store.room13 or {};v=s.get("v111") or {}
+        # 구 캠페인의 생활 장면 전체를 켜지 않는다. 1부의 기존 협업 두 장면만 실제 재실 때 연다.
+        if not 1<=s.get("day",1)<=7 or row["id"] not in ("workshop_pair","inn_mending"):return False
+        if v.get("gate")=="travel" or globals().get("r13_v111_tense_context",lambda:None)():return False
+        members={m["person"] for m in row["members"]}
+        if any(o.get("person") in members and o.get("location")==s.get("location")
+               for o in r13_v111_binding().get("options",[])):return False
+        for person in members:
+            if not r13_v111_person_alive(person) or r13_v111_value("departed:"+person) or r13_v111_value("busy:"+person):return False
+            if not r13_v111_actor_ready(person):return False
+        return True
+
     def r13_life_group_allowed(row, actors, entry=False):
         s = store.room13 or {}
         if entry or row["status"] != "approved" or not getattr(store, "r13_life_field_active", False):return False
+        if not r13_life_v111_allowed(row):return False
         if any(getattr(store, name, False) for name in ("r13_cg_active", "r13_meeting_active", "r13_meeting_live_active", "r13_aftermath_active", "r13_ending_story_active")):return False
         if set(renpy.get_showing_tags()).intersection(("r13_ep_cut", "r13_ep_book")):return False
         if s.get("location") != row["location"] or s.get("day") not in row["days"] or s.get("period") not in row["periods"]:return False

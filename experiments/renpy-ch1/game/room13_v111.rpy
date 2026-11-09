@@ -161,6 +161,25 @@ init 301 python:
         # 목록에 두면 제목을 누르는 것만으로 자료를 대신 내밀어 준다. 제시는 r13_v111_present_index 가 그대로 받는다.
         # 「이분을 보셨습니까?」처럼 그 사람에게 하는 말이면서 자료를 함께 보이는 선택지는 목록에 남긴다.
         return [(o["title"],Return("present") if o.get("present") and o["present"] not in store.room13["evidence"] else Return(o.get("index",i)),bool(o.get("remember_read") and r13_v111_value("ui_topic_read:%s:%s"%(store.room13["v111"].get("gate"),o.get("index",i))))) for i,o in enumerate(b.get("options",[])) if o.get("person")==person and o.get("location")==store.room13["location"] and not o.get("present_only")]
+    def r13_v111_roam_companions():
+        here=store.room13["location"]
+        people=[]
+        if (store.room13.get("daram_state") in ("with_dad","rescued")
+                and not r13_v111_value("DARAM_DETAINED")
+                and r13_v111_value("location:daram") in (None,here)
+                and r13_v111_value("busy:mom")!="daram_guard"
+                and not (r13_v111_value("DARAM_location")=="school" and r13_v111_value("busy:nabi")=="daram_guard")
+                and not (r13_v111_value("DARAM_location")=="room13" and store.room13["v111"].get("scene")=="MS14_D07_S04")):
+            people.append("daram")
+        if r13_v111_value("family_reunited") and r13_v111_value("location:mom")==here and not r13_v111_value("busy:mom"):
+            people.append("mom")
+        return people
+
+    def r13_v111_roam_arrive(people):
+        here=store.room13["location"]
+        present=[p for p in store.room13["v111"].get("people",[]) if r13_v111_value("location:"+p)==here]
+        r13_v111_arrive(list(dict.fromkeys(present+list(people))))
+
     def r13_v111_auto_index(key):
         # 2026-10-29 같은 검토: 질문 목록에 남기지 않은 동작 두 가지를 대기 화면 없이 잇는다.
         # 1) 2일 밤 13호 침대(lamp_prep2)를 누르면 이어지는 잠자리(sleep2)에서 침대를 한 번 더 누르게 하지 않는다.
@@ -168,10 +187,13 @@ init 301 python:
         #    고를 것이 하나뿐이므로(선택지가 하나면 창을 띄우지 않는다) 지문으로 넘어간다.
         b=r13_v111_binding()
         options=b.get("options",[])
-        if store.r13_v111_bed_pending==key:
+        if store.r13_v111_bed_pending is not None:
+            pending=store.r13_v111_bed_pending
             store.r13_v111_bed_pending=None
-            bed=[o["index"] for o in options if o.get("object")=="bed"]
-            if bed:return bed[0]
+            # 옛 저장의 문자열 예약은 수면 동의로 보지 않는다.
+            if pending==(key,store.room13.get("day")):
+                bed=[o["index"] for o in options if o.get("object")=="bed"]
+                if bed:return bed[0]
         if b.get("auto") and len(options)==1:return options[0]["index"]
         return None
 
@@ -285,6 +307,8 @@ init 301 python:
                     return "책상 위 메모를 다시 펼쳐, 발견한 차이를 다람과 이야기하자."
                 return "두 글을 마저 살펴봐야 한다. 책상 위 메모를 다시 펼쳐 보자."
             return None
+        if key=="bed" and location in ("room13","guestroom"):
+            return "이불과 베개가 놓여 있다. 잠들기 전에 남은 일을 마치자."
         record=R13_V111_RECORD_OBJECTS.get((location,key))
         if record:
             if r13_v111_owned(record):return ROOM13["evidence"]["V111:"+record]["establishes"]
@@ -322,9 +346,58 @@ init 301 python:
             return [(Transform("assets/room13-v111-blanket-before.webp",xysize=(260,180),fit="contain",nearest=True),30,441)]
         return _r13_v111_props(entry)
     _r13_v111_places=r13_places
+    def r13_v111_revisit_allowed():
+        # 일상 조사 대기만 연다. 이동·회의·긴급 대응은 기존 장면의 동선을 따른다.
+        state=store.room13;story=state.get("v111",{});here=state.get("location")
+        safe_gates={"registered_menu","note_pick","bundle_open","letter_compare_review","chorong_inquiry1","sleep1",
+            "lamp_rope","go_box","box_inspect","box_note","envelope_show","post_menu","portrait_ask","lamp_observe",
+            "chorong_documents2","afternoon2","lamp_prep2","sleep2","piko_clean","lamp_inspect3","fragment_request",
+            "lamp_log_request","loan_read","measurement_read","transport_read","knife_permission","store_visit",
+            "stone_check","sale_check","restore_input","lamp_attempt_field3","sleep3","portrait_show4","portrait_place4",
+            "look_gate4","inspect_gate4","collect4","sleep4","compare_cloth5","envelope5","reply_handoff5","lock_check5",
+            "sleep5","board6","afternoon6","sleep6_input","free_sleep7_input"}
+        if not 1<=state.get("day",1)<=7 or story.get("gate") not in safe_gates:return False
+        if story.get("scene") in ("MS14_D03_S05","MS14_D05_S03","MS14_D07_S02") or getattr(store,"r13_meeting_active",False):return False
+        if (r13_v111_value("DARAM_DETAINED") or r13_v111_value("OWL_ALIVE") is False
+                or r13_v111_value("route7")=="murder" or state.get("case_state")=="occurred"):return False
+        if (r13_v111_value("busy:mom")=="daram_guard" or r13_v111_value("busy:nabi")=="daram_guard"
+                or r13_v111_value("location:daram") not in (None,here)):return False
+        return True
+
+    def r13_v111_known_public_visits():
+        # 지도에 그려진 것과 실제 방문은 다르다. 새 방문 기록과 확실한 구판 완료 기록만 읽는다.
+        state=store.room13;visits=list(state.get("v111",{}).get("visited_places",[]))
+        visits.append(state.get("location"))
+        completed={"square":("MS14_D02_S01_L0033",),"post":("MS14_D02_S02_L0005",),
+            "workshop":("MS14_D03_S03_L0008","MS14_D03_S04_L0037"),
+            "clinic":("MS14_D03_S03_L0027",),"school":("MS14_D06_S01_L0012",)}
+        for place,records in completed.items():
+            if any(r13_has("v111:applied:"+rid) for rid in records):visits.append(place)
+        if r13_v111_value("ui_room_arrival_seen") or r13_v111_owned("E06"):visits.append("inn")
+        return [place for place in ("inn","square","post","workshop","clinic","school") if place in visits]
+
+    def r13_v111_public_revisit_places():
+        return r13_v111_known_public_visits() if r13_v111_revisit_allowed() else []
+
+    def r13_v111_inn_revisit_places():
+        # 첫 방에 도착한 뒤에도 여관의 익숙한 길은 현재 대기 선택지와 별개로 남긴다.
+        # 새 수사 장소를 열거나 구금·사건 봉쇄를 우회하지 않는다.
+        state=store.room13;day=state.get("day",1)
+        if not r13_v111_revisit_allowed():return []
+        if not 1<=day<=7 or state.get("location") not in ("inn","hall","room13","dining"):return []
+        if (r13_v111_value("DARAM_DETAINED") or r13_v111_value("OWL_ALIVE") is False
+                or r13_v111_value("route7")=="murder" or state.get("case_state")=="occurred"):return []
+        room_known=(r13_v111_value("ui_room_arrival_seen") or r13_v111_owned("E06")
+                    or day>1 and r13_v111_value("gate_registered"))
+        if not room_known:return []
+        result=["inn","hall","room13"]
+        if day>2 or r13_has("v111:entered:MS14_D02_S04") or r13_has("v111:entered:MS14_D02_S05"):
+            result.append("dining")
+        return result
+
     def r13_places():
         if not r13_v111_active():return _r13_v111_places()
-        return list(dict.fromkeys([store.room13["location"]]+[o["location"] for o in r13_v111_binding().get("options",[]) if o.get("location")]))
+        return list(dict.fromkeys([store.room13["location"]]+[o["location"] for o in r13_v111_binding().get("options",[]) if o.get("location")]+r13_v111_inn_revisit_places()+r13_v111_public_revisit_places()))
     _r13_v111_bed=r13_bed_available
     def r13_bed_available(key):
         return False if r13_v111_active() else _r13_v111_bed(key)
@@ -343,12 +416,21 @@ label r13_v111_wait_again:
     if r13_v111_talk_person and r13_v111_talk_person in r13_visible_people() and not r13_v111_idle_ok(r13_v111_talk_person):
         $ v111_pick=("person",r13_v111_talk_person); v111_binding=r13_v111_binding()
     else:
+        $ r13_life_field_active=True
         call screen r13_hub
         $ v111_pick=_return; v111_binding=r13_v111_binding()
+        $ r13_life_field_active=False
     $ r13_v111_talk_person=None
     # 0.19.95: same guard as the older hub (room13.rpy) — a screen that returns
     # something other than a (kind, value) pair shows the hub again instead of crashing.
     if not r13_screen_choice_ok(v111_pick,"r13_v111_hub"):
+        jump r13_v111_wait_again
+    if v111_pick[0] in ("life_group","life_child"):
+        $ r13_life_field_active=True
+        $ v111_life_group=v111_pick[1] if v111_pick[0]=="life_group" else next((g["id"] for g in r13_life_groups_here() if v111_pick[1] in g.get("individual_lines",{})),None)
+        if v111_life_group:
+            call r13_life_group_talk(v111_life_group, None if v111_pick[0]=="life_group" else v111_pick[1])
+        $ r13_life_field_active=False
         jump r13_v111_wait_again
     if v111_pick[0]=="menu" and v111_pick[1]=="map":
         call screen r13_map
@@ -360,13 +442,40 @@ label r13_v111_wait_again:
             if v111_story_move:
                 $ r13_v111_time("move:"+key+":"+_return,5)
                 return v111_story_move["index"]
+            $ v111_roam_companions=r13_v111_roam_companions()
             $ r13_edit(location=_return)
+            $ r13_v111_roam_arrive(v111_roam_companions)
             call r13_scene(R13_PLACES[room13["location"]][1],R13_PLACES[room13["location"]][0],"calm")
             $ v111_move=next((i for i,o in enumerate(v111_binding.get("options",[])) if o.get("move")==room13["location"]),None)
             if v111_move is not None:
                 $ r13_v111_time("move:"+key+":"+room13["location"],5)
                 return v111_binding["options"][v111_move].get("index",v111_move)
         jump r13_v111_wait_again
+    if v111_pick[0]=="travel":
+        $ v111_local_target=r13_local_destination(v111_pick[1])
+        if v111_local_target=="outside":
+            call screen r13_map
+            $ v111_local_target=_return
+        if v111_local_target and v111_local_target in r13_places():
+            $ v111_story_move=next((o for o in v111_binding.get("options",[]) if o.get("move")==v111_local_target and o.get("move_by_story")),None)
+            if v111_story_move:
+                $ r13_v111_time("move:"+key+":"+v111_local_target,5)
+                return v111_story_move["index"]
+            $ v111_roam_companions=r13_v111_roam_companions()
+            $ r13_edit(location=v111_local_target)
+            $ r13_v111_roam_arrive(v111_roam_companions)
+            call r13_scene(R13_PLACES[room13["location"]][1],R13_PLACES[room13["location"]][0],"calm")
+            $ v111_local_move=next((o for o in v111_binding.get("options",[]) if o.get("move")==v111_local_target),None)
+            if v111_local_move:
+                $ r13_v111_time("move:"+key+":"+v111_local_target,5)
+                return v111_local_move["index"]
+        jump r13_v111_wait_again
+    if v111_pick[0]=="sleep":
+        $ v111_rest=r13_v111_rest_option()
+        if v111_rest:
+            $ v111_pick=("object",v111_rest["object"])
+        else:
+            jump r13_v111_wait_again
     if v111_pick[0]=="person":
         $ v111_person=v111_pick[1]
         $ v111_piko_reported=False
@@ -450,12 +559,23 @@ label r13_v111_wait_again:
             return 0 if v111_pick[1]=="ledger" else 1
         $ v111_matches=[i for i,o in enumerate(v111_binding.get("options",[])) if o.get("object")==v111_pick[1] and o.get("location")==room13["location"]]
         if len(v111_matches)==1:
-            $ r13_v111_bed_pending=v111_binding["options"][v111_matches[0]].get("bed_to")   # 2026-10-29: 침대 한 번으로 잠자리까지(r13_v111_auto_index)
+            if r13_v111_rest_option() and v111_binding["options"][v111_matches[0]]["index"]==0:
+                call r13_v111_rest_confirm
+                if not _return:
+                    jump r13_v111_wait_again
+                $ v111_bed_next=v111_binding["options"][v111_matches[0]].get("bed_to")
+                $ r13_v111_bed_pending=(v111_bed_next,room13["day"]) if v111_bed_next else None
             $ r13_v111_time("inspect:"+key+":"+v111_pick[1],0 if key=="letter_compare_review" or (key=="gate_investigate" and v111_pick[1]=="ledger") else 15)
             return v111_binding["options"][v111_matches[0]].get("index",v111_matches[0])
         if len(v111_matches)>1:
             $ v111_object_options=[("(%s, 어떻게 할까?)"%r13_object_name(v111_pick[1]),None)]+[(v111_binding["options"][i]["title"],i) for i in v111_matches]   # 2026-10-28 캡처 검수: 제목 없이 열리면 직전 대사(「설마 여기서 주무십니까?」)가 물음처럼 떠서 고를 것과 어긋났다. 보기만이 아니라 하는 일(사람 받기)도 있어 「어떻게 할까」로 묻는다
             $ v111_result=renpy.display_menu(v111_object_options)
+            if not isinstance(v111_result,int) or v111_result not in v111_matches:
+                jump r13_v111_wait_again
+            if r13_v111_rest_option() and v111_binding["options"][v111_result]["index"]==0:
+                call r13_v111_rest_confirm
+                if not _return:
+                    jump r13_v111_wait_again
             return v111_binding["options"][v111_result].get("index",v111_result)
         # 2026-10-29 소유자 「규칙판을 두 번 읽어야 자료가 나온다」: 입구 규칙판은 처음 누를 때 바로 읽고 갖는다.
         # 신청서를 찾으러 가라는 말을 들은 뒤(gate_choice)에는 선반을 누르면 그대로 신청서를 찾는다.
@@ -464,6 +584,9 @@ label r13_v111_wait_again:
             jump r13_v111_wait_again
         if key=="gate_choice" and v111_pick[1] in ("booth","gate_documents"):
             return 1
+        if v111_pick[1]=="bed" and room13["location"] in ("room13","guestroom"):
+            $ renpy.notify("아직 할 일이 남아 있습니다. 준비를 마치면 여기서 잠잘 수 있습니다.")
+            jump r13_v111_wait_again
         $ v111_object_spec=ROOM13["objects"].get(room13["location"],{}).get(v111_pick[1],{})
         $ v111_ambient=r13_v111_ambient_text(v111_pick[1],v111_object_spec)
         if v111_ambient:

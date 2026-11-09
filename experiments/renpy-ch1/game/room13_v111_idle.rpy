@@ -2,8 +2,8 @@
 # 혼잣말로 넘어가도 괜찮고, 기본 인사말이라도"). Tapping such a resident does not open the
 # question sheet: the first tap of the day plays that resident's greeting
 # (v111/newworld/greetings.json), later taps a short thought from Dad.
-# "Nothing to say" = no option of the current scene for this person here, no unread follow-up
-# question, and no specific evidence reaction left to see. Family members always open as before.
+# "Nothing to say" = no current option or eligible follow-up question for this person here,
+# and no specific evidence reaction left to see. Read questions remain available for replay.
 init 336 python:
     R13_GREETINGS=json.load(renpy.file("v111/newworld/greetings.json")) if renpy.loadable("v111/newworld/greetings.json") else {}
     R13_IDLE_THOUGHTS=(
@@ -20,7 +20,8 @@ init 336 python:
     def r13_v111_has_business(person):
         here=store.room13["location"]
         if any(o.get("person")==person and o.get("location")==here for o in r13_v111_binding().get("options",[])):return True
-        if any(not r13_followup_read(s["id"]) for s in r13_v111_followups(person)):return True
+        # 읽은 질문도 목록에서 다시 고를 수 있다. 읽음 표시는 새 대화 표시와 별도로 유지한다.
+        if r13_v111_followups(person):return True
         for spec in R13_REACTIONS.get("present",[]):
             if spec["person"]==person and r13_v111_owned(spec["evidence"]) and r13_reaction_day_ok(spec) and not r13_reaction_seen(spec):
                 return True
