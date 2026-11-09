@@ -255,6 +255,10 @@ init 170 python:
         if entry.get("status")!="approved_runtime":return None
         return r13_dialogue_fit_profile(r13_dialogue_render_profiles(person,entry,player_facing=True),height)
 
+    # 승인 원화의 정적 조립 결과만 보관한다. 표정 반응의 plan/시계는 공유하지 않는다.
+    R13_DIALOGUE_SOURCE_ART_CACHE={}
+    R13_DIALOGUE_SOURCE_ART_CACHE_LIMIT=48
+
     def r13_dialogue_source_neutral(person,pose,height):
         profile=r13_dialogue_source_profile(person,pose,height)
         if not profile:return None
@@ -268,8 +272,19 @@ init 170 python:
         if emotion=="flustered" and "flustered" not in profile["frames"]:emotion="anxious"
         frame=profile["frames"].get(emotion,profile["frames"]["neutral"])
         if renpy.loadable(frame["file"]):
-            art=Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=bool(frame.get("nearest")),subpixel=not frame.get("nearest")),xysize=tuple(profile["canvas"]))
-            return r13_pixel_scale(art,profile["canvas"][0],profile["canvas"][1],2) if profile.get("pixel_grid")==2 and not frame.get("native_detail") else art
+            # 화면 재평가/예측에서 같은 Fixed와 Transform을 매번 다시 만들면
+            # 같은 원화도 별도 렌더 대상으로 취급된다. 모양이 같은 정적 결과만 재사용한다.
+            revision=globals().get("r13_asset_revision")
+            cache=globals().setdefault("R13_DIALOGUE_SOURCE_ART_CACHE",{})
+            cache_key=(revision() if revision else 0,emotion,frame["file"],tuple(frame["offset"]),frame.get("scale",1.0),bool(frame.get("nearest")),tuple(profile["canvas"]),profile.get("pixel_grid"),bool(frame.get("native_detail")))
+            art=cache.get(cache_key)
+            if art is None:
+                art=Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=bool(frame.get("nearest")),subpixel=not frame.get("nearest")),xysize=tuple(profile["canvas"]))
+                if profile.get("pixel_grid")==2 and not frame.get("native_detail"):
+                    art=r13_pixel_scale(art,profile["canvas"][0],profile["canvas"][1],2)
+                if len(cache)>=globals().get("R13_DIALOGUE_SOURCE_ART_CACHE_LIMIT",48):cache.clear()
+                cache[cache_key]=art
+            return art
         # An approved character must never silently revert to the old pixel design.
         # A second shipped size is the same approved neutral, with its whole canvas scaled.
         posed=r13_dialogue_pose_source(person,pose)

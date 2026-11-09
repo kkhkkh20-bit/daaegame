@@ -122,7 +122,8 @@ screen say(who,what):
     if room13_mode and r13_black_card:
         add Solid("#000")
         r13_dialogue_text what id "what" style "say_dialogue" xalign .5 yalign .46 xmaximum 980 text_align .5 layout "subtitle" size r13_type("emphasis") line_spacing 8 font r13_ui_font() color "#e9e1d2"
-        timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
+        if r13_typing_timer_needed():
+            timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
         use r13_toolbar(mode="line")
     elif room13_mode and r13_meeting_active and r13_meeting_claim in R13_DEBATE and not r13_nw_meeting_claim(r13_meeting_claim):
         use r13_meeting_stage(r13_meeting_claim,r13_meeting_focus_person(r13_meeting_claim),True)
@@ -137,7 +138,8 @@ screen say(who,what):
                 background Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6)
                 text who id "who" size r13_type("body") color "#fff3df" font R13_UI_BOLD_FONT xmaximum 1000 outlines []
         text "▸" xpos 1160 ypos (r13_control_y()-48) size r13_type("body") color "#4b3420"
-        timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
+        if r13_typing_timer_needed():
+            timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
         if r13_nw_meeting_claim(r13_meeting_claim):
             use r13_toolbar(mode="line")
         else:
@@ -185,7 +187,8 @@ screen say(who,what):
             text "▸" xanchor 1.0 xpos R13_CONCEPT_RIGHT yanchor .5 ypos (R13_NIGHT_TEXT_BOTTOM-8) size r13_type("small") color "#4b3420" at r13_next_glow
         else:
             text "▸" xanchor 1.0 xpos R13_CONCEPT_RIGHT yanchor .5 ypos (R13_NIGHT_TEXT_BOTTOM-8) size r13_type("small") color "#4b3420"
-        timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
+        if r13_typing_timer_needed():
+            timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
         if r13_field_reading:
             pass
         elif place != "마차 안" and not r13_cg_active:

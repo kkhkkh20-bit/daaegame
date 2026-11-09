@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-09",
+  "source_url": "https://github.com/byungjunjang/slop-rewrite",
+  "source_commit": "b6d301120cfa0ceec90b80907f6110995dcc7395",
+  "entrypoints": 12,
+  "existing_entrypoints_overwritten": 0,
+  "private_taste": {
+    "cases": 7,
+    "rules": 4,
+    "validator": "OK rules=4 cases=7",
+    "scope": "다람탐정 대사·서사",
+    "tracked": false
+  },
+  "checks": {
+    "status": true,
+    "python_syntax": true,
+    "read_only_self_comparison": "PASS",
+    "bundle_includes_project_taste": true,
+    "game_runtime_changed": false
+  },
+  "limitations": [
+    "사용자 작품 코퍼스에 기반한 작가 문체 가이드는 만들지 않음",
+    "글의 자연스러움이나 재미를 검사 통과로 판정하지 않음",
+    "블로그 HTML 수집용 선택 패키지는 설치하지 않음",
+    "외부 업로드·LLM API·쓰기 훅 없음"
+  ],
+  "smoke_output": [
+    "(없음)",
+    "",
+    "판정: PASS · 장르 hard 0 · 원칙 S1 0 / S2 0 · 취향 규칙 0 · 불변식 S1 0"
+  ]
+}
