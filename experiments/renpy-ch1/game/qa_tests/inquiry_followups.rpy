@@ -6,6 +6,8 @@ init python:
 
     def qa_chorong139_prepare():
         qa_chorong_inquiry_prepare()
+        # 준비용 자료 지급 알림은 실제 신규 획득 장면이 아니므로 캡처 전에 닫는다.
+        renpy.hide_screen('r13_evidence_found')
         r13_v111_set('chorong_memo_checked2',True)
         r13_v111_set('chorong_invitation_checked2',True)
 
@@ -74,6 +76,7 @@ testcase inquiry139_chorong_questions_and_repeat:
     $ qa_inquiry139_before=qa_inquiry139_domain()
     click '초롱'
     pause until screen 'r13_topics' timeout 20
+    pause .5
     screenshot 'chorong-followup-questions.png'
     click '자료 제시'
     pause until screen 'r13_book' timeout 20
