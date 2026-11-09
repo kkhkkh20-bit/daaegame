@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "as_of": "2026-11-08",
+  "as_of": "2026-11-09",
   "scope": "요청서와 현재 파일·연결 코드의 대조 스냅샷. 제작·납품·연결 여부는 개별 항목의 상태와 납품 기록을 따른다.",
   "statuses": {
     "needs_delivery": "전용 그림 미납품",
@@ -4440,6 +4440,151 @@
         "활성 실제 화면의 대사와 그림이 맞는다.",
         "같은 장면 PC·모바일에서 원화·문자·버튼이 읽힌다."
       ]
+    },
+    {
+      "id": "CLOSEUP-DOT-BADOOK-143",
+      "title": "바둑이 근접 대화 픽셀 질감·6표정 납품 확인",
+      "kind": "인물",
+      "status": "verify_delivery",
+      "priority": "P2",
+      "description": "기존 CLOSEUP-DOT의 바둑이 상세 확인 항목. 실제 1부 연속 플레이에서 밤이·나비의 픽셀 경계와 다른 매끄러운 질감이 확인됐다. 저장소·원본·납품 기록·도구함 검색으로 같은 역할의 즉시 교체 묶음을 찾지 못했으나, 별도 수신 ZIP까지 미납품이라고 확정하지 않았다. 받은 원본을 먼저 확인하고 없을 때 제작한다. 기존 6표정 dot-v2는 거친 재샘플링 파생본, canonical48은 단일 등불 자세라 품질·역할을 동시에 충족하는 대체로 승인하지 않았다.",
+      "scenes": [
+        "입구의 바둑이 문답과 회의"
+      ],
+      "branches": [
+        "현재 장면·정답·생사·결말 조건 유지"
+      ],
+      "references": [
+        "game/assets/dialogue-source-master-v2/resident_badook/840/neutral.webp",
+        "game/assets/dialogue-source-master-v2/bami/760/neutral.webp",
+        "game/assets/dialogue-source-master-v2/nabi/760/anxious.webp",
+        "art/canonical48-rev45/originals/resident_badook.webp",
+        "game/assets/dialogue-dot-v2/resident_badook/760/neutral.webp"
+      ],
+      "sources": [
+        "docs/art-requests/근접_대화_질감_바둑이_무쇠_20261109.md",
+        "game/systems/room13_dialogue_beats.rpy",
+        "game/assets/room13-closeup-smooth.json",
+        "game/assets/room13-dialogue-talk-art.json"
+      ],
+      "approved_scope": "2026-11-09 소유자: 실제 1부 리뷰에서 남은 문제 개선 승인. 이번 등록은 보유 원본 확인과 제작 규격 명세이며 외부 발주·이미지 생성·게임 교체를 실행하지 않는다.",
+      "contract": {
+        "states": [
+          "neutral",
+          "joy",
+          "angry",
+          "anxious",
+          "flustered",
+          "surprise_talk"
+        ],
+        "transparent": true,
+        "delivery": [
+          "원본 PNG",
+          "투명 무손실 WebP",
+          "인물·표정·파일·크기·머리/발 기준 대응표"
+        ],
+        "size_rule": "현재 840 프로필의 인물 비율·머리/발 기준 보존. 아래 원본 실측은 레퍼런스이며 최종 캔버스는 연결 담당자와 확정. 같은 표시 크기에서 밤이·나비와 질감 비교. 큰 칸 재샘플링·일괄 픽셀화 금지."
+      },
+      "required": [
+        "현재 인물의 정체성·체형·복장·색을 보존한 정면 전신 6표정",
+        "밤이·나비 근접 기준과 같은 픽셀 윤곽·선 굵기·명암 밀도",
+        "양눈이 대화 상대를 바라보고 표정별 머리·어깨·발 기준이 유지됨",
+        "기록판·연필·모자·제복·망토·달마시안 무늬 보존"
+      ],
+      "avoid": [
+        "기존 dot-v2를 거칠게 확대해 새 원본으로 납품",
+        "흰 스티커 테두리·후광·유색 잔상·불투명 배경",
+        "단일 표정 또는 반신 4표정을 전신 6표정으로 간주",
+        "기존 파일 덮어쓰기·삭제",
+        "기록판 자세를 이유 없이 등불 자세로 교체"
+      ],
+      "acceptance": [
+        "기존 수신 ZIP에 동일 역할 묶음이 있는지 먼저 확인하여 중복 제작 방지",
+        "6표정 모두 동일 인물·복장·소품·질감이고 기본 표정만 교체하지 않음",
+        "PC·휴대폰의 실제 대화·회의에서 얼굴과 대사판·소품 가림 없음",
+        "저장 복원과 표정 전환에서 머리/발 기준이 튀지 않음"
+      ],
+      "parent_request": "CLOSEUP-DOT",
+      "verification": {
+        "date": "2026-11-09",
+        "local_search": "원본·납품 기록·에셋 도구함 대조. 같은 역할의 완전한 대체 미확인.",
+        "delivery_judgment": "미납품 확정 아님. 소유자 별도 수신 원본 확인 필요.",
+        "runtime_judgment": "현재 그림 교체 없음. 질감 통일 미해결."
+      }
+    },
+    {
+      "id": "CLOSEUP-DOT-MUSOE-143",
+      "title": "무쇠 근접 대화 픽셀 질감·6표정 납품 확인",
+      "kind": "인물",
+      "status": "verify_delivery",
+      "priority": "P2",
+      "description": "기존 CLOSEUP-DOT의 무쇠 상세 확인 항목. 실제 1부 연속 플레이에서 밤이·나비의 픽셀 경계와 다른 매끄러운 질감이 확인됐다. 저장소·원본·납품 기록·도구함 검색으로 같은 역할의 즉시 교체 묶음을 찾지 못했으나, 별도 수신 ZIP까지 미납품이라고 확정하지 않았다. 받은 원본을 먼저 확인하고 없을 때 제작한다. 기존 도트 joy에는 솜이 손글씨가 있으나 anxious에는 없으므로, 불안 대사에 웃는 그림을 넣지 않는다.",
+      "scenes": [
+        "5일차 솜이네 방의 무쇠 문답"
+      ],
+      "branches": [
+        "현재 장면·정답·생사·결말 조건 유지"
+      ],
+      "references": [
+        "game/assets/dialogue-source-master-v2/resident_musoe/840/anxious.webp",
+        "game/assets/dialogue-source-master-v2/bami/760/neutral.webp",
+        "game/assets/dialogue-source-master-v2/nabi/760/anxious.webp",
+        "art/canonical48-rev45/originals/resident_musoe.webp",
+        "game/assets/dialogue-dot-v2/resident_musoe/760/joy.webp"
+      ],
+      "sources": [
+        "docs/art-requests/근접_대화_질감_바둑이_무쇠_20261109.md",
+        "game/systems/room13_dialogue_beats.rpy",
+        "game/assets/room13-closeup-smooth.json",
+        "game/assets/room13-dialogue-talk-art.json"
+      ],
+      "approved_scope": "2026-11-09 소유자: 실제 1부 리뷰에서 남은 문제 개선 승인. 이번 등록은 보유 원본 확인과 제작 규격 명세이며 외부 발주·이미지 생성·게임 교체를 실행하지 않는다.",
+      "contract": {
+        "states": [
+          "neutral",
+          "joy",
+          "angry",
+          "anxious",
+          "flustered",
+          "surprise_talk"
+        ],
+        "transparent": true,
+        "delivery": [
+          "원본 PNG",
+          "투명 무손실 WebP",
+          "인물·표정·파일·크기·머리/발 기준 대응표"
+        ],
+        "size_rule": "현재 840 프로필의 인물 비율·머리/발 기준 보존. 아래 원본 실측은 레퍼런스이며 최종 캔버스는 연결 담당자와 확정. 같은 표시 크기에서 밤이·나비와 질감 비교. 큰 칸 재샘플링·일괄 픽셀화 금지."
+      },
+      "required": [
+        "현재 인물의 정체성·체형·복장·색을 보존한 정면 전신 6표정",
+        "밤이·나비 근접 기준과 같은 픽셀 윤곽·선 굵기·명암 밀도",
+        "양눈이 대화 상대를 바라보고 표정별 머리·어깨·발 기준이 유지됨",
+        "불안 표정에서 솜이가 적힌 손바닥을 함께 보존. 이 손글씨는 의도된 이야기 소품으로 글자 금지의 명시적 예외.",
+        "고글·노란 목도리·회색 코트와 현재 손녀 이름 단서를 유지"
+      ],
+      "avoid": [
+        "기존 dot-v2를 거칠게 확대해 새 원본으로 납품",
+        "흰 스티커 테두리·후광·유색 잔상·불투명 배경",
+        "단일 표정 또는 반신 4표정을 전신 6표정으로 간주",
+        "기존 파일 덮어쓰기·삭제",
+        "솜이 손글씨 삭제 또는 불안 대사에 joy 표정 대체",
+        "솜이 외 설명·정답·인명 추가"
+      ],
+      "acceptance": [
+        "기존 수신 ZIP에 동일 역할 묶음이 있는지 먼저 확인하여 중복 제작 방지",
+        "6표정 모두 동일 인물·복장·소품·질감이고 기본 표정만 교체하지 않음",
+        "PC·휴대폰의 실제 대화·회의에서 얼굴과 대사판·소품 가림 없음",
+        "저장 복원과 표정 전환에서 머리/발 기준이 튀지 않음",
+        "실제 5일차 불안 대사에서 손바닥 솜이 글씨와 불안 얼굴이 동시에 보임"
+      ],
+      "parent_request": "CLOSEUP-DOT",
+      "verification": {
+        "date": "2026-11-09",
+        "local_search": "원본·납품 기록·에셋 도구함 대조. 같은 역할의 완전한 대체 미확인.",
+        "delivery_judgment": "미납품 확정 아님. 소유자 별도 수신 원본 확인 필요.",
+        "runtime_judgment": "현재 그림 교체 없음. 질감 통일 미해결."
+      }
     }
   ]
 }

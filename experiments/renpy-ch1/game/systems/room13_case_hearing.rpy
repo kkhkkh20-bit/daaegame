@@ -5,7 +5,7 @@ init 352 python:
     from collections.abc import Mapping as R13CaseHearingMapping, Sequence as R13CaseHearingSequence
 
     R13_CASE_HEARING_HEARD_PREFIX="hearing:heard:"
-    R13_CASE_HEARING_STAGE_FIELDS=frozenset(("key","speaker","line_ids","title","press_block","kind","latest_only"))
+    R13_CASE_HEARING_STAGE_FIELDS=frozenset(("key","speaker","line_ids","title","press_block","kind","latest_only","target_titles"))
     R13_CASE_HEARING_FILES=("v111/case-hearing.json","v111/case-hearing-early.json",
                             "v111/case-hearing-mid.json","v111/case-hearing-late.json",
                             "v111/case-hearing-ending.json")
@@ -65,9 +65,14 @@ init 352 python:
             if kind not in ("statement","question"):return []
             latest_only=stage.get("latest_only",False)
             if not isinstance(latest_only,bool):return []
+            target_titles=stage.get("target_titles",{})
+            if not isinstance(target_titles,R13CaseHearingMapping):return []
+            if any(not isinstance(rid,str) or rid not in line_ids or not isinstance(title,str) or not title.strip()
+                   for rid,title in target_titles.items()):return []
             keys.add(key);targets.update(line_ids)
             result.append(dict(key=key,speaker=stage["speaker"],line_ids=list(line_ids),
-                               title=stage["title"],press_block=press,kind=kind,latest_only=latest_only))
+                               title=stage["title"],press_block=press,kind=kind,latest_only=latest_only,
+                               target_titles=dict(target_titles)))
         return result
 
     def r13_case_hearing_eligible_cases(data,values):
@@ -128,7 +133,8 @@ init 352 python:
             for target in stage["line_ids"]:
                 quote=r13_case_hearing_quote_for(data,case,target,values)
                 if quote is not None:
-                    rows.append(dict(key=stage["key"],target=target,title=stage["title"],kind=stage["kind"],**quote))
+                    rows.append(dict(key=stage["key"],target=target,
+                                     title=stage["target_titles"].get(target,stage["title"]),kind=stage["kind"],**quote))
             # 수정된 발언은 실제로 끝까지 들은 뒤에만 이전 인용을 대신한다. 과거 캐시는 지우지 않는다.
             result.extend(rows[-1:] if stage["latest_only"] else rows)
         return result

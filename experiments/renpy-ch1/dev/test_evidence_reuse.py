@@ -50,7 +50,10 @@ class EvidenceReuse(unittest.TestCase):
         d2,d3,d10=day(2),day(3),day(10)
         self.assertIn('바느질',' '.join(r['text'] for r in d2['after']['MS14_D02_S03_L0018']))
         self.assertIn('목도리',' '.join(r['text'] for r in d3['after']['MS14_D03_S01_L0036']))   # 피코 생존
-        self.assertIn('코가 있어야 할 자리만 비어',' '.join(r['text'] for r in d3['after']['MS14_D03_S01_L9101']))  # 피코 사망
+        # 수령 본문과 after가 연달아 나오므로 미완성 코 설명은 한 번만 한다.
+        dead_portrait=d3['replace']['MS14_D03_S01_L9101']['text']+' '+' '.join(r['text'] for r in d3['after']['MS14_D03_S01_L9101'])
+        self.assertEqual(dead_portrait.count('코가 있어야 할 자리'),1)
+        self.assertIn('목도리',dead_portrait)
         for v in d3['evidence']['E09']['variants'].values():self.assertIn('목도리',v);self.assertNotIn('바늘',v);self.assertNotIn('무릎',v)
         facts=json.loads((GAME/'v111/evidence-facts.json').read_text())['E09']
         for lines in facts.values():self.assertLessEqual(len(lines),3);self.assertTrue(any('목도리' in l for l in lines));self.assertFalse(any('바늘' in l or '손이 그려' in l for l in lines))

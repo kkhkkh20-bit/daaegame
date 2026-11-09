@@ -184,6 +184,7 @@ class CaseHearing(unittest.TestCase):
             env['r13_case_hearing_quote']('RID_REPAIR')
             env['r13_case_hearing_press_block'](key,'RID_REPAIR')
         env['r13_case_hearing_spec']('수리')['line_ids'].append('FAKE')
+        env['r13_case_hearing_spec']('수리')['target_titles']['RID_REPAIR']='가짜 제목'
         env['r13_case_hearing_rows']('수리')[0]['text']='가짜 말'
         env['r13_case_hearing_quote']('RID_REPAIR')['speaker']='fake'
         self.assertEqual(state.room13,before)
@@ -263,7 +264,12 @@ class CaseHearing(unittest.TestCase):
                    lambda stages:stages[0].update(kind='thought'),
                    lambda stages:stages[0].update(latest_only='false'),
                    lambda stages:stages[0].update(latest_only=1),
-                   lambda stages:stages[0].update(latest_only=None)]
+                   lambda stages:stages[0].update(latest_only=None),
+                   lambda stages:stages[0].update(target_titles=[]),
+                   lambda stages:stages[0].update(target_titles=None),
+                   lambda stages:stages[0].update(target_titles={'UNKNOWN':'다른 대상의 제목'}),
+                   lambda stages:stages[0].update(target_titles={'RID_REPAIR':''}),
+                   lambda stages:stages[0].update(target_titles={'RID_REPAIR':False})]
         for mutate in mutations:
             data=fixture();mutate(data['cases']['lamp']['stages'])
             env,state=self.environment(data=data)
@@ -412,6 +418,41 @@ class CaseHearing(unittest.TestCase):
         self.hear(env,'RID_SALE_SECOND','두 번째 거래 발언')
         self.assertEqual([r['target'] for r in env['r13_case_hearing_rows']('거래')],['RID_SALE','RID_SALE_SECOND'])
 
+    def test_each_target_title_is_used_only_for_its_actually_heard_line(self):
+        data=fixture();stage=data['cases']['lamp']['stages'][1]
+        stage['target_titles']={'RID_SALE':'돌을 받았다는 말','RID_SALE_SECOND':'돌을 팔았다는 말'}
+        env,state=self.environment(data=data)
+        self.assertEqual(env['r13_case_hearing_rows']('거래'),[])
+        self.hear(env,'RID_SALE','받았다고 실제로 한 말','resident_siluk')
+        before=copy.deepcopy(state.room13)
+        rows=env['r13_case_hearing_rows']('거래')
+        self.assertEqual([(r['target'],r['title'],r['text']) for r in rows],
+                         [('RID_SALE','돌을 받았다는 말','받았다고 실제로 한 말')])
+        self.assertNotIn('돌을 팔았다는 말',json.dumps(rows,ensure_ascii=False))
+        self.assertEqual(state.room13,before)
+        self.hear(env,'RID_SALE_SECOND','팔았다고 실제로 한 말','resident_siluk')
+        rows=env['r13_case_hearing_rows']('거래')
+        self.assertEqual([(r['target'],r['title']) for r in rows],
+                         [('RID_SALE','돌을 받았다는 말'),('RID_SALE_SECOND','돌을 팔았다는 말')])
+        self.assertEqual(env['r13_case_hearing_press_block']('거래','RID_SALE'),'press_sale')
+        self.assertEqual(env['r13_case_hearing_press_block']('거래','RID_SALE_SECOND'),'press_sale')
+        env['r13_case_hearing_spec']('거래')['target_titles']['RID_SALE']='가짜 제목'
+        self.assertEqual(env['r13_case_hearing_rows']('거래')[0]['title'],'돌을 받았다는 말')
+
+    def test_legacy_metadata_and_partial_target_titles_keep_the_stage_title_as_fallback(self):
+        data=fixture();stage=data['cases']['lamp']['stages'][1]
+        stage['target_titles']={'RID_SALE':'받았다는 대목'}
+        cached={PREFIX+'RID_SALE':dict(speaker='resident_siluk',text='구 저장의 첫 원문'),
+                PREFIX+'RID_SALE_SECOND':dict(speaker='resident_siluk',text='구 저장의 두 번째 원문')}
+        env,state=self.environment(data=data,values=cached)
+        before=copy.deepcopy(state.room13)
+        self.assertEqual([r['title'] for r in env['r13_case_hearing_rows']('거래')],['받았다는 대목','거래된 돌'])
+        self.assertEqual(env['r13_case_hearing_quote']('RID_SALE_SECOND')['text'],'구 저장의 두 번째 원문')
+        self.assertEqual(state.room13,before)
+        env,state=self.environment(values=cached)
+        self.assertEqual(env['r13_case_hearing_spec']('거래')['target_titles'],{})
+        self.assertEqual([r['title'] for r in env['r13_case_hearing_rows']('거래')],['거래된 돌','거래된 돌'])
+
     def test_case_condition_uses_only_values_and_treats_missing_as_not_true(self):
         for values,expected in (({},'fire_not_evacuated'),({'FIRE_EVACUATED':None},'fire_not_evacuated'),
                                 ({'FIRE_EVACUATED':False},'fire_not_evacuated'),
@@ -503,16 +544,20 @@ class CaseHearing(unittest.TestCase):
         self.assertEqual(data['conflicts'],[])
         records=json.loads((ROOT/'game/v111/records.json').read_text())['records']
         spoken={key:row.get('speaker') for key,row in records.items() if row.get('speaker')}
+        source_text={key:row.get('text') for key,row in records.items()}
         blocks=set()
         for source in (ROOT/'game/v111/newworld').glob('*.json'):
             part=json.loads(source.read_text())
             blocks.update(part.get('blocks',{}))
             for rid,row in part.get('replace',{}).items():
-                if 'speaker' in row:spoken[rid]=row['speaker']
+                if isinstance(row,dict):
+                    if 'speaker' in row:spoken[rid]=row['speaker']
+                    if 'text' in row:source_text[rid]=row['text']
             for group in ('before','after','blocks'):
                 for rows in part.get(group,{}).values():
                     for row in rows:
-                        if row.get('speaker') and row.get('id'):spoken[row['id']]=row['speaker']
+                        if row.get('speaker') and row.get('id'):
+                            spoken[row['id']]=row['speaker'];source_text[row['id']]=row['text']
         for case in data['cases']:
             stages=env['r13_case_hearing_stages'](data,case)
             self.assertEqual(len(stages),len(data['cases'][case]['stages']))
@@ -522,6 +567,12 @@ class CaseHearing(unittest.TestCase):
                 for target in stage['line_ids']:
                     self.assertIn(target,spoken)
                     self.assertEqual(spoken[target],stage['speaker'])
+                # 같은 단계의 서로 다른 실제 발언은 같은 선택 제목을 쓰지 않는다.
+                # latest_only는 한 행만 보이고, 같은 원문의 배타적 경로 RID는 구별할 내용을 만들지 않는다.
+                targets=stage['line_ids']
+                if len(targets)>1 and not stage['latest_only'] and len({source_text[t] for t in targets})>1:
+                    titles=[stage['target_titles'].get(t,stage['title']) for t in targets]
+                    self.assertEqual(len(set(titles)),len(titles),(case,stage['key'],titles))
         cached={PREFIX+target:dict(speaker=spoken[target],text='실제 청취 캐시를 보존한 저장 예시')
                 for case in data['cases'] for stage in env['r13_case_hearing_stages'](data,case)
                 for target in stage['line_ids']}
