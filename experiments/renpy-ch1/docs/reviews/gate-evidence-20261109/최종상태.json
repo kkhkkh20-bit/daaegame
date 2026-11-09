@@ -1,0 +1,137 @@
+{
+  "version": "0.20.134",
+  "screens": [
+    "r13_topics"
+  ],
+  "day": 1,
+  "period": 0,
+  "location": "gate",
+  "gate": "registered_menu",
+  "scene": "MS14_D01_S04",
+  "who": "",
+  "say": "",
+  "choice": null,
+  "claim": "v111:함께 들어갈 근거를 고른다",
+  "values": {
+    "day": 1,
+    "carriage_stopped": true,
+    "father_with_daram": true,
+    "piko_sheltered": false,
+    "piko_alive": true,
+    "portrait": "none",
+    "gate_registered": true,
+    "gate_basis_proven": true,
+    "reason_heard": false,
+    "purpose_difference_known": true,
+    "invitation_author": "unknown",
+    "mother_warning_received": false,
+    "public_stones": "with_baek",
+    "silluk_status": "free",
+    "silluk_labor_transfer_known": false,
+    "unverified_stones_status": "with_baek",
+    "nero_bedding_reserved": false,
+    "carried_dry_blankets": 0,
+    "bami_status": "free",
+    "musoe_alive": true,
+    "mother_box_checked_day2": false,
+    "nero_met_day2": false,
+    "nero_supply_route_known": false,
+    "under_desk_checked": false,
+    "lamp_theft_supported": false,
+    "nero_contact_lead": false,
+    "box_rechecked_day2": false,
+    "rumor_not_eyewitness": false,
+    "inn_information_hub_risk_known": false,
+    "K01a": true,
+    "K01b": true,
+    "K05": false,
+    "lamp_part_0": false,
+    "lamp_part_1": false,
+    "lamp_part_2": false,
+    "lamp_part_3": false,
+    "d4_fence_seen": false,
+    "d4_tracks_seen": false,
+    "d4_bucket_seen": false,
+    "afternoon_visit_declined": false,
+    "somi_entry_consent": false,
+    "mother_denies_invitation": false,
+    "supply_contact_pending": false,
+    "family_safety_changed": false,
+    "KKOMI_ALIVE": true,
+    "OWL_ALIVE": true,
+    "TOK_ALIVE": true,
+    "tok_workshop_present": true,
+    "tok_hearing_present": true,
+    "DARAM_DETAINED": false,
+    "route7": "uncommitted",
+    "prevention": null,
+    "grandmother_custody": "free",
+    "E01.variant": "observed",
+    "location:karo": "gate",
+    "location:guard": "gate",
+    "elapsed_minutes": 45,
+    "E02.variant": "observed",
+    "E03.variant": "observed",
+    "talked:MS14_D01_S03:guard": true,
+    "ui_topic_read:gate_investigate:5": true,
+    "proof_given:함께 들어갈 근거를 고른다": [
+      "V111:E02",
+      "V111:E03"
+    ],
+    "meeting:gate": "win",
+    "E05.variant": "observed"
+  },
+  "owned": [
+    "V111:E01",
+    "V111:E02",
+    "V111:E03",
+    "V111:E05"
+  ],
+  "arguments": {
+    "v111:함께 들어갈 근거를 고른다": [
+      "V111:E02",
+      "V111:E03"
+    ]
+  },
+  "binding": {
+    "location": "gate",
+    "people": [
+      "guard",
+      "daram",
+      "karo"
+    ],
+    "options": [
+      {
+        "title": "명단은 어떻게 옮겨 적으신 겁니까?",
+        "location": "gate",
+        "guard": [
+          [
+            "state",
+            "reason_heard",
+            false
+          ]
+        ],
+        "person": "guard",
+        "index": 0
+      },
+      {
+        "title": "짐을 찾아 여관으로 간다",
+        "location": "inn",
+        "guard": [],
+        "move": "inn",
+        "index": 1
+      }
+    ]
+  },
+  "packet": [
+    null,
+    "고쳐 받은 명단에 다람 이름이 보인다. 다람이 내 손을 잡는다.",
+    {
+      "no_lead": true,
+      "expression": "neutral",
+      "pose": "neutral",
+      "line_id": "MS14_D01_S04_L0012"
+    }
+  ],
+  "index": 10
+}

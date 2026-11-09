@@ -23,10 +23,32 @@ init 69 python:
                 c.lines("#6c4e36aa",False,[(x,y+dy*n),(x,y),(x+dx*n,y)],1)
             return out
 
+    def r13_evidence_notice_keys(current,new_keys):
+        # 한 번의 화면 안에서 이미 보여 준 자료도 다시 줄 세우지 않는다.
+        result=list(dict.fromkeys(current or []))
+        for key in new_keys or []:
+            if key not in result:result.append(key)
+        return result
+
+    def r13_evidence_notice_visible():
+        blocked=("main_menu","pause_menu","save","load","confirm","r13_latch_diagram132","r13_piko_scene",
+            "r13_pw_picture","r13_map","r13_records","r13_learning_notes","r13_record_compare",
+            "r13_calendar","r13_work_board","r13_proof_workspace")
+        return not getattr(store,"r13_nw_comparison",None) and not any(renpy.get_screen(name) for name in blocked)
+
     def r13_evidence_acquired(keys):
-        if keys:
-            renpy.hide_screen("r13_evidence_found")
-            renpy.show_screen("r13_evidence_found", keys=list(keys),conversation=r13_feedback_in_conversation())
+        if not keys:return
+        current=renpy.get_screen("r13_evidence_found")
+        # show 직후에는 화면 매개변수가 아직 scope에 바인딩되지 않아 _kwargs에만 있다.
+        existing=list(current.scope.get("notice_keys",current.scope.get("keys",current.scope.get("_kwargs",{}).get("keys",[])))) if current else []
+        queued=r13_evidence_notice_keys(existing,keys)
+        if current and queued==existing:return
+        if current:
+            # 기존 화면의 default 목록만 늘린다. 다시 show하면 현재 index가 0으로 돌아간다.
+            renpy.set_screen_variable("notice_keys",queued,screen="r13_evidence_found")
+            renpy.restart_interaction()
+        else:
+            renpy.show_screen("r13_evidence_found",keys=queued,conversation=r13_feedback_in_conversation())
 
     def r13_click_feedback(key):
         spec=ROOM13["objects"].get(store.room13["location"],{}).get(key)
@@ -67,7 +89,8 @@ screen r13_click_glint(point):
 define R13_EVIDENCE_CARD_CENTER = (1010, 112)
 define R13_EVIDENCE_ICON_SIZE = 104
 define R13_EVIDENCE_NAME_WIDTH = 190
-define R13_EVIDENCE_NOTICE_SIZE = (300, 100)
+define R13_EVIDENCE_NOTICE_SIZE = (360, 136)
+define R13_EVIDENCE_HELD_SIZE = (300, 100)
 define R13_EVIDENCE_NOTICE_TOP = 104
 define R13_EVIDENCE_CARD_PAD = 10
 
@@ -91,7 +114,7 @@ screen r13_evidence_card(key,caption="",conversation=False,notice=False,compact=
         # 셋으로 갈렸다(대화 1010·조사 1100·선택 1180). 선택창 목록(오른쪽 600~1236, y 240~)과 조사 화면 오른쪽 화살표를 덮었다.
         # 증거 칸(R13_EV_CUT_BOX)과 같은 놋쇠 도트 틀의 고정 크기 가로 카드로, 날짜판 바로 아래 한 자리에 둔다.
         # 증거 칸이 떠 있으면 그 아래로 내린다(둘이 겹치지 않게).
-        $ card_w,card_h=R13_EVIDENCE_NOTICE_SIZE
+        $ card_w,card_h=R13_EVIDENCE_NOTICE_SIZE if notice else R13_EVIDENCE_HELD_SIZE
         $ card_y=(R13_EV_CUT_BOX[1]+R13_EV_CUT_BOX[2]+8) if renpy.showing("r13_ep_cut") else R13_EVIDENCE_NOTICE_TOP
         fixed:
             xanchor 1.0 xpos 1252 ypos card_y xysize (card_w,card_h)
@@ -100,29 +123,36 @@ screen r13_evidence_card(key,caption="",conversation=False,notice=False,compact=
             hbox:
                 xpos 20 ypos 20 spacing 14 ysize card_h-40
                 add Transform(r13_record_icon(key),xysize=(card_h-40,card_h-40),fit="contain",nearest=True) yalign .5
-                text r13_catalog_title(key) size r13_type("small") color "#fff4df" yalign .5 xmaximum card_w-card_h-20 layout "subtitle"
+                if notice:
+                    vbox:
+                        spacing 2 yalign .5
+                        text "증거 획득" size r13_type("small") color "#e0bd7b" font R13_UI_BOLD_FONT
+                        text r13_catalog_title(key) size r13_type("small") color "#fff4df" xmaximum card_w-card_h-20 layout "subtitle"
+                else:
+                    text r13_catalog_title(key) size r13_type("small") color "#fff4df" yalign .5 xmaximum card_w-card_h-20 layout "subtitle"
 
 screen r13_evidence_found(keys,conversation=False):
     # 0.18.48: above the desk close-up (90) and the item bag (95), which reopen right after a
     # find and used to cover the card. It has no buttons, so it never blocks input.
     zorder 98
     default item_index=0
+    default notice_keys=keys
     # Navigation and full record panes own their surface. Desk/item finds still show above the close-up.
     # 2026-10-27: 자료 대조 통합 화면 위에서도 띄우지 않는다(발언·상세 글과 겹쳤다).
-    if not r13_nw_comparison and not any(renpy.get_screen(name) for name in ("r13_latch_diagram132","r13_piko_scene","r13_pw_picture","r13_map","r13_records","r13_learning_notes","r13_record_compare","r13_calendar","r13_work_board","r13_proof_workspace")):
+    if r13_evidence_notice_visible():
         if renpy.get_screen("r13_crisis_proof") or renpy.get_screen("r13_topics"):
             # 자료 대조 패널 위에서는 제목과 겹치지 않게 패널 아래로 보낸다(위 compact).
             # 2026-10-27 검수(p08c 캡처): 질문 수첩(488~1180, 줄은 y 228 부터) 위에서도 오른쪽 위 카드(1012~1190, 190~)가
             # 첫 질문의 끝 글자를 덮어 「묻는ㄷ」로 보였다. 질문 목록이 떠 있으면 같은 한 줄 카드로 수첩 아래 띠에 둔다.
-            use r13_evidence_card(keys[item_index],conversation=conversation,notice=True,compact=True)
+            use r13_evidence_card(notice_keys[item_index],conversation=conversation,notice=True,compact=True)
         else:
             if r13_fx_active():
                 add R13_STORYBOOK.get("card_glow", Null()) xpos (1252-R13_EVIDENCE_NOTICE_SIZE[0]//2) ypos (R13_EVIDENCE_NOTICE_TOP+R13_EVIDENCE_NOTICE_SIZE[1]//2) anchor (.5,.5) at r13_card_glow
-            use r13_evidence_card(keys[item_index],conversation=conversation,notice=True)
-    if item_index+1<len(keys):
-        timer 2.4 action SetScreenVariable("item_index",item_index+1)
-    else:
-        timer 2.4 action Hide("r13_evidence_found")
+            use r13_evidence_card(notice_keys[item_index],conversation=conversation,notice=True)
+        # 카드를 넘길 때만 새 시계를 만든다. 같은 timer를 재사용하면 두 번째 카드에서 멈춘다.
+        # 현재 카드에 다음 자료가 추가되어도 같은 key·timer라 보던 순서와 시간은 이어진다.
+        for notice_index index notice_index in [item_index]:
+            timer 3.2 action (SetScreenVariable("item_index",notice_index+1) if notice_index+1<len(notice_keys) else Hide("r13_evidence_found"))
 
 # A quiet acknowledgement for empty taps; no observation, journal or clock writes.
 init 69 python:

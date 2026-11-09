@@ -108,7 +108,8 @@ label r13_v111_gate_request:
     call r13_v111_travel('gate','gate_request')
     call r13_v111_wait('gate_request')
     $ v111_answer=_return
-    if v111_answer==0:
+    $ r13_gate_continue_to_shelf=(v111_answer==1)
+    if v111_answer in (0,1):
         jump r13_v111_gate_list
     jump r13_v111_gate_request
 
@@ -123,6 +124,12 @@ label r13_v111_gate_list:
     call r13_lines(r13_v111_lines(['MS14_D01_S02_L0019']), 'v111:gate_list:MS14_D01_S02_L0019')
     $ r13_v111_commit('MS14_D01_S02_L0019')
     call r13_lines(r13_v111_lines(['MS14_D01_S02_L0020', 'MS14_D01_S02_L0021', 'MS14_D01_S02_L0022']), 'v111:gate_list:MS14_D01_S02_L0020')
+    # 옛 명단 읽기 저장의 call stack을 유지한다. 선반에서 시작한 조사만 계속한다.
+    if r13_gate_continue_to_shelf:
+        $ r13_gate_continue_to_shelf=False
+        $ r13_v111_time("inspect:gate_choice:booth",15)
+        $ r13_v111_option('MS14_D01_S02_L0022_O2')
+        jump r13_v111_gate_original
     jump r13_v111_gate_choice
 
 label r13_v111_gate_choice:
@@ -146,8 +153,9 @@ label r13_v111_gate_letter:
 label r13_v111_gate_original:
     $ r13_v111_scene('MS14_D01_S02')
     $ r13_v111_score()
-    call r13_v111_gate_shelf_pick   # 2026-10-29 설계안 ②: 돌목이 칸을 알려 주던 L0026·L0027 대신 아빠가 요일 칸을 고른다(room13_v111_gate_shelf.rpy). 줄 수 고정.
-    jump r13_v111_gate_original_out
+    call r13_v111_gate_shelf_pick   # 요일 선택 뒤 같은 조사에서 원본을 읽고 얻는다.
+    $ r13_v111_time("inspect:gate_investigate:gate_documents",15)
+    jump r13_v111_gate_read_original
 
 label r13_v111_gate_original_out:
     $ r13_v111_scene('MS14_D01_S02')

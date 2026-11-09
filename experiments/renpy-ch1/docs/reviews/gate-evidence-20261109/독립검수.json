@@ -1,0 +1,145 @@
+{
+  "date": "2026-11-09",
+  "reviewer": "evidence_notice134",
+  "scope": "부모가 구현한 입구 클릭 동선의 읽기 전용 독립 코드 검수와 부모가 실행한 SDK 결과·캡처 대조. 알림 구현은 이 검수자가 담당했으므로 알림 코드 자체의 완전한 별도 작성자 검수로 세지 않는다.",
+  "result": "최종 소스·SDK·실제 웹 PC/모바일 캡처 확인: 추가 차단 사항 없음",
+  "route_review": [
+    {
+      "route": "선반 먼저 클릭",
+      "files": [
+        "game/room13_v111.rpy:gate_request object 분기",
+        "game/room13_v111_days123.rpy:r13_v111_gate_request/r13_v111_gate_list/r13_v111_gate_original",
+        "game/room13_v111_gate_shelf.rpy:default r13_gate_continue_to_shelf"
+      ],
+      "checked": [
+        "ledger/booth/gate_documents는 모두 경비에게 명단을 요청하는 핸드오프를 먼저 거친다.",
+        "선반에서 시작한 return1은 UI 의도 flag=True로 기록하고 기존 gate_list로 jump한다.",
+        "기존 gate_list의 E02 본문·획득 commit·두 번째 r13_lines 호출은 원래 자리에 유지된다.",
+        "기존 본문 뒤 flag=True일 때만 flag를 False로 돌리고 요일 선반을 거쳐 원본 읽기/획득으로 이어진다.",
+        "기존 마지막 jump gate_choice가 남아 있어 flag가 없는 옛 저장과 장부 먼저 경로는 원래대로 이어진다."
+      ],
+      "runtime": "gate134_shelf_first_continues_to_original PASSED. 목요일 오답→금요일 재선택·원본 재클릭 없음·E02/E03 각1개·미등록 상태·45분 증가 assert를 부모 SDK 결과로 확인."
+    },
+    {
+      "route": "장부 또는 경비 먼저",
+      "checked": [
+        "return0→기존 gate_list 본문→gate_choice의 기존 jump 흐름이 유지된다. 삭제된 helper나 새 return을 통과하지 않는다.",
+        "기존 booth 조사15분과 새 original의 문서읽기15분을 합쳐 장부15분 포함45분이다. 문서 읽기 비용을 앞당긴 것이며 두 번 더하지 않는다.",
+        "gate_investigate에서 명단 재읽기는 계속0분이다."
+      ],
+      "runtime": "gate_ledger_pointer_handoff PASSED. 장부 중앙 클릭의 요청 대화·E02획득·요일 뒤E03획득·명단 재읽기 시간 유지 assert를 부모 SDK 결과로 확인."
+    },
+    {
+      "route": "편지 제시",
+      "checked": [
+        "r13_v111_gate_letter와 r13_v111_gate_original_out은 수정되지 않았다.",
+        "초대 편지를 제시한 뒤 gate_investigate로 가는 기존 경로가 유지되며 신청 원본을 읽는 선택지도 그대로다."
+      ],
+      "runtime": "이번 독립 검수에서는 별도 편지 제시 자연 플레이를 실행하지 않았고 코드 경로만 대조했다."
+    },
+    {
+      "route": "이미 E03을 가진 저장",
+      "checked": [
+        "r13_v111_commit→r13_v111_apply의 applied marker와 r13_grant의 owned guard는 그대로다.",
+        "기존 gate_read_original의 v111_reread_original 검사와 재읽기 시 아이 설명 생략을 유지한다.",
+        "시간은 day+event marker로 중복을 막으며 inspect:gate_investigate:gate_documents 키를 재사용한다."
+      ],
+      "runtime": "구버전 파일을 실제 불러온 검사는 부모 웹 검수 범위다. 여기서는 재획득·재알림이 추가되는 새 코드가 없는지 읽어 확인했다."
+    }
+  ],
+  "guarded_domains": {
+    "unchanged_files": [
+      "game/v111/records.json",
+      "game/v111/field-bindings.json",
+      "game/room13_v111_newworld_rules.rpy"
+    ],
+    "verified": "위 파일의 현재 git diff0줄. 원본 기록ID·증거ID·정답 조건을 바꾸는 변경 없음."
+  },
+  "notice_runtime_review": {
+    "case": "evidence134_hidden_queue_and_append",
+    "result": "PASSED",
+    "checked": [
+      "보이던 E02를 메뉴로4초 가린 뒤 복귀해도 E02를 볼 수 있다.",
+      "E03의 index1에서 E04를 추가해도 index와 순서가 유지된다.",
+      "E02→E03→E05→E04가 차례로 표시된 뒤 화면이 종료된다.",
+      "이미 가진 E02를 다시 grant해도 현재 알림이 재시작하지 않는다.",
+      "서사 values는 시험 전과 같다."
+    ],
+    "note": "처음에는 한 번 끝난 TimerState가 다음 카드에도 재사용돼 index1에서 멈췄다. 카드 index를 키로 쓰는 for 안에 단일3.2초 timer를 둔 재검사에서 통과했다.",
+    "first_render_boundary": {
+      "finding": "같은 interaction 안에서 개별 grant를 여러 번 하면 첫 show의 인자가 아직 scope._kwargs에만 있을 수 있다.",
+      "change": "notice_keys, scope.keys, scope._kwargs.keys 순서의 fallback으로 최초 자료도 합친다.",
+      "unit": "새 단위9개·기존17개 총26개 통과.",
+      "runtime": "최종 강화 SDK case PASSED(37.4초): 동일 callback의 E02→E03→E05 개별 grant, 메뉴4초 숨김/복귀, index1에서E04추가, E05/E04까지 순서 표시·최종숨김·서사값불변7assert를 부모 결과로 확인했다."
+    }
+  },
+  "visual_review": {
+    "paths": [
+      "native/gate134_shelf_first_continues_to_original/gate134-original-without-second-click.png",
+      "native/gate134_shelf_first_continues_to_original/gate134-shelf-first-complete.png",
+      "native/evidence134_hidden_queue_and_append/notice134-list-acquired.png",
+      "native/evidence134_hidden_queue_and_append/notice134-original-acquired.png",
+      "native/evidence134_hidden_queue_and_append/notice134-corrected-list-acquired.png"
+    ],
+    "checked": [
+      "E02/E03/E05 실제 문서 그림이 서로 구분되어 표시된다.",
+      "증거 획득·자료명이 어두운 카드에 읽히며 오른쪽 위 날짜판 아래에 있다.",
+      "검토한 PC SDK 사진에서 카드가 인물 얼굴·대사·날짜판을 가리지 않는다."
+    ],
+    "limits": [
+      "입구 명단·원본 획득을 연결한 부분 검증이며 1부 전체 재완주가 아니다.",
+      "웹 PC/모바일 최종 캡처는 아래 web_visual_review에서 독립 대조했다. 실제 클릭과 구버전 저장 복원은 부모가 실행했다."
+    ]
+  },
+  "save_stack_review": {
+    "finding": "옛 gate_list는 jump 진입인데 본문을 새 call helper로 옮겨 끝을 return으로 바꾸면, 옛 mid-E02 r13_lines 저장의 복원 지점이 새 helper 본문으로 매핑될 때 helper용 부모 frame이 없어 더 바깥 return frame을 pop할 위험이 있다.",
+    "sdk_basis": [
+      "renpy/ast.py Call.execute:1629가 self.next.name을 return_site로 push한다.",
+      "renpy/ast.py Return.execute:1710이 lookup_return(pop=True)를 호출한다.",
+      "현재 game/room13.rpy:90~120의 시작/v111 진입은 jump 기반이다."
+    ],
+    "recommendation": "기존 gate_list 본문과 끝 jump 구조를 보존하고 default False UI의도flag로 shelf-first일 때만 본문 뒤 원본 찾기를 잇는다.",
+    "scope_limit": "oldsave gate_investigate/E03 미획득 경로의 정상 복원은 mid-E02 call stack 안전성을 별도로 보장하지 않는다. 옛 파일을 직접 불러오는 추가 실제검증은 부모 범위다.",
+    "resolution": "새 helper를 삭제하고 기존 gate_list의 두 r13_lines 호출·commit·끝 jump를 복원했다. default False인 UI 의도flag로 선반 첫 클릭만 이어가며 helper용 부모frame이 없는 옛 mid-E02 저장이 새 return을 만나는 위험을 제거했다.",
+    "status": "권고 반영을 최종 소스에서 확인 완료",
+    "runtime_after_fix": "부모가 재실행한 gate_ledger_pointer_handoff PASSED23.4초, gate134_shelf_first_continues_to_original PASSED21.3초를 결과파일에서 확인했다."
+  },
+  "web_visual_review": {
+    "paths": [
+      "web/04-134-선반첫클릭-V111-E02-PC.png",
+      "web/04-134-선반첫클릭-V111-E02-모바일.png",
+      "web/04-134-선반첫클릭-V111-E03-PC.png",
+      "web/04-134-선반첫클릭-V111-E03-모바일.png",
+      "web/04-134-선반첫클릭-V111-E05-PC.png",
+      "web/04-134-선반첫클릭-V111-E05-모바일.png",
+      "web/03-134-구저장-V111-E03-PC.png",
+      "web/03-134-구저장-V111-E03-모바일.png"
+    ],
+    "checked": [
+      "최종 로컬 웹 캡처 8장을 직접 열어 PC 1280×720 및 모바일 가로 844×390에서 확인했다.",
+      "E02 초소 처리 명단·E03 방문 신청 원본·E05 정정된 입장 기록에 각각 실제 문서 아이콘과 증거 획득 표시가 읽힌다.",
+      "E02/E03은 우측 상단 날짜판 또는 회의 표제 아래에 있으며 대사·인물 얼굴·버튼을 가리지 않는다.",
+      "E05는 기존 큰 증거 그림 아래에 획득 카드를 배치해 서로 겹치지 않으며 날짜판과 대사창도 가리지 않는다.",
+      "133 구저장 복원 후 신규 E03 획득 PC/모바일 캡처에서도 카드가 정상 표시된다."
+    ],
+    "state_path": "web/최종상태.json",
+    "state_checked": {
+      "version": "0.20.134",
+      "owned": [
+        "V111:E01",
+        "V111:E02",
+        "V111:E03",
+        "V111:E05"
+      ],
+      "gate_registered": true,
+      "gate_basis_proven": true,
+      "meeting_gate": "win",
+      "elapsed_minutes": 45
+    },
+    "result": "검토한 화면에서 잘림·중첩·자료명 오표시 없음. 등록 성공 상태 및 E02/E03/E05 각 1개 보유를 최종상태 JSON으로 대조했다.",
+    "limits": [
+      "검수자는 부모가 실행한 웹 캡처와 상태를 독립 확인했으며 해당 웹 조작을 직접 반복하지 않았다.",
+      "공개 GitHub Pages 주소의 배포 후 확인이나 1부 전체 재완주를 포함하지 않는다."
+    ]
+  }
+}

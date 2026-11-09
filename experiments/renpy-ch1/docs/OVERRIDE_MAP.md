@@ -342,7 +342,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 148 | `systems/room13_materials.rpy:40` | _r13_v111_catalog_record |
-| 2 | 306 | `room13_v111.rpy:658` | _r13_nw_rules_catalog_record |
+| 2 | 306 | `room13_v111.rpy:659` | _r13_nw_rules_catalog_record |
 | 3 | 318 | `room13_v111_newworld_rules.rpy:14` |  |
 
 ## `r13_conversation_opening` (3층)
@@ -430,7 +430,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 150 | `systems/room13_material_art.rpy:8` | _r13_v111_material_art |
-| 2 | 302 | `room13_v111.rpy:574` | _r13_room_documents_material_art |
+| 2 | 302 | `room13_v111.rpy:575` | _r13_room_documents_material_art |
 | 3 | 356 | `systems/room13_room_documents.rpy:18` |  |
 
 ## `r13_meeting_cast` (3층)
@@ -487,14 +487,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 150 | `systems/room13_sound.rpy:123` | _r13_contrast_scene_music |
 | 2 | 163 | `systems/room13_scene_contrast.rpy:25` | _r13_v111_scene_music |
-| 3 | 307 | `room13_v111.rpy:687` |  |
+| 3 | 307 | `room13_v111.rpy:688` |  |
 
 ## `r13_speaker` (3층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 55 | `room13_rules.rpy:303` | _r13_v111_speaker_base |
-| 2 | 304 | `room13_v111.rpy:702` | _r13_carriage_speaker |
+| 2 | 304 | `room13_v111.rpy:703` | _r13_carriage_speaker |
 | 3 | 306 | `room13_carriage_direction.rpy:103` |  |
 
 ## `r13_v111_line` (3층)
@@ -554,7 +554,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 69 | `room13_feedback.rpy:31` | _r13_sound_click_feedback |
+| 1 | 69 | `room13_feedback.rpy:53` | _r13_sound_click_feedback |
 | 2 | 150 | `systems/room13_sound.rpy:214` |  |
 
 ## `r13_close_spec` (2층)
@@ -652,7 +652,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 69 | `room13_feedback.rpy:26` | _r13_sound_evidence_acquired |
+| 1 | 69 | `room13_feedback.rpy:39` | _r13_sound_evidence_acquired |
 | 2 | 150 | `systems/room13_sound.rpy:200` |  |
 
 ## `r13_fullbody_authored_pose` (2층)

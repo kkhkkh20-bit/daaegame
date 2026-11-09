@@ -25,11 +25,9 @@ testcase gate_ledger_pointer_handoff:
     click pos (qa_gate_shelf_center[0],qa_gate_shelf_center[1])
     click pos (900,600) until screen "choice" timeout 30
     click "금요일 칸을 꺼낸다"
-    click pos (900,600) until eval (renpy.get_screen("r13_hub") and room13["v111"]["gate"]=="gate_investigate") timeout 30
-    pause .8
-    $ qa_gate_document_center=qa_gate_ledger_pointer("gate_documents")
-    click pos (qa_gate_document_center[0],qa_gate_document_center[1])
-    click pos (900,600) until eval (renpy.get_screen("r13_hub") and r13_v111_owned("E03")) timeout 40
+    # 원본을 찾은 뒤 서류를 다시 누르지 않아도 읽기·획득까지 끝나야 한다.
+    click pos (900,600) until eval (renpy.get_screen("r13_hub") and room13["v111"]["gate"]=="gate_investigate") timeout 40
+    assert eval (r13_v111_owned("E03"))
     pause .8
     $ qa_gate_reread_before=r13_v111_value("elapsed_minutes")
     $ qa_gate_ledger_center=qa_gate_ledger_pointer("ledger")
@@ -39,3 +37,33 @@ testcase gate_ledger_pointer_handoff:
     click pos (900,600) until screen "r13_hub" timeout 30
     assert eval (r13_v111_owned("E02") and r13_v111_owned("E03") and r13_v111_value("elapsed_minutes")==qa_gate_reread_before)
     screenshot "장부와신청서_각각조사.png"
+
+
+# 첫 클릭은 서류를 찾으러 가는 의도다. 명단을 아직 안 읽었어도 같은 조사에서 이어진다.
+testcase gate134_shelf_first_continues_to_original:
+    $ preferences.text_cps=0
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until screen "r13_hub" timeout 90
+    pause .8
+    $ qa_gate134_before=r13_v111_value("elapsed_minutes") or 0
+    $ qa_gate134_shelf=qa_gate_ledger_pointer("gate_documents")
+    click pos (qa_gate134_shelf[0],qa_gate134_shelf[1])
+    pause until screen "say" timeout 20
+    assert eval (r13_packet and "명단을 보여 주십시오" in r13_packet[1])
+    click pos (900,600) until screen "choice" timeout 40
+    assert eval (r13_v111_owned("E02") and not r13_v111_owned("E03"))
+    click "목요일 칸을 꺼낸다"
+    click pos (900,600) until screen "choice" timeout 25
+    assert eval (not r13_v111_owned("E03"))
+    click "금요일 칸을 꺼낸다"
+    # 본문 읽기 전에 허브로 돌아온다면 재클릭 버그다.
+    click pos (900,600) until eval (r13_v111_owned("E03") or renpy.get_screen("r13_hub")) timeout 30
+    assert eval (r13_v111_owned("E03") and r13_has("v111:applied:MS14_D01_S03_L0002"))
+    pause .4
+    screenshot "gate134-original-without-second-click.png"
+    click pos (900,600) until screen "r13_hub" timeout 30
+    assert eval (room13["v111"]["gate"]=="gate_investigate" and not r13_v111_value("gate_registered"))
+    assert eval (r13_v111_value("elapsed_minutes")==qa_gate134_before+45)
+    assert eval (room13["evidence"].count("V111:E02")==1 and room13["evidence"].count("V111:E03")==1)
+    screenshot "gate134-shelf-first-complete.png"

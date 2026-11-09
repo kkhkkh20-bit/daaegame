@@ -419,10 +419,11 @@ label r13_v111_wait_again:
         jump r13_v111_wait_again
     if v111_pick[0]=="object":
         $ v111_pick=("object",r13_v111_object_key(v111_pick[1]))
-        if key=="gate_request" and v111_pick[1]=="ledger":
+        if key=="gate_request" and v111_pick[1] in ("ledger","booth","gate_documents"):
             call r13_v111_gate_ledger_hand
             $ r13_v111_time("inspect:gate_request:ledger",15)
-            return 0
+            # 선반을 누른 조사도 명단 확인 뒤 원본 찾기까지 이어간다.
+            return 0 if v111_pick[1]=="ledger" else 1
         $ v111_matches=[i for i,o in enumerate(v111_binding.get("options",[])) if o.get("object")==v111_pick[1] and o.get("location")==room13["location"]]
         if len(v111_matches)==1:
             $ r13_v111_bed_pending=v111_binding["options"][v111_matches[0]].get("bed_to")   # 2026-10-29: 침대 한 번으로 잠자리까지(r13_v111_auto_index)
