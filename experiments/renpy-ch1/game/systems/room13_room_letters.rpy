@@ -14,6 +14,9 @@ init 355 python:
     def r13_room_letters_discovery_needed(key):
         if key not in (R13_ROOM_LETTERS_KEY,"v111:"+R13_ROOM_LETTERS_KEY):
             return False
+        # 현행 첫 읽기는 퀴즈의 합격 조건으로 삼지 않는다. 옛 저장의 진행 중 관찰은 보존한다.
+        if r13_v111_value("letter_inquiry_mode138"):
+            return False
         if r13_v111_value("letter_tail_observed") is True:
             return False
         # 이미 비교를 마친 판에는 새 조사 단계를 소급하지 않는다.

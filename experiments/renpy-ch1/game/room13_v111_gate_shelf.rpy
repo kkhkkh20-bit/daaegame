@@ -1,11 +1,9 @@
 # 같은 조사에서 선반까지 이어갈지 저장하는 UI 의도다. 옛 저장은 기존 명단 경로를 따른다.
 default r13_gate_continue_to_shelf=False
 
-# 2026-10-29 소유자 승인 설계안 ②(1일 돌목 사건 다시 설계): 「신청서는 저 선반에 날짜별로 꽂혀 있소」 뒤에
-# 돌목이 「오늘 날짜는 맨 위 칸이오」라고 칸을 알려 주어 「직접 찾아 보여 달라」가 행동이 되지 못했다.
-# 선반 칸은 요일로 나뉘어 있고, 아빠는 명단의 「같은 도착일」(우리가 내린 날 = 오늘)과 날짜판을 보고 칸을 고른다.
-# 틀린 칸은 벌칙 없이 그 칸이 무엇인지만 말한다(기회를 쓰지 않는다). 새 자료·사건은 없다 — 맞는 칸에서 원래대로 신청 원본(E03)을 찾는다.
-# days123.rpy 는 줄 수 고정이라 r13_v111_gate_original 의 한 줄만 이 label 호출로 바꿨다.
+# 0.20.138: 날짜별 서류 검색을 별도 요일 퀴즈로 묻지 않는다. 명단과 원본을 읽고
+# 플레이어가 차이를 입증하는 데 집중한다. 원본 획득은 호출한 기존 조사 라벨에서만 한다.
+# 예전 선택창 안에서 저장한 판을 위해 menu 라벨·선택 값·오답 복귀는 아래에 보존한다.
 init 360 python:
     def r13_gate_shelf_days():
         today=(store.room13 or {}).get("day",1)
@@ -14,7 +12,9 @@ init 360 python:
 
 label r13_v111_gate_shelf_pick:
     $ r13_gate_shelf_names=r13_gate_shelf_days()
-    call r13_lines([r13_nw_added_line(dict(kind="thought",text="선반 칸마다 요일 쪽지가 붙어 있다. 명단엔 「같은 도착일」이라고만 적혀 있다."))],'nw:gate_shelf_intro')
+    call r13_lines([r13_nw_added_line(dict(kind="narration",text="선반에서 오늘 날짜의 신청서 묶음을 꺼낸다. 다돌이라고 적힌 종이가 있다."))],'nw:gate_shelf_lookup')
+    return
+
 label r13_v111_gate_shelf_menu:
     $ r13_gate_shelf_pick=renpy.display_menu([(r13_gate_shelf_names[0]+" 칸을 꺼낸다","before"),(r13_gate_shelf_names[1]+" 칸을 꺼낸다","today"),(r13_gate_shelf_names[2]+" 칸을 꺼낸다","after")])
     if r13_gate_shelf_pick=="today":

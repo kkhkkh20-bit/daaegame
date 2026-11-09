@@ -59,8 +59,8 @@ class OpeningConversation(Layer):
                                         'MS14_D01_S05_L0034', 'MS14_D01_S05_L0035'])
                 index = lambda term: next(i for i, text in enumerate(rows) if term in text)
                 self.assertLess(index('도토리'), index('누가 썼는지 모르겠어'))
-                self.assertLess(index('누가 썼는지 모르겠어'), index('이 편지를 보낸 것도 엄마인지'))
-                self.assertLess(index('이 편지를 보낸 것도 엄마인지'), index('할머니한테 물어보자'))
+                self.assertLess(index('누가 썼는지 모르겠어'), index('두 장 다 보여 드리자'))
+                self.assertLess(index('두 장 다 보여 드리자'), index('할머니한테 물어보자'))
                 self.assertEqual(sum('편지엔 하나도 없어' in text for text in rows), 1)
                 self.assertEqual(self.state.room13, before)
         self.assertEqual(env['R13_V111']['evidence']['E01']['variants']['observed'],

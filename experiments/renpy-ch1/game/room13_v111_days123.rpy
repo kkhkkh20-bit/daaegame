@@ -400,6 +400,7 @@ label r13_v111_bundle:
     jump r13_v111_letter_compare_review
 
 label r13_v111_letter_compare:
+    $ r13_v111_set('letter_inquiry_mode138',True)
     $ r13_room_letters_open()
     call r13_v111_proof('두 편지를 나란히 본다',['E01', 'E06'],'r13_v111_room_compare','r13_v111_letter_retry',None,review_return='r13_v111_letter_compare_review')
     jump expression _return
@@ -522,8 +523,23 @@ label r13_v111_chorong:
     $ r13_v111_scene('MS14_D02_S01')
     call r13_v111_travel('square','chorong')
     $ r13_v111_score()
-    call r13_lines(r13_v111_lines(['MS14_D02_S01_L0013', 'MS14_D02_S01_L0014', 'MS14_D02_S01_L0015', 'MS14_D02_S01_L0016', 'MS14_D02_S01_L0017', 'MS14_D02_S01_L0018', 'MS14_D02_S01_L0019', 'MS14_D02_S01_L0020', 'MS14_D02_S01_L0021', 'MS14_D02_S01_L0022', 'MS14_D02_S01_L0023', 'MS14_D02_S01_L0024', 'MS14_D02_S01_L0025', 'MS14_D02_S01_L0026', 'MS14_D02_S01_L0027', 'MS14_D02_S01_L0028', 'MS14_D02_S01_L0029']), 'v111:chorong:MS14_D02_S01_L0014')
-    jump r13_v111_go_box
+    call r13_lines(r13_v111_lines(['MS14_D02_S01_L0013', 'MS14_D02_S01_L0014']), 'v111:chorong:MS14_D02_S01_L0014')
+    call r13_lines(r13_nw_block('chorong_intro138'),'nw:chorong_intro138')
+    jump r13_v111_chorong_documents2
+
+label r13_v111_chorong_documents2:
+    if r13_v111_value('chorong_memo_checked2') and r13_v111_value('chorong_invitation_checked2'):
+        $ r13_v111_talk_person=None
+        call r13_lines(r13_v111_lines(['MS14_D02_S01_L0026', 'MS14_D02_S01_L0027', 'MS14_D02_S01_L0028', 'MS14_D02_S01_L0029']), 'v111:chorong_documents2:MS14_D02_S01_L0026')
+        jump r13_v111_go_box
+    call r13_v111_wait('chorong_documents2')
+    if _return==0:
+        call r13_lines(r13_v111_lines(['MS14_D02_S01_L0015', 'MS14_D02_S01_L0016', 'MS14_D02_S01_L0017', 'MS14_D02_S01_L0018', 'MS14_D02_S01_L0019', 'MS14_D02_S01_L0020', 'MS14_D02_S01_L0021', 'MS14_D02_S01_L0022']), 'v111:chorong_documents2:MS14_D02_S01_L0015')
+        $ r13_v111_set('chorong_memo_checked2',True)
+    elif _return==1:
+        call r13_lines(r13_v111_lines(['MS14_D02_S01_L0023', 'MS14_D02_S01_L0024', 'MS14_D02_S01_L0025']), 'v111:chorong_documents2:MS14_D02_S01_L0023')
+        $ r13_v111_set('chorong_invitation_checked2',True)
+    jump r13_v111_chorong_documents2
 
 label r13_v111_go_box:
     call r13_v111_wait('go_box')

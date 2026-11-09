@@ -30,11 +30,12 @@ class ResourceIntake(unittest.TestCase):
   from test_newworld_text import Layer
   env=Layer.load(self)
   for rid,identity,emotion in (
-   ('MS14_D01_S03_L0005','v111:gate_read_original:MS14_D01_S03_L0003','angry'),
-   ('MS14_D03_S06_L0003','v111:restore3:MS14_D03_S06_L0002','anxious')):
+
+   ('MS14_D03_S06_L0003','v111:restore3:MS14_D03_S06_L0002','anxious'),):
    packet=next(p for p in env['r13_v111_lines']([rid]) if p[2].get('line_id')==rid)
    self.assertEqual(packet[2]['expression'],emotion)
    self.assertIsNone(env['r13_dialogue_context_match'](identity,0,packet,emotion))
+  self.assertFalse(any(p[2].get('line_id')=='MS14_D01_S03_L0005' for p in env['r13_v111_lines'](['MS14_D01_S03_L0005'])), '입구 해설을 줄인 뒤 삭제한 줄은 그림도 재생하지 않는다.')
   # 울음을 닦는 전용 그림과 갑작스러운 수레 경고는 계속 사용한다.
   for rid,identity,key in (
    ('MS14_D03_S06_L0018','v111:piko_memorial:MS14_D03_S06_L0013','daram:intake21_09_wipe_tears'),

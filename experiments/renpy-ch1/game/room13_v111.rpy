@@ -107,6 +107,9 @@ init 301 python:
         if v.get("gate")=="letter_compare_review" and r13_v111_value("chorong_whereabouts_asked1"):
             for option in b["options"]:
                 if option.get("index")==1:option["title"]="아내나 초롱 씨가 돌아왔습니까?"
+        if v.get("gate")=="chorong_documents2":
+            checked={0:r13_v111_value("chorong_memo_checked2"),1:r13_v111_value("chorong_invitation_checked2")}
+            b["options"]=[o for o in b["options"] if not checked.get(o["index"])]
         b.setdefault("people",v.get("people",["daram"]))
         if v.get("scene") in ("MS14_D14_S02","MS14_D14_S04") and r13_v111_value("madam_observer_consent") and r13_v111_value("location:resident_madam")==store.room13["location"] and r13_v111_person_alive("resident_madam"):
             b["people"]=list(dict.fromkeys(b["people"]+["resident_madam"]))
@@ -176,6 +179,9 @@ init 301 python:
             if type(value) is int and len(matches)==1:return value
         # 1~3일 첫 플레이 검수: 이미 말을 건 상대에게 질문이 없거나 하나뿐인 두 관문만 잇는다.
         # 후속 질문·새 선택이 생긴 저장에서는 기존 질문지를 보이며, 자료 선택과 수신자 판정은 건너뛰지 않는다.
+        if key=="chorong_documents2" and person=="resident_lamplighter" and location=="square" and not questions:
+            if any(o.get("person")==person and o.get("location")==location and o.get("present_only") and o.get("present") for o in options):
+                return "present"
         route={"envelope_show":("seryeon","post"),"portrait_ask":("resident_piko","square")}
         if route.get(key)!=(person,location) or len(options)!=1:return None
         option=options[0]

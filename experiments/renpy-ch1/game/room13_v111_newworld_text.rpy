@@ -62,6 +62,9 @@ init 319 python:
         r13_v111_apply("nw:acquire:"+key,[dict(op="acquire",key=key,variant=variant)])
     # Named conditions for added lines. Add one line here when an event needs it.
     R13_NW_WHEN={
+        "letter_inquiry138":lambda:bool(r13_v111_value("letter_inquiry_mode138")),
+        "letter_tail_observed138":lambda:bool(r13_v111_value("letter_inquiry_mode138")) and bool(r13_v111_value("letter_tail_observed")),
+        "legacy_letter_tail_unobserved138":lambda:not r13_v111_value("letter_inquiry_mode138") and not r13_v111_value("letter_tail_observed"),
         "chorong_asked1":lambda:bool(r13_v111_value("chorong_whereabouts_asked1")),
         "always":lambda:True,
         # 소설 적용: 실제 행동을 본 새 저장과 이전 장면을 지난 저장을 구별한다.

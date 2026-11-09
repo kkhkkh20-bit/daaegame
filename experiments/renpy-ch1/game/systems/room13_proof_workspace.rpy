@@ -159,11 +159,13 @@ init 350 python:
     def r13_pw_main_label(mode):
         return "비교 마치기" if mode=="compare" else "근거 제시"
 
-    def r13_pw_room_letters_copy(key,pair,discovery_needed,observed):
+    def r13_pw_room_letters_copy(key,pair,discovery_needed,observed,inquiry=False):
         """첫 방의 실제 읽는 두 글만, 관찰 전후에 맞는 조작 설명을 쓴다."""
         values=tuple(pair or ())
         if key not in ("두 편지를 나란히 본다","v111:두 편지를 나란히 본다") or len(values)!=2 or set(values)!={"V111:E01","V111:E06"}:
             return None
+        if inquiry:
+            return ("다람과 이야기","두 글을 읽고, 다람과 함께 확인합니다.")
         if observed:
             return ("발견한 차이 확인","「발견한 차이 확인」을 눌러 다람과 이야기를 이어 가세요.")
         if not discovery_needed:
@@ -720,7 +722,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ review_action=Return("investigate") if can_review else None
     $ pair_submission=r13_pw_pair_submission(live_pair,owned,mode) if view=="pair" else None
     $ discovery_pending=r13_room_letters_discovery_pending(key,pair_submission or chosen)
-    $ room_letters_copy=r13_pw_room_letters_copy(key,pair_submission or chosen,r13_room_letters_discovery_needed(key),r13_v111_value("letter_tail_observed") is True)
+    $ room_letters_copy=r13_pw_room_letters_copy(key,pair_submission or chosen,r13_room_letters_discovery_needed(key),r13_v111_value("letter_tail_observed") is True,inquiry=bool(r13_v111_value("letter_inquiry_mode138")))
     # 첫 방은 두 문서의 제목이 이미 각 열에 있다. 쟁점·조작 안내를 두 줄로 반복하지 않는다.
     $ compact_context=bool(room_letters_copy and not quote_open)
     $ context_text=room_letters_copy[1] if compact_context else title

@@ -52,6 +52,12 @@ init 341 python:
     def r13_v111_goal():
         v=store.room13.get("v111") or {}
         gate=v.get("gate")
+        if gate=="chorong_documents2":
+            if r13_v111_value("chorong_memo_checked2"):
+                return "메모는 아내의 글씨라고 한다. 우릴 부른 편지도 알아볼 수 있을까."
+            if r13_v111_value("chorong_invitation_checked2"):
+                return "초롱 씨는 초대 편지의 발송자를 모른다. 방의 메모는 알아볼 수 있을까."
+            return "방의 메모와 우릴 부른 편지. 초롱 씨는 두 글에 관해 무엇을 알까."
         if gate=="letter_compare_review" and r13_v111_value("letter_tail_observed"):
             return "책상 위 메모를 눌러, 발견한 차이를 다람과 이야기하자."
         if gate=="letter_compare_review" and r13_v111_value("chorong_whereabouts_asked1"):

@@ -23,8 +23,6 @@ testcase gate_ledger_pointer_handoff:
     pause .8
     $ qa_gate_shelf_center=qa_gate_ledger_pointer("booth")
     click pos (qa_gate_shelf_center[0],qa_gate_shelf_center[1])
-    click pos (900,600) until screen "choice" timeout 30
-    click "금요일 칸을 꺼낸다"
     # 원본을 찾은 뒤 서류를 다시 누르지 않아도 읽기·획득까지 끝나야 한다.
     click pos (900,600) until eval (renpy.get_screen("r13_hub") and room13["v111"]["gate"]=="gate_investigate") timeout 40
     assert eval (r13_v111_owned("E03"))
@@ -51,12 +49,8 @@ testcase gate134_shelf_first_continues_to_original:
     click pos (qa_gate134_shelf[0],qa_gate134_shelf[1])
     pause until screen "say" timeout 20
     assert eval (r13_packet and "명단을 보여 주십시오" in r13_packet[1])
-    click pos (900,600) until screen "choice" timeout 40
-    assert eval (r13_v111_owned("E02") and not r13_v111_owned("E03"))
-    click "목요일 칸을 꺼낸다"
-    click pos (900,600) until screen "choice" timeout 25
-    assert eval (not r13_v111_owned("E03"))
-    click "금요일 칸을 꺼낸다"
+    click pos (900,600) until eval (r13_packet and "오늘 날짜의 신청서" in r13_packet[1]) timeout 40
+    assert eval (r13_v111_owned("E02") and not r13_v111_owned("E03") and not renpy.get_screen("choice"))
     # 본문 읽기 전에 허브로 돌아온다면 재클릭 버그다.
     click pos (900,600) until eval (r13_v111_owned("E03") or renpy.get_screen("r13_hub")) timeout 30
     assert eval (r13_v111_owned("E03") and r13_has("v111:applied:MS14_D01_S03_L0002"))
@@ -67,3 +61,25 @@ testcase gate134_shelf_first_continues_to_original:
     assert eval (r13_v111_value("elapsed_minutes")==qa_gate134_before+45)
     assert eval (room13["evidence"].count("V111:E02")==1 and room13["evidence"].count("V111:E03")==1)
     screenshot "gate134-shelf-first-complete.png"
+
+
+# 예전 요일 선택창 안에서 저장한 판은 원래의 오답 재선택과 반환을 유지한다.
+label qa_gate138_legacy_shelf:
+    $ r13_gate_shelf_names=r13_gate_shelf_days()
+    call r13_v111_gate_shelf_menu
+    jump r13_v111_gate_request
+
+testcase gate138_legacy_shelf_choice_keeps_state:
+    $ preferences.text_cps=0
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until screen "r13_hub" timeout 90
+    $ qa_gate138_before=winter_copy.deepcopy(room13)
+    run Call("qa_gate138_legacy_shelf")
+    pause until screen "choice" timeout 30
+    click "목요일 칸을 꺼낸다"
+    click pos (900,600) until screen "choice" timeout 25
+    assert eval (room13==qa_gate138_before)
+    click "금요일 칸을 꺼낸다"
+    click pos (900,600) until screen "r13_hub" timeout 30
+    assert eval (room13==qa_gate138_before and not r13_v111_owned("E03"))

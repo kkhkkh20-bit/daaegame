@@ -328,7 +328,9 @@ screen r13_book(target=None,present=False,hearing=False,called=False,purpose=Non
     default drawer_case=None
     default drawer_gpage=0
     default drawer_ipage=0
-    $ drawer_on=r13_drawer_active(archive)
+    # 첫 두 글을 확인하는 대화에서는 이전 날의 서류도 같은 보유 목록에서 고른다.
+    $ document_inquiry=present and target=="resident_lamplighter" and r13_v111_active() and room13.get("v111",{}).get("gate")=="chorong_documents2"
+    $ drawer_on=r13_drawer_active(archive) and not document_inquiry
     $ entries=r13_catalog_entries(archive and not present,hearing)
     if drawer_on:
         $ drawer_all=entries

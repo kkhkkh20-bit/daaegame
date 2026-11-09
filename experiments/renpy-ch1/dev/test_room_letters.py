@@ -66,6 +66,14 @@ class RoomLetters(unittest.TestCase):
         state.room13['v111']['values']['letter_tail_observed']=True
         self.assertFalse(pending(CLAIM,PAIR))
 
+    def test_current_inquiry_does_not_require_a_spot_guess_or_grant_its_discovery(self):
+        env,state,_=self.environment(values={'letter_inquiry_mode138':True})
+        before=copy.deepcopy(vars(state))
+        self.assertFalse(env['r13_room_letters_discovery_pending'](CLAIM,PAIR))
+        self.assertFalse(env['r13_room_letters_begin_discovery'](CLAIM,PAIR))
+        self.assertEqual(vars(state),before)
+        self.assertNotIn('letter_tail_observed',state.room13['v111']['values'])
+
     def test_completed_old_saves_do_not_gain_a_new_required_step(self):
         for values,flags in [({'proof_given:두 편지를 나란히 본다':list(PAIR)},()),
                              ({},('v111:applied:MS14_D01_S05_L0031',))]:
