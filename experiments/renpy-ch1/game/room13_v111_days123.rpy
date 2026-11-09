@@ -220,7 +220,12 @@ label r13_v111_gate_reread_list:
 label r13_v111_gate_purpose:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
-    call r13_lines(r13_v111_lines(['MS14_D01_S03_L0009', 'MS14_D01_S03_L0010', 'MS14_D01_S03_L0011', 'MS14_D01_S03_L0012']), 'v111:gate_purpose:MS14_D01_S03_L0009')
+    if not r13_v111_value('gate_application_acknowledged'):
+        call r13_lines(r13_v111_lines(['MS14_D01_S03_L0009', 'MS14_D01_S03_L0010', 'MS14_D01_S03_L0011', 'MS14_D01_S03_L0012']), 'v111:gate_purpose:MS14_D01_S03_L0009')
+        $ r13_v111_set('gate_application_acknowledged',True)
+        $ r13_pw_reveal_gate_statement()
+    else:
+        call r13_lines(r13_nw_block('gate_application_repeat139'),'nw:gate_application_repeat139')
     $ r13_v111_commit('MS14_D01_S03_L0012')
     jump r13_v111_gate_investigate
 
@@ -546,6 +551,12 @@ label r13_v111_go_box:
     $ v111_answer=_return
     if v111_answer==0:
         jump r13_v111_box_path
+    if v111_answer==1:
+        call r13_lines(r13_nw_block('chorong_secrecy_question139'),'nw:chorong_secrecy_question139')
+        $ r13_v111_set('chorong_secrecy_asked2',True)
+    if v111_answer==2:
+        call r13_lines(r13_nw_block('chorong_scope_question139'),'nw:chorong_scope_question139')
+        $ r13_v111_set('chorong_scope_asked2',True)
     jump r13_v111_go_box
 
 label r13_v111_box_path:

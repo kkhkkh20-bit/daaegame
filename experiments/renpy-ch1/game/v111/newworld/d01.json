@@ -209,7 +209,8 @@
       "text": "제가 낸 신청서도 확인해 주십시오."
     },
     "MS14_D01_S03_L0010": {
-      "text": "확인하겠습니다. 잘못된 부분을 짚어 주십시오.",
+      "speaker": "돌목",
+      "text": "신청서에는 동행인 다람이 적혀 있습니다. 하지만 제가 받은 명단에는 다돌 씨만 있습니다.",
       "expression": "neutral"
     },
     "MS14_D01_S03_L0011": {
@@ -1478,6 +1479,51 @@
         "kind": "narration",
         "text": "창밖이 파랗게 어두워진다.",
         "id": "NW_D01_FLOW137_ROOM_WAIT_EVENING1_01"
+      }
+    ],
+    "gate_invitation_scope139": [
+      {
+        "speaker": "돌목",
+        "text": "초대 편지군요. 하지만 이 편지만으로 초소에 신청한 사람을 확인할 수는 없습니다.",
+        "id": "NW_INQUIRY139_GATE_INVITATION_SCOPE139_01",
+        "kind": "dialogue",
+        "expression": "neutral"
+      }
+    ],
+    "gate_list_repeat139": [
+      {
+        "speaker": "돌목",
+        "text": "지금 제가 확인하는 명단입니다. 다돌 씨 이름만 적혀 있습니다.",
+        "id": "NW_INQUIRY139_GATE_LIST_REPEAT139_01",
+        "kind": "dialogue",
+        "expression": "neutral"
+      }
+    ],
+    "gate_rules_scope139": [
+      {
+        "speaker": "돌목",
+        "text": "입장할 때 지킬 규칙입니다. 지금은 누가 신청했고 누가 등록됐는지 확인해야 합니다.",
+        "id": "NW_INQUIRY139_GATE_RULES_SCOPE139_01",
+        "kind": "dialogue",
+        "expression": "neutral"
+      }
+    ],
+    "gate_application_repeat139": [
+      {
+        "speaker": "돌목",
+        "text": "신청서에 다람 이름이 있는 건 확인했습니다. 그 점을 부정하는 건 아닙니다.",
+        "id": "NW_INQUIRY139_GATE_APPLICATION_REPEAT139_01",
+        "kind": "dialogue",
+        "expression": "neutral"
+      }
+    ],
+    "gate_unfamiliar_record139": [
+      {
+        "speaker": "돌목",
+        "text": "이 자료에 대해서는 제가 답해 드릴 내용이 없습니다.",
+        "id": "NW_INQUIRY139_GATE_UNFAMILIAR_RECORD139_01",
+        "kind": "dialogue",
+        "expression": "neutral"
       }
     ]
   }

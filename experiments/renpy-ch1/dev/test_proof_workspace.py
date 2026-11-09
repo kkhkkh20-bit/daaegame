@@ -81,6 +81,20 @@ class ProofWorkspacePure(unittest.TestCase):
         self.assertFalse(vis(gate,lambda f:False,lambda k:True))
         self.assertTrue(vis(ctx['두 편지를 나란히 본다'],lambda f:False,lambda k:None))
 
+    def test_gate_acknowledgment_updates_only_its_quote_without_leaking_to_new_games(self):
+        import json
+        key='함께 들어갈 근거를 고른다'
+        context=self.ns['r13_pw_context']
+        original=dict(context(key))
+        spoken=json.loads((ROOT/'game/v111/newworld/d01.json').read_text())['replace']['MS14_D01_S03_L0010']['text']
+        acknowledged=context(key,gate_application_acknowledged=True)
+        self.assertEqual(acknowledged['quote'],spoken)
+        self.assertNotEqual(acknowledged['quote'],original['quote'])
+        self.assertEqual(context(key),original)
+        self.assertEqual(context('두 편지를 나란히 본다',True),context('두 편지를 나란히 본다'))
+        self.assertEqual({k:v for k,v in acknowledged.items() if k!='quote'},
+                         {k:v for k,v in original.items() if k!='quote'})
+
     def test_no_answer_function_in_module(self):
         src=SRC.read_text(encoding='utf-8')
         for name in ('r13_v111_proof_accepts','R13_PROOF_ALTERNATES','R13_PROOF_EXTRAS','r13_v111_proof_kept','r13_v111_proof_sets','r13_nw_retry'):

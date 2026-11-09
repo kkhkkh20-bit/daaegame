@@ -110,6 +110,11 @@ init 301 python:
         if v.get("gate")=="chorong_documents2":
             checked={0:r13_v111_value("chorong_memo_checked2"),1:r13_v111_value("chorong_invitation_checked2")}
             b["options"]=[o for o in b["options"] if not checked.get(o["index"])]
+        if v.get("gate")=="gate_investigate" and r13_v111_value("gate_application_acknowledged"):
+            b["options"]=[o for o in b["options"] if o.get("index")!=3]
+        if v.get("gate")=="go_box":
+            checked={1:r13_v111_value("chorong_secrecy_asked2"),2:r13_v111_value("chorong_scope_asked2")}
+            b["options"]=[o for o in b["options"] if o.get("index")==0 or (r13_v111_value("chorong_invitation_checked2") and r13_v111_value("chorong_memo_checked2") and not checked.get(o.get("index")))]
         b.setdefault("people",v.get("people",["daram"]))
         if v.get("scene") in ("MS14_D14_S02","MS14_D14_S04") and r13_v111_value("madam_observer_consent") and r13_v111_value("location:resident_madam")==store.room13["location"] and r13_v111_person_alive("resident_madam"):
             b["people"]=list(dict.fromkeys(b["people"]+["resident_madam"]))
@@ -426,7 +431,8 @@ label r13_v111_wait_again:
                     return v111_match
                 if v111_shown:
                     # 0.20.x (owner plan item 3): the resident answers in their own voice.
-                    $ v111_react=r13_v111_present_reaction(v111_person,v111_shown)
+                    $ v111_inquiry_block=r13_inquiry_reaction_block(key,v111_person,v111_shown,room13["v111"].get("values",{}))
+                    $ v111_react=r13_nw_block(v111_inquiry_block) if v111_inquiry_block else r13_v111_present_reaction(v111_person,v111_shown)
                     if v111_react:
                         call r13_lines(v111_react,"v111:present_reaction:"+v111_person+":"+v111_shown)
                     else:

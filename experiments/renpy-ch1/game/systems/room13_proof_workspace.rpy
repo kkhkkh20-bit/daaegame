@@ -65,9 +65,14 @@ init 350 python:
         if mode!="compare" or len(values)!=2 or values[0]==values[1]:return None
         return values if all(k in owned for k in values) else None
 
-    def r13_pw_context(key):
+    R13_GATE_APPLICATION_QUOTE="신청서에는 동행인 다람이 적혀 있습니다. 하지만 제가 받은 명단에는 다돌 씨만 있습니다."
+
+    def r13_pw_context(key,gate_application_acknowledged=False):
         """시범 쟁점이면 문맥 dict, 아니면 None(호출자가 기존 화면으로 폴백)."""
-        return R13_PW_CONTEXT.get(key)
+        spec=R13_PW_CONTEXT.get(key)
+        if spec and key=="함께 들어갈 근거를 고른다" and gate_application_acknowledged:
+            return dict(spec,quote=R13_GATE_APPLICATION_QUOTE)
+        return spec
 
     def r13_pw_quote_visible(spec,has,value):
         """발언을 보일지. has(flag)·value(key) 는 호출자가 넘기는 조회 함수라 시험에서 바꿔 끼울 수 있다."""
@@ -199,6 +204,15 @@ default r13_pw_views = {}   # 쟁점(claim)별 UI 기억: 탭·열어 본 자료
 default persistent.room13_pw_controls_seen = False
 
 init 351 python:
+    def r13_pw_reveal_gate_statement():
+        # 방금 들은 발언만 펼친다. 제출 자료·획득·기회는 손대지 않는다.
+        claim="v111:함께 들어갈 근거를 고른다"
+        views=dict(store.r13_pw_views or {})
+        remembered=dict(views.get(claim,{}) or {})
+        remembered["quote_open"]=True
+        views[claim]=remembered
+        store.r13_pw_views=views
+
     def r13_pw_active(key):
         return r13_v111_active() and r13_pw_context(key) is not None
 
@@ -689,7 +703,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     zorder 50
     default ready=False
     timer .15 action SetScreenVariable("ready",True)
-    $ ctx=r13_pw_context(key) or dict(mode="proof",speaker=None,quote=None,quote_when=None)
+    $ ctx=r13_pw_context(key,gate_application_acknowledged=bool(r13_v111_value("gate_application_acknowledged"))) or dict(mode="proof",speaker=None,quote=None,quote_when=None)
     $ mode=ctx["mode"]
     $ remembered=(r13_pw_views or {}).get(claim,{})
     default tab=remembered.get("tab",r13_pw_initial_tab(mode,r13_drawer_active(),r13_pw_entries(),r13_drawer_now(r13_pw_entries())))

@@ -34,3 +34,34 @@ class LetterInquiry(unittest.TestCase):
         env,_=self.env();b=env['r13_v111_binding']()
         self.assertEqual(env['r13_v111_direct_topic']('chorong_documents2','resident_lamplighter','square',b['options'],[]),'present')
         self.assertIsNone(env['r13_v111_direct_topic']('chorong_documents2','granny','square',b['options'],[]))
+
+class InquiryFollowups(unittest.TestCase):
+    def env(self,gate,values=None):
+        env,state=LetterInquiry().env(values)
+        env['r13_v111_owned']=lambda key:'V111:'+key in state.room13['evidence']
+        state.room13['v111']['gate']=gate
+        state.room13['location']='gate' if gate=='gate_investigate' else 'square'
+        return env,state
+
+    def test_gate_application_requires_owned_original_and_is_removed_only_after_reply(self):
+        env,state=self.env('gate_investigate');binding=env['r13_v111_binding']()
+        original=next(o for o in binding['options'] if o['index']==3)
+        self.assertTrue(original['present_only'])
+        self.assertEqual(env['r13_v111_present_index'](binding,'guard','V111:E03'),3)
+        state.room13['evidence'].remove('V111:E03')
+        self.assertIsNone(env['r13_v111_present_index'](binding,'guard','V111:E03'))
+        state.room13['v111']['values']['gate_application_acknowledged']=True
+        after=env['r13_v111_binding']()
+        self.assertNotIn(3,[o['index'] for o in after['options']])
+        self.assertIn(5,[o['index'] for o in after['options']])
+
+    def test_followups_require_both_answers_and_each_disappears_independently(self):
+        for flags in ({},{'chorong_memo_checked2':True},{'chorong_invitation_checked2':True}):
+            env,_=self.env('go_box',flags)
+            self.assertEqual([o['index'] for o in env['r13_v111_binding']()['options']],[0])
+        env,state=self.env('go_box',{'chorong_memo_checked2':True,'chorong_invitation_checked2':True})
+        self.assertEqual([o['index'] for o in env['r13_v111_binding']()['options']],[0,1,2])
+        state.room13['v111']['values']['chorong_scope_asked2']=True
+        self.assertEqual([o['index'] for o in env['r13_v111_binding']()['options']],[0,1])
+        state.room13['v111']['values']['chorong_secrecy_asked2']=True
+        self.assertEqual([o['index'] for o in env['r13_v111_binding']()['options']],[0])
