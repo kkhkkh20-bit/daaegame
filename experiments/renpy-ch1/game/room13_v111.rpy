@@ -487,16 +487,19 @@ label r13_nw_wrong_thought:
 label r13_v111_proof(key,correct,success,wrong=None,hint=None,review_return=None):
     # 2026-10-27 UX 인계서 D04: review_return 이 있으면 「조사 계속」으로 그 현장 라벨로 돌아간다(기회·선택·판정 불변).
     call r13_nw_wrong_thought
+    $ v111_hearing_only=False
     $ v111_claim="v111:"+key
     $ R13_CLAIMS[v111_claim]=dict(assertion=R13_PROOF_TITLES.get(key,key))
     $ room13["arguments"].setdefault(v111_claim,[])
     if r13_case_hearing_spec(key):
         $ r13_v111_set("hearing:base:"+key,list(correct))
 label r13_v111_proof_again:
-    # 2026-10-27 UX 인계서 D01~D03·D06: 시범 쟁점(systems/room13_proof_workspace.rpy R13_PW_CONTEXT)은 통합 화면.
+    # 2026-10-27 UX 인계서 D01~D03·D06: 본편의 등록된 문맥·청취 메타는 통합 화면.
     # 반환값("argue"/"press"/"investigate"/("remove",키)/("toggle",키))은 아래 기존 분기로 그대로 흐른다.
-    # 그 밖의 쟁점과 옛 캠페인은 기존 자료 대조 패널 + 자료 고르기 책(r13_v111_proof_pick)이다.
-    if r13_fire_links_active(key):
+    # 미등록 쟁점과 옛 캠페인은 기존 자료 대조 패널 + 자료 고르기 책(r13_v111_proof_pick)이다.
+    if r13_fire_links_active(key) and v111_hearing_only:
+        call screen r13_proof_workspace(v111_claim,key,can_press=True,chances=r13_v111_proof_chances(key),hearing_only=True)
+    elif r13_fire_links_active(key):
         call screen r13_fire_links(v111_claim,key,can_press=bool(hint) or key in R13_PROOF_RANGE,investigate=bool(review_return),chances=r13_v111_proof_chances(key))
     elif r13_pw_active(key):
         call screen r13_proof_workspace(v111_claim,key,can_press=bool(hint) or key in R13_PROOF_RANGE,investigate=bool(review_return),chances=r13_v111_proof_chances(key))
@@ -507,6 +510,12 @@ label r13_v111_proof_again:
         call r13_v111_fire_question7(_return[1])
         if _return!="argue":
             jump r13_v111_proof_again
+    if _return=="hearing_open" and r13_fire_links_active(key):
+        $ v111_hearing_only=True
+        jump r13_v111_proof_again
+    if _return=="hearing_resume" and r13_fire_links_active(key):
+        $ v111_hearing_only=False
+        jump r13_v111_proof_again
     if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="hearing_press":
         $ v111_hearing_block=r13_case_hearing_press_block(key,_return[1])
         if v111_hearing_block:

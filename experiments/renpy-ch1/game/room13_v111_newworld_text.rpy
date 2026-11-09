@@ -575,7 +575,9 @@ init 319 python:
     def r13_nw_added_line(row):
         if row.get("kind")=="thought":
             # The father's unspoken thought, shown like the authored thought lines.
-            return ("dad","("+row["text"]+")",dict(no_lead=True,thought=True,expression="thinking",pose="thinking"))
+            thought_options=dict(no_lead=True,thought=True,expression="thinking",pose="thinking")
+            if row.get("id"):thought_options["source_id"]=row["id"]
+            return ("dad","("+row["text"]+")",thought_options)
         who=MS14_SPEAKERS.get(row.get("speaker")) if row.get("speaker") is not None else None
         if who and not r13_v111_person_alive(who):raise Exception("Absent/dead new-world speaker: "+row["id"])
         slot=row.get("expression") or "neutral"

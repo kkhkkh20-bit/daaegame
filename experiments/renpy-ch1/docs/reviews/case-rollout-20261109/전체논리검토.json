@@ -1,0 +1,1749 @@
+{
+  "검토범위": "메타 5파일 전체와 연결된 현재 원문·신규 블록·실제 호출 라벨·when·청취 캐시를 읽기 전용으로 대조. ending 파일 납품 후 그 메타와 d11~d14 새 블록까지 포함했다. 단위/SDK/빌드/실제 UI 플레이는 실행하지 않았고 제품을 수정하지 않았다.",
+  "집계": {
+    "파일별stage": {
+      "case-hearing-early.json": 3,
+      "case-hearing-ending.json": 18,
+      "case-hearing-late.json": 7,
+      "case-hearing-mid.json": 6,
+      "case-hearing.json": 6
+    },
+    "stage": 40,
+    "고유proofkey": 38,
+    "실제호출proofkey": 38,
+    "누락": [],
+    "가짜key": [],
+    "같은case내중복target": [],
+    "화자불일치": [],
+    "case이름중복": [],
+    "사건수": 17,
+    "40stage설명": "38개 고유 key 중 첫 화재 key는 배타적인 fire_empty/fire_rescue 두 case에, 마지막 피코 그림 key는 배타적인 piko13_stolen/piko13_attempt 두 case에 각각 있어 stage는40개다. 같은 RID 재사용은 서로 다른 배타 case 안에서만 이뤄진다."
+  },
+  "현재결론": "현재 납품 메타에서 없는 발화·다른 화자·같은 case의 target 충돌·새 press에 의한 늦은 단서 선행 노출을 발견하지 못했다. 도토리 부재/우체국 접수만으로 작성자를 확정하는 새 결론도 없다. 발견했던 아이 발 추가는 루트 보고 후 현재 제품에서 제거된 것을 다시 확인했다. 현재 열린 수정 권고는 없다.",
+  "해결확인": [
+    {
+      "항목": "할머니 contact 되묻기의 원문 밖 대상 추가",
+      "최초발견": "촛대가 발에 걸릴까 봐라는 기존 설명을 아이 발에 걸릴까 봐로 넓혀 아이 위치에 관한 선행 지식이 생길 수 있었다.",
+      "현재확인": "발에 걸릴까 봐 집었다고요. 핀은 그때 걸렸나 봐요.",
+      "상태": "루트에 보고한 뒤 현재 파일에서 아이가 제거된 것을 재확인. 검토자 제품 수정 없음.",
+      "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d10.json",
+      "원문ID": "MS14_D10_S03_L0041",
+      "신규ID": "NW_HEARING141_LATE_CONTACT_2"
+    }
+  ],
+  "종류검토": "혼자 의문을 품거나 실물 글을 읽는 맥락은 question, NPC의 사실·행위·기재·인과 설명은 statement로 연결됐다. 백 부인/판돌/주민/선생님의 기존 질문을 그들이 하지 않은 단정적 허위 주장으로 바꾸지 않는다. 기존 lamp 메타의 kind 생략6개는 현재 로더의 기본 statement로 해석된다.",
+  "분기별검토": [
+    {
+      "대상": "초반 세 사건",
+      "결과": "입구는 돌목의 초기 입장 거절 L0013와 신청서 직접 제시 뒤의 실제 개정 발언 L0010을 함께 참조하고 latest_only로 후자를 들은 뒤에만 후자로 교체한다. 첫 방은 아빠가 실제로 한 생각, 진료소는 우박의 반환 진술을 참조한다. 첫 방은 question이며 도토리 부재를 위조 확증으로 만들지 않는다. 새 첫 방 응답도 엄마가 쓴 글인지 봐 달라는 의문에 머문다.",
+      "근거": [
+        "case-hearing-early.json",
+        "d01.json NW_D01_S05_V03 / hearing141_letter_question_press",
+        "room13_v111_days123.rpy gate_arrival / bundle / clinic3"
+      ]
+    },
+    {
+      "대상": "일반 도난/미수",
+      "결과": "lamp_bound2로 기존 두 사건을 구별한다. 일반 도난의 판매·장부를 미수의 실제 반출로 바꾸지 않는다. 수리 시간선만으로 모든 시간대의 톡 가능성을 전면 배제하는 새 문장도 없다. E17/E33은 기존 회의 중 실제 칼 대조 뒤에 얻는다.",
+      "근거": [
+        "case-hearing.json",
+        "room13_lamp_attempt.rpy",
+        "room13_v111_days123.rpy knife_fit",
+        "room13_case_hearing.rpy case_enabled"
+      ]
+    },
+    {
+      "대상": "5일 추위/경고",
+      "결과": "밤이의 추가 울타리 발언은 bami_cold4일 때만 실제 표시된다. 기본 키 추정 발언과 새 되묻기는 목격과 추정을 구별한다. 엄마 경고는 전문을 읽고 난 뒤의 새 아빠 질문으로, 작성자는 아직 의문으로 남는다. 다람과 아빠가 기존에 함께 읽는 경로다.",
+      "근거": [
+        "d05.json NW_D05_S03_SL01 / after.MS14_D05_S04_L0013",
+        "room13_v111_days45.rpy warning_read5 / warning_compare5"
+      ]
+    },
+    {
+      "대상": "7일 화재 두 분기",
+      "결과": "fire_empty의 FIRE_EVACUATED equals true와 fire_rescue의 not_equals true가 배타적이다. 실제 추가 target의 fire_evacuated/fire_not_evacuated도 같은 축이다. 빈 창고 진압과 세 아이 구조를 섞지 않으며 문 앞 목격을 방화 목격으로 확대하지 않는다. 추가 응답의 누비·너울은 각각 기존 대면 및 학교 책임 장면에 있다.",
+      "근거": [
+        "case-hearing-mid.json",
+        "d07.json after.MS14_D07_S02_L0002",
+        "room13_v111_newworld_text.rpy fire_evacuated / fire_not_evacuated",
+        "room13_v111_days610.rpy nubi_hypothesis7 / responsibility7"
+      ]
+    },
+    {
+      "대상": "10일 살인/예방·톡 부재",
+      "결과": "13호실 사건과 기록 전달을 다른 case로 둔다. 사망한 부엉이와 부재한 톡에게 새 응답을 요구하지 않는다. 톡 참석/사본 경로가 갈려도 새 되묻기는 해당 회의에 있는 아빠·너울·할머니만 말한다.",
+      "근거": [
+        "case-hearing-late.json",
+        "room13_v111_days610.rpy hearing10 / owner_tok10 / owner_copy10 / prevent_hearing10"
+      ]
+    },
+    {
+      "대상": "11일 가설·피코/부엉이 생사",
+      "결과": "새 press는 피코에게 증언을 강제하지 않고 실제 질문한 돌목·백 부인·판돌·주민·선생님의 범위만 확인한다. 13호 직접 관찰 과제의 부엉이 사망/생존/돌 사전 제거 경로도 새 press에서 한 결과로 단정하지 않는다.",
+      "근거": [
+        "case-hearing-ending.json hypothesis11",
+        "d11.json hearing141_hyp_*",
+        "room13_v111_days1114.rpy hypothesis11 / hyp1_q11~hyp5_proof11"
+      ]
+    },
+    {
+      "대상": "12일 수프의 늦은/먹기 전 경로",
+      "결과": "취급 구간 target은 각 경로의 실제 아빠 발언 L0040/L0079다. press도 아빠 생각이어서 부재 목격자나 사망한 아이에게 말시키지 않는다. 미목격 손의 움직임을 짐작으로 채우지 말자는 내용이며 추가 범인 확정을 하지 않는다. 선생님의 빈 병·작은 냄비 주장은 실제 원문을 참조한다.",
+      "근거": [
+        "case-hearing-ending.json soup12",
+        "d12.json hearing141_soup_handling12",
+        "room13_v111_days1114.rpy handling_late12 / handling_pre12 / soup_final12 / confessed12"
+      ]
+    },
+    {
+      "대상": "13일 담요·도난/미수 거래",
+      "결과": "담요의 시간·동석 발언은 실제 proof 전에 나온다. 가격의 정상 target은 lamp_stolen, 미수 target은 lamp_attempt로 분리된다. 메타 case도 piko13_stolen(lamp_bound2 not_equals true)/piko13_attempt(equals true)로 나뉘어 과거 다른 변형 캐시가 함께 보여도 교차 표시하지 않는다. 마지막 그림 key와 RID는 두 배타 case에 각각 둔다. 미수 press는 받기로 한 값만 묻고 돈을 실제 받았다고 만들지 않는다. 피코 관련 후속 새 응답은 너울의 불신만 확인하며 피코 생존을 강제하지 않는다.",
+      "근거": [
+        "case-hearing-ending.json blanket13 / piko13_stolen / piko13_attempt",
+        "d13.json rein_open13 / hearing141_piko_offer13",
+        "room13_v111_days1114.rpy rein13 / rein_ledger13p / rein_painting13p"
+      ]
+    },
+    {
+      "대상": "14일 제단·자료 부족",
+      "결과": "target은 해당 q14 블록에서 실제 말한 뒤 proof에 진입한다. 자료가 없어 proof 자체를 건너뛰는 기존 흐름을 새 메타가 해제하지 않는다. 새 press는 미획득 장부·옛 기록·첫 희생자 이름을 풀이로 말하지 않는다. 너울 사망 갈래에서도 새 제단 응답은 아빠·촌장만 말한다.",
+      "근거": [
+        "case-hearing-ending.json altar14",
+        "d14.json hearing141_altar_*",
+        "room13_v111_days1114.rpy altar1_q14~altar4_proof14"
+      ]
+    }
+  ],
+  "38key별근거": [
+    {
+      "사건": "gate",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-early.json",
+      "key": "함께 들어갈 근거를 고른다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": true,
+      "실제선행발화": [
+        {
+          "ID": "MS14_D01_S02_L0013",
+          "화자": "돌목",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days123.rpy",
+              "줄": 104,
+              "라벨": "r13_v111_gate_arrival"
+            }
+          ]
+        },
+        {
+          "ID": "MS14_D01_S03_L0010",
+          "화자": "돌목",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days123.rpy",
+              "줄": 224,
+              "라벨": "r13_v111_gate_purpose"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days123.rpy",
+        "줄": 240,
+        "라벨": "r13_v111_gate_proof"
+      },
+      "되묻기": {
+        "블록": "hearing141_gate_scope_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d01.json",
+        "줄": 1529,
+        "화자": [
+          "아빠",
+          "돌목"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "room_letters",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-early.json",
+      "key": "두 편지를 나란히 본다",
+      "kind": "question",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_D01_S05_V03",
+          "화자": "아빠",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d01.json",
+          "정의줄": 691,
+          "정의위치": "before.MS14_D01_S05_L0030",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days123.rpy",
+              "줄": 404,
+              "라벨": "r13_v111_bundle"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days123.rpy",
+        "줄": 410,
+        "라벨": "r13_v111_letter_compare"
+      },
+      "되묻기": {
+        "블록": "hearing141_letter_question_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d01.json",
+        "줄": 1545,
+        "화자": [
+          "아빠",
+          "다람"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "measurement",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-early.json",
+      "key": "측정 종료와 점검 기록을 대조한다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "MS14_D03_S03_L0017",
+          "화자": "우박",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days123.rpy",
+              "줄": 1054,
+              "라벨": "r13_v111_clinic3"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days123.rpy",
+        "줄": 1075,
+        "라벨": "r13_v111_measurement_proof"
+      },
+      "되묻기": {
+        "블록": "hearing141_measurement_return_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d03.json",
+        "줄": 2617,
+        "화자": [
+          "아빠",
+          "우박"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "hypothesis11",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "초롱과 피코의 하루를 대조한다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_H1_Q_01",
+          "화자": "돌목",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d11.json",
+          "정의줄": 1625,
+          "정의위치": "blocks.hyp1_q11",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 647,
+              "라벨": "r13_v111_hyp1_q11"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 668,
+        "라벨": "r13_v111_hyp1_proof11"
+      },
+      "되묻기": {
+        "블록": "hearing141_hyp_touch11",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d11.json",
+        "줄": 2810,
+        "화자": [
+          "아빠",
+          "돌목"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "hypothesis11",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "창고에서 잠자는 사람을 짚는다",
+      "kind": "question",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_H2_Q_01",
+          "화자": "백 부인",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d11.json",
+          "정의줄": 1707,
+          "정의위치": "blocks.hyp2_q11",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 688,
+              "라벨": "r13_v111_hyp2_q11"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 709,
+        "라벨": "r13_v111_hyp2_proof11"
+      },
+      "되묻기": {
+        "블록": "hearing141_hyp_store11",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d11.json",
+        "줄": 2826,
+        "화자": [
+          "아빠",
+          "백 부인"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "hypothesis11",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "요즘 돌이 어디서 오는지 대조한다",
+      "kind": "question",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_H3_Q_01",
+          "화자": "판돌",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d11.json",
+          "정의줄": 1786,
+          "정의위치": "blocks.hyp3_q11",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 729,
+              "라벨": "r13_v111_hyp3_q11"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 750,
+        "라벨": "r13_v111_hyp3_proof11"
+      },
+      "되묻기": {
+        "블록": "hearing141_hyp_recent11",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d11.json",
+        "줄": 2842,
+        "화자": [
+          "아빠",
+          "판돌"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "hypothesis11",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "아르카가 없는 아이들과 대조한다",
+      "kind": "question",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_H4_Q_01",
+          "화자": "주민",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d11.json",
+          "정의줄": 1868,
+          "정의위치": "blocks.hyp4_q11",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 770,
+              "라벨": "r13_v111_hyp4_q11"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 791,
+        "라벨": "r13_v111_hyp4_proof11"
+      },
+      "되묻기": {
+        "블록": "hearing141_hyp_children11",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d11.json",
+        "줄": 2858,
+        "화자": [
+          "아빠",
+          "주민"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "hypothesis11",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "13호 난로의 돌을 내놓는다",
+      "kind": "question",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_H5_Q_01",
+          "화자": "선생님",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d11.json",
+          "정의줄": 1934,
+          "정의위치": "blocks.hyp5_q11",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 811,
+              "라벨": "r13_v111_hyp5_q11"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 837,
+        "라벨": "r13_v111_hyp5_proof11"
+      },
+      "되묻기": {
+        "블록": "hearing141_hyp_room11",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d11.json",
+        "줄": 2874,
+        "화자": [
+          "아빠",
+          "선생님"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "soup12",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "재사용 설명과 개봉 봉인을 대조한다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "MS14_D12_S04_L0020",
+          "화자": "선생님",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 1426,
+              "라벨": "r13_v111_bottle_matched12"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 1433,
+        "라벨": "r13_v111_seal_proof12"
+      },
+      "되묻기": {
+        "블록": "hearing141_soup_seal12",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d12.json",
+        "줄": 2253,
+        "화자": [
+          "아빠",
+          "선생님"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "soup12",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "파편·봉인·취급 구간을 함께 제시한다",
+      "kind": "question",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "MS14_D12_S04_L0040",
+          "화자": "아빠",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 1478,
+              "라벨": "r13_v111_handling_late12"
+            }
+          ]
+        },
+        {
+          "ID": "MS14_D12_S04_L0079",
+          "화자": "아빠",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 1493,
+              "라벨": "r13_v111_handling_pre12"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 1522,
+        "라벨": "r13_v111_soup_final12"
+      },
+      "되묻기": {
+        "블록": "hearing141_soup_handling12",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d12.json",
+        "줄": 2269,
+        "화자": [
+          "아빠"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "soup12",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "명단과 흰 그릇을 대조한다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_SL_Q_01",
+          "화자": "선생님",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d12.json",
+          "정의줄": 1558,
+          "정의위치": "blocks.soup_list_q12",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 1563,
+              "라벨": "r13_v111_confessed12"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 1567,
+        "라벨": "r13_v111_list_proof12"
+      },
+      "되묻기": {
+        "블록": "hearing141_soup_list12",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d12.json",
+        "줄": 2278,
+        "화자": [
+          "아빠",
+          "선생님"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "blanket13",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "아내가 봤다는 담요의 시점을 확인한다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "MS14_D13_S03_L0017",
+          "화자": "촌장",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 1969,
+              "라벨": "r13_v111_blanket_lie13"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 1974,
+        "라벨": "r13_v111_mending_proof13"
+      },
+      "되묻기": {
+        "블록": "hearing141_blanket_mending13",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d13.json",
+        "줄": 2323,
+        "화자": [
+          "아빠",
+          "촌장"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "blanket13",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "촌장이 어젯밤 있던 곳을 확인한다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_BQ_03",
+          "화자": "촌장",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d13.json",
+          "정의줄": 1235,
+          "정의위치": "blocks.badook_q13",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 1988,
+              "라벨": "r13_v111_mending_answer13"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 1992,
+        "라벨": "r13_v111_badook_proof13"
+      },
+      "되묻기": {
+        "블록": "hearing141_blanket_badook13",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d13.json",
+        "줄": 2339,
+        "화자": [
+          "아빠",
+          "촌장"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "altar14",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "희생의 숫자와 장부를 대조한다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_A1_Q02",
+          "화자": "촌장",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d14.json",
+          "정의줄": 1489,
+          "정의위치": "blocks.altar1_q14",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 2938,
+              "라벨": "r13_v111_altar1_q14"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 2943,
+        "라벨": "r13_v111_altar1_proof14"
+      },
+      "되묻기": {
+        "블록": "hearing141_altar_number14",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d14.json",
+        "줄": 3191,
+        "화자": [
+          "아빠",
+          "촌장"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "altar14",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "아르카가 부른다는 말과 옛 기록을 대조한다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_A2_Q01",
+          "화자": "촌장",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d14.json",
+          "정의줄": 1623,
+          "정의위치": "blocks.altar2_q14",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 2971,
+              "라벨": "r13_v111_altar2_q14"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 2982,
+        "라벨": "r13_v111_altar2_proof14"
+      },
+      "되묻기": {
+        "블록": "hearing141_altar_call14",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d14.json",
+        "줄": 3207,
+        "화자": [
+          "아빠",
+          "촌장"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "altar14",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "쇠가 언제 붙었는지 보인다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_A3_Q01",
+          "화자": "촌장",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d14.json",
+          "정의줄": 1679,
+          "정의위치": "blocks.altar3_q14",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 2999,
+              "라벨": "r13_v111_altar3_q14"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 3010,
+        "라벨": "r13_v111_altar3_proof14"
+      },
+      "되묻기": {
+        "블록": "hearing141_altar_iron14",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d14.json",
+        "줄": 3223,
+        "화자": [
+          "아빠",
+          "촌장"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "altar14",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "맨 처음 이름을 짚는다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_A4_Q01",
+          "화자": "촌장",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d14.json",
+          "정의줄": 1737,
+          "정의위치": "blocks.altar4_q14",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 3027,
+              "라벨": "r13_v111_altar4_q14"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 3038,
+        "라벨": "r13_v111_altar4_proof14"
+      },
+      "되묻기": {
+        "블록": "hearing141_altar_first14",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d14.json",
+        "줄": 3239,
+        "화자": [
+          "아빠",
+          "촌장"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "piko13_stolen",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "장부의 두 배를 실룩에게 보인다",
+      "kind": "statement",
+      "case_when": {
+        "key": "lamp_bound2",
+        "not_equals": true
+      },
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_RO_03",
+          "화자": "실룩",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d13.json",
+          "정의줄": 1572,
+          "정의위치": "blocks.rein_open13",
+          "when": "lamp_stolen",
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 2119,
+              "라벨": "r13_v111_rein13"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 2130,
+        "라벨": "r13_v111_rein_ledger13p"
+      },
+      "되묻기": {
+        "블록": "hearing141_piko_price13",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d13.json",
+        "줄": 2355,
+        "화자": [
+          "아빠",
+          "실룩"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "piko13_stolen",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "피코가 막혀야 했던 까닭을 보인다",
+      "kind": "statement",
+      "case_when": {
+        "key": "lamp_bound2",
+        "not_equals": true
+      },
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_RL_03",
+          "화자": "너울",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d13.json",
+          "정의줄": 1721,
+          "정의위치": "blocks.rein_ledger13",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 2134,
+              "라벨": "r13_v111_rein_ledger13"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 2138,
+        "라벨": "r13_v111_rein_painting13p"
+      },
+      "되묻기": {
+        "블록": "hearing141_piko_painting13",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d13.json",
+        "줄": 2387,
+        "화자": [
+          "아빠",
+          "너울"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "piko13_attempt",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "인수하지 않은 돌의 약속 값을 보인다",
+      "kind": "statement",
+      "case_when": {
+        "key": "lamp_bound2",
+        "equals": true
+      },
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_HEARING141_REIN_ATTEMPT_CLAIM13",
+          "화자": "실룩",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d13.json",
+          "정의줄": 1580,
+          "정의위치": "blocks.rein_open13",
+          "when": "lamp_attempt",
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 2119,
+              "라벨": "r13_v111_rein13"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 2128,
+        "라벨": "r13_v111_rein_ledger13p"
+      },
+      "되묻기": {
+        "블록": "hearing141_piko_offer13",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d13.json",
+        "줄": 2371,
+        "화자": [
+          "아빠",
+          "실룩"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "piko13_attempt",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-ending.json",
+      "key": "피코가 막혀야 했던 까닭을 보인다",
+      "kind": "statement",
+      "case_when": {
+        "key": "lamp_bound2",
+        "equals": true
+      },
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_RL_03",
+          "화자": "너울",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d13.json",
+          "정의줄": 1721,
+          "정의위치": "blocks.rein_ledger13",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+              "줄": 2134,
+              "라벨": "r13_v111_rein_ledger13"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy",
+        "줄": 2138,
+        "라벨": "r13_v111_rein_painting13p"
+      },
+      "되묻기": {
+        "블록": "hearing141_piko_painting13",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d13.json",
+        "줄": 2387,
+        "화자": [
+          "아빠",
+          "너울"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "room13_hearing",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-late.json",
+      "key": "두 상처와 촛대 파손을 대조한다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "MS14_D10_S02_L0006",
+          "화자": "너울",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+              "줄": 1550,
+              "라벨": "r13_v111_hearing10"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "줄": 1558,
+        "라벨": "r13_v111_wound_proof10"
+      },
+      "되묻기": {
+        "블록": "hearing141_late_wound_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d10.json",
+        "줄": 2540,
+        "화자": [
+          "아빠",
+          "너울"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "room13_hearing",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-late.json",
+      "key": "두 번째 길을 실제 기록으로 보인다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "MS14_D10_S02_L0021",
+          "화자": "너울",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+              "줄": 1572,
+              "라벨": "r13_v111_wound_answer10"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "줄": 1587,
+        "라벨": "r13_v111_passage_proof10"
+      },
+      "되묻기": {
+        "블록": "hearing141_late_passage_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d10.json",
+        "줄": 2556,
+        "화자": [
+          "아빠",
+          "너울"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "room13_hearing",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-late.json",
+      "key": "구리선과 수선 출처를 대조한다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "MS14_D10_S03_L0002",
+          "화자": "할머니",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+              "줄": 1640,
+              "라벨": "r13_v111_owner10"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "줄": 1645,
+        "라벨": "r13_v111_owner_proof10"
+      },
+      "되묻기": {
+        "블록": "hearing141_late_owner_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d10.json",
+        "줄": 2572,
+        "화자": [
+          "아빠",
+          "할머니"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "room13_hearing",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-late.json",
+      "key": "첫 비명 뒤 핀을 다시 채운 때",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "MS14_D10_S03_L0018",
+          "화자": "할머니",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+              "줄": 1673,
+              "라벨": "r13_v111_time10"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "줄": 1680,
+        "라벨": "r13_v111_time_proof10"
+      },
+      "되묻기": {
+        "블록": "hearing141_late_time_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d10.json",
+        "줄": 2588,
+        "화자": [
+          "아빠",
+          "할머니"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "room13_hearing",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-late.json",
+      "key": "접촉면과 아이의 위치를 대조한다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "MS14_D10_S03_L0041",
+          "화자": "할머니",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+              "줄": 1699,
+              "라벨": "r13_v111_time_answer10"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "줄": 1704,
+        "라벨": "r13_v111_contact_proof10"
+      },
+      "되묻기": {
+        "블록": "hearing141_late_contact_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d10.json",
+        "줄": 2604,
+        "화자": [
+          "아빠",
+          "할머니"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "records_handover",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-late.json",
+      "key": "수신인과 가족 전달 권한을 구분한다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "MS14_D10_P01_L0015",
+          "화자": "할머니",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+              "줄": 1840,
+              "라벨": "r13_v111_prevent_hearing10"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "줄": 1847,
+        "라벨": "r13_v111_authority_proof10"
+      },
+      "되묻기": {
+        "블록": "hearing141_late_authority_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d10.json",
+        "줄": 2620,
+        "화자": [
+          "아빠",
+          "할머니"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "records_handover",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-late.json",
+      "key": "반송·필사본·초대 발송을 대조한다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "MS14_D10_P01_L0026",
+          "화자": "할머니",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+              "줄": 1857,
+              "라벨": "r13_v111_authority_answer10"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "줄": 1864,
+        "라벨": "r13_v111_writing_proof10"
+      },
+      "되묻기": {
+        "블록": "hearing141_late_writing_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d10.json",
+        "줄": 2636,
+        "화자": [
+          "아빠",
+          "할머니"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "gate_post",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-mid.json",
+      "key": "밤이 혐의의 근거를 확인한다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "MS14_D05_S03_L0009",
+          "화자": "너울",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days45.rpy",
+              "줄": 489,
+              "라벨": "r13_v111_hearing5"
+            }
+          ]
+        },
+        {
+          "ID": "NW_D05_S03_SL01",
+          "화자": "너울",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d05.json",
+          "정의줄": 1014,
+          "정의위치": "after.MS14_D05_S03_L0009",
+          "when": "bami_cold4",
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days45.rpy",
+              "줄": 489,
+              "라벨": "r13_v111_hearing5"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days45.rpy",
+        "줄": 498,
+        "라벨": "r13_v111_proof5"
+      },
+      "되묻기": {
+        "블록": "hearing141_bami_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d05.json",
+        "줄": 1738,
+        "화자": [
+          "아빠",
+          "너울"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "warning",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-mid.json",
+      "key": "두 편지의 초대를 대조한다",
+      "kind": "question",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_HEARING141_WARNING_QUESTION",
+          "화자": "아빠",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d05.json",
+          "정의줄": 1076,
+          "정의위치": "after.MS14_D05_S04_L0013",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days45.rpy",
+              "줄": 599,
+              "라벨": "r13_v111_warning_read5"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days45.rpy",
+        "줄": 603,
+        "라벨": "r13_v111_warning_compare5"
+      },
+      "되묻기": {
+        "블록": "hearing141_warning_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d05.json",
+        "줄": 1754,
+        "화자": [
+          "다람",
+          "아빠"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "fire_empty",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-mid.json",
+      "key": "불이 시작된 곳과 진술을 대조한다",
+      "kind": "statement",
+      "case_when": {
+        "key": "FIRE_EVACUATED",
+        "equals": true
+      },
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_D07_OR02",
+          "화자": "누비",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d07.json",
+          "정의줄": 2374,
+          "정의위치": "blocks.nubi_lamp_defense7",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+              "줄": 570,
+              "라벨": "r13_v111_nubi_hypothesis7"
+            },
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+              "줄": 623,
+              "라벨": "r13_v111_nubi_first_question7"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "줄": 579,
+        "라벨": "r13_v111_nubi_proof7"
+      },
+      "되묻기": {
+        "블록": "hearing141_fire_origin_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d07.json",
+        "줄": 2734,
+        "화자": [
+          "아빠",
+          "누비"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "fire_empty",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-mid.json",
+      "key": "불의 원인과 빈 창고 진압을 구분한다",
+      "kind": "statement",
+      "case_when": {
+        "key": "FIRE_EVACUATED",
+        "equals": true
+      },
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_HEARING141_FIRE_EMPTY_TARGET",
+          "화자": "너울",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d07.json",
+          "정의줄": 1286,
+          "정의위치": "after.MS14_D07_S02_L0002",
+          "when": "fire_evacuated",
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+              "줄": 674,
+              "라벨": "r13_v111_responsibility7"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "줄": 684,
+        "라벨": "r13_v111_empty_fire_basis7"
+      },
+      "되묻기": {
+        "블록": "hearing141_fire_empty_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d07.json",
+        "줄": 2750,
+        "화자": [
+          "아빠",
+          "너울"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "fire_rescue",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-mid.json",
+      "key": "불이 시작된 곳과 진술을 대조한다",
+      "kind": "statement",
+      "case_when": {
+        "key": "FIRE_EVACUATED",
+        "not_equals": true
+      },
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_D07_OR02",
+          "화자": "누비",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d07.json",
+          "정의줄": 2374,
+          "정의위치": "blocks.nubi_lamp_defense7",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+              "줄": 570,
+              "라벨": "r13_v111_nubi_hypothesis7"
+            },
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+              "줄": 623,
+              "라벨": "r13_v111_nubi_first_question7"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "줄": 579,
+        "라벨": "r13_v111_nubi_proof7"
+      },
+      "되묻기": {
+        "블록": "hearing141_fire_origin_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d07.json",
+        "줄": 2734,
+        "화자": [
+          "아빠",
+          "누비"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "fire_rescue",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing-mid.json",
+      "key": "불의 원인과 아이 구조를 구분한다",
+      "kind": "statement",
+      "case_when": {
+        "key": "FIRE_EVACUATED",
+        "not_equals": true
+      },
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_HEARING141_FIRE_RESCUE_TARGET",
+          "화자": "너울",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d07.json",
+          "정의줄": 1294,
+          "정의위치": "after.MS14_D07_S02_L0002",
+          "when": "fire_not_evacuated",
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+              "줄": 674,
+              "라벨": "r13_v111_responsibility7"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "줄": 688,
+        "라벨": "r13_v111_rescue_fire_basis7"
+      },
+      "되묻기": {
+        "블록": "hearing141_fire_rescue_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d07.json",
+        "줄": 2766,
+        "화자": [
+          "아빠",
+          "너울"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "lamp",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing.json",
+      "key": "수리와 반출을 가릴 자료를 낸다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "MS14_D03_S05_L0002",
+          "화자": "너울",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days123.rpy",
+              "줄": 1211,
+              "라벨": "r13_v111_trial_open"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days123.rpy",
+        "줄": 1218,
+        "라벨": "r13_v111_trial_repair"
+      },
+      "되묻기": {
+        "블록": "hearing140_lamp_repair_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d03.json",
+        "줄": 2536,
+        "화자": [
+          "아빠",
+          "너울"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "lamp",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing.json",
+      "key": "돌과 매입 기록을 낸다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "MS14_D03_S05_L0005",
+          "화자": "너울",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days123.rpy",
+              "줄": 1224,
+              "라벨": "r13_v111_trial_repair_ok"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days123.rpy",
+        "줄": 1229,
+        "라벨": "r13_v111_trial_sale"
+      },
+      "되묻기": {
+        "블록": "hearing140_lamp_sale_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d03.json",
+        "줄": 2552,
+        "화자": [
+          "아빠",
+          "너울"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "lamp",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing.json",
+      "key": "바깥 걸쇠 주장과 발견 위치를 대조한다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "MS14_D03_S05_L0017",
+          "화자": "실룩",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days123.rpy",
+              "줄": 1278,
+              "라벨": "r13_v111_knife_fit140"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days123.rpy",
+        "줄": 1297,
+        "라벨": "r13_v111_trial_latch"
+      },
+      "되묻기": {
+        "블록": "hearing140_lamp_latch_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d03.json",
+        "줄": 2568,
+        "화자": [
+          "아빠",
+          "실룩"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "lamp",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing.json",
+      "key": "마지막 점검과 인수한 돌을 연결한다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "MS14_D03_S05_L0025",
+          "화자": "실룩",
+          "표시여부": true,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days123.rpy",
+              "줄": 1316,
+              "라벨": "r13_v111_trial_latch_ok"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days123.rpy",
+        "줄": 1321,
+        "라벨": "r13_v111_trial_stone"
+      },
+      "되묻기": {
+        "블록": "hearing140_lamp_stone_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/d03.json",
+        "줄": 2584,
+        "화자": [
+          "아빠",
+          "실룩"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "lamp_attempt",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing.json",
+      "key": "수리 뒤 새로 생긴 파손을 가린다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_LA_LA_OPEN3_2",
+          "화자": "너울",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/lamp_attempt.json",
+          "정의줄": 236,
+          "정의위치": "blocks.la_open3",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_lamp_attempt.rpy",
+              "줄": 54,
+              "라벨": "r13_lamp_attempt_open3"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_lamp_attempt.rpy",
+        "줄": 59,
+        "라벨": "r13_lamp_attempt_repair3"
+      },
+      "되묻기": {
+        "블록": "hearing140_attempt_repair_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/lamp_attempt.json",
+        "줄": 444,
+        "화자": [
+          "아빠",
+          "너울"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    },
+    {
+      "사건": "lamp_attempt",
+      "메타파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/case-hearing.json",
+      "key": "남아 있는 돌과 칼의 사용을 연결한다",
+      "kind": "statement",
+      "case_when": null,
+      "latest_only": false,
+      "실제선행발화": [
+        {
+          "ID": "NW_LA_LA_REPAIR_OK3_2",
+          "화자": "실룩",
+          "정의파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/lamp_attempt.json",
+          "정의줄": 257,
+          "정의위치": "blocks.la_repair_ok3",
+          "when": null,
+          "실제호출": [
+            {
+              "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_lamp_attempt.rpy",
+              "줄": 63,
+              "라벨": "r13_lamp_attempt_repair_ok3"
+            }
+          ]
+        }
+      ],
+      "proof호출": {
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/room13_lamp_attempt.rpy",
+        "줄": 76,
+        "라벨": "r13_lamp_attempt_final3"
+      },
+      "되묻기": {
+        "블록": "hearing140_attempt_knife_press",
+        "파일": "/workspace/daaegame/experiments/renpy-ch1/game/v111/newworld/lamp_attempt.json",
+        "줄": 460,
+        "화자": [
+          "아빠",
+          "실룩"
+        ]
+      },
+      "읽기검토": "해당 실제 호출 흐름에서 선행 발화 후 proof로 이동. 새 되묻기는 기존 발언의 관찰·주장 범위만 재확인. 문서 이름으로 정답 조합이나 미확인 범인·사인 결론을 미리 말하지 않음."
+    }
+  ],
+  "메타해시": {
+    "case-hearing-early.json": "006d03cee37e7e6c05dfaa83b1be55ad1a23b3c2d73ebcfc9e8b755adcdab7d9",
+    "case-hearing-ending.json": "052919271b9070a403243e4face57ff2c21a1735e68ad45304a525649ea1e3d2",
+    "case-hearing-late.json": "bd6c0e2233d15035e1c57995344bb339fce5586c5e76be48c286a78994da06fb",
+    "case-hearing-mid.json": "31b65b6dafb387385e729a70e90af098be1d8e39cb6a3600fa0cd27b9ceb9d39",
+    "case-hearing.json": "39468ca0ec1cf8515ed5623924fddb7c9040aaa381ee5ac7c213bedd3b945356"
+  },
+  "한계": "실제 들은 줄 완료 캐시가 없으면 해당 대상은 표시되지 않는다. 이번 읽기 검토에서 새 press가 사망·부재 인물을 필수 화자로 추가하는 경로는 찾지 못했다. 이는 임의로 손상한 저장의 모든 조합이나 게임 전체 생사·위치 로직의 무오류를 실행 검증했다는 뜻이 아니다. 실제 SDK·분기 UI 검증은 루트 담당이다."
+}

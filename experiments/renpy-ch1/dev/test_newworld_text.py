@@ -195,8 +195,9 @@ class NewWorldText(Layer):
   # 실제 상대·자료·기응답 상태로 선택하는 조사 반응도 런타임 블록 참조다.
   used|=set(re.findall(r"[\"'](\w+139)[\"']",(ROOT/'game/systems/room13_inquiry_reactions.rpy').read_text()))
   # 실제 들은 발언의 메타가 선택형 문답을 참조한다. 표시 메타에는 판정 자료가 없다.
-  hearing=json.loads((ROOT/'game/v111/case-hearing.json').read_text())
-  used|={stage['press_block'] for case in hearing['cases'].values() for stage in case['stages'] if stage.get('press_block')}
+  for path in (ROOT/'game/v111').glob('case-hearing*.json'):
+   hearing=json.loads(path.read_text())
+   used|={stage['press_block'] for case in hearing['cases'].values() for stage in case['stages'] if stage.get('press_block')}
   used|=set(re.findall(r'"(hearing140_review_\w+)"',(ROOT/'game/room13_v111.rpy').read_text()))
   self.assertEqual(used,set(env['R13_NW_TEXT']['blocks']))
   env['R13_NW_TEXT']['blocks']['qa_block']=[{'id':'NW_QA_1','speaker':None,'text':'보이는 줄'},{'id':'NW_QA_2','speaker':None,'text':'숨는 줄','when':'owl_dead'}]

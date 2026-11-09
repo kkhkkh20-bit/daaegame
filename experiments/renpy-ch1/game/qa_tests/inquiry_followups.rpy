@@ -54,7 +54,10 @@ testcase inquiry139_gate_original_changes_statement:
     pause until screen 'r13_proof_workspace' timeout 20
     pause until eval (qa_pw_read_scope().get('ready')) timeout 10
     assert eval (qa_pw_read_scope()['ctx']['quote']==R13_GATE_APPLICATION_QUOTE and qa_pw_read_scope()['quote_open'] and qa_pw_read_selection([]))
+    assert eval (qa_pw_read_scope()['hearing_row']['target']=='MS14_D01_S03_L0010' and qa_pw_read_scope()['hearing_row']['text']==R13_GATE_APPLICATION_QUOTE)
     screenshot 'gate-updated-statement-proof.png'
+    click id 'r13_pw_submit'
+    pause .3
     click id 'r13_pw_check_E02'
     pause .3
     click id 'r13_pw_check_E03'

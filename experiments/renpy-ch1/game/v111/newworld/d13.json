@@ -1573,7 +1573,16 @@
         "speaker": "실룩",
         "kind": "dialogue",
         "text": "에이, 손 닿는 데서 아무 등이나 고른 거예요.{w=.3}\n돌값이야 어느 등이든 다 같고요.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "lamp_stolen"
+      },
+      {
+        "id": "NW_HEARING141_REIN_ATTEMPT_CLAIM13",
+        "speaker": "실룩",
+        "kind": "dialogue",
+        "text": "에이, 손 닿는 데서 아무 등이나 고른 거예요.{w=.3}\n돌값이야 어느 등이든 다 같고요.",
+        "expression": "neutral",
+        "when": "lamp_attempt"
       }
     ],
     "rein_ledger13": [
@@ -2309,6 +2318,86 @@
         "speaker": null,
         "kind": "narration",
         "text": "바둑이는 여전히 고삐를 쥐고 있다. 눈만 한 번 촌장 쪽으로 갔다가 돌아온다."
+      }
+    ],
+    "hearing141_blanket_mending13": [
+      {
+        "id": "NW_HEARING141_BLANKET_MENDING13_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "모과 씨가 이 담요를 본 게 어젯밤이라는 말씀이죠?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_HEARING141_BLANKET_MENDING13_02",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "네. 모과가 직접 보고 한 말입니다.",
+        "expression": "neutral"
+      }
+    ],
+    "hearing141_blanket_badook13": [
+      {
+        "id": "NW_HEARING141_BLANKET_BADOOK13_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "바둑이 씨가 같은 시간에 함께 있었다는 말씀이죠?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_HEARING141_BLANKET_BADOOK13_02",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "네. 바둑이도 같이 있었습니다.",
+        "expression": "neutral"
+      }
+    ],
+    "hearing141_piko_price13": [
+      {
+        "id": "NW_HEARING141_PIKO_PRICE13_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "어느 등의 돌이든 같은 값을 받았다는 말씀이죠?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_HEARING141_PIKO_PRICE13_02",
+        "speaker": "실룩",
+        "kind": "dialogue",
+        "text": "네. 3번이라고 다를 게 있겠어요?",
+        "expression": "neutral"
+      }
+    ],
+    "hearing141_piko_offer13": [
+      {
+        "id": "NW_HEARING141_PIKO_OFFER13_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "돌을 가져오면 받기로 한 값도 어느 등이든 같았습니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_HEARING141_PIKO_OFFER13_02",
+        "speaker": "실룩",
+        "kind": "dialogue",
+        "text": "그래요. 3번이라고 특별한 값을 약속받은 건 아니에요.",
+        "expression": "neutral"
+      }
+    ],
+    "hearing141_piko_painting13": [
+      {
+        "id": "NW_HEARING141_PIKO_PAINTING13_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "실룩 씨의 말을 믿을 수 없다는 말씀이죠?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_HEARING141_PIKO_PAINTING13_02",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "그 말을 곧바로 사실로 받아들일 수는 없습니다.",
+        "expression": "neutral"
       }
     ]
   },

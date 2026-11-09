@@ -1,0 +1,93 @@
+{
+  "cases": {
+    "gate_post": {
+      "title": "울타리 곁의 목격과 밤이 혐의",
+      "stages": [
+        {
+          "key": "밤이 혐의의 근거를 확인한다",
+          "speaker": "너울",
+          "line_ids": [
+            "MS14_D05_S03_L0009",
+            "NW_D05_S03_SL01"
+          ],
+          "title": "키와 울타리 목격으로 밤이를 지목한 이유",
+          "press_block": "hearing141_bami_press",
+          "kind": "statement"
+        }
+      ]
+    },
+    "warning": {
+      "title": "우리를 부른 편지와 엄마의 경고",
+      "stages": [
+        {
+          "key": "두 편지의 초대를 대조한다",
+          "speaker": "아빠",
+          "line_ids": [
+            "NW_HEARING141_WARNING_QUESTION"
+          ],
+          "title": "우리를 마을로 부른 사람은 누구인가",
+          "press_block": "hearing141_warning_press",
+          "kind": "question"
+        }
+      ]
+    },
+    "fire_empty": {
+      "title": "화재 원인과 빈 창고 진압",
+      "when": {
+        "key": "FIRE_EVACUATED",
+        "equals": true
+      },
+      "stages": [
+        {
+          "key": "불이 시작된 곳과 진술을 대조한다",
+          "speaker": "누비",
+          "line_ids": [
+            "NW_D07_OR02"
+          ],
+          "title": "등잔에서 번졌을 수도 있다는 말",
+          "press_block": "hearing141_fire_origin_press",
+          "kind": "statement"
+        },
+        {
+          "key": "불의 원인과 빈 창고 진압을 구분한다",
+          "speaker": "너울",
+          "line_ids": [
+            "NW_HEARING141_FIRE_EMPTY_TARGET"
+          ],
+          "title": "빈 창고의 불을 끈 일까지 같은 책임인가",
+          "press_block": "hearing141_fire_empty_press",
+          "kind": "statement"
+        }
+      ]
+    },
+    "fire_rescue": {
+      "title": "화재 원인과 아이 구조",
+      "when": {
+        "key": "FIRE_EVACUATED",
+        "not_equals": true
+      },
+      "stages": [
+        {
+          "key": "불이 시작된 곳과 진술을 대조한다",
+          "speaker": "누비",
+          "line_ids": [
+            "NW_D07_OR02"
+          ],
+          "title": "등잔에서 번졌을 수도 있다는 말",
+          "press_block": "hearing141_fire_origin_press",
+          "kind": "statement"
+        },
+        {
+          "key": "불의 원인과 아이 구조를 구분한다",
+          "speaker": "너울",
+          "line_ids": [
+            "NW_HEARING141_FIRE_RESCUE_TARGET"
+          ],
+          "title": "아이들을 데리고 나온 일까지 같은 책임인가",
+          "press_block": "hearing141_fire_rescue_press",
+          "kind": "statement"
+        }
+      ]
+    }
+  }
+}

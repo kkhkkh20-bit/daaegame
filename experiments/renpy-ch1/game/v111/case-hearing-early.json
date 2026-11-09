@@ -1,0 +1,51 @@
+{
+  "cases": {
+    "gate": {
+      "title": "입구의 누락된 이름",
+      "stages": [
+        {
+          "key": "함께 들어갈 근거를 고른다",
+          "speaker": "돌목",
+          "line_ids": [
+            "MS14_D01_S02_L0013",
+            "MS14_D01_S03_L0010"
+          ],
+          "title": "명단에서 빠진 다람의 이름",
+          "press_block": "hearing141_gate_scope_press",
+          "kind": "statement",
+          "latest_only": true
+        }
+      ]
+    },
+    "room_letters": {
+      "title": "방에 남은 글과 초대 편지",
+      "stages": [
+        {
+          "key": "두 편지를 나란히 본다",
+          "speaker": "아빠",
+          "line_ids": [
+            "NW_D01_S05_V03"
+          ],
+          "title": "우리를 부른 글과 방에 남은 글을 함께 읽는다",
+          "press_block": "hearing141_letter_question_press",
+          "kind": "question"
+        }
+      ]
+    },
+    "measurement": {
+      "title": "우박의 측정과 돌을 돌려놓은 일",
+      "stages": [
+        {
+          "key": "측정 종료와 점검 기록을 대조한다",
+          "speaker": "우박",
+          "line_ids": [
+            "MS14_D03_S03_L0017"
+          ],
+          "title": "돌을 다시 넣었다는 우박의 말",
+          "press_block": "hearing141_measurement_return_press",
+          "kind": "statement"
+        }
+      ]
+    }
+  }
+}

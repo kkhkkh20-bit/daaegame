@@ -326,7 +326,7 @@ screen r13_fire_links(claim,key,can_press=False,investigate=False,chances=None):
                 use r13_control("현장 그림",None,Show("r13_pw_picture",key="V111:E06_FIRE"),enabled=ready,width=286,height=56,label_size=small,control_id="r13_fire_site")
         fixed:
             xpos 142 ypos footer_y xysize (230,footer_h)
-            use r13_control("들은 말 읽기",None,Function(r13_fire_links_change,claim,view="words"),enabled=ready,width=230,height=footer_h,label_size=small,control_id="r13_fire_words")
+            use r13_control("들은 말 읽기",None,Return("hearing_open") if any(row["key"]==key for row in r13_case_hearing_rows(key)) else Function(r13_fire_links_change,claim,view="words"),enabled=ready,width=230,height=footer_h,label_size=small,control_id="r13_fire_words")
         fixed:
             xpos 386 ypos footer_y xysize (230,footer_h)
             use r13_control("현장으로" if investigate else "자료 읽기",None,Return("investigate") if investigate else Function(r13_fire_links_change,claim,view="library",field=None,page=0),enabled=ready,width=230,height=footer_h,label_size=small,control_id="r13_fire_investigate")

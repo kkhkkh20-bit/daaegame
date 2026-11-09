@@ -33,7 +33,7 @@ class ProofWorkspacePure(unittest.TestCase):
                 self.assertNotRegex(str(spec.get(field) or ''),r'V111:|E0\d|E06_FIRE')
             self.assertNotIn('correct',spec)
 
-    def test_every_actual_part_one_issue_uses_workspace_but_later_issues_do_not(self):
+    def test_part_one_defaults_and_later_metadata_cover_actual_proof_calls(self):
         paths=['room13_v111_days123.rpy','room13_v111_days45.rpy','room13_lamp_attempt.rpy']
         early='\n'.join((ROOT/'game'/p).read_text() for p in paths)
         middle=(ROOT/'game/room13_v111_days610.rpy').read_text()
@@ -43,6 +43,9 @@ class ProofWorkspacePure(unittest.TestCase):
         later+='\n'+(ROOT/'game/room13_v111_days1114.rpy').read_text()
         self.assertTrue(extract(later))
         self.assertTrue(extract(later).isdisjoint(self.ns['R13_PW_CONTEXT']))
+        import json
+        registered={stage['key'] for path in (ROOT/'game/v111').glob('case-hearing*.json') for case in json.loads(path.read_text())['cases'].values() for stage in case['stages']}
+        self.assertTrue(extract(later)<=registered)
         # 5일 두 편지는 읽기 쌍과 제출 선택을 분리하는 기존 compare 규칙을 쓴다.
         self.assertEqual(self.ns['R13_PW_CONTEXT']['두 편지의 초대를 대조한다']['mode'],'compare')
         for key in extract((ROOT/'game/room13_lamp_attempt.rpy').read_text())|{'밤이 혐의의 근거를 확인한다','두 편지의 초대를 대조한다','불의 원인과 빈 창고 진압을 구분한다','불의 원인과 아이 구조를 구분한다'}:

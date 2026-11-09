@@ -1280,6 +1280,24 @@
         "expression": "neutral",
         "when": "kkomi_alive"
       }
+    ],
+    "MS14_D07_S02_L0002": [
+      {
+        "id": "NW_HEARING141_FIRE_EMPTY_TARGET",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "아이들은 먼저 옮겼고 보리는 빈 창고의 불을 껐다면서요. 그 일까지 나눠 적을 필요는 없습니다. 셋 다 책임이 있으니까요.",
+        "expression": "neutral",
+        "when": "fire_evacuated"
+      },
+      {
+        "id": "NW_HEARING141_FIRE_RESCUE_TARGET",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "보리가 창고에서 아이들을 데리고 나온 건 들었습니다. 그 일까지 나눠 적을 필요는 없습니다. 셋 다 책임이 있으니까요.",
+        "expression": "neutral",
+        "when": "fire_not_evacuated"
+      }
     ]
   },
   "drop": [
@@ -2711,6 +2729,54 @@
         "listener": "누비",
         "listener_expression": "anxious",
         "beat": "press"
+      }
+    ],
+    "hearing141_fire_origin_press": [
+      {
+        "id": "NW_HEARING141_FIRE_ORIGIN_PRESS01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "등잔에서 불이 시작되는 걸 보셨습니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_HEARING141_FIRE_ORIGIN_PRESS02",
+        "speaker": "누비",
+        "kind": "dialogue",
+        "text": "그럴 수도 있다는 거예요. 창고 안에 등잔이 있었으니까.",
+        "expression": "angry"
+      }
+    ],
+    "hearing141_fire_empty_press": [
+      {
+        "id": "NW_HEARING141_FIRE_EMPTY_PRESS01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "보리 씨가 빈 창고의 불을 끈 일도 함께 적겠다는 겁니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_HEARING141_FIRE_EMPTY_PRESS02",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "장작을 가져간 건 보리입니다. 불을 껐다고 그 일을 빼놓을 수는 없습니다.",
+        "expression": "neutral"
+      }
+    ],
+    "hearing141_fire_rescue_press": [
+      {
+        "id": "NW_HEARING141_FIRE_RESCUE_PRESS01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "보리 씨가 아이들을 데리고 나온 일도 같은 잘못으로 적겠다는 겁니까?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_HEARING141_FIRE_RESCUE_PRESS02",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "장작을 가져간 건 보리입니다. 아이들을 꺼냈다고 그 일을 빼놓을 수는 없습니다.",
+        "expression": "neutral"
       }
     ]
   },

@@ -1,0 +1,223 @@
+{
+  "cases": {
+    "hypothesis11": {
+      "title": "아르카와 사람의 변화",
+      "stages": [
+        {
+          "key": "초롱과 피코의 하루를 대조한다",
+          "speaker": "돌목",
+          "line_ids": [
+            "NW_H1_Q_01"
+          ],
+          "title": "매일 돌을 만지는 초롱은 왜 괜찮은가",
+          "press_block": "hearing141_hyp_touch11",
+          "kind": "statement"
+        },
+        {
+          "key": "창고에서 잠자는 사람을 짚는다",
+          "speaker": "백 부인",
+          "line_ids": [
+            "NW_H2_Q_01"
+          ],
+          "title": "돌이 많은 창고와 백 부인의 상태",
+          "press_block": "hearing141_hyp_store11",
+          "kind": "question"
+        },
+        {
+          "key": "요즘 돌이 어디서 오는지 대조한다",
+          "speaker": "판돌",
+          "line_ids": [
+            "NW_H3_Q_01"
+          ],
+          "title": "오래 쓰던 돌이 왜 요즘 문제가 되는가",
+          "press_block": "hearing141_hyp_recent11",
+          "kind": "question"
+        },
+        {
+          "key": "아르카가 없는 아이들과 대조한다",
+          "speaker": "주민",
+          "line_ids": [
+            "NW_H4_Q_01"
+          ],
+          "title": "아이들이 아픈 까닭",
+          "press_block": "hearing141_hyp_children11",
+          "kind": "question"
+        },
+        {
+          "key": "13호 난로의 돌을 내놓는다",
+          "speaker": "선생님",
+          "line_ids": [
+            "NW_H5_Q_01"
+          ],
+          "title": "직접 겪은 변화가 있는가",
+          "press_block": "hearing141_hyp_room11",
+          "kind": "question"
+        }
+      ]
+    },
+    "soup12": {
+      "title": "작은 냄비와 약병",
+      "stages": [
+        {
+          "key": "재사용 설명과 개봉 봉인을 대조한다",
+          "speaker": "선생님",
+          "line_ids": [
+            "MS14_D12_S04_L0020"
+          ],
+          "title": "다 쓴 병에 물을 넣었다는 설명",
+          "press_block": "hearing141_soup_seal12",
+          "kind": "statement"
+        },
+        {
+          "key": "파편·봉인·취급 구간을 함께 제시한다",
+          "speaker": "아빠",
+          "line_ids": [
+            "MS14_D12_S04_L0040",
+            "MS14_D12_S04_L0079"
+          ],
+          "title": "직접 본 구간과 보지 못한 구간",
+          "press_block": "hearing141_soup_handling12",
+          "kind": "question"
+        },
+        {
+          "key": "명단과 흰 그릇을 대조한다",
+          "speaker": "선생님",
+          "line_ids": [
+            "NW_SL_Q_01"
+          ],
+          "title": "작은 냄비는 모두를 위한 것이었나",
+          "press_block": "hearing141_soup_list12",
+          "kind": "statement"
+        }
+      ]
+    },
+    "blanket13": {
+      "title": "판돌에게 전해진 아내의 말",
+      "stages": [
+        {
+          "key": "아내가 봤다는 담요의 시점을 확인한다",
+          "speaker": "촌장",
+          "line_ids": [
+            "MS14_D13_S03_L0017"
+          ],
+          "title": "모과가 수선 자리를 봤다는 시점",
+          "press_block": "hearing141_blanket_mending13",
+          "kind": "statement"
+        },
+        {
+          "key": "촌장이 어젯밤 있던 곳을 확인한다",
+          "speaker": "촌장",
+          "line_ids": [
+            "NW_BQ_03"
+          ],
+          "title": "바둑이도 함께 있었다는 말",
+          "press_block": "hearing141_blanket_badook13",
+          "kind": "statement"
+        }
+      ]
+    },
+    "altar14": {
+      "title": "마을을 버티게 한다는 주장",
+      "stages": [
+        {
+          "key": "희생의 숫자와 장부를 대조한다",
+          "speaker": "촌장",
+          "line_ids": [
+            "NW_A1_Q02"
+          ],
+          "title": "한 사람을 보내면 열흘을 버틴다는 수",
+          "press_block": "hearing141_altar_number14",
+          "kind": "statement"
+        },
+        {
+          "key": "아르카가 부른다는 말과 옛 기록을 대조한다",
+          "speaker": "촌장",
+          "line_ids": [
+            "NW_A2_Q01"
+          ],
+          "title": "부름을 받았으니 가야 한다는 말",
+          "press_block": "hearing141_altar_call14",
+          "kind": "statement"
+        },
+        {
+          "key": "쇠가 언제 붙었는지 보인다",
+          "speaker": "촌장",
+          "line_ids": [
+            "NW_A3_Q01"
+          ],
+          "title": "쇠도 할아버지 때부터 그대로였나",
+          "press_block": "hearing141_altar_iron14",
+          "kind": "statement"
+        },
+        {
+          "key": "맨 처음 이름을 짚는다",
+          "speaker": "촌장",
+          "line_ids": [
+            "NW_A4_Q01"
+          ],
+          "title": "처음부터 같은 방식이었다는 말",
+          "press_block": "hearing141_altar_first14",
+          "kind": "statement"
+        }
+      ]
+    },
+    "piko13_stolen": {
+      "title": "3번 등을 고른 이유",
+      "when": {
+        "key": "lamp_bound2",
+        "not_equals": true
+      },
+      "stages": [
+        {
+          "key": "장부의 두 배를 실룩에게 보인다",
+          "speaker": "실룩",
+          "line_ids": [
+            "NW_RO_03"
+          ],
+          "title": "어느 등의 돌이든 같은 값이라는 말",
+          "press_block": "hearing141_piko_price13",
+          "kind": "statement"
+        },
+        {
+          "key": "피코가 막혀야 했던 까닭을 보인다",
+          "speaker": "너울",
+          "line_ids": [
+            "NW_RL_03"
+          ],
+          "title": "실룩의 진술을 믿을 수 없다는 반응",
+          "press_block": "hearing141_piko_painting13",
+          "kind": "statement"
+        }
+      ]
+    },
+    "piko13_attempt": {
+      "title": "3번 등을 고른 이유",
+      "when": {
+        "key": "lamp_bound2",
+        "equals": true
+      },
+      "stages": [
+        {
+          "key": "인수하지 않은 돌의 약속 값을 보인다",
+          "speaker": "실룩",
+          "line_ids": [
+            "NW_HEARING141_REIN_ATTEMPT_CLAIM13"
+          ],
+          "title": "가져오면 받을 값도 같았나",
+          "press_block": "hearing141_piko_offer13",
+          "kind": "statement"
+        },
+        {
+          "key": "피코가 막혀야 했던 까닭을 보인다",
+          "speaker": "너울",
+          "line_ids": [
+            "NW_RL_03"
+          ],
+          "title": "실룩의 진술을 믿을 수 없다는 반응",
+          "press_block": "hearing141_piko_painting13",
+          "kind": "statement"
+        }
+      ]
+    }
+  }
+}

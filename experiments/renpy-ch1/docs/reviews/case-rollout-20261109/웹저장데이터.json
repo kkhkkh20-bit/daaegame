@@ -1,0 +1,120 @@
+{
+  "before": {
+    "version": "0.20.141",
+    "exception": false,
+    "hearing": {
+      "hearing:heard:MS14_D01_S02_L0013": {
+        "speaker": "guard",
+        "text": "명단에는 다돌 씨 이름만 있습니다.{w=.3} 다람 이름이 없으니 아이는 들여보낼 수 없습니다."
+      },
+      "hearing:heard:MS14_D10_S02_L0006": {
+        "speaker": "neoul",
+        "text": "손목을 쳤으면 머리도 쳤겠지. 촛대는 아이 손에 있었으니."
+      },
+      "hearing:heard:MS14_D10_S02_L0021": {
+        "speaker": "neoul",
+        "text": "그래 봐야 그 문으론 아무도 안 들어갔소. 그렇지 않소?"
+      },
+      "hearing:heard:MS14_D10_S03_L0002": {
+        "speaker": "granny",
+        "text": "아이고, 그 흔한 걸요? 나도 쓰고 나비도 써요.\n시장에서 한 줌씩 파는 걸."
+      },
+      "hearing:heard:MS14_D10_S03_L0018": {
+        "speaker": "granny",
+        "text": "낮에요.{w=.3} 그 방 치울 때.\n그 노인이 주워 놨을 수도 있고요."
+      },
+      "hearing:heard:MS14_D10_S03_L0041": {
+        "speaker": "granny",
+        "text": "이미 쓰러져 있었어요. 촛대가 발에 걸릴까 봐 집었죠.\n핀은……{w=.4} 그때 걸렸나 보죠."
+      }
+    },
+    "arguments": {
+      "v111:접촉면과 아이의 위치를 대조한다": [
+        "V111:E08_CONTACT_ASSEMBLY",
+        "V111:E08_WOUND_WIRE"
+      ]
+    },
+    "view": "list",
+    "rows": [
+      {
+        "key": "두 상처와 촛대 파손을 대조한다",
+        "target": "MS14_D10_S02_L0006",
+        "title": "아이 손의 촛대와 머리 상처",
+        "kind": "statement",
+        "speaker": "neoul",
+        "text": "손목을 쳤으면 머리도 쳤겠지. 촛대는 아이 손에 있었으니."
+      },
+      {
+        "key": "두 번째 길을 실제 기록으로 보인다",
+        "target": "MS14_D10_S02_L0021",
+        "title": "문이 열리기 전의 출입",
+        "kind": "statement",
+        "speaker": "neoul",
+        "text": "그래 봐야 그 문으론 아무도 안 들어갔소. 그렇지 않소?"
+      },
+      {
+        "key": "구리선과 수선 출처를 대조한다",
+        "target": "MS14_D10_S03_L0002",
+        "title": "흔한 종류라는 핀",
+        "kind": "statement",
+        "speaker": "granny",
+        "text": "아이고, 그 흔한 걸요? 나도 쓰고 나비도 써요.\n시장에서 한 줌씩 파는 걸."
+      },
+      {
+        "key": "첫 비명 뒤 핀을 다시 채운 때",
+        "target": "MS14_D10_S03_L0018",
+        "title": "핀을 떨어뜨렸다는 때",
+        "kind": "statement",
+        "speaker": "granny",
+        "text": "낮에요.{w=.3} 그 방 치울 때.\n그 노인이 주워 놨을 수도 있고요."
+      },
+      {
+        "key": "접촉면과 아이의 위치를 대조한다",
+        "target": "MS14_D10_S03_L0041",
+        "title": "쓰러진 뒤 촛대를 집었다는 설명",
+        "kind": "statement",
+        "speaker": "granny",
+        "text": "이미 쓰러져 있었어요. 촛대가 발에 걸릴까 봐 집었죠.\n핀은……{w=.4} 그때 걸렸나 보죠."
+      }
+    ]
+  },
+  "after": {
+    "version": "0.20.141",
+    "exception": false,
+    "hearing": {
+      "hearing:heard:MS14_D01_S02_L0013": {
+        "speaker": "guard",
+        "text": "명단에는 다돌 씨 이름만 있습니다.{w=.3} 다람 이름이 없으니 아이는 들여보낼 수 없습니다."
+      },
+      "hearing:heard:MS14_D10_S02_L0006": {
+        "speaker": "neoul",
+        "text": "손목을 쳤으면 머리도 쳤겠지. 촛대는 아이 손에 있었으니."
+      },
+      "hearing:heard:MS14_D10_S02_L0021": {
+        "speaker": "neoul",
+        "text": "그래 봐야 그 문으론 아무도 안 들어갔소. 그렇지 않소?"
+      },
+      "hearing:heard:MS14_D10_S03_L0002": {
+        "speaker": "granny",
+        "text": "아이고, 그 흔한 걸요? 나도 쓰고 나비도 써요.\n시장에서 한 줌씩 파는 걸."
+      },
+      "hearing:heard:MS14_D10_S03_L0018": {
+        "speaker": "granny",
+        "text": "낮에요.{w=.3} 그 방 치울 때.\n그 노인이 주워 놨을 수도 있고요."
+      },
+      "hearing:heard:MS14_D10_S03_L0041": {
+        "speaker": "granny",
+        "text": "이미 쓰러져 있었어요. 촛대가 발에 걸릴까 봐 집었죠.\n핀은……{w=.4} 그때 걸렸나 보죠."
+      }
+    },
+    "arguments": {
+      "v111:접촉면과 아이의 위치를 대조한다": [
+        "V111:E08_CONTACT_ASSEMBLY",
+        "V111:E08_WOUND_WIRE"
+      ]
+    },
+    "view": null,
+    "rows": null
+  },
+  "equal": true
+}
