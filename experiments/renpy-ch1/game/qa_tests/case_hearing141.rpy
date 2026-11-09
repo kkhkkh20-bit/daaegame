@@ -66,6 +66,9 @@ init python:
         assert screen['hearing_kind']==item['kind']
         assert screen['hearing_rows'] and any(r['key']==item['key'] for r in screen['hearing_rows'])
         assert r13_case_hearing_spec(item['key'])
+        if screen['mode']=='compare':assert screen['view']=='pair'
+        elif len(screen['hearing_rows'])==1:assert screen['view']=='list' and screen['quote_open']
+        else:assert screen['view']=='statements'
 
 label qa_hearing141_sequence:
     if qa_hearing141_index>=len(qa_hearing141_plan):
@@ -105,7 +108,8 @@ testcase hearing141_early:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -123,7 +127,8 @@ testcase hearing141_early:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -143,7 +148,8 @@ testcase hearing141_early:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -161,7 +167,8 @@ testcase hearing141_early:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -180,7 +187,8 @@ testcase hearing141_early:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -211,7 +219,8 @@ testcase hearing141_late:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -229,7 +238,8 @@ testcase hearing141_late:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -247,7 +257,8 @@ testcase hearing141_late:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -265,7 +276,8 @@ testcase hearing141_late:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -300,7 +312,8 @@ testcase hearing141_late:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -318,7 +331,8 @@ testcase hearing141_late:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -337,7 +351,8 @@ testcase hearing141_late:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -366,7 +381,8 @@ testcase hearing141_end_a:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -384,7 +400,8 @@ testcase hearing141_end_a:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -402,7 +419,8 @@ testcase hearing141_end_a:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -420,7 +438,8 @@ testcase hearing141_end_a:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -438,7 +457,8 @@ testcase hearing141_end_a:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -456,7 +476,8 @@ testcase hearing141_end_a:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -474,7 +495,8 @@ testcase hearing141_end_a:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -493,7 +515,8 @@ testcase hearing141_end_a:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -522,7 +545,8 @@ testcase hearing141_end_b:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -540,7 +564,8 @@ testcase hearing141_end_b:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -558,7 +583,8 @@ testcase hearing141_end_b:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -576,7 +602,8 @@ testcase hearing141_end_b:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -594,7 +621,8 @@ testcase hearing141_end_b:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -612,7 +640,8 @@ testcase hearing141_end_b:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -630,7 +659,8 @@ testcase hearing141_end_b:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -648,7 +678,8 @@ testcase hearing141_end_b:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -666,7 +697,8 @@ testcase hearing141_end_b:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2
@@ -685,7 +717,8 @@ testcase hearing141_end_b:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .3
     assert eval (qa_hearing141_domain()==qa_hearing141_before)
-    click id "r13_pw_submit"
+    if eval (qa_hearing141_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .2
     run Function(qa_hearing141_selection)
     pause .2

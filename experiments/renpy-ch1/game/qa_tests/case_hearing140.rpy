@@ -30,7 +30,7 @@ testcase hearing140_lamp_complete:
     run Jump("r13_v111_trial_open")
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .5
-    assert eval (qa_pw_read_scope()["view"]=="statements" and len(qa_hearing140_rows())==1)
+    assert eval (qa_pw_read_scope()["view"]=="list" and qa_pw_read_scope()["quote_open"] and len(qa_hearing140_rows())==1)
     assert eval (qa_hearing140_rows()[0]["text"]==r13_v111_line("MS14_D03_S05_L0002")[1])
     assert eval (not r13_case_hearing_quote("MS14_D03_S05_L0017"))
     screenshot "hearing140-01-first-statement.png"
@@ -39,7 +39,8 @@ testcase hearing140_lamp_complete:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .5
     assert eval (qa_pw_read_domain()==qa140_before)
-    click id "r13_pw_submit"
+    if eval (qa_pw_read_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .3
     assert eval (qa_pw_read_scope()["view"]=="list" and qa_pw_read_scope()["tab"]=="now")
     click id "r13_pw_tab_now"
@@ -67,7 +68,8 @@ testcase hearing140_lamp_complete:
     assert eval (len(qa_hearing140_rows())==2 and key=="돌과 매입 기록을 낸다")
     # 이미 확인한 발언에 맞는 자료를 다시 제시해도 현재 쟁점 자동승리·기회차감은 없다.
     click id "r13_hearing_target_MS14_D03_S05_L0002"
-    click id "r13_pw_submit"
+    if eval (qa_pw_read_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .3
     click id "r13_pw_tab_now"
     pause .2
@@ -113,7 +115,8 @@ testcase hearing140_lamp_complete:
     pause .2
     click id "r13_pw_single"
     click id "r13_hearing_target_MS14_D03_S05_L0005"
-    click id "r13_pw_submit"
+    if eval (qa_pw_read_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .3
     click id "r13_pw_tab_now"
     pause .2
@@ -132,6 +135,7 @@ testcase hearing140_lamp_complete:
     click "칼끝과 안쪽 조각을 맞춰 본다"
     click pos (900,600) until screen "r13_case_inspect" timeout 60
     pause .4
+    assert eval (not qa_nw_seen("깨진 자리까지 똑같은 칼"))
     $ qa140_before=qa_pw_read_domain()
     click id "r13_case_inspect_handle"
     pause .3
@@ -143,6 +147,7 @@ testcase hearing140_lamp_complete:
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .5
     assert eval (r13_v111_owned("E33") and r13_v111_owned("E17") and len(qa_hearing140_rows())==3)
+    assert eval (qa_nw_seen("깨진 자리까지 똑같은 칼"))
     $ qa140_before=qa_pw_read_domain()
     click id "r13_hearing_inspect"
     pause .4
@@ -155,7 +160,8 @@ testcase hearing140_lamp_complete:
     click id "r13_case_inspect_close"
     pause .4
     assert eval (qa_pw_read_domain()==qa140_before)
-    click id "r13_pw_submit"
+    if eval (qa_pw_read_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .3
     click id "r13_pw_tab_now"
     pause .2
@@ -180,7 +186,8 @@ testcase hearing140_lamp_complete:
     pause .5
     assert eval (len(qa_hearing140_rows())==4 and key=="마지막 점검과 인수한 돌을 연결한다")
     screenshot "hearing140-06-last-explanation.png"
-    click id "r13_pw_submit"
+    if eval (qa_pw_read_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .3
     click id "r13_pw_tab_now"
     pause .2
@@ -216,13 +223,14 @@ testcase hearing140_attempt_and_save_touch:
     run Jump("r13_lamp_attempt_open3")
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .5
-    assert eval (qa_pw_read_scope()["view"]=="statements" and len(qa_hearing140_rows())==1)
+    assert eval (qa_pw_read_scope()["view"]=="list" and qa_pw_read_scope()["quote_open"] and len(qa_hearing140_rows())==1)
     assert eval (qa_hearing140_rows()[0]["target"]=="NW_LA_LA_OPEN3_2" and not r13_case_hearing_quote("MS14_D03_S05_L0002"))
     screenshot "hearing140-08-attempt-touch.png"
     click id "r13_pw_press"
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .5
-    click id "r13_pw_submit"
+    if eval (qa_pw_read_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .3
     click id "r13_pw_tab_now"
     pause .2
@@ -245,7 +253,8 @@ testcase hearing140_attempt_and_save_touch:
     pause .5
     assert eval (len(qa_hearing140_rows())==2 and key=="남아 있는 돌과 칼의 사용을 연결한다")
     screenshot "hearing140-09-attempt-second-touch.png"
-    click id "r13_pw_submit"
+    if eval (qa_pw_read_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .3
     click id "r13_pw_tab_now"
     pause .2
@@ -279,7 +288,8 @@ testcase hearing140_wrong_and_skipped_statement:
     run Jump("r13_v111_trial_open")
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     pause .5
-    click id "r13_pw_submit"
+    if eval (qa_pw_read_scope()["view"]=="statements"):
+        click id "r13_pw_submit"
     pause .3
     click id "r13_pw_check_E14"
     $ qa140_tries=r13_v111_value("tries:lamp") or 0

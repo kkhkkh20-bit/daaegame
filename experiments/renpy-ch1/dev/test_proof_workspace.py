@@ -142,6 +142,59 @@ class ProofWorkspacePure(unittest.TestCase):
         self.assertFalse(ok([],'proof'));self.assertTrue(ok(['a'],'proof'));self.assertTrue(ok(['a','b','c'],'proof'))
         self.assertFalse(ok([],'compare'));self.assertFalse(ok(['a'],'compare'));self.assertTrue(ok(['a','b'],'compare'));self.assertFalse(ok(['a','b','c'],'compare'))
 
+    def test_single_heard_statement_starts_with_materials_and_keeps_rereading_available(self):
+        view=self.ns['r13_pw_initial_view']
+        self.assertEqual(view('proof',1),'list')
+        self.assertEqual(view('proof',2),'statements')
+        self.assertEqual(view('proof',5),'statements')
+        self.assertEqual(view('proof',0),'list')
+        # 읽기 전용 화재와 문서 비교는 한 발언이라는 이유로 화면을 바꾸지 않는다.
+        self.assertEqual(view('proof',1,hearing_only=True),'statements')
+        self.assertEqual(view('compare',1,pair=('a','b')),'pair')
+        self.assertEqual(view('compare',1),'list')
+        # 플레이어가 직접 열고 저장한 방식은 다시 진입해도 보존한다.
+        for saved in ('statements','list','single','pair'):
+            self.assertEqual(view('proof',1,remembered=saved),saved)
+        source=SRC.read_text()
+        self.assertIn('default quote_open=remembered.get("quote_open",bool(hearing_rows) and mode!="compare")',source)
+        self.assertIn('SetScreenVariable("view","statements")',source)
+        self.assertIn('Return(("hearing_press",hearing_target))',source)
+        self.assertIn('bool(chosen) if hearing_row and mode!="compare"',source)
+
+    def test_statement_rows_allow_two_lines_without_changing_pc_or_touch_page_counts(self):
+        geometry=self.ns['r13_pw_hearing_geometry']
+        for touch,count,height in ((False,4,72),(True,3,88)):
+            row=geometry(touch)
+            self.assertEqual(row['per_page'],count)
+            self.assertEqual(row['height'],height)
+            self.assertEqual((5+row['per_page']-1)//row['per_page'],2)
+            self.assertLessEqual(40+count*row['height']+(count-1)*row['gap'],352)
+
+    def test_selected_material_collection_does_not_reserve_space_or_submit_evidence(self):
+        source=SRC.read_text()
+        screen=source.split('screen r13_pw_selected_materials(',1)[1].split('\nscreen ',1)[0]
+        self.assertIn('room13.get("arguments",{}).get(claim,[])',screen)
+        self.assertIn('if k in owned',screen)
+        self.assertIn('use r13_pw_card(',screen)
+        self.assertIn('close_on_open="r13_pw_selected_materials"',screen)
+        self.assertIn('Hide("r13_pw_selected_materials")',screen)
+        for name in ('r13_pw_set_arguments(', 'end_interaction(', 'Return("argue")'):
+            self.assertNotIn(name,screen)
+        workspace=source.split('screen r13_proof_workspace(',1)[1]
+        self.assertIn('Show("r13_pw_selected_materials",claim=claim,mode=mode)',workspace)
+        self.assertIn('xpos 324 ypos L["footer_y"]',workspace)
+        # 자료 목록의 높이·열 수 계산을 바꾸지 않아 기존 쪽 수를 유지한다.
+        self.assertIn('list_h=L["body_h"]-L["tab_h"]-8-tip_h',workspace)
+        self.assertIn('pages=r13_pw_pages(sections,L["cols"],list_h,L["card_h"],small+6,8,0)',workspace)
+
+    def test_fire_readonly_workspace_has_one_named_return_action(self):
+        source=SRC.read_text().split('screen r13_proof_workspace(',1)[1]
+        header=source.split('    text context_text',1)[0]
+        self.assertIn('if not hearing_only:',header)
+        self.assertNotIn('"연결판으로"',header)
+        self.assertEqual(source.count('"연결판으로"'),1)
+        self.assertIn('close_action=(Return("hearing_resume") if hearing_only else review_action)',source)
+
     def test_first_letter_comparison_can_review_even_without_legacy_return_argument(self):
         target=self.ns['r13_pw_review_target']
         self.assertEqual(target('두 편지를 나란히 본다',None),'r13_v111_letter_compare_review')

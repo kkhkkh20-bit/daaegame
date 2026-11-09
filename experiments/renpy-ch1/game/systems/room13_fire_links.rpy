@@ -357,7 +357,7 @@ screen r13_fire_links(claim,key,can_press=False,investigate=False,chances=None):
                     add Solid("#c9a86a99") xsize 1000 ysize 1
                 if "witness" in row["observations"] and r13_v111_value("bori_nubi_door_witness_heard") is True:
                     text "보리에게 들은 말" size r13_type("subtitle") color ink font R13_UI_BOLD_FONT
-                    text "불이 번지기 전에 누비 씨가 창고 문 앞에 서 있는 건 봤소." size r13_type("emphasis") color ink font R13_UI_FONT xsize 1000
+                    text "불이 번지기 전에 누비 씨가 창고 문 앞에 서 있는 건 봤어요." size r13_type("emphasis") color ink font R13_UI_FONT xsize 1000
                 if not chosen:
                     text "제출할 자료가 없습니다. 연결한 관찰과 출처를 다시 확인하세요." size r13_type("emphasis") color ink font R13_UI_FONT xsize 1000
         if row["notice"]:
@@ -430,7 +430,7 @@ screen r13_fire_links(claim,key,can_press=False,investigate=False,chances=None):
                 xsize 1020 spacing 26
                 if r13_v111_value("bori_nubi_door_witness_heard") is True:
                     text "보리에게 들은 말" size r13_type("subtitle") color ink font R13_UI_BOLD_FONT
-                    text "불이 번지기 전에 누비 씨가 창고 문 앞에 서 있는 건 봤소." size r13_type("emphasis") color ink font R13_UI_FONT xsize 1020
+                    text "불이 번지기 전에 누비 씨가 창고 문 앞에 서 있는 건 봤어요." size r13_type("emphasis") color ink font R13_UI_FONT xsize 1020
                 if r13_v111_value("fire_lamp_defense_heard") is True:
                     text "누비에게 들은 말" size r13_type("subtitle") color ink font R13_UI_BOLD_FONT
                     text "창고 안에 등잔 있었잖아요. 거기서 불이 번졌을 수도 있죠. 제가 거기 있었다고 불을 놓은 건 아니에요." size r13_type("emphasis") color ink font R13_UI_FONT xsize 1020

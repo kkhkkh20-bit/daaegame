@@ -1,0 +1,134 @@
+{
+  "검토자": "visual141_review",
+  "대상": "0.20.142 수정",
+  "상태": "독립검수 완료",
+  "수행범위": "기존 0.20.141 대표 캡처8장을 view_image로 직접 확인. 제품코드 수정·SDK·빌드·브라우저 실행 없음.",
+  "기준캡처": [
+    "/workspace/daaegame/experiments/renpy-ch1/docs/reviews/case-rollout-20261109/01-입구.png",
+    "/workspace/daaegame/experiments/renpy-ch1/docs/reviews/case-rollout-20261109/02-긴회의-PC.png",
+    "/workspace/daaegame/experiments/renpy-ch1/docs/reviews/case-rollout-20261109/03-긴회의-터치.png",
+    "/workspace/daaegame/experiments/renpy-ch1/docs/reviews/case-rollout-20261109/04-수프.png",
+    "/workspace/daaegame/experiments/renpy-ch1/docs/reviews/case-rollout-20261109/05-화재-빈창고.png",
+    "/workspace/daaegame/experiments/renpy-ch1/docs/reviews/case-rollout-20261109/06-화재-구조.png",
+    "/workspace/daaegame/experiments/renpy-ch1/docs/reviews/case-rollout-20261109/07-웹후반저장-휴대폰.png",
+    "/workspace/daaegame/experiments/renpy-ch1/docs/reviews/case-rollout-20261109/08-웹편지-휴대폰.png"
+  ],
+  "재검수기준": [
+    "긴 발언 제목이 두 줄일 때 테두리에 붙거나 행 밖으로 나오지 않는다.",
+    "PC·터치에서 발언 항목과 인용 본문·하단 행동이 겹치지 않는다.",
+    "페이지 밖에서 고른 증거도 제출 전 이름을 재확인할 수 있다.",
+    "화재 들은말 읽기에서 연결판 복귀의 중복이 줄고 실제 복귀수단은 남는다.",
+    "발언0개·자료0개·긴제목·큰글씨에서도 버튼 잘림이 없다.",
+    "기존 편지 두 원문과 다람과 이야기 버튼은 가려지지 않는다.",
+    "별도 선택모아보기 조작이 추가되면 현재페이지/되묻기/제시 버튼과 구별된다."
+  ],
+  "현재판정": "수정된 공통UI diff 및 SDK9장·웹4장을 직접확인했다. 원래 시각지적 V01/V02/V03 해결을 해당화면에서확인했으며 새잘림·가림을발견하지못했다.",
+  "결과": [
+    {
+      "원지적": "V01 긴발언행 여백",
+      "판정": "해결확인",
+      "증거": "SDK누비긴두줄행, PC4행, 터치2행캡처"
+    },
+    {
+      "원지적": "V02 타페이지 선택자료 이름 확인",
+      "판정": "해결확인",
+      "증거": "웹PC·휴대폰 선택한자료모아보기에서 서로다른페이지의자료2개이름동시표시"
+    },
+    {
+      "원지적": "V03 화재복귀 중복",
+      "판정": "해결확인",
+      "증거": "SDK화재들은말캡처의상단복귀제거·하단복귀/X유지"
+    }
+  ],
+  "소스검토": {
+    "파일": "game/systems/room13_proof_workspace.rpy",
+    "확인": [
+      "한발언 기본시작은 list지만 기억한 view, 문서compare, 화재hearing_only는 보존한다.",
+      "selected modal은 기존 arguments를 읽고 기존 checkbox toggle을 사용한다. 별도 제출/판정 호출은 없다.",
+      "선택자료 이름은 모달Hide 뒤 기존 r13_pw_open_detail로 읽는다. 원래 선택묶음을 자동으로 바꾸지 않는다.",
+      "주화면 capture callback과 arguments 저장 경로는 보존된다. 선택모달 페이지 자체는 새로 열 때0쪽으로 시작한다.",
+      "화재 hearing_only의 상단 연결판복귀만 제거됐으며 우하단복귀·닫기X는 남는다.",
+      "PC4행72 높이에서 한줄쟁점의 행마지막끝은 약540, 하단버튼은약572라 겹침없다. 터치3행88은 마지막끝520, 하단548로 겹침없다. 실제렌더는후속캡처로확인필요."
+    ],
+    "확정새결함": 0,
+    "미검증": [
+      "모달열린상태 저장/불러오기 실제루트",
+      "긴발언·큰글씨에서 행내글자 렌더",
+      "선택모아보기3개·0개·다중페이지 실제배치",
+      "실제UI명령숨김순서/터치입력"
+    ]
+  },
+  "SDK1차": {
+    "캡처": [
+      "/workspace/work/fix142/native/inquiry139_gate_original_changes_statement/gate-updated-statement-proof.png",
+      "/workspace/work/fix142/native/hearing140_lamp_complete/hearing140-01-first-statement.png",
+      "/workspace/work/fix142/native/hearing140_lamp_complete/hearing140-02-evidence-and-statement.png",
+      "/workspace/work/fix142/native/hearing140_lamp_complete/hearing140-03-knife-fracture.png",
+      "/workspace/work/fix142/native/hearing140_lamp_complete/hearing140-06-last-explanation.png"
+    ],
+    "직접확인": [
+      "입구와첫3일회의에서 한발언은 인용문을보이며 자료목록으로바로열린다. 발언다시읽기·되묻기 조작이남아있다.",
+      "3장선택모아보기두줄버튼이 하단칸안에들어간다.",
+      "4발언PC화면은 마지막행·우측본문·하단버튼이 서로겹치지 않는다.",
+      "칼조사그림·관찰글·확인버튼이 수첩안에보이고 가림없다."
+    ],
+    "확정새잘림": 0,
+    "범위한계": "모달열기·체크해제·저장·실제후속판정은 이정지캡처만으로검증하지않음"
+  },
+  "SDK2차": {
+    "캡처": [
+      "/workspace/work/fix142/native/hearing141_fire_bridge/hearing141-fire-origin-words.png",
+      "/workspace/work/fix142/native/fire7_hypothesis_rebut_and_submit/fire7_evidence.png",
+      "/workspace/work/fix142/native/hearing140_attempt_and_save_touch/hearing140-08-attempt-touch.png",
+      "/workspace/work/fix142/native/hearing140_attempt_and_save_touch/hearing140-09-attempt-second-touch.png"
+    ],
+    "직접확인": [
+      "누비의 긴 두줄발언 행은 .141보다 높아져 행테두리와 글자사이에 상하여백이 보인다. V01 해결을 이캡처에서 확인한다.",
+      "화재 들은말화면의 상단 연결판으로가 없어지고 우하단 연결판으로와 닫기X는 남아있다. V03 해결을 확인한다.",
+      "화재연결판은 증거획득알림이 올라오지 않아 우상단 관찰·질문·행동을 가리지 않는다.",
+      "터치 1발언은 인용문·자료목록으로시작하며 발언다시읽기·되묻기가남아있다.",
+      "터치 2발언목록의 두줄행·긴인용문·하단버튼은 겹치거나화면밖으로나오지 않는다."
+    ],
+    "확정새잘림": 0
+  },
+  "웹검토": {
+    "직접본캡처": [
+      "/workspace/work/fix142/web/02-선택자료모아보기-PC.png",
+      "/workspace/work/fix142/web/02-선택자료모아보기-휴대폰.png",
+      "/workspace/work/fix142/web/03-선택해제뒤원화면-PC.png",
+      "/workspace/work/fix142/web/04-단일발언바로자료읽기-휴대폰.png"
+    ],
+    "직접확인": [
+      "원목록의 서로다른페이지에서선택한 접힌천·닫힌핀·고리와 상처가장자리구리파편의 이름2개가 PC·휴대폰모아보기한화면에동시에보인다. V02해결확인.",
+      "선택모아보기의 체크·그림·이름·닫기X·돌아가기·선택개수는수첩틀안에있고다른조작을가리지않는다.",
+      "체크해제후원화면에는1장선택이표시되며 선택모아보기버튼·읽던자료본문·되묻기·제시버튼이겹치지않는다.",
+      "단일발언모바일자료목록은 발언인용·목록·되묻기·상단다시읽기가모두보인다."
+    ],
+    "기록대조": {
+      "version": "0.20.142",
+      "old141_save_loaded": true,
+      "save_reload_equal": true,
+      "selected_names": [
+        "V111:E08_CONTACT_ASSEMBLY",
+        "V111:E08_WOUND_WIRE"
+      ],
+      "read_kept_selection": true,
+      "remove_kept_other_selection": true,
+      "single_view": {
+        "view": "list",
+        "quote": true,
+        "rows": 1,
+        "submit_focus": false
+      },
+      "pageerrors": [],
+      "scope": "기존141 준비상태 저장의 실제불러오기 및142저장·새로고침·불러오기, 선택모아보기·상세읽기·체크해제 PC/휴대폰. 단일발언은 준비한 상태. 자연후반완주 아님."
+    },
+    "범위한계": "저장/입력은 root실행기록을대조했으며 검토자가독립브라우저를추가실행한것은아니다. 후반준비저장을사용한UI검사이며 자연후반완주가아니다."
+  },
+  "미검증잔여": [
+    "모아보기선택0개/4개이상페이지를실제로조작한캡처는이번묶음에서보지않았다. 소스의빈목록·3개페이지처리는검토했다.",
+    "모든기기/모든큰글씨조합의전체회귀는아니다.",
+    "전체스토리·정답판정·생사·결말변경에대한검수는담당범위밖이다."
+  ],
+  "최종확정새결함": 0
+}

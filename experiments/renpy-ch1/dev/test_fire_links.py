@@ -244,6 +244,85 @@ class FireLinkModel(unittest.TestCase):
         self.assertEqual((row, self.owned), before)
 
 
+class FireAdmissionQuestionFlow(unittest.TestCase):
+    """실제 라벨의 근거별 질문이 기존 답변에 한 번만 이어지는지 실행한다."""
+
+    def question_flow(self, owned, heard, admitted=False, choice="trace"):
+        source=(GAME / "room13_v111_days610.rpy").read_text()
+        label=source.split("label r13_v111_nubi_admission7:\n",1)[1].split("\nlabel ",1)[0]
+        start=label.index("    $ v111_fire_recheck_options=")
+        end=label.index("    call r13_lines(r13_v111_lines(['MS14_D07_S01_L0037'])")
+        code=[]
+        for line in textwrap.dedent(label[start:end]).splitlines():
+            indent=line[:len(line)-len(line.lstrip())]
+            command=line.lstrip()
+            if command.startswith("$ "):
+                line=indent+command[2:]
+            elif command.startswith("call screen r13_fire_recheck("):
+                line=indent+"_return=pick(v111_fire_recheck_options)"
+            elif command.startswith("call r13_lines("):
+                line=indent+command.replace("call r13_lines(","emit(",1)
+            code.append(line)
+        data=json.loads((GAME / "v111/newworld/d07.json").read_text())
+        records=json.loads((GAME / "v111/records.json").read_text())["records"]
+        values={"fire_laundry_exchange_heard7":heard,"NUBI_admitted_setting_fire":admitted,
+                "tries:fire":2,"KKOMI_ALIVE":False,"FIRE_EVACUATED":False}
+        before=copy.deepcopy((owned,values))
+        emitted=[];pickers=[]
+
+        def read(ids):
+            return [dict(records[rid],text=data["replace"].get(rid,records[rid])["text"],source=rid) for rid in ids]
+
+        def pick(options):
+            pickers.append(tuple(options))
+            return choice
+
+        env=dict(r13_fire_recheck_options=load_links()["r13_fire_recheck_options"],
+                 r13_pw_entries=lambda:list(owned),r13_v111_value=values.get,
+                 r13_nw_block=lambda key:[dict(row,source=key) for row in data["blocks"][key]],
+                 r13_v111_lines=read,emit=lambda rows,*unused:emitted.extend(rows),pick=pick)
+        exec("\n".join(code),env)
+        self.assertEqual((owned,values),before,"되묻기의 표시 순서가 자료·기회·생사를 바꾸지 않는다")
+        return emitted,pickers
+
+    def test_owned_trace_or_heard_pot_question_goes_directly_to_existing_reply(self):
+        for owned,heard,choice in ((["V111:E06_FIRE"],False,"trace"),
+                                  ([],True,"pot"),
+                                  (["V111:E06_FIRE"],True,"trace"),
+                                  (["V111:E06_FIRE"],True,"pot")):
+            with self.subTest(owned=owned,heard=heard,choice=choice):
+                rows,pickers=self.question_flow(owned,heard,choice=choice)
+                self.assertEqual([row["source"] for row in rows],
+                                 ["fire_admission_"+choice+"7","MS14_D07_S01_L0036"])
+                self.assertEqual([row["speaker"] for row in rows],["아빠","누비"])
+                self.assertIn("조금만 부었어요",rows[1]["text"])
+                self.assertEqual(pickers,[("trace","pot")] if owned and heard else [])
+
+    def test_legacy_without_recheck_or_completed_admission_keeps_one_common_question(self):
+        for owned,heard,admitted in (([],False,False),([],False,True),
+                                    (["V111:E06_FIRE"],True,True)):
+            with self.subTest(owned=owned,heard=heard,admitted=admitted):
+                rows,pickers=self.question_flow(owned,heard,admitted)
+                self.assertEqual([row["source"] for row in rows],
+                                 ["MS14_D07_S01_L0035","MS14_D07_S01_L0036"])
+                self.assertEqual([row["speaker"] for row in rows],["보리","누비"])
+                self.assertEqual(pickers,[])
+
+    def test_bori_direct_witness_and_quoted_source_are_identical_modern_speech(self):
+        source=(GAME / "room13_v111_days610.rpy").read_text()
+        body=source.split("label r13_v111_bori_witness_heard7:\n",1)[1].split("\nlabel ",1)[0]
+        args=re.search(r"call r13_lines\((.*)\)",body).group(1)
+        call=ast.parse("f("+args+")",mode="eval").body
+        packet=ast.literal_eval(call.args[0])[0]
+        self.assertEqual(packet[0],"resident_bori")
+        self.assertEqual(packet[1],"불이 번지기 전에 누비 씨가 창고 문 앞에 서 있는 건 봤어요.")
+        citations=re.findall(r'^\s*text "([^"]+)"',SOURCE.read_text(),re.M)
+        witness_citations=[text for text in citations if "누비 씨가 창고 문 앞에 서 있는 건" in text]
+        self.assertTrue(witness_citations)
+        for text in witness_citations:
+            self.assertEqual(text,packet[1],"직접 발화와 모든 수첩 재인용은 같은 말이어야 한다")
+
+
 class StoreProxy:
     """Ren’Py store 속성과 init 전역이 같은 공간을 보도록 모사한다."""
     def __init__(self, namespace):

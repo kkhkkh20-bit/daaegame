@@ -59,10 +59,20 @@ class EvidenceNotice134(unittest.TestCase):
         self.acquire(['V111:E02','V111:E03'])
         self.assertEqual(self.shown,[])
     def test_hidden_panes_and_menus_block_visibility(self):
-        for name in ('r13_proof_workspace','r13_record_compare','r13_map','r13_records','pause_menu','main_menu','save','load','confirm','r13_latch_diagram132'):
+        for name in ('r13_proof_workspace','r13_fire_links','r13_fire_recheck','r13_record_compare','r13_map','r13_records','pause_menu','main_menu','save','load','confirm','r13_latch_diagram132'):
             self.blocked={name};self.assertFalse(self.visible(),name)
         self.blocked=set();self.assertTrue(self.visible())
         self.store.r13_nw_comparison='knife_tip';self.assertFalse(self.visible())
+    def test_fire_reading_defers_queued_notice_until_return_to_scene(self):
+        self.acquire(['V111:E06_FIRE'])
+        self.current=SimpleNamespace(scope=dict(notice_keys=['V111:E06_FIRE'],item_index=0))
+        self.blocked={'r13_fire_links'}
+        self.assertFalse(self.visible())
+        self.acquire(['V111:E06_RESCUE'])
+        self.assertEqual(self.updates[0][1],['V111:E06_FIRE','V111:E06_RESCUE'])
+        self.assertEqual(self.current.scope['item_index'],0)
+        self.blocked.clear()
+        self.assertTrue(self.visible())
     def test_family_focus_defers_notice_until_picture_is_folded(self):
         self.acquire(['V111:E30'])
         self.store.r13_ep_cut_current='focus:D01_FAMILY_DRAWING'

@@ -33,7 +33,7 @@ init 350 python:
             quote="새벽에 간 건 맞아요. 걸쇠가 벌어졌길래 칼로 밀어 닫아 줬죠.",
             quote_when=("flag","v111:entered:MS14_D03_S05")),
         "마지막 점검과 인수한 돌을 연결한다":dict(mode="proof",speaker="실룩",
-            quote="그, 그래도…… 내가 판 돌이 그 돌인지는…….",
+            quote="그 돌을 판 건 맞아요. 그래도 길에서 주운 거예요.",
             quote_when=("flag","v111:entered:MS14_D03_S05")),
         # 두 편지: 인물의 해설 없이 문서 둘을 직접 읽는다. 의문 한 줄만.
         "두 편지를 나란히 본다":dict(mode="compare",speaker=None,
@@ -55,6 +55,18 @@ init 350 python:
     R13_PW_COMPARE_LIMIT=2
     # 저장된 호출의 review_return이 없던 판도 같은 현장으로 돌아갈 수 있게 한다.
     R13_PW_REVIEW_RETURNS={"두 편지를 나란히 본다":"r13_v111_letter_compare_review"}
+
+    def r13_pw_initial_view(mode,hearing_count,remembered=None,pair=None,detail=None,hearing_only=False):
+        # 한 발언뿐이면 곧바로 자료를 읽는다. 직접 바꿔 둔 화면과 두 문서 읽기는 보존한다.
+        if hearing_only:return "statements"
+        if remembered:return remembered
+        if mode!="compare" and hearing_count>1:return "statements"
+        if mode!="compare" and hearing_count==1:return "list"
+        return "pair" if pair else "single" if detail else "list"
+
+    def r13_pw_hearing_geometry(touch):
+        # 두 줄 제목에도 상하 여백을 둔다. 한 쪽의 발언 수는 PC4/터치3을 유지한다.
+        return dict(per_page=3 if touch else 4,height=88 if touch else 72,gap=8)
 
     def r13_pw_review_target(key,declared=None):
         return declared or R13_PW_REVIEW_RETURNS.get(key)
@@ -465,7 +477,7 @@ screen r13_pw_checkbox(on,size=30):
                 text "✓" align (.5,.5) size (size-8) color r13_nb_accent() font R13_UI_BOLD_FONT
 
 # 자료 한 장: 왼쪽 체크 영역(선택), 나머지(그림·이름)는 상세를 읽는 영역. 둘은 시각적으로 갈라져 있다.
-screen r13_pw_card(claim,key,mode,w,h,chosen,is_detail,ready):
+screen r13_pw_card(claim,key,mode,w,h,chosen,is_detail,ready,close_on_open=None):
     $ check_w=88 if r13_touch_ui() else 56
     $ thumb=h-28
     $ name_w=w-check_w-thumb-30
@@ -485,7 +497,7 @@ screen r13_pw_card(claim,key,mode,w,h,chosen,is_detail,ready):
             button:
                 id r13_pw_id("r13_pw_open_",key)
                 xpos (check_w+1) ypos 0 xysize (w-6-check_w-1,h-6) padding (0,0) background None hover_background Solid("#8d4b2d14")
-                action Function(r13_pw_open_detail,key) sensitive ready
+                action ([Hide(close_on_open),Function(r13_pw_open_detail,key)] if close_on_open else Function(r13_pw_open_detail,key)) sensitive ready
                 alt ("읽기 · "+r13_catalog_title(key))
                 fixed:
                     xysize (w-6-check_w-1,h-6)
@@ -494,6 +506,36 @@ screen r13_pw_card(claim,key,mode,w,h,chosen,is_detail,ready):
                     vbox:
                         xpos (thumb+18) yalign .5 spacing 1
                         text name xsize name_w size label_size color r13_nb_ink() font R13_UI_BOLD_FONT line_spacing -1
+
+screen r13_pw_selected_materials(claim,mode):
+    modal True
+    zorder 70
+    default ready=False
+    timer .15 action SetScreenVariable("ready",True)
+    default selected_page=0
+    $ owned=r13_pw_entries()
+    $ selected=[k for k in room13.get("arguments",{}).get(claim,[]) if k in owned]
+    $ selected_page=min(selected_page,max(0,(len(selected)-1)//3))
+    $ small=r13_type("small")
+    $ footer=r13_nb_footer_y()
+    use r13_notebook_shell("선택한 자료",close_action=Hide("r13_pw_selected_materials"),rule_y=132)
+    text "체크는 선택 해제 · 이름은 내용 읽기" xpos R13_NB_LEFT ypos 150 size small color r13_nb_muted() font R13_UI_FONT
+    for index,item in enumerate(selected[selected_page*3:selected_page*3+3]):
+        fixed:
+            xpos R13_NB_LEFT ypos (196+index*100) xysize (R13_NB_WIDTH,88)
+            use r13_pw_card(claim,item,mode,R13_NB_WIDTH,88,True,False,ready,close_on_open="r13_pw_selected_materials")
+    if not selected:
+        text "선택한 자료가 없습니다." xpos R13_NB_LEFT ypos 212 size r13_type("emphasis") color r13_nb_ink() font R13_UI_FONT
+    if len(selected)>3:
+        for index,(caption,target,enabled) in enumerate((("‹",selected_page-1,selected_page>0),("›",selected_page+1,(selected_page+1)*3<len(selected)))):
+            fixed:
+                xpos (R13_NB_LEFT+index*94) ypos footer xysize (82,r13_control_height())
+                use r13_control(caption,None,SetScreenVariable("selected_page",target),enabled=ready and enabled,width=82,control_id=("r13_pw_selected_prev" if index==0 else "r13_pw_selected_next"))
+    text ("%d장 선택 · %d / %d쪽"%(len(selected),selected_page+1,max(1,(len(selected)+2)//3))) xpos 340 ypos (footer+14) size small color r13_nb_muted() font R13_UI_FONT
+    fixed:
+        xpos 966 ypos footer xysize (240,r13_control_height())
+        use r13_control("돌아가기",None,Hide("r13_pw_selected_materials"),enabled=ready,width=240,control_id="r13_pw_selected_close")
+    key "game_menu" action Hide("r13_pw_selected_materials")
 
 # 열어 본 자료 상세: 기존 부품(제목 꼬리표·그림 상자·관찰 사실·쪽지)을 다시 쓴다. 긴 원문은 「출처 펼치기」 안.
 screen r13_pw_detail(claim,key,mode,x,y,w,h,origin_open,can_pair,ready):
@@ -730,13 +772,13 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     default tab=remembered.get("tab",("now" if hearing_rows and r13_drawer_now(r13_pw_entries()) else r13_pw_initial_tab(mode,r13_drawer_active(),r13_pw_entries(),r13_drawer_now(r13_pw_entries()))))
     default detail=remembered.get("detail")
     default pair=remembered.get("pair")
-    default view=("statements" if hearing_only else remembered.get("view") or ("statements" if hearing_rows and mode!="compare" else "pair" if pair else ("single" if detail else "list")))
+    default view=r13_pw_initial_view(mode,len(hearing_rows),remembered.get("view"),pair,detail,hearing_only)
     default hearing_target=remembered.get("hearing_target") if any(r["target"]==remembered.get("hearing_target") for r in hearing_rows) else next((r["target"] for r in hearing_rows if r["key"]==key),None)
     $ view="list" if view=="statements" and not hearing_rows else view
     default quote_open=remembered.get("quote_open",bool(hearing_rows) and mode!="compare")
     default origin_open=remembered.get("origin_open",False)
     default page=0
-    default hearing_page=next((i//(3 if r13_touch_ui() else 4) for i,r in enumerate(hearing_rows) if r["target"]==hearing_target),0)
+    default hearing_page=next((i//r13_pw_hearing_geometry(r13_touch_ui())["per_page"] for i,r in enumerate(hearing_rows) if r["target"]==hearing_target),0)
     default pick_slot=None
     default observe=bool(remembered.get("room_letters_discovery")) and r13_room_letters_discovery_needed(key)
     default replace_pending=None
@@ -769,6 +811,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ context_text=room_letters_copy[1] if compact_context else (hearing_row["title"] if hearing_row else title)
     $ L=r13_pw_read_layout(context_text,quote_open and view!="statements",layout_quote,compact=compact_context)
     $ touch=L["touch"]
+    $ hearing_geometry=r13_pw_hearing_geometry(touch)
     use r13_notebook_shell("자료 대조" if mode=="compare" else "질문 검토" if hearing_rows and hearing_kind=="question" else "발언 검증" if hearing_rows else "자료 대조",close_action=(Return("hearing_resume") if hearing_only else review_action),rule_y=(148 if touch else 128))
     if can_review:
         key "game_menu" action review_action
@@ -776,10 +819,11 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
         text chances.replace("회의 기회","기회") xpos R13_NB_TITLE_X ypos (108 if touch else 104) xsize 370 size small color muted font R13_UI_BOLD_FONT
     fixed:
         xpos 500 ypos 54 xysize (208,88 if touch else 64)
-        use r13_control(("확인할 질문" if hearing_kind=="question" else "발언 목록") if hearing_rows else "한 장만 보기",None,[SetScreenVariable("view","statements")] if hearing_rows else [SetScreenVariable("detail",detail or (live_pair[0] if live_pair[0] else (owned[0] if owned else None))),SetScreenVariable("view","single"),SetScreenVariable("pick_slot",None),SetScreenVariable("observe",False)],enabled=ready and bool(owned),chosen=view==("statements" if hearing_rows else "single"),width=208,height=(88 if touch else 64),label_size=r13_type("body"),control_id="r13_pw_single")
-    fixed:
-        xpos 724 ypos 54 xysize (240,88 if touch else 64)
-        use r13_control("연결판으로" if hearing_only else "자료 목록" if view=="statements" else "나란히 읽기",None,Return("hearing_resume") if hearing_only else [SetScreenVariable("view","list")] if view=="statements" else [SetScreenVariable("pair",r13_pw_pair_on_open(chosen,pair,detail,owned)),SetScreenVariable("view","pair"),SetScreenVariable("pick_slot",None)],enabled=ready and len(owned)>1,chosen=view=="pair",width=240,height=(88 if touch else 64),label_size=r13_type("body"),control_id="r13_pw_pair")
+        use r13_control((("질문 다시 읽기" if hearing_kind=="question" else "발언 다시 읽기") if len(hearing_rows)==1 else ("확인할 질문" if hearing_kind=="question" else "발언 목록")) if hearing_rows else "한 장만 보기",None,[SetScreenVariable("view","statements")] if hearing_rows else [SetScreenVariable("detail",detail or (live_pair[0] if live_pair[0] else (owned[0] if owned else None))),SetScreenVariable("view","single"),SetScreenVariable("pick_slot",None),SetScreenVariable("observe",False)],enabled=ready and bool(owned),chosen=view==("statements" if hearing_rows else "single"),width=208,height=(88 if touch else 64),label_size=r13_type("body"),control_id="r13_pw_single")
+    if not hearing_only:
+        fixed:
+            xpos 724 ypos 54 xysize (240,88 if touch else 64)
+            use r13_control("자료 목록" if view=="statements" else "나란히 읽기",None,[SetScreenVariable("view","list")] if view=="statements" else [SetScreenVariable("pair",r13_pw_pair_on_open(chosen,pair,detail,owned)),SetScreenVariable("view","pair"),SetScreenVariable("pick_slot",None)],enabled=ready and len(owned)>1,chosen=view=="pair",width=240,height=(88 if touch else 64),label_size=r13_type("body"),control_id="r13_pw_pair")
     text context_text xpos L["left"] ypos L["context_y"] xsize L["title_w"] size (small if compact_context else r13_type("emphasis")) color (accent if compact_context else ink) font R13_UI_BOLD_FONT
     if quote_text and view!="statements":
         fixed:
@@ -796,14 +840,14 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ sections=r13_pw_sections(tab,owned)
     $ pages=[[]]
     if view=="statements":
-        text ("자료로 답할 질문을 고르세요." if hearing_kind=="question" else "누구의 어떤 말을 확인할까요?") xpos L["left"] ypos L["body_top"] size small color muted font R13_UI_FONT
-        $ hearing_page=min(hearing_page,max(0,(len(hearing_rows)-1)//(3 if touch else 4)))
-        $ hearing_per_page=3 if touch else 4
+        text (("질문을 다시 읽거나 더 확인할 수 있습니다." if hearing_kind=="question" else "발언을 다시 읽거나 되물을 수 있습니다.") if len(hearing_rows)==1 else ("자료로 답할 질문을 고르세요." if hearing_kind=="question" else "누구의 어떤 말을 확인할까요?")) xpos L["left"] ypos L["body_top"] size small color muted font R13_UI_FONT
+        $ hearing_page=min(hearing_page,max(0,(len(hearing_rows)-1)//hearing_geometry["per_page"]))
+        $ hearing_per_page=hearing_geometry["per_page"]
         $ hearing_visible=hearing_rows[hearing_page*hearing_per_page:(hearing_page+1)*hearing_per_page]
         for hi,row in enumerate(hearing_visible):
             fixed:
-                xpos L["left"] ypos (L["body_top"]+40+hi*(96 if touch else 62)) xysize (420,88 if touch else 56)
-                use r13_control(R13_NAMES.get(row["speaker"],row["speaker"])+" · "+row["title"],None,[SetScreenVariable("hearing_target",row["target"]),SetScreenVariable("quote_open",True)],enabled=ready,chosen=hearing_target==row["target"],width=420,height=(88 if touch else 56),label_size=small,control_id=("r13_hearing_target_"+row["target"]))
+                xpos L["left"] ypos (L["body_top"]+40+hi*(hearing_geometry["height"]+hearing_geometry["gap"])) xysize (420,hearing_geometry["height"])
+                use r13_control(R13_NAMES.get(row["speaker"],row["speaker"])+" · "+row["title"],None,[SetScreenVariable("hearing_target",row["target"]),SetScreenVariable("quote_open",True)],enabled=ready,chosen=hearing_target==row["target"],width=420,height=hearing_geometry["height"],label_size=small,control_id=("r13_hearing_target_"+row["target"]))
         if hearing_row:
             frame:
                 area (L["left"]+440,L["body_top"]+40,L["width"]-440,L["body_h"]-40) padding (20,18) background r13_field_paper()
@@ -868,10 +912,15 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
         fixed:
             xpos L["left"] ypos L["footer_y"] xysize (176,L["footer_h"])
             use r13_control("목록",None,[SetScreenVariable("view","list"),SetScreenVariable("observe",False),SetScreenVariable("pick_slot",None)],enabled=ready,width=176,control_id="r13_pw_back_list")
-    vbox:
-        xpos 324 ypos (L["footer_y"]+6) xsize 144 spacing 2
-        text (("질문 선택" if hearing_kind=="question" else "발언 선택") if view=="statements" else "2장 읽기" if pair_submission else "%d장 선택"%len(chosen)) size small color ink font R13_UI_BOLD_FONT
-        text (("%d / %d쪽"%(hearing_page+1,(len(hearing_rows)+(3 if touch else 4)-1)//(3 if touch else 4))) if view=="statements" and len(hearing_rows)>(3 if touch else 4) else "되묻기 · 대조" if view=="statements" else "현재 두 장" if pair_submission else "체크로 두 장" if mode=="compare" and len(chosen)<2 else "제출 자료" if persistent.room13_pw_controls_seen else "체크로 선택") size small color muted font R13_UI_FONT
+    if view!="statements" and chosen and not pair_submission and not hearing_only:
+        fixed:
+            xpos 324 ypos L["footer_y"] xysize (144,L["footer_h"])
+            use r13_control("%d장 선택\n모아보기"%len(chosen),None,Show("r13_pw_selected_materials",claim=claim,mode=mode),enabled=ready,width=144,label_size=small,control_id="r13_pw_selected")
+    else:
+        vbox:
+            xpos 324 ypos (L["footer_y"]+6) xsize 144 spacing 2
+            text (("질문 읽기" if hearing_kind=="question" else "발언 읽기") if view=="statements" and len(hearing_rows)==1 else ("질문 선택" if hearing_kind=="question" else "발언 선택") if view=="statements" else "2장 읽기" if pair_submission else "%d장 선택"%len(chosen)) size small color ink font R13_UI_BOLD_FONT
+            text (("%d / %d쪽"%(hearing_page+1,(len(hearing_rows)+(3 if touch else 4)-1)//(3 if touch else 4))) if view=="statements" and len(hearing_rows)>(3 if touch else 4) else "되묻기 · 대조" if view=="statements" else "현재 두 장" if pair_submission else "체크로 두 장" if mode=="compare" and len(chosen)<2 else "제출 자료" if persistent.room13_pw_controls_seen else "체크로 선택") size small color muted font R13_UI_FONT
     $ secondary=[]
     if can_review:
         $ secondary.append(("현장으로",review_action,"r13_pw_investigate"))

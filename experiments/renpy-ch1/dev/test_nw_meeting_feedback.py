@@ -1,5 +1,7 @@
 """제출 연출은 실제 발언을 따르고 자료·기회·결과를 바꾸지 않는다."""
+import ast
 import copy
+import re
 import textwrap
 import types
 import unittest
@@ -82,6 +84,28 @@ class MeetingFeedback(unittest.TestCase):
 
 
 class KnifeComparisonRows(Layer):
+    def test_normal_route_keeps_match_explanation_after_physical_confirmation(self):
+        source=(GAME/'room13_v111_days123.rpy').read_text()
+        menu=source.split('label r13_v111_trial_knife:',1)[1].split('label r13_v111_trial_knife_records:',1)[0]
+        request=menu.split('    if v111_answer==0:',1)[1].split('    if v111_answer==1:',1)[0]
+        ids=ast.literal_eval(re.search(r'r13_v111_lines\((\[[^\]]*\])\)',request).group(1))
+        self.assertNotIn('MS14_D03_S05_L0014',ids)
+        env=self.load()
+        self.assertFalse(any(row[2].get('comparison') for row in env['r13_v111_lines'](ids)))
+        inspect=request.index('call screen r13_case_inspect("knife")')
+        guard=request.index('if _return=="knife_fit":')
+        success=request.index('jump r13_v111_knife_fit140')
+        self.assertLess(inspect,guard)
+        self.assertLess(guard,success)
+        matched=source.split('label r13_v111_knife_fit140:',1)[1].split('\nlabel ',1)[0]
+        shown=ast.literal_eval(re.search(r'r13_v111_lines\((\[[^\]]*\])\)',matched).group(1))
+        self.assertEqual(shown[:2],['MS14_D03_S05_L0014','MS14_D03_S05_L0016'])
+        self.assertLess(matched.index('MS14_D03_S05_L0017'),matched.index("r13_v111_commit('MS14_D03_S05_L0018')"))
+        # 이미 대조를 고른 옛 저장의 진입점과 identity는 남긴다.
+        legacy=source.split('label r13_v111_knife_fit:',1)[1].split('label r13_v111_knife_fit140:',1)[0]
+        self.assertIn('v111:knife_fit:MS14_D03_S05_L0012',legacy)
+        self.assertNotIn('MS14_D03_S05_L0014',legacy)
+
     def test_close_up_is_after_player_match_and_is_not_a_new_record(self):
         env=self.load();before=copy.deepcopy(self.state.room13)
         rows=env['r13_v111_lines'](['MS14_D03_S05_L0014','MS14_D03_S05_L0016'])

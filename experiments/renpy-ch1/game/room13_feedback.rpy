@@ -33,7 +33,7 @@ init 69 python:
     def r13_evidence_notice_visible():
         blocked=("main_menu","pause_menu","save","load","confirm","r13_latch_diagram132","r13_piko_scene",
             "r13_pw_picture","r13_map","r13_records","r13_learning_notes","r13_record_compare",
-            "r13_calendar","r13_work_board","r13_proof_workspace")
+            "r13_calendar","r13_work_board","r13_proof_workspace","r13_fire_links","r13_fire_recheck")
         # 가족 그림은 내용 자체가 단서다. 큰 첫 발견 컷을 읽는 동안 알림과 만료 시계를
         # 함께 기다리게 하고, 컷을 접은 뒤 원래 자리에서 획득 사실을 알려 준다.
         family_focus=getattr(store,"r13_ep_cut_current",None) in ("focus:E06","focus:D01_FAMILY_DRAWING") and renpy.showing("r13_ep_cut")

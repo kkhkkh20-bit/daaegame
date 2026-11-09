@@ -67,6 +67,7 @@ testcase fire7_hypothesis_rebut_and_submit:
     assert eval (not r13_v111_value('fire_origin_hypothesis') and not r13_v111_owned('E07_NUBI') and not qa_fire_link_row()['notice'])
     click id 'r13_fire_slot_1'
     click id 'r13_fire_choice_door'
+    assert eval (not r13_evidence_notice_visible())
     screenshot 'fire7_evidence.png'
     click id 'r13_fire_submit'
     click pos (900,600) until eval (r13_packet and '문 앞의 탄 자국과 기름 냄새' in r13_packet[1].replace('\n',' ')) timeout 60

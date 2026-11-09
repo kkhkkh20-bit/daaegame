@@ -559,7 +559,7 @@ label r13_v111_bori_witness7:
     jump r13_v111_bori_witness7
 
 label r13_v111_bori_witness_heard7:
-    call r13_lines([("resident_bori","불이 번지기 전에 누비 씨가 창고 문 앞에 서 있는 건 봤소.",{"no_lead":True,"expression":"anxious","pose":"anxious"})],"v111:bori_fire_door_witness")
+    call r13_lines([("resident_bori","불이 번지기 전에 누비 씨가 창고 문 앞에 서 있는 건 봤어요.",{"no_lead":True,"expression":"anxious","pose":"anxious"})],"v111:bori_fire_door_witness")
     $ r13_v111_set("bori_nubi_door_witness_heard",True)
     jump r13_v111_nubi_hypothesis7
 
@@ -650,7 +650,9 @@ label r13_v111_nubi_admission7:
             call r13_lines(r13_nw_block('fire_admission_trace7'),'nw:fire_admission_trace7')
         else:
             call r13_lines(r13_nw_block('fire_admission_pot7'),'nw:fire_admission_pot7')
-    call r13_lines(r13_v111_lines(['MS14_D07_S01_L0035']),'v111:MS14_D07_S01_L0035')
+    else:
+        # 근거별 질문을 했으면 바로 누비의 답으로 잇는다. 구 저장의 공통 질문은 남긴다.
+        call r13_lines(r13_v111_lines(['MS14_D07_S01_L0035']),'v111:MS14_D07_S01_L0035')
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0036']),'v111:MS14_D07_S01_L0036')
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0037']),'v111:MS14_D07_S01_L0037')
     call r13_lines(r13_v111_lines(['MS14_D07_S01_L0038']),'v111:MS14_D07_S01_L0038')

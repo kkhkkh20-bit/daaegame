@@ -1241,14 +1241,14 @@ label r13_v111_trial_knife:
     $ v111_menu_owner='trial_knife'
     # 2026-10-24 지시서 01 1번 (MEETING_RULES_V2.md 1장 2번 「회의는 언제나 깰 수 있다」): 정답 보기는 칼 대조
     # 동의·파편 소지와 상관없이 늘 보인다. 예전에는 동의가 없으면 오답과 「자료를 다시 본다」만 남아 이길 수 없었다.
-    # 실룩은 이 회의 자리에서 아빠가 다시 청하자 칼을 내보인다(MS14_D03_S05_L0012~L0014).
+    # 실룩은 이 회의 자리에서 아빠가 다시 청하자 칼을 내보인다(L0012~L0013). 일치 설명 L0014는 직접 관찰 뒤다.
     # 기존 0·1·2는 유지한다. 새 3은 자국을 보는 조사이며, 특정 칼이라는 주장과 구분한다.
     $ v111_menu=[('칼날과 안벽 자국을 맞춰 본다',3),('칼끝과 안쪽 조각을 맞춰 본다',0),('이 자국은 실룩 씨 칼이 냈습니다',1),('자료를 다시 본다',2)]
     $ v111_answer=renpy.display_menu(v111_menu)
     if v111_answer==0:
         $ r13_v111_scene('MS14_D03_S05')
         $ r13_v111_score()
-        call r13_lines(r13_v111_lines(['MS14_D03_S05_L0012', 'MS14_D03_S05_L0013', 'MS14_D03_S05_L0014']),'v111:knife_request140')
+        call r13_lines(r13_v111_lines(['MS14_D03_S05_L0012', 'MS14_D03_S05_L0013']),'v111:knife_request140')
         call screen r13_case_inspect("knife")
         if _return=="knife_fit":
             jump r13_v111_knife_fit140
@@ -1273,9 +1273,10 @@ label r13_v111_knife_scratch_observe3:
 label r13_v111_knife_fit:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
-    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0012', 'MS14_D03_S05_L0013', 'MS14_D03_S05_L0014']), 'v111:knife_fit:MS14_D03_S05_L0012')
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0012', 'MS14_D03_S05_L0013']), 'v111:knife_fit:MS14_D03_S05_L0012')
 label r13_v111_knife_fit140:
-    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0016', 'MS14_D03_S05_L0017']), 'v111:knife_fit:MS14_D03_S05_L0016')
+    # 현재 진입은 실물 접점 확인 뒤다. 이전 저장의 라벨·호출 identity도 유지한다.
+    call r13_lines(r13_v111_lines(['MS14_D03_S05_L0014', 'MS14_D03_S05_L0016', 'MS14_D03_S05_L0017']), 'v111:knife_fit:MS14_D03_S05_L0016')
     $ r13_v111_commit('MS14_D03_S05_L0018')
     call r13_lines(r13_v111_lines(['MS14_D03_S05_L9101', 'MS14_D03_S05_L9102']), 'v111:knife_fit:MS14_D03_S05_L9101')
     jump r13_v111_trial_latch

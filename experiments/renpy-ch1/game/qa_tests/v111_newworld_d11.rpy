@@ -100,16 +100,20 @@ testcase v111_nw_d11_hyp1_two_records:
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day11)
     run Jump("r13_v111_hyp1_proof11")
-    pause 1.5
-    assert screen "r13_crisis_proof"
-    click "자료 고르기"
-    pause 0.5
-    click "QA V111:E11"
-    pause 0.8
-    click "QA V111:NW_PIKO_TREMOR"
-    pause 0.8
-    click "QA 닫기"  # 0.20.7: the proof book stays open between picks
-    pause 0.5
-    click "선택한 근거 제출"
-    click pos (640,300) until "백 부인은 그 돌 곁에서 잠을 자지 않는다" timeout 60
+    pause until screen "r13_proof_workspace" timeout 30
+    pause until eval (qa_pw_read_scope().get("ready")) timeout 10
+    click id "r13_pw_tab_all"
+    pause .3
+    if eval (not qa_pw_read_has("r13_pw_check_E11")):
+        click id "r13_pw_next" until eval qa_pw_read_has("r13_pw_check_E11") timeout 20
+    click id "r13_pw_check_E11"
+    pause .3
+    if eval (not qa_pw_read_has("r13_pw_check_NW_PIKO_TREMOR")):
+        click id "r13_pw_next" until eval qa_pw_read_has("r13_pw_check_NW_PIKO_TREMOR") timeout 30
+    click id "r13_pw_check_NW_PIKO_TREMOR"
+    pause .3
+    assert eval (qa_pw_read_selection(["V111:E11","V111:NW_PIKO_TREMOR"]))
+    screenshot "hyp1-two-records-selection.png"
+    click id "r13_pw_submit"
+    click pos (900,600) until eval (v111_claim=="menu:hyp2" and renpy.get_screen("choice")) timeout 60
     assert eval (r13_v111_value("hyp_issue:1")=="won" and qa_nw_seen("받침에서 멀어지면 바닥이 차갑습니다"))
