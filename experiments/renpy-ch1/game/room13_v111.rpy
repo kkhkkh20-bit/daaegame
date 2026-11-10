@@ -367,8 +367,9 @@ init 301 python:
             "lamp_log_request","loan_read","measurement_read","transport_read","knife_permission","store_visit",
             "stone_check","sale_check","restore_input","lamp_attempt_field3","sleep3","portrait_show4","portrait_place4",
             "look_gate4","inspect_gate4","collect4","sleep4","compare_cloth5","envelope5","reply_handoff5","lock_check5",
-            "sleep5","board6","afternoon6","sleep6_input","free_sleep7_input","free_day7"}
+            "sleep5","board6","afternoon6","sleep6_input","free_sleep7_input","free_day7","morning_finish2"}
         if not 1<=state.get("day",1)<=7 or story.get("gate") not in safe_gates:return False
+        if globals().get("r13_v111_tense_context",lambda:None)():return False
         free7=r13_v111_free7_ready()
         if story.get("gate")=="free_day7" and not free7:return False
         if (story.get("scene") in ("MS14_D03_S05","MS14_D05_S03")
@@ -393,7 +394,10 @@ init 301 python:
         return [place for place in ("inn","square","post","workshop","clinic","school") if place in visits]
 
     def r13_v111_public_revisit_places():
-        return r13_v111_known_public_visits() if r13_v111_revisit_allowed() else []
+        if not r13_v111_revisit_allowed():return []
+        if 2<=store.room13.get("day",1)<=7:
+            return list(globals().get("R13_VILLAGE147_PUBLIC_PLACES",()))
+        return r13_v111_known_public_visits()
 
     def r13_v111_inn_revisit_places():
         # 첫 방에 도착한 뒤에도 여관의 익숙한 길은 현재 대기 선택지와 별개로 남긴다.
@@ -451,8 +455,14 @@ label r13_v111_wait_again:
     if v111_pick[0]=="menu" and v111_pick[1]=="map":
         call screen r13_map
         if _return and _return in r13_places():
+            $ v111_map_target=_return
+            if r13_village147_move_message(key,v111_map_target):
+                call screen r13_confirm(r13_village147_move_message(key,v111_map_target),r13_village147_move_caption(key,v111_map_target),"더 둘러보기")
+                if not _return:
+                    jump r13_v111_wait_again
+            $ _return=v111_map_target
             # 2026-10-29 외부 검토 「행동이 질문 목록 안에 있다」: 2일 오후 「네로를 만나러 간다」는 나비에게 하는 말이 아니라
-            # 가는 일이다. 지도에서 숲을 고르는 것으로 오후를 정한다(확인 창 없음 — 뜻은 그 대기의 「생각」이 미리 말한다).
+            # 가는 일이다. 오후를 마감하는 이동은 위에서 뜻을 확인한 뒤 원래 선택으로 반환한다.
             # 가는 길에 나비·피코에게 알리는 장면이 이야기에 있으므로, 여기서 숲으로 옮겨 놓지 않고 이야기가 데려가게 한다.
             $ v111_story_move=next((o for o in v111_binding.get("options",[]) if o.get("move")==_return and o.get("move_by_story")),None)
             if v111_story_move:
@@ -473,6 +483,10 @@ label r13_v111_wait_again:
             call screen r13_map
             $ v111_local_target=_return
         if v111_local_target and v111_local_target in r13_places():
+            if r13_village147_move_message(key,v111_local_target):
+                call screen r13_confirm(r13_village147_move_message(key,v111_local_target),r13_village147_move_caption(key,v111_local_target),"더 둘러보기")
+                if not _return:
+                    jump r13_v111_wait_again
             $ v111_story_move=next((o for o in v111_binding.get("options",[]) if o.get("move")==v111_local_target and o.get("move_by_story")),None)
             if v111_story_move:
                 $ r13_v111_time("move:"+key+":"+v111_local_target,5)
@@ -485,6 +499,12 @@ label r13_v111_wait_again:
             if v111_local_move:
                 $ r13_v111_time("move:"+key+":"+v111_local_target,5)
                 return v111_local_move["index"]
+        jump r13_v111_wait_again
+    if v111_pick==("day_transition","lunch2"):
+        if r13_village147_lunch_ready():
+            call screen r13_confirm("아침 조사를 마치고 점심을 먹으러 갈까요?\n점심 뒤에는 오후 일정이 시작됩니다.","점심 먹으러 가기","더 둘러보기")
+            if _return:
+                return 0
         jump r13_v111_wait_again
     if v111_pick[0]=="sleep":
         $ v111_rest=r13_v111_rest_option()
@@ -569,6 +589,9 @@ label r13_v111_wait_again:
                         call r13_lines(v111_react,"v111:present_reaction:"+v111_person+":"+v111_shown)
                     else:
                         $ renpy.notify("지금은 이 자료로 더 확인할 내용이 없다.")
+            if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="village_visit":
+                if isinstance(_return[1],(tuple,list)) and len(_return[1])==2:
+                    call r13_visit147_dispatch(_return[1][0],_return[1][1])
             if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="sidequest":
                 if isinstance(_return[1],(tuple,list)) and len(_return[1])==2:
                     call r13_sidequest_dispatch(_return[1][0],_return[1][1])

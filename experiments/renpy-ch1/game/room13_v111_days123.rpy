@@ -733,6 +733,8 @@ label r13_v111_lamp_details:
     $ r13_v111_commit('MS14_D02_S03_L0025')
     call r13_lines(r13_v111_lines(['MS14_D02_S03_L9101', 'MS14_D02_S03_L0026', 'MS14_D02_S03_L0027', 'MS14_D02_S03_L0028', 'MS14_D02_S03_L0029', 'MS14_D02_S03_L0030', 'MS14_D02_S03_L0031', 'MS14_D02_S03_L0032', 'MS14_D02_S03_L0033', 'MS14_D02_S03_L0034', 'MS14_D02_S03_L0035', 'MS14_D02_S03_L0037', 'MS14_D02_S03_L0038', 'MS14_D02_S03_L0039', 'MS14_D02_S03_L0040', 'MS14_D02_S03_L0041', 'MS14_D02_S03_L0042', 'MS14_D02_S03_L0043', 'MS14_D02_S03_L0044', 'MS14_D02_S03_L0045', 'MS14_D02_S03_L0046']), 'v111:lamp_details:MS14_D02_S03_L9101')
     $ r13_v111_commit('MS14_D02_S03_L0047')
+    # 조사 결과는 즉시 받고, 오전 생활 방문을 마칠 때 점심을 직접 선택한다.
+    call r13_v111_wait('morning_finish2')
     jump r13_v111_diner_offer
 
 label r13_v111_diner_offer:

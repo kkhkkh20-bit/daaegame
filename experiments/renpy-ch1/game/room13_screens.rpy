@@ -123,6 +123,17 @@ screen r13_hub(entry=False):
         fixed:
             area (1020,352,232,r13_control_height())
             use r13_control("잠자기","auto",Return(("sleep","bed")),enabled=input_ready,height=r13_control_height(),control_id="r13_rest_sleep")
+    if not entry and r13_village147_lunch_ready():
+        fixed:
+            area (996,176,256,r13_control_height())
+            use r13_control("점심 먹으러 가기","auto",Return(("day_transition","lunch2")),enabled=input_ready,width=256,height=r13_control_height(),control_id="r13_lunch147")
+    if not entry and r13_v111_active():
+        $ village147_notice=r13_visit147_notice()
+        if village147_notice:
+            frame:
+                xpos 24 ypos 164 xmaximum 700 padding (16,10)
+                background r13_field_paper(label=True)
+                text village147_notice size r13_type("small") color r13_type_color("ink") xmaximum 668
     if not entry and r13_bed_available("bed"):
         fixed:
             area (1020,264,232,64)

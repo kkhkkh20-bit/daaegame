@@ -1,0 +1,702 @@
+{
+  "revision": 1,
+  "events": {
+    "postcard": {
+      "title": "비워 둔 수취인 칸",
+      "owner": "resident_owlgp",
+      "source_place": "post",
+      "source_day": 2,
+      "source_periods": [
+        0,
+        1
+      ],
+      "members": [
+        "resident_owlgp",
+        "seryeon"
+      ],
+      "notice": "부엉이 할아버지가 엽서 한 장을 앞에 두고 세련과 이야기하고 있다.",
+      "source_title": "엽서를 쓰시는 중이세요?",
+      "memory_title": "엽서는 보내셨어요?",
+      "passed_title": "지금은 쉬시는 중이세요?",
+      "choices": [
+        {
+          "title": "안부부터 물어보시면 어떨까요?",
+          "result": "help"
+        },
+        {
+          "title": "천천히 쓰세요. 기다릴게요.",
+          "result": "watch"
+        },
+        {
+          "title": "저는 제 용건부터 보겠습니다.",
+          "result": "decline"
+        }
+      ],
+      "blocks": {
+        "intro": [
+          {
+            "id": "VL147_POST_INTRO_01",
+            "speaker": "아빠",
+            "text": "엽서를 쓰시는 중이세요?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_INTRO_02",
+            "speaker": "부엉이",
+            "text": "그래. 보내려는 사람 이름은 아는데, 여기에 쓰려니 손이 안 가네.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_INTRO_03",
+            "speaker": "세련",
+            "text": "인사말을 벌써 세 번 고치셨어요. 주소는 다 적으셨고요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_INTRO_04",
+            "speaker": "부엉이",
+            "text": "오래간만에 보내는데, 볼일도 없이 잘 지내냐고만 해도 될까 싶어서.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "help": [
+          {
+            "id": "VL147_POST_HELP_01",
+            "speaker": "아빠",
+            "text": "안부부터 물어보시면 어떨까요? 답장이 와야 어떻게 지내는지도 알죠.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_HELP_02",
+            "speaker": "부엉이",
+            "text": "그렇겠지. 쓰지도 않고 답부터 걱정했구먼.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_HELP_03",
+            "speaker": "세련",
+            "text": "그럼 지우개는 잠깐 제가 갖고 있을게요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_HELP_04",
+            "speaker": "부엉이",
+            "text": "그건 돌려줘. 이름 틀리면 안 되잖나.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "watch": [
+          {
+            "id": "VL147_POST_WATCH_01",
+            "speaker": "아빠",
+            "text": "천천히 쓰세요. 기다릴게요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_WATCH_02",
+            "speaker": null,
+            "text": "할아버지가 지우개를 엽서 옆에 놓는다. 한 줄을 쓰고, 이번에는 지우지 않는다.",
+            "expression": "neutral",
+            "kind": "narration"
+          },
+          {
+            "id": "VL147_POST_WATCH_03",
+            "speaker": "부엉이",
+            "text": "기다리게 했네. 다 썼어.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_WATCH_04",
+            "speaker": "아빠",
+            "text": "이제 부치시면 되겠네요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_WATCH_05",
+            "speaker": "부엉이",
+            "text": "응. 여기서 더 붙들고 있으면 또 고칠 테니.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "decline": [
+          {
+            "id": "VL147_POST_DECLINE_01",
+            "speaker": "아빠",
+            "text": "저는 제 용건부터 보겠습니다.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_DECLINE_02",
+            "speaker": "세련",
+            "text": "네. 말씀하세요. 엽서는 천천히 쓰셔도 되니까요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_DECLINE_03",
+            "speaker": "부엉이",
+            "text": "그래, 먼저 보게. 난 한 줄만 더 쓰면 돼.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "memory_help": [
+          {
+            "id": "VL147_POST_MEMORY_HELP_01",
+            "speaker": "아빠",
+            "text": "엽서는 보내셨어요?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_MEMORY_HELP_02",
+            "speaker": "부엉이",
+            "text": "보냈지. 자네 말 듣고 안부만 적었어.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_MEMORY_HELP_03",
+            "speaker": "아빠",
+            "text": "답장 기다리시겠네요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_MEMORY_HELP_04",
+            "speaker": "부엉이",
+            "text": "이제는 그래도 기다릴 게 생겼네.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "memory_watch": [
+          {
+            "id": "VL147_POST_MEMORY_WATCH_01",
+            "speaker": "아빠",
+            "text": "엽서는 보내셨어요?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_MEMORY_WATCH_02",
+            "speaker": "부엉이",
+            "text": "응. 자네 앞에서 쓴 그대로 보냈어. 혼자 있었으면 또 지웠을 거야.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_MEMORY_WATCH_03",
+            "speaker": "아빠",
+            "text": "끝까지 쓰셨으니 다행입니다.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_MEMORY_WATCH_04",
+            "speaker": "부엉이",
+            "text": "다음에는 지우개를 두고 와야겠어.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "memory_decline": [
+          {
+            "id": "VL147_POST_MEMORY_DECLINE_01",
+            "speaker": "아빠",
+            "text": "엽서는 보내셨어요?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_MEMORY_DECLINE_02",
+            "speaker": "부엉이",
+            "text": "부쳤어. 세련이 창구 닫기 전에 달라길래 얼른 줬지.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_MEMORY_DECLINE_03",
+            "speaker": "아빠",
+            "text": "다 쓰셨군요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_MEMORY_DECLINE_04",
+            "speaker": "부엉이",
+            "text": "그래. 계속 들고 있을 수도 없으니까.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "passed": [
+          {
+            "id": "VL147_POST_PASSED_01",
+            "speaker": "아빠",
+            "text": "지금은 쉬시는 중이세요?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_PASSED_02",
+            "speaker": "부엉이",
+            "text": "응. 우체국에 엽서를 부쳤어. 한 장 쓰는 데 한참 걸렸지.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_PASSED_03",
+            "speaker": "아빠",
+            "text": "쓰실 말씀이 많으셨나 봅니다.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POST_PASSED_04",
+            "speaker": "부엉이",
+            "text": "아니. 잘 지내냐는 말을 썼다 지웠다 했어. 보내고 나니 별것 아닌데.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "noticed": [
+          {
+            "id": "VL147_POSTCARD_NOTICED_01",
+            "speaker": "아빠",
+            "text": "엽서는 보내셨어요?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POSTCARD_NOTICED_02",
+            "speaker": "부엉이",
+            "text": "부쳤어. 세련이 창구 닫기 전에 달라길래 얼른 줬지.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POSTCARD_NOTICED_03",
+            "speaker": "아빠",
+            "text": "다 쓰셨군요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_POSTCARD_NOTICED_04",
+            "speaker": "부엉이",
+            "text": "그래. 계속 들고 있을 수도 없으니까.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ]
+      }
+    },
+    "sleeve": {
+      "title": "팔이 안 빠져요",
+      "owner": "resident_tori",
+      "source_place": "inn",
+      "source_day": 2,
+      "source_periods": [
+        0,
+        1
+      ],
+      "members": [
+        "resident_yeoni",
+        "resident_tori"
+      ],
+      "notice": "토리가 소매를 잡고 있고, 여니가 안쪽 실밥을 살피고 있다.",
+      "source_title": "소매가 걸렸니?",
+      "memory_title": "소매는 이제 편하니?",
+      "passed_title": "요즘은 뭐 하니?",
+      "choices": [
+        {
+          "title": "제가 이쪽 천을 잡을게요.",
+          "result": "help"
+        },
+        {
+          "title": "잠깐 옆에서 볼게요.",
+          "result": "watch"
+        },
+        {
+          "title": "지금은 도와드리기 어렵겠어요.",
+          "result": "decline"
+        }
+      ],
+      "blocks": {
+        "intro": [
+          {
+            "id": "VL147_SEAM_INTRO_01",
+            "speaker": "아빠",
+            "text": "소매가 걸렸니?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_INTRO_02",
+            "speaker": "토리",
+            "text": "손을 빼려는데 안 빠져요. 잠깐만요. 그쪽 잡아당기면 더 걸려요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_INTRO_03",
+            "speaker": "여니",
+            "text": "알았어. 조금만 느슨하게 해 보자.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_INTRO_04",
+            "speaker": "다람",
+            "text": "아빠, 손이 갇혔어.",
+            "expression": "neutral",
+            "kind": "dialogue",
+            "companion": true
+          },
+          {
+            "id": "VL147_SEAM_INTRO_05",
+            "speaker": "아빠",
+            "text": "손목은 괜찮니?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_INTRO_06",
+            "speaker": "토리",
+            "text": "네. 천만 걸린 거예요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "help": [
+          {
+            "id": "VL147_SEAM_HELP_01",
+            "speaker": "아빠",
+            "text": "제가 이쪽 천을 잡을게요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_HELP_02",
+            "speaker": "여니",
+            "text": "고맙습니다. 토리야, 손목을 조금 돌려 봐.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_HELP_03",
+            "speaker": "토리",
+            "text": "나왔어요. 다음에는 제 팔부터 넣어 보고 꿰매요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_HELP_04",
+            "speaker": "여니",
+            "text": "그래. 선만 곧게 맞추느라 너무 좁게 잡았네.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_HELP_05",
+            "speaker": "다람",
+            "text": "내 장갑도 벗을 때 손가락이 뒤집혀.",
+            "expression": "neutral",
+            "kind": "dialogue",
+            "companion": true
+          },
+          {
+            "id": "VL147_SEAM_HELP_08",
+            "speaker": "아빠",
+            "text": "그 장갑은 아빠가 같이 펴 줄게.",
+            "expression": "neutral",
+            "kind": "dialogue",
+            "companion": true
+          },
+          {
+            "id": "VL147_SEAM_HELP_06",
+            "speaker": "아빠",
+            "text": "그럼 이 소매는 조금 더 넓혀야겠네요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_HELP_07",
+            "speaker": "여니",
+            "text": "네. 손부터 뺐으니, 이제 안쪽을 다시 손봐야죠.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "watch": [
+          {
+            "id": "VL147_SEAM_WATCH_01",
+            "speaker": "아빠",
+            "text": "잠깐 옆에서 볼게요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_WATCH_02",
+            "speaker": "여니",
+            "text": "토리야, 천을 반대로 젖혀 볼까?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_WATCH_03",
+            "speaker": "토리",
+            "text": "이렇게요? 아, 이 실이 잡고 있었네요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_WATCH_04",
+            "speaker": null,
+            "text": "여니가 안쪽 실밥을 조금 푼다. 토리가 손을 빼고 손목을 돌린다.",
+            "expression": "neutral",
+            "kind": "narration"
+          },
+          {
+            "id": "VL147_SEAM_WATCH_05",
+            "speaker": "여니",
+            "text": "입고 벗는 걸 먼저 봤어야 했네.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_WATCH_06",
+            "speaker": "아빠",
+            "text": "풀어 놓은 실은 괜찮나요?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_WATCH_07",
+            "speaker": "여니",
+            "text": "다시 꿰매면 돼요. 팔이 걸리는 것보다는 낫죠.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "decline": [
+          {
+            "id": "VL147_SEAM_DECLINE_01",
+            "speaker": "아빠",
+            "text": "지금은 도와드리기 어렵겠어요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_DECLINE_02",
+            "speaker": "여니",
+            "text": "괜찮아요. 토리야, 이 실만 풀자. 천은 잡아당기지 말고.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_DECLINE_03",
+            "speaker": "토리",
+            "text": "네. 이쪽부터요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "memory_help": [
+          {
+            "id": "VL147_SEAM_MEMORY_HELP_01",
+            "speaker": "아빠",
+            "text": "소매는 이제 편하니?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_MEMORY_HELP_02",
+            "speaker": "토리",
+            "text": "네. 잡아 주셔서 손이 빠졌잖아요. 이번에는 혼자 벗었어요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_MEMORY_HELP_03",
+            "speaker": "아빠",
+            "text": "안쪽 실은 다시 손봤고?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_MEMORY_HELP_04",
+            "speaker": "토리",
+            "text": "여니가 조금 풀었어요. 아직 마무리는 해야 한대요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "memory_watch": [
+          {
+            "id": "VL147_SEAM_MEMORY_WATCH_01",
+            "speaker": "아빠",
+            "text": "소매는 이제 편하니?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_MEMORY_WATCH_02",
+            "speaker": "토리",
+            "text": "네. 그때 여니가 실을 풀어 줘서 이제 손이 안 걸려요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_MEMORY_WATCH_03",
+            "speaker": "아빠",
+            "text": "입어 보고 손보니까 다르구나.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_MEMORY_WATCH_04",
+            "speaker": "토리",
+            "text": "다음에도 꿰매기 전에 꼭 입어 볼 거예요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "memory_decline": [
+          {
+            "id": "VL147_SEAM_MEMORY_DECLINE_01",
+            "speaker": "아빠",
+            "text": "소매는 이제 편하니?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_MEMORY_DECLINE_02",
+            "speaker": "토리",
+            "text": "네. 여니랑 안쪽 실을 풀었어요. 이렇게 하면 안 걸려요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_MEMORY_DECLINE_03",
+            "speaker": "아빠",
+            "text": "잘됐네. 손목은 괜찮고?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_MEMORY_DECLINE_04",
+            "speaker": "토리",
+            "text": "괜찮아요. 세게 안 당겼거든요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "passed": [
+          {
+            "id": "VL147_SEAM_PASSED_01",
+            "speaker": "아빠",
+            "text": "요즘은 뭐 하니?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_PASSED_02",
+            "speaker": "토리",
+            "text": "여니랑 소매를 고쳤어요. 손이 끼어서 안 빠졌거든요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_PASSED_03",
+            "speaker": "아빠",
+            "text": "손목은 괜찮니?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_PASSED_04",
+            "speaker": "토리",
+            "text": "네. 실을 조금 풀고 다시 입어 봤어요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "quest_offer": [
+          {
+            "id": "VL147_SEAM_QUEST_OFFER_01",
+            "speaker": "아빠",
+            "text": "바느질을 조금 도와드릴까요?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_QUEST_OFFER_02",
+            "speaker": "여니",
+            "text": "손은 뺐지만 소매 안쪽은 다시 꿰매야 해요. 토리가 입고 벗기 편하게요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_QUEST_OFFER_03",
+            "speaker": "아빠",
+            "text": "팔이 움직일 틈을 남기면 되겠군요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SEAM_QUEST_OFFER_04",
+            "speaker": "여니",
+            "text": "네. 너무 당기지 말고요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ],
+        "noticed": [
+          {
+            "id": "VL147_SLEEVE_NOTICED_01",
+            "speaker": "아빠",
+            "text": "소매는 이제 편하니?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SLEEVE_NOTICED_02",
+            "speaker": "토리",
+            "text": "네. 여니랑 안쪽 실을 풀었어요. 이렇게 하면 안 걸려요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SLEEVE_NOTICED_03",
+            "speaker": "아빠",
+            "text": "잘됐네. 손목은 괜찮고?",
+            "expression": "neutral",
+            "kind": "dialogue"
+          },
+          {
+            "id": "VL147_SLEEVE_NOTICED_04",
+            "speaker": "토리",
+            "text": "괜찮아요. 세게 안 당겼거든요.",
+            "expression": "neutral",
+            "kind": "dialogue"
+          }
+        ]
+      }
+    }
+  }
+}

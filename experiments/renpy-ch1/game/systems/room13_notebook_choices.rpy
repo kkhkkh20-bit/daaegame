@@ -10,8 +10,8 @@ init 81 python:
     R13_CHOICE_TEXT_PAD=116   # 번호 칸(36~90)·사이·오른쪽 여백. 예전 184(번호 60 + 「·」 130 + 글자 160)
     def r13_notebook_choice_pages(entries,width,height,split=False):
         # 2026-10-28 소유자(7일 빨래터 선택 캡처): "왜 이리 두껍고 튀어나와". 가장 긴 선택지(세 줄)에 칸 높이를 모두 맞추던
-        # 것을 그만두고, 칸마다 제 글자 높이만큼만 갖는다(최소 64, 터치 80). 글자 폭은 번호 자리를 줄인 width-R13_CHOICE_TEXT_PAD.
-        minimum=80 if r13_touch_ui() else 60
+        # 것을 그만두고, 칸마다 제 글자 높이만큼만 갖는다. 터치는 공통 조작 높이(88)를 쓴다.
+        minimum=r13_control_height() if r13_touch_ui() else 60
         rows=[]
         for entry in entries:
             label=r13_question_caption(entry[0],False,False)

@@ -17,16 +17,17 @@ class PublicRevisit144(unittest.TestCase):
             r13_v111_active=lambda:True,r13_v111_value=lambda key:self.state.room13['v111']['values'].get(key),
             r13_v111_owned=lambda key:'V111:'+key in self.state.room13['evidence'],
             r13_has=lambda key:key in self.state.room13['flags'],r13_v111_binding=lambda:self.binding,
-            _r13_v111_places=lambda:['legacy'])
+            _r13_v111_places=lambda:['legacy'],
+            R13_VILLAGE147_PUBLIC_PLACES=("inn","hall","room13","dining","square","gate","post","workshop","clinic","school","store"))
         for key in ('r13_v111_free7_ready','r13_v111_revisit_allowed','r13_v111_known_public_visits','r13_v111_public_revisit_places','r13_v111_inn_revisit_places','r13_places'):
             load_function('game/room13_v111.rpy',key,self.env)
         load_function('game/room13_rules.rpy','r13_edit',self.env)
 
     def test_square_can_revisit_inn_and_return_to_the_original_question(self):
         before=copy.deepcopy(self.state.room13)
-        self.assertEqual(self.env['r13_places'](),['square','inn'])
+        self.assertEqual(set(self.env['r13_places']()),set(self.env['R13_VILLAGE147_PUBLIC_PLACES']))
         self.env['r13_edit'](location='inn')
-        self.assertEqual(self.env['r13_places'](),['inn','square','hall','room13'])
+        self.assertEqual(set(self.env['r13_places']()),set(self.env['R13_VILLAGE147_PUBLIC_PLACES']))
         self.env['r13_edit'](location='square')
         after=self.state.room13
         self.assertEqual(after['day'],before['day']);self.assertEqual(after['period'],before['period'])
@@ -48,9 +49,11 @@ class PublicRevisit144(unittest.TestCase):
         saved=json.loads(json.dumps(self.state.room13));self.state.room13=saved
         self.assertIn('post',self.env['r13_places']())
 
-    def test_unvisited_and_undiscovered_places_never_open_from_map_art(self):
+    def test_public_first_visits_open_but_private_and_future_places_remain_closed(self):
         self.state.room13['v111']['visited_places']+=['store','passage','ancient','facility','greenhouse','altar']
-        for key in ('post','workshop','clinic','school','store','passage','ancient','facility','greenhouse','altar'):
+        for key in ('post','workshop','clinic','school','store'):
+            self.assertIn(key,self.env['r13_places']())
+        for key in ('passage','ancient','facility','greenhouse','altar'):
             self.assertNotIn(key,self.env['r13_places']())
 
     def test_old_saves_restore_only_certain_completed_visits(self):
@@ -84,13 +87,13 @@ class PublicRevisit144(unittest.TestCase):
                 self.assertEqual(self.env['r13_places'](),['square'])
                 values.pop(field)
 
-    def test_afternoon_forest_story_choice_and_store_lock_are_unchanged(self):
+    def test_afternoon_forest_story_choice_is_unchanged_and_store_public_space_opens(self):
         self.state.room13['v111'].update(gate='afternoon2',scene='MS14_D02_S04')
         self.state.room13['v111']['visited_places'].append('store')
         self.binding=json.loads((ROOT/'game/v111/field-bindings.json').read_text())['afternoon2']
         original=copy.deepcopy(self.binding)
         self.assertIn('inn',self.env['r13_places']())
-        self.assertNotIn('store',self.env['r13_places']())
+        self.assertIn('store',self.env['r13_places']())
         self.assertEqual(self.binding,original)
         forest=next(o for o in self.binding['options'] if o.get('move')=='forest')
         self.assertTrue(forest['move_by_story'])
