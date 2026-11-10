@@ -589,6 +589,9 @@ label r13_v111_wait_again:
                         call r13_lines(v111_react,"v111:present_reaction:"+v111_person+":"+v111_shown)
                     else:
                         $ renpy.notify("지금은 이 자료로 더 확인할 내용이 없다.")
+            if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="world148":
+                if isinstance(_return[1],(tuple,list)) and len(_return[1])==2:
+                    call r13_world148_dispatch(_return[1][0],_return[1][1])
             if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="village_visit":
                 if isinstance(_return[1],(tuple,list)) and len(_return[1])==2:
                     call r13_visit147_dispatch(_return[1][0],_return[1][1])
@@ -643,6 +646,9 @@ label r13_v111_wait_again:
         if v111_pick[1]=="bed" and room13["location"] in ("room13","guestroom"):
             $ v111_bed_hint=r13_v111_ambient_text(v111_pick[1],ROOM13["objects"].get(room13["location"],{}).get(v111_pick[1],{}))
             $ renpy.notify(v111_bed_hint or "아직 할 일이 남아 있습니다. 준비를 마치면 여기서 잠잘 수 있습니다.")
+            jump r13_v111_wait_again
+        call r13_world148_object(v111_pick[1])
+        if _return:
             jump r13_v111_wait_again
         $ v111_object_spec=ROOM13["objects"].get(room13["location"],{}).get(v111_pick[1],{})
         $ v111_ambient=r13_v111_ambient_text(v111_pick[1],v111_object_spec)

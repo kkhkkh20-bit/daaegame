@@ -111,10 +111,10 @@ screen r13_hub(entry=False):
             area (24,84,144,88 if r13_touch_ui() else 64)
             use r13_field_top_button("지도","map",Return(("menu","map")),input_ready)
     if not entry and r13_v111_active():
-        if r13_sidequest_tasks146():
+        if r13_sidequest_tasks146() or r13_world148_journal():
             fixed:
                 area (504,84,144,r13_control_height())
-                use r13_control("부탁","record",Return(("menu","sidequests")),enabled=input_ready,width=144,height=r13_control_height(),control_id="r13_field_quests")
+                use r13_control("마을일" if r13_world148_journal() else "부탁","record",Return(("menu","sidequests")),enabled=input_ready,width=144,height=r13_control_height(),control_id="r13_field_quests")
         if r13_field_companion_button146():
             fixed:
                 area (664,84,144,r13_control_height())

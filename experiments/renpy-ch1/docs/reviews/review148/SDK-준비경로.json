@@ -1,0 +1,614 @@
+{
+  "scope": "실제 SDK의 준비 상태·일과·행동 조회. 자연 완주는 아니다.",
+  "rows": [
+    {
+      "thread": "light",
+      "context": "safe",
+      "result": "help",
+      "owner_place": "workshop",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          2,
+          0
+        ],
+        "source_place": "square",
+        "observed_fact": "등받침 가장자리에는 닦인 자리와 남은 물기가 함께 있다.",
+        "result": "help",
+        "asked_time": [
+          2,
+          0
+        ],
+        "last_time": [
+          2,
+          0
+        ],
+        "heard_variants": [
+          "piko_safe"
+        ],
+        "worked": true,
+        "worked_time": [
+          2,
+          0
+        ]
+      },
+      "variants": [
+        "piko_safe"
+      ]
+    },
+    {
+      "thread": "light",
+      "context": "safe",
+      "result": "listen",
+      "owner_place": "workshop",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          2,
+          0
+        ],
+        "source_place": "square",
+        "observed_fact": "등받침 가장자리에는 닦인 자리와 남은 물기가 함께 있다.",
+        "result": "listen",
+        "asked_time": [
+          2,
+          0
+        ],
+        "last_time": [
+          2,
+          0
+        ],
+        "heard_variants": [
+          "piko_safe"
+        ]
+      },
+      "variants": [
+        "piko_safe"
+      ]
+    },
+    {
+      "thread": "postal",
+      "context": "safe",
+      "result": "help",
+      "owner_place": "post",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          2,
+          0
+        ],
+        "source_place": "post",
+        "observed_fact": "한 묶음에 들어온 우편물에도 서로 다른 글씨가 보인다.",
+        "result": "help",
+        "asked_time": [
+          2,
+          0
+        ],
+        "last_time": [
+          2,
+          0
+        ],
+        "heard_variants": [
+          "piko_safe"
+        ],
+        "worked": true,
+        "worked_time": [
+          2,
+          0
+        ]
+      },
+      "variants": [
+        "piko_safe"
+      ]
+    },
+    {
+      "thread": "postal",
+      "context": "safe",
+      "result": "listen",
+      "owner_place": "post",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          2,
+          0
+        ],
+        "source_place": "post",
+        "observed_fact": "한 묶음에 들어온 우편물에도 서로 다른 글씨가 보인다.",
+        "result": "listen",
+        "asked_time": [
+          2,
+          0
+        ],
+        "last_time": [
+          2,
+          0
+        ],
+        "heard_variants": [
+          "piko_safe"
+        ]
+      },
+      "variants": [
+        "piko_safe"
+      ]
+    },
+    {
+      "thread": "seat",
+      "context": "safe",
+      "result": "help",
+      "owner_place": "dining",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          4,
+          1
+        ],
+        "source_place": "dining",
+        "observed_fact": "식탁과 의자는 식사 때마다 여러 사람이 함께 쓴다.",
+        "result": "help",
+        "asked_time": [
+          4,
+          1
+        ],
+        "last_time": [
+          4,
+          1
+        ],
+        "heard_variants": [
+          "piko_safe",
+          "lamp_win"
+        ],
+        "worked": true,
+        "worked_time": [
+          4,
+          1
+        ]
+      },
+      "variants": [
+        "piko_safe",
+        "lamp_win"
+      ]
+    },
+    {
+      "thread": "seat",
+      "context": "safe",
+      "result": "listen",
+      "owner_place": "dining",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          4,
+          1
+        ],
+        "source_place": "dining",
+        "observed_fact": "식탁과 의자는 식사 때마다 여러 사람이 함께 쓴다.",
+        "result": "listen",
+        "asked_time": [
+          4,
+          1
+        ],
+        "last_time": [
+          4,
+          1
+        ],
+        "heard_variants": [
+          "piko_safe",
+          "lamp_win"
+        ]
+      },
+      "variants": [
+        "piko_safe",
+        "lamp_win"
+      ]
+    },
+    {
+      "thread": "seat",
+      "context": "dead",
+      "result": "help",
+      "owner_place": "dining",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          4,
+          1
+        ],
+        "source_place": "dining",
+        "observed_fact": "식탁과 의자는 식사 때마다 여러 사람이 함께 쓴다.",
+        "result": "help",
+        "asked_time": [
+          4,
+          1
+        ],
+        "last_time": [
+          4,
+          1
+        ],
+        "heard_variants": [
+          "piko_dead",
+          "lamp_win"
+        ],
+        "worked": true,
+        "worked_time": [
+          4,
+          1
+        ]
+      },
+      "variants": [
+        "piko_dead",
+        "lamp_win"
+      ]
+    },
+    {
+      "thread": "seat",
+      "context": "dead",
+      "result": "listen",
+      "owner_place": "dining",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          4,
+          1
+        ],
+        "source_place": "dining",
+        "observed_fact": "식탁과 의자는 식사 때마다 여러 사람이 함께 쓴다.",
+        "result": "listen",
+        "asked_time": [
+          4,
+          1
+        ],
+        "last_time": [
+          4,
+          1
+        ],
+        "heard_variants": [
+          "piko_dead",
+          "lamp_win"
+        ]
+      },
+      "variants": [
+        "piko_dead",
+        "lamp_win"
+      ]
+    },
+    {
+      "thread": "tools",
+      "context": "safe",
+      "result": "help",
+      "owner_place": "workshop",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          4,
+          1
+        ],
+        "source_place": "workshop",
+        "observed_fact": "공구판의 모든 걸이가 차 있지는 않다. 빈자리만으로 빠진 까닭을 알 수는 없다.",
+        "result": "help",
+        "asked_time": [
+          4,
+          1
+        ],
+        "last_time": [
+          4,
+          1
+        ],
+        "heard_variants": [
+          "piko_safe",
+          "lamp_win"
+        ],
+        "worked": true,
+        "worked_time": [
+          4,
+          1
+        ]
+      },
+      "variants": [
+        "piko_safe",
+        "lamp_win"
+      ]
+    },
+    {
+      "thread": "tools",
+      "context": "safe",
+      "result": "listen",
+      "owner_place": "workshop",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          4,
+          1
+        ],
+        "source_place": "workshop",
+        "observed_fact": "공구판의 모든 걸이가 차 있지는 않다. 빈자리만으로 빠진 까닭을 알 수는 없다.",
+        "result": "listen",
+        "asked_time": [
+          4,
+          1
+        ],
+        "last_time": [
+          4,
+          1
+        ],
+        "heard_variants": [
+          "piko_safe",
+          "lamp_win"
+        ]
+      },
+      "variants": [
+        "piko_safe",
+        "lamp_win"
+      ]
+    },
+    {
+      "thread": "tools",
+      "context": "dead",
+      "result": "help",
+      "owner_place": "workshop",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          4,
+          1
+        ],
+        "source_place": "workshop",
+        "observed_fact": "공구판의 모든 걸이가 차 있지는 않다. 빈자리만으로 빠진 까닭을 알 수는 없다.",
+        "result": "help",
+        "asked_time": [
+          4,
+          1
+        ],
+        "last_time": [
+          4,
+          1
+        ],
+        "heard_variants": [
+          "piko_dead",
+          "lamp_win"
+        ],
+        "worked": true,
+        "worked_time": [
+          4,
+          1
+        ]
+      },
+      "variants": [
+        "piko_dead",
+        "lamp_win"
+      ]
+    },
+    {
+      "thread": "tools",
+      "context": "dead",
+      "result": "listen",
+      "owner_place": "workshop",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          4,
+          1
+        ],
+        "source_place": "workshop",
+        "observed_fact": "공구판의 모든 걸이가 차 있지는 않다. 빈자리만으로 빠진 까닭을 알 수는 없다.",
+        "result": "listen",
+        "asked_time": [
+          4,
+          1
+        ],
+        "last_time": [
+          4,
+          1
+        ],
+        "heard_variants": [
+          "piko_dead",
+          "lamp_win"
+        ]
+      },
+      "variants": [
+        "piko_dead",
+        "lamp_win"
+      ]
+    },
+    {
+      "thread": "school",
+      "context": "safe",
+      "result": "help",
+      "owner_place": "school",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          2,
+          0
+        ],
+        "source_place": "school",
+        "observed_fact": "접힌 담요가 놓여 있다. 누가 쓸지 적힌 이름은 이쪽에서 보이지 않는다.",
+        "result": "help",
+        "asked_time": [
+          2,
+          0
+        ],
+        "last_time": [
+          2,
+          0
+        ],
+        "heard_variants": [
+          "piko_safe"
+        ],
+        "worked": true,
+        "worked_time": [
+          2,
+          0
+        ]
+      },
+      "variants": [
+        "piko_safe"
+      ]
+    },
+    {
+      "thread": "school",
+      "context": "safe",
+      "result": "listen",
+      "owner_place": "school",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          2,
+          0
+        ],
+        "source_place": "school",
+        "observed_fact": "접힌 담요가 놓여 있다. 누가 쓸지 적힌 이름은 이쪽에서 보이지 않는다.",
+        "result": "listen",
+        "asked_time": [
+          2,
+          0
+        ],
+        "last_time": [
+          2,
+          0
+        ],
+        "heard_variants": [
+          "piko_safe"
+        ]
+      },
+      "variants": [
+        "piko_safe"
+      ]
+    },
+    {
+      "thread": "aftermath",
+      "context": "safe",
+      "result": "help",
+      "owner_place": "square",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          7,
+          1
+        ],
+        "source_place": "school",
+        "observed_fact": "학교에 놓인 장작은 길이와 굵기가 제각각이다.",
+        "result": "help",
+        "asked_time": [
+          7,
+          1
+        ],
+        "last_time": [
+          7,
+          1
+        ],
+        "heard_variants": [
+          "piko_safe",
+          "fire_safe"
+        ],
+        "worked": true,
+        "worked_time": [
+          7,
+          1
+        ]
+      },
+      "variants": [
+        "piko_safe",
+        "fire_safe"
+      ]
+    },
+    {
+      "thread": "aftermath",
+      "context": "safe",
+      "result": "listen",
+      "owner_place": "square",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          7,
+          1
+        ],
+        "source_place": "school",
+        "observed_fact": "학교에 놓인 장작은 길이와 굵기가 제각각이다.",
+        "result": "listen",
+        "asked_time": [
+          7,
+          1
+        ],
+        "last_time": [
+          7,
+          1
+        ],
+        "heard_variants": [
+          "piko_safe",
+          "fire_safe"
+        ]
+      },
+      "variants": [
+        "piko_safe",
+        "fire_safe"
+      ]
+    },
+    {
+      "thread": "aftermath",
+      "context": "lost",
+      "result": "help",
+      "owner_place": "square",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          7,
+          1
+        ],
+        "source_place": "school",
+        "observed_fact": "학교에 놓인 장작은 길이와 굵기가 제각각이다.",
+        "result": "help",
+        "asked_time": [
+          7,
+          1
+        ],
+        "last_time": [
+          7,
+          1
+        ],
+        "heard_variants": [
+          "piko_safe",
+          "fire_lost"
+        ],
+        "worked": true,
+        "worked_time": [
+          7,
+          1
+        ]
+      },
+      "variants": [
+        "piko_safe",
+        "fire_lost"
+      ]
+    },
+    {
+      "thread": "aftermath",
+      "context": "lost",
+      "result": "listen",
+      "owner_place": "square",
+      "state": {
+        "observed": true,
+        "observed_time": [
+          7,
+          1
+        ],
+        "source_place": "school",
+        "observed_fact": "학교에 놓인 장작은 길이와 굵기가 제각각이다.",
+        "result": "listen",
+        "asked_time": [
+          7,
+          1
+        ],
+        "last_time": [
+          7,
+          1
+        ],
+        "heard_variants": [
+          "piko_safe",
+          "fire_lost"
+        ]
+      },
+      "variants": [
+        "piko_safe",
+        "fire_lost"
+      ]
+    }
+  ]
+}

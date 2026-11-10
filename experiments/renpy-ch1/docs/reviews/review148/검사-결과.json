@@ -1,0 +1,24 @@
+{
+  "unit": {
+    "count": 1773,
+    "result": "통과",
+    "log": "/tmp/fix148/unit-publish.log"
+  },
+  "new_unit": 27,
+  "sdk": [
+    {
+      "test": "world148_runtime_matrix",
+      "status": "PASSED"
+    },
+    {
+      "test": "world148_postal_object_question_work_and_journal",
+      "status": "PASSED"
+    }
+  ],
+  "dialogue": {
+    "A": 0,
+    "B": 0,
+    "C": 0
+  },
+  "lint": "신규 오류 없음; 기존 도달 불가 문장 안내 유지"
+}

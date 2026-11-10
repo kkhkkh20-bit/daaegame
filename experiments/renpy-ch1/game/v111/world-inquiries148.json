@@ -1,0 +1,1968 @@
+{
+  "schema": 1,
+  "threads": {
+    "light": {
+      "title": "등 아래에 남는 일",
+      "owner": "resident_lamplighter",
+      "owner_name": "초롱",
+      "days": [
+        2,
+        7
+      ],
+      "sources": [
+        {
+          "location": "square",
+          "object": "lamp",
+          "observation": [
+            {
+              "id": "WI148_LIGHT_001",
+              "speaker": null,
+              "text": "등의 받침 가장자리에 물기가 남아 있다. 닦인 자리와 젖은 자리가 손바닥 너비로 갈린다.",
+              "kind": "narration"
+            }
+          ],
+          "fact": "등받침 가장자리에는 닦인 자리와 남은 물기가 함께 있다."
+        }
+      ],
+      "question": "등 아래 물기는 매번 닦으세요?",
+      "choices": [
+        {
+          "title": "받침 닦는 건 도울게요.",
+          "result": "help"
+        },
+        {
+          "title": "밤에는 어떻게 돌보세요?",
+          "result": "listen"
+        },
+        {
+          "title": "다음에 다시 여쭐게요.",
+          "result": "later"
+        }
+      ],
+      "task": {
+        "location": "square",
+        "object": "lamp",
+        "title": "등받침 바깥 물기 닦기",
+        "message": "등의 끈과 덮개를 건드리지 않고 받침 바깥의 물기만 닦을까요?"
+      },
+      "facts": {
+        "learned": "초롱은 고인 물이 얼기 전에 등받침을 살핀다. 밤에 다른 등을 돌아보는 동안에는 이쪽을 계속 지킬 수 없다.",
+        "helped": "등받침을 닦던 천이 손가락까지 차갑게 젖었다. 바깥을 닦은 뒤에도 안쪽 모서리에는 살필 곳이 남았다."
+      },
+      "blocks": {
+        "intro": [
+          {
+            "id": "WI148_LIGHT_002",
+            "speaker": "아빠",
+            "text": "등 아래 물기는 매번 닦으세요?",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_LIGHT_003",
+            "speaker": "초롱",
+            "text": "네. 눈이 녹으면 또 고여요. 얼기 전에 봐야 해서요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_LIGHT_004",
+            "speaker": "아빠",
+            "text": "불빛은 멀리서도 보이는데, 닦은 자리는 가까이 와야 보이네요.",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_LIGHT_005",
+            "speaker": "초롱",
+            "text": "닦아 놓으면 아무도 모르죠. 미끄러지면 그때 저를 찾아요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "help": [
+          {
+            "id": "WI148_LIGHT_006",
+            "speaker": "초롱",
+            "text": "그럼 바깥 받침만 부탁할게요. 끈이나 덮개는 그대로 두시고요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_LIGHT_007",
+            "speaker": "아빠",
+            "text": "여기 남은 물기만 닦겠습니다. 안쪽은 손대지 않을게요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "listen": [
+          {
+            "id": "WI148_LIGHT_008",
+            "speaker": "초롱",
+            "text": "밤에도 돌아봐요. 그래도 한 등에 내내 붙어 있을 수는 없어요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_LIGHT_009",
+            "speaker": "아빠",
+            "text": "등이 켜져 있어도, 누가 곁을 지키고 있다는 뜻은 아니군요.",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_LIGHT_010",
+            "speaker": "초롱",
+            "text": "네. 제가 다른 등을 보는 동안엔 이쪽을 못 보니까요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_LIGHT_011",
+            "speaker": "초롱",
+            "text": "그래서 지나가다 물이 고이면 불러 주세요. 불빛만 보고 괜찮겠거니 하지는 마시고요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "action": [
+          {
+            "id": "WI148_LIGHT_012",
+            "speaker": null,
+            "text": "받침 바깥에 고인 물기를 천으로 훔친다. 천이 끈에 걸리지 않게 접어 쥔다.",
+            "kind": "narration"
+          },
+          {
+            "id": "WI148_LIGHT_013",
+            "speaker": null,
+            "text": "젖은 천을 접으니 손가락이 닿는 쪽까지 차갑다. 안쪽 모서리에 맺힌 물방울은 천 끝으로도 잘 닿지 않는다.",
+            "kind": "narration"
+          }
+        ],
+        "memory_help": [
+          {
+            "id": "WI148_LIGHT_014",
+            "speaker": "초롱",
+            "text": "전에 닦아 주신 데는 잘 봤어요. 덕분에 안쪽을 먼저 살폈고요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_LIGHT_015",
+            "speaker": "아빠",
+            "text": "다 닦아 놓은 줄 알면 안 되겠네요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_LIGHT_016",
+            "speaker": "초롱",
+            "text": "네. 바깥만 부탁드린 거니까요. 지나가실 때 다시 봐 주시면 돼요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "memory_listen": [
+          {
+            "id": "WI148_LIGHT_017",
+            "speaker": "아빠",
+            "text": "지나오면서 받침부터 봤습니다. 전에는 불빛만 봤는데요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_LIGHT_018",
+            "speaker": "초롱",
+            "text": "그럼 다음엔 저를 찾기 전에 물이 고였는지도 보이겠네요. 손대기 어려우면 불러 주세요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "reinspect_help": [
+          {
+            "id": "WI148_LIGHT_019",
+            "speaker": null,
+            "text": "받침 바깥을 손가락으로 따라 본다. 천을 대지 못했던 안쪽 모서리에 물방울이 맺혀 있다.",
+            "kind": "narration"
+          }
+        ],
+        "reinspect_listen": [
+          {
+            "id": "WI148_LIGHT_020",
+            "speaker": null,
+            "text": "등의 불빛 아래로 시선을 내린다. 받침 가장자리의 물기가 빛을 받아 반짝인다.",
+            "kind": "narration"
+          }
+        ]
+      },
+      "variants": {},
+      "source_refs": [
+        "/workspace/outputs/daram-full-novel-polished-20261105/chapters/02_원고.txt:53-65",
+        "docs/design/resident-reactions-20261105/주민_반응별편.md:11-77"
+      ]
+    },
+    "postal": {
+      "title": "도장이 확인하는 것",
+      "owner": "seryeon",
+      "owner_name": "세련",
+      "days": [
+        2,
+        7
+      ],
+      "sources": [
+        {
+          "location": "post",
+          "object": "parcels",
+          "observation": [
+            {
+              "id": "WI148_POSTAL_001",
+              "speaker": null,
+              "text": "창구에 놓인 우편 묶음은 끈으로 구분되어 있다. 접수 도장이 찍힌 겉면에도 글씨 모양은 제각각이다.",
+              "kind": "narration"
+            }
+          ],
+          "fact": "한 묶음에 들어온 우편물에도 서로 다른 글씨가 보인다."
+        }
+      ],
+      "question": "한 묶음으로 오면 보낸 사람도 같습니까?",
+      "choices": [
+        {
+          "title": "겉표시를 함께 살펴봐도 될까요?",
+          "result": "help"
+        },
+        {
+          "title": "도장은 뭘 확인하는 건가요?",
+          "result": "listen"
+        },
+        {
+          "title": "나중에 다시 여쭐게요.",
+          "result": "later"
+        }
+      ],
+      "task": {
+        "location": "post",
+        "object": "parcels",
+        "title": "우편 묶음의 겉표시 살피기",
+        "message": "우편물을 뜯거나 순서를 바꾸지 않고 묶음의 겉표시와 봉투의 접수 도장을 살펴볼까요?"
+      },
+      "facts": {
+        "learned": "세련의 접수 도장은 우편물을 받았다는 표시다. 편지를 쓴 사람을 확인한 표시는 아니다.",
+        "helped": "같은 접수 도장이 찍힌 봉투에도 글씨의 기울기와 획 굵기가 달랐다. 함께 들어온 우편물이라고 같은 사람이 썼다는 뜻은 아니다."
+      },
+      "blocks": {
+        "intro": [
+          {
+            "id": "WI148_POSTAL_002",
+            "speaker": "아빠",
+            "text": "한 묶음으로 오면 보낸 사람도 같습니까?",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_POSTAL_003",
+            "speaker": "세련",
+            "text": "가져온 곳이 같은 거예요. 그 안에 여러 사람 편지가 들 수 있죠.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_POSTAL_004",
+            "speaker": "아빠",
+            "text": "장부에 적힌 곳을 사람 이름처럼 읽었네요.",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_POSTAL_005",
+            "speaker": "세련",
+            "text": "그럼 기록보다 더 많은 걸 읽으신 거예요. 제가 확인한 데까지만 말씀드릴게요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "help": [
+          {
+            "id": "WI148_POSTAL_006",
+            "speaker": "세련",
+            "text": "겉표시와 봉투의 도장을 보세요. 풀지는 마시고요. 묶음으로 온 것과 누가 썼는지는 나눠 보셔야 해요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_POSTAL_007",
+            "speaker": "아빠",
+            "text": "겉에서 확인할 수 있는 것만 보겠습니다.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "listen": [
+          {
+            "id": "WI148_POSTAL_008",
+            "speaker": "세련",
+            "text": "제 도장은 여기서 받았다는 뜻이에요. 제가 쓰는 걸 봤다는 뜻은 아니고요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_POSTAL_009",
+            "speaker": "아빠",
+            "text": "그 도장만으로 아내가 직접 썼다고 할 수도, 아니라고 할 수도 없겠군요.",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_POSTAL_010",
+            "speaker": "세련",
+            "text": "네. 그걸 알려면 다른 확인이 필요해요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_POSTAL_011",
+            "speaker": "아빠",
+            "text": "알겠습니다. 접수한 사실과 쓴 사람은 나눠서 적겠습니다.",
+            "kind": "dialogue",
+            "expression": "thinking"
+          }
+        ],
+        "action": [
+          {
+            "id": "WI148_POSTAL_012",
+            "speaker": null,
+            "text": "묶인 우편물을 그대로 둔 채 겉표시와 봉투의 접수 도장을 살핀다. 같은 도장이 찍힌 봉투에도 글씨 모양은 다르다.",
+            "kind": "narration"
+          },
+          {
+            "id": "WI148_POSTAL_013",
+            "speaker": null,
+            "text": "반듯하게 눌러 쓴 글씨 옆에 오른쪽으로 기운 글씨가 있다. 도장은 같은 모양인데 그 아래의 획은 굵기도 다르다.",
+            "kind": "narration"
+          }
+        ],
+        "memory_help": [
+          {
+            "id": "WI148_POSTAL_014",
+            "speaker": "세련",
+            "text": "전에 보신 묶음, 이번엔 구분이 되셨어요?",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_POSTAL_015",
+            "speaker": "아빠",
+            "text": "네. 함께 들어온 걸, 한 사람이 썼다는 뜻으로 읽으면 안 되겠더군요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_POSTAL_016",
+            "speaker": "세련",
+            "text": "맞아요. 없는 확인까지 제 도장에 맡기시면 곤란하죠.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "memory_listen": [
+          {
+            "id": "WI148_POSTAL_017",
+            "speaker": "아빠",
+            "text": "도장을 보면 이제 무슨 확인을 했는지부터 묻게 됩니다.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_POSTAL_018",
+            "speaker": "세련",
+            "text": "그럼 제가 대답할 때도 짧아지겠네요. 아는 데까지만 말하면 되니까요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "reinspect_help": [
+          {
+            "id": "WI148_POSTAL_019",
+            "speaker": null,
+            "text": "같은 접수 도장이 찍힌 봉투들이 묶여 있다. 봉투마다 글씨의 기울기와 획 굵기가 다르다.",
+            "kind": "narration"
+          }
+        ],
+        "reinspect_listen": [
+          {
+            "id": "WI148_POSTAL_020",
+            "speaker": null,
+            "text": "봉투의 글씨와 그 위에 찍힌 도장을 따로 살핀다. 접수 도장은 여느 봉투와 같은 자리에 찍혀 있다.",
+            "kind": "narration"
+          }
+        ]
+      },
+      "variants": {},
+      "source_refs": [
+        "/workspace/outputs/daram-full-novel-polished-20261105/chapters/02_원고.txt:129-153"
+      ]
+    },
+    "seat": {
+      "title": "앉는 자리와 잘 자리",
+      "owner": "nabi",
+      "owner_name": "나비",
+      "days": [
+        3,
+        7
+      ],
+      "sources": [
+        {
+          "location": "dining",
+          "object": "table",
+          "observation": [
+            {
+              "id": "WI148_SEAT_001",
+              "speaker": null,
+              "text": "공용 식탁에는 그릇 자국이 겹쳐 있다. 의자를 안으로 밀면 통로가 조금 넓어진다.",
+              "kind": "narration"
+            }
+          ],
+          "fact": "식탁과 의자는 식사 때마다 여러 사람이 함께 쓴다."
+        }
+      ],
+      "question": "식당에는 각자 정해진 자리가 있습니까?",
+      "choices": [
+        {
+          "title": "빈 접시부터 치울게요.",
+          "result": "help"
+        },
+        {
+          "title": "여기서 자는 건 별개인가요?",
+          "result": "listen"
+        },
+        {
+          "title": "지금은 일 보세요.",
+          "result": "later"
+        }
+      ],
+      "task": {
+        "location": "dining",
+        "object": "breadboard",
+        "title": "빈 접시를 마른 쪽에 포개기",
+        "message": "벤치와 침구는 그대로 두고 빵판 옆의 빈 접시만 마른 쪽에 포갤까요?"
+      },
+      "facts": {
+        "learned": "나비는 사람이 앉을 자리와 식사 뒤 치울 일을 말로 먼저 맞추려 한다.",
+        "helped": "빈 접시를 안쪽으로 포개니 통로 곁에 놓인 그릇이 줄었다. 식당에서는 앉을 자리뿐 아니라 음식을 나를 길도 필요했다."
+      },
+      "blocks": {
+        "intro": [
+          {
+            "id": "WI148_SEAT_002",
+            "speaker": "아빠",
+            "text": "식당에는 각자 정해진 자리가 있습니까?",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_SEAT_003",
+            "speaker": "나비",
+            "text": "밥 먹는 자리는 비면 앉아요. 접시 놓을 때만 비켜 주시면 되고요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_SEAT_004",
+            "speaker": "아빠",
+            "text": "누군가 오래 앉으면 다른 사람 몫을 빼앗는 건가 싶어서요.",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_SEAT_005",
+            "speaker": "나비",
+            "text": "식사하는 동안은 괜찮아요. 그 뒤에 치울 물건이 남는 건 다른 얘기고요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "help": [
+          {
+            "id": "WI148_SEAT_006",
+            "speaker": "나비",
+            "text": "그럼 빵판 옆 빈 접시만 마른 쪽으로 포개 주세요. 젖은 행주는 쓰지 마시고요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_SEAT_007",
+            "speaker": "아빠",
+            "text": "접시만 옮기겠습니다. 벤치나 담요는 그대로 두고요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "listen": [
+          {
+            "id": "WI148_SEAT_008",
+            "speaker": "나비",
+            "text": "의자 하나 비었다고 밤자리까지 생기는 건 아니에요. 아침 준비할 때는 다시 비워야 하니까요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_SEAT_009",
+            "speaker": "아빠",
+            "text": "잘 곳을 내주면 다음 날 일도 달라지겠네요.",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_SEAT_010",
+            "speaker": "나비",
+            "text": "네. 그렇다고 그걸 재촉하다 보면 사람한테까지 나가라는 말이 돼요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_SEAT_011",
+            "speaker": "나비",
+            "text": "저도 말을 좀 골라야죠. 접시 치우란 말부터요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "action": [
+          {
+            "id": "WI148_SEAT_012",
+            "speaker": null,
+            "text": "빵판 옆에 남은 빈 접시를 들어 마른 쪽에 포갠다. 접시 밑이 젖어 있어 행주로 손을 닦는다.",
+            "kind": "narration"
+          },
+          {
+            "id": "WI148_SEAT_013",
+            "speaker": null,
+            "text": "비워진 자리에 접시를 다시 놓아 보니 통로 쪽으로 튀어나오지 않는다. 누가 지나갈 때 팔을 움츠릴 필요도 줄겠다.",
+            "kind": "narration"
+          }
+        ],
+        "memory_help": [
+          {
+            "id": "WI148_SEAT_014",
+            "speaker": "나비",
+            "text": "접시 옮겨 주신 자리, 바로 썼어요. 빵 놓기 전에 치울 게 줄었네요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_SEAT_015",
+            "speaker": "아빠",
+            "text": "다음에도 빈 접시부터 물어볼게요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_SEAT_016",
+            "speaker": "나비",
+            "text": "네. 남의 건 아직 먹는 중일 수도 있으니까요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "memory_listen": [
+          {
+            "id": "WI148_SEAT_017",
+            "speaker": "아빠",
+            "text": "여기 앉아도 될까요? 접시 놓으시면 비키겠습니다.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_SEAT_018",
+            "speaker": "나비",
+            "text": "그렇게 물으시면 돼요. 지금은 앉으셔도 돼요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "reinspect_help": [
+          {
+            "id": "WI148_SEAT_019",
+            "speaker": null,
+            "text": "내가 포개 놓은 빈 접시 옆으로 새 그릇을 놓을 만한 자리가 생겼다.",
+            "kind": "narration"
+          }
+        ],
+        "reinspect_listen": [
+          {
+            "id": "WI148_SEAT_020",
+            "speaker": null,
+            "text": "공용 식탁의 의자 하나가 비어 있다. 탁자에는 전에 놓였던 그릇의 둥근 자국이 겹쳐 남아 있다.",
+            "kind": "narration"
+          }
+        ]
+      },
+      "variants": {
+        "piko_dead": {
+          "intro": [
+            {
+              "id": "WI148_SEAT_021",
+              "speaker": "아빠",
+              "text": "피코 씨가 앉던 자리는 어디였습니까?",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SEAT_022",
+              "speaker": "나비",
+              "text": "저쪽이요. 의자에 노란 물감이 묻어 있었어요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SEAT_023",
+              "speaker": "아빠",
+              "text": "그대로 두실 겁니까?",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SEAT_024",
+              "speaker": "나비",
+              "text": "아직은요. 그렇다고 아무도 못 앉게 하지는 않을 거예요. 제가 그 사람을 자꾸 내보내려고 했어도…… 여기 앉아 있던 건 맞으니까요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            }
+          ],
+          "listen": [
+            {
+              "id": "WI148_SEAT_025",
+              "speaker": "나비",
+              "text": "식당 정리해야 한다고 재촉했어요. 틀린 말은 아니었는데, 지금은 그 말부터 생각나요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SEAT_026",
+              "speaker": "아빠",
+              "text": "식당을 치우는 일과 피코 씨를 내보내는 일이 한 말이 됐군요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SEAT_027",
+              "speaker": "나비",
+              "text": "네. 오늘은 따로 말하려고요. 접시는 치워 달라고. 앉아 계셔도 된다고.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SEAT_028",
+              "speaker": "아빠",
+              "text": "그렇게 말해 주세요. 저도 듣겠습니다.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            }
+          ],
+          "memory_help": [
+            {
+              "id": "WI148_SEAT_029",
+              "speaker": "나비",
+              "text": "접시는 치웠는데 자꾸 저 의자를 보게 돼요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SEAT_030",
+              "speaker": "아빠",
+              "text": "자리까지 치울 필요는 없잖습니까.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SEAT_031",
+              "speaker": "나비",
+              "text": "네. 이번에는 접시만 치울래요. 도와주신 것도 거기까지고요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            }
+          ],
+          "memory_listen": [
+            {
+              "id": "WI148_SEAT_032",
+              "speaker": "나비",
+              "text": "전에 말씀드린 의자요. 다음 손님 오면 그냥 앉으시라고 할 거예요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SEAT_033",
+              "speaker": "아빠",
+              "text": "피코 씨가 앉았던 건 그대로 기억하시면 되겠죠.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SEAT_034",
+              "speaker": "나비",
+              "text": "그러려고요. 빈 의자만 보고 있을 수는 없으니까요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            }
+          ]
+        },
+        "piko_safe": {
+          "intro": [
+            {
+              "id": "WI148_SEAT_035",
+              "speaker": "아빠",
+              "text": "피코 씨가 무사한 걸 확인했습니다.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_SEAT_036",
+              "speaker": "나비",
+              "text": "다행이에요. 그럼 다시 앉을 때 저 의자 찾겠네요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_SEAT_037",
+              "speaker": "아빠",
+              "text": "그분 자리로 정해 두신 건가요?",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_SEAT_038",
+              "speaker": "나비",
+              "text": "아뇨. 물감 묻힌 의자를 좋아하길래요. 밥 먹는 자리는 비면 누구든 앉아요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            }
+          ],
+          "listen": [
+            {
+              "id": "WI148_SEAT_039",
+              "speaker": "나비",
+              "text": "그림 놓을 자리도, 식사할 자리도 있어야 하니 말을 먼저 맞춰야 해요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_SEAT_040",
+              "speaker": "아빠",
+              "text": "잘 곳을 내주는 일도, 다음 날 치울 일을 같이 생각해야겠네요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_SEAT_041",
+              "speaker": "나비",
+              "text": "네. 그러니 말로 먼저 정해야 해요. 의자가 비었다고 밤자리까지 빈 건 아니니까요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            }
+          ]
+        }
+      },
+      "source_refs": [
+        "docs/design/resident-reactions-20261105/주민_반응별편.md:199-282",
+        "game/room13_piko_reactions.rpy:piko_news3:nabi"
+      ]
+    },
+    "tools": {
+      "title": "공구판의 빈칸",
+      "owner": "buri",
+      "owner_name": "부리",
+      "days": [
+        3,
+        7
+      ],
+      "sources": [
+        {
+          "location": "workshop",
+          "object": "tools",
+          "observation": [
+            {
+              "id": "WI148_TOOLS_001",
+              "speaker": null,
+              "text": "공구판에는 걸린 공구와 비어 있는 걸이가 함께 있다. 손이 자주 닿는 자리에는 먼지가 덜 쌓여 있다.",
+              "kind": "narration"
+            }
+          ],
+          "fact": "공구판의 모든 걸이가 차 있지는 않다. 빈자리만으로 빠진 까닭을 알 수는 없다."
+        }
+      ],
+      "question": "공구를 빌려주면 네 일은 어떻게 하니?",
+      "choices": [
+        {
+          "title": "빈 걸이 먼지만 털어 줄까?",
+          "result": "help"
+        },
+        {
+          "title": "빌려주는 일부터 들려줄래?",
+          "result": "listen"
+        },
+        {
+          "title": "다음에 다시 이야기하자.",
+          "result": "later"
+        }
+      ],
+      "task": {
+        "location": "workshop",
+        "object": "tools",
+        "title": "빈 걸이 아래 먼지 털기",
+        "message": "공구와 대여 쪽지는 그대로 두고 빈 걸이 아래의 먼지만 털까요?"
+      },
+      "facts": {
+        "learned": "부리는 필요한 공구가 없으면 하던 일도 기다리게 된다고 한다. 같은 질문에 계속 답하는 동안에는 다른 것도 고치지 못한다.",
+        "helped": "걸이 아래를 닦으려니 내 손으로 곁의 공구 손잡이를 가리게 됐다. 부리가 공구 위치를 바꾸지 말라고 한 까닭이 보였다."
+      },
+      "blocks": {
+        "intro": [
+          {
+            "id": "WI148_TOOLS_002",
+            "speaker": "아빠",
+            "text": "공구를 빌려주면 네 일은 어떻게 하니?",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_TOOLS_003",
+            "speaker": "부리",
+            "text": "다른 공구로 할 수 있는 것부터 해요. 그것도 못 하면 기다리는 거죠.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_TOOLS_004",
+            "speaker": "아빠",
+            "text": "빌려준 뒤의 일도 물어야 하는데, 잠깐 괜찮겠니?",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_TOOLS_005",
+            "speaker": "부리",
+            "text": "제가 아는 데까지만요. 빌려준 건 아는데 그 뒤에 쓰는 건 못 봤으니까요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "help": [
+          {
+            "id": "WI148_TOOLS_006",
+            "speaker": "부리",
+            "text": "그럼 빈 걸이 아래만 털어 주세요. 공구나 쪽지 위치는 바꾸지 말고요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_TOOLS_007",
+            "speaker": "아빠",
+            "text": "알았어. 빈칸을 채우거나 다른 걸 옮기진 않을게.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "listen": [
+          {
+            "id": "WI148_TOOLS_008",
+            "speaker": "부리",
+            "text": "빌려 달라는 사람은 금방 쓴대요. 저는 그동안 다른 걸 고치죠.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_TOOLS_009",
+            "speaker": "아빠",
+            "text": "그 공구가 꼭 필요한 일이 들어오면 기다려야겠네.",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_TOOLS_010",
+            "speaker": "부리",
+            "text": "그렇죠. 그런데 누가 가져갔는지 설명하다 하루 다 쓰면 다른 것도 못 고쳐요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_TOOLS_011",
+            "speaker": "아빠",
+            "text": "아는 걸 묻되, 같은 말을 계속 시키지는 않을게.",
+            "kind": "dialogue",
+            "expression": "thinking"
+          }
+        ],
+        "action": [
+          {
+            "id": "WI148_TOOLS_012",
+            "speaker": null,
+            "text": "공구와 쪽지 사이로 손을 넣어 빈 걸이 아래의 먼지를 턴다. 몸을 조금 숙이니 곁에 걸린 손잡이가 내 손에 가린다.",
+            "kind": "narration"
+          },
+          {
+            "id": "WI148_TOOLS_013",
+            "speaker": null,
+            "text": "먼지를 털어 내고 한 걸음 물러선다. 공구가 같은 쪽을 향해 있어야 어떤 것이 비었는지 금방 보인다.",
+            "kind": "narration"
+          }
+        ],
+        "memory_help": [
+          {
+            "id": "WI148_TOOLS_014",
+            "speaker": "부리",
+            "text": "거기 다른 거 안 걸어 주셔서 좋아요. 원래 자리 헷갈리면 제가 또 찾아야 하거든요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_TOOLS_015",
+            "speaker": "아빠",
+            "text": "깨끗하게 해 준다고 네 일까지 바꾸면 안 되지.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_TOOLS_016",
+            "speaker": "부리",
+            "text": "네. 비어 있는 이유가 있으니까요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "memory_listen": [
+          {
+            "id": "WI148_TOOLS_017",
+            "speaker": "아빠",
+            "text": "이번에는 일하는 데 방해 안 되는지만 먼저 물을게. 잠깐 괜찮니?",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_TOOLS_018",
+            "speaker": "부리",
+            "text": "질문부터 하시는 것보단 낫네요. 뭘 물을 건데요?",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "reinspect_help": [
+          {
+            "id": "WI148_TOOLS_019",
+            "speaker": null,
+            "text": "빈 걸이 아래의 먼지가 걷혔다. 곁에 걸린 공구와 쪽지의 위치는 그대로다.",
+            "kind": "narration"
+          }
+        ],
+        "reinspect_listen": [
+          {
+            "id": "WI148_TOOLS_020",
+            "speaker": null,
+            "text": "빈 걸이를 따라 시선을 옮긴다. 곁에 걸린 다른 공구에도 닳은 손잡이 자국이 보인다.",
+            "kind": "narration"
+          }
+        ]
+      },
+      "variants": {
+        "lamp_win": {
+          "memory_help": [
+            {
+              "id": "WI148_TOOLS_029",
+              "speaker": "부리",
+              "text": "걸이 밑은 이제 됐어요. 다음에 오시면 청소 말고 고칠 물건 가져오세요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_TOOLS_030",
+              "speaker": "아빠",
+              "text": "네가 원래 하던 일로 찾아오라는 거지?",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_TOOLS_031",
+              "speaker": "부리",
+              "text": "네. 저 공방 하는 거 맞거든요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            }
+          ],
+          "intro": [
+            {
+              "id": "WI148_TOOLS_025",
+              "speaker": "아빠",
+              "text": "회의에서 돌을 꺼낸 일까지 밝혔어. 네가 공구를 빌려준 일과는 나눠서 이야기했고.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_TOOLS_026",
+              "speaker": "부리",
+              "text": "그럼 이제 뭘 고치는지부터 물어봐 줬으면 좋겠어요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_TOOLS_027",
+              "speaker": "아빠",
+              "text": "응. 네가 원래 하던 일로 찾아오고 싶어.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_TOOLS_028",
+              "speaker": "부리",
+              "text": "공구판만 들여다보고 가면 제가 일하는 건 못 보잖아요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            }
+          ]
+        },
+        "lamp_partial": {
+          "memory_listen": [
+            {
+              "id": "WI148_TOOLS_036",
+              "speaker": "아빠",
+              "text": "지난번 네가 빌려줬다고 한 건 적어 뒀어. 다시 말하지 않아도 돼.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_TOOLS_037",
+              "speaker": "부리",
+              "text": "그럼 이번에 물을 것만 물어보세요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            }
+          ],
+          "intro": [
+            {
+              "id": "WI148_TOOLS_032",
+              "speaker": "아빠",
+              "text": "회의에서 톡이 가져간 건 아니라는 데까지는 확인했어. 누가 가져갔는지는 더 봐야 해.",
+              "kind": "dialogue",
+              "expression": "thinking"
+            },
+            {
+              "id": "WI148_TOOLS_033",
+              "speaker": "부리",
+              "text": "그럼 또 같은 얘기 물으러 와요?",
+              "kind": "dialogue",
+              "expression": "thinking"
+            },
+            {
+              "id": "WI148_TOOLS_034",
+              "speaker": "아빠",
+              "text": "다시 물을 일이 있으면 무엇을 더 확인해야 하는지 먼저 말할게.",
+              "kind": "dialogue",
+              "expression": "thinking"
+            },
+            {
+              "id": "WI148_TOOLS_035",
+              "speaker": "부리",
+              "text": "그렇게 해 주세요. 모른다고 해도 처음부터 다시 시키진 마시고요.",
+              "kind": "dialogue",
+              "expression": "thinking"
+            }
+          ]
+        },
+        "lamp_lose": {
+          "memory_listen": [
+            {
+              "id": "WI148_TOOLS_042",
+              "speaker": "부리",
+              "text": "이번에는 누구 찾으러 오셨어요? 또 공구 빌린 사람요?",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_TOOLS_043",
+              "speaker": "아빠",
+              "text": "이번엔 네가 이야기할 시간 있는지 먼저 물으러 왔어.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_TOOLS_044",
+              "speaker": "부리",
+              "text": "그럼 잠깐은 있어요. 같은 얘기만 아니면요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            }
+          ],
+          "intro": [
+            {
+              "id": "WI148_TOOLS_038",
+              "speaker": "아빠",
+              "text": "회의에서 충분히 밝히지 못했어. 그래도 네가 빌려준 일과 그 뒤의 일은 섞어 말하지 않을게.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_TOOLS_039",
+              "speaker": "부리",
+              "text": "그 말은 저한테만 하지 마세요. 다른 사람한테도 해 주세요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_TOOLS_040",
+              "speaker": "아빠",
+              "text": "응. 내가 확인한 것까지만 말할게.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_TOOLS_041",
+              "speaker": "부리",
+              "text": "저도 제가 아는 데까지만 대답할 거예요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            }
+          ]
+        }
+      },
+      "source_refs": [
+        "docs/design/resident-reactions-20261105/주민_반응별편.md:377-429",
+        "docs/design/resident-reactions-20261105/주민_반응별편.md:283-328"
+      ]
+    },
+    "school": {
+      "title": "담요가 놓인 다음",
+      "owner": "resident_teacher",
+      "owner_name": "선생님",
+      "days": [
+        2,
+        7
+      ],
+      "sources": [
+        {
+          "location": "school",
+          "object": "blankets",
+          "observation": [
+            {
+              "id": "WI148_SCHOOL_001",
+              "speaker": null,
+              "text": "접힌 담요 끝이 더미 바깥으로 조금 나와 있다. 담요가 놓인 곳과 사람이 누울 바닥은 떨어져 있다.",
+              "kind": "narration"
+            }
+          ],
+          "fact": "접힌 담요가 놓여 있다. 누가 쓸지 적힌 이름은 이쪽에서 보이지 않는다."
+        }
+      ],
+      "question": "담요가 있어도 바로 재울 수는 없나요?",
+      "choices": [
+        {
+          "title": "남은 담요 끝은 접어 둘게요.",
+          "result": "help"
+        },
+        {
+          "title": "아이들을 받는 일도 듣고 싶어요.",
+          "result": "listen"
+        },
+        {
+          "title": "나중에 다시 여쭙겠습니다.",
+          "result": "later"
+        }
+      ],
+      "task": {
+        "location": "school",
+        "object": "blankets",
+        "title": "담요 더미 바깥의 끝 접기",
+        "message": "사용 중인 침구는 건드리지 않고 접힌 담요 더미 바깥으로 나온 끝만 안으로 넣을까요?"
+      },
+      "facts": {
+        "learned": "아이를 맡기는 일은 담요나 짐을 내려놓는 것만으로 끝나지 않는다. 선생님과 실제로 맡을 일을 확인해야 한다.",
+        "helped": "접힌 담요 끝을 조금 움직여도 위의 담요가 따라 밀렸다. 남은 것과 쓰고 있는 것을 먼저 가려야 했다."
+      },
+      "blocks": {
+        "intro": [
+          {
+            "id": "WI148_SCHOOL_002",
+            "speaker": "아빠",
+            "text": "담요가 있어도 바로 재울 수는 없나요?",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_SCHOOL_003",
+            "speaker": "선생님",
+            "text": "누가 오는지, 누가 데려오는지부터 알아야죠. 담요만 내놓고 기다릴 수는 없으니까요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_SCHOOL_004",
+            "speaker": "아빠",
+            "text": "자리를 허락받아도 데려오는 일은 따로 남는군요.",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_SCHOOL_005",
+            "speaker": "선생님",
+            "text": "네. 물도 필요하고요. 아이가 여기 도착했는지도 직접 확인해야 해요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "help": [
+          {
+            "id": "WI148_SCHOOL_006",
+            "speaker": "선생님",
+            "text": "담요 더미 밖으로 나온 담요 끝만 안으로 접어 주세요. 쓰고 있는 침구는 그대로 두시고요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_SCHOOL_007",
+            "speaker": "아빠",
+            "text": "남은 담요만 정리하겠습니다. 빌려 가는 건 아니고요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "listen": [
+          {
+            "id": "WI148_SCHOOL_008",
+            "speaker": "선생님",
+            "text": "아이를 데리고 왔다가 어른만 가 버리면, 저는 누가 오늘 밤 돌아오는지도 몰라요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_SCHOOL_009",
+            "speaker": "아빠",
+            "text": "맡아 달라는 말로 끝낼 수 없겠네요.",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_SCHOOL_010",
+            "speaker": "선생님",
+            "text": "네. 돌아올 시간도, 그동안 제가 맡을 일도 말해 주셔야 해요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_SCHOOL_011",
+            "speaker": "아빠",
+            "text": "허락을 구할 때 그 뒤에 할 일까지 말씀드리겠습니다.",
+            "kind": "dialogue",
+            "expression": "thinking"
+          }
+        ],
+        "action": [
+          {
+            "id": "WI148_SCHOOL_012",
+            "speaker": null,
+            "text": "접힌 더미 바깥으로 나온 남은 담요 끝을 안으로 넣는다. 자꾸 풀리는 가장자리를 한 번 더 눌러 접는다.",
+            "kind": "narration"
+          },
+          {
+            "id": "WI148_SCHOOL_013",
+            "speaker": null,
+            "text": "다른 담요 밑에 깔린 끝을 빼려다 손을 멈춘다. 한 장을 움직여도 위에 쌓인 것이 따라 밀린다.",
+            "kind": "narration"
+          }
+        ],
+        "memory_help": [
+          {
+            "id": "WI148_SCHOOL_014",
+            "speaker": "선생님",
+            "text": "담요 끝은 잘 넣어 주셨네요. 아이들이 지나가다 밟지 않겠어요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_SCHOOL_015",
+            "speaker": "아빠",
+            "text": "또 밖으로 나오면 말씀해 주세요. 쓰는 담요는 먼저 여쭙고요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_SCHOOL_016",
+            "speaker": "선생님",
+            "text": "네. 정리하는 것과 필요한 걸 가져가는 건 다르니까요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "memory_listen": [
+          {
+            "id": "WI148_SCHOOL_017",
+            "speaker": "아빠",
+            "text": "아이들을 맡길 땐, 제가 언제 돌아올지도 먼저 말하겠습니다.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_SCHOOL_018",
+            "speaker": "선생님",
+            "text": "그럼 기다리는 쪽도 준비를 할 수 있죠. 오실 때까지 맡을 일이 있으니까요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "reinspect_help": [
+          {
+            "id": "WI148_SCHOOL_019",
+            "speaker": null,
+            "text": "남은 담요 끝이 접힌 더미 안에 놓여 있다. 위에 얹힌 담요도 밖으로 밀려 나오지 않는다.",
+            "kind": "narration"
+          }
+        ],
+        "reinspect_listen": [
+          {
+            "id": "WI148_SCHOOL_020",
+            "speaker": null,
+            "text": "접힌 담요 더미와 교실 문을 번갈아 본다. 문턱 너머로 아이들이 지날 자리가 나 있다.",
+            "kind": "narration"
+          }
+        ]
+      },
+      "variants": {
+        "fire_safe": {
+          "intro": [
+            {
+              "id": "WI148_SCHOOL_021",
+              "speaker": "아빠",
+              "text": "창고에서 온 네 아이, 여기서 지내는 데 더 필요한 게 있습니까?",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_SCHOOL_022",
+              "speaker": "선생님",
+              "text": "우선 자리는 있어요. 데려오신 뒤에도 계속 봐야 하니, 나가실 땐 저한테 말해 주세요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_SCHOOL_023",
+              "speaker": "아빠",
+              "text": "네. 데려왔으니 끝났다고 생각하지 않겠습니다.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_SCHOOL_024",
+              "speaker": "선생님",
+              "text": "아이들이 깨면 물부터 찾을 거예요. 그때도 어른이 있어야죠.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            }
+          ],
+          "listen": [
+            {
+              "id": "WI148_SCHOOL_025",
+              "speaker": "선생님",
+              "text": "네 아이가 학교에 들어온 건 제가 확인했어요. 담요가 도착했을 때 말고, 아이들 얼굴을 보고요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_SCHOOL_026",
+              "speaker": "아빠",
+              "text": "수레가 비었다고 다 온 줄 알면 안 됐겠네요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_SCHOOL_027",
+              "speaker": "선생님",
+              "text": "네. 짐 내린 걸 확인하는 것과 아이를 맡는 건 다르니까요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_SCHOOL_028",
+              "speaker": "아빠",
+              "text": "다음에도 아이들 이름부터 같이 확인하겠습니다.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            }
+          ],
+          "memory_listen": [
+            {
+              "id": "WI148_SCHOOL_029",
+              "speaker": "선생님",
+              "text": "나가실 거면 어디로 가시는지만 알려 주세요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_SCHOOL_030",
+              "speaker": "아빠",
+              "text": "알겠습니다. 돌아와서도 그냥 지나가지 않고 말씀드릴게요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_SCHOOL_031",
+              "speaker": "선생님",
+              "text": "그럼 제가 계속 기다릴 일 하나는 줄겠네요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            }
+          ]
+        },
+        "fire_lost": {
+          "intro": [
+            {
+              "id": "WI148_SCHOOL_032",
+              "speaker": "아빠",
+              "text": "창고에서 나온 세 아이는 좀 어떻습니까?",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SCHOOL_033",
+              "speaker": "선생님",
+              "text": "여기 있어요. 조금 전에도 서로 붙어 앉아 있었어요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SCHOOL_034",
+              "speaker": "아빠",
+              "text": "제가 뭘 하면 될까요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SCHOOL_035",
+              "speaker": "선생님",
+              "text": "지금은 큰 소리로 부르지 말아 주세요. 아이들한테 그 일을 또 설명하라고도 하지 마시고요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            }
+          ],
+          "listen": [
+            {
+              "id": "WI148_SCHOOL_036",
+              "speaker": "아빠",
+              "text": "오늘은 담요만 보고 다 됐다고 말할 수가 없네요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SCHOOL_037",
+              "speaker": "선생님",
+              "text": "세 아이가 온 건 확인했어요. 꼬미가 오지 못한 것도요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SCHOOL_038",
+              "speaker": "아빠",
+              "text": "네. 제가 여기까지 데려온 아이들 곁에 있겠습니다.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SCHOOL_039",
+              "speaker": "선생님",
+              "text": "그러려면 나가실 때도 말씀해 주세요. 아이들이 다시 어른을 찾지 않게요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            }
+          ],
+          "help": [
+            {
+              "id": "WI148_SCHOOL_040",
+              "speaker": "선생님",
+              "text": "쓰지 않는 담요 끝만 안으로 접어 주세요. 아이들이 덮은 것은 그대로 두세요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SCHOOL_041",
+              "speaker": "아빠",
+              "text": "네. 아이들에게 다시 일어나 달라고 하지는 않겠습니다.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            }
+          ],
+          "action": [
+            {
+              "id": "WI148_SCHOOL_042",
+              "speaker": null,
+              "text": "사용하지 않는 담요 끝만 접힌 더미 안으로 넣는다. 아이들이 덮고 있는 침구에는 손대지 않는다.",
+              "kind": "narration"
+            },
+            {
+              "id": "WI148_SCHOOL_043",
+              "speaker": null,
+              "text": "자꾸 풀리는 가장자리를 눌러 두고 손을 뗀다. 교실 쪽에서는 담요를 끌어당기는 작은 소리가 난다.",
+              "kind": "narration"
+            }
+          ],
+          "memory_help": [
+            {
+              "id": "WI148_SCHOOL_044",
+              "speaker": "선생님",
+              "text": "남은 담요는 그대로 두세요. 지금은 더 정리하지 않으셔도 돼요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SCHOOL_045",
+              "speaker": "아빠",
+              "text": "네. 아이들이 찾으면 들을 수 있는 데 있겠습니다.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SCHOOL_046",
+              "speaker": "선생님",
+              "text": "그렇게 해 주세요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            }
+          ],
+          "memory_listen": [
+            {
+              "id": "WI148_SCHOOL_047",
+              "speaker": "아빠",
+              "text": "전에 말씀하신 대로, 아이들한테 다시 그 일을 묻지는 않겠습니다.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_SCHOOL_048",
+              "speaker": "선생님",
+              "text": "말하고 싶어 하면 듣고요. 먼저 설명하라고 시키지는 말아 주세요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            }
+          ]
+        }
+      },
+      "source_refs": [
+        "/workspace/outputs/daram-full-novel-polished-20261105/chapters/06_원고.txt:177-200",
+        "docs/design/resident-reactions-day456-20261106/주민_반응별편.md:227-257"
+      ]
+    },
+    "aftermath": {
+      "title": "불 뒤에 남은 살림",
+      "owner": "resident_bori",
+      "owner_name": "보리",
+      "days": [
+        6,
+        7
+      ],
+      "sources": [
+        {
+          "location": "school",
+          "object": "firewood",
+          "observation": [
+            {
+              "id": "WI148_AFTERMATH_001",
+              "speaker": null,
+              "text": "길이가 다른 장작이 함께 놓여 있다. 짧은 조각도 굵기가 달라 한눈에 같은 양인지 가늠하기 어렵다.",
+              "kind": "narration"
+            }
+          ],
+          "fact": "학교에 놓인 장작은 길이와 굵기가 제각각이다."
+        }
+      ],
+      "question": "보리 씨, 지금 제가 할 일이 있습니까?",
+      "choices": [
+        {
+          "title": "짧은 장작은 따로 놓을까요?",
+          "result": "help"
+        },
+        {
+          "title": "오늘 남은 일을 듣겠습니다.",
+          "result": "listen"
+        },
+        {
+          "title": "쉬세요. 나중에 뵙겠습니다.",
+          "result": "later"
+        }
+      ],
+      "task": {
+        "location": "school",
+        "object": "firewood",
+        "title": "짧은 장작을 긴 것과 나눠 놓기",
+        "message": "학교에 놓인 장작 중 짧은 조각만 곁으로 나눠 놓을까요? 장작을 가져가거나 태우지는 않습니다."
+      },
+      "facts": {
+        "learned": "보리는 아이들 밥을 챙기려 한다. 위험한 일까지 아이들에게 맡기지는 않으려 한다.",
+        "helped": "짧아도 굵은 장작은 한 손에 들기 어려웠다. 작은 조각에도 날카로운 껍질이 남아 있었다."
+      },
+      "blocks": {
+        "intro": [
+          {
+            "id": "WI148_AFTERMATH_002",
+            "speaker": "아빠",
+            "text": "보리 씨, 지금 제가 할 일이 있습니까?",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_AFTERMATH_003",
+            "speaker": "보리",
+            "text": "짧은 장작을 긴 것과 나눠 놓으려던 참이에요. 들기 전에 어느 걸 쓸지 보려고요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_AFTERMATH_004",
+            "speaker": "아빠",
+            "text": "짧은 건 아이들이 들 만하겠네요.",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_AFTERMATH_005",
+            "speaker": "보리",
+            "text": "길이만 보면 안 돼요. 짧아도 굵으면 무거워요. 손 둘 데도 먼저 봐야죠.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "help": [
+          {
+            "id": "WI148_AFTERMATH_006",
+            "speaker": "보리",
+            "text": "그럼 학교에 놓인 것 중 짧은 조각만 곁으로 나눠 주세요. 옮겨 가거나 태우지는 말고요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_AFTERMATH_007",
+            "speaker": "아빠",
+            "text": "네. 길이부터 나눠 놓겠습니다. 어디 쓸지는 그다음에 여쭙고요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "listen": [
+          {
+            "id": "WI148_AFTERMATH_008",
+            "speaker": "보리",
+            "text": "아이들 먹을 것도, 방 데울 것도 챙겨야죠. 돕겠다고 해도 장작부터 쥐여 줄 순 없어요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_AFTERMATH_009",
+            "speaker": "아빠",
+            "text": "작은 조각도요?",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_AFTERMATH_010",
+            "speaker": "보리",
+            "text": "짧아도 굵으면 무거워요. 거친 데를 쥐면 손도 다치고요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_AFTERMATH_011",
+            "speaker": "아빠",
+            "text": "밥을 받는 대신 일을 시키는 건 아니시군요.",
+            "kind": "dialogue",
+            "expression": "thinking"
+          },
+          {
+            "id": "WI148_AFTERMATH_012",
+            "speaker": "보리",
+            "text": "그건 아니죠. 밥은 제가 챙길 겁니다.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "action": [
+          {
+            "id": "WI148_AFTERMATH_013",
+            "speaker": null,
+            "text": "학교에 놓인 장작 중 짧은 조각을 곁으로 나누어 놓는다. 짧아도 굵은 것은 한 손에 들기 어렵다.",
+            "kind": "narration"
+          },
+          {
+            "id": "WI148_AFTERMATH_014",
+            "speaker": null,
+            "text": "가늘고 긴 조각보다 짧고 굵은 조각이 더 무겁다. 작은 조각을 내려놓으려니 껍질이 손바닥을 찌를 듯 일어나 있다.",
+            "kind": "narration"
+          }
+        ],
+        "memory_help": [
+          {
+            "id": "WI148_AFTERMATH_015",
+            "speaker": "아빠",
+            "text": "짧은 장작은 곁에 나눠 두었습니다. 짧아도 굵은 건 꽤 무겁더군요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_AFTERMATH_016",
+            "speaker": "보리",
+            "text": "그렇죠. 길이만 보고 아이한테 들게 하면 안 돼요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_AFTERMATH_017",
+            "speaker": "아빠",
+            "text": "거친 껍질도 남아 있더군요. 제가 먼저 살피겠습니다.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "memory_listen": [
+          {
+            "id": "WI148_AFTERMATH_018",
+            "speaker": "아빠",
+            "text": "아이들한테 맡길 걸 찾기 전에, 제가 들 것을 먼저 여쭈려고요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          },
+          {
+            "id": "WI148_AFTERMATH_019",
+            "speaker": "보리",
+            "text": "그럼 같이 보죠. 짧다고 가벼운 건 아니니까요.",
+            "kind": "dialogue",
+            "expression": "neutral"
+          }
+        ],
+        "reinspect_help": [
+          {
+            "id": "WI148_AFTERMATH_020",
+            "speaker": null,
+            "text": "짧은 장작이 긴 것 곁에 나뉘어 놓였다. 짧은 조각 중 하나의 껍질이 옆으로 날카롭게 일어났다.",
+            "kind": "narration"
+          }
+        ],
+        "reinspect_listen": [
+          {
+            "id": "WI148_AFTERMATH_021",
+            "speaker": null,
+            "text": "짧은 장작을 내려다본다. 길이는 손바닥만 한데 굵기가 제 손목만 한 조각도 있다.",
+            "kind": "narration"
+          }
+        ]
+      },
+      "variants": {
+        "fire_safe": {
+          "intro": [
+            {
+              "id": "WI148_AFTERMATH_022",
+              "speaker": "아빠",
+              "text": "학교에서 창고 아이 넷을 보고 오셨습니까?",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_AFTERMATH_023",
+              "speaker": "보리",
+              "text": "네. 꼬미까지 봤어요. 불 앞에서는 학교에 있다는 말만 들었는데, 제 눈으로 보고 왔어요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_AFTERMATH_024",
+              "speaker": "아빠",
+              "text": "손은 괜찮으십니까?",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_AFTERMATH_025",
+              "speaker": "보리",
+              "text": "그을린 거예요. 낮에 박힌 가시는 남았고요. 학교 장작도 맨손으로 덥석 잡으면 안 되겠어요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            }
+          ],
+          "listen": [
+            {
+              "id": "WI148_AFTERMATH_026",
+              "speaker": "보리",
+              "text": "아이들 밥은 챙기려고요. 돕겠다고 해도 장작부터 들게 하진 않을 거예요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_AFTERMATH_027",
+              "speaker": "아빠",
+              "text": "아이 넷이 다 왔다고 해서 오늘 할 일도 끝난 건 아니네요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_AFTERMATH_028",
+              "speaker": "보리",
+              "text": "네. 그렇다고 애들한테 제가 할 일까지 시키진 않을 거예요. 밥 먹으라고 부른 거니까요.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            }
+          ],
+          "memory_help": [
+            {
+              "id": "WI148_AFTERMATH_029",
+              "speaker": "아빠",
+              "text": "부탁하신 짧은 장작은 나눠 두었습니다.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_AFTERMATH_030",
+              "speaker": "보리",
+              "text": "고마워요. 거친 데도 같이 보셨어요?",
+              "kind": "dialogue",
+              "expression": "neutral"
+            },
+            {
+              "id": "WI148_AFTERMATH_031",
+              "speaker": "아빠",
+              "text": "네. 작은 조각에도 날카로운 껍질이 있더군요. 아이 손에 바로 쥐여 주기는 어렵겠습니다.",
+              "kind": "dialogue",
+              "expression": "neutral"
+            }
+          ]
+        },
+        "fire_lost": {
+          "intro": [
+            {
+              "id": "WI148_AFTERMATH_032",
+              "speaker": "아빠",
+              "text": "학교로 돌아오신 뒤에는 뭘 맡으셨습니까?",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_AFTERMATH_033",
+              "speaker": "보리",
+              "text": "창고에서 나온 세 아이 밥부터 챙기려고요. 그릇 놓을 자리부터 보고 있어요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_AFTERMATH_034",
+              "speaker": "아빠",
+              "text": "꼬미가 없어서 자꾸 빈 곳을 보게 됩니다.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_AFTERMATH_035",
+              "speaker": "보리",
+              "text": "네. 저도요. 그래도 여기 온 애들 밥은 차려야죠.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            }
+          ],
+          "help": [
+            {
+              "id": "WI148_AFTERMATH_036",
+              "speaker": "보리",
+              "text": "그럼 짧은 조각을 곁으로 나눠 주세요. 아이들 손이 닿기 전에 거친 데도 같이 보고요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_AFTERMATH_037",
+              "speaker": "아빠",
+              "text": "네. 길이만 나누지 않고 들 만한지도 보겠습니다.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            }
+          ],
+          "listen": [
+            {
+              "id": "WI148_AFTERMATH_038",
+              "speaker": "보리",
+              "text": "창고에서 나온 세 아이는 학교에 있어요. 꼬미가 없는 건 저도 알아요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_AFTERMATH_039",
+              "speaker": "아빠",
+              "text": "밥 챙길 때마다 생각나시겠네요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_AFTERMATH_040",
+              "speaker": "보리",
+              "text": "네. 그렇다고 세 아이 먹일 일을 멈출 수는 없죠. 할 일을 나눠야 하고요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_AFTERMATH_041",
+              "speaker": "아빠",
+              "text": "무엇부터 필요한지 말씀해 주세요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_AFTERMATH_042",
+              "speaker": "보리",
+              "text": "그릇이요. 빈 것부터 부탁할게요. 뜨거운 건 아이들한테 맡기지 않고요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            }
+          ],
+          "memory_help": [
+            {
+              "id": "WI148_AFTERMATH_043",
+              "speaker": "아빠",
+              "text": "짧은 장작을 나눠 두었습니다. 작은 것에도 거친 껍질이 있더군요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_AFTERMATH_044",
+              "speaker": "보리",
+              "text": "네. 어른들이 먼저 봐야죠. 고마워요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_AFTERMATH_045",
+              "speaker": "아빠",
+              "text": "아이들한테 맡길 일을 찾기 전에 제가 할 것부터 여쭙겠습니다.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            }
+          ],
+          "memory_listen": [
+            {
+              "id": "WI148_AFTERMATH_046",
+              "speaker": "보리",
+              "text": "전에 말씀드린 그릇이요. 날라 줄 사람이 필요하면 부탁할게요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_AFTERMATH_047",
+              "speaker": "아빠",
+              "text": "알겠습니다. 아이들한테 먼저 넘기지 마시고요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            },
+            {
+              "id": "WI148_AFTERMATH_048",
+              "speaker": "보리",
+              "text": "네. 빈 그릇이라고 무턱대고 들게 하진 않을 거예요.",
+              "kind": "dialogue",
+              "expression": "distressed"
+            }
+          ]
+        }
+      },
+      "source_refs": [
+        "docs/design/resident-reactions-day456-20261106/주민_반응별편.md:259-355",
+        "docs/design/resident-reactions-day789-20261106/주민_반응별편.md:85-124",
+        "/workspace/outputs/daram-full-novel-polished-20261105/chapters/07_원고.txt:1-17"
+      ]
+    }
+  }
+}

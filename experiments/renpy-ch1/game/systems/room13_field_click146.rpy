@@ -58,20 +58,31 @@ screen r13_sidequest_journal146():
     timer .2 action SetScreenVariable("ready",True)
     add Solid("#172a2aa6")
     add r13_asset_path(R13_NB_PANEL) xpos R13_NB_PANEL_POS[0] ypos R13_NB_PANEL_POS[1]
-    text "주민의 부탁" xpos R13_NB_TITLE_X ypos R13_NB_TITLE_Y size r13_nb_title_size() color r13_nb_ink() font R13_UI_BOLD_FONT
+    $ world_notes=r13_world148_journal()
+    text ("마을의 일과 이야기" if world_notes else "주민의 부탁") xpos R13_NB_TITLE_X ypos R13_NB_TITLE_Y size r13_nb_title_size() color r13_nb_ink() font R13_UI_BOLD_FONT
     default page=0
-    $ tasks=r13_sidequest_tasks146()
-    $ pages=max(1,(len(tasks)+1)//2)
+    default section="world" if r13_world148_journal() else "quests"
+    if world_notes:
+        hbox:
+            pos (156,122) spacing 18
+            use r13_control("주민의 부탁","record",[SetScreenVariable("section","quests"),SetScreenVariable("page",0)],width=260,height=r13_control_height(),chosen=section=="quests",control_id="r13_world148_quests")
+            use r13_control("마을 이야기","record",[SetScreenVariable("section","world"),SetScreenVariable("page",0)],width=260,height=r13_control_height(),chosen=section=="world",control_id="r13_world148_notes")
+    $ tasks=world_notes if world_notes and section=="world" else r13_sidequest_tasks146()
+    $ per_page=1 if world_notes and (r13_touch_ui() or persistent.room13_large_text) else 2
+    $ pages=max(1,(len(tasks)+per_page-1)//per_page)
     $ page=min(page,pages-1)
     text ("%d / %d쪽"%(page+1,pages)) xpos 1120 ypos R13_NB_TITLE_Y xanchor 1.0 size r13_type("small") color r13_type_color("muted")
     vbox:
-        pos (156,142) xsize 996 spacing 18
+        pos (156,222 if world_notes else 142) xsize 996 spacing 18
         if not tasks:
             text "아직 들은 부탁이 없습니다." size r13_type("body") color r13_nb_ink()
-        for task in tasks[page*2:page*2+2]:
+        for task in tasks[page*per_page:page*per_page+per_page]:
             vbox:
                 spacing 5
                 text (task["title"]+" · "+R13_SIDEQUEST_STATUS146.get(task["status"],task["status"])) size r13_type("body") color r13_nb_ink() font R13_UI_BOLD_FONT
+                if world_notes and section=="world":
+                    text task["fact"] size r13_type("small") color r13_nb_ink() xmaximum 980
+                    text task["source"] size r13_type("small") color r13_type_color("muted")
                 text task["objective"] size r13_type("small") color r13_type_color("muted") xmaximum 980
                 if task.get("place"):
                     text ("장소: "+R13_PLACES.get(task["place"],(task["place"],))[0]) size r13_type("small") color r13_type_color("muted")
