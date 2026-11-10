@@ -70,6 +70,30 @@ class FieldContextActions(unittest.TestCase):
         values['acorn_recovered']=True
         self.assertEqual(caption('v111_can'),'깡통 줄 · 회수함')
 
+    def test_can_body_is_clickable_below_companion_and_inventory_buttons(self):
+        source=(ROOT/'game/room13_v111_woodshed_can.rpy').read_text()
+        env=dict(ROOM13=dict(objects=dict(v111_woodshed={})),R13_OBJECT_NAMES={})
+        exec(textwrap.dedent(source.split('init 319 python:\n',1)[1]),env)
+        rect=env['ROOM13']['objects']['v111_woodshed']['v111_can']['rect']
+        # 실제 1280×720 캡처의 최대 카메라 1120에서 확인한 깡통 몸통.
+        # 줄 윗부분 대신 몸통 중앙과 양옆 아래쪽을 눌러도 같은 물건을 가리켜야 한다.
+        body_points=[(1120+812,175),(1120+788,155),(1120+835,198)]
+        for camera in (0,420,1120):
+            x,y,w,h=rect
+            x-=camera
+            for body_x,body_y in body_points:
+                self.assertTrue(x<=body_x-camera<x+w and y<=body_y<y+h)
+            # 다람·물품 버튼의 공통 높이(84~148)에 조사 영역이 침범하지 않는다.
+            for hud_x,hud_width in ((664,144),(824,104)):
+                overlap_width=max(0,min(x+w,hud_x+hud_width)-max(x,hud_x))
+                overlap_height=max(0,min(y+h,148)-max(y,84))
+                self.assertEqual(overlap_width*overlap_height,0)
+        actions=[o for o in self.binding('afternoon6')['options'] if o.get('object')=='v111_can']
+        self.assertEqual([o['index'] for o in actions],[80,81])
+        self.assertTrue(all(o['location']=='v111_woodshed' for o in actions))
+        self.assertEqual(actions[0]['guard'],[['state','kkomi_can_seen6',None]])
+        self.assertEqual(actions[1]['guard'],[['state','kkomi_can_seen6',True],['state','acorn_recovered',None]])
+
     def test_single_opted_in_question_runs_only_its_original_integer_action(self):
         choose=self.env['r13_v111_direct_topic']
         for gate,person in [('bori_witness7','resident_bori'),('nubi_children_receipt7','resident_teacher'),('hp_meal6','daram')]:

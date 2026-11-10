@@ -62,12 +62,13 @@ label qa149_hub(place="store"):
         call r13_v111_wait(room13['v111']['gate'])
         $ renpy.test.qa149_return=_return
 
-label qa149_lamp:
+label qa149_lamp(learned=True):
     $ qa146_begin()
     $ qa149_prepare("square",True)
     $ room13["livelihood"]=r13_wallet(room13)
     $ room13["livelihood"]["items"]=["cord"]
-    $ r13_ex149_mark("knot_method")
+    if learned:
+        $ r13_ex149_mark("knot_method")
     $ r13_v111_set("lamp_latch_seen2",True)
     call r13_scene(R13_PLACES['square'][1],R13_PLACES['square'][0],'calm')
     call r13_lamp_prep2
@@ -163,6 +164,34 @@ testcase exploration149_lamp_original_outcome:
     click '걸쇠 고정하기'
     click pos (900,600) until screen 'r13_hub' timeout 30
     assert eval (r13_v111_value('lamp_bound2') and not r13_ex149_owned('cord') and 'cord' in r13_wallet(room13)['used'])
+
+testcase exploration150_lamp_missing_method:
+    $ preferences.text_cps=0
+    pause 1.0
+    click '처음부터'
+    click pos (900,600) until screen 'r13_hub' timeout 90
+    run Call('qa149_lamp',False)
+    pause until eval (renpy.get_screen('r13_hub') and renpy.get_screen('r13_hub').scope['world_ready']) timeout 30
+    pause 1.0
+    click id 'r13_field_items149'
+    pause until screen 'r13_ex149_bag' timeout 20
+    click id 'ex149_select_cord'
+    pause until screen 'r13_hub' timeout 20
+    pause .8
+    if eval (qa_field146_object_point('lamp')[0]>1200):
+        click pos (1232,276)
+        pause 1.0
+    if eval (qa_field146_object_point('lamp')[0]<80):
+        click pos (48,276)
+        pause 1.0
+    $ renpy.test.ex150_before=winter_copy.deepcopy(room13)
+    click pos qa_field146_object_point('lamp')
+    pause until eval (r13_packet and '묶는 방법부터' in r13_packet[1]) timeout 20
+    pause .8
+    screenshot '150-lamp-method-needed.png'
+    click pos (900,600) until screen 'r13_hub' timeout 20
+    assert eval (room13==renpy.test.ex150_before and r13_ex149_owned('cord') and r13_ex149_held=='cord')
+    assert eval (not r13_v111_value('lamp_bound2') and not r13_v111_value('lamp_cord2'))
 
 testcase exploration149_delivery_choices:
     $ preferences.text_cps=0

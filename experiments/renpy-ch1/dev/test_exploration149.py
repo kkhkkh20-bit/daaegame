@@ -216,6 +216,38 @@ class Exploration149(unittest.TestCase):
         option = env['R13_V111_BINDINGS']['lamp_prep2']['options'][3]
         self.assertTrue(all(state.room13['v111']['values'].get(key) == value for kind, key, value in option['guard']))
 
+    def test_correct_material_without_method_is_distinguished_without_mutation(self):
+        env, state = environment();self.prep_lamp(env, state)
+        for method in (None, False, True):
+            state.room13['v111']['exploration149']['knot_method'] = method
+            before = copy.deepcopy(state.room13)
+            self.assertEqual(env['r13_ex149_lamp_needs_method']('lamp'), method is not True)
+            self.assertEqual(env['r13_ex149_lamp_ready']('lamp'), method is True)
+            self.assertEqual(state.room13, before)
+        state.room13['v111']['exploration149'].pop('knot_method')
+        self.assertTrue(env['r13_ex149_lamp_needs_method']('lamp'))
+        before = copy.deepcopy(state.room13)
+        self.assertFalse(env['r13_ex149_lamp_supply']('lamp'))
+        self.assertEqual(state.room13, before, '방법 안내는 끈·시간·본편 상태를 바꾸지 않는다')
+
+    def test_method_hint_only_for_observed_unfixed_lamp_and_owned_cord(self):
+        for reason in ('day3', 'wrong_gate', 'wrong_place', 'wrong_object', 'no_latch', 'no_cord', 'bound', 'supplied', 'unsafe', 'missing_binding'):
+            env, state = environment();self.prep_lamp(env, state)
+            state.room13['v111']['exploration149'].pop('knot_method');obj = 'lamp'
+            if reason == 'day3': state.room13['day'] = 3
+            elif reason == 'wrong_gate': state.room13['v111']['gate'] = 'sleep2'
+            elif reason == 'wrong_place': state.room13['location'] = 'gate'
+            elif reason == 'wrong_object': obj = 'stone'
+            elif reason == 'no_latch': state.room13['v111']['values']['lamp_latch_seen2'] = False
+            elif reason == 'no_cord': state.room13['livelihood']['items'] = []
+            elif reason == 'bound': state.room13['v111']['values']['lamp_bound2'] = True
+            elif reason == 'supplied': state.room13['v111']['values']['lamp_cord2'] = True
+            elif reason == 'unsafe': state.calm = False
+            elif reason == 'missing_binding': env['R13_V111_BINDINGS'] = {}
+            before = copy.deepcopy(state.room13)
+            self.assertFalse(env['r13_ex149_lamp_needs_method'](obj), reason)
+            self.assertEqual(state.room13, before)
+
     def test_days_and_crises_disable_mutations(self):
         for reason in ('day1', 'day8', 'travel', 'unsafe', 'detained', 'incident'):
             env, state = environment()

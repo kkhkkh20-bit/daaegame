@@ -131,19 +131,25 @@ init 389 python:
                 or state.get("scale_corrected") or not r13_ex149_owned("weight")):return False
         return r13_ex149_mark("scale_corrected")
 
-    def r13_ex149_lamp_ready(obj):
+    def r13_ex149_lamp_target(obj):
         if not isinstance(obj,str) or not r13_ex149_available():return False
         state=store.room13;story=state["v111"]
         if (state.get("day")!=2 or story.get("gate")!="lamp_prep2"
                 or state.get("location")!="square" or obj!="lamp"):return False
         if (r13_v111_value("lamp_latch_seen2") is not True or r13_v111_value("lamp_bound2")
-                or r13_v111_value("lamp_cord2") or r13_ex149_state().get("knot_method") is not True
+                or r13_v111_value("lamp_cord2")
                 or not r13_ex149_owned("cord")):return False
         # 래치를 이미 보고 아직 끈이 없으면 활성 선택지에는 lamp가 없다.
         # 본편 원본의 고정 대상만 확인하고, 현재 실행 조건은 위에서 검사한다.
         binding=R13_V111_BINDINGS.get("lamp_prep2",{})
         return any(option.get("object")=="lamp" and option.get("location")=="square"
                    and option.get("index",index)==3 for index,option in enumerate(binding.get("options",[])))
+
+    def r13_ex149_lamp_ready(obj):
+        return r13_ex149_lamp_target(obj) and r13_ex149_state().get("knot_method") is True
+
+    def r13_ex149_lamp_needs_method(obj):
+        return r13_ex149_lamp_target(obj) and r13_ex149_state().get("knot_method") is not True
 
     def r13_ex149_lamp_supply(obj):
         if not r13_ex149_lamp_ready(obj):return False

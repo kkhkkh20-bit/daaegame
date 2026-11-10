@@ -3,6 +3,6 @@
 # 그려진 자리에 「깡통 줄」을 따로 두고 6일 오후 두 행동(field-bindings afternoon6 index 80·81)을 이쪽으로 옮겼다.
 # later_bindings 는 줄 수 고정이라 그 뒤(init 318)에 여기서 더한다. 좌표는 2400 폭 창고 그림 기준.
 init 319 python:
-    ROOM13["objects"]["v111_woodshed"]["v111_can"]=dict(rect=[1878,20,110,150],need=[],give=[],flags=[],
+    ROOM13["objects"]["v111_woodshed"]["v111_can"]=dict(rect=[1890,150,90,70],need=[],give=[],flags=[],
         text="문 옆 천장 못에 깡통 줄이 매달려 있다.")
     R13_OBJECT_NAMES["v111_can"]="깡통 줄"

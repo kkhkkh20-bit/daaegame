@@ -6,7 +6,7 @@ default r13_ex149_scale_on_pan = False
 init 390 python:
     with renpy.file("v111/exploration149.json") as _ex149_file:
         R13_EX149_BLOCKS=json.load(_ex149_file)["blocks"]
-    R13_EX149_REQUIRED={"market_intro","delivery_intro","delivery_large_tag","delivery_small_tag","delivery_box","delivery_need_read","delivery_tie","delivery_taught","delivery_repeat","delivery_unbound","delivery_separate","scale_intro","scale_reference","scale_place","scale_pivot","scale_need_check","scale_eunho","scale_repeat","scale_pack","lamp_method","wrong_target","need_item","receive_cord","receive_weight","return_weight"}
+    R13_EX149_REQUIRED={"market_intro","delivery_intro","delivery_large_tag","delivery_small_tag","delivery_box","delivery_need_read","delivery_tie","delivery_taught","delivery_repeat","delivery_unbound","delivery_separate","scale_intro","scale_reference","scale_place","scale_pivot","scale_need_check","scale_eunho","scale_repeat","scale_pack","lamp_method","lamp_need_method","wrong_target","need_item","receive_cord","receive_weight","return_weight"}
     if not R13_EX149_REQUIRED<=set(R13_EX149_BLOCKS):raise Exception("선택 탐색 대화 단계 누락")
     _ex149_ids=set()
     for _ex149_key,_ex149_rows in R13_EX149_BLOCKS.items():
@@ -255,6 +255,8 @@ label r13_ex149_use(obj):
             $ r13_ex149_held=None
             call r13_lines(r13_ex149_lines("lamp_method"),"exploration149:lamp_method")
             return 3
+    elif r13_ex149_held=="cord" and r13_ex149_lamp_needs_method(obj):
+        call r13_lines(r13_ex149_lines("lamp_need_method"),"exploration149:lamp_need_method")
     elif r13_ex149_held=="weight" and room13["location"]=="store" and obj=="scale":
         $ r13_ex149_held=None
         if r13_ex149_owned("weight") and (r13_ex149_state().get("scale_placed") or r13_ex149_scale_place()):
