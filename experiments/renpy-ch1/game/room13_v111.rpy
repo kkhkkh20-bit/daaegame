@@ -428,6 +428,8 @@ label r13_v111_wait(key):
     if v111_auto is not None:
         return v111_auto
 label r13_v111_wait_again:
+    if not r13_ex149_available() or not r13_ex149_owned(r13_ex149_held):
+        $ r13_ex149_held=None
     window hide
     hide r13_visitor
     # 0.20.6 (owner day-1 play: "추가 질문마다 대화를 다시 시작하는 느낌"): after a question, a shown
@@ -516,11 +518,23 @@ label r13_v111_wait_again:
         if v111_pick[1]!="daram" or not r13_v111_dialogue_here146("daram"):
             jump r13_v111_wait_again
         $ v111_pick=("person","daram")
+    if v111_pick==("menu","items149"):
+        call r13_ex149_inventory
+        jump r13_v111_wait_again
     if v111_pick==("menu","sidequests"):
         call screen r13_sidequest_journal146
         jump r13_v111_wait_again
     if v111_pick[0]=="person":
         $ v111_person=v111_pick[1]
+        if r13_ex149_held and any(o.get("person")==v111_person and o.get("location")==room13["location"] for o in v111_binding.get("options",[])):
+            $ r13_ex149_held=None
+        if r13_ex149_held:
+            if r13_ex149_held=="cord" and v111_person=="karo" and room13["location"]=="gate" and r13_ex149_person_ready("karo"):
+                $ r13_ex149_held=None
+                call r13_ex149_inspect("delivery")
+            else:
+                call r13_lines(r13_ex149_lines("wrong_target"),"exploration149:wrong_target")
+            jump r13_v111_wait_again
         $ v111_piko_reported=False
         if room13["location"] in ("hidden_pandol","hidden_base14") and not any(o.get("person")==v111_person for o in v111_binding.get("options",[])):
             call r13_hidden_idle
@@ -589,6 +603,8 @@ label r13_v111_wait_again:
                         call r13_lines(v111_react,"v111:present_reaction:"+v111_person+":"+v111_shown)
                     else:
                         $ renpy.notify("지금은 이 자료로 더 확인할 내용이 없다.")
+            if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="exploration149":
+                call r13_ex149_person(v111_person,_return[1])
             if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="world148":
                 if isinstance(_return[1],(tuple,list)) and len(_return[1])==2:
                     call r13_world148_dispatch(_return[1][0],_return[1][1])
@@ -606,6 +622,13 @@ label r13_v111_wait_again:
         jump r13_v111_wait_again
     if v111_pick[0]=="object":
         $ v111_pick=("object",r13_v111_object_key(v111_pick[1]))
+        if r13_ex149_held and not r13_ex149_lamp_ready(v111_pick[1]) and any(o.get("object")==v111_pick[1] and o.get("location")==room13["location"] for o in v111_binding.get("options",[])):
+            $ r13_ex149_held=None
+        if r13_ex149_held:
+            call r13_ex149_use(v111_pick[1])
+            if type(_return) is int and _return==3 and key=="lamp_prep2":
+                return 3
+            jump r13_v111_wait_again
         if key=="gate_request" and v111_pick[1] in ("ledger","booth","gate_documents"):
             call r13_v111_gate_ledger_hand
             $ r13_v111_time("inspect:gate_request:ledger",15)
@@ -646,6 +669,9 @@ label r13_v111_wait_again:
         if v111_pick[1]=="bed" and room13["location"] in ("room13","guestroom"):
             $ v111_bed_hint=r13_v111_ambient_text(v111_pick[1],ROOM13["objects"].get(room13["location"],{}).get(v111_pick[1],{}))
             $ renpy.notify(v111_bed_hint or "아직 할 일이 남아 있습니다. 준비를 마치면 여기서 잠잘 수 있습니다.")
+            jump r13_v111_wait_again
+        call r13_ex149_object_dispatch(v111_pick[1])
+        if _return:
             jump r13_v111_wait_again
         call r13_world148_object(v111_pick[1])
         if _return:

@@ -33,6 +33,7 @@ init 57 python:
         if globals().get("r13_v111_rest_option",lambda:None)():rects.append((offset+1020,352,232,h))
         if globals().get("r13_sidequest_tasks146",lambda:[])() or globals().get("r13_world148_journal",lambda:[])():rects.append((offset+504,84,144,h))
         if globals().get("r13_field_companion_button146",lambda:False)():rects.append((offset+664,84,144,h))
+        if globals().get("r13_ex149_available",lambda:False)():rects.append((offset+824,84,104,h))
         return rects
 
     R13_UI_PADDING = {

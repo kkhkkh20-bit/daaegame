@@ -66,7 +66,7 @@ class ProofUsability(unittest.TestCase):
     def test_gate_hint_does_not_name_required_material_or_location(self):
         data=json.loads((ROOT/'game/v111/newworld/d01.json').read_text())
         hint=data['replace']['MS14_D01_S03_L0027']['text']
-        self.assertIn('기준',hint)
+        self.assertIn('신청했을 때와 지금 기록',hint)
         for word in ('게시판','E04','입장 규칙','정답'):
             self.assertNotIn(word,hint)
 

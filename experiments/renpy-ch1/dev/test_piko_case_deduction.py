@@ -20,10 +20,11 @@ class PikoCaseDeduction(Layer):
     def test_morning_discovery_does_not_claim_to_know_death_time(self):
         env=self.load()
         env['r13_v111_set']('piko_alive',False)
-        lines=env['r13_v111_lines'](['MS14_D03_S01_L0010','MS14_D03_S05_L0038'])
+        lines=env['r13_v111_lines'](['MS14_D03_S01_L0020','MS14_D03_S05_L0038'])
         text=' '.join(r[1] for r in lines)
-        self.assertIn('아침에 발견했을 때',text)
-        self.assertIn('언제 숨졌는지는 모릅니다',text)
+        self.assertIn('아침에',text)
+        self.assertIn('발견',text)
+        self.assertIn('언제 숨졌는지는 아직 모릅니다',text)
         self.assertNotIn('없어진 뒤에도',text)
 
     def test_viewing_new_reactions_does_not_finish_care_or_change_custody(self):

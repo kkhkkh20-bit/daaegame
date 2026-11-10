@@ -77,7 +77,7 @@ init 350 python:
         if mode!="compare" or len(values)!=2 or values[0]==values[1]:return None
         return values if all(k in owned for k in values) else None
 
-    R13_GATE_APPLICATION_QUOTE="신청서에는 동행인 다람이 적혀 있습니다. 하지만 제가 받은 명단에는 다돌 씨만 있습니다."
+    R13_GATE_APPLICATION_QUOTE="신청서에는 다람 이름도 있군요. 받은 명단과 다릅니다."
 
     def r13_pw_context(key,gate_application_acknowledged=False):
         """시범 쟁점이면 문맥 dict, 아니면 None(호출자가 기존 화면으로 폴백)."""

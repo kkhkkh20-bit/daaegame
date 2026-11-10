@@ -40,7 +40,8 @@ class EarlyNovelAdaptation(Layer):
         self.assertEqual(source.count("r13_v111_commit('MS14_D02_S01_L0039')"), 1)
         # 작성 뒤 원래 L0040 앞에 또 종이를 꺼내고 넣는 장면이 붙지 않는다.
         after_writing = " ".join(row[1] for row in env["r13_v111_lines"](["MS14_D02_S01_L0040"]))
-        self.assertIn("오후에 다시 오겠습니다", after_writing)
+        self.assertIn("함에 넣었습니다", after_writing)
+        self.assertIn("오후에 답이 왔는지 다시", after_writing)
         self.assertNotIn("쪽지 남기자", after_writing)
         self.assertNotIn("쪽지를 함 안쪽", after_writing)
         data = json.loads((ROOT / "game/v111/newworld/d02.json").read_text())

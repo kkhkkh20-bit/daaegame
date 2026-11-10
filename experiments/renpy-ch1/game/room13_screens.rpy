@@ -119,6 +119,10 @@ screen r13_hub(entry=False):
             fixed:
                 area (664,84,144,r13_control_height())
                 use r13_control("다람","dialogue",Return(("companion","daram")),enabled=input_ready,width=144,height=r13_control_height(),control_id="r13_field_companion")
+    if not entry and r13_ex149_available():
+        fixed:
+            area (824,84,104,r13_control_height())
+            use r13_control("취소" if r13_ex149_held else "물품",None,SetVariable("r13_ex149_held",None) if r13_ex149_held else Return(("menu","items149")),enabled=input_ready,width=104,height=r13_control_height(),primary=bool(r13_ex149_held),control_id="r13_field_items149")
     if not entry and r13_v111_rest_option():
         fixed:
             area (1020,352,232,r13_control_height())
@@ -142,7 +146,7 @@ screen r13_hub(entry=False):
         fixed:
             area (772,104,232,64)
             use r13_control("저녁 할 일","auto",Return(("menu","evening")),enabled=input_ready,height=64)
-    if not entry and r13_has("livelihood_open"):
+    if not entry and r13_has("livelihood_open") and not r13_v111_active():
         # 0.18.56 (owner): no work/shop board at the top. Work is asked for from the person who
         # gives it, goods are bought from the seller in person; only the purse is shown.
         frame:

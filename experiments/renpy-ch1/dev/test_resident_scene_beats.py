@@ -26,7 +26,7 @@ class ResidentSceneBeats(Layer):
         rows = self.rows(env, "r13_v111_piko_dead3")
         texts = [r[1] for r in rows]
         self.assertTrue(any("아빠가 여기 있는댔잖아" in t for t in texts))
-        self.assertLess(next(i for i, t in enumerate(texts) if "아빠도 여기 있을게" in t),
+        self.assertLess(next(i for i, t in enumerate(texts) if "아빠 여기 있을게" in t),
                         next(i for i, t in enumerate(texts) if "아빠가 여기 있는댔잖아" in t))
         self.assertEqual(self.state.room13, before, "행동 대사가 생사나 초상을 획득하지 않는다")
         env["r13_v111_commit"]("MS14_D03_S01_L0021")
@@ -73,7 +73,7 @@ class ResidentSceneBeats(Layer):
                 self.assertEqual(before, self.state.room13)
                 self.assertFalse(any(r[0] == "resident_piko" for r in rows))
                 # 사용 여부는 아직 확인할 문제다. 기존 가능성 질문을 범행 입증으로 바꾸지 않는다.
-                self.assertIn("그 집게로 돌을 가져갔는지, 그것부터 보려는 겁니다.", texts)
+                self.assertTrue(any("아직은 모릅니다" in t and "누가 언제 썼는지" in t for t in texts))
                 first = self.rows(env, "r13_v111_workshop3")
                 self.assertFalse(any("뭐라고 적었어요" in r[1] for r in first))
 
